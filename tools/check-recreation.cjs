@@ -1,7 +1,7 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const handlers={},elements={},noop=()=>{};
 const ctx=new Proxy({}, {get:(o,k)=>o[k]||noop,set:(o,k,v)=>(o[k]=v,true)});
-const canvas={getContext:()=>ctx,focus:noop};
+const canvasHandlers={};const canvas={getContext:()=>ctx,focus:noop,addEventListener:(name,cb)=>canvasHandlers[name]=cb,getBoundingClientRect:()=>({left:100,top:50,width:512,height:384}),setPointerCapture:noop,hasPointerCapture:()=>true,releasePointerCapture:noop};
 for(const id of ['#start','#pause','#reset','#options','#close'])elements[id]={};
 elements['#game']=canvas;elements['#bots']={checked:true};elements['#difficulty']={value:'normal'};
 elements['#controls']={open:false,showModal(){this.open=true},close(){this.open=false}};
@@ -12,7 +12,7 @@ const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.f
 vm.createContext(sandbox);
 for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','support.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
- if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol});})();');
+ if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection});})();');
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
@@ -82,4 +82,17 @@ state.rocks=[];let acquired=false;for(let i=0;i<12;i++){state.t+=.5;if(f.perceiv
 state.rocks=[{x:300,y:100,w:20,h:400}];assert.equal(f.perceive(observer,[hidden],240),null,'Wall must immediately block an existing target');
 const delays=Array.from({length:20},()=>f.enemyFireDelay({type:'soldier'}));assert(delays.every(d=>d>=3.8&&d<5.4),'Normal spit cooldown should be 3.8 to 5.4 seconds');assert(new Set(delays).size>10,'Spit intervals must vary');
 console.log('Passed wall-limited AI perception, reaction delay, target loss behind walls, and randomized slower enemy fire.');
+}
+
+{
+api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mode='playing';state.mask=null;state.rocks=[];state.props=[];state.doors=[];
+const one={x:200,y:200,team:'human',type:'soldier',alive:true,hp:1,angle:0,cool:0,weapon:0},two={...one,x:260,y:220},commander={...one,x:240,y:240,type:'commander',id:1};state.humans=[one,two,commander];
+const pointer=(x,y,button=0,shiftKey=false)=>({clientX:100+x/2,clientY:50+y/2,button,shiftKey,pointerId:7,preventDefault:noop});
+canvasHandlers.pointerdown(pointer(180,180));canvasHandlers.pointermove(pointer(285,260));canvasHandlers.pointerup(pointer(285,260));assert.equal(f.selection.size,2,'Scaled-canvas drag selects only troops');assert(!f.selection.has(commander),'Keyboard commanders are excluded from mouse troop selection');
+canvasHandlers.pointerdown(pointer(600,350,2));assert(one.attackMove&&two.attackMove);assert.notEqual(one.attackMove.x,two.attackMove.x,'Formation destinations should be spaced');
+canvasHandlers.pointerdown(pointer(one.x,one.y));canvasHandlers.pointerup(pointer(one.x,one.y));assert.equal(f.selection.size,1,'Click selects one');canvasHandlers.pointerdown(pointer(two.x,two.y,0,true));canvasHandlers.pointerup(pointer(two.x,two.y,0,true));assert.equal(f.selection.size,2,'Shift click adds');
+state.rocks=[{x:380,y:80,w:40,h:500}];f.attackMoveTo({x:650,y:300});const goal={...one.attackMove};for(let i=0;i<1600&&one.attackMove;i++){state.t+=.05;f.attackMoveStep(one,null,.05);assert(!f.blocked(one.x,one.y),'Attack move cannot cross wall');}assert.equal(one.attackMove,null,'Attack move reaches destination behind a long wall');assert.equal(one.order,3,'Troop holds after arrival');assert(Math.hypot(one.x-goal.x,one.y-goal.y)<13);
+f.selectTroops(two,two);two.cannon=0;state.cannons=[{occupant:two}];f.attackMoveTo({x:400,y:300});assert.equal(state.cannons[0].occupant,null,'Ordered cannon troops dismount');assert.equal(two.cannon,undefined);assert(!f.blocked(two.attackMove.x,two.attackMove.y),'Blocked click destination resolves to open terrain');
+state.rocks=[];one.x=330;one.y=600;one.cool=0;one.attackMove={x:650,y:600};state.bullets=[];const enemy={x:430,y:600,alive:true,hp:4};f.attackMoveStep(one,enemy,.05);assert.equal(state.bullets.length,1,'Attack move engages a visible enemy');assert.equal(one.x,330,'Aligned troop pauses travel to engage');f.attackMoveStep(one,null,.05);assert(one.x>330,'Travel resumes after engagement');api.loadMission(2);assert.equal(f.selection.size,0,'Mission reset clears selection');
+console.log('Passed drag/click/Shift selection, scaled pointer coordinates, commander exclusion, right-click formations, wall routing, blocked destinations, cannon dismount and arrival holding.');
 }

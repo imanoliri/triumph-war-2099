@@ -30,6 +30,8 @@ Commander 4's keyboard preset and computer teammates are additions. Original inp
 
 Press Orders then a direction: Up = Attack, Down = Defend, Right = Follow, Left = Normal. Hold Fire + Orders for grenades, up to eight carried. Infantry aim and fire only along the four cardinal directions. Bugs spit within a narrow ±11.25° cone around their facing. Aim follows movement. Walk over pickups and evolver plants. Press Fire near terminals and unlocked doors. Troops can collect weapons and occupy plasma cannons; commanders cannot occupy cannons.
 
+Left-drag on the battlefield selects infantry, tanks and ground robots. A left-click selects one troop; Shift adds troops (Shift-click toggles one). Right-click orders selected troops to attack-move: route toward spaced destination positions, engage visible enemies, then resume travel and hold on arrival. Troops assigned to cannons dismount when ordered. Clicks inside terrain resolve to nearby reachable ground. Commander keyboard controls remain separate. Nearby commander orders replace mouse destinations.
+
 Enter starts/advances/continues. Escape or Space pauses. F2 restarts. The mission selector supports development comparisons. Commanders return after ten seconds while a non-player troop survives. Continuing a failed mission costs 100 merits.
 
 ## Fidelity gaps and verification
