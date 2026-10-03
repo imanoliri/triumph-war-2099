@@ -6,7 +6,7 @@ http.createServer((req,res) => {
   let name;
   try { name = decodeURIComponent(new URL(req.url,'http://localhost').pathname).replace(/^\/+/, '') || 'index.html'; }
   catch { res.writeHead(400).end(); return; }
-  if (!['index.html','style.css','game.js'].includes(name) && !/^assets\/[\w./-]+\.(png|js|wav|mid)$/.test(name)) {res.writeHead(404).end();return;}
+  if (!['index.html','style.css','game.js','support.js'].includes(name) && !/^assets\/[\w./-]+\.(png|js|wav|mid)$/.test(name)) {res.writeHead(404).end();return;}
   const file = path.resolve(root,name);
   if (!file.startsWith(root + path.sep)) {res.writeHead(404).end();return;}
   fs.readFile(file,(err,data)=> {if(err){res.writeHead(404).end();return;}res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream','Cache-Control':'no-store'}).end(data);});

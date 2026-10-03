@@ -70,3 +70,13 @@
 - Logic checks passed for terminal dependencies, completion flags, mission timers, cave terminal presence, health and kill targets, plus all prior mission/input checks. Live visual/audio/play comparison remains unverified under the existing browser denial and launch timeout.
 - Next work: further event translation for transport arrivals, infiltration, telepads and chemical hazards; MIDI playback; original UI; exact movement/combat/score/campaign behavior; live comparison when access works.
 - Added passing fixtures for all five difficulty health values, Hold Base's first spawn after 25 seconds, kill-count progression (spawn count does not satisfy the target), victory after 200 kills, doors staying open while Fire is held, and final victory only after crystal extraction. Fixtures operate the real JavaScript engine under a mock DOM/canvas; they are not live play evidence.
+
+## 2026-10-03 — source support arrivals
+
+- Recovered 19 native movement paths and bouncing-ball parameters. MMF 1.2 uses fixed 14-byte path steps here; the newer documented variable-size format failed boundary validation, so the reader was corrected from the actual bytes.
+- Replaced instant support with recovered per-map creation lists, guard conditions, offsets, sounds and helper positions. Carriers approach, pause, drop infantry once per second, then leave. Aircraft make passes, fire, bomb and create animated troop drops. Indoor air calls ten-second zipline creators; later indoor ground calls create five troops at a telepad-selected spawner. Indoor ground support uses seven-hit robots.
+- BLITZ now follows the executable's one-carrier/two-aircraft/one-tank list. This differs from the help text's description of two reinforcements.
+- Added transport-supported respawn, pending-arrival survival, carrier spit blocking and moving-carrier bug destruction. Full survival counter semantics remain pending.
+- Passing fixtures cover carrier lifecycle, aircraft pass/drop, indoor delivery, zipline expiration, robots, BLITZ counts and carrier-backed respawn, together with all previous checks.
+- Compatibility timing uses 50 Hz movement and pause conversion based on Anaconda's player implementation: https://github.com/Matt-Esch/anaconda/blob/master/mmfparser/player/movements/path.py and https://github.com/Matt-Esch/anaconda/blob/master/mmfparser/player/movements/common.pyx . Live timing remains unverified.
+- Remaining differences are documented in `research/SUPPORT-RECOVERY.md`: approximate bomb/drop timing and helper movement, unresolved (0,0) prototypes, exact survival counters, robot AI, hazards/telepads, MIDI, original UI, score/campaign flow, and live comparison.

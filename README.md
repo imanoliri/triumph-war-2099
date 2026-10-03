@@ -36,7 +36,9 @@ Enter starts/advances/continues. Escape or Space pauses. F2 restarts. The missio
 
 Map art and sprite pixels are recovered; gameplay remains reconstructed. All 7,172 original event groups are decoded, and a subset is translated into `assets/original-rules.js`: terminal/door dependencies, mission time gates, health for five difficulty levels, enemy limits, difficulty culling markers, final kill targets and crystal extraction requirements.
 
-Movement, AI, collision details, weapon ranges and some damage, spawn probabilities, scores, transport arrivals, air support, telepads, chemical hazards and campaign transitions still need comparison. Reinforcements appear directly. Wave spawn positions, queen offspring and crystal beam duration remain approximate. Sound assignments are partly inferred; MIDI playback is pending. Difficulty culling currently uses sprite bounding boxes rather than exact per-pixel overlap.
+Support pickups now use source-derived creation rules and original sprites. Outdoor carriers follow recovered paths and drop infantry while stopped. Aircraft pass through the map, strafe, drop troops and bomb. Later maps use five-troop telepad arrivals, ten-second zipline creators and seven-hit ground robots. BLITZ uses the executable's creation list: one carrier, two aircraft and one tank.
+
+Movement, AI, collision details, weapon ranges and some damage, spawn probabilities, scores, telepad functions, chemical hazards and campaign transitions still need comparison. Carrier paths are recovered; their clock conversion uses a compatible 50 Hz model and remains unverified against the original. Aircraft bombing currently resolves directly at the aircraft position; landing animation timing and helper bouncing are approximate. Wave spawn positions, queen offspring and crystal beam duration remain approximate. Sound assignments are partly inferred; MIDI playback is pending. Difficulty culling uses sprite bounding boxes rather than exact per-pixel overlap.
 
 Local mock-canvas checks pass for all nine mission initialization/drawing paths, movement, directional orders, grenades, assistant ownership, pause, controls, restart and combat simulation. Browser rendering and audio playback remain unverified: the browser tool denied preview permission. Recent original-game launches through the computer tool timed out.
 
@@ -56,10 +58,14 @@ Recovery scripts in `tools/` run from this repository directory:
 8. `node tools/recover-events.cjs`
 9. `node tools/event-report.cjs`
 10. `node tools/derive-original-rules.cjs`
+11. `node tools/recover-movements.cjs`
+12. `node tools/derive-support-rules.cjs`
 
 Run `node tools/check-recreation.cjs` for local logic checks. Intermediates go in ignored `work/`. Observations are saved in `DEVELOPMENT-NOTES.md`.
 
 `research/events.json.gz` preserves the complete decoded event tables for inspection. `research/EVENT-RECOVERY.md` records the rules recovered this pass. Browser play, visual rendering and audible playback remain unverified.
+
+`support.js` implements recovered path following and support-rule selection. `assets/support-rules.js` records each map's pickup creation lists, global-value guards and helper positions. See `research/SUPPORT-RECOVERY.md` for evidence and remaining differences.
 
 ## Research
 
