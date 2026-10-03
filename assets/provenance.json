@@ -1,0 +1,22 @@
+{
+  "source": "C:/Games/DarkSunGames/2099_23.exe",
+  "originalAuthor": "Anthony Lopes / DarkSun Games",
+  "images": 995,
+  "objectDefinitions": 623,
+  "frames": 26,
+  "gameplayFrames": [
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    21
+  ],
+  "extraction": "MMF 1.x image bank and frame chunks; RGB555 pixels; static backdrop collision masks",
+  "sha256": "8BB1B28C3634C1357F62F55A7A6DFD893DB199D8D827834B208D9D364D89D677",
+  "soundEffects": 62,
+  "midiTracks": 14
+}
