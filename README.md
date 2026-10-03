@@ -13,7 +13,7 @@ The JavaScript engine is newly written. The original editable Multimedia Fusion 
 - 62 sound effects, converted from Microsoft ADPCM to PCM WAV.
 - 14 original MIDI tracks, decoded for offline browser playback.
 
-Original game and assets: Anthony Lopes / DarkSun Games. `assets/provenance.json` records their source. The local Git repository records development.
+Original game and assets: Anthony Lopes / DarkSun Games. `assets/provenance.json` records their source. The local Git repository records development. `main` contains the project baseline; the initial playable checkpoint and subsequent improvements are on `initial-recreation`, descended from `main`.
 
 ## Playing together
 
@@ -64,7 +64,7 @@ Recovery scripts in `tools/` run from this repository directory:
 12. `node tools/derive-support-rules.cjs`
 13. `node tools/build-music.cjs`
 
-Run `node tools/check-recreation.cjs` for local logic checks. Intermediates go in ignored `work/`. Observations are saved in `DEVELOPMENT-NOTES.md`.
+Run `node tools/check-recreation.cjs` for local logic checks and `node tools/check-music.cjs` for MIDI scheduling checks. Intermediates go in ignored `work/`. Observations are saved in `DEVELOPMENT-NOTES.md`.
 
 `research/events.json.gz` preserves the complete decoded event tables for inspection. `research/EVENT-RECOVERY.md` records the rules recovered this pass. Browser play, visual rendering and audible playback remain unverified.
 

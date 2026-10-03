@@ -88,3 +88,6 @@
 - Infantry/commanders fire only in four cardinal directions, without diagonal flame spread. AI aligns onto firing lanes and avoids firing through terrain. Bugs preserve their facing and may spit only within ±11.25 degrees; this angle is an approximation requested as a small cone.
 - Existing nine-mission logic suite passes, plus cardinal bullets, facing-constrained spit and a long-wall route fixture. Audible playback and browser rendering remain unverified because browser access was denied.
 - GitHub connector identifies account imanoliri but has no repository-creation operation. Browser creation at github.com/new was denied by the browser security policy; no alternate browser route was attempted.
+
+- MIDI checks pass for all 14 decoded tracks, every mission track assignment, user-gesture start, oscillator scheduling, pause/resume and track switching.
+- Git branch layout prepared: minimal main baseline; all five development commits rebased onto it on initial-recreation. Original local history is retained under local-history-before-github. GitHub creation remains blocked pending an empty private repository URL.
