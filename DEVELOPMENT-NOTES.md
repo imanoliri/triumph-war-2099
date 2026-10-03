@@ -80,3 +80,11 @@
 - Passing fixtures cover carrier lifecycle, aircraft pass/drop, indoor delivery, zipline expiration, robots, BLITZ counts and carrier-backed respawn, together with all previous checks.
 - Compatibility timing uses 50 Hz movement and pause conversion based on Anaconda's player implementation: https://github.com/Matt-Esch/anaconda/blob/master/mmfparser/player/movements/path.py and https://github.com/Matt-Esch/anaconda/blob/master/mmfparser/player/movements/common.pyx . Live timing remains unverified.
 - Remaining differences are documented in `research/SUPPORT-RECOVERY.md`: approximate bomb/drop timing and helper movement, unresolved (0,0) prototypes, exact survival counters, robot AI, hazards/telepads, MIDI, original UI, score/campaign flow, and live comparison.
+
+## 2026-10-04 — music, terrain and aiming feedback
+
+- User reported missing music, terrain-unaware AI and unrestricted aiming. Added offline scheduling of all 14 original MIDI performances, preserving tempo maps, note timing, programs and sustain. Mission tracks come from decoded original events. Browser oscillator instruments approximate Windows General MIDI; pitch bend, percussion and some controllers remain gaps. Playback starts on a user gesture and loops; pause suspends its audio clock.
+- Added shared four-neighbour distance fields at 16-pixel spacing, radius clearance and line-of-sight sampling. AI can route around long walls and open nearby unlocked doors. Fields invalidate on mission/door/wall changes. Tight corridors and moving-unit congestion remain unverified.
+- Infantry/commanders fire only in four cardinal directions, without diagonal flame spread. AI aligns onto firing lanes and avoids firing through terrain. Bugs preserve their facing and may spit only within ±11.25 degrees; this angle is an approximation requested as a small cone.
+- Existing nine-mission logic suite passes, plus cardinal bullets, facing-constrained spit and a long-wall route fixture. Audible playback and browser rendering remain unverified because browser access was denied.
+- GitHub connector identifies account imanoliri but has no repository-creation operation. Browser creation at github.com/new was denied by the browser security policy; no alternate browser route was attempted.

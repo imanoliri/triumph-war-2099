@@ -10,9 +10,9 @@ class Image {constructor(){this.complete=true;this.naturalWidth=20;}}
 class Audio {cloneNode(){return this}play(){return Promise.resolve()}}
 const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.from(s,'base64').toString('latin1'),document:{querySelector:id=>elements[id],createElement:()=>canvas},window:{addEventListener:(name,cb)=>handlers[name]=cb},requestAnimationFrame:cb=>sandbox.nextFrame=cb};
 vm.createContext(sandbox);
-for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','support.js','game.js']){
+for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','support.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
- if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup});})();');
+ if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman});})();');
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
@@ -58,3 +58,18 @@ api.loadMission(1);fixture=sandbox.window.__fixture();state=fixture.state;assert
 api.loadMission(1);fixture=sandbox.window.__fixture();state=fixture.state;fixture.reinforce('troops');state.mode='playing';for(const u of state.humans){u.alive=false;u.respawn=0;}fixture.update(.02);assert(state.humans.some(u=>u.type==='commander'&&u.alive),'Carrier supports commander respawn without deployed troops');assert.equal(state.mode,'playing');
 console.log('Passed source support rules: carrier pause/drop/departure, air passes and landing animations, indoor five-troop arrival, zipline expiration, ground robots, BLITZ creation counts, and carrier-backed respawn.');
 console.log('Passed: recovered maps and actors, movement, directional orders, grenades, assistant ownership, pause/resume, combat simulation, controls, F2, restart, and all nine mission initialization/render paths. Browser rendering/audio playback unverified.');
+
+{
+// User-reported aiming rules: all infantry fire cardinally; bug spit follows facing.
+api.loadMission(1);const fixture=sandbox.window.__fixture(),state=fixture.state;
+state.bullets=[];
+for(const angle of [.2,.7,1.4,2.8,-1.1]){const u={x:500,y:500,team:'human',type:'soldier',angle,cool:0,weapon:1,order:0};fixture.fire(u);const b=state.bullets.at(-1);assert(Math.abs(b.dx)<1e-12||Math.abs(b.dy)<1e-12,'Infantry bullets must be cardinal');}
+const bug={x:500,y:500,team:'alien',type:'soldier',angle:.6,shotOffset:Math.PI/16,cool:0,weapon:0};fixture.fire(bug);const spit=state.bullets.at(-1);assert(Math.abs(Math.atan2(spit.dy,spit.dx)-bug.angle)<=Math.PI/16+1e-12);
+// Route around a long wall instead of oscillating at its edge.
+const nav=sandbox.window.TriumphNavigation,wall=(x,y)=>x<8||x>1016||y<40||y>752||(x>380&&x<420&&y>80&&y<580);
+nav.reset();let walker={x:200,y:300},goal={x:650,y:300};
+for(let n=0;n<1500&&Math.hypot(walker.x-goal.x,walker.y-goal.y)>10;n++){const next=nav.step(walker,goal,wall,'wall');assert(next,'Route should exist around wall');const dx=next.x-walker.x,dy=next.y-walker.y,length=Math.hypot(dx,dy),amount=Math.min(3,length);walker.x+=dx/length*amount;walker.y+=dy/length*amount;assert(!wall(walker.x,walker.y),'Route cannot cross terrain');}
+assert(Math.hypot(walker.x-goal.x,walker.y-goal.y)<12,'Route should reach goal behind wall');
+console.log('Passed cardinal infantry fire, facing-constrained bug spit, and navigation around a long wall.');
+
+}

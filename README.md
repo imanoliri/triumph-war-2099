@@ -11,7 +11,7 @@ The JavaScript engine is newly written. The original editable Multimedia Fusion 
 - All nine gameplay map backgrounds and static collision masks.
 - The original help text and mission briefings.
 - 62 sound effects, converted from Microsoft ADPCM to PCM WAV.
-- 14 MIDI tracks, preserved as files. Music playback is unfinished.
+- 14 original MIDI tracks, decoded for offline browser playback.
 
 Original game and assets: Anthony Lopes / DarkSun Games. `assets/provenance.json` records their source. The local Git repository records development.
 
@@ -28,7 +28,7 @@ You control commanders 1 and 4. Computer teammates control 2 and 3 by default. T
 
 Commander 4's keyboard preset and computer teammates are additions. Original input options included joysticks; gamepad support remains unfinished.
 
-Press Orders then a direction: Up = Attack, Down = Defend, Right = Follow, Left = Normal. Hold Fire + Orders for grenades, up to eight carried. Aim follows movement. Walk over pickups and evolver plants. Press Fire near terminals and unlocked doors. Troops can collect weapons and occupy plasma cannons; commanders cannot occupy cannons.
+Press Orders then a direction: Up = Attack, Down = Defend, Right = Follow, Left = Normal. Hold Fire + Orders for grenades, up to eight carried. Infantry aim and fire only along the four cardinal directions. Bugs spit within a narrow ±11.25° cone around their facing. Aim follows movement. Walk over pickups and evolver plants. Press Fire near terminals and unlocked doors. Troops can collect weapons and occupy plasma cannons; commanders cannot occupy cannons.
 
 Enter starts/advances/continues. Escape or Space pauses. F2 restarts. The mission selector supports development comparisons. Commanders return after ten seconds while a non-player troop survives. Continuing a failed mission costs 100 merits.
 
@@ -38,13 +38,15 @@ Map art and sprite pixels are recovered; gameplay remains reconstructed. All 7,1
 
 Support pickups now use source-derived creation rules and original sprites. Outdoor carriers follow recovered paths and drop infantry while stopped. Aircraft pass through the map, strafe, drop troops and bomb. Later maps use five-troop telepad arrivals, ten-second zipline creators and seven-hit ground robots. BLITZ uses the executable's creation list: one carrier, two aircraft and one tank.
 
-Movement, AI, collision details, weapon ranges and some damage, spawn probabilities, scores, telepad functions, chemical hazards and campaign transitions still need comparison. Carrier paths are recovered; their clock conversion uses a compatible 50 Hz model and remains unverified against the original. Aircraft bombing currently resolves directly at the aircraft position; landing animation timing and helper bouncing are approximate. Wave spawn positions, queen offspring and crystal beam duration remain approximate. Sound assignments are partly inferred; MIDI playback is pending. Difficulty culling uses sprite bounding boxes rather than exact per-pixel overlap.
+Squad AI now routes around terrain using shared distance fields, checks line of sight, aligns cardinal shots, and opens nearby unlocked doors. Movement, collision details, weapon ranges and some damage, spawn probabilities, scores, telepad functions, chemical hazards and campaign transitions still need comparison. Carrier paths are recovered; their clock conversion uses a compatible 50 Hz model and remains unverified against the original. Aircraft bombing currently resolves directly at the aircraft position; landing animation timing and helper bouncing are approximate. Wave spawn positions, queen offspring and crystal beam duration remain approximate. Sound assignments are partly inferred. Original MIDI notes, tempo changes and sustain are played with a lightweight browser synthesizer; General MIDI instrument timbres and percussion, pitch bend and some controllers still differ from the original Windows synthesizer. Difficulty culling uses sprite bounding boxes rather than exact per-pixel overlap.
 
 Local mock-canvas checks pass for all nine mission initialization/drawing paths, movement, directional orders, grenades, assistant ownership, pause, controls, restart and combat simulation. Browser rendering and audio playback remain unverified: the browser tool denied preview permission. Recent original-game launches through the computer tool timed out.
 
 ## Development
 
-`game.js` is the editable engine. `assets/original-data.js` contains definitions and placements. `window.triumph.state()` returns a snapshot; `loadMission(1..9)` selects a mission. `command(2, {...})` and `command(3, {...})` accept movement/fire/order/grenade commands lasting up to three seconds. Numeric orders: Normal 0, Follow 1, Attack 2, Defend 3.
+Music starts after a keypress or Start click, uses the original track assigned to the selected mission, loops, and pauses with the game.
+
+`game.js` is the editable engine. `navigation.js` handles squad routes; `music.js` plays the original performances from `assets/audio/music-data.js`. `assets/original-data.js` contains definitions and placements. `window.triumph.state()` returns a snapshot; `loadMission(1..9)` selects a mission. `command(2, {...})` and `command(3, {...})` accept movement/fire/order/grenade commands lasting up to three seconds. Numeric orders: Normal 0, Follow 1, Attack 2, Defend 3.
 
 Recovery scripts in `tools/` run from this repository directory:
 
@@ -60,6 +62,7 @@ Recovery scripts in `tools/` run from this repository directory:
 10. `node tools/derive-original-rules.cjs`
 11. `node tools/recover-movements.cjs`
 12. `node tools/derive-support-rules.cjs`
+13. `node tools/build-music.cjs`
 
 Run `node tools/check-recreation.cjs` for local logic checks. Intermediates go in ignored `work/`. Observations are saved in `DEVELOPMENT-NOTES.md`.
 
