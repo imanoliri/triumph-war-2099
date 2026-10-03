@@ -91,3 +91,11 @@
 
 - MIDI checks pass for all 14 decoded tracks, every mission track assignment, user-gesture start, oscillator scheduling, pause/resume and track switching.
 - Git branch layout prepared: minimal main baseline; all five development commits rebased onto it on initial-recreation. Original local history is retained under local-history-before-github. GitHub creation remains blocked pending an empty private repository URL.
+
+## 2026-10-04 — lower firing rate, less direct AI and Windows MIDI instruments
+
+- User reports excessive enemy firing, over-direct/over-smart AI, walls not being perceived and different music sound. Original MIDI files were unchanged; the oscillator-only instrument implementation caused a major timbre mismatch.
+- Normal alien cooldown is now 3.8–5.4 seconds with per-shot variation, vs 1.5 seconds. Initial cooldown is 2–5 seconds; five difficulty values and a +0.4 second advanced-bug offset are documented. These are requested balancing adjustments, not source-derived exact timing.
+- Units acquire only visible enemies within bounded ranges. Random scan/reaction timing and randomized nearby target choice replace continuous omniscient nearest-target selection. Targets disappear immediately when blocked by walls or doors. Patrols vary headings, pauses and durations. Normal infantry wanders; Attack advances; Follow/Defend retain their purpose. AI commanders accompany players instead of automatically completing hidden objectives and instantly dodging every projectile.
+- Prepared 495 PCM samples and 137 instrument definitions (including 128 melodic programs and percussion banks) from installed C:/Windows/System32/drivers/gm.dls. Samples, region key ranges, tuning, gain and loop points now drive local music playback. Generated bank stays outside Git and is reproducible with tools/build-windows-midi-bank.py. Original MIDI performances and mission assignment remain the same. Exact Windows synthesis envelopes/reverb/controllers remain gaps.
+- Nine-mission suite, wall-limited perception, delayed acquisition, immediate wall target loss, randomized cooldown ranges, music scheduler and Windows sample/loop integrity checks pass. Actual listening and live browser play remain unverified due prior tool permissions.

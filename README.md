@@ -38,11 +38,13 @@ Map art and sprite pixels are recovered; gameplay remains reconstructed. All 7,1
 
 Support pickups now use source-derived creation rules and original sprites. Outdoor carriers follow recovered paths and drop infantry while stopped. Aircraft pass through the map, strafe, drop troops and bomb. Later maps use five-troop telepad arrivals, ten-second zipline creators and seven-hit ground robots. BLITZ uses the executable's creation list: one carrier, two aircraft and one tank.
 
-Squad AI now routes around terrain using shared distance fields, checks line of sight, aligns cardinal shots, and opens nearby unlocked doors. Movement, collision details, weapon ranges and some damage, spawn probabilities, scores, telepad functions, chemical hazards and campaign transitions still need comparison. Carrier paths are recovered; their clock conversion uses a compatible 50 Hz model and remains unverified against the original. Aircraft bombing currently resolves directly at the aircraft position; landing animation timing and helper bouncing are approximate. Wave spawn positions, queen offspring and crystal beam duration remain approximate. Sound assignments are partly inferred. Original MIDI notes, tempo changes and sustain are played with a lightweight browser synthesizer; General MIDI instrument timbres and percussion, pitch bend and some controllers still differ from the original Windows synthesizer. Difficulty culling uses sprite bounding boxes rather than exact per-pixel overlap.
+Squad AI routes around terrain using shared distance fields, checks line of sight, and opens nearby unlocked doors. Target acquisition has randomized reaction delays; targets behind walls are lost immediately. Normal infantry patrols, Attack approaches visible enemies, Follow stays near its leader, and AI commanders 2/3 accompany players 1/4. Patrol headings, pauses, target choices and following offsets vary. Movement, collision details, weapon ranges and some damage, spawn probabilities, scores, telepad functions, chemical hazards and campaign transitions still need comparison. Carrier paths are recovered; their clock conversion uses a compatible 50 Hz model and remains unverified against the original. Aircraft bombing currently resolves directly at the aircraft position; landing animation timing and helper bouncing are approximate. Wave spawn positions, queen offspring and crystal beam duration remain approximate. Sound assignments are partly inferred. Original MIDI notes, tempo changes and sustain now play through samples prepared from this PC’s installed Windows MIDI bank, including program-specific instruments, percussion, tuning and sustain loops. Oscillator synthesis is a fallback when the local bank has not been generated. Envelopes, effects, pitch bend and some controllers still differ from the original synthesizer; exact audible matching is unverified. Difficulty culling uses sprite bounding boxes rather than exact per-pixel overlap.
 
 Local mock-canvas checks pass for all nine mission initialization/drawing paths, movement, directional orders, grenades, assistant ownership, pause, controls, restart and combat simulation. Browser rendering and audio playback remain unverified: the browser tool denied preview permission. Recent original-game launches through the computer tool timed out.
 
 ## Development
+
+Enemy spit cooldowns are randomized: Normal 3.8–5.4 seconds (previously 1.5), Easy 4.8–6.4, Very easy 5.5–7.1, Hard 3.2–4.8, Very hard 2.7–4.3. Advanced bugs add 0.4 seconds. These are feedback-driven balance values rather than a claim of recovered original timing.
 
 Music starts after a keypress or Start click, uses the original track assigned to the selected mission, loops, and pauses with the game.
 
@@ -63,6 +65,9 @@ Recovery scripts in `tools/` run from this repository directory:
 11. `node tools/recover-movements.cjs`
 12. `node tools/derive-support-rules.cjs`
 13. `node tools/build-music.cjs`
+14. `python tools/build-windows-midi-bank.py` (Windows local sample bank)
+
+The generated `assets/audio/gm-bank.js` is local to your Windows installation and excluded from Git. Regenerate it after cloning using step 14; the game falls back to simple synthesis if it is absent. The original MIDI files remain included unchanged. DLS regions, tuning and loop metadata follow Microsoft’s [DirectMusic region documentation](https://learn.microsoft.com/nl-nl/previous-versions/ms808241%28v%3Dmsdn.10%29).
 
 Run `node tools/check-recreation.cjs` for local logic checks and `node tools/check-music.cjs` for MIDI scheduling checks. Intermediates go in ignored `work/`. Observations are saved in `DEVELOPMENT-NOTES.md`.
 

@@ -12,7 +12,7 @@ const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.f
 vm.createContext(sandbox);
 for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','support.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
- if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman});})();');
+ if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol});})();');
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
@@ -72,4 +72,14 @@ for(let n=0;n<1500&&Math.hypot(walker.x-goal.x,walker.y-goal.y)>10;n++){const ne
 assert(Math.hypot(walker.x-goal.x,walker.y-goal.y)<12,'Route should reach goal behind wall');
 console.log('Passed cardinal infantry fire, facing-constrained bug spit, and navigation around a long wall.');
 
+}
+
+{
+api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mask=null;state.props=[];state.rocks=[{x:300,y:100,w:20,h:400}];state.doors=[];
+const observer={x:200,y:250,team:'human',alive:true},hidden={x:400,y:250,team:'alien',alive:true,hp:4};
+for(let i=0;i<12;i++){state.t+=.5;assert.equal(f.perceive(observer,[hidden],240),null,'AI must not acquire enemies through walls');}
+state.rocks=[];let acquired=false;for(let i=0;i<12;i++){state.t+=.5;if(f.perceive(observer,[hidden],240)===hidden)acquired=true;}assert(acquired,'Visible enemy can be acquired after reaction delay');
+state.rocks=[{x:300,y:100,w:20,h:400}];assert.equal(f.perceive(observer,[hidden],240),null,'Wall must immediately block an existing target');
+const delays=Array.from({length:20},()=>f.enemyFireDelay({type:'soldier'}));assert(delays.every(d=>d>=3.8&&d<5.4),'Normal spit cooldown should be 3.8 to 5.4 seconds');assert(new Set(delays).size>10,'Spit intervals must vary');
+console.log('Passed wall-limited AI perception, reaction delay, target loss behind walls, and randomized slower enemy fire.');
 }

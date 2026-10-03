@@ -1,2 +1,5 @@
 work/
 *.log
+
+# Generated from this Windows installation; rebuild locally.
+assets/audio/gm-bank.js
