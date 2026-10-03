@@ -34,7 +34,9 @@ Enter starts/advances/continues. Escape or Space pauses. F2 restarts. The missio
 
 ## Fidelity gaps and verification
 
-Map art and sprite pixels are recovered; gameplay remains reconstructed. Original event tables have not been translated. Door/terminal dependencies, difficulty gates, spawn timing, AI, weapon ranges, damage, scores, transport arrivals, air support, telepads, chemical hazards and campaign transitions need comparison. Reinforcements currently appear directly. Final waves and crystal behavior are approximations. Sound assignments are inferred from sample names and help text. MIDI playback remains pending.
+Map art and sprite pixels are recovered; gameplay remains reconstructed. All 7,172 original event groups are decoded, and a subset is translated into `assets/original-rules.js`: terminal/door dependencies, mission time gates, health for five difficulty levels, enemy limits, difficulty culling markers, final kill targets and crystal extraction requirements.
+
+Movement, AI, collision details, weapon ranges and some damage, spawn probabilities, scores, transport arrivals, air support, telepads, chemical hazards and campaign transitions still need comparison. Reinforcements appear directly. Wave spawn positions, queen offspring and crystal beam duration remain approximate. Sound assignments are partly inferred; MIDI playback is pending. Difficulty culling currently uses sprite bounding boxes rather than exact per-pixel overlap.
 
 Local mock-canvas checks pass for all nine mission initialization/drawing paths, movement, directional orders, grenades, assistant ownership, pause, controls, restart and combat simulation. Browser rendering and audio playback remain unverified: the browser tool denied preview permission. Recent original-game launches through the computer tool timed out.
 
@@ -50,8 +52,14 @@ Recovery scripts in `tools/` run from this repository directory:
 4. `python tools/build-original-assets.py`
 5. `node tools/recover-audio.cjs`
 6. `node tools/decode-sounds.cjs`
+7. `node tools/enrich-object-data.cjs`
+8. `node tools/recover-events.cjs`
+9. `node tools/event-report.cjs`
+10. `node tools/derive-original-rules.cjs`
 
 Run `node tools/check-recreation.cjs` for local logic checks. Intermediates go in ignored `work/`. Observations are saved in `DEVELOPMENT-NOTES.md`.
+
+`research/events.json.gz` preserves the complete decoded event tables for inspection. `research/EVENT-RECOVERY.md` records the rules recovered this pass. Browser play, visual rendering and audible playback remain unverified.
 
 ## Research
 
