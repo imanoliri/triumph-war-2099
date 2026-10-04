@@ -398,16 +398,17 @@
       "id": "TRI-028",
       "title": "Review tank rest between firing bursts",
       "task": "docs/tasks/tank-burst-rest.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Exact agreed rest and preserved cadence/other units independently reviewed and full suite passed; simulation-only limitation recorded",
       "questions": [],
       "approval": "User authorized queue execution; agreed 3.5-4.5s tank rest; follows TRI-027",
-      "worker": {
-        "id": "/root/tank_rest_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-tank-burst-rest",
-        "branch": "feature/tank-burst-rest"
-      },
-      "branch": "feature/tank-burst-rest"
+      "branch": "feature/tank-burst-rest",
+      "completion": {
+        "evidence": "Exact agreed rest and preserved cadence/other units independently reviewed and full suite passed; simulation-only limitation recorded",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "0769605abeb5f9f585d0043e89399b0dd2d7486b",
+        "squashCommit": "6909eeb5524b2f4c274bb099c4e8d32190d144eb"
+      }
     },
     {
       "id": "TRI-029",
@@ -1914,6 +1915,27 @@
       "details": [
         "../triumph-tank-burst-rest",
         "/root/tank_rest_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:58:42.022Z",
+      "command": "move",
+      "ticket": "TRI-028",
+      "details": [
+        "Review",
+        "Worker0769605 scoped constant/timing evidence reviewed; independent full suite passed, no live claims"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:58:42.962Z",
+      "command": "move",
+      "ticket": "TRI-028",
+      "details": [
+        "Done",
+        "Exact agreed rest and preserved cadence/other units independently reviewed and full suite passed; simulation-only limitation recorded",
+        "/root",
+        "6909eeb5524b2f4c274bb099c4e8d32190d144eb",
+        "0769605abeb5f9f585d0043e89399b0dd2d7486b"
       ]
     }
   ]
