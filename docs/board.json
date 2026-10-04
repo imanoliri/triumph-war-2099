@@ -512,10 +512,16 @@
       "id": "TRI-037",
       "title": "Increase custom mission pressure across every difficulty",
       "task": "docs/tasks/custom-mission-pressure-all-difficulties.md",
-      "status": "Ready",
-      "reason": "User explicitly requested nests and increased pressure at every difficulty 2026-10-05; both discussed custom missions, next after active TRI-027",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User explicitly requested nests and increased pressure at every difficulty 2026-10-05; both discussed custom missions, next after active TRI-027"
+      "approval": "User explicitly requested nests and increased pressure at every difficulty 2026-10-05; both discussed custom missions, next after active TRI-027",
+      "worker": {
+        "id": "/root/pressure_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-pressure-all-difficulties",
+        "branch": "feature/custom-mission-pressure-all-difficulties"
+      },
+      "branch": "feature/custom-mission-pressure-all-difficulties"
     }
   ],
   "events": [
@@ -1765,6 +1771,15 @@
         "/root",
         "7fc01c97944c4c53046aafea130310099f650147",
         "33aceedf1ca12f1b387288f36a88b6eac21e38a0"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:39:15.534Z",
+      "command": "dispatch",
+      "ticket": "TRI-037",
+      "details": [
+        "../triumph-custom-pressure-all-difficulties",
+        "/root/pressure_worker"
       ]
     }
   ]
