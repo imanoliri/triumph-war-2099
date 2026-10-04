@@ -11,3 +11,5 @@ Subsequent user extension: include Silent Return too, at all five difficulties. 
 Latest user correction: Last Convoy was hard enough. Remove Last Convoy from TRI-037; preserve its current TRI-034 profiles exactly. Approved follow-up now only Relay Breaker and Silent Return across all five difficulties. No worker has been dispatched for037, so no implementation must be undone.
 
 After dispatch: user added programmed Silent Return three-airdrop formation at~20s and briefing notice. Actual answers: friendly reinforcements; three central drop points arranged top-to-bottom, aircraft approach from top. Relayed to pressure worker. Use existing drop complements, actual valid terrain, single-shot/tactical/restart and pending/survivor extraction guards; pressure accounts for added friendlies. No enemy drops or original support changes inferred.
+
+Further user request: ground robots50% faster. Created separate approved TRI-038, movement1.5x only, preserving weapons/health/firing and other unit speeds. Queue after037/028/030; pressure worker stays on existing scope. No concurrent implementation worker.

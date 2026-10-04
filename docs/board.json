@@ -528,6 +528,15 @@
         "branch": "feature/custom-mission-pressure-all-difficulties"
       },
       "branch": "feature/custom-mission-pressure-all-difficulties"
+    },
+    {
+      "id": "TRI-038",
+      "title": "Increase ground robot movement speed by 50 percent",
+      "task": "docs/tasks/ground-robot-speed.md",
+      "status": "Ready",
+      "reason": "User explicitly requested robot50% movement increase 2026-10-05; separate bounded ticket after current pressure and queued tank/turret fixes",
+      "questions": [],
+      "approval": "User explicitly requested robot50% movement increase 2026-10-05; separate bounded ticket after current pressure and queued tank/turret fixes"
     }
   ],
   "events": [
@@ -1812,6 +1821,25 @@
       "details": [
         "In progress",
         "Actual user airdrop answers recorded and relayed; scope adds bounded custom scheduled friendly support"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:40:54.991Z",
+      "command": "create",
+      "ticket": "TRI-038",
+      "details": [
+        "ground-robot-speed",
+        "Increase ground robot movement speed by 50 percent",
+        "Ground robots move at 1.5 times their current movement speed across ordinary orders and routing, with combat cadence and other units unchanged."
+      ]
+    },
+    {
+      "at": "2026-10-04T22:40:56.697Z",
+      "command": "move",
+      "ticket": "TRI-038",
+      "details": [
+        "Ready",
+        "User explicitly requested robot50% movement increase 2026-10-05; separate bounded ticket after current pressure and queued tank/turret fixes"
       ]
     }
   ]
