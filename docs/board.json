@@ -302,10 +302,16 @@
       "id": "TRI-022",
       "title": "Simplify director worker dispatch and handoffs",
       "task": "docs/tasks/director-workflow-simplification.md",
-      "status": "Ready",
-      "reason": "User explicitly requested ticket creation and implementation of proposed director-worker simplification.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User explicitly requested ticket creation and implementation of proposed director-worker simplification."
+      "approval": "User explicitly requested ticket creation and implementation of proposed director-worker simplification.",
+      "worker": {
+        "id": "/root/workflow_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-director-workflow-simplification",
+        "branch": "chore/director-workflow-simplification"
+      },
+      "branch": "chore/director-workflow-simplification"
     }
   ],
   "events": [
@@ -958,6 +964,15 @@
       "details": [
         "Ready",
         "User explicitly requested ticket creation and implementation of proposed director-worker simplification."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:16:55.327Z",
+      "command": "dispatch",
+      "ticket": "TRI-022",
+      "details": [
+        "../triumph-director-workflow-simplification",
+        "/root/workflow_worker"
       ]
     }
   ]
