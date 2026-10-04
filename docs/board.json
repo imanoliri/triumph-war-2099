@@ -206,16 +206,17 @@
       "id": "TRI-015",
       "title": "Preserve duplicate commander weapon pickups",
       "task": "docs/tasks/duplicate-commander-weapons.md",
-      "status": "Review",
-      "reason": "Workerf473be9; director reviewed duplicate matching/early return/AI filtering and independent full suite passed. Live weapons unverified.",
+      "status": "Done",
+      "reason": "Director independent full suite and duplicate/contact/AI code review passed. Squashc2a8338; live weapon collection unverified.",
       "questions": [],
       "approval": "User explicitly requested preventing duplicate commander weapon consumption on 2026-10-04.",
-      "worker": {
-        "id": "/root/commander_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-duplicate-commander-weapons",
-        "branch": "fix/duplicate-commander-weapons"
-      },
-      "branch": "fix/duplicate-commander-weapons"
+      "branch": "fix/duplicate-commander-weapons",
+      "completion": {
+        "evidence": "Director independent full suite and duplicate/contact/AI code review passed. Squashc2a8338; live weapon collection unverified.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "f473be97758e8670bca72fa019ddedb81adffd31",
+        "squashCommit": "c2a8338911a172c29a8cf466cb33e964ec2ccdc6"
+      }
     },
     {
       "id": "TRI-016",
@@ -649,6 +650,18 @@
       "details": [
         "Review",
         "Workerf473be9; director reviewed duplicate matching/early return/AI filtering and independent full suite passed. Live weapons unverified."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:54:34.365Z",
+      "command": "move",
+      "ticket": "TRI-015",
+      "details": [
+        "Done",
+        "Director independent full suite and duplicate/contact/AI code review passed. Squashc2a8338; live weapon collection unverified.",
+        "/root",
+        "c2a8338",
+        "f473be9"
       ]
     }
   ]
