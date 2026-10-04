@@ -1,7 +1,7 @@
 # Fix soldier hunt stopping before aim alignment
 
 - Ticket: TRI-027; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/soldier-hunt-alignment`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Fix soldier hunt stopping before aim alignment
 
 ## Acceptance criteria
 
-- [ ] Soldiers pursuing bugs reach a valid position and aim before firing; avoid ineffective stopping or shots while preserving deliberate aiming rules.
+- [x] Soldiers pursuing bugs reach a valid position and aim before firing; avoid ineffective stopping or shots while preserving deliberate aiming rules.
 
 ## Scope and decisions
 
@@ -24,3 +24,8 @@ Proposed observable acceptance for later approved fix: ordinary soldiers pursuin
 2026-10-05 user explicitly authorized continuing to consume the queue. Director selects this bounded reported bug next after TRI-034: reproduce and fix firing/stop eligibility against the existing legal aiming rules, with the scope and observable cases above. No permission for a generic combat or navigation rewrite. Fresh isolated worker, one active ticket, stops at Review.
 
 
+- [2026-10-05 / 007](../journal/2026-10-05-007-soldier-hunt-alignment.md)
+
+## Review evidence
+
+Implemented actual projectile-lane eligibility and post-movement heading refresh. Disposable stationary/moving, close diagonal, nine-pixel miss, wall detour, prop obstruction, flame reach, focus and asymmetric heading fixtures pass. Full `node tools/dev.cjs test` passed; affected `node tools/check-recreation.cjs` passed again after adding wall-detour coverage. Live smoke is recorded separately; controlled live hunt and audio remain unverified. Worker stops at Review, pending director review and squash integration.

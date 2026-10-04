@@ -172,7 +172,7 @@ console.log('Passed held mouse autofire, normal weapon cooldown, moving diagonal
 
 {
 api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mode='playing';resumeSimulation();state.mask=null;state.rocks=[];state.doors=[];state.props=[];
-for(const order of [0,1,2,3]){const troop={x:400,y:350,team:'human',type:'soldier',alive:true,hp:1,angle:0,cool:0,weapon:0,order},bug={x:510,y:430,team:'alien',type:'soldier',alive:true,hp:4};state.bullets=[];f.aimHuman(troop,bug,.1);assert.equal(state.bullets.length,0,'Friendly troops wait before firing');state.t=troop.burst.readyAt;f.aimHuman(troop,bug,0);assert.equal(state.bullets.length,1,'Friendly order '+order+' should actively shoot visible diagonal threat');assert(Math.abs(state.bullets[0].dy)<1e-12,'Friendly infantry shots remain cardinal');if(order===0||order===1)assert(troop.y>350,'Normal/Follow troops should step into a firing lane');if(order===3)assert.equal(troop.y,350,'Defenders should hold position');}
+for(const order of [0,1,2,3]){const troop={x:400,y:350,team:'human',type:'soldier',alive:true,hp:1,angle:0,cool:0,weapon:0,order},bug={x:510,y:430,team:'alien',type:'soldier',alive:true,hp:4};state.bullets=[];f.aimHuman(troop,bug,.1);assert.equal(state.bullets.length,0,'Friendly troops wait before firing');state.t=troop.burst.readyAt;f.aimHuman(troop,bug,0);assert.equal(state.bullets.length,0,'Friendly order '+order+' waits for a legal cardinal lane');if(order===3)assert.equal(troop.y,350,'Defenders hold while off lane');troop.y=bug.y;f.aimHuman(troop,bug,0);assert.equal(state.bullets.length,1,'Aligned friendly order '+order+' fires');assert(Math.abs(state.bullets[0].dy)<1e-12,'Friendly infantry shots remain cardinal');if(order===0||order===1)assert(troop.y>350,'Normal/Follow troops should step into a firing lane');if(order===3)assert.equal(troop.x,400,'Defenders should hold position');}
 const friendly={x:400,y:350,team:'human',alive:true,hp:1},bug={x:510,y:430,team:'alien',alive:true,hp:4};let friendlyTime=null,bugTime=null;state.t=0;for(let i=0;i<40;i++){state.t=i*.1;if(f.perceive(friendly,[bug],245)&&friendlyTime===null)friendlyTime=state.t;if(f.perceive(bug,[friendly],240)&&bugTime===null)bugTime=state.t;}assert(friendlyTime!==null&&bugTime!==null);assert(friendlyTime<bugTime,'Friendly troops should react sooner than bugs');state.t=bug.ai.focusUntil+.01;assert.equal(f.perceive(bug,[friendly],240),null,'Bugs should lose interest after a short focus interval');assert(bug.ai.boredUntil>state.t,'Bugs should take a wandering break');
 const farBug={x:400,y:350,team:'alien',alive:true,hp:4},farSoldier={x:600,y:350,team:'human',alive:true,hp:1};for(let i=0;i<50;i++){state.t+=.1;assert.equal(f.perceive(farBug,[farSoldier],240),null,'Bugs should not detect targets beyond reduced sight range');}
 const modes=new Set(),walker={x:400,y:350,team:'alien',type:'soldier',alive:true,hp:4,angle:0};for(let i=0;i<100;i++){state.t+=3.1;f.bugIntent(walker,friendly,.02,1);modes.add(walker.intent.mode);}assert(modes.has('approach')&&modes.has('wander')&&modes.has('pause'),'Bugs must vary approach, wandering and pauses');
@@ -181,6 +181,27 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
 }
 
 {const previous=api.state().paused;elements['#units'].onclick();assert.equal(elements['#unit-guide'].open,true);assert.equal(api.state().paused,true);assert(elements['#unit-cards'].innerHTML.includes('Egg / nest'));assert(elements['#unit-cards'].innerHTML.includes('No armor / damage reduction'));assert(elements['#units-context'].textContent.includes('queen HP:'));handlers.keydown(event('Space'));assert.equal(api.state().paused,true);elements['#units-close'].onclick();assert.equal(api.state().paused,previous);elements['#pause'].onclick();elements['#units'].onclick();elements['#units-close'].onclick();assert.equal(api.state().paused,!previous);elements['#pause'].onclick();console.log('Passed unit manual content, modal input blocking and pause restoration.');}
+
+// TRI-027: the actual cardinal projectile must intersect the bug before firing.
+{
+ api.loadMission(1);const f=sandbox.window.__fixture(),st=f.state;st.mask=null;st.rocks=[];st.doors=[];st.props=[];st.gate=null;st.t=0;st.bullets=[];
+ const u={x:400,y:350,team:'human',type:'soldier',alive:true,hp:1,cool:0,weapon:0,order:2},bug={x:510,y:430,team:'alien',type:'soldier',alive:true,hp:4};
+ f.aimHuman(u,bug,.1);st.t=u.burst.readyAt;f.aimHuman(u,bug,0);
+ assert.equal(st.bullets.length,0,'TRI-027: visible diagonal bug is not a legal cardinal shot');
+ const shotLegal=(unit,t)=>{const shot=st.bullets.at(-1);assert(shot);assert(Math.abs((t.x-unit.x)*shot.dy-(t.y-unit.y)*shot.dx)<8,'Every shot intersects current bug radius');};
+ for(let i=0;i<150&&st.bullets.length===0;i++){st.t+=.1;u.cool=0;f.aimHuman(u,bug,.1);}shotLegal(u,bug);assert(u.y>420,'Soldier reaches cardinal lane');
+ bug.y+=30;u.cool=0;st.bullets=[];const oldY=u.y;f.aimHuman(u,bug,.1);assert.equal(st.bullets.length,0,'Moving target invalidates lane');assert(u.y>oldY,'Soldier repositions after target moves');
+ for(let i=0;i<60&&st.bullets.length===0;i++){st.t+=.1;u.cool=0;f.aimHuman(u,bug,.1);}shotLegal(u,bug);
+ for(const delta of [9,-9]){u.x=400;u.y=400;bug.x=510;bug.y=400+delta;u.cool=0;st.bullets=[];f.aimHuman(u,bug,0);assert.equal(st.bullets.length,0,'Old ten-pixel stop tolerance would miss');f.aimHuman(u,bug,.1);st.t+=2;f.aimHuman(u,bug,.1);shotLegal(u,bug);}
+ u.x=400;u.y=400;bug.x=580;bug.y=400;u.weapon=1;u.cool=0;st.bullets=[];f.aimHuman(u,bug,.1);assert(u.x>400,'Flame closes beyond usable projectile range');
+ u.weapon=0;u.x=400;u.y=400;bug.x=510;bug.y=406;u.order=3;u.cool=0;st.props=[{hp:5,left:450,top:397,w:10,h:4}];st.bullets=[];f.aimHuman(u,bug,0);st.t+=2;f.aimHuman(u,bug,0);assert.equal(st.bullets.length,0,'Actual cardinal ray checks props despite clear direct sight');st.props=[];
+ for(const type of ['soldier','robot','commander','commando']){const p={x:400,y:400,team:'human',type,alive:true,hp:1,cool:0,weapon:0,order:0},t={x:440,y:440,team:'alien',alive:true,hp:4};st.bullets=[];f.aimHuman(p,t,.1);st.t+=2;p.cool=0;f.aimHuman(p,t,0);assert.equal(st.bullets.length,type==='commando'?1:0,'Only commando has diagonal legal heading');}
+ // Focus pursuit uses the same eligibility; order commands dismount before normal alignment.
+ st.aliens=[bug];u.order=2;u.focusTarget=bug;u.x=400;u.y=350;u.cool=0;st.bullets=[];assert(f.focusAttackStep(u,.1));assert.equal(st.bullets.length,0);assert(u.y>350);
+ const close={x:400,y:400,team:'human',type:'soldier',alive:true,hp:1,cool:0,weapon:0,order:0},near={x:414,y:414,team:'alien',alive:true,hp:4};st.bullets=[];for(let i=0;i<30&&!st.bullets.length;i++){st.t+=.1;close.cool=0;f.aimHuman(close,near,.1);}shotLegal(close,near);
+ const detour={x:400,y:350,team:'human',type:'soldier',alive:true,hp:1,cool:0,weapon:0,order:2},beyond={x:510,y:430,team:'alien',alive:true,hp:4};st.rocks=[{x:390,y:390,w:40,h:20}];st.bullets=[];for(let i=0;i<240&&!st.bullets.length;i++){st.t+=.1;detour.cool=0;f.aimHuman(detour,beyond,.1);}shotLegal(detour,beyond);st.rocks=[];
+ console.log('Passed TRI-027 stationary/moving hunt, nine-pixel/close diagonal lanes, flame closing, projectile obstruction, focus and asymmetric infantry headings.');
+}
 
 // Burst control retains shot cadence, independently varies timings and cannot bypass rests.
 {
@@ -203,7 +224,7 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
   assert.equal(sizes.size,r.max-r.min+1,'All configured burst sizes occur');assert(delays.size>50,'Reaction delays vary independently');
  }
  const defender={x:400,y:400,team:'human',type:'soldier',cool:0,weapon:0,order:3};f.aimHuman(defender,target,0);state.t=defender.burst.readyAt;f.aimHuman(defender,target,0);assert.equal(defender.cool,.2);assert(defender.burst.remaining>=2&&defender.burst.remaining<=5);
- const flame={...defender,weapon:1,cool:0,burst:undefined};f.aimHuman(flame,target,0);state.t=flame.burst.readyAt;f.aimHuman(flame,target,0);assert.equal(flame.cool,.18);
+ const flame={...defender,x:target.x-100,weapon:1,cool:0,burst:undefined};f.aimHuman(flame,target,0);state.t=flame.burst.readyAt;f.aimHuman(flame,target,0);assert.equal(flame.cool,.18);
  const commander={x:400,y:400,team:'human',type:'commander',cool:0,weapon:0};state.bullets=[];f.aimHuman(commander,target,0);assert.equal(state.bullets.length,1);assert.equal(commander.burst,undefined);
  elements['#units'].onclick();assert(elements['#unit-cards'].innerHTML.includes('9–12 shots per burst'));assert(elements['#unit-cards'].innerHTML.includes('3–6 shots per burst'));elements['#units-close'].onclick();
  console.log('Passed soldier/robot/tank burst sizes, initial delays, rest ranges, target switching/loss, cadence, Defend/flame, continuous commander fire and guide descriptions.');

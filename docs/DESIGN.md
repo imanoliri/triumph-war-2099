@@ -4,7 +4,7 @@ This is the current approved recreation design. Recovered source rules live in a
 
 ## Directional asymmetry
 
-On foot, regular soldiers, robots and AI commanders fire in four cardinal directions. Their AI aligns to firing lanes. Commandos fire in eight directions. The selected commander's mouse aiming supports arbitrary directions. Bugs spit only along their facing with a ±11.25° cone. This asymmetry is intentional: disciplined infantry wins direct engagements, while bugs use movement and facing differently. Do not make all units omnidirectional as a cleanup.
+On foot, regular soldiers, robots and AI commanders fire in four cardinal directions. Their AI aligns to firing lanes and only fires when the actual quantized projectile ray overlaps the target within weapon reach and is unobstructed. Pursuers reposition when targets leave the lane; Defend holds and waits for a legal shot. Commandos fire in eight directions. The selected commander's mouse aiming supports arbitrary directions. Bugs spit only along their facing with a ±11.25° cone. This asymmetry is intentional: disciplined infantry wins direct engagements, while bugs use movement and facing differently. Do not make all units omnidirectional as a cleanup.
 
 ## Combat values
 

@@ -121,7 +121,36 @@ function aimCannon(u,target){
  const sweep=u.sweep,angle=sweep.start+sweep.sign*sweep.width*sweep.index/(sweep.total-1);
  u.angle=cannonAngle(angle);fire(u,false,angle);sweep.index++;finishBurstShot(u);if(!u.burst.remaining)u.sweep=null;
 }
-function aimHuman(u,target,dt){if(u.cannon!==undefined){aimCannon(u,target);return;}if(u.type==='tank'&&u.cannon===undefined){aimTank(u,target);return;}const angle=(u.cannon!==undefined?cannonAngle:u.type==='commando'?diagonal:cardinal)(Math.atan2(target.y-u.y,target.x-u.x));u.angle=angle;const across=Math.abs((target.x-u.x)*Math.sin(angle)-(target.y-u.y)*Math.cos(angle));if(across>10&&dt&&u.order!==3&&u.cannon===undefined){if(u.type==='commando'){const offset=-(target.x-u.x)*Math.sin(angle)+(target.y-u.y)*Math.cos(angle);navigate(u,-Math.sin(angle)*offset,Math.cos(angle)*offset,dt,36);}else{const vertical=Math.abs(Math.sin(angle))>.5;navigate(u,vertical?target.x-u.x:0,vertical?0:target.y-u.y,dt,u.type==='commander'?55:36);}u.angle=angle;}if(visible(u,target)&&burstReady(u,target)&&u.cool<=0){fire(u);finishBurstShot(u);}else if(!visible(u,target))trackBurst(u,null);}
+// Test the quantized weapon ray, not the direct sight line to a diagonal target.
+function humanFiringLane(u,target){
+ const dx=target.x-u.x,dy=target.y-u.y,c=Math.cos(u.angle),sn=Math.sin(u.angle),along=dx*c+dy*sn,across=dx*sn-dy*c;
+ const radius=s.nests.includes(target)?26:target.type==='queen'||target.type==='tank'?17:8;
+ const range=u.weapon===1?145:u.weapon===2?319:638;
+ if(Math.abs(across)>=radius-1||along+radius<=10)return false;
+ const entry=Math.max(10,along-Math.sqrt(radius*radius-across*across)+1);
+ if(entry>range+10)return false;
+ for(let travel=10;travel<=entry;travel+=Math.min(4,entry-travel||4)){
+  const x=u.x+c*travel,y=u.y+sn*travel;
+  if(blocked(x,y)||s.props.some(p=>p.hp>0&&x>=p.left&&x<p.left+p.w&&y>=p.top&&y<p.top+p.h))return false;
+ }
+ return true;
+}
+function aimHuman(u,target,dt){
+ if(u.cannon!==undefined){aimCannon(u,target);return;}
+ if(u.type==='tank'){aimTank(u,target);return;}
+ const heading=()=> (u.type==='commando'?diagonal:cardinal)(Math.atan2(target.y-u.y,target.x-u.x));
+ u.angle=heading();trackBurst(u,target);
+ if(!humanFiringLane(u,target)&&dt&&u.order!==3){
+  const c=Math.cos(u.angle),sn=Math.sin(u.angle),dx=target.x-u.x,dy=target.y-u.y,offset=-dx*sn+dy*c;
+  const radius=s.nests.includes(target)?26:target.type==='queen'||target.type==='tank'?17:8;
+  // Slide onto the legal lane; close when range or terrain prevents a shot.
+  if(Math.abs(offset)>=radius-1)navigate(u,-sn*offset,c*offset,dt,u.type==='commander'?55:36);
+  else navigate(u,dx,dy,dt,u.type==='commander'?55:36);
+  u.angle=heading();
+ }
+ if(visible(u,target)&&humanFiringLane(u,target)&&burstReady(u,target)&&u.cool<=0){fire(u);finishBurstShot(u);}
+ else if(!visible(u,target))trackBurst(u,null);
+}
 
 function nearest(u,list,max=Infinity){let best=null,d=max;for(const a of list){if(a.alive===false||a.hp<=0)continue;const t=dist(u,a);if(t<d){best=a;d=t;}}return best;}
 function fire(u,freeAim=false,projectileAngle){if(u.cool>0)return;if(u.cannon!==undefined)u.angle=cannonAngle(u.angle);else if(u.type==='commando')u.angle=diagonal(u.angle);else if(!freeAim&&u.team==='human'&&['soldier','commander','robot'].includes(u.type))u.angle=cardinal(u.angle);u.cool=u.team==='alien'?enemyFireDelay(u):u.type==='tank'?.2:u.type==='air'?.3:u.type==='commander'?(u.weapon===1?.180:.250):u.weapon===1?.180:u.type==='commando'?.38:u.order===3?.20:.38;const angles=[u.team==='alien'?(u.shotOffset||0):0];for(const a of angles){const angle=(u.cannon!==undefined&&projectileAngle!==undefined?projectileAngle:u.angle)+a;s.bullets.push({x:u.x+Math.cos(angle)*10,y:u.y+Math.sin(angle)*10,dx:Math.cos(angle),dy:Math.sin(angle),team:u.team,owner:u.id,life:u.weapon===1?.5:u.weapon===2?1.1:2.2,speed:u.team==='alien'?120:290,damage:u.type==='tank'?5:1,plasma:u.weapon===2});}if(window.ORIGINAL_AUDIO)sound(u.team==='alien'?0:u.weapon===1?13:u.weapon===2?12:u.type==='tank'?24:11,u.type==='commander'?.25:u.type==='tank'?.16:.08);else if(u.type==='commander')tone(110+rnd()*80,.025,.013);}
@@ -172,7 +201,7 @@ function showUnits(){
  const burstText=type=>{const r=burstRules[type];return `${r.min}–${r.max} shots per burst; ${r.restMin}–${r.restMax} s rest; ${r.delayMin}–${r.delayMax} s reaction delay.`;};
  const rows=[
  ['Commander','Commander1',1,'Bullet: 1; grenade: 12 to bugs, 15 to nests','0.25 s (4 shots/s); flame: 0.18 s','Keyboard / AI fires in four directions; selected mouse commander aims freely. Moves at 85 px/s, commands nearby troops and collects weapons/support. Returns after 10 s if army or incoming support remain; return shield lasts 0.6 s. Grenades: 0.33 s cooldown, up to 8 carried.'],
- ['Infantry','Troop',1,'1 per bullet','0.38 s (2.63 shots/s); Defend: 0.20 s (5/s)',burstText('soldier')+' Four-direction fire with firing-lane alignment. Sees visible enemies within 245 px. Normal patrols, Follow stays with its commander, Attack advances, Defend holds position. Collects weapons/eagles and occupies cannons. Attack-moving soldiers make short route-side detours: eagles before turrets in clear areas, turrets before combat when enemies are nearby. When clear of enemies, temporarily seeks usable eagles within 250 px, then returns. Combat pauses the trip; player orders cancel it.'],
+ ['Infantry','Troop',1,'1 per bullet','0.38 s (2.63 shots/s); Defend: 0.20 s (5/s)',burstText('soldier')+' Four-direction fire; moves into an unobstructed weapon-range lane and fires only when aligned. Defend holds and waits for a legal lane. Sees visible enemies within 245 px. Normal patrols, Follow stays with its commander, Attack advances, Defend holds position. Collects weapons/eagles and occupies cannons. Attack-moving soldiers make short route-side detours: eagles before turrets in clear areas, turrets before combat when enemies are nearby. When clear of enemies, temporarily seeks usable eagles within 250 px, then returns. Combat pauses the trip; player orders cancel it.'],
  ['Commando','Troop',1,'1 per bullet','0.38 s (2.63 shots/s); flame: 0.18 s',burstText('commando')+' Blue bandana. Fires in eight directions, including diagonals. Delivered by blue-eagle air and infiltration support; retains normal infantry orders, sight, pickups, health and damage, including automatic eagle trips when no enemies are in range.'],
  ['Tank','Tank',8,'5 per bullet','0.20 s (5 shots/s)',burstText('tank')+' Sweeps a locked 25–80° arc toward the densest visible bug group within 300 px; narrow for tight groups, wider for spread groups. Alternates sweep direction between bursts. Falls back to a nest when no bugs are visible. Uses squad orders and terrain routing. Right-click an enemy to focus a 15° sweep across that target. Walls stop shots.'],
  ['Ground robot','ground bot',7,'1 per bullet','0.38 s; Defend: 0.20 s; flame: 0.18 s',burstText('robot')+' Uses squad orders, terrain routing and four-direction fire. Detects enemies within 245 px.'],
