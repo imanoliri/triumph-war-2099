@@ -124,3 +124,8 @@
 - WASD and V/B follow the selected commander. Selecting commanders 2/3 temporarily overrides their teammate AI; unselected commander 1 no longer duplicates WASD/fire input. Mouse clicking aims and fires in the nearest cardinal direction, and right-click throws a grenade with existing cooldown/count limits. A selection ring identifies the controlled commander. Dead commanders cannot fire; order buttons disable when unavailable.
 - Troop drag selection and right-click attack-move remain available. Dragging/selecting troops switches mouse to troop mode; clicking a commander selector clears that selection and returns to mouse firing/grenades. Mouse short-clicks on empty ground fire; drag gestures do not.
 - Checks pass for every selector, exclusive WASD ownership, selected-shot owner/direction, mouse grenades and cooldown, all four order buttons, canvas pointer actions, troop-mode switching and dead commander input. Full gameplay regression suite passes. Live UI appearance/input remains unverified due browser permissions.
+
+## 2026-10-04 — diagonal mouse aiming
+
+- User requested diagonal mouse shooting. Selected commanders now aim/fire toward the exact cursor angle, with a scoped fire override so regular infantry and AI keep their cardinal aiming rule. Mouse grenades use the same direction; V fire also follows an active mouse aim. Original sprite animations still choose the nearest available facing.
+- Logic checks pass for diagonal shots in all four quadrants, a non-45-degree cursor direction, mouse grenade direction and existing cardinal infantry behavior. Live play remains unverified.
