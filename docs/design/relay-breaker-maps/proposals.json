@@ -1,0 +1,639 @@
+[
+  {
+    "id": "a-split-ridge",
+    "title": "A / Split Ridge",
+    "subtitle": "Two fronts, one deliberate commitment",
+    "obstacles": [
+      [
+        280,
+        310,
+        450,
+        150
+      ],
+      [
+        520,
+        24,
+        180,
+        64
+      ],
+      [
+        520,
+        680,
+        180,
+        64
+      ]
+    ],
+    "relays": [
+      [
+        800,
+        200
+      ],
+      [
+        800,
+        560
+      ]
+    ],
+    "nests": [
+      [
+        904,
+        240
+      ],
+      [
+        904,
+        600
+      ]
+    ],
+    "bugs": [
+      [
+        744,
+        160
+      ],
+      [
+        872,
+        160
+      ],
+      [
+        904,
+        304
+      ],
+      [
+        744,
+        608
+      ],
+      [
+        872,
+        528
+      ],
+      [
+        968,
+        600
+      ]
+    ],
+    "support": [
+      [
+        224,
+        576
+      ],
+      [
+        576,
+        600
+      ]
+    ],
+    "plasma": [
+      352,
+      176
+    ],
+    "notes": [
+      "Recommended starting point",
+      "Main: northern assault",
+      "Flank: equal southern front",
+      "Ridge breaks crossfire",
+      "Risk: divided reinforcements",
+      "Open outer tank circuit"
+    ],
+    "world": [
+      1024,
+      768
+    ],
+    "origin": "top-left; actor points are sprite hotspots",
+    "status": "schematic custom concept, not recovered art",
+    "starts": {
+      "commanders": [
+        [
+          96,
+          288
+        ],
+        [
+          96,
+          352
+        ],
+        [
+          96,
+          416
+        ],
+        [
+          96,
+          480
+        ]
+      ],
+      "soldiers": [
+        [
+          160,
+          288
+        ],
+        [
+          160,
+          352
+        ],
+        [
+          160,
+          416
+        ],
+        [
+          160,
+          480
+        ],
+        [
+          224,
+          288
+        ],
+        [
+          224,
+          352
+        ],
+        [
+          224,
+          416
+        ],
+        [
+          224,
+          480
+        ]
+      ]
+    },
+    "routes": {
+      "main": [
+        [
+          128,
+          384
+        ],
+        [
+          128,
+          160
+        ],
+        [
+          800,
+          160
+        ],
+        [
+          800,
+          200
+        ]
+      ],
+      "flank": [
+        [
+          128,
+          384
+        ],
+        [
+          128,
+          600
+        ],
+        [
+          800,
+          600
+        ],
+        [
+          800,
+          560
+        ]
+      ],
+      "connector": [
+        [
+          800,
+          200
+        ],
+        [
+          800,
+          560
+        ]
+      ]
+    }
+  },
+  {
+    "id": "b-relay-basin",
+    "title": "B / Relay Basin",
+    "subtitle": "A shared staging hub and exposed relay pockets",
+    "obstacles": [
+      [
+        300,
+        180,
+        180,
+        120
+      ],
+      [
+        650,
+        180,
+        180,
+        120
+      ],
+      [
+        300,
+        470,
+        180,
+        130
+      ],
+      [
+        650,
+        470,
+        180,
+        130
+      ]
+    ],
+    "relays": [
+      [
+        856,
+        112
+      ],
+      [
+        856,
+        656
+      ]
+    ],
+    "nests": [
+      [
+        952,
+        112
+      ],
+      [
+        952,
+        656
+      ]
+    ],
+    "bugs": [
+      [
+        792,
+        112
+      ],
+      [
+        920,
+        176
+      ],
+      [
+        984,
+        240
+      ],
+      [
+        792,
+        656
+      ],
+      [
+        920,
+        592
+      ],
+      [
+        984,
+        528
+      ]
+    ],
+    "support": [
+      [
+        240,
+        384
+      ],
+      [
+        552,
+        384
+      ]
+    ],
+    "plasma": [
+      552,
+      336
+    ],
+    "notes": [
+      "Most open / flexible",
+      "Main: shared center hub",
+      "Flank: long northern edge",
+      "South relay via east lane",
+      "Risk: exposed center fire",
+      "Tank turns in central plaza"
+    ],
+    "world": [
+      1024,
+      768
+    ],
+    "origin": "top-left; actor points are sprite hotspots",
+    "status": "schematic custom concept, not recovered art",
+    "starts": {
+      "commanders": [
+        [
+          96,
+          288
+        ],
+        [
+          96,
+          352
+        ],
+        [
+          96,
+          416
+        ],
+        [
+          96,
+          480
+        ]
+      ],
+      "soldiers": [
+        [
+          160,
+          288
+        ],
+        [
+          160,
+          352
+        ],
+        [
+          160,
+          416
+        ],
+        [
+          160,
+          480
+        ],
+        [
+          224,
+          288
+        ],
+        [
+          224,
+          352
+        ],
+        [
+          224,
+          416
+        ],
+        [
+          224,
+          480
+        ]
+      ]
+    },
+    "routes": {
+      "main": [
+        [
+          128,
+          384
+        ],
+        [
+          552,
+          384
+        ],
+        [
+          904,
+          384
+        ],
+        [
+          904,
+          112
+        ],
+        [
+          856,
+          112
+        ]
+      ],
+      "flank": [
+        [
+          128,
+          384
+        ],
+        [
+          128,
+          96
+        ],
+        [
+          552,
+          96
+        ],
+        [
+          856,
+          112
+        ]
+      ],
+      "connector": [
+        [
+          904,
+          384
+        ],
+        [
+          904,
+          656
+        ],
+        [
+          856,
+          656
+        ]
+      ]
+    }
+  },
+  {
+    "id": "c-switchback-mesa",
+    "title": "C / Switchback Mesa",
+    "subtitle": "A staged approach with a long rear bypass",
+    "obstacles": [
+      [
+        260,
+        24,
+        160,
+        236
+      ],
+      [
+        260,
+        420,
+        160,
+        200
+      ],
+      [
+        580,
+        180,
+        150,
+        400
+      ]
+    ],
+    "relays": [
+      [
+        880,
+        300
+      ],
+      [
+        880,
+        640
+      ]
+    ],
+    "nests": [
+      [
+        952,
+        352
+      ],
+      [
+        952,
+        688
+      ]
+    ],
+    "bugs": [
+      [
+        816,
+        240
+      ],
+      [
+        944,
+        240
+      ],
+      [
+        952,
+        416
+      ],
+      [
+        816,
+        640
+      ],
+      [
+        944,
+        592
+      ],
+      [
+        984,
+        688
+      ]
+    ],
+    "support": [
+      [
+        192,
+        640
+      ],
+      [
+        488,
+        656
+      ]
+    ],
+    "plasma": [
+      488,
+      144
+    ],
+    "notes": [
+      "Most staged / deliberate",
+      "Main: northern switchback",
+      "Flank: longer south bypass",
+      "Mesa screens nest pockets",
+      "Risk: blind corner advance",
+      "Broad east tank connector"
+    ],
+    "world": [
+      1024,
+      768
+    ],
+    "origin": "top-left; actor points are sprite hotspots",
+    "status": "schematic custom concept, not recovered art",
+    "starts": {
+      "commanders": [
+        [
+          96,
+          288
+        ],
+        [
+          96,
+          352
+        ],
+        [
+          96,
+          416
+        ],
+        [
+          96,
+          480
+        ]
+      ],
+      "soldiers": [
+        [
+          160,
+          288
+        ],
+        [
+          160,
+          352
+        ],
+        [
+          160,
+          416
+        ],
+        [
+          160,
+          480
+        ],
+        [
+          224,
+          288
+        ],
+        [
+          224,
+          352
+        ],
+        [
+          224,
+          416
+        ],
+        [
+          224,
+          480
+        ]
+      ]
+    },
+    "routes": {
+      "main": [
+        [
+          128,
+          340
+        ],
+        [
+          480,
+          340
+        ],
+        [
+          480,
+          100
+        ],
+        [
+          816,
+          100
+        ],
+        [
+          816,
+          300
+        ],
+        [
+          880,
+          300
+        ]
+      ],
+      "flank": [
+        [
+          128,
+          340
+        ],
+        [
+          128,
+          700
+        ],
+        [
+          488,
+          700
+        ],
+        [
+          816,
+          700
+        ],
+        [
+          880,
+          640
+        ]
+      ],
+      "connector": [
+        [
+          880,
+          300
+        ],
+        [
+          816,
+          300
+        ],
+        [
+          816,
+          640
+        ],
+        [
+          880,
+          640
+        ]
+      ]
+    }
+  }
+]

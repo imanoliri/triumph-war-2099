@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1408" height="1100" viewBox="0 0 1408 1100">
+<rect width="1408" height="1100" fill="#101b25"/>
+<text x="64" y="48" font-family="Segoe UI,sans-serif" font-size="20" fill="#8cb5c9">TRIUMPH / RELAY BREAKER</text>
+<text x="64" y="102" font-family="Segoe UI,sans-serif" font-size="42" fill="#eaf1f6">C / Switchback Mesa</text>
+<text x="64" y="139" font-family="Segoe UI,sans-serif" font-size="23" fill="#eaf1f6">A staged approach with a long rear bypass</text>
+<text x="64" y="176" font-family="Segoe UI,sans-serif" font-size="17" fill="#adc0cc">SCHEMATIC CONCEPT   |   1024 x 768 world   |   New terrain; existing assault rules</text>
+<rect x="64" y="190" width="1024" height="768" fill="#d9c18d" stroke="#efdcac" stroke-width="2"/>
+<polyline points="64,190 64,958" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="192,190 192,958" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="320,190 320,958" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="448,190 448,958" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="576,190 576,958" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="704,190 704,958" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="832,190 832,958" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="960,190 960,958" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="1088,190 1088,958" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="64,190 1088,190" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="64,318 1088,318" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="64,446 1088,446" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="64,574 1088,574" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="64,702 1088,702" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="64,830 1088,830" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="64,958 1088,958" fill="none" stroke="#c8b17e" stroke-width="1" stroke-linejoin="round"/>
+<rect x="324" y="214" width="160" height="236" fill="#6e6654" stroke="#514d43" stroke-width="2"/>
+<rect x="324" y="610" width="160" height="200" fill="#6e6654" stroke="#514d43" stroke-width="2"/>
+<rect x="644" y="370" width="150" height="400" fill="#6e6654" stroke="#514d43" stroke-width="2"/>
+<polyline points="192,530 544,530 544,290 880,290 880,490 944,490" fill="none" stroke="#f5e3b7" stroke-width="12" stroke-linejoin="round"/>
+<polyline points="192,530 544,530 544,290 880,290 880,490 944,490" fill="none" stroke="#167886" stroke-width="6" stroke-linejoin="round"/>
+<polyline points="357.7697057352859,536.2722467471679 368.0,530.0 357.7697057352859,523.7277532528321" fill="none" stroke="#167886" stroke-width="4" stroke-linejoin="round"/>
+<polyline points="550.2722467471679,420.2302942647141 544.0,410.0 537.7277532528321,420.2302942647141" fill="none" stroke="#167886" stroke-width="4" stroke-linejoin="round"/>
+<polyline points="701.7697057352859,296.2722467471679 712.0,290.0 701.7697057352859,283.7277532528321" fill="none" stroke="#167886" stroke-width="4" stroke-linejoin="round"/>
+<polyline points="873.7277532528321,379.7697057352859 880.0,390.0 886.2722467471679,379.7697057352859" fill="none" stroke="#167886" stroke-width="4" stroke-linejoin="round"/>
+<polyline points="901.7697057352859,496.2722467471679 912.0,490.0 901.7697057352859,483.7277532528321" fill="none" stroke="#167886" stroke-width="4" stroke-linejoin="round"/>
+<polyline points="944,490 880,490 880,830 944,830" fill="none" stroke="#f5e3b7" stroke-width="12" stroke-linejoin="round"/>
+<polyline points="944,490 880,490 880,830 944,830" fill="none" stroke="#167886" stroke-width="6" stroke-linejoin="round"/>
+<polyline points="922.2302942647141,483.7277532528321 912.0,490.0 922.2302942647141,496.2722467471679" fill="none" stroke="#167886" stroke-width="4" stroke-linejoin="round"/>
+<polyline points="873.7277532528321,649.7697057352859 880.0,660.0 886.2722467471679,649.7697057352859" fill="none" stroke="#167886" stroke-width="4" stroke-linejoin="round"/>
+<polyline points="901.7697057352859,836.2722467471679 912.0,830.0 901.7697057352859,823.7277532528321" fill="none" stroke="#167886" stroke-width="4" stroke-linejoin="round"/>
+<polyline points="192,530 192,890 552,890 880,890 944,830" fill="none" stroke="#f5e3b7" stroke-width="12" stroke-linejoin="round"/>
+<polyline points="192,530 192,890 552,890 880,890 944,830" fill="none" stroke="#7752a2" stroke-width="6" stroke-linejoin="round"/>
+<polyline points="185.7277532528321,699.7697057352859 192.0,710.0 198.2722467471679,699.7697057352859" fill="none" stroke="#7752a2" stroke-width="4" stroke-linejoin="round"/>
+<polyline points="361.7697057352859,896.2722467471679 372.0,890.0 361.7697057352859,883.7277532528321" fill="none" stroke="#7752a2" stroke-width="4" stroke-linejoin="round"/>
+<polyline points="705.7697057352859,896.2722467471679 716.0,890.0 705.7697057352859,883.7277532528321" fill="none" stroke="#7752a2" stroke-width="4" stroke-linejoin="round"/>
+<polyline points="908.8264672454704,871.5727563638023 912.0,860.0 900.2467722037098,862.4210816525912" fill="none" stroke="#7752a2" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="944" cy="490" r="23" fill="#005a69" stroke="#fff4db" stroke-width="2"/>
+<text x="936" y="494" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">R1</text>
+<circle cx="944" cy="830" r="23" fill="#005a69" stroke="#fff4db" stroke-width="2"/>
+<text x="936" y="834" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">R2</text>
+<circle cx="1016" cy="542" r="23" fill="#a72e32" stroke="#fff4db" stroke-width="2"/>
+<text x="1008" y="546" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">N1</text>
+<circle cx="1016" cy="878" r="23" fill="#a72e32" stroke="#fff4db" stroke-width="2"/>
+<text x="1008" y="882" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">N2</text>
+<circle cx="880" cy="430" r="10" fill="#d74943" stroke="#fff4db" stroke-width="2"/>
+<text x="872" y="434" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">b</text>
+<circle cx="1008" cy="430" r="10" fill="#d74943" stroke="#fff4db" stroke-width="2"/>
+<text x="1000" y="434" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">b</text>
+<circle cx="1016" cy="606" r="10" fill="#d74943" stroke="#fff4db" stroke-width="2"/>
+<text x="1008" y="610" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">b</text>
+<circle cx="880" cy="830" r="10" fill="#d74943" stroke="#fff4db" stroke-width="2"/>
+<text x="872" y="834" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">b</text>
+<circle cx="1008" cy="782" r="10" fill="#d74943" stroke="#fff4db" stroke-width="2"/>
+<text x="1000" y="786" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">b</text>
+<circle cx="1048" cy="878" r="10" fill="#d74943" stroke="#fff4db" stroke-width="2"/>
+<text x="1040" y="882" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">b</text>
+<circle cx="160" cy="478" r="13" fill="#1f567d" stroke="#fff4db" stroke-width="2"/>
+<text x="152" y="482" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">C</text>
+<circle cx="160" cy="542" r="13" fill="#1f567d" stroke="#fff4db" stroke-width="2"/>
+<text x="152" y="546" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">C</text>
+<circle cx="160" cy="606" r="13" fill="#1f567d" stroke="#fff4db" stroke-width="2"/>
+<text x="152" y="610" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">C</text>
+<circle cx="160" cy="670" r="13" fill="#1f567d" stroke="#fff4db" stroke-width="2"/>
+<text x="152" y="674" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">C</text>
+<circle cx="224" cy="478" r="10" fill="#1f567d" stroke="#fff4db" stroke-width="2"/>
+<text x="216" y="482" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">s</text>
+<circle cx="224" cy="542" r="10" fill="#1f567d" stroke="#fff4db" stroke-width="2"/>
+<text x="216" y="546" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">s</text>
+<circle cx="224" cy="606" r="10" fill="#1f567d" stroke="#fff4db" stroke-width="2"/>
+<text x="216" y="610" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">s</text>
+<circle cx="224" cy="670" r="10" fill="#1f567d" stroke="#fff4db" stroke-width="2"/>
+<text x="216" y="674" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">s</text>
+<circle cx="288" cy="478" r="10" fill="#1f567d" stroke="#fff4db" stroke-width="2"/>
+<text x="280" y="482" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">s</text>
+<circle cx="288" cy="542" r="10" fill="#1f567d" stroke="#fff4db" stroke-width="2"/>
+<text x="280" y="546" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">s</text>
+<circle cx="288" cy="606" r="10" fill="#1f567d" stroke="#fff4db" stroke-width="2"/>
+<text x="280" y="610" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">s</text>
+<circle cx="288" cy="670" r="10" fill="#1f567d" stroke="#fff4db" stroke-width="2"/>
+<text x="280" y="674" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">s</text>
+<circle cx="256" cy="830" r="20" fill="#d99c14" stroke="#fff4db" stroke-width="2"/>
+<text x="248" y="834" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">Y</text>
+<circle cx="552" cy="846" r="20" fill="#985e29" stroke="#fff4db" stroke-width="2"/>
+<text x="544" y="850" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">T</text>
+<circle cx="552" cy="334" r="18" fill="#276960" stroke="#fff4db" stroke-width="2"/>
+<text x="544" y="338" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">P</text>
+<rect x="1112" y="190" width="264" height="768" fill="#1b2b38"/>
+<text x="1132" y="226" font-family="Segoe UI,sans-serif" font-size="20" fill="#eaf1f6">ROUTE CHOICE</text>
+<text x="1132" y="267" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">Most staged / deliberate</text>
+<text x="1132" y="300" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">Main: northern switchback</text>
+<text x="1132" y="333" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">Flank: longer south bypass</text>
+<text x="1132" y="366" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">Mesa screens nest pockets</text>
+<text x="1132" y="399" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">Risk: blind corner advance</text>
+<text x="1132" y="432" font-family="Segoe UI,sans-serif" font-size="17" fill="#eaf1f6">Broad east tank connector</text>
+<text x="1132" y="495" font-family="Segoe UI,sans-serif" font-size="20" fill="#eaf1f6">KEY</text>
+<text x="1132" y="537" font-family="Segoe UI,sans-serif" font-size="18" fill="#dfc89d">C / s</text>
+<text x="1132" y="555" font-family="Segoe UI,sans-serif" font-size="15" fill="#eaf1f6">4 commanders / 8 soldiers</text>
+<text x="1132" y="582" font-family="Segoe UI,sans-serif" font-size="18" fill="#dfc89d">R1 / R2</text>
+<text x="1132" y="600" font-family="Segoe UI,sans-serif" font-size="15" fill="#eaf1f6">Activate both relays</text>
+<text x="1132" y="627" font-family="Segoe UI,sans-serif" font-size="18" fill="#dfc89d">N1 / N2</text>
+<text x="1132" y="645" font-family="Segoe UI,sans-serif" font-size="15" fill="#eaf1f6">Destroy both nests</text>
+<text x="1132" y="672" font-family="Segoe UI,sans-serif" font-size="18" fill="#dfc89d">b</text>
+<text x="1132" y="690" font-family="Segoe UI,sans-serif" font-size="15" fill="#eaf1f6">6 ordinary bugs</text>
+<text x="1132" y="717" font-family="Segoe UI,sans-serif" font-size="18" fill="#dfc89d">Y</text>
+<text x="1132" y="735" font-family="Segoe UI,sans-serif" font-size="15" fill="#eaf1f6">Yellow troop support</text>
+<text x="1132" y="762" font-family="Segoe UI,sans-serif" font-size="18" fill="#dfc89d">T</text>
+<text x="1132" y="780" font-family="Segoe UI,sans-serif" font-size="15" fill="#eaf1f6">Bronze tank support</text>
+<text x="1132" y="807" font-family="Segoe UI,sans-serif" font-size="18" fill="#dfc89d">P</text>
+<text x="1132" y="825" font-family="Segoe UI,sans-serif" font-size="15" fill="#eaf1f6">Plasma weapon pickup</text>
+<text x="1132" y="882" font-family="Segoe UI,sans-serif" font-size="15" fill="#eaf1f6">Teal: main / Purple: flank</text>
+<text x="1132" y="913" font-family="Segoe UI,sans-serif" font-size="15" fill="#eaf1f6">Solid rock blocks movement</text>
+<text x="64" y="1003" font-family="Segoe UI,sans-serif" font-size="21" fill="#eaf1f6">Objective: activate both relays, then clear nests and all ground / transitioning enemies.</text>
+<text x="64" y="1038" font-family="Segoe UI,sans-serif" font-size="18" fill="#adc0cc">Concept clearance only. Sightlines, collision masks, support delivery and balance require implementation tests.</text>
+<text x="64" y="1069" font-family="Segoe UI,sans-serif" font-size="17" fill="#adc0cc">No runtime map added. Original maps, controls, aiming and enemy-only barrel damage remain unchanged.</text>
+</svg>

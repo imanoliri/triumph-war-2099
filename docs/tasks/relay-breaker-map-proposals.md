@@ -1,7 +1,7 @@
 # Propose a new Relay Breaker map for user review
 
 - Ticket: TRI-029; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `chore/relay-breaker-map-proposals`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Propose a new Relay Breaker map for user review
 
 ## Acceptance criteria
 
-- [ ] Produce distinct visual custom-map proposals with terrain, routes, objectives, starts and enemy/support placements; user selects and refines a proposal before new-map implementation.
+- [x] Produce distinct visual custom-map proposals with terrain, routes, objectives, starts and enemy/support placements; user selects and refines a proposal before new-map implementation.
 
 ## Scope and decisions
 
@@ -21,4 +21,6 @@ Worker owns design/artifact creation and feasibility inspection, stops Review wi
 
 ## Sessions
 
+
+- [2026-10-04 / 043](../journal/2026-10-04-043-relay-breaker-map-proposals.md)
 
