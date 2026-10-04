@@ -21,3 +21,5 @@ Meaningful regression checks: exact finite budget across long frames, cap pressu
 
 
 - [2026-10-04 / 041](../journal/2026-10-04-041-custom-last-convoy.md)
+
+- [Director acceptance / squash](../journal/2026-10-04-042-custom-last-convoy-director.md)

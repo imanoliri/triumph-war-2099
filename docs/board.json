@@ -350,16 +350,17 @@
       "id": "TRI-025",
       "title": "Add Last Convoy defense mission",
       "task": "docs/tasks/custom-last-convoy.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent full suite and final custom regression/source review pass. Live deployment smoke passed; full manual completion/audio/balance unverified, accepted explicit limits. Squash c4feff2.",
       "questions": [],
       "approval": "User requested new missions after workflow task; bounded defense scope recorded, registry and assault accepted; proceed next under stated three-mission working scope.",
-      "worker": {
-        "id": "/root/convoy_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-last-convoy",
-        "branch": "feature/custom-last-convoy"
-      },
-      "branch": "feature/custom-last-convoy"
+      "branch": "feature/custom-last-convoy",
+      "completion": {
+        "evidence": "Independent full suite and final custom regression/source review pass. Live deployment smoke passed; full manual completion/audio/balance unverified, accepted explicit limits. Squash c4feff2.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "96d235c572d941a0a18137af1bb122b6347f4475",
+        "squashCommit": "c4feff21da8cf82e97bbb4127999a55f066ee2ef"
+      }
     },
     {
       "id": "TRI-026",
@@ -389,9 +390,10 @@
       "id": "TRI-029",
       "title": "Propose a new Relay Breaker map for user review",
       "task": "docs/tasks/relay-breaker-map-proposals.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "User explicitly requested visual proposals for a new Relay Breaker map to review and align; active defense accepted. Proposal design only; selected-map implementation awaits user choice.",
+      "questions": [],
+      "approval": "User explicitly requested visual proposals for a new Relay Breaker map to review and align; active defense accepted. Proposal design only; selected-map implementation awaits user choice."
     },
     {
       "id": "TRI-030",
@@ -1258,6 +1260,36 @@
         "mounted-soldier-duplicate-sprite",
         "Hide standing soldier sprite while mounted in turret",
         "Mounted soldiers render only the seated turret operator; standing sprite returns after dismount without changing turret combat or controls."
+      ]
+    },
+    {
+      "at": "2026-10-04T18:02:32.390Z",
+      "command": "move",
+      "ticket": "TRI-025",
+      "details": [
+        "Review",
+        "Director independent full suite and final custom regression passed; finite queue/progress/source-isolation diff reviewed. Browser deployment smoke confirms UI/objectives; robot is recovered ground bot. Full live completion/audio/balance unverified."
+      ]
+    },
+    {
+      "at": "2026-10-04T18:02:57.558Z",
+      "command": "move",
+      "ticket": "TRI-025",
+      "details": [
+        "Done",
+        "Independent full suite and final custom regression/source review pass. Live deployment smoke passed; full manual completion/audio/balance unverified, accepted explicit limits. Squash c4feff2.",
+        "/root",
+        "c4feff21da8cf82e97bbb4127999a55f066ee2ef",
+        "96d235c572d941a0a18137af1bb122b6347f4475"
+      ]
+    },
+    {
+      "at": "2026-10-04T18:02:57.623Z",
+      "command": "move",
+      "ticket": "TRI-029",
+      "details": [
+        "Ready",
+        "User explicitly requested visual proposals for a new Relay Breaker map to review and align; active defense accepted. Proposal design only; selected-map implementation awaits user choice."
       ]
     }
   ]
