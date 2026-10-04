@@ -8,7 +8,7 @@ Drains, tunnels, pump stations and maintenance chambers. This chapter can connec
 
 ## Forces and tactical identity
 
-Friendly proposal: Sewer Rats: guides and scavenger patrols. Enemy proposal: Worms and vent bugs. Introduce one new role and one enemy adaptation at a time; exact abilities, counters and statistics require refinement.
+Friendly proposal: Sewer Rats: guides and scavenger patrols. User-selected enemy: perforator bugs that automatically attack through single-cell walls. This replaces the earlier worm assignment; dune-like charging worms belong to the desert frontier. Existing vent bugs can remain a secondary proposal. Exact abilities, counters and statistics require refinement.
 
 ## Mission seeds
 
@@ -20,4 +20,4 @@ Use the listed terrain to shape distinct routes, strongpoints and objectives. Pr
 
 ## Dependencies and open questions
 
-Use existing doors/vents where suitable; new tunnel travel requires a ticket. Determine objective, loss conditions, support, enemy budgets and difficulty before dispatch. Faction roster persistence and campaign consequences remain open.
+Automatic attacks through a single-cell wall are user direction, but cell dimensions, attack range, target acquisition, damage, warning and whether walls remain intact need refinement. Do not infer wall destruction, passage through walls or attacks through thicker walls. Use existing doors/vents where suitable; new tunnel travel requires a ticket. Determine objective, loss conditions, support, enemy budgets and difficulty before dispatch. Faction roster persistence and campaign consequences remain open.

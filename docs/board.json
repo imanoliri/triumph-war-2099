@@ -480,6 +480,22 @@
         "branch": "feature/custom-mission-challenge"
       },
       "branch": "feature/custom-mission-challenge"
+    },
+    {
+      "id": "TRI-035",
+      "title": "Add desert charging worms",
+      "task": "docs/tasks/desert-charging-worm.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-036",
+      "title": "Create Beneath the Dunes desert convoy rescue",
+      "task": "docs/tasks/beneath-the-dunes.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -1612,6 +1628,26 @@
       "details": [
         "../triumph-custom-mission-challenge",
         "/root/challenge_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:21:43.506Z",
+      "command": "create",
+      "ticket": "TRI-035",
+      "details": [
+        "desert-charging-worm",
+        "Add desert charging worms",
+        "Implement the agreed burrow, visible warning, straight charge and recovery behavior with collision, damage, rendering and original-campaign isolation verified."
+      ]
+    },
+    {
+      "at": "2026-10-04T22:21:43.565Z",
+      "command": "create",
+      "ticket": "TRI-036",
+      "details": [
+        "beneath-the-dunes",
+        "Create Beneath the Dunes desert convoy rescue",
+        "Implement the approved desert convoy-rescue objective and new map, with reachable routes, charging-worm encounters, difficulty profiles and separately recorded live evidence."
       ]
     }
   ]

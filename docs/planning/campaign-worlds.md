@@ -6,6 +6,8 @@ Recorded2026-10-05; planning only. No campaign/unit/runtime implementation autho
 
 ## User direction
 
+2026-10-05 clarification: retain worlds from all earlier tables in a combined index; select desert first. Desert frontier gets dune-like charging worms. Under-city gets perforator bugs that automatically attack through single-cell walls. See [combined world table](campaigns/planets/README.md) and [desert refinement](campaigns/missions/desert-operation.md).
+
 Hybrid campaign: continuing expedition story with occasional missions commanding local factions. Each place may have its own missions, independent colonies/settlements, human variants, environmental quirks and adapted bugs. User examples: Navy, mercenaries, spec ops, Desert Riders, Sewer Rats; frontier worlds, expeditionary forces and rebels; burrowing/flying/worm/spider bugs. User explicitly added snowy planet, ocean/island maritime planet and capital urban planet, and wants more places than their initial examples.
 
 ## Director proposals for discussion (not agreed implementation)
