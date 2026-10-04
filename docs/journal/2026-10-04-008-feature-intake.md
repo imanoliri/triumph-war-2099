@@ -2,7 +2,7 @@
 
 - Branch: main
 - Tickets: TRI-009, TRI-010, TRI-011
-- Status: in progress
+- Status: complete
 
 ## Chronological log
 
@@ -27,3 +27,5 @@ TRI-011 reviewed and squash-integrated as 03f75fcd2411545a5193e4a8c6d035c8de6f25
 ## Final handoff
 
 Requested features complete on main: TRI-009 766607c, TRI-010 c8c4d5e, TRI-011 03f75fc. No further implementation action required. Broad browser mechanics/balance/audio and all-nine live completion remain follow-up backlog checks, not passing claims. Worktrees preserved.
+
+Final main preview loaded successfully at http://127.0.0.1:2099 and deployed Desert Canyon into tactical mode.
