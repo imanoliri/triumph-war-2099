@@ -54,3 +54,5 @@ TRI-013 tactical-music fix is implemented for Review: gameplay freeze no longer 
 TRI-014 closed-door routing fix (Review): the reproduced room-wall stall now routes through an unlocked door and opens it before crossing, while actual collision/locked requirements remain. Fields are isolated by stable passability policy and door-state revision. All human-type room fixtures and locked/unlock/destroyed/cache/alien regressions pass; live room-routing playtest remains unverified.
 
 TRI-015 duplicate commander weapons (Review): matching auto/flame/rapid/plasma pickups remain without score/effects, and AI skips those duplicates. Different equipment and other collectors work as before. VM contact/AI-choice regressions cover the behavior; live collection remains unverified.
+
+TRI-016 plasma cannon directions (Review): both mounted operator types use 16-direction aim/projectiles, while on-foot infantry/commando rules remain. Direction/boundary/mount/dismount regressions cover the behavior; live cannon rendering/audio remains unverified.

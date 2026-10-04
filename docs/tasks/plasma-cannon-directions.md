@@ -1,7 +1,7 @@
 # Give plasma cannons 16-direction fire for every operator
 
 - Ticket: TRI-016; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `fix/plasma-cannon-directions`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Give plasma cannons 16-direction fire for every operator
 
 ## Acceptance criteria
 
-- [ ] Mounted plasma cannons aim and fire in 16 directions regardless of operator type; unmounted aiming rules remain intact.
+- [x] Mounted plasma cannons aim and fire in 16 directions regardless of operator type; unmounted aiming rules remain intact.
 
 ## Scope and decisions
 
@@ -17,3 +17,6 @@ User explicitly requested on 2026-10-04 that plasma cannons always shoot in 16 d
 
 ## Sessions
 
+
+- [2026-10-04 / 022](../journal/2026-10-04-022-plasma-cannon-directions.md)
+- [2026-10-04 / 023](../journal/2026-10-04-023-plasma-cannon-directions.md)

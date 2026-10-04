@@ -4,7 +4,7 @@ This is the current approved recreation design. Recovered source rules live in a
 
 ## Directional asymmetry
 
-Regular soldiers, robots and AI commanders fire in four cardinal directions. Their AI aligns to firing lanes. Commandos fire in eight directions. The selected commander's mouse aiming supports arbitrary directions. Bugs spit only along their facing with a ±11.25° cone. This asymmetry is intentional: disciplined infantry wins direct engagements, while bugs use movement and facing differently. Do not make all units omnidirectional as a cleanup.
+On foot, regular soldiers, robots and AI commanders fire in four cardinal directions. Their AI aligns to firing lanes. Commandos fire in eight directions. The selected commander's mouse aiming supports arbitrary directions. Bugs spit only along their facing with a ±11.25° cone. This asymmetry is intentional: disciplined infantry wins direct engagements, while bugs use movement and facing differently. Do not make all units omnidirectional as a cleanup.
 
 ## Combat values
 
@@ -78,3 +78,5 @@ Random reinforcement eagle creation uses the same recovered mission/support guar
 Music continues during tactical mode and Controls/Units dialogs after the browser audio gesture unlock. Gameplay freeze does not change the music pause state; explicit audio API controls and mission track selection remain independent.
 
 Commanders leave weapon pickups matching their current equipment on the map, with no reward, effects or lifetime refresh. Auto is weapon 0 (including default equipment), flame/rapid share weapon 1, plasma is weapon 2. Switching to a different weapon remains normal; commander AI ignores matching weapon pickups while still seeking useful weapons/support. Other units retain existing weapon collection behavior.
+
+Mounted plasma cannons aim and emit projectiles in 16 equally spaced headings (22.5°), independent of whether regular infantry or a commando operates them. This mounted rule takes precedence over on-foot cardinal/eight-direction rules. Mounting, range, plasma damage and operator burst/cooldown rules are unchanged; dismount restores the operator’s normal on-foot direction rules.
