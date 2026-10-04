@@ -13,10 +13,11 @@ Review tank rest between firing bursts
 
 ## Scope and decisions
 
-User balance report 2026-10-04, verbatim: "tank rests 3-5-4.5s between bursts". Meaning is not yet resolved: observed excessive roughly3-5s delay versus proposed fixed4.5s rest. Director asked an optional clarification and must record actual answer before approving a numerical balance change. Capture Backlog; do not interrupt current custom missions or dispatch parallel worker.
+User balance report 2026-10-04, verbatim: "tank rests 3-5-4.5s between bursts". User clarified: current rest is too short; desired new rest is randomized 3.5 to 4.5 seconds between bursts. Preserve within-burst cadence and burst size. Measure from last shot of one burst to eligibility for the next with a continuously valid target; target acquisition/aim can add delay separately. This is the agreed numerical scope for later implementation, recorded from an actual answer. Capture Backlog; do not interrupt current custom missions or dispatch parallel worker.
 
 Later bounded investigation should inspect tank burst size, shot cadence, cooldown/rest, target acquisition/repositioning and any difficulty or aiming effects. Reproduce observed rest in deterministic disposable fixture and distinguish cooldown from moving/aligning/no-target time. Propose or implement only agreed timing; preserve mounted cannon16 headings and asymmetric infantry aiming. Record custom balance separate from recovered source behavior; no unrelated weapon/global difficulty rewrite. Measurable later acceptance should include agreed time measured between last shot of one burst and first shot of next with stable valid target, edge cases for target loss/reacquisition/tactical freeze/restart, relevant regression/full suite and honest live limits. Worker stops Review on isolated branch after director approval.
 
 ## Sessions
+
 
 
