@@ -115,8 +115,8 @@
       "id": "TRI-010",
       "title": "Attack-move eagle collection and turret mounting",
       "task": "docs/tasks/attack-move-interactions.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker fa2bebc; director inspected final diff and independently passed full suite including corrected unavailable eagle fixtures.",
       "questions": [],
       "approval": "User requested this feature on 2026-10-04; task captures proximity interactions and priorities.",
       "worker": {
@@ -252,6 +252,15 @@
       "details": [
         "../triumph-attack-move-interactions",
         "/root/commander_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T14:14:39.851Z",
+      "command": "move",
+      "ticket": "TRI-010",
+      "details": [
+        "Review",
+        "Worker fa2bebc; director inspected final diff and independently passed full suite including corrected unavailable eagle fixtures."
       ]
     }
   ]
