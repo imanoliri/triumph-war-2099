@@ -360,6 +360,14 @@
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
       "questions": []
+    },
+    {
+      "id": "TRI-027",
+      "title": "Fix soldier hunt stopping before aim alignment",
+      "task": "docs/tasks/soldier-hunt-alignment.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -1139,6 +1147,16 @@
         "custom-silent-return",
         "Add Silent Return infiltration mission",
         "Separate custom infiltration mission requires legitimate access unlock and laser activation followed by support-aware living-human extraction, while preserving original Flash Back behavior."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:43:55.759Z",
+      "command": "create",
+      "ticket": "TRI-027",
+      "details": [
+        "soldier-hunt-alignment",
+        "Fix soldier hunt stopping before aim alignment",
+        "Soldiers pursuing bugs reach a valid position and aim before firing; avoid ineffective stopping or shots while preserving deliberate aiming rules."
       ]
     }
   ]
