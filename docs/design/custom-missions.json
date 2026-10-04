@@ -1,0 +1,22 @@
+{
+ "status":"proposal; three candidates are director working scope; user count preference unsubmitted",
+ "coordinateConvention":"active sprite hotspots; world 1024x768",
+ "missions":[
+ {"id":"custom-rocks-relay","name":"Relay Breaker","role":"assault","baseMapIndex":7,"fixtureMission":2,
+ "commanders":[[72,200],[72,264],[72,328],[72,392]],"soldiers":[[136,200],[136,264],[136,328],[136,392],[200,200],[200,264],[200,328],[200,392]],"commandos":[],"robots":[],
+ "terminals":[{"object":257,"x":392,"y":264,"key":"west-relay"},{"object":257,"x":840,"y":584,"key":"east-relay"}],
+ "nests":[[704,256],[904,584]],"bugs":[[648,264],[776,264],[840,584],[968,520],[968,584],[904,648]],
+ "support":[{"type":"troops","object":63,"x":264,"y":392},{"type":"tank","object":65,"x":584,"y":584}],"weapons":[{"type":"plasma","object":54,"x":328,"y":320}],
+ "route":[[256,256],[392,264],[584,392],[712,584],[840,584]],"objective":{"activate":["west-relay","east-relay"],"clearEnemies":true,"minimumTime":0},"randomPickups":false,"vents":false,"waves":[]},
+ {"id":"custom-base-last-convoy","name":"Last Convoy","role":"defense","baseMapIndex":13,"fixtureMission":5,
+ "commanders":[[456,392],[520,392],[584,392],[520,456]],"soldiers":[[392,392],[456,456],[584,456],[392,520],[456,520],[520,520],[584,520],[648,520],[328,520],[264,520]],"commandos":[],"robots":[[584,584]],"terminals":[],"nests":[],"bugs":[[256,208],[584,200],[840,520],[776,648]],
+ "support":[{"type":"troops","object":63,"x":520,"y":584},{"type":"tank","object":65,"x":584,"y":648}],"weapons":[{"type":"plasma","object":54,"x":456,"y":520}],
+ "route":[[264,264],[392,392],[520,520],[776,520],[776,648]],"objective":{"minimumTime":120,"waveBudgetEmitted":true,"clearEnemies":true,"atLeastOneNonCommander":true},"randomPickups":false,"vents":false,
+ "waves":[{"at":20,"points":[[256,208],[584,200]],"bugsPerPoint":3},{"at":50,"points":[[840,520],[776,648]],"bugsPerPoint":4},{"at":80,"points":[[256,208],[584,200],[840,520],[776,648]],"bugsPerPoint":3}]},
+ {"id":"custom-flash-silent-return","name":"Silent Return","role":"infiltration","baseMapIndex":9,"fixtureMission":3,
+ "commanders":[[328,72],[392,72],[456,72],[520,72]],"soldiers":[],"commandos":[[328,136],[392,136],[456,136],[520,136]],"robots":[],
+ "terminals":[{"object":253,"x":480,"y":617,"key":"access"},{"object":257,"x":844,"y":270,"key":"laser"}],"terminalApproaches":[[464,617],[836,262]],"nests":[],"bugs":[[264,328],[584,520],[776,392],[840,392],[840,200],[904,136]],
+ "support":[{"type":"air","object":64,"x":520,"y":648}],"weapons":[{"type":"plasma","object":54,"x":520,"y":520}],
+ "route":[[392,328],[456,520],[464,617],[712,520],[840,392],[836,262],[520,136]],"objective":{"use":["access"],"activate":["laser"],"extractLivingGroundHumans":{"x":392,"y":72,"radius":96,"minimumNonCommanders":1},"clearEnemies":false},"randomPickups":false,"vents":false,"waves":[]}
+ ]
+}

@@ -1,7 +1,7 @@
 # Design playable custom mission candidates
 
 - Ticket: TRI-023; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `chore/custom-mission-design`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,11 @@ Design playable custom mission candidates
 
 ## Acceptance criteria
 
-- [ ] Deliver distinct assault, defense and infiltration mission designs with existing-asset layouts, reachable objectives, support/enemy placements and measurable checks; identify bounded implementation tasks and pending count choice, without gameplay changes.
+- [x] Deliver distinct assault, defense and infiltration mission designs with existing-asset layouts, reachable objectives, support/enemy placements and measurable checks; identify bounded implementation tasks and pending count choice, without gameplay changes.
+
+## Review deliverable
+
+[Design and implementation acceptance](../design/custom-missions.md), [exact proposed metadata](../design/custom-missions.json) and `node tools/check-custom-mission-design.cjs` supply the review artifact. Three candidates are director working scope; user count preference remains unsubmitted. First implementation ticket is registry + Relay Breaker only; no runtime behavior changed here. Geometry diagnostic: 88 clear/reachable entries, 18 cardinal firing lanes, terminal unlock/return and support eligibility pass. Full `node tools/dev.cjs test` passes; browser playability/balance remain unverified. See the session for handoff and limitations.
 
 ## Scope and decisions
 
@@ -17,3 +21,4 @@ User explicitly requested creating new missions after workflow simplification on
 
 ## Sessions
 
+- [2026-10-04 / 037](../journal/2026-10-04-037-custom-mission-design.md)
