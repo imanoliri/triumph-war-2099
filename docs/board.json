@@ -131,8 +131,8 @@
       "id": "TRI-011",
       "title": "Tactical mode presentation and mission start",
       "task": "docs/tasks/tactical-mode.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker b13c96a; director reviewed final runtime/style/docs and independently passed full suite; live start/restart/visor/dialog/queued-order/mission-selector smoke passed.",
       "questions": [],
       "approval": "User requested this feature on 2026-10-04; task captures tactical presentation and mission start.",
       "worker": {
@@ -289,6 +289,15 @@
       "details": [
         "../triumph-tactical-mode",
         "/root/commander_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T14:22:24.183Z",
+      "command": "move",
+      "ticket": "TRI-011",
+      "details": [
+        "Review",
+        "Worker b13c96a; director reviewed final runtime/style/docs and independently passed full suite; live start/restart/visor/dialog/queued-order/mission-selector smoke passed."
       ]
     }
   ]
