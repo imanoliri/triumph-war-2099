@@ -334,10 +334,16 @@
       "id": "TRI-024",
       "title": "Add custom mission registry and Relay Breaker",
       "task": "docs/tasks/custom-relay-breaker.md",
-      "status": "Ready",
-      "reason": "User explicitly requested new mission creation after current task; first independently viable registry and assault scope recorded from accepted design, optional count answer unsubmitted.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User explicitly requested new mission creation after current task; first independently viable registry and assault scope recorded from accepted design, optional count answer unsubmitted."
+      "approval": "User explicitly requested new mission creation after current task; first independently viable registry and assault scope recorded from accepted design, optional count answer unsubmitted.",
+      "worker": {
+        "id": "/root/relay_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-relay-breaker",
+        "branch": "feature/custom-relay-breaker"
+      },
+      "branch": "feature/custom-relay-breaker"
     }
   ],
   "events": [
@@ -1088,6 +1094,15 @@
       "details": [
         "Ready",
         "User explicitly requested new mission creation after current task; first independently viable registry and assault scope recorded from accepted design, optional count answer unsubmitted."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:40:54.742Z",
+      "command": "dispatch",
+      "ticket": "TRI-024",
+      "details": [
+        "../triumph-custom-relay-breaker",
+        "/root/relay_worker"
       ]
     }
   ]
