@@ -1,7 +1,7 @@
 # Add Last Convoy defense mission
 
 - Ticket: TRI-025; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/custom-last-convoy`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Add Last Convoy defense mission
 
 ## Acceptance criteria
 
-- [ ] Separate custom defense mission emits exactly 26 scheduled bugs, requires 120 seconds and cleanup with a surviving noncommander, and preserves original wave logic.
+- [x] Separate custom defense mission emits exactly 26 scheduled bugs, requires 120 seconds and cleanup with a surviving noncommander, and preserves original wave logic.
 
 ## Scope and decisions
 
@@ -20,3 +20,4 @@ Meaningful regression checks: exact finite budget across long frames, cap pressu
 ## Sessions
 
 
+- [2026-10-04 / 041](../journal/2026-10-04-041-custom-last-convoy.md)

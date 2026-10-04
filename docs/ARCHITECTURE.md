@@ -9,7 +9,7 @@ index.html loads recovered asset globals, music.js, navigation.js, support.js, s
 | game.js | State lifecycle, simulation orchestration, combat, support integration, input and main drawing |
 | src/breeding.js | Finite Normal nest opportunities, seeded RNG and birth animation phase with explicit capacity/emission inputs |
 | src/balance.js | Custom burst, specialist and sweep tuning; separate from recovered rules |
-| src/custom-missions.js | Immutable custom scenario registry, stable IDs and explicit placements; currently Relay Breaker only |
+| src/custom-missions.js | Immutable custom scenario registry, stable IDs and explicit placements; Relay Breaker and Last Convoy |
 | src/missions.js | Pure mission progress/automatic completion requirements |
 | src/rally.js | Reachable rally destination selection and flag rendering |
 | navigation.js | Collision-aware route fields, reachability, destinations and route distance |
@@ -52,3 +52,5 @@ Route fields are cached separately per stable collision callback and revision. H
 TRI-017: src/vent-bugs.js receives state and random/collision/spawn/sound callbacks explicitly. s.vents holds one actor per ceiling/drop/jump phase outside normal combat lists; grounded actors transfer into s.aliens. Mission progress counts s.vents separately, avoiding premature victory or duplicate counting. Source extract and conversion limits are recorded in research/vent-bugs.md.
 
 TRI-024: loadCustomMission(id) reuses the existing original terrain/support initializer, then replaces scenario actors and shallow-copies objective rules. Source map identity remains for support eligibility and geometry; custom identity overrides progress, briefing/results, HUD and restart. The nine-entry original list and loadMission(1..9) stay unchanged. An in-memory original/custom merit ledger isolates awards when switching. No persistent saves or custom unlock chain. Loopback and package src allowlists already include the new classic script; project/runtime/syntax checks cover it.
+
+TRI-025: `TriumphMissions.createWaves` owns disposable finite arrival state; `emitWaves` receives state and a spawn callback. Custom progress counts future/queued arrivals separately from living enemies and the minimum-time/survivor gates. Only custom missions initialize this state; source kill-based waves retain their original update path.

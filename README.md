@@ -51,3 +51,5 @@ Director coordination: [local board](docs/BOARD.md), [director instructions](doc
 Reinforcement eagles use mission support eligibility. Random eagles only spawn when currently usable; existing temporarily capped eagles remain and show TROOPS FULL · WAIT FOR SPACE until troops are lost. SUPPORT UNAVAILABLE marks a missing applicable mission support rule.
 
 Music continues during tactical mode and Controls/Units dialogs after the browser audio gesture unlock. Gameplay freeze does not change the music pause state; explicit audio API controls and mission track selection remain independent.
+
+Custom selector scenarios: Relay Breaker activates two relays and clears the area. Last Convoy defends Hold Base terrain for 120 simulation seconds, then clears four initial bugs and 26 finite scheduled arrivals while retaining a living noncommander. Tactical planning freezes the clock; restarting resets the scenario. These custom scenarios have separate merits from the original campaign.
