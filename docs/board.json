@@ -99,16 +99,17 @@
       "id": "TRI-009",
       "title": "AI commanders unless explicitly selected",
       "task": "docs/tasks/commander-selection.md",
-      "status": "Review",
-      "reason": "Worker d7cef2e; director reviewed runtime diff, live selector smoke and independently passed full test suite.",
+      "status": "Done",
+      "reason": "Director acceptance/diff review and independent full test suite passed; live selector smoke passed. Squash 766607c.",
       "questions": [],
       "approval": "User requested this feature on 2026-10-04; task captures commander default and explicit selection.",
-      "worker": {
-        "id": "/root/commander_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-commander-selection",
-        "branch": "feature/commander-selection"
-      },
-      "branch": "feature/commander-selection"
+      "branch": "feature/commander-selection",
+      "completion": {
+        "evidence": "Director acceptance/diff review and independent full test suite passed; live selector smoke passed. Squash 766607c.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "d7cef2eca5447e228a44df3e7121dfcdbdcae90a",
+        "squashCommit": "766607c1276a4ff041b02dd2e43b76526e930ee1"
+      }
     },
     {
       "id": "TRI-010",
@@ -224,6 +225,18 @@
       "details": [
         "Review",
         "Worker d7cef2e; director reviewed runtime diff, live selector smoke and independently passed full test suite."
+      ]
+    },
+    {
+      "at": "2026-10-04T12:55:24.808Z",
+      "command": "move",
+      "ticket": "TRI-009",
+      "details": [
+        "Done",
+        "Director acceptance/diff review and independent full test suite passed; live selector smoke passed. Squash 766607c.",
+        "/root",
+        "766607c",
+        "d7cef2e"
       ]
     }
   ]
