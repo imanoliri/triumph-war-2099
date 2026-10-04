@@ -174,8 +174,8 @@
       "id": "TRI-013",
       "title": "Keep music playing in tactical mode",
       "task": "docs/tasks/tactical-music.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker7877511; director reviewed one-line decoupling and frame integration tests, independent full suite passed. Audible playback unverified.",
       "questions": [],
       "approval": "User explicitly requested music continue during tactical mode on 2026-10-04.",
       "worker": {
@@ -566,6 +566,15 @@
       "details": [
         "../triumph-tactical-music",
         "/root/commander_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T14:43:38.393Z",
+      "command": "move",
+      "ticket": "TRI-013",
+      "details": [
+        "Review",
+        "Worker7877511; director reviewed one-line decoupling and frame integration tests, independent full suite passed. Audible playback unverified."
       ]
     }
   ]
