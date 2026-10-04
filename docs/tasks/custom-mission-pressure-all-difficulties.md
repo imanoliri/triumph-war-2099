@@ -21,6 +21,10 @@ User approved this concrete follow-up scope after prior bounded retune was merge
 
 ## Sessions
 
+## Silent Return scheduled friendly airdrops
+
+2026-10-05 user requests and confirms three friendly reinforcement airdrops at approximately20 simulation seconds, at three clear drop points arranged top-to-bottom along the center of the map, with aircraft approaching from the top. Briefing must explicitly announce schedule and formation. Worker chooses physically valid central points using actual terrain and existing support/aircraft rules; no wall drop or bypass of legitimate door/access sequence. Use three drop events with existing per-drop friendly complement unless source mechanism requires a material choice. Tactical mode freezes schedule; restart resets it; events are single-shot. Applicable all five Silent Return difficulties. All living landed humans must extract and inbound flights/drops must finish under the existing objective. Scheduled-but-not-triggered arrivals must not permit premature victory. Scope includes only minimal custom scheduling/entry configuration needed; original support behavior unchanged. Pressure tuning must account for this additional friendly force rather than assuming the old roster.
+
 ## User scope extension
 
 **Latest authoritative scope:** user subsequently clarified Last Convoy was hard enough. TRI-037 covers **Relay Breaker and Silent Return only**, all five difficulties. Preserve Last Convoy's current TRI-034 profiles exactly. This supersedes all earlier inclusions of Last Convoy below and above; retain chronological decisions for evidence. Do not modify Convoy nests, waves, support, starting armies or objectives.

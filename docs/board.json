@@ -513,8 +513,14 @@
       "title": "Increase custom mission pressure across every difficulty",
       "task": "docs/tasks/custom-mission-pressure-all-difficulties.md",
       "status": "In progress",
-      "reason": "Dispatched approved ticket",
-      "questions": [],
+      "reason": "Actual user airdrop answers recorded and relayed; scope adds bounded custom scheduled friendly support",
+      "questions": [
+        {
+          "number": 1,
+          "question": "Silent Return scheduled drops: friendly or enemy; three central top-to-bottom points or aircraft formation?",
+          "answer": "User: friendly reinforcements, three central drop points arranged top-to-bottom with aircraft approaching from top at about20s; announce in brief"
+        }
+      ],
       "approval": "User explicitly requested nests and increased pressure at every difficulty 2026-10-05; both discussed custom missions, next after active TRI-027",
       "worker": {
         "id": "/root/pressure_worker",
@@ -1780,6 +1786,32 @@
       "details": [
         "../triumph-custom-pressure-all-difficulties",
         "/root/pressure_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:39:46.070Z",
+      "command": "ask",
+      "ticket": "TRI-037",
+      "details": [
+        "Silent Return scheduled drops: friendly or enemy; three central top-to-bottom points or aircraft formation?"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:39:46.131Z",
+      "command": "answer",
+      "ticket": "TRI-037",
+      "details": [
+        "1",
+        "User: friendly reinforcements, three central drop points arranged top-to-bottom with aircraft approaching from top at about20s; announce in brief"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:39:46.189Z",
+      "command": "move",
+      "ticket": "TRI-037",
+      "details": [
+        "In progress",
+        "Actual user airdrop answers recorded and relayed; scope adds bounded custom scheduled friendly support"
       ]
     }
   ]
