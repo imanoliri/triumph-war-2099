@@ -512,8 +512,8 @@
       "id": "TRI-037",
       "title": "Increase custom mission pressure across every difficulty",
       "task": "docs/tasks/custom-mission-pressure-all-difficulties.md",
-      "status": "In progress",
-      "reason": "Actual user airdrop answers recorded and relayed; scope adds bounded custom scheduled friendly support",
+      "status": "Done",
+      "reason": "Independent suite/pressure checks and live evidence reviewed; all-five increased pressure and scheduled friendly formation accepted with human calibration limits",
       "questions": [
         {
           "number": 1,
@@ -522,12 +522,13 @@
         }
       ],
       "approval": "User explicitly requested nests and increased pressure at every difficulty 2026-10-05; both discussed custom missions, next after active TRI-027",
-      "worker": {
-        "id": "/root/pressure_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-pressure-all-difficulties",
-        "branch": "feature/custom-mission-pressure-all-difficulties"
-      },
-      "branch": "feature/custom-mission-pressure-all-difficulties"
+      "branch": "feature/custom-mission-pressure-all-difficulties",
+      "completion": {
+        "evidence": "Independent suite/pressure checks and live evidence reviewed; all-five increased pressure and scheduled friendly formation accepted with human calibration limits",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "8e0f5d2f893a326d6128cdca799f4b6743faae2d",
+        "squashCommit": "20fdbba880b4956abbe86a9b18e202bf87041cc3"
+      }
     },
     {
       "id": "TRI-038",
@@ -1877,6 +1878,27 @@
       "details": [
         "Backlog",
         "Withdrawn by user2026-10-05: leave Last Convoy as it is now; no worker dispatched"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:54:20.091Z",
+      "command": "move",
+      "ticket": "TRI-037",
+      "details": [
+        "Review",
+        "Worker8e0f5d2 reviewed; independent full suite and final pressure check pass; live screenshots and calibration limitations inspected"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:54:42.052Z",
+      "command": "move",
+      "ticket": "TRI-037",
+      "details": [
+        "Done",
+        "Independent suite/pressure checks and live evidence reviewed; all-five increased pressure and scheduled friendly formation accepted with human calibration limits",
+        "/root",
+        "20fdbba880b4956abbe86a9b18e202bf87041cc3",
+        "8e0f5d2f893a326d6128cdca799f4b6743faae2d"
       ]
     }
   ]
