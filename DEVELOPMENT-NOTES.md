@@ -236,3 +236,10 @@
 ## 2026-10-04 — Separate tank sweep widths
 - Changed normal/autonomous tank minimum sweep to 25°; spread groups can still widen it to 80°. Direct focus attacks use a 15° sweep centered on the assigned target.
 - Added a separate focusArc setting and updated Units, README and sweep regression expectations. Burst cadence, count, cooldown, damage and target selection retain their existing settings.
+
+
+## 2026-10-04 — Tactical pause with orders
+- Replaced the large pause overlay with a small top-center banner; briefing, victory and defeat panels retain their mission screens.
+- Enabled paused troop selection, attack/force movement, focus targets, usable-object orders, commander selection and squad orders through buttons or keyboard. Simulation updates remain stopped; movement and interaction orders execute after resume. Commander firing/grenades cannot execute while paused.
+- Controls now restores the prior pause state, matching Units. Updated Controls and README.
+- Syntax and full simulation checks passed, including no large pause rectangle, paused drag/move/focus/use/button/keyboard input, frozen time/position/combat, preserved modal pause and order execution on resume. Also passed updated 25° normal/15° focus tank sweep checks. Live browser appearance remains unverified.

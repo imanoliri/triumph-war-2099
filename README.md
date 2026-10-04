@@ -137,3 +137,7 @@ Groups operate doors once: closed doors open, open doors close. Locked doors wai
 
 ### Automatic mission completion
 Missions complete automatically when all living bugs and nests are cleared and the mission's wave, terminal, timer and crystal requirements are satisfied. A bottom-right battlefield status lists remaining requirements. New bug births resolve onto clear playable terrain, preventing unseen off-map survivors; carrier kills count toward wave quotas.
+
+
+### Tactical pause
+Space, Escape or Pause freezes the simulation and shows a small banner at the top of the battlefield. You can still select troops and commanders, issue attack-move or force-move orders, assign focus targets, order interactions, and give squad orders with buttons or keyboard. Orders execute when play resumes. Movement, firing, grenades, timers and support arrivals stay frozen. Opening and closing Controls or Units preserves an existing pause.

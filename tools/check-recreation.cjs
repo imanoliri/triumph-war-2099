@@ -272,3 +272,21 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  api.loadMission(4);f=sandbox.window.__fixture();state=f.state;state.aliens=[];for(const [x,y] of [[-50,100],[1100,400],[500,810],[500,5]]){const bug=f.spawnGroundBug(x,y);assert(bug.x>=16&&bug.x<=1008&&bug.y>=44&&bug.y<=744);assert(!f.blocked(bug.x,bug.y),'New bug resolves onto clear playable terrain');}
  console.log('Passed automatic victory and single rewards in all nine missions, terminal/wave prerequisites, progress reporting and clear-ground bug births at map boundaries.');
 }
+
+{
+ api.loadMission(3);elements['#start'].onclick();const f=sandbox.window.__fixture(),state=f.state;const troop=state.humans.find(u=>u.type==='soldier');troop.x=400;troop.y=400;
+ elements['#pause'].onclick();assert(api.state().paused);const time=state.t,position={x:troop.x,y:troop.y},bullets=state.bullets.length;
+ const pointer=(x,y,button,timeStamp=10000)=>({clientX:100+x/2,clientY:50+y/2,button,timeStamp,pointerId:80,preventDefault:noop});
+ canvasHandlers.pointerdown(pointer(390,390,0));canvasHandlers.pointermove(pointer(410,410,0));canvasHandlers.pointerup(pointer(410,410,0));assert(f.selection.has(troop),'Paused drag selects troops');
+ canvasHandlers.pointerdown(pointer(600,450,2,10000));assert(troop.attackMove&&!troop.attackMove.force,'Paused attack move accepted');canvasHandlers.pointerdown(pointer(600,450,2,10100));assert(troop.attackMove.force,'Paused force move accepted');
+ const nest=state.nests[0];canvasHandlers.pointerdown(pointer(nest.x,nest.y,2,11000));assert.equal(troop.focusTarget,nest,'Paused enemy focus accepted');
+ const terminal=state.terminals[0];canvasHandlers.pointerdown(pointer(terminal.x,terminal.y,2,12000));canvasHandlers.pointerdown(pointer(terminal.x,terminal.y,2,12100));assert.equal(troop.useOrder.kind,'terminal','Paused use order accepted');assert(!terminal.used,'Paused use is not activated immediately');
+ const rectangles=[];ctx.fillRect=(...args)=>rectangles.push(args);frames(2);assert(!rectangles.some(r=>r[0]===145&&r[1]===105&&r[2]===734),'Pause has no large battlefield overlay');ctx.fillRect=noop;
+ assert.equal(state.t,time);assert.equal(troop.x,position.x);assert.equal(troop.y,position.y);assert.equal(state.bullets.length,bullets,'Combat stays frozen');
+ elements['#cmd-1'].onclick();state.humans[0].x=400;state.humans[0].y=400;frames(1);assert.equal(elements['#order-3'].disabled,false);elements['#order-3'].onclick();assert.equal(troop.order,3,'Paused squad button works');
+ handlers.keydown(event('KeyB'));handlers.keyup(event('KeyB'));handlers.keydown(event('KeyW'));handlers.keyup(event('KeyW'));assert.equal(troop.order,2,'Paused keyboard squad order works');
+ canvasHandlers.pointerdown(pointer(600,400,2));handlers.keydown(event('KeyV'));handlers.keyup(event('KeyV'));assert.equal(state.bullets.length,bullets,'Paused commander cannot fire');
+ elements['#options'].onclick();elements['#close'].onclick();assert(api.state().paused,'Controls preserves tactical pause');
+ f.selectTroops({x:390,y:390},{x:410,y:410});f.attackMoveTo({x:600,y:450},true);elements['#pause'].onclick();frames(10);assert(state.t>time);assert(Math.hypot(troop.x-position.x,troop.y-position.y)>0,'Paused movement executes after resume');
+ console.log('Passed unobstructed tactical pause, paused selection/move/focus/use/button/keyboard orders, frozen combat/time, preserved modal pause and execution after resume.');
+}
