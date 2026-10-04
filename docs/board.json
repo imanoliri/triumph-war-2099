@@ -115,16 +115,17 @@
       "id": "TRI-010",
       "title": "Attack-move eagle collection and turret mounting",
       "task": "docs/tasks/attack-move-interactions.md",
-      "status": "Review",
-      "reason": "Worker fa2bebc; director inspected final diff and independently passed full suite including corrected unavailable eagle fixtures.",
+      "status": "Done",
+      "reason": "Independent review and full final suite passed; bounded path detours and enemy-dependent priority verified in VM. Live mechanics unverified. Squash c8c4d5e.",
       "questions": [],
       "approval": "User requested this feature on 2026-10-04; task captures proximity interactions and priorities.",
-      "worker": {
-        "id": "/root/commander_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-attack-move-interactions",
-        "branch": "feature/attack-move-interactions"
-      },
-      "branch": "feature/attack-move-interactions"
+      "branch": "feature/attack-move-interactions",
+      "completion": {
+        "evidence": "Independent review and full final suite passed; bounded path detours and enemy-dependent priority verified in VM. Live mechanics unverified. Squash c8c4d5e.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "fa2bebc841a6a182ec2ac3073dfb1e3f2198c02e",
+        "squashCommit": "c8c4d5e9b0795dfcf45dbc852d122b626c954d46"
+      }
     },
     {
       "id": "TRI-011",
@@ -261,6 +262,18 @@
       "details": [
         "Review",
         "Worker fa2bebc; director inspected final diff and independently passed full suite including corrected unavailable eagle fixtures."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:14:58.382Z",
+      "command": "move",
+      "ticket": "TRI-010",
+      "details": [
+        "Done",
+        "Independent review and full final suite passed; bounded path detours and enemy-dependent priority verified in VM. Live mechanics unverified. Squash c8c4d5e.",
+        "/root",
+        "c8c4d5e",
+        "fa2bebc"
       ]
     }
   ]

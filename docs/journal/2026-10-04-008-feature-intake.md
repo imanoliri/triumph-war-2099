@@ -19,3 +19,5 @@ Director reviewed commander runtime diff and performed browser smoke checks on l
 Review TRI-009 worker commit/checks; squash-integrate when acceptance passes. Then dispatch TRI-010 and TRI-011 sequentially from main; one active worker. Record integration SHAs in subsequent checkpoints. No remote publication authorized.
 
 TRI-009 reviewed and squash-integrated as 766607c1276a4ff041b02dd2e43b76526e930ee1 from worker d7cef2e; full director checks passed. Next: TRI-010.
+
+TRI-010 reviewed and squash-integrated as c8c4d5e9b0795dfcf45dbc852d122b626c954d46 from fa2bebc. Final director suite passed after unavailable-support fixture correction; live mechanics unverified. Next: TRI-011 tactical presentation/start.
