@@ -297,6 +297,15 @@
         "reviewedImplementationCommit": "078f0af38792806d75dfc2afdae21671b02e4272",
         "squashCommit": "b95f73ff82c684392a8eabcadae99e2e0c9ea526"
       }
+    },
+    {
+      "id": "TRI-022",
+      "title": "Simplify director worker dispatch and handoffs",
+      "task": "docs/tasks/director-workflow-simplification.md",
+      "status": "Ready",
+      "reason": "User explicitly requested ticket creation and implementation of proposed director-worker simplification.",
+      "questions": [],
+      "approval": "User explicitly requested ticket creation and implementation of proposed director-worker simplification."
     }
   ],
   "events": [
@@ -930,6 +939,25 @@
         "/root",
         "b95f73ff82c684392a8eabcadae99e2e0c9ea526",
         "078f0af38792806d75dfc2afdae21671b02e4272"
+      ]
+    },
+    {
+      "at": "2026-10-04T17:16:27.273Z",
+      "command": "create",
+      "ticket": "TRI-022",
+      "details": [
+        "director-workflow-simplification",
+        "Simplify director worker dispatch and handoffs",
+        "Implement safe streamlined preparation/dispatch records, one useful session per run, concise fresh-worker contracts and consolidated completion guidance; disposable lifecycle checks pass without weakening isolation/review or changing gameplay."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:16:27.375Z",
+      "command": "move",
+      "ticket": "TRI-022",
+      "details": [
+        "Ready",
+        "User explicitly requested ticket creation and implementation of proposed director-worker simplification."
       ]
     }
   ]
