@@ -29,3 +29,5 @@ Acceptance evidence: actual compiled terrain/mask align with artwork; all spawn/
 Custom terrain/mask and exact proposal A placements are implemented; focused physical simulation and full suite/package pass. Browser final-art/tactical/partial troop/support smoke passed. Full live Normal victory/time/casualties/births and audio remain unverified, requiring director review acceptance or a follow-up live pass. See session047 and its playtest. B/C remain untouched/unregistered. Worker stops at Review; no merge/publication.
 
 Director accepted TRI-032 implementation after independent full-suite pass, runtime/mask/art/source-isolation review and live deployment/northern-route smoke. Full Normal completion, audio and balance remain explicitly unverified; acceptance does not convert these limits into passing playtests.
+
+- [Director acceptance / squash](../journal/2026-10-04-048-relay-breaker-split-ridge-director.md)

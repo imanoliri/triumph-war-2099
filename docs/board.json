@@ -366,9 +366,10 @@
       "id": "TRI-026",
       "title": "Add Silent Return infiltration mission",
       "task": "docs/tasks/custom-silent-return.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "User requested new missions after workflow and continued work; first two and selectedA map accepted. Proceed queued bounded infiltration scope from accepted design, existing map reuse disclosed.",
+      "questions": [],
+      "approval": "User requested new missions after workflow and continued work; first two and selectedA map accepted. Proceed queued bounded infiltration scope from accepted design, existing map reuse disclosed."
     },
     {
       "id": "TRI-027",
@@ -430,16 +431,17 @@
       "id": "TRI-032",
       "title": "Build Split Ridge as a new Relay Breaker map",
       "task": "docs/tasks/relay-breaker-split-ridge.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent full suite/runtime/custom art/mask review and live route smoke passed; actual support/formation/tank circuits proved. Full Normal playthrough/audio/balance unverified accepted explicitly. Squasha7d2a18, B/Csaved.",
       "questions": [],
       "approval": "User selectedA Split Ridge and explicitly requested preservingB/C; narrow sweep accepted, now implement selected custom terrain under recorded scope.",
-      "worker": {
-        "id": "/root/split_ridge_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-relay-breaker-split-ridge",
-        "branch": "feature/relay-breaker-split-ridge"
-      },
-      "branch": "feature/relay-breaker-split-ridge"
+      "branch": "feature/relay-breaker-split-ridge",
+      "completion": {
+        "evidence": "Independent full suite/runtime/custom art/mask review and live route smoke passed; actual support/formation/tank circuits proved. Full Normal playthrough/audio/balance unverified accepted explicitly. Squasha7d2a18, B/Csaved.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "fb2fb3a404f0a37d99ce621612621b94930bff0c",
+        "squashCommit": "a7d2a187d98d14a2e96ad1e5c0f7493f1acfd6a6"
+      }
     }
   ],
   "events": [
@@ -1435,6 +1437,36 @@
       "details": [
         "../triumph-relay-breaker-split-ridge",
         "/root/split_ridge_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T21:46:47.001Z",
+      "command": "move",
+      "ticket": "TRI-032",
+      "details": [
+        "Review",
+        "Director independent full suite/runtime/art/mask/source-isolation review passed; live tactical/north route smoke verified, actual support circuits inVM. Accept documented full Normal/audio/balance limits, finaldocfb2fb3a."
+      ]
+    },
+    {
+      "at": "2026-10-04T21:47:15.202Z",
+      "command": "move",
+      "ticket": "TRI-032",
+      "details": [
+        "Done",
+        "Independent full suite/runtime/custom art/mask review and live route smoke passed; actual support/formation/tank circuits proved. Full Normal playthrough/audio/balance unverified accepted explicitly. Squasha7d2a18, B/Csaved.",
+        "/root",
+        "a7d2a187d98d14a2e96ad1e5c0f7493f1acfd6a6",
+        "fb2fb3a404f0a37d99ce621612621b94930bff0c"
+      ]
+    },
+    {
+      "at": "2026-10-04T21:47:15.262Z",
+      "command": "move",
+      "ticket": "TRI-026",
+      "details": [
+        "Ready",
+        "User requested new missions after workflow and continued work; first two and selectedA map accepted. Proceed queued bounded infiltration scope from accepted design, existing map reuse disclosed."
       ]
     }
   ]
