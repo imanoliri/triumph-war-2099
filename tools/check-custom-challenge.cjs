@@ -9,7 +9,7 @@ function setup(before){let seed=34;const deterministic=Object.create(Math);deter
 // Focused bounded regressions; full combat probe runs only with --record.
 for(const difficulty of ['normal','hard','veryhard'])for(const id of ['custom-rocks-relay','custom-base-last-convoy']){
  const box=setup(false),w=box.window;box.document.querySelector('#difficulty').value=difficulty;w.triumph.loadCustomMission(id);let f=w.__fixture(),s=f.state;
- const expected=id==='custom-rocks-relay'?{normal:0,hard:24,veryhard:48}:{normal:26,hard:80,veryhard:120};assert.equal(s.customWaves.arrivals.length,expected[difficulty]);
+ const expected=id==='custom-rocks-relay'?{normal:22,hard:33,veryhard:44}:{normal:26,hard:80,veryhard:120};assert.equal(s.customWaves.arrivals.length,expected[difficulty]);
  for(const a of [...s.humans,...s.aliens,...s.nests,...s.pickups,...s.customWaves.arrivals])assert(!f.blocked(a.x,a.y),'Existing hotspot must be traversable');
  s.aliens=[];s.nests.forEach(n=>n.hp=0);s.terminals.forEach(t=>t.active=true);s.t=120;
  if(expected[difficulty])assert(!f.missionProgress().ready,'Pending arrivals gate victory');

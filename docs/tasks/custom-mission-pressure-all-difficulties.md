@@ -1,7 +1,7 @@
 # Increase Relay Breaker and Silent Return pressure across every difficulty
 
 - Ticket: TRI-037; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/custom-mission-pressure-all-difficulties`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Increase custom mission pressure across every difficulty
 
 ## Acceptance criteria
 
-- [ ] Relay Breaker and Silent Return sustain materially higher pressure at every selectable difficulty through nests and encounter/resource tuning appropriate to each objective, with original campaign and Last Convoy balance isolated and measured evidence.
+- [x] Relay Breaker and Silent Return sustain materially higher pressure at every selectable difficulty through nests and encounter/resource tuning appropriate to each objective, with original campaign and Last Convoy balance isolated and measured evidence.
 
 ## Scope and decisions
 
@@ -30,3 +30,12 @@ User approved this concrete follow-up scope after prior bounded retune was merge
 **Latest authoritative scope:** user subsequently clarified Last Convoy was hard enough. TRI-037 covers **Relay Breaker and Silent Return only**, all five difficulties. Preserve Last Convoy's current TRI-034 profiles exactly. This supersedes all earlier inclusions of Last Convoy below and above; retain chronological decisions for evidence. Do not modify Convoy nests, waves, support, starting armies or objectives.
 
 2026-10-05 user explicitly added Silent Return to this follow-up. This supersedes its earlier exclusion above. All three custom missions now belong to TRI-037; original campaign remains excluded. Silent Return must retain legitimate access unlock, laser activation and return of every living ground human with a noncommander and no support inbound; enemies may remain. Add pressure along approach and return routes with reachable/targetable nest placements or existing spawn mechanisms. Do not turn infiltration into enemy extermination, block the access/laser/extraction, bypass door unlocks or introduce new enemy mechanics. Assess all five selectable difficulties and update briefing/guide to explain continuing pressure. Separate before/after evidence per mission and difficulty; freeze collision/terrain. Numerical tuning worker-owned under the same bounded task.
+- [2026-10-05 / 010](../journal/2026-10-05-010-custom-mission-pressure-all-difficulties.md)
+
+## Silent Return scheduled friendly airdrops
+
+2026-10-05 user requests and confirms three friendly reinforcement airdrops at approximately20 simulation seconds, at three clear drop points arranged top-to-bottom along the center of the map, with aircraft approaching from the top. Briefing must explicitly announce schedule and formation. Worker chooses physically valid central points using actual terrain and existing support/aircraft rules; no wall drop or bypass of legitimate door/access sequence. Use three drop events with existing per-drop friendly complement unless source mechanism requires a material choice. Tactical mode freezes schedule; restart resets it; events are single-shot. Applicable all five Silent Return difficulties. All living landed humans must extract and inbound flights/drops must finish under the existing objective. Scheduled-but-not-triggered arrivals must not permit premature victory. Scope includes only minimal custom scheduling/entry configuration needed; original support behavior unchanged. Pressure tuning must account for this additional friendly force rather than assuming the old roster.
+
+## Review evidence
+
+Implemented four Relay nests / three Silent nests with all-five fixed birth cadence and finite encounter profiles. Added confirmed friendly formation and support-aware extraction schedule. Full suite passes; exact Last Convoy metadata equality regression passes. Before/after all20 actual-runtime tactical probes and Normal browser smokes are recorded in the session. Subjective challenge/complete human victory across every difficulty remains a calibration limitation; it is not inferred from enemy counts. Worker stops at Review.
