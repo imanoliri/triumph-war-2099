@@ -174,16 +174,17 @@
       "id": "TRI-013",
       "title": "Keep music playing in tactical mode",
       "task": "docs/tasks/tactical-music.md",
-      "status": "Review",
-      "reason": "Worker7877511; director reviewed one-line decoupling and frame integration tests, independent full suite passed. Audible playback unverified.",
+      "status": "Done",
+      "reason": "Director full suite and source review passed; tactical freeze no longer forwards audio pause. Audible playback not verified. Squash99e6ebb.",
       "questions": [],
       "approval": "User explicitly requested music continue during tactical mode on 2026-10-04.",
-      "worker": {
-        "id": "/root/commander_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-tactical-music",
-        "branch": "fix/tactical-music"
-      },
-      "branch": "fix/tactical-music"
+      "branch": "fix/tactical-music",
+      "completion": {
+        "evidence": "Director full suite and source review passed; tactical freeze no longer forwards audio pause. Audible playback not verified. Squash99e6ebb.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "7877511669c2ea7a4f1f4760400122cad6abce49",
+        "squashCommit": "99e6ebbc196eec9fdfeac7949226450f78221670"
+      }
     },
     {
       "id": "TRI-014",
@@ -575,6 +576,18 @@
       "details": [
         "Review",
         "Worker7877511; director reviewed one-line decoupling and frame integration tests, independent full suite passed. Audible playback unverified."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:43:57.820Z",
+      "command": "move",
+      "ticket": "TRI-013",
+      "details": [
+        "Done",
+        "Director full suite and source review passed; tactical freeze no longer forwards audio pause. Audible playback not verified. Squash99e6ebb.",
+        "/root",
+        "99e6ebb",
+        "7877511"
       ]
     }
   ]

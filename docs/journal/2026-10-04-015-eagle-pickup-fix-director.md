@@ -31,3 +31,5 @@ User requested commanders leave already-equipped weapon pickups. Approved TRI-01
 User requested mounted plasma cannons always fire in16 directions independent of operator. Approved separate TRI-016 plasma-cannon-directions, queued after TRI-015; unmounted asymmetry preserved.
 
 TRI-012 accepted and squash-integrated29b20417448e27c432302faf88eb331532242c9d from reviewed9e96844e833052e871e1b8c7e2012bf8f440ab42. Independent full suite passed; final contrast-only change verified by affected simulation. Task session-link merge conflict resolved preserving both worker and director sessions. Live cap-label display remains unverified. Next: TRI-013 tactical music, then TRI-014 pathing, TRI-015 duplicate weapons, TRI-016 cannon directions.
+
+TRI-013 accepted/squashed99e6ebbc196eec9fdfeac7949226450f78221670 from7877511669c2ea7a4f1f4760400122cad6abce49. Independent full suite passed; actual audible playback unverified. Next TRI-014. Director pre-fix room VM probe: soldier(300,300), room x480..780/y200..600, west-door y380..420 closed unlocked, goal(650,300); after30s stuck(471.744,301.572), door stillclosed.
