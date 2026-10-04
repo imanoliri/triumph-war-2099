@@ -20,3 +20,4 @@ User reported on 2026-10-04 that some rendered reinforcement eagles cannot be pi
 
 ## Sessions
 
+- [2026-10-04 / 015 director](../journal/2026-10-04-015-eagle-pickup-fix-director.md)
