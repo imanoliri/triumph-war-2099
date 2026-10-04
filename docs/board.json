@@ -430,16 +430,17 @@
       "id": "TRI-030",
       "title": "Hide standing soldier sprite while mounted in turret",
       "task": "docs/tasks/mounted-soldier-duplicate-sprite.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent full suite and browser screenshot review accepted; seated-only/dismount restoration verified",
       "questions": [],
       "approval": "User authorized queue execution; scoped duplicate mounted sprite fix follows TRI-028",
-      "worker": {
-        "id": "/root/mounted_render_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-mounted-soldier-duplicate-sprite",
-        "branch": "fix/mounted-soldier-duplicate-sprite"
-      },
-      "branch": "fix/mounted-soldier-duplicate-sprite"
+      "branch": "fix/mounted-soldier-duplicate-sprite",
+      "completion": {
+        "evidence": "Independent full suite and browser screenshot review accepted; seated-only/dismount restoration verified",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "5289b0b9db9435497ebe26512cfcd29c42df9a27",
+        "squashCommit": "7a502fc3b2590fd58101b37c2613ced33a77c4df"
+      }
     },
     {
       "id": "TRI-031",
@@ -1951,6 +1952,27 @@
       "details": [
         "../triumph-mounted-soldier-duplicate-sprite",
         "/root/mounted_render_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T23:07:06.535Z",
+      "command": "move",
+      "ticket": "TRI-030",
+      "details": [
+        "Review",
+        "Reviewed5289b0b runtime filter, independent full suite and before/after/dismount screenshots pass"
+      ]
+    },
+    {
+      "at": "2026-10-04T23:07:07.562Z",
+      "command": "move",
+      "ticket": "TRI-030",
+      "details": [
+        "Done",
+        "Independent full suite and browser screenshot review accepted; seated-only/dismount restoration verified",
+        "/root",
+        "7a502fc3b2590fd58101b37c2613ced33a77c4df",
+        "5289b0b9db9435497ebe26512cfcd29c42df9a27"
       ]
     }
   ]
