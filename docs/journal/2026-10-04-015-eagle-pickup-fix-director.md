@@ -19,3 +19,5 @@ Pre-fix Hanger reproduction confirmed in disposable VM. Implementation checks/br
 ## Next action / handoff
 
 Review worker final diff/commit/checks; independently verify actual reproduction and all-nine eligibility regressions, plus live feedback smoke if available. Squash-merge accepted fix, then record resulting SHA in subsequent administrative checkpoint. No publication authorized.
+
+User subsequently confirmed: 'yeah, it seems to be population cap!' Prioritize clear temporary availability feedback and retain capped existing eagles until troop numbers drop. Cap unchanged.

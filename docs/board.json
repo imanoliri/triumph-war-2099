@@ -148,12 +148,17 @@
       "title": "Fix rendered reinforcement eagles that cannot be collected",
       "task": "docs/tasks/eagle-pickup-fix.md",
       "status": "In progress",
-      "reason": "User reproduction detail recorded and relayed; continue shared-rule diagnosis.",
+      "reason": "Population-cap diagnosis confirmed by user and relayed; continue availability feedback and invalid-spawn fix.",
       "questions": [
         {
           "number": 1,
           "question": "Which missions/colors and collector types did the user observe?",
           "answer": "User: I think it is in all missions, regardless of commander or soldier. No specific color identified."
+        },
+        {
+          "number": 2,
+          "question": "Does the user identify population cap as the observed trigger?",
+          "answer": "User: yeah, it seems to be population cap! Preserve the cap; fix silent unavailability and retain existing eagle until capacity returns."
         }
       ],
       "approval": "User reported visible randomly unpickable eagles on 2026-10-04; approved bounded diagnosis/fix and regression scope.",
@@ -386,6 +391,32 @@
       "details": [
         "In progress",
         "User reproduction detail recorded and relayed; continue shared-rule diagnosis."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:33:04.263Z",
+      "command": "ask",
+      "ticket": "TRI-012",
+      "details": [
+        "Does the user identify population cap as the observed trigger?"
+      ]
+    },
+    {
+      "at": "2026-10-04T14:33:04.322Z",
+      "command": "answer",
+      "ticket": "TRI-012",
+      "details": [
+        "2",
+        "User: yeah, it seems to be population cap! Preserve the cap; fix silent unavailability and retain existing eagle until capacity returns."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:33:04.380Z",
+      "command": "move",
+      "ticket": "TRI-012",
+      "details": [
+        "In progress",
+        "Population-cap diagnosis confirmed by user and relayed; continue availability feedback and invalid-spawn fix."
       ]
     }
   ]
