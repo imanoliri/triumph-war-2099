@@ -1,7 +1,7 @@
 # Add custom mission registry and Relay Breaker
 
 - Ticket: TRI-024; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/custom-relay-breaker`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Add custom mission registry and Relay Breaker
 
 ## Acceptance criteria
 
-- [ ] Playable separately labelled Relay Breaker assault requires both unique relays and enemy clearance; all nine originals and their progress preserved; checks and honest live limitations recorded.
+- [x] Playable separately labelled Relay Breaker assault requires both unique relays and enemy clearance; all nine originals and their progress preserved; checks and honest live limitations recorded.
 
 ## Scope and decisions
 
@@ -22,3 +22,10 @@ Add meaningful regression evidence for both relay orders, missing flag, living/b
 ## Sessions
 
 
+- [2026-10-04 / 039](../journal/2026-10-04-039-custom-relay-breaker.md)
+
+## Review evidence
+
+Implemented registry and Relay Breaker only. Full dev suite and focused runtime/geometry checks pass; browser smoke verifies custom selection/brief/HUD/sprites/tactical deployment. Full Normal live completion, support usage, casualties, elapsed completion time, LOS softlocks and audio/balance remain unverified; see [playtest](../playtests/2026-10-04-relay-breaker.md). Ready for independent review, not merged or published.
+
+Director accepted implementation after independent runtime diff review, passing full suite and live smoke of corrected sprites/CUSTOM HUD/tactical start. Acceptance includes the explicit limitation that full Normal playthrough, live support usage, casualties, completion time, remaining births, LOS softlocks, balance and audio remain unverified; none is claimed passed.

@@ -17,7 +17,7 @@ async function main(){
  try{
   const port=await new Promise((resolve,reject)=>{let output='';const timeout=setTimeout(()=>reject(Error('Preview startup timed out')),10000);server.on('error',e=>{clearTimeout(timeout);reject(e);});server.on('exit',code=>{clearTimeout(timeout);reject(Error('Preview exited: '+code));});server.stdout.on('data',data=>{output+=data;const match=output.match(/127\.0\.0\.1:(\d+)/);if(match){clearTimeout(timeout);resolve(Number(match[1]));}});});
   const get=name=>new Promise((resolve,reject)=>http.get({host:'127.0.0.1',port,path:name},res=>{let body='';res.on('data',d=>body+=d);res.on('end',()=>resolve({status:res.statusCode,body}));}).on('error',reject));
-  for(const name of ['/','/src/breeding.js','/src/balance.js','/src/missions.js','/src/rally.js'])assert.equal((await get(name)).status,200,name);
+  for(const name of ['/','/src/breeding.js','/src/balance.js','/src/custom-missions.js','/src/missions.js','/src/rally.js'])assert.equal((await get(name)).status,200,name);
   for(const name of ['/AGENTS.md','/docs/STATUS.md','/tools/task.cjs','/package.json','/assets/../../AGENTS.md'])assert.equal((await get(name)).status,404,name);
   console.log('Passed preview startup from another cwd, extracted-module serving and docs/tooling/path allowlist exclusion.');
  }finally{server.kill();}
