@@ -23,3 +23,5 @@ User explicitly requested creating new missions after TRI-022 on 2026-10-04. Wor
 [TRI-023](custom-mission-design.md) owns independent concrete design/feasibility for assault/defense/infiltration candidates while count preference is pending. This necessary preparation does not assume silent approval of campaign size. Implementation follows agreed scope in bounded mission branches; original nine missions remain distinguishable.
 
 Director working scope is three independent custom scenarios using existing assets, starting with [TRI-024](custom-relay-breaker.md), then Last Convoy and Silent Return in separate tickets. This is a stated working assumption under the explicit creation request; no submitted count answer is claimed. Designs accepted in d49158a; no forced unlocking or new artwork.
+
+Bounded follow-up tickets: [TRI-025 Last Convoy](custom-last-convoy.md), [TRI-026 Silent Return](custom-silent-return.md). Begin only after preceding registry/mission review and acceptance.

@@ -344,6 +344,22 @@
         "branch": "feature/custom-relay-breaker"
       },
       "branch": "feature/custom-relay-breaker"
+    },
+    {
+      "id": "TRI-025",
+      "title": "Add Last Convoy defense mission",
+      "task": "docs/tasks/custom-last-convoy.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-026",
+      "title": "Add Silent Return infiltration mission",
+      "task": "docs/tasks/custom-silent-return.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -1103,6 +1119,26 @@
       "details": [
         "../triumph-custom-relay-breaker",
         "/root/relay_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T17:42:34.527Z",
+      "command": "create",
+      "ticket": "TRI-025",
+      "details": [
+        "custom-last-convoy",
+        "Add Last Convoy defense mission",
+        "Separate custom defense mission emits exactly 26 scheduled bugs, requires 120 seconds and cleanup with a surviving noncommander, and preserves original wave logic."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:42:34.587Z",
+      "command": "create",
+      "ticket": "TRI-026",
+      "details": [
+        "custom-silent-return",
+        "Add Silent Return infiltration mission",
+        "Separate custom infiltration mission requires legitimate access unlock and laser activation followed by support-aware living-human extraction, while preserving original Flash Back behavior."
       ]
     }
   ]
