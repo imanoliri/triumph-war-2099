@@ -99,10 +99,16 @@
       "id": "TRI-009",
       "title": "AI commanders unless explicitly selected",
       "task": "docs/tasks/commander-selection.md",
-      "status": "Ready",
-      "reason": "User requested this feature on 2026-10-04; task captures commander default and explicit selection.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User requested this feature on 2026-10-04; task captures commander default and explicit selection."
+      "approval": "User requested this feature on 2026-10-04; task captures commander default and explicit selection.",
+      "worker": {
+        "id": "/root/commander_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-commander-selection",
+        "branch": "feature/commander-selection"
+      },
+      "branch": "feature/commander-selection"
     },
     {
       "id": "TRI-010",
@@ -200,6 +206,15 @@
       "details": [
         "Ready",
         "User requested this feature on 2026-10-04; task captures tactical presentation and mission start."
+      ]
+    },
+    {
+      "at": "2026-10-04T12:51:04.648Z",
+      "command": "dispatch",
+      "ticket": "TRI-009",
+      "details": [
+        "../triumph-commander-selection",
+        "/root/commander_worker"
       ]
     }
   ]
