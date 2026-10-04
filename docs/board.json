@@ -131,10 +131,16 @@
       "id": "TRI-011",
       "title": "Tactical mode presentation and mission start",
       "task": "docs/tasks/tactical-mode.md",
-      "status": "Ready",
-      "reason": "User requested this feature on 2026-10-04; task captures tactical presentation and mission start.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User requested this feature on 2026-10-04; task captures tactical presentation and mission start."
+      "approval": "User requested this feature on 2026-10-04; task captures tactical presentation and mission start.",
+      "worker": {
+        "id": "/root/commander_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-tactical-mode",
+        "branch": "feature/tactical-mode"
+      },
+      "branch": "feature/tactical-mode"
     }
   ],
   "events": [
@@ -274,6 +280,15 @@
         "/root",
         "c8c4d5e",
         "fa2bebc"
+      ]
+    },
+    {
+      "at": "2026-10-04T14:15:37.216Z",
+      "command": "dispatch",
+      "ticket": "TRI-011",
+      "details": [
+        "../triumph-tactical-mode",
+        "/root/commander_worker"
       ]
     }
   ]
