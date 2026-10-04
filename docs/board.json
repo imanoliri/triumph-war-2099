@@ -448,6 +448,14 @@
         "reviewedImplementationCommit": "fb2fb3a404f0a37d99ce621612621b94930bff0c",
         "squashCommit": "a7d2a187d98d14a2e96ad1e5c0f7493f1acfd6a6"
       }
+    },
+    {
+      "id": "TRI-033",
+      "title": "Prepare reusable map art kit and AI handoff prompts",
+      "task": "docs/tasks/map-art-handoff-kit.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -1482,6 +1490,16 @@
       "details": [
         "../triumph-custom-silent-return",
         "/root/silent_return_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T21:49:13.810Z",
+      "command": "create",
+      "ticket": "TRI-033",
+      "details": [
+        "map-art-handoff-kit",
+        "Prepare reusable map art kit and AI handoff prompts",
+        "A self-contained map art kit provides fixed geometry contracts, palettes, element/sprite references, map images/screenshots and bounded artist prompts for other AI workers without gameplay changes."
       ]
     }
   ]
