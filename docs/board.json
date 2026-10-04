@@ -454,10 +454,16 @@
       "id": "TRI-033",
       "title": "Prepare reusable map art kit and AI handoff prompts",
       "task": "docs/tasks/map-art-handoff-kit.md",
-      "status": "Ready",
-      "reason": "User explicitly requested art kit ticket directly after current Silent Return, including adequate director/artist prompts and skills or workflows. Silent Return accepted; kit only, no art replacement.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User explicitly requested art kit ticket directly after current Silent Return, including adequate director/artist prompts and skills or workflows. Silent Return accepted; kit only, no art replacement."
+      "approval": "User explicitly requested art kit ticket directly after current Silent Return, including adequate director/artist prompts and skills or workflows. Silent Return accepted; kit only, no art replacement.",
+      "worker": {
+        "id": "/root/art_kit_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-map-art-handoff-kit",
+        "branch": "chore/map-art-handoff-kit"
+      },
+      "branch": "chore/map-art-handoff-kit"
     },
     {
       "id": "TRI-034",
@@ -1550,6 +1556,15 @@
       "details": [
         "Ready",
         "User explicitly requested art kit ticket directly after current Silent Return, including adequate director/artist prompts and skills or workflows. Silent Return accepted; kit only, no art replacement."
+      ]
+    },
+    {
+      "at": "2026-10-04T21:56:18.009Z",
+      "command": "dispatch",
+      "ticket": "TRI-033",
+      "details": [
+        "../triumph-map-art-handoff-kit",
+        "/root/art_kit_worker"
       ]
     }
   ]
