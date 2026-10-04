@@ -7,3 +7,5 @@
 #unit-guide{width:min(1050px,95vw);max-width:1050px;max-height:90vh;overflow:auto}#unit-guide header{display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:-28px;background:#111d0e;z-index:1;padding:10px 0}#unit-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(290px,100%),1fr));gap:14px}.unit-card{border:1px solid #456737;background:#172313;padding:16px}.unit-card h3{color:#b2e095;display:flex;align-items:center;gap:12px;margin:0 0 14px}.unit-card img{width:48px;height:48px;object-fit:contain;image-rendering:pixelated}.unit-card dl{display:grid;grid-template-columns:85px 1fr;gap:8px;margin:0}.unit-card dt{color:#83947a}.unit-card dd{margin:0}.unit-card p{margin-bottom:0}.weapons{grid-column:1/-1}
 
 .commando-card h3 img{border-right:4px solid #4dbaff}.redbug-card h3 img{border-right:4px solid #fa4b4b}
+
+.battlefield{position:relative}#rally{position:absolute;top:1px;right:1px;width:7%;height:4.5%;padding:0;font-size:clamp(8px,1.2vw,13px)}#rally[aria-pressed="true"]{background:#42612b;color:#ecffd9;border-color:#a9e867}#rally:disabled{opacity:.5;cursor:default}

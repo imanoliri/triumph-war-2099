@@ -141,3 +141,9 @@ Missions complete automatically when all living bugs and nests are cleared and t
 
 ### Tactical pause
 Space, Escape or Pause freezes the simulation and shows a small banner at the top of the battlefield. You can still select troops and commanders, issue attack-move or force-move orders, assign focus targets, order interactions, and give squad orders with buttons or keyboard. Orders execute when play resumes. Movement, firing, grenades, timers and support arrivals stay frozen. Opening and closing Controls or Units preserves an existing pause.
+
+
+### Reinforcement rally flags
+The **Rally** button sits at the top-right of the battlefield, beside Army/Wave. **R** toggles placement mode. Left-click clear terrain to place numbered flags; right-click a flag to remove it. R, Escape or the button exits the mode. Placement and removal work while paused and do not fire or throw grenades.
+
+New soldiers, tanks and robots from yellow ground, bronze support and Blitzkrieg eagles receive an attack-move order to the nearest reachable flag, using the navigation grid's terrain route distance. Carrier soldiers choose when they unload. Locked doors block routes; unlocked doors can be opened en route. Commandos ignore flags, including those arriving from Blitzkrieg aircraft/infiltration. Units stop to fight along the way and hold near their destination on arrival. Player orders override rally orders. Deleting a flag affects future arrivals; already assigned units keep their destination. Without reachable flags, arrivals retain their usual behavior. Flags and placement mode reset on mission restart/change.

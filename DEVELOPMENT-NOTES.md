@@ -243,3 +243,11 @@
 - Enabled paused troop selection, attack/force movement, focus targets, usable-object orders, commander selection and squad orders through buttons or keyboard. Simulation updates remain stopped; movement and interaction orders execute after resume. Commander firing/grenades cannot execute while paused.
 - Controls now restores the prior pause state, matching Units. Updated Controls and README.
 - Syntax and full simulation checks passed, including no large pause rectangle, paused drag/move/focus/use/button/keyboard input, frozen time/position/combat, preserved modal pause and order execution on resume. Also passed updated 25° normal/15° focus tank sweep checks. Live browser appearance remains unverified.
+
+
+## 2026-10-04 — Reinforcement rally flags
+- Added a real Rally button over the top-right HUD, immediately right of repositioned Army/Wave counters. Button highlights placement mode; physical R toggles, Escape exits before pausing. Left-click clear terrain places numbered flags; right-click removes the nearest clicked flag. Supports multiple flags and tactical pause, suppressing mouse firing/grenades during placement.
+- Added navigation routeDistance using cached four-neighbor terrain fields to choose the nearest reachable flag. Locked doors block routes; unlocked doors count as traversable because units open them during travel.
+- Tagged support sources and assigned attack-move at each eligible arrival: yellow carrier/indoor soldiers, bronze tanks/robots, Blitzkrieg soldiers/tanks/robots. Aircraft/infiltration commandos are excluded, including Blitzkrieg. Existing units are not reassigned when flags change. Player orders override rally destinations; arrival uses existing attack-move holding/combat behavior.
+- Mission restart/change clears flags and placement mode. Updated Controls, Units and README and exposed rally state through existing state API.
+- Syntax and full simulation checks passed, including button/R/Escape/paused input, scaled coordinates, no placement shots/grenades, route-distance selection, locked/unlocked doors, flag deletion, player override, yellow/bronze/Blitz arrivals, commando exclusion and mission reset. Live browser layout remains unverified.
