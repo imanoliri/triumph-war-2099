@@ -14,7 +14,7 @@ const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.f
 vm.createContext(sandbox);
 for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
- if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules});})();');
+ if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,addTroop,variantMark});})();');
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
@@ -53,7 +53,7 @@ api.loadMission(1);fixture=sandbox.window.__fixture();state=fixture.state;const 
 assert(fixture.reinforce('troops'));assert.equal(state.humans.filter(u=>u.type==='soldier').length,initialTroops,'Carrier calls must not instantly create infantry');assert.equal(state.reinforcements[0].kind,'carrier');
 let carrierStopped=false;for(let i=0;i<500;i++){state.t+=.02;fixture.updateSupport(.02);if(state.reinforcements.some(r=>r.kind==='carrier'&&r.path.pause>0))carrierStopped=true;}
 assert(carrierStopped,'Recovered pause node is used');assert(state.humans.filter(u=>u.type==='soldier').length>initialTroops,'Carrier drops troops while stopped');assert.equal(state.reinforcements.length,0,'Carrier leaves at path end');
-api.loadMission(1);fixture=sandbox.window.__fixture();state=fixture.state;assert(fixture.reinforce('air'));assert.equal(state.reinforcements[0].kind,'air');for(let i=0;i<600;i++){state.t+=.02;fixture.updateSupport(.02);}assert(state.humans.filter(u=>u.type==='soldier').length>12,'Aircraft pass completes animated troop drops');assert.equal(state.reinforcements.length,0);
+api.loadMission(1);fixture=sandbox.window.__fixture();state=fixture.state;assert(fixture.reinforce('air'));assert.equal(state.reinforcements[0].kind,'air');for(let i=0;i<600;i++){state.t+=.02;fixture.updateSupport(.02);}assert(state.humans.some(u=>u.type==='commando'),'Aircraft pass completes animated commando drops');assert.equal(state.reinforcements.length,0);
 api.loadMission(7);fixture=sandbox.window.__fixture();state=fixture.state;const before=state.humans.length;assert(fixture.reinforce('troops'));assert.equal(state.humans.length,before+5,'Indoor reinforcement uses five source-created troops');assert(fixture.reinforce('air'));assert.equal(state.reinforcements.at(-1).kind,'infiltration');assert(fixture.reinforce('tank'));assert.equal(state.humans.at(-1).type,'robot');assert.equal(state.humans.at(-1).hp,7);
 for(let i=0;i<600;i++){state.t+=.02;fixture.updateSupport(.02);}assert.equal(state.reinforcements.length,0,'Zipline creator expires after ten seconds');assert(state.humans.length>before+6,'Zipline animation creates additional troops');
 api.loadMission(1);fixture=sandbox.window.__fixture();state=fixture.state;assert(fixture.reinforce('blitz'));assert.equal(state.reinforcements.filter(r=>r.kind==='air').length,2);assert.equal(state.reinforcements.filter(r=>r.kind==='carrier').length,1);assert.equal(state.humans.filter(u=>u.type==='tank').length,3);
@@ -153,7 +153,7 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
 {
  api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mask=null;state.rocks=[];state.doors=[];state.props=[];
  const target={x:600,y:400,team:'alien',alive:true,hp:1000},other={...target,y:410};
- for(const type of ['soldier','robot','tank']){
+ for(const type of ['soldier','robot','tank','commando']){
   const r=f.burstRules[type],sizes=new Set(),delays=new Set();
   for(let i=0;i<80;i++){
    const u={x:400,y:400,team:'human',type,alive:true,hp:8,cool:0,weapon:0,order:0};state.bullets=[];const start=state.t;
@@ -174,4 +174,22 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  const commander={x:400,y:400,team:'human',type:'commander',cool:0,weapon:0};state.bullets=[];f.aimHuman(commander,target,0);assert.equal(state.bullets.length,1);assert.equal(commander.burst,undefined);
  elements['#units'].onclick();assert(elements['#unit-cards'].innerHTML.includes('5–9 shots per burst'));assert(elements['#unit-cards'].innerHTML.includes('3–6 shots per burst'));elements['#units-close'].onclick();
  console.log('Passed soldier/robot/tank burst sizes, initial delays, rest ranges, target switching/loss, cadence, Defend/flame, continuous commander fire and guide descriptions.');
+}
+
+{
+ api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mask=null;state.rocks=[];state.doors=[];state.props=[];
+ const initial=state.humans.filter(u=>u.type==='commando').length;assert.equal(initial,0,'No replacement of placed infantry');assert(!state.aliens.some(u=>u.type==='redbug'),'Placed bugs remain ordinary');
+ f.reinforce('air');for(let i=0;i<700;i++){state.t+=.02;f.updateSupport(.02);}assert(state.humans.some(u=>u.type==='commando'),'Air drops commandos');
+ api.loadMission(7);const inside=sandbox.window.__fixture();inside.reinforce('air');for(let i=0;i<650;i++){inside.state.t+=.02;inside.updateSupport(.02);}assert(inside.state.humans.some(u=>u.type==='commando'),'Indoor blue-eagle troops are commandos');
+ api.loadMission(6);const infiltrate=sandbox.window.__fixture();infiltrate.reinforce('air');for(let i=0;i<650;i++){infiltrate.state.t+=.02;infiltrate.updateSupport(.02);}assert(infiltrate.state.humans.some(u=>u.type==='commando'),'Infiltration drops commandos');
+ api.loadMission(1);const g=sandbox.window.__fixture(),world=g.state;world.mask=null;world.rocks=[];world.doors=[];world.props=[];let reds=0;
+ for(let i=0;i<10000;i++){const u=g.spawnGroundBug(500,500);if(u.type==='redbug'){reds++;assert.equal(u.hp,5);}else assert.equal(u.hp,world.difficulty.bug);}assert(reds>900&&reds<1100,'Spawn lottery should be approximately 10 percent');
+ const red={x:400,y:400,type:'redbug',team:'alien',alive:true,hp:5},target={x:590,y:400,team:'human',alive:true,hp:1};let seen=false;
+ for(let i=0;i<100;i++){world.t+=.1;if(g.perceive(red,[target],240))seen=true;}assert(seen,'Red bug sees at 190 px');target.x=601;assert.equal(g.perceive(red,[target],240),null,'Red bug loses target beyond 200 px');target.x=590;world.rocks=[{x:480,y:350,w:20,h:100}];for(let i=0;i<30;i++){world.t+=.2;assert.equal(g.perceive(red,[target],240),null,'Red sight respects walls');}world.rocks=[];
+ for(const difficulty of ['veryeasy','easy','normal','hard','veryhard']){elements['#difficulty'].value=difficulty;for(let i=0;i<50;i++){const d=g.enemyFireDelay(red);assert(d>=2.6&&d<4.2,'Red spit cooldown is fixed across difficulty');}}elements['#difficulty'].value='normal';
+ const commando=g.addTroop(52,400,400,'commando');target.x=500;target.y=500;world.bullets=[];g.aimHuman(commando,target,0);world.t=commando.burst.readyAt;commando.cool=0;g.aimHuman(commando,target,0);assert.equal(world.bullets.length,1);assert(Math.abs(world.bullets[0].dx-Math.SQRT1_2)<1e-9&&Math.abs(world.bullets[0].dy-Math.SQRT1_2)<1e-9,'Commando diagonal fire');
+ g.selectTroops({x:390,y:390},{x:410,y:410});assert(g.selection.has(commando),'Commando participates in selection');g.attackMoveTo({x:700,y:500});assert(commando.attackMove,'Commando accepts attack move');
+ world.pickups=[{x:400,y:400,type:'plasma'}];world.humans=[commando];world.aliens=[];world.nests=[{x:900,y:700,hp:50,timer:1000}];world.mode='playing';g.update(.02);assert.equal(commando.weapon,2,'Commando collects weapons');
+ g.variantMark(commando);g.variantMark(red);elements['#units'].onclick();assert(elements['#unit-cards'].innerHTML.includes('Red Krate bug'));assert(elements['#unit-cards'].innerHTML.includes('5–7 shots per burst'));elements['#units-close'].onclick();
+ console.log('Passed air/indoor/infiltration commandos, diagonal fire, commando orders/pickups, 10-percent red spawn lottery, fixed red HP/cooldowns, 200px wall-limited sight and guide entries.');
 }

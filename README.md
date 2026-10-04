@@ -100,3 +100,8 @@ Click **Units** below the battlefield for sprite previews, health, damage, firin
 
 ### Friendly burst fire
 Infantry, robots and cannon operators fire randomized 3–6-shot bursts, rest 0.8–1.8 seconds, and take 0.2–0.8 seconds to begin shooting after target acquisition. Tanks fire 5–9-shot bursts, rest 1.5–3 seconds, and take 0.4–1.2 seconds to begin. Each unit varies independently. Existing shot intervals apply inside bursts (tank 0.70 s; infantry 0.38 s, Defend 0.20 s, flame 0.18 s). Target loss interrupts a burst; reacquisition adds a delay, and target switches preserve any remaining rest. Commanders and aircraft retain continuous fire. Units shows these rules.
+
+### Specialist units
+**Commandos** arrive through blue-eagle aircraft drops and indoor infiltration/zipline drops. They reuse infantry animations with a blue bandana overlay, retain 1 HP and 1 damage, and fire in eight directions. Burst: 5–7 shots at 0.38 s intervals, 0.8–1.2 s rest, 0.2–0.4 s acquisition delay. They support selection, orders, attack-move, pickups, cannons and reinforcement population limits. Flame retains its 0.18 s shot interval.
+
+**Red Krate bugs** reuse ground-bug animations with a red abdomen band. Every newly created ground bug (nest, queen birth/death offspring, wave) independently has a 10% chance to be red. Existing map placements are unchanged. Red bugs have fixed 5 HP, 200 px terrain-blocked sight and 2.6–4.2 s spit cooldown at every difficulty. Damage remains 1, with the existing facing cone and randomized behavior. Growplants turn them into normal queens. Both variants appear in Units.
