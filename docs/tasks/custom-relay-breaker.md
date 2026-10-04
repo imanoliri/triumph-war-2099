@@ -29,3 +29,5 @@ Add meaningful regression evidence for both relay orders, missing flag, living/b
 Implemented registry and Relay Breaker only. Full dev suite and focused runtime/geometry checks pass; browser smoke verifies custom selection/brief/HUD/sprites/tactical deployment. Full Normal live completion, support usage, casualties, elapsed completion time, LOS softlocks and audio/balance remain unverified; see [playtest](../playtests/2026-10-04-relay-breaker.md). Ready for independent review, not merged or published.
 
 Director accepted implementation after independent runtime diff review, passing full suite and live smoke of corrected sprites/CUSTOM HUD/tactical start. Acceptance includes the explicit limitation that full Normal playthrough, live support usage, casualties, completion time, remaining births, LOS softlocks, balance and audio remain unverified; none is claimed passed.
+
+- [Director acceptance / squash](../journal/2026-10-04-040-custom-relay-breaker-director.md)

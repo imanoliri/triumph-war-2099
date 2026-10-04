@@ -334,24 +334,26 @@
       "id": "TRI-024",
       "title": "Add custom mission registry and Relay Breaker",
       "task": "docs/tasks/custom-relay-breaker.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent full suite/runtime review and live UI smoke passed; full combat playthrough/balance/audio unverified and explicitly accepted. Squash b507f2c.",
       "questions": [],
       "approval": "User explicitly requested new mission creation after current task; first independently viable registry and assault scope recorded from accepted design, optional count answer unsubmitted.",
-      "worker": {
-        "id": "/root/relay_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-relay-breaker",
-        "branch": "feature/custom-relay-breaker"
-      },
-      "branch": "feature/custom-relay-breaker"
+      "branch": "feature/custom-relay-breaker",
+      "completion": {
+        "evidence": "Independent full suite/runtime review and live UI smoke passed; full combat playthrough/balance/audio unverified and explicitly accepted. Squash b507f2c.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "78fa82bb26aceada08de6493901c368ea0ec322e",
+        "squashCommit": "b507f2cc6aaf1e625d7edda149217bf648286e5c"
+      }
     },
     {
       "id": "TRI-025",
       "title": "Add Last Convoy defense mission",
       "task": "docs/tasks/custom-last-convoy.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "User requested new missions after workflow task; bounded defense scope recorded, registry and assault accepted; proceed next under stated three-mission working scope.",
+      "questions": [],
+      "approval": "User requested new missions after workflow task; bounded defense scope recorded, registry and assault accepted; proceed next under stated three-mission working scope."
     },
     {
       "id": "TRI-026",
@@ -1175,6 +1177,36 @@
         "tank-burst-rest",
         "Review tank rest between firing bursts",
         "Clarify and tune tank burst/rest timing from user timing note, with explicit desired duration and regression evidence before balance implementation."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:53:35.100Z",
+      "command": "move",
+      "ticket": "TRI-024",
+      "details": [
+        "Review",
+        "Director independent full suite and runtime review passed; live smoke verified corrected sprites, separate custom selector/HUD and tactical deployment. Accept full-playthrough/balance/audio limitations explicitly; reviewed f3c7dc0 plus documentation78fa82b."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:53:58.179Z",
+      "command": "move",
+      "ticket": "TRI-024",
+      "details": [
+        "Done",
+        "Independent full suite/runtime review and live UI smoke passed; full combat playthrough/balance/audio unverified and explicitly accepted. Squash b507f2c.",
+        "/root",
+        "b507f2cc6aaf1e625d7edda149217bf648286e5c",
+        "78fa82bb26aceada08de6493901c368ea0ec322e"
+      ]
+    },
+    {
+      "at": "2026-10-04T17:53:58.241Z",
+      "command": "move",
+      "ticket": "TRI-025",
+      "details": [
+        "Ready",
+        "User requested new missions after workflow task; bounded defense scope recorded, registry and assault accepted; proceed next under stated three-mission working scope."
       ]
     }
   ]
