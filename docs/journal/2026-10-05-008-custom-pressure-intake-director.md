@@ -13,3 +13,5 @@ Latest user correction: Last Convoy was hard enough. Remove Last Convoy from TRI
 After dispatch: user added programmed Silent Return three-airdrop formation at~20s and briefing notice. Actual answers: friendly reinforcements; three central drop points arranged top-to-bottom, aircraft approach from top. Relayed to pressure worker. Use existing drop complements, actual valid terrain, single-shot/tactical/restart and pending/survivor extraction guards; pressure accounts for added friendlies. No enemy drops or original support changes inferred.
 
 Further user request: ground robots50% faster. Created separate approved TRI-038, movement1.5x only, preserving weapons/health/firing and other unit speeds. Queue after037/028/030; pressure worker stays on existing scope. No concurrent implementation worker.
+
+Further user request: Last Convoy restores original map grenade/weapon caches. Separate approved TRI-039 after037, before028/030/038. Restore recovered static pickup types/positions, not source support/enemies/random generation. Preserve current challenge profiles. TRI-037 still excludes Last Convoy; no parallel worker.

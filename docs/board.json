@@ -537,6 +537,15 @@
       "reason": "User explicitly requested robot50% movement increase 2026-10-05; separate bounded ticket after current pressure and queued tank/turret fixes",
       "questions": [],
       "approval": "User explicitly requested robot50% movement increase 2026-10-05; separate bounded ticket after current pressure and queued tank/turret fixes"
+    },
+    {
+      "id": "TRI-039",
+      "title": "Restore original map grenade and weapon caches in Last Convoy",
+      "task": "docs/tasks/last-convoy-source-caches.md",
+      "status": "Ready",
+      "reason": "User requested original grenade/weapon caches in Last Convoy2026-10-05; source pickup restoration only, next after pressure037",
+      "questions": [],
+      "approval": "User requested original grenade/weapon caches in Last Convoy2026-10-05; source pickup restoration only, next after pressure037"
     }
   ],
   "events": [
@@ -1840,6 +1849,25 @@
       "details": [
         "Ready",
         "User explicitly requested robot50% movement increase 2026-10-05; separate bounded ticket after current pressure and queued tank/turret fixes"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:42:20.898Z",
+      "command": "create",
+      "ticket": "TRI-039",
+      "details": [
+        "last-convoy-source-caches",
+        "Restore original map grenade and weapon caches in Last Convoy",
+        "Last Convoy includes the original Hold Base map's recovered grenade and weapon caches at their source positions without changing current difficulty or wave profiles."
+      ]
+    },
+    {
+      "at": "2026-10-04T22:42:22.599Z",
+      "command": "move",
+      "ticket": "TRI-039",
+      "details": [
+        "Ready",
+        "User requested original grenade/weapon caches in Last Convoy2026-10-05; source pickup restoration only, next after pressure037"
       ]
     }
   ]
