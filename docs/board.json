@@ -408,6 +408,14 @@
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
       "questions": []
+    },
+    {
+      "id": "TRI-031",
+      "title": "Add narrow sweep bursts to plasma turrets",
+      "task": "docs/tasks/plasma-turret-narrow-sweep.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -1305,6 +1313,16 @@
       "details": [
         "../triumph-relay-breaker-map-proposals",
         "/root/map_proposal_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T18:04:58.674Z",
+      "command": "create",
+      "ticket": "TRI-031",
+      "details": [
+        "plasma-turret-narrow-sweep",
+        "Add narrow sweep bursts to plasma turrets",
+        "Mounted plasma turrets use tank-style sweep bursts with agreed 0–15-degree arc semantics while preserving operator-independent aiming and existing mounting behavior."
       ]
     }
   ]
