@@ -94,6 +94,33 @@
         "reviewedImplementationCommit": "25ea368c8f35b2a15c113e700b6cc51e4091c2bd",
         "squashCommit": "6c611e32e154e0c0ed250df0c6cd83c0cdf6d5f4"
       }
+    },
+    {
+      "id": "TRI-009",
+      "title": "AI commanders unless explicitly selected",
+      "task": "docs/tasks/commander-selection.md",
+      "status": "Ready",
+      "reason": "User requested this feature on 2026-10-04; task captures commander default and explicit selection.",
+      "questions": [],
+      "approval": "User requested this feature on 2026-10-04; task captures commander default and explicit selection."
+    },
+    {
+      "id": "TRI-010",
+      "title": "Attack-move eagle collection and turret mounting",
+      "task": "docs/tasks/attack-move-interactions.md",
+      "status": "Ready",
+      "reason": "User requested this feature on 2026-10-04; task captures proximity interactions and priorities.",
+      "questions": [],
+      "approval": "User requested this feature on 2026-10-04; task captures proximity interactions and priorities."
+    },
+    {
+      "id": "TRI-011",
+      "title": "Tactical mode presentation and mission start",
+      "task": "docs/tasks/tactical-mode.md",
+      "status": "Ready",
+      "reason": "User requested this feature on 2026-10-04; task captures tactical presentation and mission start.",
+      "questions": [],
+      "approval": "User requested this feature on 2026-10-04; task captures tactical presentation and mission start."
     }
   ],
   "events": [
@@ -116,6 +143,63 @@
         "/root",
         "6c611e32e154e0c0ed250df0c6cd83c0cdf6d5f4",
         "25ea368c8f35b2a15c113e700b6cc51e4091c2bd"
+      ]
+    },
+    {
+      "at": "2026-10-04T12:49:44.187Z",
+      "command": "create",
+      "ticket": "TRI-009",
+      "details": [
+        "commander-selection",
+        "AI commanders unless explicitly selected",
+        "All commanders default to AI; explicit commander buttons alone enable direct control; otherwise troop-control mode is active."
+      ]
+    },
+    {
+      "at": "2026-10-04T12:49:44.254Z",
+      "command": "create",
+      "ticket": "TRI-010",
+      "details": [
+        "attack-move-interactions",
+        "Attack-move eagle collection and turret mounting",
+        "Attack-moving soldiers collect nearby route eagles and mount nearby usable plasma turrets, with the requested enemy-dependent priority."
+      ]
+    },
+    {
+      "at": "2026-10-04T12:49:44.318Z",
+      "command": "create",
+      "ticket": "TRI-011",
+      "details": [
+        "tactical-mode",
+        "Tactical mode presentation and mission start",
+        "Pause is named tactical mode, visibly frames the map with a blue or green visor, and is active at mission start."
+      ]
+    },
+    {
+      "at": "2026-10-04T12:50:20.253Z",
+      "command": "move",
+      "ticket": "TRI-009",
+      "details": [
+        "Ready",
+        "User requested this feature on 2026-10-04; task captures commander default and explicit selection."
+      ]
+    },
+    {
+      "at": "2026-10-04T12:50:20.316Z",
+      "command": "move",
+      "ticket": "TRI-010",
+      "details": [
+        "Ready",
+        "User requested this feature on 2026-10-04; task captures proximity interactions and priorities."
+      ]
+    },
+    {
+      "at": "2026-10-04T12:50:20.380Z",
+      "command": "move",
+      "ticket": "TRI-011",
+      "details": [
+        "Ready",
+        "User requested this feature on 2026-10-04; task captures tactical presentation and mission start."
       ]
     }
   ]
