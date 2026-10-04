@@ -27,3 +27,5 @@ User also requested tactical mode not pause music. Approved separate TRI-013 tac
 User reported closed-door room pathing wall-shortcut stalls. Approved separate TRI-014 closed-door-pathing, queued after TRI-013. Preserve locked doors and source coordinate conventions.
 
 User requested commanders leave already-equipped weapon pickups. Approved TRI-015 duplicate-commander-weapons, queued after TRI-014; preserve existing weapon identities and other collectors.
+
+User requested mounted plasma cannons always fire in16 directions independent of operator. Approved separate TRI-016 plasma-cannon-directions, queued after TRI-015; unmounted asymmetry preserved.

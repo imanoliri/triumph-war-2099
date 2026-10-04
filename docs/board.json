@@ -195,6 +195,15 @@
       "reason": "User explicitly requested preventing duplicate commander weapon consumption on 2026-10-04.",
       "questions": [],
       "approval": "User explicitly requested preventing duplicate commander weapon consumption on 2026-10-04."
+    },
+    {
+      "id": "TRI-016",
+      "title": "Give plasma cannons 16-direction fire for every operator",
+      "task": "docs/tasks/plasma-cannon-directions.md",
+      "status": "Ready",
+      "reason": "User explicitly requested 16-direction plasma cannon shooting for all operators on 2026-10-04.",
+      "questions": [],
+      "approval": "User explicitly requested 16-direction plasma cannon shooting for all operators on 2026-10-04."
     }
   ],
   "events": [
@@ -501,6 +510,25 @@
       "details": [
         "Ready",
         "User explicitly requested preventing duplicate commander weapon consumption on 2026-10-04."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:38:39.736Z",
+      "command": "create",
+      "ticket": "TRI-016",
+      "details": [
+        "plasma-cannon-directions",
+        "Give plasma cannons 16-direction fire for every operator",
+        "Mounted plasma cannons aim and fire in 16 directions regardless of operator type; unmounted aiming rules remain intact."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:38:39.857Z",
+      "command": "move",
+      "ticket": "TRI-016",
+      "details": [
+        "Ready",
+        "User explicitly requested 16-direction plasma cannon shooting for all operators on 2026-10-04."
       ]
     }
   ]
