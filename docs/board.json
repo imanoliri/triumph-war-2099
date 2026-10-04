@@ -350,10 +350,16 @@
       "id": "TRI-025",
       "title": "Add Last Convoy defense mission",
       "task": "docs/tasks/custom-last-convoy.md",
-      "status": "Ready",
-      "reason": "User requested new missions after workflow task; bounded defense scope recorded, registry and assault accepted; proceed next under stated three-mission working scope.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User requested new missions after workflow task; bounded defense scope recorded, registry and assault accepted; proceed next under stated three-mission working scope."
+      "approval": "User requested new missions after workflow task; bounded defense scope recorded, registry and assault accepted; proceed next under stated three-mission working scope.",
+      "worker": {
+        "id": "/root/convoy_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-last-convoy",
+        "branch": "feature/custom-last-convoy"
+      },
+      "branch": "feature/custom-last-convoy"
     },
     {
       "id": "TRI-026",
@@ -1207,6 +1213,15 @@
       "details": [
         "Ready",
         "User requested new missions after workflow task; bounded defense scope recorded, registry and assault accepted; proceed next under stated three-mission working scope."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:54:18.121Z",
+      "command": "dispatch",
+      "ticket": "TRI-025",
+      "details": [
+        "../triumph-custom-last-convoy",
+        "/root/convoy_worker"
       ]
     }
   ]
