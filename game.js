@@ -54,12 +54,12 @@ function cardinal(angle){return Math.round(angle/(Math.PI/2))*(Math.PI/2);}
 function visible(a,b){return window.TriumphNavigation?window.TriumphNavigation.line(a,b,blocked):!blocked((a.x+b.x)/2,(a.y+b.y)/2);}
 const specialistRules={redbug:{hp:5,sight:200,fireMin:2.6,fireMax:4.2,spawnChance:.1}};
 const infantryType=u=>['soldier','commando'].includes(u.type);
-const burstRules={commando:{min:5,max:7,restMin:.8,restMax:1.2,delayMin:.2,delayMax:.4},soldier:{min:3,max:6,restMin:.8,restMax:1.8,delayMin:.2,delayMax:.8},robot:{min:3,max:6,restMin:.8,restMax:1.8,delayMin:.2,delayMax:.8},tank:{min:5,max:9,restMin:1.5,restMax:3,delayMin:.4,delayMax:1.2}};
+const burstRules={commando:{min:5,max:7,restMin:.8,restMax:1.2,delayMin:.2,delayMax:.4},soldier:{min:3,max:6,restMin:.8,restMax:1.8,delayMin:.2,delayMax:.8},robot:{min:3,max:6,restMin:.8,restMax:1.8,delayMin:.2,delayMax:.8},tank:{min:9,max:12,restMin:1.5,restMax:3,delayMin:.4,delayMax:1.2}};
 function trackBurst(u,target){
  const rule=u.team==='human'&&burstRules[u.type];if(!rule)return;
  const b=u.burst??={target:null,remaining:0,readyAt:0,restUntil:0};
  if(target&&(target.alive===false||target.hp<=0||!visible(u,target)))target=null;
- if(b.target!==target){b.target=target;b.remaining=0;if(target)b.readyAt=Math.max(b.restUntil,s.t+rule.delayMin+rnd()*(rule.delayMax-rule.delayMin));}
+ if(b.target!==target){b.target=target;b.remaining=0;u.sweep=null;if(target)b.readyAt=Math.max(b.restUntil,s.t+rule.delayMin+rnd()*(rule.delayMax-rule.delayMin));}
 }
 function burstReady(u,target){
  const rule=u.team==='human'&&burstRules[u.type];if(!rule)return true;
@@ -67,10 +67,26 @@ function burstReady(u,target){
  if(!b.remaining)b.remaining=rule.min+Math.floor(rnd()*(rule.max-rule.min+1));return true;
 }
 function finishBurstShot(u){const rule=u.team==='human'&&burstRules[u.type];if(!rule)return;const b=u.burst;if(--b.remaining===0)b.restUntil=s.t+rule.restMin+rnd()*(rule.restMax-rule.restMin);}
-function aimHuman(u,target,dt){const angle=(u.type==='commando'?diagonal:cardinal)(Math.atan2(target.y-u.y,target.x-u.x));u.angle=angle;const across=Math.abs((target.x-u.x)*Math.sin(angle)-(target.y-u.y)*Math.cos(angle));if(across>10&&dt&&u.order!==3&&u.cannon===undefined){if(u.type==='commando'){const offset=-(target.x-u.x)*Math.sin(angle)+(target.y-u.y)*Math.cos(angle);navigate(u,-Math.sin(angle)*offset,Math.cos(angle)*offset,dt,36);}else{const vertical=Math.abs(Math.sin(angle))>.5;navigate(u,vertical?target.x-u.x:0,vertical?0:target.y-u.y,dt,u.type==='commander'?55:36);}u.angle=angle;}if(visible(u,target)&&burstReady(u,target)&&u.cool<=0){fire(u);finishBurstShot(u);}else if(!visible(u,target))trackBurst(u,null);}
+const tankSweepRules={range:300,minArc:Math.PI/6,maxArc:Math.PI*4/9,padding:Math.PI/18};
+const angleDifference=(a,b)=>Math.atan2(Math.sin(a-b),Math.cos(a-b));
+function tankGroup(u,fallback){
+ const r=tankSweepRules,seen=s.aliens.filter(a=>a.alive&&a.hp>0&&dist(u,a)<r.range&&visible(u,a)).map(a=>({target:a,angle:Math.atan2(a.y-u.y,a.x-u.x)}));
+ let best=null;
+ for(const seed of seen){const group=seen.filter(p=>{const offset=angleDifference(p.angle,seed.angle);return offset>=-1e-9&&offset<=r.maxArc;}),offsets=group.map(p=>angleDifference(p.angle,seed.angle)),low=Math.min(...offsets),high=Math.max(...offsets);if(!best||group.length>best.count||group.length===best.count&&dist(u,seed.target)<dist(u,best.target))best={target:seed.target,count:group.length,center:seed.angle+(low+high)/2,width:Math.max(r.minArc,Math.min(r.maxArc,high-low+r.padding))};}
+ return best||{target:fallback,count:0,center:Math.atan2(fallback.y-u.y,fallback.x-u.x),width:r.minArc};
+}
+function aimTank(u,target){
+ const locked=u.sweep&&u.burst?.remaining>0;
+ const group=locked?null:tankGroup(u,target),aim=locked?u.burst.target:group.target;
+ if(!aim||aim.alive===false||aim.hp<=0||!visible(u,aim)||dist(u,aim)>=tankSweepRules.range){trackBurst(u,null);return;}
+ if(!burstReady(u,aim)||u.cool>0)return;
+ if(!u.sweep){const sign=u.nextSweepSign||1;u.nextSweepSign=-sign;u.sweep={start:group.center-sign*group.width/2,width:group.width,sign,total:u.burst.remaining,index:0};}
+ const sweep=u.sweep;u.angle=sweep.start+sweep.sign*sweep.width*sweep.index/(sweep.total-1);fire(u);sweep.index++;finishBurstShot(u);if(!u.burst.remaining)u.sweep=null;
+}
+function aimHuman(u,target,dt){if(u.type==='tank'){aimTank(u,target);return;}const angle=(u.type==='commando'?diagonal:cardinal)(Math.atan2(target.y-u.y,target.x-u.x));u.angle=angle;const across=Math.abs((target.x-u.x)*Math.sin(angle)-(target.y-u.y)*Math.cos(angle));if(across>10&&dt&&u.order!==3&&u.cannon===undefined){if(u.type==='commando'){const offset=-(target.x-u.x)*Math.sin(angle)+(target.y-u.y)*Math.cos(angle);navigate(u,-Math.sin(angle)*offset,Math.cos(angle)*offset,dt,36);}else{const vertical=Math.abs(Math.sin(angle))>.5;navigate(u,vertical?target.x-u.x:0,vertical?0:target.y-u.y,dt,u.type==='commander'?55:36);}u.angle=angle;}if(visible(u,target)&&burstReady(u,target)&&u.cool<=0){fire(u);finishBurstShot(u);}else if(!visible(u,target))trackBurst(u,null);}
 
 function nearest(u,list,max=Infinity){let best=null,d=max;for(const a of list){if(a.alive===false||a.hp<=0)continue;const t=dist(u,a);if(t<d){best=a;d=t;}}return best;}
-function fire(u,freeAim=false){if(u.cool>0)return;if(!freeAim&&u.team==='human'&&['soldier','commander','robot'].includes(u.type))u.angle=cardinal(u.angle);if(u.type==='commando')u.angle=diagonal(u.angle);u.cool=u.team==='alien'?enemyFireDelay(u):u.type==='tank'?.7:u.type==='air'?.3:u.type==='commander'?(u.weapon===1?.180:.250):u.weapon===1?.180:u.type==='commando'?.38:u.order===3?.20:.38;const angles=[u.team==='alien'?(u.shotOffset||0):0];for(const a of angles){const angle=u.angle+a;s.bullets.push({x:u.x+Math.cos(angle)*10,y:u.y+Math.sin(angle)*10,dx:Math.cos(angle),dy:Math.sin(angle),team:u.team,owner:u.id,life:u.weapon===1?.5:u.weapon===2?1.1:2.2,speed:u.team==='alien'?120:290,damage:u.type==='tank'?5:1,plasma:u.weapon===2});}if(window.ORIGINAL_AUDIO)sound(u.team==='alien'?0:u.weapon===1?13:u.weapon===2?12:u.type==='tank'?24:11,u.type==='commander'?.25:.08);else if(u.type==='commander')tone(110+rnd()*80,.025,.013);}
+function fire(u,freeAim=false){if(u.cool>0)return;if(!freeAim&&u.team==='human'&&['soldier','commander','robot'].includes(u.type))u.angle=cardinal(u.angle);if(u.type==='commando')u.angle=diagonal(u.angle);u.cool=u.team==='alien'?enemyFireDelay(u):u.type==='tank'?.5:u.type==='air'?.3:u.type==='commander'?(u.weapon===1?.180:.250):u.weapon===1?.180:u.type==='commando'?.38:u.order===3?.20:.38;const angles=[u.team==='alien'?(u.shotOffset||0):0];for(const a of angles){const angle=u.angle+a;s.bullets.push({x:u.x+Math.cos(angle)*10,y:u.y+Math.sin(angle)*10,dx:Math.cos(angle),dy:Math.sin(angle),team:u.team,owner:u.id,life:u.weapon===1?.5:u.weapon===2?1.1:2.2,speed:u.team==='alien'?120:290,damage:u.type==='tank'?5:1,plasma:u.weapon===2});}if(window.ORIGINAL_AUDIO)sound(u.team==='alien'?0:u.weapon===1?13:u.weapon===2?12:u.type==='tank'?24:11,u.type==='commander'?.25:.08);else if(u.type==='commander')tone(110+rnd()*80,.025,.013);}
 function burst(x,y,size=12,color='#f5a641'){s.effects.push({x,y,size,color,t:.4});}
 function spawnGroundBug(x,y){const special=rnd()<specialistRules.redbug.spawnChance,u=unit(x,y,'alien',special?'redbug':'soldier');u.hp=special?specialistRules.redbug.hp:s.difficulty?.bug||4;s.aliens.push(u);return u;}
 function kill(u,owner){u.alive=false;sound(u.team==='alien'?(u.type==='queen'?20:5):6,.22);burst(u.x,u.y,10,u.team==='alien'?'#b57068':'#7d3f35');if(u.team==='alien'){s.kills++;if(s.waveKills)s.waveKills[u.type==='queen'?'queen':'normal']++;if(owner)s.score[owner-1]+=10;if(u.type==='queen')for(let i=0;i<4;i++){spawnGroundBug(u.x+rnd()*30-15,u.y+rnd()*30-15);}}if(u.type==='commander'){u.respawn=10;if(u.id===activeCommander)drag=null;}}
@@ -113,7 +129,7 @@ function showUnits(){
  ['Commander','Commander1',1,'Bullet: 1; grenade: 12 to bugs, 15 to nests','0.25 s (4 shots/s); flame: 0.18 s','Keyboard / AI fires in four directions; selected mouse commander aims freely. Moves at 85 px/s, commands nearby troops and collects weapons/support. Returns after 10 s if army or incoming support remain; return shield lasts 0.6 s. Grenades: 0.33 s cooldown, up to 8 carried.'],
  ['Infantry','Troop',1,'1 per bullet','0.38 s (2.63 shots/s); Defend: 0.20 s (5/s)',burstText('soldier')+' Four-direction fire with firing-lane alignment. Sees visible enemies within 245 px. Normal patrols, Follow stays with its commander, Attack advances, Defend holds position. Collects weapons/eagles and occupies cannons.'],
  ['Commando','Troop',1,'1 per bullet','0.38 s (2.63 shots/s); flame: 0.18 s',burstText('commando')+' Blue bandana. Fires in eight directions, including diagonals. Delivered by blue-eagle air and infiltration support; retains normal infantry orders, sight, pickups, health and damage.'],
- ['Tank','Tank',8,'5 per bullet','0.70 s (1.43 shots/s)',burstText('tank')+' Uses squad orders, terrain routing and cardinal firing-lane aiming. Detects enemies within 300 px. More health and damage, slower fire.'],
+ ['Tank','Tank',8,'5 per bullet','0.50 s (2 shots/s)',burstText('tank')+' Sweeps a locked 30–80° arc toward the densest visible bug group within 300 px; narrow for tight groups, wider for spread groups. Alternates sweep direction between bursts. Falls back to a nest when no bugs are visible. Uses squad orders and terrain routing. Walls stop shots.'],
  ['Ground robot','ground bot',7,'1 per bullet','0.38 s; Defend: 0.20 s; flame: 0.18 s',burstText('robot')+' Uses squad orders, terrain routing and four-direction fire. Detects enemies within 245 px.'],
  ['Krate ground bug','Krate Ground Bug',h.bug,'Spit: 1; melee: 1',`${base.toFixed(1)}–${(base+1.6).toFixed(1)} s spit; melee: 1 s`,'Sees 175 px with clear sight. Spits in its facing direction ±11.25°. Randomly approaches, wanders or pauses. Focus lasts 1.5–3.5 s, then breaks for 1–3 s; may skip shooting. Evolves at a growplant.'],
  ['Red Krate bug','Krate Ground Bug',specialistRules.redbug.hp,'Spit: 1; melee: 1',`${specialistRules.redbug.fireMin}–${specialistRules.redbug.fireMax} s spit; melee: 1 s`,`Red abdomen band. ${specialistRules.redbug.sight} px sight, blocked by terrain. ${specialistRules.redbug.spawnChance*100}% chance among newly spawned ground bugs from nests, queens and waves. Fixed health/cooldown across difficulties; normal facing cone and randomized behavior. Can evolve into a normal queen.`],

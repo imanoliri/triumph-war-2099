@@ -14,7 +14,7 @@ const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.f
 vm.createContext(sandbox);
 for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
- if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,addTroop,variantMark});})();');
+ if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,addTroop,variantMark,tankGroup,aimTank,tankSweepRules});})();');
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
@@ -151,7 +151,7 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
 
 // Burst control retains shot cadence, independently varies timings and cannot bypass rests.
 {
- api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mask=null;state.rocks=[];state.doors=[];state.props=[];
+ api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mask=null;state.rocks=[];state.doors=[];state.props=[];state.aliens=[];
  const target={x:600,y:400,team:'alien',alive:true,hp:1000},other={...target,y:410};
  for(const type of ['soldier','robot','tank','commando']){
   const r=f.burstRules[type],sizes=new Set(),delays=new Set();
@@ -159,7 +159,7 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
    const u={x:400,y:400,team:'human',type,alive:true,hp:8,cool:0,weapon:0,order:0};state.bullets=[];const start=state.t;
    f.aimHuman(u,target,0);assert.equal(state.bullets.length,0);const delay=u.burst.readyAt-start;assert(delay>=r.delayMin-1e-9&&delay<=r.delayMax+1e-9);delays.add(delay);
    state.t=u.burst.readyAt;f.aimHuman(u,target,0);const size=1+u.burst.remaining;sizes.add(size);assert(size>=r.min&&size<=r.max);assert.equal(state.bullets.length,1);
-   const cadence=u.cool;assert.equal(cadence,type==='tank'?.7:.38);f.aimHuman(u,target,0);assert.equal(state.bullets.length,1,'Cannot skip within-burst cooldown');
+   const cadence=u.cool;assert.equal(cadence,type==='tank'?.5:.38);f.aimHuman(u,target,0);assert.equal(state.bullets.length,1,'Cannot skip within-burst cooldown');
    for(let n=1;n<size;n++){state.t+=cadence;u.cool=0;f.aimHuman(u,target,0);}assert.equal(state.bullets.length,size);assert.equal(u.burst.remaining,0);
    const rest=u.burst.restUntil-state.t;assert(rest>=r.restMin-1e-9&&rest<=r.restMax+1e-9);const restUntil=u.burst.restUntil;u.cool=0;f.aimHuman(u,other,0);assert.equal(u.burst.restUntil,restUntil,'Switch preserves rest');assert.equal(state.bullets.length,size);
    f.trackBurst(u,null);f.aimHuman(u,target,0);assert(u.burst.readyAt>=restUntil);assert.equal(state.bullets.length,size);
@@ -172,7 +172,7 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  const defender={x:400,y:400,team:'human',type:'soldier',cool:0,weapon:0,order:3};f.aimHuman(defender,target,0);state.t=defender.burst.readyAt;f.aimHuman(defender,target,0);assert.equal(defender.cool,.2);assert(defender.burst.remaining>=2&&defender.burst.remaining<=5);
  const flame={...defender,weapon:1,cool:0,burst:undefined};f.aimHuman(flame,target,0);state.t=flame.burst.readyAt;f.aimHuman(flame,target,0);assert.equal(flame.cool,.18);
  const commander={x:400,y:400,team:'human',type:'commander',cool:0,weapon:0};state.bullets=[];f.aimHuman(commander,target,0);assert.equal(state.bullets.length,1);assert.equal(commander.burst,undefined);
- elements['#units'].onclick();assert(elements['#unit-cards'].innerHTML.includes('5–9 shots per burst'));assert(elements['#unit-cards'].innerHTML.includes('3–6 shots per burst'));elements['#units-close'].onclick();
+ elements['#units'].onclick();assert(elements['#unit-cards'].innerHTML.includes('9–12 shots per burst'));assert(elements['#unit-cards'].innerHTML.includes('3–6 shots per burst'));elements['#units-close'].onclick();
  console.log('Passed soldier/robot/tank burst sizes, initial delays, rest ranges, target switching/loss, cadence, Defend/flame, continuous commander fire and guide descriptions.');
 }
 
@@ -192,4 +192,18 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  world.pickups=[{x:400,y:400,type:'plasma'}];world.humans=[commando];world.aliens=[];world.nests=[{x:900,y:700,hp:50,timer:1000}];world.mode='playing';g.update(.02);assert.equal(commando.weapon,2,'Commando collects weapons');
  g.variantMark(commando);g.variantMark(red);elements['#units'].onclick();assert(elements['#unit-cards'].innerHTML.includes('Red Krate bug'));assert(elements['#unit-cards'].innerHTML.includes('5–7 shots per burst'));elements['#units-close'].onclick();
  console.log('Passed air/indoor/infiltration commandos, diagonal fire, commando orders/pickups, 10-percent red spawn lottery, fixed red HP/cooldowns, 200px wall-limited sight and guide entries.');
+}
+
+{
+ api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mask=null;state.rocks=[];state.doors=[];state.props=[];
+ const tank={x:400,y:400,team:'human',type:'tank',alive:true,hp:8,cool:0,weapon:0,order:0};
+ const bug=(degrees,distance=200)=>({x:400+Math.cos(degrees*Math.PI/180)*distance,y:400+Math.sin(degrees*Math.PI/180)*distance,team:'alien',type:'soldier',alive:true,hp:100});
+ const isolated=bug(180,100);state.aliens=[isolated,bug(-25),bug(0),bug(25)];const group=f.tankGroup(tank,isolated);assert.equal(group.count,3,'Tank chooses denser group over closest isolated bug');assert(Math.abs(group.center)<1e-9);assert(group.width>=Math.PI/6&&group.width<=Math.PI*4/9);
+ state.bullets=[];f.aimTank(tank,isolated);state.t=tank.burst.readyAt;f.aimTank(tank,isolated);const sweep={...tank.sweep};assert.equal(tank.cool,.5);assert(sweep.total>=9&&sweep.total<=12);const first=Math.atan2(state.bullets[0].dy,state.bullets[0].dx);
+ for(const a of state.aliens){a.x+=40;a.y+=60;}
+ for(let i=1;i<sweep.total;i++){state.t+=.5;tank.cool=0;f.aimTank(tank,isolated);assert.equal(state.bullets.length,i+1);const actual=Math.atan2(state.bullets.at(-1).dy,state.bullets.at(-1).dx),expected=sweep.start+sweep.sign*sweep.width*i/(sweep.total-1);assert(Math.abs(Math.atan2(Math.sin(actual-expected),Math.cos(actual-expected)))<1e-9,'Locked evenly spaced sweep ignores moving targets');}
+ const last=Math.atan2(state.bullets.at(-1).dy,state.bullets.at(-1).dx);assert(Math.abs(last-first-sweep.width)<1e-9);const rest=tank.burst.restUntil-state.t;assert(rest>=1.5&&rest<3);state.t=tank.burst.restUntil;tank.cool=0;f.aimTank(tank,isolated);if(!tank.sweep){state.t=tank.burst.readyAt;f.aimTank(tank,isolated);}assert.equal(tank.sweep.sign,-sweep.sign,'Successive bursts reverse sweep direction');
+ f.trackBurst(tank,null);state.aliens=[];const nest={x:600,y:400,hp:50};const fallback=f.tankGroup(tank,nest);assert.equal(fallback.target,nest);assert.equal(fallback.width,Math.PI/6);
+ state.aliens=[bug(179),bug(-179),bug(175)];assert.equal(f.tankGroup(tank,nest).count,3,'Density grouping wraps across angle boundary');state.rocks=[{x:190,y:350,w:20,h:100}];assert.equal(f.tankGroup(tank,nest).count,0,'Group selection ignores bugs behind walls');
+ console.log('Passed tank density targeting, 9–12-shot 0.50s barrages, locked evenly spaced 30–80 degree sweep, direction alternation, rest, nest fallback, angle wrap and wall-limited grouping.');
 }

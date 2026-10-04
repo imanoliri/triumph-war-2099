@@ -163,3 +163,10 @@
 - Centralized new-ground-bug creation for nest births, queen births/death offspring and ordinary wave spawns; each has an independent 10% variant roll. Original placed bugs and queens remain unchanged.
 - Units now has both variants and air-support descriptions, with shared configuration-derived variant stats and burst timings. No recovered image asset was modified; markings are canvas overlays.
 - Logic checks cover all prior behavior plus air/infiltration arrivals, commando bursts/diagonal fire/orders/pickups, approximate 10% spawn frequency over 10,000 births, fixed red HP/cooldown across difficulties and wall-limited 200 px sight. Live visual/balance comparison remains unverified.
+
+## 2026-10-04 — Tank sweeping barrage
+- Updated tanks to 9–12-shot bursts and 0.50 s shot cooldown. Kept 1.5–3 s between-burst rest, 0.4–1.2 s target-acquisition delay, 8 HP and 5 damage.
+- Added grouping of visible living bugs within 300 px, including circular-angle wrapping; chooses densest angular neighborhood with closer anchors breaking ties. Tight groups use 30° arcs; spread groups extend up to 80°, with 10° padding bounded by those limits. Nest fallback uses 30°.
+- Locks center/width/direction and shot count at the first shot, spaces successive shots evenly edge-to-edge, and alternates sweep direction each burst. Tank aiming no longer uses cardinal lane alignment. Existing terrain routing, orders and projectile wall collisions stay active. Burst-anchor death or loss of sight/range interrupts the burst; rests persist through target changes.
+- Updated Units tank entry and README with barrage behavior/rate.
+- Checks include density choice vs nearest isolated bug, locked sweep under moving enemies, arc limits/endpoints/spacing, successive direction reversal, nest fallback, angle wrapping, walls and generic burst/rest/cadence rules. Live balance/rendering remains unverified.
