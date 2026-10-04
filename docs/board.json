@@ -392,6 +392,14 @@
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
       "questions": []
+    },
+    {
+      "id": "TRI-030",
+      "title": "Hide standing soldier sprite while mounted in turret",
+      "task": "docs/tasks/mounted-soldier-duplicate-sprite.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -1240,6 +1248,16 @@
         "relay-breaker-map-proposals",
         "Propose a new Relay Breaker map for user review",
         "Produce distinct visual custom-map proposals with terrain, routes, objectives, starts and enemy/support placements; user selects and refines a proposal before new-map implementation."
+      ]
+    },
+    {
+      "at": "2026-10-04T18:02:20.842Z",
+      "command": "create",
+      "ticket": "TRI-030",
+      "details": [
+        "mounted-soldier-duplicate-sprite",
+        "Hide standing soldier sprite while mounted in turret",
+        "Mounted soldiers render only the seated turret operator; standing sprite returns after dismount without changing turret combat or controls."
       ]
     }
   ]
