@@ -127,3 +127,9 @@ Explosive barrels/canisters damage enemies only: blasts deal 8 damage to bugs an
 Focus input preserves the clicked enemy across a double-click even if it moves. Repeated clicks on the same enemy retain the active burst and reaction timer. Enemy clicks never become force-move; empty-ground double-click retains that command. Firing LOS uses projectile clearance to the target body, separately from walking clearance, so nests along the bottom edge remain attackable. Focus orders approach only when out of weapon range or behind cover.
 
 Tank focus attacks use a 10° sweep centered on the assigned target. Autonomous barrages also have a 10° minimum, widening up to 80° for spread-out groups. Tanks no longer concentrate every focused shot on the exact center.
+
+
+### Forced interaction orders
+With troops selected, double right-click a door, terminal, pickup, cannon, alien flower or crystal objective to send eligible units there and use it. They route around terrain and pause combat and automatic eagle trips until the action finishes. New movement, attack or squad orders cancel the interaction. A cyan marker indicates the order.
+
+Groups operate doors once: closed doors open, open doors close. Locked doors wait for their linked terminal to unlock them. Terminals preserve their recovered door unlocks and objective flags. Pickups, flowers and cannons require infantry or commandos; tanks and robots can operate doors and terminals. Crystal objectives retain mission prerequisites and extraction rules.

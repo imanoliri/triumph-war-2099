@@ -217,3 +217,10 @@
 
 ## 2026-10-04 — Tank minimum sweep in both firing modes
 - Set autonomous tank minimum arc to 10° (maximum 80° remains). Explicit focus now also sweeps a 10° arc centered on its assigned target instead of firing every shot directly at the center. Burst size, cadence, rest, damage and reaction timing remain unchanged. Updated Units/README.
+
+
+## 2026-10-04 — Forced interaction orders
+- Double right-click usable objects with troops selected assigns a terrain-routed interaction order: doors, terminals, pickups, cannons, alien flowers and crystal objectives. Enemy focus takes priority; empty-ground double-click remains force move.
+- Shared group actions toggle a door only once. Locked doors wait for their source terminal; targeted terminal use preserves source unlocks and mission flags. Interaction sight prevents activating through another wall. Units pause combat and supply trips during the order and hold after completion; new player orders cancel it.
+- Infantry/commandos can collect pickups, consume flowers and occupy cannons. Tanks/robots can operate doors and terminals. Crystal recovery preserves the existing Caves contact rule and other mission/extraction prerequisites.
+- Updated Controls, terminal description and README. Syntax and simulation checks passed, including targeted terminal unlocks, shared door open/close, locked-door waiting, cancellation, double-click dispatch and blocked interaction sight. Live browser gameplay remains unverified.
