@@ -370,3 +370,13 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  api.loadMission(6);f=sandbox.window.__fixture();state=f.state;state.pickups=[{x:400,y:400,type:'tank'}];const labels=[],backings=[];const oldFill=ctx.fillText,oldRect=ctx.fillRect;ctx.fillText=value=>labels.push(value);ctx.fillRect=(x,y,w,h)=>{if(ctx.fillStyle==='#14201ef2')backings.push({x,y,w,h});};frames(1);ctx.fillText=oldFill;ctx.fillRect=oldRect;assert(labels.includes('SUPPORT UNAVAILABLE'),'Existing unsupported eagle is visibly explained');assert(backings.length,'Availability label has dark backing');assert(backings.every(b=>b.x>=0&&b.x+b.w<=1024&&b.y>=0&&b.y+b.h<=768),'Label backing remains inside map');
  console.log('Passed recovered Hanger bronze-spawn mismatch, all-nine generated eagle collection by commanders/soldiers, preserved indoor cap/blocked eagle retention, availability labels and later retry.');
 }
+
+// Render frames must leave the music pause API independent of gameplay freeze.
+{
+ const previous=sandbox.window.TriumphMusic,calls=[],tracks=[];let gestures=0;sandbox.window.TriumphMusic={pause:value=>calls.push(value),select:value=>tracks.push(value),unlock:()=>gestures++};
+ api.loadMission(1);elements['#start'].onclick();assert(api.state().paused);let before=api.state().time;frames(10);assert.equal(api.state().time,before,'Tactical startup remains frozen');assert.equal(calls.length,0,'Startup frames do not pause music');
+ for(const [open,close] of [['#options','#close'],['#units','#units-close']]){elements[open].onclick();frames(5);elements[close].onclick();frames(5);assert(api.state().paused);assert.equal(api.state().time,before);assert.equal(calls.length,0,'Tactical dialog frames never override music');}
+ elements['#pause'].onclick();frames(10);assert(api.state().time>before,'Simulation can resume while music stays independent');handlers.keydown(event('Space'));handlers.keyup(event('Space'));before=api.state().time;frames(10);assert.equal(api.state().time,before);assert.equal(calls.length,0,'Toggle frames do not pause or resume music');
+ api.loadMission(2);elements['#start'].onclick();frames(5);assert(api.state().paused);assert.equal(tracks.length,2,'Mission switching still selects tracks');assert(gestures>=3,'Gesture unlock remains connected');assert.equal(calls.length,0);sandbox.window.TriumphMusic=previous;
+ console.log('Passed frame integration: tactical start/toggle/dialogs freeze gameplay without overriding music pause, while mission track selection and gesture unlock remain.');
+}

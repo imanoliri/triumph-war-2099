@@ -1,7 +1,7 @@
 # Keep music playing in tactical mode
 
 - Ticket: TRI-013; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `fix/tactical-music`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Keep music playing in tactical mode
 
 ## Acceptance criteria
 
-- [ ] Entering or starting tactical mode freezes simulation without pausing music; switching missions and audio controls retain their normal behavior.
+- [x] Entering or starting tactical mode freezes simulation without pausing music; switching missions and audio controls retain their normal behavior.
 
 ## Scope and decisions
 
@@ -17,3 +17,6 @@ User explicitly requested on 2026-10-04 that tactical mode should not pause musi
 
 ## Sessions
 
+
+- [2026-10-04 / 016](../journal/2026-10-04-016-tactical-music.md)
+- [2026-10-04 / 017](../journal/2026-10-04-017-tactical-music.md)

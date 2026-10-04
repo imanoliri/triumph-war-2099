@@ -49,3 +49,5 @@ Local main preserves the accepted playable milestone; individual branches carry 
 Director coordination: [local board](docs/BOARD.md), [director instructions](docs/DIRECTOR.md), [worker instructions](docs/WORKER.md).
 
 Reinforcement eagles use mission support eligibility. Random eagles only spawn when currently usable; existing temporarily capped eagles remain and show TROOPS FULL · WAIT FOR SPACE until troops are lost. SUPPORT UNAVAILABLE marks a missing applicable mission support rule.
+
+Music continues during tactical mode and Controls/Units dialogs after the browser audio gesture unlock. Gameplay freeze does not change the music pause state; explicit audio API controls and mission track selection remain independent.
