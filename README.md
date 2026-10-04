@@ -121,3 +121,5 @@ Double right-click a living bug or nest with troops selected to assign it as the
 Carriers now stop for at least five seconds, unloading one soldier each second below the troop cap. New troops, tanks and robots resolve their arrival positions to clear ground. Aircraft starting off-map keep their recovered heading when it crosses the battlefield; otherwise they turn toward the map center. This fixes Flash Back's one-soldier carrier stop, stranded off-map tank and horizontal flight above the map.
 
 Static backdrops use their recovered top-left frame coordinates; image hotspots apply only to active sprites. Map backgrounds and collision masks are rebuilt together using this rule. Solid-color quick backdrops are rendered as well as contributing collision.
+
+Explosive barrels/canisters damage enemies only: blasts deal 8 damage to bugs and 12 to nests, while the remaining fire affects bugs. Friendly soldiers, commandos, tanks, robots and commanders are immune to both the blast and its fire. Nearby container chain reactions remain.

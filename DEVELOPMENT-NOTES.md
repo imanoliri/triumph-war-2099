@@ -205,3 +205,6 @@
 - Visually inspected Retake Base and a nine-map contact sheet: building perimeter/corners now join and cliff edges align. Saved outputs/triumph-map-overview.png.
 - Compared old/new original-data: object definitions, image metadata, frame/object placements and briefings are identical; only all nine masks change. Confirmed a recovered wall pixel appears at its actual top-left coordinate.
 - Existing game simulation checks passed, including all missions, navigation/support, Flash Back arrivals, focus orders, eagle trips and tank sweeps. Live browser play and collision comparison with the original remain unverified.
+
+## 2026-10-04 — Enemy-only explosive barrels
+- Barrel/canister blast damage now iterates enemies only; friendly units and commanders take no blast damage. Lingering barrel fire likewise affects bugs only. Nest damage and prop chain reactions remain unchanged. Updated Units guide and README.
