@@ -1,0 +1,19 @@
+'use strict';
+// Read only tracked recovered/custom data; write only this kit's catalogs.
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'../..');process.chdir(root);
+const box={window:{}};
+vm.runInNewContext(fs.readFileSync('assets/original-data.js','utf8'),box);
+vm.runInNewContext(fs.readFileSync('assets/custom/split-ridge/terrain.js','utf8'),box);
+const original=box.window.ORIGINAL,terrain=box.window.TriumphTerrains['split-ridge'];
+const spriteIds=[51,91,100,101,52,146,74,257,63,65,54,151,152];
+const sprites=spriteIds.map(object=>{const o=original.objects[object],a=Object.values(o.animations||{})[0],d=Object.values(a||{})[0],handle=d?.frames[0]??o.image;return {object,name:o.name,handle,...original.images[handle],path:`assets/images/${handle}.png`,provenance:'recovered; Anthony Lopes / DarkSun Games',selection:'first animation, first direction, first frame; reference only'};});
+const sourceMap=original.maps.find(m=>m.index===7);
+const elements=[...new Set(sourceMap.instances.map(i=>original.objects[i.object].image).filter(h=>h!==undefined&&h!==1))].map(handle=>({handle,path:`assets/images/${handle}.png`,...original.images[handle],provenance:'recovered Desert Rocks backdrop; role inferred visually, not recovered name'}));
+const refs=[['assets/custom/split-ridge/terrain.png','custom terrain'],['assets/custom/split-ridge/collision.png','custom mask'],['assets/custom/split-ridge/terrain.js','custom packed mask'],['tools/build-split-ridge.py','custom editable deterministic authoring source'],['assets/maps/7.png','recovered Desert Rocks'],['assets/original-data.js','recovered metadata and original mask'],['assets/provenance.json','recovered provenance'],['docs/design/relay-breaker-maps/proposals.json','custom approved A and saved B/C geometry'],...['a-split-ridge','b-relay-basin','c-switchback-mesa'].flatMap(id=>[['docs/design/relay-breaker-maps/'+id+'.png','custom schematic'],['docs/design/relay-breaker-maps/'+id+'.svg','custom editable schematic']]),['docs/playtests/artifacts/2026-10-04-split-ridge-tactical.png','historical final tactical screenshot'],['docs/playtests/artifacts/2026-10-04-split-ridge-live.png','historical live screenshot before final cosmetic refinement'],['docs/playtests/2026-10-04-split-ridge.md','historical browser limits']];
+const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const proposal=JSON.parse(fs.readFileSync('docs/design/relay-breaker-maps/proposals.json'))[0];
+const placements=[...proposal.starts.commanders.map(point=>({kind:'commander',point})),...proposal.starts.soldiers.map(point=>({kind:'soldier',point})),...proposal.bugs.map(point=>({kind:'bug',point})),...proposal.nests.map(point=>({kind:'nest',point})),...proposal.relays.map(point=>({kind:'relay',point})),...proposal.support.map((point,i)=>({kind:i?'tank support':'troop support',point})),{kind:'plasma',point:proposal.plasma}];
+const manifest={kit:'TRI-033',world:[1024,768],origin:'top-left',hudQuietRows:32,authoringGrid:[512,384],maskBytes:98304,maskSha256:crypto.createHash('sha256').update(Buffer.from(terrain.mask,'base64')).digest('hex'),maskBase64:terrain.mask,polygons:terrain.polygons,placements,routes:proposal.routes,obstacleEnvelopes:proposal.obstacles,palette:{sand:['#d8b860','#c8a848','#f0d070','#b89840','#d0a860','#e0b870'],rock:['#887858','#988060','#b09868','#c0a078','#d0b888','#785020']},references:refs.map(([p,provenance])=>({path:p,provenance,sha256:sha(p)})),sprites,elements};
+for(const [name,data] of [['manifest',manifest],['sprites',sprites]])fs.writeFileSync(`docs/art-kit/${name}.json`,JSON.stringify(data,null,2)+'\n');
+console.log(`Kit catalog: ${refs.length} references, ${sprites.length} sprites, ${elements.length} backdrop handles, ${placements.length} hotspots.`);

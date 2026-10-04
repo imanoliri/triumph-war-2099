@@ -1,7 +1,7 @@
 # Prepare reusable map art kit and AI handoff prompts
 
 - Ticket: TRI-033; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `chore/map-art-handoff-kit`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Prepare reusable map art kit and AI handoff prompts
 
 ## Acceptance criteria
 
-- [ ] A self-contained map art kit provides fixed geometry contracts, palettes, element/sprite references, map images/screenshots and bounded artist prompts for other AI workers without gameplay changes.
+- [x] A self-contained map art kit provides fixed geometry contracts, palettes, element/sprite references, map images/screenshots and bounded artist prompts for other AI workers without gameplay changes.
 
 ## Scope and decisions
 
@@ -30,3 +30,4 @@ User explicitly confirmed ticket preparation and queue priority on 2026-10-04: r
 User refinement on 2026-10-04: TRI-033 must add adequate prompts and skills or workflows for the director/orchestrator and feature session to conduct delegated art work. Deliver concrete director intake/dispatch/review workflow, reusable bounded artist-session workflow, and filled Split Ridge handoff prompt, not only a reference folder. Integrate with existing DIRECTOR/WORKER/WORKFLOW through concise links, avoiding duplicated policies and recursive sessions. Assess whether a small dedicated reusable skill is useful; if creating a Codex skill, read skill-creator first and keep authority limited to the art kit (no autonomous scope expansion, new threads, publication or model override). Otherwise use explicit repository workflow/prompt files with clear trigger and minimal context pointers. Teach director what to send and what evidence to require; teach artist worker how to locate references, preserve immutable mask/gameplay, produce editable/raster outputs, visually verify and stop at Review. Document available tool/skill selection for raster generation versus deterministic SVG/canvas/tile authoring, with exact invoked-skill requirements when applicable. No need to install tools or a plugin to make the handoff usable.
 
 Priority confirmation on2026-10-05: user corrected immediate balance start to after TRI-033. Finish current kit, then start TRI-034 directly afterward; do not park this task.
+- [2026-10-04 / 051](../journal/2026-10-04-051-map-art-handoff-kit.md)

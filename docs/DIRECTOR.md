@@ -1,5 +1,7 @@
 # Director workflow
 
+For an approved map-art ticket, use the [art intake/dispatch/review checklist](art-kit/director-workflow.md) and its complete prompts/reference kit. This adds art evidence requirements within the authority below.
+
 The user talks to the director. One implementation worker handles one approved ticket in an isolated Git worktree. This is a local workflow, not a running service or a native GitHub Projects integration.
 
 ## Director boundary and context

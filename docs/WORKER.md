@@ -1,5 +1,7 @@
 # Implementation worker
 
+For approved map-art work, the [artist-session workflow](art-kit/artist-workflow.md) provides immutable geometry, reference and output checks within this worker policy.
+
 Handle one ticket in the assigned branch/worktree. Read AGENTS, the ticket task and latest journal; the task is the authoritative scope/acceptance record. The director owns the local board in its checkout and all user communication.
 
 1. Inspect branch, HEAD and unrelated edits; resume existing work without reset/clean. Use the initial session linked by preparation for this run; do not create a duplicate. Continue it on retries and steering. Only a genuinely new execution run (such as replacement after a stopped worker) creates a new journal with `node tools/task.cjs session <slug>` after reading the previous handoff. Preserve earlier records.
