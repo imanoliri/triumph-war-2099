@@ -1,6 +1,6 @@
-import json,base64,os
+import json,base64,os,sys
 from PIL import Image,ImageDraw
-root='work/recovered';dest='assets';os.makedirs(dest+'/maps',exist_ok=True)
+root=sys.argv[1] if len(sys.argv)>1 else 'work/recovered';dest='assets';os.makedirs(dest+'/maps',exist_ok=True)
 objects=json.load(open(root+'/objects.json'));frames=json.load(open(root+'/frames.json'));images=json.load(open(root+'/images.json'))
 lookup={o['handle']:o for o in objects};info={i['handle']:i for i in images};cache={i['handle']:Image.open(f"{dest}/images/{i['handle']}.png") for i in images}
 maps=[]
@@ -9,7 +9,10 @@ for fi in [5,7,9,11,13,15,17,19,21]:
  for ins in f['instances']:
   o=lookup[ins['object']]
   if o['type']>1:continue
-  if o.get('image') not in cache:continue
+  if o.get('image') not in cache:
+   if o['type']==0 and o.get('width') and o.get('height'):
+    ImageDraw.Draw(mask).rectangle((ins['x'],ins['y'],ins['x']+o['width']-1,ins['y']+o['height']-1),fill=255 if o.get('obstacle')==1 else 0)
+   continue
   img=cache[o['image']];it=info[o['image']];x,y=ins['x'],ins['y']
   if o['type']==0:
    tile=Image.new('RGBA',(o['width'],o['height']))
@@ -18,7 +21,9 @@ for fi in [5,7,9,11,13,15,17,19,21]:
    img=tile
   else:x-=it['hx'];y-=it['hy']
   im.alpha_composite(img,(x,y))
-  if o.get('obstacle')==1:mask.paste(255,(x,y),img.getchannel('A'))
+  # Backdrops overwrite the collision plane in drawing order. A non-obstacle
+  # floor can carve a walkable corridor out of an earlier rock backdrop.
+  mask.paste(255 if o.get('obstacle')==1 else 0,(x,y),img.getchannel('A'))
  im.convert('RGB').save(f'{dest}/maps/{fi}.png')
  bits=bytearray(1024*768//8)
  for p,v in enumerate(mask.getdata()):
@@ -30,5 +35,7 @@ for fi in [5,7,9,11,13,15,17,19,21]:
  maps.append({**f,'briefing':texts,'mask':base64.b64encode(bits).decode()})
 data={'images':{i['handle']:i for i in images},'objects':{o['handle']:o for o in objects},'maps':maps,'title':frames[2]}
 open(dest+'/original-data.js','w',encoding='utf8').write('window.ORIGINAL='+json.dumps(data,separators=(',',':'))+';\n')
-open(dest+'/provenance.json','w').write(json.dumps({'source':'C:/Games/DarkSunGames/2099_23.exe','originalAuthor':'Anthony Lopes / DarkSun Games','images':len(images),'objectDefinitions':len(objects),'frames':len(frames),'gameplayFrames':[m['index'] for m in maps],'extraction':'MMF 1.x image bank and frame chunks; RGB555 pixels; static backdrop collision masks'},indent=2))
+provenance_path=dest+'/provenance.json'
+previous=json.load(open(provenance_path)) if os.path.exists(provenance_path) else {}
+open(provenance_path,'w').write(json.dumps({**previous,'source':'C:/Games/DarkSunGames/2099_23.exe','originalAuthor':'Anthony Lopes / DarkSun Games','images':len(images),'objectDefinitions':len(objects),'frames':len(frames),'gameplayFrames':[m['index'] for m in maps],'extraction':'MMF 1.x image bank and frame chunks; RGB555 pixels; static backdrop collision masks'},indent=2))
 print('Generated nine original backgrounds, collision masks, placements, animation metadata and briefings')

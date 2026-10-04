@@ -32,11 +32,15 @@ Press Orders then a direction: Up = Attack, Down = Defend, Right = Follow, Left 
 
 Left-drag on the battlefield selects infantry, tanks and ground robots. A left-click selects one troop; Shift adds troops (Shift-click toggles one). Right-click orders selected troops to attack-move: route toward spaced destination positions, engage visible enemies, then resume travel and hold on arrival. Troops assigned to cannons dismount when ordered. Clicks inside terrain resolve to nearby reachable ground. Commander keyboard controls remain separate. Nearby commander orders replace mouse destinations.
 
-Enter starts/advances/continues. Escape or Space pauses. F2 restarts. The mission selector supports development comparisons. Commanders return after ten seconds while a non-player troop survives. Continuing a failed mission costs 100 merits.
+Enter starts/advances/continues. Escape or Space pauses. F2 restarts. The mission selector supports development comparisons. Commanders return after ten seconds while army units or incoming reinforcements remain. Indoor zipline arrivals and unfinished landing drops count. A brief spawn shield blocks attacks and clears nearby bugs; returning positions resolve to clear ground. If the entire army and all commanders are gone with no reinforcements pending, the mission is lost. Continuing a failed mission costs 100 merits.
 
 ## Fidelity gaps and verification
 
+Collision masks now apply backdrop layering, allowing non-obstacle floors to clear earlier rock layers; this fixes Caves previously being entirely blocked. Image-free rectangular quick backdrops also contribute collision.
+
 Map art and sprite pixels are recovered; gameplay remains reconstructed. All 7,172 original event groups are decoded, and a subset is translated into `assets/original-rules.js`: terminal/door dependencies, mission time gates, health for five difficulty levels, enemy limits, difficulty culling markers, final kill targets and crystal extraction requirements.
+
+Random reinforcement eagles, weapon pickups and grenades regenerate from recovered one-second item rolls: Random(100) on Desert Canyon and Random(150) on later missions. Pickup count and troop limits follow the decoded events. Ground/air/tank eagle types use each map’s original object handles. Placement prefers the moving item creator and falls back to open terrain. The original BLITZ random-spawn condition checks a secondary variable fixed at 20 against ≤11; that contradictory condition is preserved, so BLITZ is collectible where placed but does not randomly regenerate.
 
 Support pickups now use source-derived creation rules and original sprites. Outdoor carriers follow recovered paths and drop infantry while stopped. Aircraft pass through the map, strafe, drop troops and bomb. Later maps use five-troop telepad arrivals, ten-second zipline creators and seven-hit ground robots. BLITZ uses the executable's creation list: one carrier, two aircraft and one tank.
 
@@ -68,6 +72,7 @@ Recovery scripts in `tools/` run from this repository directory:
 12. `node tools/derive-support-rules.cjs`
 13. `node tools/build-music.cjs`
 14. `python tools/build-windows-midi-bank.py` (Windows local sample bank)
+15. `node tools/derive-pickup-rules.cjs`
 
 The generated `assets/audio/gm-bank.js` is local to your Windows installation and excluded from Git. Regenerate it after cloning using step 14; the game falls back to simple synthesis if it is absent. The original MIDI files remain included unchanged. DLS regions, tuning and loop metadata follow Microsoft’s [DirectMusic region documentation](https://learn.microsoft.com/nl-nl/previous-versions/ms808241%28v%3Dmsdn.10%29).
 
