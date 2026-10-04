@@ -470,10 +470,16 @@
       "id": "TRI-034",
       "title": "Increase challenge in Relay Breaker and Last Convoy",
       "task": "docs/tasks/custom-mission-challenge.md",
-      "status": "Ready",
-      "reason": "User explicitly requests solving both custom missions tooeasy even on harder setting, and clarified startdirectly after033. Art kit accepted; bounded custompressure/resources tuning scope approved.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User explicitly requests solving both custom missions tooeasy even on harder setting, and clarified startdirectly after033. Art kit accepted; bounded custompressure/resources tuning scope approved."
+      "approval": "User explicitly requests solving both custom missions tooeasy even on harder setting, and clarified startdirectly after033. Art kit accepted; bounded custompressure/resources tuning scope approved.",
+      "worker": {
+        "id": "/root/challenge_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-mission-challenge",
+        "branch": "feature/custom-mission-challenge"
+      },
+      "branch": "feature/custom-mission-challenge"
     }
   ],
   "events": [
@@ -1597,6 +1603,15 @@
       "details": [
         "Ready",
         "User explicitly requests solving both custom missions tooeasy even on harder setting, and clarified startdirectly after033. Art kit accepted; bounded custompressure/resources tuning scope approved."
+      ]
+    },
+    {
+      "at": "2026-10-04T22:08:16.182Z",
+      "command": "dispatch",
+      "ticket": "TRI-034",
+      "details": [
+        "../triumph-custom-mission-challenge",
+        "/root/challenge_worker"
       ]
     }
   ]
