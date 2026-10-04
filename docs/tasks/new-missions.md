@@ -25,3 +25,5 @@ User explicitly requested creating new missions after TRI-022 on 2026-10-04. Wor
 Director working scope is three independent custom scenarios using existing assets, starting with [TRI-024](custom-relay-breaker.md), then Last Convoy and Silent Return in separate tickets. This is a stated working assumption under the explicit creation request; no submitted count answer is claimed. Designs accepted in d49158a; no forced unlocking or new artwork.
 
 Bounded follow-up tickets: [TRI-025 Last Convoy](custom-last-convoy.md), [TRI-026 Silent Return](custom-silent-return.md). Begin only after preceding registry/mission review and acceptance.
+
+User steering: requested visual proposals for a new Relay Breaker map, for direct review/alignment before implementation. [TRI-029](relay-breaker-map-proposals.md) follows active defense ticket; infiltration remains queued. Existing Relay Breaker currently reuses Desert Rocks, disclosed honestly.

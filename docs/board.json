@@ -384,6 +384,14 @@
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
       "questions": []
+    },
+    {
+      "id": "TRI-029",
+      "title": "Propose a new Relay Breaker map for user review",
+      "task": "docs/tasks/relay-breaker-map-proposals.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -1222,6 +1230,16 @@
       "details": [
         "../triumph-custom-last-convoy",
         "/root/convoy_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T17:57:47.571Z",
+      "command": "create",
+      "ticket": "TRI-029",
+      "details": [
+        "relay-breaker-map-proposals",
+        "Propose a new Relay Breaker map for user review",
+        "Produce distinct visual custom-map proposals with terrain, routes, objectives, starts and enemy/support placements; user selects and refines a proposal before new-map implementation."
       ]
     }
   ]
