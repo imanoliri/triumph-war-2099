@@ -129,3 +129,8 @@
 
 - User requested diagonal mouse shooting. Selected commanders now aim/fire toward the exact cursor angle, with a scoped fire override so regular infantry and AI keep their cardinal aiming rule. Mouse grenades use the same direction; V fire also follows an active mouse aim. Original sprite animations still choose the nearest available facing.
 - Logic checks pass for diagonal shots in all four quadrants, a non-45-degree cursor direction, mouse grenade direction and existing cardinal infantry behavior. Live play remains unverified.
+
+## 2026-10-04 — held mouse autofire
+
+- User requested continuous mouse firing. Holding left mouse in commander mode now repeats shots at the existing weapon cooldown, and continues aiming as the cursor moves, including diagonals. Release, cancellation, commander switch, death, blur, pause and opening Controls clear the held gesture. A brief stationary hold starts autofire; immediate drags still select troops, and Shift-drag always selects. Quick clicks retain single shots.
+- Checks pass for repeated shots, normal weapon rate, moving aim, release/cancel stopping and drag/Shift selection without shots. Full gameplay suite passes; live mouse play remains unverified.
