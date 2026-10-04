@@ -158,7 +158,7 @@
         {
           "number": 2,
           "question": "Does the user identify population cap as the observed trigger?",
-          "answer": "User: yeah, it seems to be population cap! Preserve the cap; fix silent unavailability and retain existing eagle until capacity returns."
+          "answer": "User: 'yeah, it seems to be population cap!' Director implementation decision within scoped fix: preserve the cap; explain temporary unavailability and retain existing eagle until capacity returns."
         }
       ],
       "approval": "User reported visible randomly unpickable eagles on 2026-10-04; approved bounded diagnosis/fix and regression scope.",
