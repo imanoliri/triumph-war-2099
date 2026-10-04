@@ -190,8 +190,8 @@
       "id": "TRI-014",
       "title": "Fix soldiers routing through walls near closed doors",
       "task": "docs/tasks/closed-door-pathing.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Director reviewed route/collision/cache diff and independent full suite passed; reproduced room fixture now reaches target without blocked terrain. Worker0bdc25d; live routing unverified.",
       "questions": [],
       "approval": "User reported wall-shortcut closed-door soldier routing on 2026-10-04 and requested bounded fix.",
       "worker": {
@@ -603,6 +603,15 @@
       "details": [
         "../triumph-closed-door-pathing",
         "/root/commander_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T14:50:30.915Z",
+      "command": "move",
+      "ticket": "TRI-014",
+      "details": [
+        "Review",
+        "Director reviewed route/collision/cache diff and independent full suite passed; reproduced room fixture now reaches target without blocked terrain. Worker0bdc25d; live routing unverified."
       ]
     }
   ]
