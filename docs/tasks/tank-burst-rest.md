@@ -19,5 +19,9 @@ Later bounded investigation should inspect tank burst size, shot cadence, cooldo
 
 ## Sessions
 
+## Queue execution approval
+
+2026-10-05 user authorized continuing the queue. Agreed implementation: randomized tank rest from 3.5 to 4.5 seconds, preserving burst size/cadence and other units. Execute after TRI-027, as a separate bounded worker ticket.
+
 
 

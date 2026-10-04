@@ -382,17 +382,19 @@
       "id": "TRI-027",
       "title": "Fix soldier hunt stopping before aim alignment",
       "task": "docs/tasks/soldier-hunt-alignment.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "User authorized queue execution 2026-10-05; bounded hunt alignment fix next after TRI-034",
+      "questions": [],
+      "approval": "User authorized queue execution 2026-10-05; bounded hunt alignment fix next after TRI-034"
     },
     {
       "id": "TRI-028",
       "title": "Review tank rest between firing bursts",
       "task": "docs/tasks/tank-burst-rest.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "User authorized queue execution; agreed 3.5-4.5s tank rest; follows TRI-027",
+      "questions": [],
+      "approval": "User authorized queue execution; agreed 3.5-4.5s tank rest; follows TRI-027"
     },
     {
       "id": "TRI-029",
@@ -414,9 +416,10 @@
       "id": "TRI-030",
       "title": "Hide standing soldier sprite while mounted in turret",
       "task": "docs/tasks/mounted-soldier-duplicate-sprite.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "User authorized queue execution; scoped duplicate mounted sprite fix follows TRI-028",
+      "questions": [],
+      "approval": "User authorized queue execution; scoped duplicate mounted sprite fix follows TRI-028"
     },
     {
       "id": "TRI-031",
@@ -1648,6 +1651,33 @@
         "beneath-the-dunes",
         "Create Beneath the Dunes desert convoy rescue",
         "Implement the approved desert convoy-rescue objective and new map, with reachable routes, charging-worm encounters, difficulty profiles and separately recorded live evidence."
+      ]
+    },
+    {
+      "at": "2026-10-04T22:30:00.119Z",
+      "command": "move",
+      "ticket": "TRI-027",
+      "details": [
+        "Ready",
+        "User authorized queue execution 2026-10-05; bounded hunt alignment fix next after TRI-034"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:30:00.181Z",
+      "command": "move",
+      "ticket": "TRI-028",
+      "details": [
+        "Ready",
+        "User authorized queue execution; agreed 3.5-4.5s tank rest; follows TRI-027"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:30:00.244Z",
+      "command": "move",
+      "ticket": "TRI-030",
+      "details": [
+        "Ready",
+        "User authorized queue execution; scoped duplicate mounted sprite fix follows TRI-028"
       ]
     }
   ]

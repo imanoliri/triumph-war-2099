@@ -17,4 +17,8 @@ User observed 2026-10-04 that a soldier manning a turret appears both correctly 
 
 ## Sessions
 
+## Queue execution approval
+
+2026-10-05 user authorized continuing the queue. Execute this scoped rendering fix after TRI-028 with the existing observable acceptance, preserving mounted combat and controls. Separate worker ticket; no asset regeneration.
+
 

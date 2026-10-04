@@ -19,4 +19,8 @@ Proposed observable acceptance for later approved fix: ordinary soldiers pursuin
 
 ## Sessions
 
+## Queue execution approval
+
+2026-10-05 user explicitly authorized continuing to consume the queue. Director selects this bounded reported bug next after TRI-034: reproduce and fix firing/stop eligibility against the existing legal aiming rules, with the scope and observable cases above. No permission for a generic combat or navigation rewrite. Fresh isolated worker, one active ticket, stops at Review.
+
 
