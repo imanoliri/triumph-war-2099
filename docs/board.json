@@ -142,6 +142,15 @@
         "reviewedImplementationCommit": "b13c96abd78918003c48f2acfcfd04462188d84f",
         "squashCommit": "03f75fcd2411545a5193e4a8c6d035c8de6f253e"
       }
+    },
+    {
+      "id": "TRI-012",
+      "title": "Fix rendered reinforcement eagles that cannot be collected",
+      "task": "docs/tasks/eagle-pickup-fix.md",
+      "status": "Ready",
+      "reason": "User reported visible randomly unpickable eagles on 2026-10-04; approved bounded diagnosis/fix and regression scope.",
+      "questions": [],
+      "approval": "User reported visible randomly unpickable eagles on 2026-10-04; approved bounded diagnosis/fix and regression scope."
     }
   ],
   "events": [
@@ -311,6 +320,25 @@
         "/root",
         "03f75fc",
         "b13c96a"
+      ]
+    },
+    {
+      "at": "2026-10-04T14:28:11.935Z",
+      "command": "create",
+      "ticket": "TRI-012",
+      "details": [
+        "eagle-pickup-fix",
+        "Fix rendered reinforcement eagles that cannot be collected",
+        "Reproduce a visible unpickable reinforcement eagle, fix its cause without bypassing legitimate support constraints, and add relevant regressions."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:28:12.051Z",
+      "command": "move",
+      "ticket": "TRI-012",
+      "details": [
+        "Ready",
+        "User reported visible randomly unpickable eagles on 2026-10-04; approved bounded diagnosis/fix and regression scope."
       ]
     }
   ]
