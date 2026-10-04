@@ -13,13 +13,13 @@ On foot, regular soldiers, robots and AI commanders fire in four cardinal direct
 | Soldier | 1 | 1 | 3–6 | 0.8–1.8 s | 0.2–0.8 s |
 | Commando | 1 | 1 | 5–7 | 0.8–1.2 s | 0.2–0.4 s |
 | Robot | 7 | 1 | 3–6 | 0.8–1.8 s | 0.2–0.8 s |
-| Tank | 8 | 5 | 9–12 | 2.5–3.5 s | 0.4–1.2 s |
+| Tank | 8 | 5 | 9–12 | 3.5–4.5 s | 0.4–1.2 s |
 | Commander | 1 | 1 | Continuous player fire | Weapon cooldown | None |
 | Normal bug, normal difficulty | 4 | 1 | One spit | 3.8–5.4 s | AI decision timing |
 | Queen, normal difficulty | 50 | 1 | One spit | Normal bug + 0.4 s | AI decision timing |
 | Red bug | 5 | 1 | One spit | 2.6–4.2 s | AI decision timing |
 
-Normal infantry shot intervals: 0.38 s, Defend 0.20 s, flame 0.18 s. Commandos retain 0.38 s in Defend; flame remains 0.18 s. Tanks use 0.20 s. Commander normal/plasma interval 0.25 s, flame 0.18 s. Target loss interrupts bursts; target switching preserves rest and adds acquisition delay. Perception adds separate reaction delays. No armor or defense roll exists.
+Normal infantry shot intervals: 0.38 s, Defend 0.20 s, flame 0.18 s. Commandos retain 0.38 s in Defend; flame remains 0.18 s. Tanks use 0.20 s. Their custom 3.5–4.5 s rest runs from the final shot to next-burst eligibility with a continuously valid target; target reacquisition can add delay. Commander normal/plasma interval 0.25 s, flame 0.18 s. Target loss interrupts bursts; target switching preserves rest and adds acquisition delay. Perception adds separate reaction delays. No armor or defense roll exists.
 
 Tank autonomous barrages choose the densest visible bug group within 300 px, sweep 25–80°, lock the arc for that burst and reverse direction next burst. A nest is the fallback. Explicit focus attacks sweep 15° centered on the assigned target. Tank shot volume is twice its original recreation setting (0.16 versus 0.08).
 

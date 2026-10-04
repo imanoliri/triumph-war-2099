@@ -15,7 +15,7 @@ const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.f
 vm.createContext(sandbox);
 for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','src/breeding.js','src/balance.js','assets/custom/split-ridge/terrain.js','src/custom-missions.js','src/missions.js','src/rally.js','src/vent-bugs.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
- if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival,toggleRally,addRally,removeRally,assignRally});})();');
+ if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,setSeed:value=>seed=value>>>0,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival,toggleRally,addRally,removeRally,assignRally});})();');
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
@@ -203,6 +203,25 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  console.log('Passed TRI-027 stationary/moving hunt, nine-pixel/close diagonal lanes, flame closing, projectile obstruction, focus and asymmetric infantry headings.');
 }
 
+// TRI-028: seeded final-shot timing, stable-target boundary and rest lifecycle.
+{
+ api.loadMission(1);const f=sandbox.window.__fixture(),st=f.state;st.mask=null;st.rocks=[];st.doors=[];st.props=[];st.aliens=[];
+ for(const [type,expected] of Object.entries({soldier:[3,6,.8,1.8,.2,.8],robot:[3,6,.8,1.8,.2,.8],commando:[5,7,.8,1.2,.2,.4],tank:[9,12,3.5,4.5,.4,1.2]}))assert.deepEqual(Object.values(f.burstRules[type]),expected,'Exact isolated burst rules for '+type);
+ const target={x:600,y:400,alive:true,hp:1000},make=()=>({x:400,y:400,team:'human',type:'tank',alive:true,hp:8,cool:0,weapon:0,order:0,focusTarget:target});
+ const rests=new Set();
+ for(const seedValue of [0,1,2099,123456789,2147483648,4294967295]){
+  const u=make();st.bullets=[];f.setSeed(seedValue);f.aimTank(u,target);st.t=u.burst.readyAt;f.aimTank(u,target);const size=st.bullets.length+u.burst.remaining;assert(size>=9&&size<=12);
+  for(let n=1;n<size;n++){assert.equal(u.cool,.2);f.aimTank(u,target);assert.equal(st.bullets.length,n,'Within-burst cooldown blocks repeated call');st.t+=.2;u.cool=0;f.aimTank(u,target);}
+  const last=st.t,until=u.burst.restUntil,rest=until-last;rests.add(rest);assert(rest>=3.5&&rest<4.5);u.cool=0;st.t=until-1e-6;f.aimTank(u,target);assert.equal(st.bullets.length,size,'No early stable-target burst');st.t=until;f.aimTank(u,target);assert.equal(st.bullets.length,size+1,'Stable target fires at exact rest eligibility');assert(Math.abs(st.t-last-rest)<1e-9);
+ }
+ assert(rests.size>1,'Seeded rest varies');
+ const u=make();st.bullets=[];f.aimTank(u,target);st.t=u.burst.readyAt;f.aimTank(u,target);while(u.burst.remaining){st.t+=.2;u.cool=0;f.aimTank(u,target);}const until=u.burst.restUntil,count=st.bullets.length;u.cool=0;
+ f.trackBurst(u,null);st.t=until-.1;f.aimTank(u,target);assert.equal(u.burst.restUntil,until);assert(u.burst.readyAt>until,'Late reacquisition adds reaction delay');st.t=until;f.aimTank(u,target);assert.equal(st.bullets.length,count);st.t=u.burst.readyAt;f.aimTank(u,target);assert.equal(st.bullets.length,count+1);
+ st.mode='playing';st.humans=[u];resumeSimulation();elements['#pause'].onclick();const frozen=JSON.stringify(u.burst),clock=st.t,cool=u.cool;f.update(10);assert.equal(st.t,clock);assert.equal(JSON.stringify(u.burst),frozen);assert.equal(u.cool,cool,'Tactical mode freezes cooldown');elements['#reset'].onclick();const reset=sandbox.window.__fixture().state;assert.equal(reset.t,0);assert(reset.humans.every(v=>!v.burst),'Restart discards old burst timers');
+ elements['#units'].onclick();assert(elements['#unit-cards'].innerHTML.includes('9–12 shots per burst; 3.5–4.5 s rest; 0.4–1.2 s reaction delay.'));elements['#units-close'].onclick();
+ console.log('Passed TRI-028 seeded final-shot rest boundaries, stable-target eligibility, 9–12 shots/.20s cadence, late reacquisition, tactical freeze, restart, guide and other-unit isolation.');
+}
+
 // Burst control retains shot cadence, independently varies timings and cannot bypass rests.
 {
  api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mask=null;state.rocks=[];state.doors=[];state.props=[];state.aliens=[];
@@ -256,7 +275,7 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  state.bullets=[];f.aimTank(tank,isolated);state.t=tank.burst.readyAt;f.aimTank(tank,isolated);const sweep={...tank.sweep};assert.equal(tank.cool,.2);assert(sweep.total>=9&&sweep.total<=12);const first=Math.atan2(state.bullets[0].dy,state.bullets[0].dx);
  for(const a of state.aliens){a.x+=40;a.y+=60;}
  for(let i=1;i<sweep.total;i++){state.t+=.2;tank.cool=0;f.aimTank(tank,isolated);assert.equal(state.bullets.length,i+1);const actual=Math.atan2(state.bullets.at(-1).dy,state.bullets.at(-1).dx),expected=sweep.start+sweep.sign*sweep.width*i/(sweep.total-1);assert(Math.abs(Math.atan2(Math.sin(actual-expected),Math.cos(actual-expected)))<1e-9,'Locked evenly spaced sweep ignores moving targets');}
- const last=Math.atan2(state.bullets.at(-1).dy,state.bullets.at(-1).dx);assert(Math.abs(last-first-sweep.width)<1e-9);const rest=tank.burst.restUntil-state.t;assert(rest>=2.5&&rest<3.5);state.t=tank.burst.restUntil;tank.cool=0;f.aimTank(tank,isolated);if(!tank.sweep){state.t=tank.burst.readyAt;f.aimTank(tank,isolated);}assert.equal(tank.sweep.sign,-sweep.sign,'Successive bursts reverse sweep direction');
+ const last=Math.atan2(state.bullets.at(-1).dy,state.bullets.at(-1).dx);assert(Math.abs(last-first-sweep.width)<1e-9);const rest=tank.burst.restUntil-state.t;assert(rest>=3.5&&rest<4.5);state.t=tank.burst.restUntil;tank.cool=0;f.aimTank(tank,isolated);if(!tank.sweep){state.t=tank.burst.readyAt;f.aimTank(tank,isolated);}assert.equal(tank.sweep.sign,-sweep.sign,'Successive bursts reverse sweep direction');
  f.trackBurst(tank,null);state.aliens=[];const nest={x:600,y:400,hp:50};const fallback=f.tankGroup(tank,nest);assert.equal(fallback.target,nest);assert.equal(fallback.width,25*Math.PI/180);
  state.aliens=[bug(179),bug(-179),bug(175)];assert.equal(f.tankGroup(tank,nest).count,3,'Density grouping wraps across angle boundary');state.rocks=[{x:190,y:350,w:20,h:100}];assert.equal(f.tankGroup(tank,nest).count,0,'Group selection ignores bugs behind walls');
  console.log('Passed tank density targeting, 9–12-shot 0.20s barrages, locked evenly spaced 25–80 degree sweep, direction alternation, rest, nest fallback, angle wrap and wall-limited grouping.');

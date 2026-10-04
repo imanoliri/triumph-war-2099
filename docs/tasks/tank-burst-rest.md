@@ -1,7 +1,7 @@
 # Review tank rest between firing bursts
 
 - Ticket: TRI-028; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/tank-burst-rest`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,10 @@ Review tank rest between firing bursts
 
 ## Acceptance criteria
 
-- [ ] Clarify and tune tank burst/rest timing from user timing note, with explicit desired duration and regression evidence before balance implementation.
+- [x] Clarify approved duration: randomized 3.5–4.5 seconds from final shot to next-burst eligibility.
+- [x] Tune tank only; preserve 9–12 shots, 0.20-second cadence, acquisition delays, targeting/sweeps and other units.
+- [x] Verify deterministic stable-target boundaries, loss/reacquisition, tactical freeze/restart and Units description; run full local suite.
+- [x] Update design and session evidence; stop at Review for independent director review.
 
 ## Scope and decisions
 
@@ -25,3 +28,4 @@ Later bounded investigation should inspect tank burst size, shot cadence, cooldo
 
 
 
+- [2026-10-05 / 012](../journal/2026-10-05-012-tank-burst-rest.md)
