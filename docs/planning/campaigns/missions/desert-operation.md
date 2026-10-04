@@ -16,8 +16,6 @@ User selected: underground sand travel, a visible warning, then emergence and a 
 
 Default design recommendation for later refinement: charge damages only once per target per charge, does not pass through rocks/buildings, and has a visible recovery opportunity. These are proposals, not approved rules. Reuse original asymmetric aim and troop controls; no unrelated combat overhaul.
 
-## Map proposal brief
-
 ## Confirmed Desert Rider roster
 
 User specified the human faction abilities and accepted crawler evasion plus limited automines on 2026-10-05:
