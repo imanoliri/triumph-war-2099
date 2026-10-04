@@ -454,24 +454,26 @@
       "id": "TRI-033",
       "title": "Prepare reusable map art kit and AI handoff prompts",
       "task": "docs/tasks/map-art-handoff-kit.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent kit verifier/visual contract/workflow review passed; compact dispatch finding fixedea77a17, worker full suite passed. No runtime art replacement. Administrative task conflict kept user priority and session link. Squash1729ef5.",
       "questions": [],
       "approval": "User explicitly requested art kit ticket directly after current Silent Return, including adequate director/artist prompts and skills or workflows. Silent Return accepted; kit only, no art replacement.",
-      "worker": {
-        "id": "/root/art_kit_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-map-art-handoff-kit",
-        "branch": "chore/map-art-handoff-kit"
-      },
-      "branch": "chore/map-art-handoff-kit"
+      "branch": "chore/map-art-handoff-kit",
+      "completion": {
+        "evidence": "Independent kit verifier/visual contract/workflow review passed; compact dispatch finding fixedea77a17, worker full suite passed. No runtime art replacement. Administrative task conflict kept user priority and session link. Squash1729ef5.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "ea77a177f742775f102391b3ecf9f6103f838ec1",
+        "squashCommit": "1729ef53cf2c1290dbe3fbee717a5ff994f392a8"
+      }
     },
     {
       "id": "TRI-034",
       "title": "Increase challenge in Relay Breaker and Last Convoy",
       "task": "docs/tasks/custom-mission-challenge.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "User explicitly requests solving both custom missions tooeasy even on harder setting, and clarified startdirectly after033. Art kit accepted; bounded custompressure/resources tuning scope approved.",
+      "questions": [],
+      "approval": "User explicitly requests solving both custom missions tooeasy even on harder setting, and clarified startdirectly after033. Art kit accepted; bounded custompressure/resources tuning scope approved."
     }
   ],
   "events": [
@@ -1565,6 +1567,36 @@
       "details": [
         "../triumph-map-art-handoff-kit",
         "/root/art_kit_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:06:30.178Z",
+      "command": "move",
+      "ticket": "TRI-033",
+      "details": [
+        "Review",
+        "Director independently reviewed kit workflows/contract/filled prompt and visual library; verifier passed all786432maskbits, hashes/paths/dimensions. Compact dispatch correctionea77a17 reviewed, worker full suite passed; no runtime art changes."
+      ]
+    },
+    {
+      "at": "2026-10-04T22:07:53.625Z",
+      "command": "move",
+      "ticket": "TRI-033",
+      "details": [
+        "Done",
+        "Independent kit verifier/visual contract/workflow review passed; compact dispatch finding fixedea77a17, worker full suite passed. No runtime art replacement. Administrative task conflict kept user priority and session link. Squash1729ef5.",
+        "/root",
+        "1729ef53cf2c1290dbe3fbee717a5ff994f392a8",
+        "ea77a177f742775f102391b3ecf9f6103f838ec1"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:07:53.731Z",
+      "command": "move",
+      "ticket": "TRI-034",
+      "details": [
+        "Ready",
+        "User explicitly requests solving both custom missions tooeasy even on harder setting, and clarified startdirectly after033. Art kit accepted; bounded custompressure/resources tuning scope approved."
       ]
     }
   ]

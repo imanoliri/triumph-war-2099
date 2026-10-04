@@ -31,3 +31,5 @@ User refinement on 2026-10-04: TRI-033 must add adequate prompts and skills or w
 
 Priority confirmation on2026-10-05: user corrected immediate balance start to after TRI-033. Finish current kit, then start TRI-034 directly afterward; do not park this task.
 - [2026-10-04 / 051](../journal/2026-10-04-051-map-art-handoff-kit.md)
+
+- [Director acceptance / next balance task](../journal/2026-10-05-001-map-art-handoff-kit-director.md)
