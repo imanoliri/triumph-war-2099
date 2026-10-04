@@ -13,7 +13,10 @@ AI commanders unless explicitly selected
 
 ## Scope and decisions
 
-Backlog proposal; director must record user agreement before Ready.
+Approved by the user request on 2026-10-04. Preserve unrelated assets, combat conventions and German physical-key controls; no publication.
+
+- Default troop mode applies at mission start and after deselecting direct commander control. Commander 1 also uses AI.
+- Update current controls/design descriptions and add focused regression coverage.
 
 ## Sessions
 

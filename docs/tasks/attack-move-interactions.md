@@ -13,7 +13,10 @@ Attack-move eagle collection and turret mounting
 
 ## Scope and decisions
 
-Backlog proposal; director must record user agreement before Ready.
+Approved by the user request on 2026-10-04. Preserve unrelated assets, combat conventions and German physical-key controls; no publication.
+
+- Use a short reachable proximity near the route, without broad detours. Preserve explicit orders and occupied-turret handling. Record exact distance choices.
+- Clear area: eagles before turrets. Nearby enemies: usable turrets before enemy attacks. Update gameplay docs and focused regressions.
 
 ## Sessions
 

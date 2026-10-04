@@ -13,7 +13,10 @@ Tactical mode presentation and mission start
 
 ## Scope and decisions
 
-Backlog proposal; director must record user agreement before Ready.
+Approved by the user request on 2026-10-04. Preserve unrelated assets, combat conventions and German physical-key controls; no publication.
+
+- Simulation freezes while orders and selection work. Dialogs preserve the prior state and shortcuts remain usable.
+- Record browser visual checks separately; update docs and focused regressions.
 
 ## Sessions
 
