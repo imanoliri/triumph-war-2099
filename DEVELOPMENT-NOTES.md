@@ -178,3 +178,6 @@
 - Single right-click selected troops = attack move; double right-click within 350 ms / 20 world pixels = force move. Force move routes around terrain but ignores combat, cannon acquisition and supply trips until arrival; then holds/resumes normal behavior. Blue destination marker distinguishes force move. Double-click history resets on selection/commander/mission changes. Updated Controls text.
 - Added navigation reachability query for supply candidates. Cheap distance filtering precedes LOS checks to avoid full-map sight checks per troop.
 - Syntax checks and tools/check-recreation.cjs passed: eagle reservation, threat pause/resume, automatic collection and departure/Follow return, new-order cancellation, inaccessible destinations, force-move combat suppression and input double-click semantics, plus all prior mechanics/tank barrage checks. Live play/rendering remains unverified.
+
+## 2026-10-04 — Tank shot volume
+- Increased tank gun sound playback volume by 50%, from 0.08 to 0.12. Other weapon volumes are unchanged.
