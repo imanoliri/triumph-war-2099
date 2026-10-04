@@ -208,3 +208,9 @@
 
 ## 2026-10-04 — Enemy-only explosive barrels
 - Barrel/canister blast damage now iterates enemies only; friendly units and commanders take no blast damage. Lingering barrel fire likewise affects bugs only. Nest damage and prop chain reactions remain unchanged. Updated Units guide and README.
+
+## 2026-10-04 — Stable focus input and projectile visibility
+- Diagnosed two sources of apparent force-move during focus: every first/third right-click assigned attack-move before the double-click was recognized; movement-clearance LOS rejected boundary targets such as Flash Back nests at y=752, making focused units keep walking rather than shoot. Moving bugs could also leave the second click's hit radius and turn it into force move.
+- Right-click on an enemy now focuses immediately (double-click remains valid). Captures the first click's target across a double-click; repeated/triple clicks never replace focus with movement or restart the same target's burst/reaction timer. Force move remains an empty-ground double-click.
+- Weapon LOS samples projectile centerline to target hit radius; keeps terrain obstruction checks but does not require the target to satisfy infantry movement/body-clearance bounds. Pickup/navigation clearance remains unchanged. Focus approaches only outside actual weapon range or behind cover (removed unnecessary 30 px approach margin; flame uses 145 px range).
+- Updated Controls, Units and README. Syntax and full simulation checks passed, including boundary-nest fire while stationary, repeat/triple clicks, moving enemy capture, retained burst timing and intervening-wall obstruction. Live gameplay remains unverified.
