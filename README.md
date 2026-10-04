@@ -34,7 +34,7 @@ node tools/dev.cjs test
 node tools/dev.cjs package
 ```
 
-The task helper creates branch instructions and numbered session handoffs. [SETUP](docs/SETUP.md) covers worktrees, Python/image recovery, optional local MIDI samples and packaging. [ARCHITECTURE](docs/ARCHITECTURE.md) explains module boundaries. [BACKLOG](docs/BACKLOG.md) tracks pending work; [PLAYTEST](docs/PLAYTEST.md) defines browser acceptance.
+The task helper creates branch instructions and chronological journals named `YYYY-MM-DD-NNN-feature-name.md`. Browse [journals](docs/journal/README.md) by date, or use each task’s session links to follow a feature; every journal includes a handover. [SETUP](docs/SETUP.md) covers worktrees, Python/image recovery, optional local MIDI samples and packaging. [ARCHITECTURE](docs/ARCHITECTURE.md) explains module boundaries. [BACKLOG](docs/BACKLOG.md) tracks pending work; [PLAYTEST](docs/PLAYTEST.md) defines browser acceptance.
 
 ## Verification and provenance
 

@@ -1,6 +1,6 @@
 # Project status
 
-Updated: 2026-10-04. Current maintenance task: docs/tasks/development-foundations.md.
+Updated: 2026-10-04. Latest completed maintenance task: docs/tasks/chronological-journals.md.
 
 ## Checkpoints
 
@@ -12,6 +12,10 @@ Updated: 2026-10-04. Current maintenance task: docs/tasks/development-foundation
 ## Merge policy
 
 All accepted task branches now squash-merge into main as one commit per task. Earlier fast-forward history and milestone tags are retained; this policy does not rewrite existing history.
+
+## Session context
+
+Chronological session journals use `docs/journal/YYYY-MM-DD-NNN-feature-name.md`, with Berlin dates and daily numbering across features. Each task links its sessions; journals preserve context, verification and the next-action handover. See WORKFLOW.
 
 ## Implemented
 

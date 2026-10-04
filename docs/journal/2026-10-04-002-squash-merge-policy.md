@@ -1,6 +1,7 @@
-# squash-merge-policy — session 001
+# 2026-10-04 / 002 — squash-merge-policy
 
-- Task: [squash-merge-policy](../../tasks/squash-merge-policy.md)
+- Task: [squash-merge-policy](../tasks/squash-merge-policy.md)
+- Date: 2026-10-04 (Europe/Berlin)
 - Branch: `chore/squash-merge-policy`
 - Starting commit: `8f5d3b290b3c176bd34201de22a629500db11d1b`
 - Status: complete locally
@@ -16,3 +17,7 @@ Documentation consistency/whitespace reviewed. No runtime change; gameplay suite
 ## Completion / handoff
 
 Task is integrated with a local squash commit titled "Require squash merges for completed task branches". Preserve older milestone tags and prior fast-forward history. Future accepted task branches must use squash merging. GitHub settings/publication remain unchanged.
+
+## Journal migration
+
+Moved from the feature-based session directory on 2026-10-04. Daily numbers reflect the recorded task sequence; exact session start times were not recorded. Existing handover content is preserved.

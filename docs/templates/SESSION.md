@@ -1,6 +1,7 @@
-# {{SLUG}} — session {{SESSION}}
+# {{DATE}} / {{SESSION}} — {{SLUG}}
 
-- Task: [{{SLUG}}](../../tasks/{{SLUG}}.md)
+- Task: [{{SLUG}}](../tasks/{{SLUG}}.md)
+- Date: {{DATE}} (Europe/Berlin); session {{SESSION}} across all features that day
 - Branch: `{{BRANCH}}`
 - Starting commit: `{{BASE}}`
 - Status: in progress
@@ -12,6 +13,10 @@ Read the task and previous handoff. Record what is already implemented and the r
 ## Work performed
 
 List concrete changes and decisions; distinguish observations from guesses.
+
+## Chronological log
+
+Append requests, decisions, actions and results in order during this session. Summarize relevant context; do not copy entire transcripts. Use timestamps only when known.
 
 ## Verification
 

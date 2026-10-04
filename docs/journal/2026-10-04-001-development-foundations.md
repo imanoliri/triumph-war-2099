@@ -1,6 +1,7 @@
-# development-foundations — session 001
+# 2026-10-04 / 001 — development-foundations
 
-- Task: [development-foundations](../../tasks/development-foundations.md)
+- Task: [development-foundations](../tasks/development-foundations.md)
+- Date: 2026-10-04 (Europe/Berlin)
 - Branch: `chore/development-foundations`
 - Starting commit: `eab0bb0c962ac41e9dea3eee26a346062566caad`
 - Status: complete locally
@@ -23,7 +24,7 @@ Added durable docs, task/session helper and templates, local backlog, GitHub iss
 | HTTP preview | passed | Started on ephemeral loopback port from another cwd; src modules served, docs/tools/traversal rejected |
 | Default/personal ZIP | passed | PCM/count validation, ZIP integrity, module membership, no Git/work/tools; local bank excluded by default |
 | Full original asset recovery | passed | Explicit installed v2.3 path, isolated checkout; all binary assets match and generated JSON/JS data matches semantically (serialization/newline differences only) |
-| Live browser/audio acceptance | not run | Current preview access unavailable; ../../playtests/development-foundations.md |
+| Live browser/audio acceptance | not run | Current preview access unavailable; ../playtests/development-foundations.md |
 
 ## Review and limitations
 
@@ -32,3 +33,7 @@ Scoped runtime diff is behavior-preserving: custom constants and pure mission/ra
 ## Next action / handoff
 
 Implementation commit 0378f4a was fast-forwarded into local main after review; the completed handoff follows it. Both milestone and task branch history are retained. New sessions choose a BACKLOG task and run tools/task.cjs start feature/<slug> (or fix/chore), then provide docs/tasks/<slug>.md and the latest handoff to a fresh chat. Use WORKFLOW for worktrees. First recommended task is browser acceptance (TRI-002), followed by bounded combat extraction (TRI-003). Remote visibility/asset distribution requires a separate explicit decision.
+
+## Journal migration
+
+Moved from the feature-based session directory on 2026-10-04. Daily numbers reflect the recorded task sequence; exact session start times were not recorded. Existing handover content is preserved.

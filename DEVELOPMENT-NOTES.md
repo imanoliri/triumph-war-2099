@@ -266,3 +266,7 @@
 
 ## 2026-10-04 — Squash merge policy
 - User requires one commit on main per completed task. Updated AGENTS, workflow, README/status, branch/session templates and PR checklist. Added local/GitHub squash procedures and resulting commit recording. Preserved pre-policy history and milestone tags. Applied squash integration to this documentation task.
+
+## 2026-10-04 — Chronological session journals
+
+Session handovers now live in docs/journal/YYYY-MM-DD-NNN-feature-name.md with Berlin dates and numbering across features. Tasks list their sessions for the feature view. Existing handovers migrated with content preserved; helpers/templates/instructions updated. Full local checks and focused tooling regressions passed. Gameplay and remote publication unchanged.

@@ -22,3 +22,7 @@ Documentation only. Applies prospectively; historical fast-forward records remai
 ## Verification and completion
 
 Reviewed documentation consistency and whitespace. No gameplay changes; gameplay tests not needed. One scoped task commit prepared, then squash-merged locally. The resulting commit can be located by its title, "Require squash merges for completed task branches", in main history.
+
+## Sessions
+
+- [2026-10-04 / 002](../journal/2026-10-04-002-squash-merge-policy.md)

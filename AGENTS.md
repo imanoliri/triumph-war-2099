@@ -3,7 +3,7 @@
 This repository is the project memory. A new chat must be able to finish a task from the checked-out code and its task/session records.
 
 - Work on one bounded feature, fix or maintenance task per branch. Use `docs/WORKFLOW.md` for branch creation, worktrees, session handoffs and review. Resume an existing task branch when appropriate.
-- Read that task's `docs/tasks/<slug>.md` and latest `docs/sessions/<slug>/` handoff. Consult DESIGN for gameplay decisions, ARCHITECTURE for boundaries, SETUP for commands and STATUS for known gaps as needed. Do not require every document for trivial edits.
+- Read that task's `docs/tasks/<slug>.md` and latest session handoff linked under its Sessions section in `docs/journal/YYYY-MM-DD-NNN-<slug>.md`. Consult DESIGN for gameplay decisions, ARCHITECTURE for boundaries, SETUP for commands and STATUS for known gaps as needed. Do not require every document for trivial edits.
 - Preserve the deliberate asymmetric aiming rules, German physical-key controls, original sprite/map coordinate conventions and enemy-only barrel damage. Update DESIGN and Units/Controls when behavior changes.
 - Keep recovered source data and custom gameplay changes distinguishable. Do not regenerate assets for unrelated edits. Use explicit source paths; never modify the installed original game.
 - Use the existing dependency-free browser runtime. Extract small modules with explicit inputs; make behavior-preserving refactors independently of balance changes.

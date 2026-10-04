@@ -18,7 +18,7 @@ node tools/task.cjs start feature/example-feature
 node tools/task.cjs start fix/example-bug --issue 12
 ```
 
-This creates a branch from local main plus `docs/tasks/example-feature.md` and `docs/sessions/example-feature/001.md`. Fill in the task's acceptance criteria before work starts. The helper never publishes, commits or merges.
+This creates a branch from local main plus `docs/tasks/example-feature.md` and `docs/journal/YYYY-MM-DD-NNN-example-feature.md`. Fill in the task's acceptance criteria before work starts. The helper never publishes, commits or merges.
 
 For concurrent work, use an isolated worktree:
 
@@ -36,11 +36,19 @@ Switch to the existing task branch or open its worktree, then:
 node tools/task.cjs session example-feature
 ```
 
-The helper creates the next numbered session record. Each record includes the active branch, starting commit, task link, work performed, verification, unresolved questions and the next action. Earlier records remain as history. Do not duplicate the whole design document in session files.
+The helper creates the next daily session record and appends its link to the task’s Sessions section. Each record includes the active branch, starting commit, task link, work performed, verification, unresolved questions and the next action. Earlier records remain as history. Do not duplicate the whole design document in session files.
 
 Suggested opening prompt:
 
-> Implement/resume docs/tasks/example-feature.md. Follow AGENTS.md and the latest handoff in docs/sessions/example-feature. Complete the acceptance criteria, verify the result and update the session record. Discuss unresolved gameplay choices before changing them.
+> Implement/resume docs/tasks/example-feature.md. Follow AGENTS.md and the latest handoff linked from that task’s Sessions section. Complete the acceptance criteria, verify the result and update the session record. Discuss unresolved gameplay choices before changing them.
+
+## Chronological and feature views
+
+Session journals live in `docs/journal/YYYY-MM-DD-NNN-feature-name.md`: date first, daily session number second, feature name last. Dates use Europe/Berlin. The number spans all features that day, rather than restarting for each feature. Sorting filenames gives project chronology; each `docs/tasks/<slug>.md` lists its sessions for the feature view. One journal is the authoritative session record and handover.
+
+The helper chooses the next number from journals in local branches and active worktrees, including uncommitted session files. Create session records sequentially when using concurrent worktrees. Separately cloned repositories cannot share a local counter; reconcile duplicate daily numbers and update task links before integration. Existing records are preserved; the initial migration records known task order without inventing timestamps.
+
+At session start, read the task and its latest linked journal. During work, append requests, decisions, actions and results in order to the chronological log. Before stopping, update task status and the journal’s verification, unresolved issues and exact next action. For a project-wide catch-up, read STATUS and the latest journals. Detailed session history belongs here; DEVELOPMENT-NOTES remains a concise milestone history.
 
 ## Review and merge
 
@@ -73,7 +81,8 @@ The GitHub workflow and PR templates are checked in locally and become active on
 - ARCHITECTURE: current code boundaries and data flow.
 - STATUS: current checkpoint and verification limitations.
 - DEVELOPMENT-NOTES: chronological history; it can contain superseded numbers.
-- Task/session files: branch scope, acceptance and handoff.
+- Task files: feature scope, acceptance, current status and session links.
+- Journal files: chronological session history, decisions, evidence and handoff.
 - README: installation, controls and entry points.
 
 Use ordinary Markdown instructions for this workflow. A per-feature skill would duplicate the task records and become stale; create a skill only if a recurring specialized procedure later needs one.
