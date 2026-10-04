@@ -33,19 +33,19 @@ Bugs have randomized approach/wander/pause choices (40/35/25%), short remembered
 
 Navigation uses a shared 16 px grid and four-neighbor distance fields. Unlocked doors open when human units approach; locked doors require their terminal. Static backdrop placements use top-left coordinates; active sprites use hotspots. Rendered terrain and collision masks must be regenerated together.
 
-## Player orders and pause
+## Player orders and tactical mode
 
 Physical KeyboardEvent.code bindings support German QWERTZ. Commander selectors transfer WASD/V/B and mouse control to the selected commander; all four commanders use AI unless explicitly selected. Missions start in troop-control mode. Clicking the selected commander button again or selecting troops deselects direct control; empty selections stay in troop mode. Only the explicitly selected commander responds to physical WASD/V/B, mouse aiming or keyboard orders. Hold left mouse to aim/fire, right mouse to grenade. Immediate drag selects troops; Shift adds/toggles selection.
 
 With troops selected: ground right-click attack-moves; double right-click empty ground force-moves without stopping to fight; enemy right-click focuses attacks (double-click also works). Double right-click usable objects forces travel/use. Groups toggle a door once; locks and terminal flags retain source dependencies. Infantry/commandos collect pickups, consume flowers and occupy cannons. Tanks/robots can operate doors and terminals.
 
-Pause leaves the battlefield visible with a small banner. Selection, squad orders, movement/focus/use orders remain available and execute after resume. Combat, movement, arrivals and timers freeze. Controls/Units preserve an existing pause.
+Every mission deploys into tactical mode, including after restart or mission change. The battlefield stays visible within a blue-green tactical visor and prominent banner. Selection, squad orders, movement/focus/use orders remain available and execute on exiting tactical mode. Combat, movement, arrivals and timers freeze. Space/Escape and the Tactical mode button toggle the mode. Controls/Units preserve the prior tactical state.
 
 ## Reinforcements and rally flags
 
 Yellow eagles call ground soldiers, bronze support calls tanks or indoor robots, blue calls aircraft/infiltration commandos. BLITZ uses each map's recovered creation list. Outdoor carriers stop at least five seconds, unloading one soldier each second below the population cap. New ground units land on clear terrain; aircraft headings that miss the map turn toward it.
 
-Rally button: top-right beside Army/Wave. Physical R toggles placement, left-click clear ground places numbered flags, right-click a flag removes it, Escape exits before toggling pause. Multiple flags and paused editing work. Yellow/bronze/BLITZ soldiers, tanks and robots attack-move to the nearest reachable flag by grid route distance. Locked doors block routes; unlocked doors are traversable. Commandos are excluded, including BLITZ. Each arriving unit chooses its destination independently. Player orders override it. Removing flags changes future arrivals; assigned units keep their destinations. Flags reset on restart/mission change.
+Rally button: top-right beside Army/Wave. Physical R toggles placement, left-click clear ground places numbered flags, right-click a flag removes it, Escape exits before toggling tactical mode. Multiple flags and tactical editing work. Yellow/bronze/BLITZ soldiers, tanks and robots attack-move to the nearest reachable flag by grid route distance. Locked doors block routes; unlocked doors are traversable. Commandos are excluded, including BLITZ. Each arriving unit chooses its destination independently. Player orders override it. Removing flags changes future arrivals; assigned units keep their destinations. Flags reset on restart/mission change.
 
 Infantry/commandos automatically seek reachable usable eagles within 250 px when no enemy/nest is visible within 245 px and no explicit movement/use/focus order is active. Each eagle has one claimant. Combat pauses the trip; afterward the unit resumes and returns to its origin (or current leader for Follow). New player orders cancel it.
 

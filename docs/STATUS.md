@@ -1,6 +1,6 @@
 # Project status
 
-Updated: 2026-10-04. Latest completed maintenance task: docs/tasks/director-workflow.md (DIR-001).
+Updated: 2026-10-04. Latest integrated gameplay tasks: commander selection (TRI-009) and attack-move interactions (TRI-010). Tactical mode (TRI-011) is implemented on its task branch for Review; integration status remains in BOARD.
 
 ## Checkpoints
 
@@ -19,11 +19,11 @@ Chronological session journals use `docs/journal/YYYY-MM-DD-NNN-feature-name.md`
 
 ## Implemented
 
-Nine recovered maps/sprites/audio/MIDI; commander controls with German physical keys; selection/attack-move/force/focus/use orders; terrain-aware randomized AI; burst fire; commandos/red bugs; tank sweeps; support/respawn; enemy-only barrels; Units manual; visible mission progress; tactical pause; yellow/bronze/BLITZ rally flags excluding commandos.
+Nine recovered maps/sprites/audio/MIDI; all four commanders use AI unless explicitly selected, with troop-control default and German physical keys; selection/attack-move/force/focus/use orders, soldier route-side eagle collection and enemy-dependent turret priority; terrain-aware randomized AI; burst fire; commandos/red bugs; tank sweeps; support/respawn; enemy-only barrels; Units manual; visible mission progress; tactical mode with startup freeze and blue-green visor; yellow/bronze/BLITZ rally flags excluding commandos.
 
 ## Verification distinction
 
-Full project/simulation/music/tooling checks passed both in the working checkout and a clean export of tracked source without the local bank. The mocked simulation checks cover all nine missions and recent controls/support behavior. Music checks verify scheduling with mocked audio. Live browser rendering, audible matching and broad balance playtests remain unverified in the current tool environment. The user's own play reports informed fixes but are not a recorded comprehensive acceptance pass.
+Full project/simulation/music/tooling checks passed both in the working checkout and a clean export of tracked source without the local bank. The mocked simulation checks cover all nine missions and recent controls/support behavior. Music checks verify scheduling with mocked audio. The director recorded limited live browser commander selector/toggle UI checks; full AI, attack-move interaction and balance playtests remain unverified. The director checked tactical-mode start/restart visuals, mode button toggling, Controls/Units restoration and a 390×844 viewport; limited live queued movement and mission-selector deployment also passed. Details are in the tactical-mode session. Audible matching remains unverified. The user's own play reports informed fixes but are not a recorded comprehensive acceptance pass.
 
 The reported mission-not-finishing issue was not reproduced as a universal completion failure. All nine completion fixtures pass; off-map births and carrier wave accounting were corrected. Keep TRI-001 open until the live scenario is reproduced or a full acceptance pass establishes resolution.
 
@@ -37,7 +37,7 @@ The reported mission-not-finishing issue was not reproduced as a universal compl
 
 ## Next recommended work
 
-1. Run and record the browser acceptance checklist, especially victory, rally behavior and pause UI.
+1. Run and record the browser acceptance checklist, especially victory, rally behavior and tactical mode UI.
 2. Extract combat/burst logic as one behavior-preserving task.
 3. Resolve publication scope/visibility, then publish and transfer local backlog items to GitHub Issues.
 

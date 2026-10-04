@@ -1,7 +1,7 @@
 # Tactical mode presentation and mission start
 
 - Ticket: TRI-011; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/tactical-mode`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Tactical mode presentation and mission start
 
 ## Acceptance criteria
 
-- [ ] Pause is named tactical mode, visibly frames the map with a blue or green visor, and is active at mission start.
+- [x] Pause is named tactical mode, visibly frames the map with a blue or green visor, and is active at mission start.
 
 ## Scope and decisions
 
@@ -20,3 +20,6 @@ Approved by the user request on 2026-10-04. Preserve unrelated assets, combat co
 
 ## Sessions
 
+
+- [2026-10-04 / 011](../journal/2026-10-04-011-tactical-mode.md)
+- [2026-10-04 / 012](../journal/2026-10-04-012-tactical-mode.md)

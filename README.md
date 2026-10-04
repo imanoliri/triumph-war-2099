@@ -17,7 +17,7 @@ Open http://127.0.0.1:2099, or open index.html directly. The preview server is r
 
 - All four commanders default to AI and missions start in troop control. Select Commander 1–4 explicitly (click again or select troops to return to troop control); WASD moves that commander. Hold left mouse to aim/fire, right mouse to grenade. V fires, B chooses a keyboard squad order. Physical keys support German QWERTZ.
 - Drag selects troops; Shift adds. Right-click ground attack-moves, double right-click empty ground force-moves, enemy clicks focus attacks, double right-click usable objects travels/activates them.
-- Space/Escape/Pause freezes play with a small banner. Selection and orders work while paused and execute on resume.
+- Missions deploy in tactical mode with a blue-green visor and prominent banner. Space/Escape or the Tactical mode button toggles the frozen simulation. Selection and orders remain usable and execute when you exit tactical mode.
 - Top-right Rally button or R toggles flag placement. Left-click clear ground places, right-click removes, Escape exits. Yellow/bronze/BLITZ soldiers/tanks/robots use the nearest reachable flag; commandos are excluded.
 - Units shows health, damage, burst behavior and descriptions. Remaining shows mission requirements. Enter starts/advances, F2 restarts.
 
