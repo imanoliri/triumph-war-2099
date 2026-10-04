@@ -1,7 +1,7 @@
 # Attack-move eagle collection and turret mounting
 
 - Ticket: TRI-010; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/attack-move-interactions`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Attack-move eagle collection and turret mounting
 
 ## Acceptance criteria
 
-- [ ] Attack-moving soldiers collect nearby route eagles and mount nearby usable plasma turrets, with the requested enemy-dependent priority.
+- [x] Attack-moving soldiers collect nearby route eagles and mount nearby usable plasma turrets, with the requested enemy-dependent priority.
 
 ## Scope and decisions
 
@@ -20,3 +20,6 @@ Approved by the user request on 2026-10-04. Preserve unrelated assets, combat co
 
 ## Sessions
 
+
+- [2026-10-04 / 009](../journal/2026-10-04-009-attack-move-interactions.md)
+- [2026-10-04 / 010](../journal/2026-10-04-010-attack-move-interactions.md)
