@@ -222,16 +222,17 @@
       "id": "TRI-016",
       "title": "Give plasma cannons 16-direction fire for every operator",
       "task": "docs/tasks/plasma-cannon-directions.md",
-      "status": "Review",
-      "reason": "Reviewed worker 0f65d07871f4ee7d89f33f8f83cd03bdbb8f81c0; independent full checks passed; mounted aim/fire precedence and dismount reviewed; live cannon rendering/audio unverified.",
+      "status": "Done",
+      "reason": "Independent review and full checks passed; mounted directions accepted; live rendering/audio unverified, see session023.",
       "questions": [],
       "approval": "User explicitly requested 16-direction plasma cannon shooting for all operators on 2026-10-04.",
-      "worker": {
-        "id": "/root/commander_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-plasma-cannon-directions",
-        "branch": "fix/plasma-cannon-directions"
-      },
-      "branch": "fix/plasma-cannon-directions"
+      "branch": "fix/plasma-cannon-directions",
+      "completion": {
+        "evidence": "Independent review and full checks passed; mounted directions accepted; live rendering/audio unverified, see session023.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "0f65d07871f4ee7d89f33f8f83cd03bdbb8f81c0",
+        "squashCommit": "c3e885f9baf08c56d4f774c3f17cade45fbd58a5"
+      }
     }
   ],
   "events": [
@@ -686,6 +687,18 @@
       "details": [
         "Review",
         "Reviewed worker 0f65d07871f4ee7d89f33f8f83cd03bdbb8f81c0; independent full checks passed; mounted aim/fire precedence and dismount reviewed; live cannon rendering/audio unverified."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:59:43.453Z",
+      "command": "move",
+      "ticket": "TRI-016",
+      "details": [
+        "Done",
+        "Independent review and full checks passed; mounted directions accepted; live rendering/audio unverified, see session023.",
+        "/root",
+        "c3e885f9baf08c56d4f774c3f17cade45fbd58a5",
+        "0f65d07871f4ee7d89f33f8f83cd03bdbb8f81c0"
       ]
     }
   ]
