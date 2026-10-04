@@ -382,16 +382,17 @@
       "id": "TRI-027",
       "title": "Fix soldier hunt stopping before aim alignment",
       "task": "docs/tasks/soldier-hunt-alignment.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Reviewed stationary/moving/obstructed pursuit evidence and independent full suite; live smoke only clearly recorded",
       "questions": [],
       "approval": "User authorized queue execution 2026-10-05; bounded hunt alignment fix next after TRI-034",
-      "worker": {
-        "id": "/root/hunt_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-soldier-hunt-alignment",
-        "branch": "feature/soldier-hunt-alignment"
-      },
-      "branch": "feature/soldier-hunt-alignment"
+      "branch": "feature/soldier-hunt-alignment",
+      "completion": {
+        "evidence": "Reviewed stationary/moving/obstructed pursuit evidence and independent full suite; live smoke only clearly recorded",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "33aceedf1ca12f1b387288f36a88b6eac21e38a0",
+        "squashCommit": "7fc01c97944c4c53046aafea130310099f650147"
+      }
     },
     {
       "id": "TRI-028",
@@ -1743,6 +1744,27 @@
       "details": [
         "Ready",
         "User explicitly requested nests and increased pressure at every difficulty 2026-10-05; both discussed custom missions, next after active TRI-027"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:38:19.233Z",
+      "command": "move",
+      "ticket": "TRI-027",
+      "details": [
+        "Review",
+        "Worker33aceed reviewed; independent full suite passed; legal projectile lane and pursuit regressions accepted with live controlled-hunt limitation"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:38:20.204Z",
+      "command": "move",
+      "ticket": "TRI-027",
+      "details": [
+        "Done",
+        "Reviewed stationary/moving/obstructed pursuit evidence and independent full suite; live smoke only clearly recorded",
+        "/root",
+        "7fc01c97944c4c53046aafea130310099f650147",
+        "33aceedf1ca12f1b387288f36a88b6eac21e38a0"
       ]
     }
   ]
