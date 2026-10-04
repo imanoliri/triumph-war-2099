@@ -2,6 +2,12 @@
 
 The user talks to the director. One implementation worker handles one approved ticket in an isolated Git worktree. This is a local workflow, not a running service or a native GitHub Projects integration.
 
+## Director boundary and context
+
+The director never implements gameplay, fixes or refactors and never conducts original-game research. It owns user discussion, ticket refinement, administrative board/planning/session records, worker dispatch/steering, question relay, independent review/checks, accepted squash integration and authorized publication. A subagent worker owns each approved ticket's research, implementation, tests, current documentation and chronological session handoff in an isolated task branch/worktree. Do not take over implementation when a worker stalls; steer or replace the worker in the same preserved checkout.
+
+Keep detailed execution in worker task/session/research records. Request concise findings, exact commit/check evidence, limitations and next actions; load details only when needed for a decision or review. Pending brainstorm tickets stay Backlog until refined and agreed here. Read durable records after a handoff instead of depending on accumulated chat context.
+
 ## Authority and records
 
 The user authorized the director to start, resume, steer and interrupt workers for agreed tickets, relay their material questions, and send user answers back. This authority persists across director conversations through these instructions. It does not authorize unagreed gameplay choices, expanded scope, publication, or nested delegation. Routine implementation choices belong to the worker.

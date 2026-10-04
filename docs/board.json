@@ -249,6 +249,22 @@
         "reviewedImplementationCommit": "d9b35c7eee3d3fc448dc47588189c6b141f2dede",
         "squashCommit": "5672220f057bc9bdf10449a1ded352e1e8d526ca"
       }
+    },
+    {
+      "id": "TRI-018",
+      "title": "Difficulty levels",
+      "task": "docs/tasks/difficulty-levels.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-019",
+      "title": "New missions",
+      "task": "docs/tasks/new-missions.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -764,6 +780,26 @@
         "/root",
         "5672220f057bc9bdf10449a1ded352e1e8d526ca",
         "d9b35c7eee3d3fc448dc47588189c6b141f2dede"
+      ]
+    },
+    {
+      "at": "2026-10-04T15:40:42.003Z",
+      "command": "create",
+      "ticket": "TRI-018",
+      "details": [
+        "difficulty-levels",
+        "Difficulty levels",
+        "Refine desired difficulty behavior, agreed balance parameters and measurable acceptance here before dispatch."
+      ]
+    },
+    {
+      "at": "2026-10-04T15:40:42.063Z",
+      "command": "create",
+      "ticket": "TRI-019",
+      "details": [
+        "new-missions",
+        "New missions",
+        "Refine mission concepts, count, objectives, maps and measurable acceptance here before dispatch."
       ]
     }
   ]
