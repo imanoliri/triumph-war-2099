@@ -473,16 +473,17 @@
       "id": "TRI-034",
       "title": "Increase challenge in Relay Breaker and Last Convoy",
       "task": "docs/tasks/custom-mission-challenge.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent review/full suite and final focused check passed; bounded pressure retune accepted, human calibration remains explicit limitation",
       "questions": [],
       "approval": "User explicitly requests solving both custom missions tooeasy even on harder setting, and clarified startdirectly after033. Art kit accepted; bounded custompressure/resources tuning scope approved.",
-      "worker": {
-        "id": "/root/challenge_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-mission-challenge",
-        "branch": "feature/custom-mission-challenge"
-      },
-      "branch": "feature/custom-mission-challenge"
+      "branch": "feature/custom-mission-challenge",
+      "completion": {
+        "evidence": "Independent review/full suite and final focused check passed; bounded pressure retune accepted, human calibration remains explicit limitation",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "576d07b5b9de458166619c123f58421433026f48",
+        "squashCommit": "7f9fce1ee9e117392d5105741ce5c157d4bf1a77"
+      }
     },
     {
       "id": "TRI-035",
@@ -1678,6 +1679,27 @@
       "details": [
         "Ready",
         "User authorized queue execution; scoped duplicate mounted sprite fix follows TRI-028"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:30:10.898Z",
+      "command": "move",
+      "ticket": "TRI-034",
+      "details": [
+        "Review",
+        "Independent full suite passed; reviewed final profile label correction 576d07b; bounded retune accepted with explicit skilled-player calibration limitation"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:30:30.711Z",
+      "command": "move",
+      "ticket": "TRI-034",
+      "details": [
+        "Done",
+        "Independent review/full suite and final focused check passed; bounded pressure retune accepted, human calibration remains explicit limitation",
+        "/root",
+        "7f9fce1",
+        "576d07b5b9de458166619c123f58421433026f48"
       ]
     }
   ]
