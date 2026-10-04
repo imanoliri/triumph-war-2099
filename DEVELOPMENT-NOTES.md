@@ -184,3 +184,9 @@
 
 ## 2026-10-04 — Tank shot volume doubled from baseline
 - Set tank gun volume to 0.16: 100% above its original 0.08 baseline (previous setting 0.12). Interpreted the requested total increase as twice the original volume.
+
+## 2026-10-04 — Double-click focus attack
+- Double right-click on a living bug or nest now issues explicit focus attack to selected troops/tanks/commandos/robots. Empty-ground double right-click retains force move, single right-click retains attack move. Hit radius accounts for nests and queens.
+- Focus overrides ordinary target selection and supply trips, routes toward an assigned target outside range or behind obstacles, and fires only with clear LOS/in range using existing burst controls. Keeps the target while obscured for pursuit; target death/removal ends the order and holds position. Commander or movement orders cancel it. Cannon operators dismount when assigned.
+- Tanks override their autonomous sweeping arc with direct per-shot target aim during explicit focus orders, preserving shot/burst/rest timing. Added persistent red target rings, red focus destination marker and API focus snapshots. Updated Controls, tank Units entry and README.
+- Syntax and existing simulation checks passed including direct tank focus against a competing bug cluster, moving target aim, wall-limited fire/pursuit, target death, replacement orders and double-click input. Live play/rendering remains unverified.
