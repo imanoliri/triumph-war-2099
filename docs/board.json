@@ -270,10 +270,16 @@
       "id": "TRI-020",
       "title": "Audit original difficulty and propose mixed balance profiles",
       "task": "docs/tasks/difficulty-audit.md",
-      "status": "Ready",
-      "reason": "User authorized audit and concrete tuning proposal after choosing source-faithful Normal and mixed tactical/attrition nest controls. No gameplay changes.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User authorized audit and concrete tuning proposal after choosing source-faithful Normal and mixed tactical/attrition nest controls. No gameplay changes."
+      "approval": "User authorized audit and concrete tuning proposal after choosing source-faithful Normal and mixed tactical/attrition nest controls. No gameplay changes.",
+      "worker": {
+        "id": "/root/commander_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-difficulty-audit",
+        "branch": "chore/difficulty-audit"
+      },
+      "branch": "chore/difficulty-audit"
     }
   ],
   "events": [
@@ -828,6 +834,15 @@
       "details": [
         "Ready",
         "User authorized audit and concrete tuning proposal after choosing source-faithful Normal and mixed tactical/attrition nest controls. No gameplay changes."
+      ]
+    },
+    {
+      "at": "2026-10-04T15:56:35.400Z",
+      "command": "dispatch",
+      "ticket": "TRI-020",
+      "details": [
+        "../triumph-difficulty-audit",
+        "/root/commander_worker"
       ]
     }
   ]
