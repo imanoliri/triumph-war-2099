@@ -368,6 +368,14 @@
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
       "questions": []
+    },
+    {
+      "id": "TRI-028",
+      "title": "Review tank rest between firing bursts",
+      "task": "docs/tasks/tank-burst-rest.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -1157,6 +1165,16 @@
         "soldier-hunt-alignment",
         "Fix soldier hunt stopping before aim alignment",
         "Soldiers pursuing bugs reach a valid position and aim before firing; avoid ineffective stopping or shots while preserving deliberate aiming rules."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:48:58.631Z",
+      "command": "create",
+      "ticket": "TRI-028",
+      "details": [
+        "tank-burst-rest",
+        "Review tank rest between firing bursts",
+        "Clarify and tune tank burst/rest timing from user timing note, with explicit desired duration and regression evidence before balance implementation."
       ]
     }
   ]
