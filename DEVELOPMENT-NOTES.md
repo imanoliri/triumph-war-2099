@@ -214,3 +214,6 @@
 - Right-click on an enemy now focuses immediately (double-click remains valid). Captures the first click's target across a double-click; repeated/triple clicks never replace focus with movement or restart the same target's burst/reaction timer. Force move remains an empty-ground double-click.
 - Weapon LOS samples projectile centerline to target hit radius; keeps terrain obstruction checks but does not require the target to satisfy infantry movement/body-clearance bounds. Pickup/navigation clearance remains unchanged. Focus approaches only outside actual weapon range or behind cover (removed unnecessary 30 px approach margin; flame uses 145 px range).
 - Updated Controls, Units and README. Syntax and full simulation checks passed, including boundary-nest fire while stationary, repeat/triple clicks, moving enemy capture, retained burst timing and intervening-wall obstruction. Live gameplay remains unverified.
+
+## 2026-10-04 — Tank minimum sweep in both firing modes
+- Set autonomous tank minimum arc to 10° (maximum 80° remains). Explicit focus now also sweeps a 10° arc centered on its assigned target instead of firing every shot directly at the center. Burst size, cadence, rest, damage and reaction timing remain unchanged. Updated Units/README.
