@@ -115,10 +115,16 @@
       "id": "TRI-010",
       "title": "Attack-move eagle collection and turret mounting",
       "task": "docs/tasks/attack-move-interactions.md",
-      "status": "Ready",
-      "reason": "User requested this feature on 2026-10-04; task captures proximity interactions and priorities.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User requested this feature on 2026-10-04; task captures proximity interactions and priorities."
+      "approval": "User requested this feature on 2026-10-04; task captures proximity interactions and priorities.",
+      "worker": {
+        "id": "/root/commander_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-attack-move-interactions",
+        "branch": "feature/attack-move-interactions"
+      },
+      "branch": "feature/attack-move-interactions"
     },
     {
       "id": "TRI-011",
@@ -237,6 +243,15 @@
         "/root",
         "766607c",
         "d7cef2e"
+      ]
+    },
+    {
+      "at": "2026-10-04T12:55:48.903Z",
+      "command": "dispatch",
+      "ticket": "TRI-010",
+      "details": [
+        "../triumph-attack-move-interactions",
+        "/root/commander_worker"
       ]
     }
   ]
