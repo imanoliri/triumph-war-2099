@@ -190,16 +190,17 @@
       "id": "TRI-014",
       "title": "Fix soldiers routing through walls near closed doors",
       "task": "docs/tasks/closed-door-pathing.md",
-      "status": "Review",
-      "reason": "Director reviewed route/collision/cache diff and independent full suite passed; reproduced room fixture now reaches target without blocked terrain. Worker0bdc25d; live routing unverified.",
+      "status": "Done",
+      "reason": "Independent full suite and route/collision/cache acceptance passed. Squash4416f26; live room route playtest unverified.",
       "questions": [],
       "approval": "User reported wall-shortcut closed-door soldier routing on 2026-10-04 and requested bounded fix.",
-      "worker": {
-        "id": "/root/commander_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-closed-door-pathing",
-        "branch": "fix/closed-door-pathing"
-      },
-      "branch": "fix/closed-door-pathing"
+      "branch": "fix/closed-door-pathing",
+      "completion": {
+        "evidence": "Independent full suite and route/collision/cache acceptance passed. Squash4416f26; live room route playtest unverified.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "0bdc25d39651b8c8ab60748e4983e8f495549852",
+        "squashCommit": "4416f260b2a9be9ae71012bd7176b62ad3e49df7"
+      }
     },
     {
       "id": "TRI-015",
@@ -612,6 +613,18 @@
       "details": [
         "Review",
         "Director reviewed route/collision/cache diff and independent full suite passed; reproduced room fixture now reaches target without blocked terrain. Worker0bdc25d; live routing unverified."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:50:55.641Z",
+      "command": "move",
+      "ticket": "TRI-014",
+      "details": [
+        "Done",
+        "Independent full suite and route/collision/cache acceptance passed. Squash4416f26; live room route playtest unverified.",
+        "/root",
+        "4416f26",
+        "0bdc25d"
       ]
     }
   ]
