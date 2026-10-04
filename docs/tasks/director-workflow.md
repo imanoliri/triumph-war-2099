@@ -31,7 +31,7 @@ Disposable board lifecycle/dispatch/refusal/recovery tests and existing local ch
 
 ## Completion and review
 
-Implementation worker ready for independent director review. All local acceptance checks passed; native remote issue/Projects integration is explicitly unavailable and not claimed. Worker implementation is committed under the title "Add thin local director ticket workflow" on chore/director-workflow. Director must inspect the diff, verify acceptance and squash-integrate before Done.
+Director independently reviewed scope, final diff and acceptance, reran director/project checks, and accepted the worker evidence. Full local suite passed in the isolated worker checkout. Reviewed implementation: `25ea368c8f35b2a15c113e700b6cc51e4091c2bd`. Squash-integrated into local main: `6c611e32e154e0c0ed250df0c6cd83c0cdf6d5f4`. Ticket DIR-001 moved to Done after integration; the real result is preserved in the board and this administrative handoff checkpoint. Native GitHub issue/Project integration remains blocked and is not claimed.
 
 ## Sessions
 

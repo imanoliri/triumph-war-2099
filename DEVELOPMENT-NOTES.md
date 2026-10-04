@@ -270,3 +270,7 @@
 ## 2026-10-04 — Chronological session journals
 
 Session handovers now live in docs/journal/YYYY-MM-DD-NNN-feature-name.md with Berlin dates and numbering across features. Tasks list their sessions for the feature view. Existing handovers migrated with content preserved; helpers/templates/instructions updated. Full local checks and focused tooling regressions passed. Gameplay and remote publication unchanged.
+
+## 2026-10-04 — Thin director workflow
+
+Added a local ticket board with lifecycle/evidence gates, one isolated worker per approved ticket, durable dispatch/recovery, question relay and independent director review. Existing backlog linked to task records; chronological director/worker journals retained. Local implementation squash commit: 6c611e32e154e0c0ed250df0c6cd83c0cdf6d5f4. Full local suite and independent focused review checks passed. Remote issue creation requires unavailable connector approval and native board access is blocked; no GitHub issue or board was created and no code/assets published.

@@ -1,6 +1,6 @@
 # Project status
 
-Updated: 2026-10-04. Latest completed maintenance task: docs/tasks/chronological-journals.md.
+Updated: 2026-10-04. Latest completed maintenance task: docs/tasks/director-workflow.md (DIR-001).
 
 ## Checkpoints
 

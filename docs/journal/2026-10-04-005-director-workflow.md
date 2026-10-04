@@ -3,7 +3,7 @@
 - Task: [director-workflow](../tasks/director-workflow.md)
 - Date: 2026-10-04 (Europe/Berlin)
 - Branch: `chore/director-workflow`
-- Starting commit: `b279654`
+- Starting commit: `729ae2e7ce5ad54abfc32beaf89d8411351bcf84`
 - Role: implementation worker `/root/director_workflow_worker`
 - Workflow state: ticket DIR-001 in [local board](../BOARD.md)
 - Director session: [2026-10-04 / 004](2026-10-04-004-director-workflow.md)
@@ -35,3 +35,7 @@ Native GitHub issues/Projects are blocked by unavailable approval, saved browser
 ## Next action / handoff
 
 Director: inspect branch chore/director-workflow and its scoped commit titled "Add thin local director ticket workflow"; review task acceptance and local evidence. Resolve findings through this worker. If accepted, squash-merge into main and record Done with independent reviewer, real squash SHA and reviewed worker SHA. Save that result in a small subsequent administrative board/journal checkpoint; do not amend history merely to embed a commit's own SHA.
+
+## Director closeout
+
+Reviewed worker commit `25ea368c8f35b2a15c113e700b6cc51e4091c2bd`; accepted and squash-integrated into local main as `6c611e32e154e0c0ed250df0c6cd83c0cdf6d5f4`. DIR-001 is Done in the director board. Starting checkpoint above corrected to the actual worker checkout HEAD at dispatch; b279654 was the feature base. No remote issue/board or publication occurred.
