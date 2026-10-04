@@ -1,11 +1,12 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const handlers={},elements={},noop=()=>{};
 const ctx=new Proxy({}, {get:(o,k)=>o[k]||noop,set:(o,k,v)=>(o[k]=v,true)});
-for(const id of ['#cmd-1','#cmd-2','#cmd-3','#cmd-4','#order-0','#order-1','#order-2','#order-3','#command-hint'])elements[id]={setAttribute:noop};
+for(const id of ['#cmd-1','#cmd-2','#cmd-3','#cmd-4','#order-0','#order-1','#order-2','#order-3','#command-hint','#units','#units-close','#units-context','#unit-cards'])elements[id]={setAttribute:noop};
 const canvasHandlers={};const canvas={getContext:()=>ctx,focus:noop,addEventListener:(name,cb)=>canvasHandlers[name]=cb,getBoundingClientRect:()=>({left:100,top:50,width:512,height:384}),setPointerCapture:noop,hasPointerCapture:()=>true,releasePointerCapture:noop};
 for(const id of ['#start','#pause','#reset','#options','#close'])elements[id]={};
 elements['#game']=canvas;elements['#bots']={checked:true};elements['#difficulty']={value:'normal'};
 elements['#controls']={open:false,showModal(){this.open=true},close(){this.open=false}};
+elements['#unit-guide']={open:false,showModal(){this.open=true},close(){this.open=false;this.onclose()}};
 elements['#mission']={value:'0'};
 class Image {constructor(){this.complete=true;this.naturalWidth=20;}}
 class Audio {cloneNode(){return this}play(){return Promise.resolve()}}
@@ -145,3 +146,5 @@ const modes=new Set(),walker={x:400,y:350,team:'alien',type:'soldier',alive:true
 state.rocks=[{x:450,y:300,w:20,h:100}];const shooter={x:400,y:350,team:'human',type:'soldier',alive:true,cool:0,weapon:0,order:0},behind={x:500,y:350,team:'alien',alive:true,hp:4};state.bullets=[];f.aimHuman(shooter,behind,0);assert.equal(state.bullets.length,0,'Friendly fire must not target through walls');
 console.log('Passed active friendly fire for all orders, Normal/Follow alignment, faster friendly reactions, bounded bug focus/range, randomized bug intent and wall-limited combat.');
 }
+
+{const previous=api.state().paused;elements['#units'].onclick();assert.equal(elements['#unit-guide'].open,true);assert.equal(api.state().paused,true);assert(elements['#unit-cards'].innerHTML.includes('Egg / nest'));assert(elements['#unit-cards'].innerHTML.includes('No armor / damage reduction'));assert(elements['#units-context'].textContent.includes('queen HP:'));handlers.keydown(event('Space'));assert.equal(api.state().paused,true);elements['#units-close'].onclick();assert.equal(api.state().paused,previous);elements['#pause'].onclick();elements['#units'].onclick();elements['#units-close'].onclick();assert.equal(api.state().paused,!previous);elements['#pause'].onclick();console.log('Passed unit manual content, modal input blocking and pause restoration.');}

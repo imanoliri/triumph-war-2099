@@ -94,3 +94,6 @@ Run `node tools/check-recreation.cjs` for local logic checks and `node tools/che
 - [FFmpeg ADPCM decoder, consulted to confirm the sound format](https://github.com/FFmpeg/FFmpeg/blob/master/libavcodec/adpcm.c)
 
 No public download of the original 2099 project source was found in the search so far. That does not establish that none exists.
+
+### Units field manual
+Click **Units** below the battlefield for sprite previews, health, damage, firing intervals, defense and behavior for every current unit and structure type. Includes weapon rules and difficulty-dependent bug stats. Opening pauses the game; closing restores its previous pause state. These describe the current recreation.
