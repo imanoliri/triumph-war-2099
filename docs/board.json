@@ -238,10 +238,16 @@
       "id": "TRI-017",
       "title": "Recover and recreate ceiling vent bugs",
       "task": "docs/tasks/vent-bugs.md",
-      "status": "Ready",
-      "reason": "User approved original-game vent bug research/recreation and explicitly directed director delegation on 2026-10-04.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User approved original-game vent bug research/recreation and explicitly directed director delegation on 2026-10-04."
+      "approval": "User approved original-game vent bug research/recreation and explicitly directed director delegation on 2026-10-04.",
+      "worker": {
+        "id": "/root/commander_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-vent-bugs",
+        "branch": "feature/vent-bugs"
+      },
+      "branch": "feature/vent-bugs"
     }
   ],
   "events": [
@@ -727,6 +733,15 @@
       "details": [
         "Ready",
         "User approved original-game vent bug research/recreation and explicitly directed director delegation on 2026-10-04."
+      ]
+    },
+    {
+      "at": "2026-10-04T15:07:01.669Z",
+      "command": "dispatch",
+      "ticket": "TRI-017",
+      "details": [
+        "../triumph-vent-bugs",
+        "/root/commander_worker"
       ]
     }
   ]
