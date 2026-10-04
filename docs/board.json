@@ -506,6 +506,15 @@
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
       "questions": []
+    },
+    {
+      "id": "TRI-037",
+      "title": "Increase custom mission pressure across every difficulty",
+      "task": "docs/tasks/custom-mission-pressure-all-difficulties.md",
+      "status": "Ready",
+      "reason": "User explicitly requested nests and increased pressure at every difficulty 2026-10-05; both discussed custom missions, next after active TRI-027",
+      "questions": [],
+      "approval": "User explicitly requested nests and increased pressure at every difficulty 2026-10-05; both discussed custom missions, next after active TRI-027"
     }
   ],
   "events": [
@@ -1715,6 +1724,25 @@
       "details": [
         "../triumph-soldier-hunt-alignment",
         "/root/hunt_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:35:05.735Z",
+      "command": "create",
+      "ticket": "TRI-037",
+      "details": [
+        "custom-mission-pressure-all-difficulties",
+        "Increase custom mission pressure across every difficulty",
+        "Relay Breaker and Last Convoy sustain materially higher pressure at every selectable difficulty through additional nests and encounter/resource tuning, with original campaign isolated and measured evidence."
+      ]
+    },
+    {
+      "at": "2026-10-04T22:35:08.276Z",
+      "command": "move",
+      "ticket": "TRI-037",
+      "details": [
+        "Ready",
+        "User explicitly requested nests and increased pressure at every difficulty 2026-10-05; both discussed custom missions, next after active TRI-027"
       ]
     }
   ]
