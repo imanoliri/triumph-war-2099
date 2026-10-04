@@ -382,10 +382,16 @@
       "id": "TRI-027",
       "title": "Fix soldier hunt stopping before aim alignment",
       "task": "docs/tasks/soldier-hunt-alignment.md",
-      "status": "Ready",
-      "reason": "User authorized queue execution 2026-10-05; bounded hunt alignment fix next after TRI-034",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User authorized queue execution 2026-10-05; bounded hunt alignment fix next after TRI-034"
+      "approval": "User authorized queue execution 2026-10-05; bounded hunt alignment fix next after TRI-034",
+      "worker": {
+        "id": "/root/hunt_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-soldier-hunt-alignment",
+        "branch": "feature/soldier-hunt-alignment"
+      },
+      "branch": "feature/soldier-hunt-alignment"
     },
     {
       "id": "TRI-028",
@@ -1700,6 +1706,15 @@
         "/root",
         "7f9fce1",
         "576d07b5b9de458166619c123f58421433026f48"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:30:53.473Z",
+      "command": "dispatch",
+      "ticket": "TRI-027",
+      "details": [
+        "../triumph-soldier-hunt-alignment",
+        "/root/hunt_worker"
       ]
     }
   ]
