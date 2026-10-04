@@ -14,7 +14,7 @@ const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.f
 vm.createContext(sandbox);
 for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
- if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep});})();');
+ if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap});})();');
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
@@ -198,14 +198,14 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mask=null;state.rocks=[];state.doors=[];state.props=[];
  const tank={x:400,y:400,team:'human',type:'tank',alive:true,hp:8,cool:0,weapon:0,order:0};
  const bug=(degrees,distance=200)=>({x:400+Math.cos(degrees*Math.PI/180)*distance,y:400+Math.sin(degrees*Math.PI/180)*distance,team:'alien',type:'soldier',alive:true,hp:100});
- const isolated=bug(180,100);state.aliens=[isolated,bug(-25),bug(0),bug(25)];const group=f.tankGroup(tank,isolated);assert.equal(group.count,3,'Tank chooses denser group over closest isolated bug');assert(Math.abs(group.center)<1e-9);assert(group.width>=Math.PI/6&&group.width<=Math.PI*4/9);
+ const isolated=bug(180,100);state.aliens=[isolated,bug(-25),bug(0),bug(25)];const group=f.tankGroup(tank,isolated);assert.equal(group.count,3,'Tank chooses denser group over closest isolated bug');assert(Math.abs(group.center)<1e-9);assert(group.width>=Math.PI/9&&group.width<=Math.PI*4/9);
  state.bullets=[];f.aimTank(tank,isolated);state.t=tank.burst.readyAt;f.aimTank(tank,isolated);const sweep={...tank.sweep};assert.equal(tank.cool,.2);assert(sweep.total>=9&&sweep.total<=12);const first=Math.atan2(state.bullets[0].dy,state.bullets[0].dx);
  for(const a of state.aliens){a.x+=40;a.y+=60;}
  for(let i=1;i<sweep.total;i++){state.t+=.2;tank.cool=0;f.aimTank(tank,isolated);assert.equal(state.bullets.length,i+1);const actual=Math.atan2(state.bullets.at(-1).dy,state.bullets.at(-1).dx),expected=sweep.start+sweep.sign*sweep.width*i/(sweep.total-1);assert(Math.abs(Math.atan2(Math.sin(actual-expected),Math.cos(actual-expected)))<1e-9,'Locked evenly spaced sweep ignores moving targets');}
  const last=Math.atan2(state.bullets.at(-1).dy,state.bullets.at(-1).dx);assert(Math.abs(last-first-sweep.width)<1e-9);const rest=tank.burst.restUntil-state.t;assert(rest>=2.5&&rest<3.5);state.t=tank.burst.restUntil;tank.cool=0;f.aimTank(tank,isolated);if(!tank.sweep){state.t=tank.burst.readyAt;f.aimTank(tank,isolated);}assert.equal(tank.sweep.sign,-sweep.sign,'Successive bursts reverse sweep direction');
- f.trackBurst(tank,null);state.aliens=[];const nest={x:600,y:400,hp:50};const fallback=f.tankGroup(tank,nest);assert.equal(fallback.target,nest);assert.equal(fallback.width,Math.PI/6);
+ f.trackBurst(tank,null);state.aliens=[];const nest={x:600,y:400,hp:50};const fallback=f.tankGroup(tank,nest);assert.equal(fallback.target,nest);assert.equal(fallback.width,Math.PI/9);
  state.aliens=[bug(179),bug(-179),bug(175)];assert.equal(f.tankGroup(tank,nest).count,3,'Density grouping wraps across angle boundary');state.rocks=[{x:190,y:350,w:20,h:100}];assert.equal(f.tankGroup(tank,nest).count,0,'Group selection ignores bugs behind walls');
- console.log('Passed tank density targeting, 9–12-shot 0.20s barrages, locked evenly spaced 30–80 degree sweep, direction alternation, rest, nest fallback, angle wrap and wall-limited grouping.');
+ console.log('Passed tank density targeting, 9–12-shot 0.20s barrages, locked evenly spaced 20–80 degree sweep, direction alternation, rest, nest fallback, angle wrap and wall-limited grouping.');
 }
 
 {
@@ -232,4 +232,11 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  canvasHandlers.pointerdown({clientX:100+390/2,clientY:50+390/2,button:0,shiftKey:false,pointerId:32,preventDefault:noop});canvasHandlers.pointerup({clientX:100+450/2,clientY:50+450/2,button:0,shiftKey:false,pointerId:32,preventDefault:noop});const click=timeStamp=>({clientX:100+nest.x/2,clientY:50+nest.y/2,button:2,timeStamp,pointerId:33,preventDefault:noop});canvasHandlers.pointerdown(click(3000));canvasHandlers.pointerdown(click(3150));assert.equal(troop.focusTarget,nest,'Double right-click nest issues focus attack');assert.equal(troop.attackMove,null,'Enemy double-click does not force-move');
  const commander=state.humans.find(u=>u.id===1);commander.x=420;commander.y=410;f.giveOrder(commander,3);assert.equal(troop.focusTarget,null,'Commander orders cancel focus');
  console.log('Passed group focus attacks, target hit detection, direct tank focus vs sweeping, target tracking, wall pursuit, target death, replacement orders and double-right-click enemy focus.');
+}
+
+{
+ api.loadMission(3);let f=sandbox.window.__fixture(),state=f.state;const troops=state.humans.filter(u=>u.type==='soldier').length;assert(f.reinforce('troops'));for(let i=0;i<800;i++){state.t+=.02;f.updateSupport(.02);}assert(state.humans.filter(u=>u.type==='soldier').length>=troops+5,'Flash Back carrier delivers a squad');assert.equal(state.reinforcements.length,0,'Carrier completes route after extended unload');for(const u of state.humans.filter(u=>u.type==='soldier').slice(troops))assert(!f.blocked(u.x,u.y),'Troops must arrive on clear ground');
+ api.loadMission(3);f=sandbox.window.__fixture();state=f.state;assert(f.reinforce('tank'));const tank=state.humans.at(-1);assert.equal(tank.type,'tank');assert(tank.y>=42&&tank.y<768);assert(!f.blocked(tank.x,tank.y),'Flash Back tank arrives on clear terrain');const before={x:tank.x,y:tank.y};f.navigate(tank,20,20,.1,30);assert(Math.hypot(tank.x-before.x,tank.y-before.y)>0,'Arriving tank can move');
+ api.loadMission(3);f=sandbox.window.__fixture();state=f.state;assert(f.reinforce('air'));const aircraft=state.reinforcements.at(-1);assert(f.flightEntersMap(aircraft,aircraft.angle),'Flash Back aircraft points into battlefield');for(let i=0;i<1000;i++){state.t+=.02;f.updateSupport(.02);}assert(state.humans.some(u=>u.type==='commando'),'Flash Back air call delivers commandos');assert.equal(state.reinforcements.length,0,'Aircraft departs after visible pass');for(const u of state.humans.filter(u=>u.type==='commando'))assert(!f.blocked(u.x,u.y),'Air troops land on clear terrain');
+ console.log('Passed Flash Back carrier squad unloading, tank clear-ground arrival/movement and corrected aircraft entry/commando delivery.');
 }
