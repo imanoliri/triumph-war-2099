@@ -456,6 +456,14 @@
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
       "questions": []
+    },
+    {
+      "id": "TRI-034",
+      "title": "Increase challenge in Relay Breaker and Last Convoy",
+      "task": "docs/tasks/custom-mission-challenge.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -1500,6 +1508,16 @@
         "map-art-handoff-kit",
         "Prepare reusable map art kit and AI handoff prompts",
         "A self-contained map art kit provides fixed geometry contracts, palettes, element/sprite references, map images/screenshots and bounded artist prompts for other AI workers without gameplay changes."
+      ]
+    },
+    {
+      "at": "2026-10-04T21:53:32.429Z",
+      "command": "create",
+      "ticket": "TRI-034",
+      "details": [
+        "custom-mission-challenge",
+        "Increase challenge in Relay Breaker and Last Convoy",
+        "Retune the two new custom missions to provide meaningful tactical and sustained pressure at agreed difficulty, with measured playtest evidence and original campaign balance unchanged."
       ]
     }
   ]
