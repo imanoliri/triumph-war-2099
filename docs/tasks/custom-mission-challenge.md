@@ -20,3 +20,5 @@ A bounded worker should inspect current custom force ratios, actual encounter ti
 ## Sessions
 
 
+
+Actual user answer: a harder difficulty was still too easy. Prioritize meaningful Hard/Very Hard custom pressure and force/resource ratios; do not infer that Normal was tested. Starting settings alone are insufficient. Exact Hard versus Very Hard was not specified; worker should assess both, with Normal regression and explicit custom profiles as needed. No automatic global original-difficulty change.
