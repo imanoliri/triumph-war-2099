@@ -398,10 +398,16 @@
       "id": "TRI-028",
       "title": "Review tank rest between firing bursts",
       "task": "docs/tasks/tank-burst-rest.md",
-      "status": "Ready",
-      "reason": "User authorized queue execution; agreed 3.5-4.5s tank rest; follows TRI-027",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User authorized queue execution; agreed 3.5-4.5s tank rest; follows TRI-027"
+      "approval": "User authorized queue execution; agreed 3.5-4.5s tank rest; follows TRI-027",
+      "worker": {
+        "id": "/root/tank_rest_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-tank-burst-rest",
+        "branch": "feature/tank-burst-rest"
+      },
+      "branch": "feature/tank-burst-rest"
     },
     {
       "id": "TRI-029",
@@ -1899,6 +1905,15 @@
         "/root",
         "20fdbba880b4956abbe86a9b18e202bf87041cc3",
         "8e0f5d2f893a326d6128cdca799f4b6743faae2d"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:55:08.809Z",
+      "command": "dispatch",
+      "ticket": "TRI-028",
+      "details": [
+        "../triumph-tank-burst-rest",
+        "/root/tank_rest_worker"
       ]
     }
   ]
