@@ -15,7 +15,7 @@ Open http://127.0.0.1:2099, or open index.html directly. The preview server is r
 
 ## Play
 
-- Select Commander 1–4; WASD moves that commander. Hold left mouse to aim/fire, right mouse to grenade. V fires, B chooses a keyboard squad order. Physical keys support German QWERTZ.
+- All four commanders default to AI and missions start in troop control. Select Commander 1–4 explicitly (click again or select troops to return to troop control); WASD moves that commander. Hold left mouse to aim/fire, right mouse to grenade. V fires, B chooses a keyboard squad order. Physical keys support German QWERTZ.
 - Drag selects troops; Shift adds. Right-click ground attack-moves, double right-click empty ground force-moves, enemy clicks focus attacks, double right-click usable objects travels/activates them.
 - Space/Escape/Pause freezes play with a small banner. Selection and orders work while paused and execute on resume.
 - Top-right Rally button or R toggles flag placement. Left-click clear ground places, right-click removes, Escape exits. Yellow/bronze/BLITZ soldiers/tanks/robots use the nearest reachable flag; commandos are excluded.

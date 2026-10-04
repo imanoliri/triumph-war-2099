@@ -1,7 +1,7 @@
 # AI commanders unless explicitly selected
 
 - Ticket: TRI-009; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/commander-selection`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ AI commanders unless explicitly selected
 
 ## Acceptance criteria
 
-- [ ] All commanders default to AI; explicit commander buttons alone enable direct control; otherwise troop-control mode is active.
+- [x] All commanders default to AI; explicit commander buttons alone enable direct control; otherwise troop-control mode is active.
 
 ## Scope and decisions
 
@@ -20,3 +20,6 @@ Approved by the user request on 2026-10-04. Preserve unrelated assets, combat co
 
 ## Sessions
 
+
+- [2026-10-04 / 006](../journal/2026-10-04-006-commander-selection.md)
+- [2026-10-04 / 007](../journal/2026-10-04-007-commander-selection.md)

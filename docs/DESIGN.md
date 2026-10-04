@@ -35,7 +35,7 @@ Navigation uses a shared 16 px grid and four-neighbor distance fields. Unlocked 
 
 ## Player orders and pause
 
-Physical KeyboardEvent.code bindings support German QWERTZ. Commander selectors transfer WASD/V/B and mouse control to the selected commander; computer teammates manage unselected commanders 2 and 3. Hold left mouse to aim/fire, right mouse to grenade. Immediate drag selects troops; Shift adds/toggles selection.
+Physical KeyboardEvent.code bindings support German QWERTZ. Commander selectors transfer WASD/V/B and mouse control to the selected commander; all four commanders use AI unless explicitly selected. Missions start in troop-control mode. Clicking the selected commander button again or selecting troops deselects direct control; empty selections stay in troop mode. Only the explicitly selected commander responds to physical WASD/V/B, mouse aiming or keyboard orders. Hold left mouse to aim/fire, right mouse to grenade. Immediate drag selects troops; Shift adds/toggles selection.
 
 With troops selected: ground right-click attack-moves; double right-click empty ground force-moves without stopping to fight; enemy right-click focuses attacks (double-click also works). Double right-click usable objects forces travel/use. Groups toggle a door once; locks and terminal flags retain source dependencies. Infantry/commandos collect pickups, consume flowers and occupy cannons. Tanks/robots can operate doors and terminals.
 
