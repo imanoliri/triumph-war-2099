@@ -18,6 +18,23 @@ Default design recommendation for later refinement: charge damages only once per
 
 ## Map proposal brief
 
+## Confirmed Desert Rider roster
+
+User specified the human faction abilities and accepted crawler evasion plus limited automines on 2026-10-05:
+
+| Unit | Agreed behavior | Numerical tuning still open |
+| --- | --- | --- |
+| Rider scout | Automatically evades when a bug gets too close | Trigger distance, displacement and cooldown |
+| Dune guard | Shotgun fires five pellets in an arc with limited range | Arc width, range, damage and cadence |
+| Field mechanic | Repairs nearby convoy vehicles | Repair rate, range and repair interruption |
+| Convoy crawler | 6 HP; follows its escort route normally, automatically dodges diagonally when a worm commits to a charge; carries limited automatic mines | Dodge distance/cooldown, mine ammunition, arming, damage and placement |
+
+Worm charges are restricted to vertical or horizontal directions, as specified by the user. The crawler's diagonal dodge is a defensive response, not a restriction on all route movement. User accepted the proposed automatic mine drop behind the crawler after an evade, with finite ammunition. Mines are included in this version, not deferred to an upgrade. A sand buggy remains an earlier unselected proposal, not part of the confirmed roster.
+
+Implementation must resolve physical clearance for evasion and placement so units cannot dodge through walls or become trapped off the escort route. These are implementation requirements; exact tuning is left to the bounded worker with evidence. Do not infer new mine friendly-fire or wall-damage rules: preserve enemy-only damage conventions unless separately approved.
+
+## Map proposal brief
+
 Wide sand lanes connected around rock islands, a convoy or colony landmark, at least two viable approach/return routes, and a defensible regroup area that does not neutralize every worm. Prepare multiple schematic layouts for review before freezing geometry. Do not reskin Split Ridge or reuse its collision contract without explicit selection.
 
 ## Agent work sequence

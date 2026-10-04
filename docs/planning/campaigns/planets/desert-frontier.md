@@ -23,3 +23,5 @@ Use the listed terrain to shape distinct routes, strongpoints and objectives. Pr
 Charging worms require a bounded new-enemy ticket: movement, readable wind-up, charge collision/damage, recovery, targeting and art. Underground travel is an open choice, not inferred from the name. Scout detection remains optional. Determine objective, loss conditions, support, enemy budgets and difficulty before dispatch. Faction roster persistence and campaign consequences remain open.
 
 First selected mission refinement: [desert operation](../missions/desert-operation.md).
+
+Confirmed human roster: auto-evading Rider scout, five-pellet short-range shotgun Dune guard, Field mechanic and 6-HP Convoy crawler. Crawler uses normal route movement, diagonal auto-evade against cardinal worm charges and limited automatic mines. Full behavior and remaining tuning are recorded in the mission brief.

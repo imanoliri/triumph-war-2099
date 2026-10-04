@@ -16,3 +16,7 @@ Add desert charging worms
 User chose desert first on 2026-10-05 and explicitly selected dune-like worms that burrow, visibly warn, then emerge into a straight charge troops can dodge. See [mission refinement](../planning/campaigns/missions/desert-operation.md) and [planet dossier](../planning/campaigns/planets/desert-frontier.md). User explicitly chose underground protection and vulnerability during warning, charge and recovery; warning must visibly expose the worm. Proposed recovery, wall collision and once-per-target charge damage need final scope refinement. No under-city perforator mechanics in this ticket. Preserve original enemies, aiming, controls and source assets. Use a separate bounded worker after the current TRI-034 review is resolved; do not dispatch from this Backlog record.
 
 ## Sessions
+
+## Further user decisions
+
+2026-10-05: worm charges only vertically or horizontally. This makes the convoy crawler's approved diagonal auto-evade a meaningful counter. Preserve straight committed charges; no continuous target tracking during charge is implied. See the mission brief for the human roster; this ticket does not implement those units.
