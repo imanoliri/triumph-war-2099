@@ -45,4 +45,6 @@ Unit checks for warning/charge/recovery, wall collision, target damage and non-d
 
 ## Vehicle escort proposal for refinement
 
+Implementation dependency: [TRI-040 Desert Rider roster](../../../tasks/desert-rider-roster.md) follows TRI-035 before mission integration. This implements the user's confirmed human/vehicle abilities as opt-in custom types; mission-specific layout and success/loss rules remain here.
+
 Convoy vehicles begin disabled at the ambush site. Friendly troops hold a marked repair area to restore them; repaired vehicles advance along a prevalidated route to extraction and can be damaged or destroyed. Recommend two convoy vehicles, victory when both surviving required vehicles reach extraction, and defeat if either required vehicle is destroyed. Exact repair duration, escort proximity, movement control, route and whether one surviving vehicle is sufficient remain proposals. Reuse existing vehicle rendering/movement only after capability inspection; do not imply existing tank support already provides this objective.

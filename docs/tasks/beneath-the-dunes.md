@@ -19,4 +19,6 @@ User selected a stranded-convoy rescue on the frontier desert planet on 2026-10-
 
 ## Further user decisions
 
+Prerequisites: TRI-035 worms, TRI-040 confirmed human faction roster. Mission vehicle count, loss/success rule and schematic map remain for user refinement; do not dispatch036 before those choices are recorded.
+
 2026-10-05 confirmed faction roster: Rider scout automatically evades nearby bugs; Dune guard shotgun fires five short-range pellets in an arc; Field mechanic repairs nearby vehicles; Convoy crawler has 6 HP and ordinary escort-route movement plus diagonal auto-evade against cardinal worm charges. User accepted limited automatic mines, dropped behind the crawler after an evade. Exact ammunition and tuning remain worker-owned implementation choices after bounded scope preparation. Human unit/vehicle behavior should be split into a prerequisite ticket before mission integration rather than silently expanding the mission branch. Sand buggy was proposed but not selected.

@@ -19,4 +19,8 @@ User chose desert first on 2026-10-05 and explicitly selected dune-like worms th
 
 ## Further user decisions
 
+## Approved bounded unit implementation
+
+User selected desert first and agreed burrow/warning/cardinal straight charge/exposed vulnerability. Queue execution is authorized. After038, implement the enemy as a separate opt-in custom unit without inserting it into original or existing custom missions. TRI-036 activates it in the approved desert mission later. Worker chooses reasonable explicit numerical defaults (HP, speeds, warning/recovery durations, charge damage/range) and records them for review. Collision-safe committed cardinal charges, once-per-target damage per charge, readable exposed warning/recovery and underground immunity are required. Preserve walls; no inferred wall destruction or perforator behavior. New authored worm visuals distinct from recovered data; explicit source/provenance and browser/simulation evidence limitations. No campaign mechanics or friendly roster in this branch.
+
 2026-10-05: worm charges only vertically or horizontally. This makes the convoy crawler's approved diagonal auto-evade a meaningful counter. Preserve straight committed charges; no continuous target tracking during charge is implied. See the mission brief for the human roster; this ticket does not implement those units.

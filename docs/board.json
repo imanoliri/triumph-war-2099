@@ -510,9 +510,10 @@
       "id": "TRI-035",
       "title": "Add desert charging worms",
       "task": "docs/tasks/desert-charging-worm.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "User chose desert and confirmed worm phases/cardinal charge/underground protection, then authorized queue execution; numerical defaults worker-owned opt-in unit after038",
+      "questions": [],
+      "approval": "User chose desert and confirmed worm phases/cardinal charge/underground protection, then authorized queue execution; numerical defaults worker-owned opt-in unit after038"
     },
     {
       "id": "TRI-036",
@@ -567,6 +568,15 @@
       "reason": "Withdrawn by user2026-10-05: leave Last Convoy as it is now; no worker dispatched",
       "questions": [],
       "approval": "User requested original grenade/weapon caches in Last Convoy2026-10-05; source pickup restoration only, next after pressure037"
+    },
+    {
+      "id": "TRI-040",
+      "title": "Implement Desert Rider soldiers and convoy crawler",
+      "task": "docs/tasks/desert-rider-roster.md",
+      "status": "Ready",
+      "reason": "User confirmed faction abilities and finite automines, queue execution authorized; opt-in roster after035 before036",
+      "questions": [],
+      "approval": "User confirmed faction abilities and finite automines, queue execution authorized; opt-in roster after035 before036"
     }
   ],
   "events": [
@@ -1988,6 +1998,34 @@
       "details": [
         "../triumph-ground-robot-speed",
         "/root/robot_speed_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T23:08:39.206Z",
+      "command": "create",
+      "ticket": "TRI-040",
+      "details": [
+        "desert-rider-roster",
+        "Implement Desert Rider soldiers and convoy crawler",
+        "Implement approved scout auto-evade, five-pellet short-range shotgun guard, vehicle-repair mechanic and6HP route-following crawler with diagonal charge evade and finite automatic mines, isolated from existing units."
+      ]
+    },
+    {
+      "at": "2026-10-04T23:08:40.917Z",
+      "command": "move",
+      "ticket": "TRI-035",
+      "details": [
+        "Ready",
+        "User chose desert and confirmed worm phases/cardinal charge/underground protection, then authorized queue execution; numerical defaults worker-owned opt-in unit after038"
+      ]
+    },
+    {
+      "at": "2026-10-04T23:08:40.998Z",
+      "command": "move",
+      "ticket": "TRI-040",
+      "details": [
+        "Ready",
+        "User confirmed faction abilities and finite automines, queue execution authorized; opt-in roster after035 before036"
       ]
     }
   ]
