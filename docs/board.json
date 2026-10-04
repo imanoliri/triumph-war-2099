@@ -147,10 +147,16 @@
       "id": "TRI-012",
       "title": "Fix rendered reinforcement eagles that cannot be collected",
       "task": "docs/tasks/eagle-pickup-fix.md",
-      "status": "Ready",
-      "reason": "User reported visible randomly unpickable eagles on 2026-10-04; approved bounded diagnosis/fix and regression scope.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User reported visible randomly unpickable eagles on 2026-10-04; approved bounded diagnosis/fix and regression scope."
+      "approval": "User reported visible randomly unpickable eagles on 2026-10-04; approved bounded diagnosis/fix and regression scope.",
+      "worker": {
+        "id": "/root/commander_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-eagle-pickup-fix",
+        "branch": "fix/eagle-pickup-fix"
+      },
+      "branch": "fix/eagle-pickup-fix"
     }
   ],
   "events": [
@@ -339,6 +345,15 @@
       "details": [
         "Ready",
         "User reported visible randomly unpickable eagles on 2026-10-04; approved bounded diagnosis/fix and regression scope."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:28:42.765Z",
+      "command": "dispatch",
+      "ticket": "TRI-012",
+      "details": [
+        "../triumph-eagle-pickup-fix",
+        "/root/commander_worker"
       ]
     }
   ]
