@@ -2,7 +2,7 @@
 
 - Task: [eagle-pickup-fix](../tasks/eagle-pickup-fix.md)
 - Branch: main
-- Status: in progress
+- Status: complete
 
 ## Chronological log
 
@@ -39,3 +39,7 @@ User explicitly authorized pushing the changes to their GitHub repository. Confi
 TRI-014 accepted/squashed4416f260b2a9be9ae71012bd7176b62ad3e49df7 from0bdc25d39651b8c8ab60748e4983e8f495549852. Independent full suite passed including closed-room success, locked/unlocked/destroyed invalidation, stable callback/cache isolation/reuse and actual blocked terrain assertions. Live route playtest unverified. Next TRI-015 then TRI-016, then authorized GitHub push.
 
 TRI-015 accepted/squashedc2a8338911a172c29a8cf466cb33e964ec2ccdc6 fromf473be97758e8670bca72fa019ddedb81adffd31. Independent full suite passed; duplicate commander gun pickup rejected before removal/effects/reward, AI skips duplicates. Live weapon collection unverified. Next TRI-016, then authorized publication.
+
+TRI-016 accepted/squashed c3e885f9baf08c56d4f774c3f17cade45fbd58a5 from reviewed 0f65d07871f4ee7d89f33f8f83cd03bdbb8f81c0. Independent full suite passed. Mounted quantization precedes on-foot rules in aim and fire; live cannon rendering/audio unverified. All approved gameplay tickets are integrated.
+
+Publication: git push -u origin main succeeded on 2026-10-04, creating origin/main at a80866e. Original history/authorship preserved; no task branches, tags or ignored MIDI bank uploaded. A Python documentation-update attempt was unavailable; corrected using native PowerShell file APIs. This checkpoint records the successful push and updates current status. Next action: push this administrative checkpoint and verify remote HEAD matches local. No implementation remains pending; broader browser/audio acceptance is follow-up work. Unrelated assets/provenance.json edit remains preserved locally.
