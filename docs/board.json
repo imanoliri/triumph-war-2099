@@ -390,10 +390,16 @@
       "id": "TRI-029",
       "title": "Propose a new Relay Breaker map for user review",
       "task": "docs/tasks/relay-breaker-map-proposals.md",
-      "status": "Ready",
-      "reason": "User explicitly requested visual proposals for a new Relay Breaker map to review and align; active defense accepted. Proposal design only; selected-map implementation awaits user choice.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User explicitly requested visual proposals for a new Relay Breaker map to review and align; active defense accepted. Proposal design only; selected-map implementation awaits user choice."
+      "approval": "User explicitly requested visual proposals for a new Relay Breaker map to review and align; active defense accepted. Proposal design only; selected-map implementation awaits user choice.",
+      "worker": {
+        "id": "/root/map_proposal_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-relay-breaker-map-proposals",
+        "branch": "chore/relay-breaker-map-proposals"
+      },
+      "branch": "chore/relay-breaker-map-proposals"
     },
     {
       "id": "TRI-030",
@@ -1290,6 +1296,15 @@
       "details": [
         "Ready",
         "User explicitly requested visual proposals for a new Relay Breaker map to review and align; active defense accepted. Proposal design only; selected-map implementation awaits user choice."
+      ]
+    },
+    {
+      "at": "2026-10-04T18:03:20.374Z",
+      "command": "dispatch",
+      "ticket": "TRI-029",
+      "details": [
+        "../triumph-relay-breaker-map-proposals",
+        "/root/map_proposal_worker"
       ]
     }
   ]
