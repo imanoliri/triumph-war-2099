@@ -548,10 +548,16 @@
       "id": "TRI-038",
       "title": "Increase ground robot movement speed by 50 percent",
       "task": "docs/tasks/ground-robot-speed.md",
-      "status": "Ready",
-      "reason": "User explicitly requested robot50% movement increase 2026-10-05; separate bounded ticket after current pressure and queued tank/turret fixes",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User explicitly requested robot50% movement increase 2026-10-05; separate bounded ticket after current pressure and queued tank/turret fixes"
+      "approval": "User explicitly requested robot50% movement increase 2026-10-05; separate bounded ticket after current pressure and queued tank/turret fixes",
+      "worker": {
+        "id": "/root/robot_speed_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-ground-robot-speed",
+        "branch": "feature/ground-robot-speed"
+      },
+      "branch": "feature/ground-robot-speed"
     },
     {
       "id": "TRI-039",
@@ -1973,6 +1979,15 @@
         "/root",
         "7a502fc3b2590fd58101b37c2613ced33a77c4df",
         "5289b0b9db9435497ebe26512cfcd29c42df9a27"
+      ]
+    },
+    {
+      "at": "2026-10-04T23:07:35.263Z",
+      "command": "dispatch",
+      "ticket": "TRI-038",
+      "details": [
+        "../triumph-ground-robot-speed",
+        "/root/robot_speed_worker"
       ]
     }
   ]
