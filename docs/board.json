@@ -414,24 +414,26 @@
       "id": "TRI-031",
       "title": "Add narrow sweep bursts to plasma turrets",
       "task": "docs/tasks/plasma-turret-narrow-sweep.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent full suite/final recreation checks and runtime review passed. Approved16visual/smooth0–15degree totalarc implemented; mounted live trajectories/audio/balance unverified. Squashf5094a7.",
       "questions": [],
       "approval": "User explicitly requested narrow turret sweep and answered yes to16visual headings plus smooth total0–15degree projectile arc; design worker finished. Independent feature implementation can proceed while map selection is pending.",
-      "worker": {
-        "id": "/root/turret_sweep_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-plasma-turret-narrow-sweep",
-        "branch": "feature/plasma-turret-narrow-sweep"
-      },
-      "branch": "feature/plasma-turret-narrow-sweep"
+      "branch": "feature/plasma-turret-narrow-sweep",
+      "completion": {
+        "evidence": "Independent full suite/final recreation checks and runtime review passed. Approved16visual/smooth0–15degree totalarc implemented; mounted live trajectories/audio/balance unverified. Squashf5094a7.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "d27f702cff9f12a2ff0e4a07a4e90d3a1233697e",
+        "squashCommit": "f5094a75c36edef890039df717ab8e70c5a7304f"
+      }
     },
     {
       "id": "TRI-032",
       "title": "Build Split Ridge as a new Relay Breaker map",
       "task": "docs/tasks/relay-breaker-split-ridge.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "User selectedA Split Ridge and explicitly requested preservingB/C; narrow sweep accepted, now implement selected custom terrain under recorded scope.",
+      "questions": [],
+      "approval": "User selectedA Split Ridge and explicitly requested preservingB/C; narrow sweep accepted, now implement selected custom terrain under recorded scope."
     }
   ],
   "events": [
@@ -1388,6 +1390,36 @@
         "relay-breaker-split-ridge",
         "Build Split Ridge as a new Relay Breaker map",
         "Relay Breaker loads a purpose-built Split Ridge terrain image/mask and agreed placements, with playable routes and support delivery; originals and saved B/C concepts preserved."
+      ]
+    },
+    {
+      "at": "2026-10-04T18:17:12.309Z",
+      "command": "move",
+      "ticket": "TRI-031",
+      "details": [
+        "Review",
+        "Director independent full suite and final affected recreation checks pass; reviewed sweep/explicit-projectile-angle/operator timing diff. Live startup/render smoke only; mounted trajectories/audio/balance limits accepted."
+      ]
+    },
+    {
+      "at": "2026-10-04T18:17:37.637Z",
+      "command": "move",
+      "ticket": "TRI-031",
+      "details": [
+        "Done",
+        "Independent full suite/final recreation checks and runtime review passed. Approved16visual/smooth0–15degree totalarc implemented; mounted live trajectories/audio/balance unverified. Squashf5094a7.",
+        "/root",
+        "f5094a75c36edef890039df717ab8e70c5a7304f",
+        "d27f702cff9f12a2ff0e4a07a4e90d3a1233697e"
+      ]
+    },
+    {
+      "at": "2026-10-04T18:17:37.697Z",
+      "command": "move",
+      "ticket": "TRI-032",
+      "details": [
+        "Ready",
+        "User selectedA Split Ridge and explicitly requested preservingB/C; narrow sweep accepted, now implement selected custom terrain under recorded scope."
       ]
     }
   ]

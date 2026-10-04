@@ -26,3 +26,5 @@ Later bounded worker should inspect existing tank locked burst aim/sweep/directi
 ## Implementation outcome
 
 Review: each operator burst samples a uniform total 0–15° arc around its starting target direction, locks that center, emits evenly spaced continuous projectile angles and alternates sweep direction. Render facing remains sixteen-way. Operator burst sizes, reaction/rest, cadence and plasma damage are preserved. Live smoke is limited to scenario startup/rendering and the guide; mounted trajectory/audio/balance await a manual playtest.
+
+- [Director acceptance / squash](../journal/2026-10-04-046-plasma-turret-narrow-sweep-director.md)
