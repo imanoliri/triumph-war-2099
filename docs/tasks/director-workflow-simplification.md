@@ -18,3 +18,5 @@ User explicitly authorized implementation of the discussed workflow simplificati
 ## Sessions
 
 - [2026-10-04 / 035](../journal/2026-10-04-035-director-workflow-simplification.md)
+
+- [2026-10-04 / 036 — director acceptance](../journal/2026-10-04-036-director-workflow-simplification-director.md)

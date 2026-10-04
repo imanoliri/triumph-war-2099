@@ -302,16 +302,17 @@
       "id": "TRI-022",
       "title": "Simplify director worker dispatch and handoffs",
       "task": "docs/tasks/director-workflow-simplification.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent full suite plus final affected lifecycle checks passed; review guards fixed; safe prepare, compact contracts and single-session/recovery/checkpoint guidance accepted. No gameplay changes. Squash7a04024.",
       "questions": [],
       "approval": "User explicitly requested ticket creation and implementation of proposed director-worker simplification.",
-      "worker": {
-        "id": "/root/workflow_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-director-workflow-simplification",
-        "branch": "chore/director-workflow-simplification"
-      },
-      "branch": "chore/director-workflow-simplification"
+      "branch": "chore/director-workflow-simplification",
+      "completion": {
+        "evidence": "Independent full suite plus final affected lifecycle checks passed; review guards fixed; safe prepare, compact contracts and single-session/recovery/checkpoint guidance accepted. No gameplay changes. Squash7a04024.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "be6bde650b6585f9ea1b219989ad4045ece503ef",
+        "squashCommit": "7a04024d9c5a2fbe4c9e5a46c93a59e9a0c84f63"
+      }
     }
   ],
   "events": [
@@ -973,6 +974,27 @@
       "details": [
         "../triumph-director-workflow-simplification",
         "/root/workflow_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T17:27:03.279Z",
+      "command": "move",
+      "ticket": "TRI-022",
+      "details": [
+        "Review",
+        "Independent full suite passed at10ab325; final committed-board/fail-closed fixes be6bde6 reviewed and affected disposable lifecycle checks passed. Dirty director preservation and scoped contracts/session recovery accepted; no gameplay changes."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:28:12.004Z",
+      "command": "move",
+      "ticket": "TRI-022",
+      "details": [
+        "Done",
+        "Independent full suite plus final affected lifecycle checks passed; review guards fixed; safe prepare, compact contracts and single-session/recovery/checkpoint guidance accepted. No gameplay changes. Squash7a04024.",
+        "/root",
+        "7a04024d9c5a2fbe4c9e5a46c93a59e9a0c84f63",
+        "be6bde650b6585f9ea1b219989ad4045ece503ef"
       ]
     }
   ]
