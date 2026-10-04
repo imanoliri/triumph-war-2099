@@ -1,8 +1,10 @@
 'use strict';
 // Stateless helpers: game.js owns placement mode, flags and unit orders.
+const rallyCollisions=new WeakMap();
 window.TriumphRally={
  choose(unit,points,state,blocked){
-  const revision=state.level+':rally:'+(state.doors||[]).map(d=>Number(d.open)+','+Number(d.locked)).join(';')+':'+(state.props||[]).filter(p=>p.wall&&p.hp>0).length,collision=(x,y)=>blocked(x,y,true);
+  const revision=state.level+':rally:'+(state.doors||[]).map(d=>[Number(d.open),Number(d.locked),Number(d.destroyed)].join(',')).join(';')+':'+(state.props||[]).filter(p=>p.wall&&p.hp>0).length;
+  if(!rallyCollisions.has(blocked))rallyCollisions.set(blocked,(x,y)=>blocked(x,y,true));const collision=rallyCollisions.get(blocked);
   let best=null,distance=Infinity;
   for(const point of points){const route=window.TriumphNavigation.routeDistance(unit,point,collision,revision);if(route<distance){distance=route;best=point;}}
   return best;

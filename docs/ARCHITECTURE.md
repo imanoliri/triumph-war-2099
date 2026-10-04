@@ -43,3 +43,5 @@ tools/check-recreation.cjs creates a mocked DOM/canvas VM, injects fixtures and 
 ## Gradual module extraction
 
 The first maintenance step extracts balance, mission progress and rally helpers without changing gameplay. game.js still contains combat, input/support orchestration and most rendering. Next extract combat/burst functions with explicit callbacks, then orders/input, support lifecycle and rendering as separate behavior-preserving tasks. Add/update regression coverage at each boundary; do not combine extraction with new balance changes.
+
+Route fields are cached separately per stable collision callback and revision. Human planning uses an openable-door predicate; actual move/weapon collision and alien planning use solid-door rules. Door revision includes open, locked and destroyed bits so terminal unlocks and destruction invalidate the appropriate fields. Rally collision callbacks are memoized, avoiding a fresh policy identity per selection. Mission begin resets all route contexts.

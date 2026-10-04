@@ -1,7 +1,7 @@
 # Fix soldiers routing through walls near closed doors
 
 - Ticket: TRI-014; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `fix/closed-door-pathing`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Fix soldiers routing through walls near closed doors
 
 ## Acceptance criteria
 
-- [ ] Reproduce soldiers stalling against a room wall when routing through a closed door, and fix navigation while preserving locked-door and interaction rules.
+- [x] Reproduce soldiers stalling against a room wall when routing through a closed door, and fix navigation while preserving locked-door and interaction rules.
 
 ## Scope and decisions
 
@@ -17,3 +17,6 @@ User reported on 2026-10-04 that soldiers trying to enter rooms with closed door
 
 ## Sessions
 
+
+- [2026-10-04 / 018](../journal/2026-10-04-018-closed-door-pathing.md)
+- [2026-10-04 / 019](../journal/2026-10-04-019-closed-door-pathing.md)
