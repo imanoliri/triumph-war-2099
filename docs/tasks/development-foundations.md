@@ -29,4 +29,4 @@ Run complete syntax/project/game/music checks, task-helper creation/resume/workt
 
 ## Completion and review
 
-Automated, tooling, packaging, HTTP and isolated recovery checks passed; scoped diff reviewed with no gameplay rebalance. Live browser acceptance remains not run and is recorded explicitly. Final handoff: docs/sessions/development-foundations/001.md. Maintenance is ready to fast-forward into local main; publication is deferred.
+Automated, tooling, packaging, HTTP and isolated recovery checks passed; scoped diff reviewed with no gameplay rebalance. Live browser acceptance remains not run and is recorded explicitly. Final handoff: docs/sessions/development-foundations/001.md. Maintenance implementation commit 0378f4a was fast-forwarded into local main after review; this completion record follows it. Publication is deferred.

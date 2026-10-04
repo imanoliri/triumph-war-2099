@@ -260,3 +260,5 @@
 - Began behavior-preserving extraction into src/balance.js, src/missions.js and src/rally.js; updated runtime script order and preview allowlist. Remaining game.js systems have bounded backlog tasks.
 - Full simulation/music/project checks passed; disposable Git branch/worktree/session and loopback HTTP allowlist checks passed. Default and personal ZIP integrity/module membership/bank exclusion checked. Full optional recovery rehearsed in an isolated checkout; all binary assets match and generated JSON/JS differs only in serialization/newlines. Recovered-assets suite passes without local sample bank.
 - Browser/audio playtest remains not run; live checklist and report explicitly record the gap. Initial mission completion report remains pending live reproduction despite all-nine automated victory checks.
+
+- Final tracked-source export also passed doctor, all checks and default packaging without the ignored MIDI bank or external scratch data. Reviewed foundations fast-forwarded into local main; no remote push performed.

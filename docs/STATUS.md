@@ -6,7 +6,7 @@ Updated: 2026-10-04. Current maintenance task: docs/tasks/development-foundation
 
 - `milestone-playable-2026-10-04` preserves eab0bb0: the playable state through rally flags before this maintenance task.
 - Local main was advanced to that milestone. `initial-recreation` retains the original development history.
-- `chore/development-foundations` introduces project/session instructions, portable commands, verification workflow and initial module extraction. See its task/session record for verification and merge state.
+- `chore/development-foundations` introduced project/session instructions, portable commands, verification workflow and initial module extraction; it was fast-forwarded into local main after maintenance review. The branch and milestone history are retained.
 - Git origin is configured for imanoliri/triumph-war-2099. This maintenance task has not published to GitHub or changed repository visibility. Prior publication/visibility decisions remain unresolved; check actual remote state before publishing.
 
 ## Implemented
@@ -15,7 +15,7 @@ Nine recovered maps/sprites/audio/MIDI; commander controls with German physical 
 
 ## Verification distinction
 
-The mocked simulation checks cover all nine missions and recent controls/support behavior. Music checks verify scheduling with mocked audio. Live browser rendering, audible matching and broad balance playtests remain unverified in the current tool environment. The user's own play reports informed fixes but are not a recorded comprehensive acceptance pass.
+Full project/simulation/music/tooling checks passed both in the working checkout and a clean export of tracked source without the local bank. The mocked simulation checks cover all nine missions and recent controls/support behavior. Music checks verify scheduling with mocked audio. Live browser rendering, audible matching and broad balance playtests remain unverified in the current tool environment. The user's own play reports informed fixes but are not a recorded comprehensive acceptance pass.
 
 The reported mission-not-finishing issue was not reproduced as a universal completion failure. All nine completion fixtures pass; off-map births and carrier wave accounting were corrected. Keep TRI-001 open until the live scenario is reproduced or a full acceptance pass establishes resolution.
 
