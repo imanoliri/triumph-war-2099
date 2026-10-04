@@ -97,3 +97,6 @@ No public download of the original 2099 project source was found in the search s
 
 ### Units field manual
 Click **Units** below the battlefield for sprite previews, health, damage, firing intervals, defense and behavior for every current unit and structure type. Includes weapon rules and difficulty-dependent bug stats. Opening pauses the game; closing restores its previous pause state. These describe the current recreation.
+
+### Friendly burst fire
+Infantry, robots and cannon operators fire randomized 3–6-shot bursts, rest 0.8–1.8 seconds, and take 0.2–0.8 seconds to begin shooting after target acquisition. Tanks fire 5–9-shot bursts, rest 1.5–3 seconds, and take 0.4–1.2 seconds to begin. Each unit varies independently. Existing shot intervals apply inside bursts (tank 0.70 s; infantry 0.38 s, Defend 0.20 s, flame 0.18 s). Target loss interrupts a burst; reacquisition adds a delay, and target switches preserve any remaining rest. Commanders and aircraft retain continuous fire. Units shows these rules.

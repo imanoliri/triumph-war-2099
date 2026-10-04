@@ -148,3 +148,10 @@
 - Bug/queen health and nest spawn intervals reflect the mission difficulty snapshot; bug firing intervals use the same difficulty base table as combat. Explains health at mission start versus immediately changed firing difficulty.
 - Opening clears held input and pauses; close/Escape restores the prior pause state. Keyboard gameplay input is blocked in the modal.
 - node --check game.js and tools/check-recreation.cjs passed, including unit-guide content/pause/input checks and existing cardinal-fire/cone tests. Live browser layout remains unverified.
+
+## 2026-10-04 — Randomized friendly burst fire
+- Implemented agreed balancing: infantry and robots fire 3–6 shots, rest 0.8–1.8 seconds, and wait 0.2–0.8 seconds on target acquisition. Tanks fire 5–9 shots, rest 1.5–3 seconds, and wait 0.4–1.2 seconds on acquisition. Each unit samples its own timing and burst size.
+- Kept within-burst cooldowns: infantry 0.38 s, Defend 0.20 s, flame 0.18 s, tanks 0.70 s. Cannon operators also use infantry burst rules. Commanders, aircraft and bugs retain their previous fire behavior.
+- Burst gate sits in friendly targeting/aiming, preserving cardinal fire, movement/order logic and mouse commander control. Target death, loss of sight or perception loss interrupts the burst. Reacquisition/switch adds a reaction delay; any existing rest deadline persists. Rest is measured from the final shot. Initial burst delay starts after AI perception identifies a target.
+- Units guide derives burst descriptions from the same configuration as combat; updated infantry, tank, robot, cannon and weapon descriptions.
+- node --check game.js and tools/check-recreation.cjs passed. Checks cover all burst sizes, reaction/rest ranges, cooldown retention, target switching/death/walls, Defend and flame cadence, commander continuous fire and guide text. Live gameplay balance remains for player feedback.

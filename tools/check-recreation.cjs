@@ -14,7 +14,7 @@ const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.f
 vm.createContext(sandbox);
 for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
- if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent});})();');
+ if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules});})();');
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
@@ -95,7 +95,7 @@ canvasHandlers.pointerdown(pointer(600,350,2));assert(one.attackMove&&two.attack
 canvasHandlers.pointerdown(pointer(one.x,one.y));canvasHandlers.pointerup(pointer(one.x,one.y));assert.equal(f.selection.size,1,'Click selects one');canvasHandlers.pointerdown(pointer(two.x,two.y,0,true));canvasHandlers.pointerup(pointer(two.x,two.y,0,true));assert.equal(f.selection.size,2,'Shift click adds');
 state.rocks=[{x:380,y:80,w:40,h:500}];f.attackMoveTo({x:650,y:300});const goal={...one.attackMove};for(let i=0;i<1600&&one.attackMove;i++){state.t+=.05;f.attackMoveStep(one,null,.05);assert(!f.blocked(one.x,one.y),'Attack move cannot cross wall');}assert.equal(one.attackMove,null,'Attack move reaches destination behind a long wall');assert.equal(one.order,3,'Troop holds after arrival');assert(Math.hypot(one.x-goal.x,one.y-goal.y)<13);
 f.selectTroops(two,two);two.cannon=0;state.cannons=[{occupant:two}];f.attackMoveTo({x:400,y:300});assert.equal(state.cannons[0].occupant,null,'Ordered cannon troops dismount');assert.equal(two.cannon,undefined);assert(!f.blocked(two.attackMove.x,two.attackMove.y),'Blocked click destination resolves to open terrain');
-state.rocks=[];one.x=330;one.y=600;one.cool=0;one.attackMove={x:650,y:600};state.bullets=[];const enemy={x:430,y:600,alive:true,hp:4};f.attackMoveStep(one,enemy,.05);assert.equal(state.bullets.length,1,'Attack move engages a visible enemy');assert.equal(one.x,330,'Aligned troop pauses travel to engage');f.attackMoveStep(one,null,.05);assert(one.x>330,'Travel resumes after engagement');api.loadMission(2);assert.equal(f.selection.size,0,'Mission reset clears selection');
+state.rocks=[];one.x=330;one.y=600;one.cool=0;one.attackMove={x:650,y:600};state.bullets=[];const enemy={x:430,y:600,alive:true,hp:4};f.attackMoveStep(one,enemy,.05);assert.equal(state.bullets.length,0,'Attack move waits for its randomized reaction delay');state.t=one.burst.readyAt;f.attackMoveStep(one,enemy,.05);assert.equal(state.bullets.length,1,'Attack move engages a visible enemy');assert.equal(one.x,330,'Aligned troop pauses travel to engage');f.attackMoveStep(one,null,.05);assert(one.x>330,'Travel resumes after engagement');api.loadMission(2);assert.equal(f.selection.size,0,'Mission reset clears selection');
 console.log('Passed drag/click/Shift selection, scaled pointer coordinates, commander exclusion, right-click formations, wall routing, blocked destinations, cannon dismount and arrival holding.');
 }
 
@@ -139,7 +139,7 @@ console.log('Passed held mouse autofire, normal weapon cooldown, moving diagonal
 
 {
 api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mode='playing';state.mask=null;state.rocks=[];state.doors=[];state.props=[];
-for(const order of [0,1,2,3]){const troop={x:400,y:350,team:'human',type:'soldier',alive:true,hp:1,angle:0,cool:0,weapon:0,order},bug={x:510,y:430,team:'alien',type:'soldier',alive:true,hp:4};state.bullets=[];f.aimHuman(troop,bug,.1);assert.equal(state.bullets.length,1,'Friendly order '+order+' should actively shoot visible diagonal threat');assert(Math.abs(state.bullets[0].dy)<1e-12,'Friendly infantry shots remain cardinal');if(order===0||order===1)assert(troop.y>350,'Normal/Follow troops should step into a firing lane');if(order===3)assert.equal(troop.y,350,'Defenders should hold position');}
+for(const order of [0,1,2,3]){const troop={x:400,y:350,team:'human',type:'soldier',alive:true,hp:1,angle:0,cool:0,weapon:0,order},bug={x:510,y:430,team:'alien',type:'soldier',alive:true,hp:4};state.bullets=[];f.aimHuman(troop,bug,.1);assert.equal(state.bullets.length,0,'Friendly troops wait before firing');state.t=troop.burst.readyAt;f.aimHuman(troop,bug,0);assert.equal(state.bullets.length,1,'Friendly order '+order+' should actively shoot visible diagonal threat');assert(Math.abs(state.bullets[0].dy)<1e-12,'Friendly infantry shots remain cardinal');if(order===0||order===1)assert(troop.y>350,'Normal/Follow troops should step into a firing lane');if(order===3)assert.equal(troop.y,350,'Defenders should hold position');}
 const friendly={x:400,y:350,team:'human',alive:true,hp:1},bug={x:510,y:430,team:'alien',alive:true,hp:4};let friendlyTime=null,bugTime=null;state.t=0;for(let i=0;i<40;i++){state.t=i*.1;if(f.perceive(friendly,[bug],245)&&friendlyTime===null)friendlyTime=state.t;if(f.perceive(bug,[friendly],240)&&bugTime===null)bugTime=state.t;}assert(friendlyTime!==null&&bugTime!==null);assert(friendlyTime<bugTime,'Friendly troops should react sooner than bugs');state.t=bug.ai.focusUntil+.01;assert.equal(f.perceive(bug,[friendly],240),null,'Bugs should lose interest after a short focus interval');assert(bug.ai.boredUntil>state.t,'Bugs should take a wandering break');
 const farBug={x:400,y:350,team:'alien',alive:true,hp:4},farSoldier={x:600,y:350,team:'human',alive:true,hp:1};for(let i=0;i<50;i++){state.t+=.1;assert.equal(f.perceive(farBug,[farSoldier],240),null,'Bugs should not detect targets beyond reduced sight range');}
 const modes=new Set(),walker={x:400,y:350,team:'alien',type:'soldier',alive:true,hp:4,angle:0};for(let i=0;i<100;i++){state.t+=3.1;f.bugIntent(walker,friendly,.02,1);modes.add(walker.intent.mode);}assert(modes.has('approach')&&modes.has('wander')&&modes.has('pause'),'Bugs must vary approach, wandering and pauses');
@@ -148,3 +148,30 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
 }
 
 {const previous=api.state().paused;elements['#units'].onclick();assert.equal(elements['#unit-guide'].open,true);assert.equal(api.state().paused,true);assert(elements['#unit-cards'].innerHTML.includes('Egg / nest'));assert(elements['#unit-cards'].innerHTML.includes('No armor / damage reduction'));assert(elements['#units-context'].textContent.includes('queen HP:'));handlers.keydown(event('Space'));assert.equal(api.state().paused,true);elements['#units-close'].onclick();assert.equal(api.state().paused,previous);elements['#pause'].onclick();elements['#units'].onclick();elements['#units-close'].onclick();assert.equal(api.state().paused,!previous);elements['#pause'].onclick();console.log('Passed unit manual content, modal input blocking and pause restoration.');}
+
+// Burst control retains shot cadence, independently varies timings and cannot bypass rests.
+{
+ api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mask=null;state.rocks=[];state.doors=[];state.props=[];
+ const target={x:600,y:400,team:'alien',alive:true,hp:1000},other={...target,y:410};
+ for(const type of ['soldier','robot','tank']){
+  const r=f.burstRules[type],sizes=new Set(),delays=new Set();
+  for(let i=0;i<80;i++){
+   const u={x:400,y:400,team:'human',type,alive:true,hp:8,cool:0,weapon:0,order:0};state.bullets=[];const start=state.t;
+   f.aimHuman(u,target,0);assert.equal(state.bullets.length,0);const delay=u.burst.readyAt-start;assert(delay>=r.delayMin-1e-9&&delay<=r.delayMax+1e-9);delays.add(delay);
+   state.t=u.burst.readyAt;f.aimHuman(u,target,0);const size=1+u.burst.remaining;sizes.add(size);assert(size>=r.min&&size<=r.max);assert.equal(state.bullets.length,1);
+   const cadence=u.cool;assert.equal(cadence,type==='tank'?.7:.38);f.aimHuman(u,target,0);assert.equal(state.bullets.length,1,'Cannot skip within-burst cooldown');
+   for(let n=1;n<size;n++){state.t+=cadence;u.cool=0;f.aimHuman(u,target,0);}assert.equal(state.bullets.length,size);assert.equal(u.burst.remaining,0);
+   const rest=u.burst.restUntil-state.t;assert(rest>=r.restMin-1e-9&&rest<=r.restMax+1e-9);const restUntil=u.burst.restUntil;u.cool=0;f.aimHuman(u,other,0);assert.equal(u.burst.restUntil,restUntil,'Switch preserves rest');assert.equal(state.bullets.length,size);
+   f.trackBurst(u,null);f.aimHuman(u,target,0);assert(u.burst.readyAt>=restUntil);assert.equal(state.bullets.length,size);
+   state.t=u.burst.readyAt;f.aimHuman(u,target,0);assert.equal(state.bullets.length,size+1,'Resumes after rest and reacquisition');
+   target.alive=false;u.cool=0;f.aimHuman(u,target,0);assert.equal(u.burst.remaining,0,'Death interrupts burst');assert.equal(state.bullets.length,size+1);target.alive=true;
+   f.aimHuman(u,target,0);state.rocks=[{x:480,y:350,w:20,h:100}];f.aimHuman(u,target,0);assert.equal(u.burst.target,null,'Wall interrupts burst');state.rocks=[];
+  }
+  assert.equal(sizes.size,r.max-r.min+1,'All configured burst sizes occur');assert(delays.size>50,'Reaction delays vary independently');
+ }
+ const defender={x:400,y:400,team:'human',type:'soldier',cool:0,weapon:0,order:3};f.aimHuman(defender,target,0);state.t=defender.burst.readyAt;f.aimHuman(defender,target,0);assert.equal(defender.cool,.2);assert(defender.burst.remaining>=2&&defender.burst.remaining<=5);
+ const flame={...defender,weapon:1,cool:0,burst:undefined};f.aimHuman(flame,target,0);state.t=flame.burst.readyAt;f.aimHuman(flame,target,0);assert.equal(flame.cool,.18);
+ const commander={x:400,y:400,team:'human',type:'commander',cool:0,weapon:0};state.bullets=[];f.aimHuman(commander,target,0);assert.equal(state.bullets.length,1);assert.equal(commander.burst,undefined);
+ elements['#units'].onclick();assert(elements['#unit-cards'].innerHTML.includes('5–9 shots per burst'));assert(elements['#unit-cards'].innerHTML.includes('3–6 shots per burst'));elements['#units-close'].onclick();
+ console.log('Passed soldier/robot/tank burst sizes, initial delays, rest ranges, target switching/loss, cadence, Defend/flame, continuous commander fire and guide descriptions.');
+}
