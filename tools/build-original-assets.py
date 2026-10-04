@@ -11,7 +11,9 @@ for fi in [5,7,9,11,13,15,17,19,21]:
   if o['type']>1:continue
   if o.get('image') not in cache:
    if o['type']==0 and o.get('width') and o.get('height'):
-    ImageDraw.Draw(mask).rectangle((ins['x'],ins['y'],ins['x']+o['width']-1,ins['y']+o['height']-1),fill=255 if o.get('obstacle')==1 else 0)
+    bounds=(ins['x'],ins['y'],ins['x']+o['width']-1,ins['y']+o['height']-1)
+    if o.get('fill')==1:ImageDraw.Draw(im).rectangle(bounds,fill=tuple(o.get('color',[0,0,0]))+(255,))
+    ImageDraw.Draw(mask).rectangle(bounds,fill=255 if o.get('obstacle')==1 else 0)
    continue
   img=cache[o['image']];it=info[o['image']];x,y=ins['x'],ins['y']
   if o['type']==0:
@@ -19,7 +21,9 @@ for fi in [5,7,9,11,13,15,17,19,21]:
    for tx in range(0,o['width'],img.width):
     for ty in range(0,o['height'],img.height):tile.alpha_composite(img,(tx,ty))
    img=tile
-  else:x-=it['hx'];y-=it['hy']
+  # Frame backdrop instances use top-left coordinates. Image hotspots apply
+  # only to active sprites; decorative backdrop hotspots may be far off-image.
+  # Subtracting them displaces wall ends, terrain edges and whole floor panels.
   im.alpha_composite(img,(x,y))
   # Backdrops overwrite the collision plane in drawing order. A non-obstacle
   # floor can carve a walkable corridor out of an earlier rock backdrop.
