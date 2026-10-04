@@ -24,3 +24,5 @@ Provide reviewable library previews and complete handoff prompt, suitable for an
 ## Sessions
 
 
+
+User explicitly confirmed ticket preparation and queue priority on 2026-10-04: run directly after current TRI-026 Silent Return. This priority supersedes other Backlog fixes. Prepare kit only; director remains coordinator.
