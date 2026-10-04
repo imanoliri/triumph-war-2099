@@ -190,10 +190,16 @@
       "id": "TRI-014",
       "title": "Fix soldiers routing through walls near closed doors",
       "task": "docs/tasks/closed-door-pathing.md",
-      "status": "Ready",
-      "reason": "User reported wall-shortcut closed-door soldier routing on 2026-10-04 and requested bounded fix.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User reported wall-shortcut closed-door soldier routing on 2026-10-04 and requested bounded fix."
+      "approval": "User reported wall-shortcut closed-door soldier routing on 2026-10-04 and requested bounded fix.",
+      "worker": {
+        "id": "/root/commander_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-closed-door-pathing",
+        "branch": "fix/closed-door-pathing"
+      },
+      "branch": "fix/closed-door-pathing"
     },
     {
       "id": "TRI-015",
@@ -588,6 +594,15 @@
         "/root",
         "99e6ebb",
         "7877511"
+      ]
+    },
+    {
+      "at": "2026-10-04T14:44:27.888Z",
+      "command": "dispatch",
+      "ticket": "TRI-014",
+      "details": [
+        "../triumph-closed-door-pathing",
+        "/root/commander_worker"
       ]
     }
   ]
