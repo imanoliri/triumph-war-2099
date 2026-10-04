@@ -390,16 +390,17 @@
       "id": "TRI-029",
       "title": "Propose a new Relay Breaker map for user review",
       "task": "docs/tasks/relay-breaker-map-proposals.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Visual proposals reviewed; independent concept geometry75placements/routes/reachable lanes passed; worker full suite passed. New-map implementation awaits user selection, not implied by design Done. Squash6fa6a25.",
       "questions": [],
       "approval": "User explicitly requested visual proposals for a new Relay Breaker map to review and align; active defense accepted. Proposal design only; selected-map implementation awaits user choice.",
-      "worker": {
-        "id": "/root/map_proposal_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-relay-breaker-map-proposals",
-        "branch": "chore/relay-breaker-map-proposals"
-      },
-      "branch": "chore/relay-breaker-map-proposals"
+      "branch": "chore/relay-breaker-map-proposals",
+      "completion": {
+        "evidence": "Visual proposals reviewed; independent concept geometry75placements/routes/reachable lanes passed; worker full suite passed. New-map implementation awaits user selection, not implied by design Done. Squash6fa6a25.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "9169766d67278da92389d1789c4dc48ffd398361",
+        "squashCommit": "6fa6a25e7402cc04587520d5a9a034a1ba4677c9"
+      }
     },
     {
       "id": "TRI-030",
@@ -413,9 +414,10 @@
       "id": "TRI-031",
       "title": "Add narrow sweep bursts to plasma turrets",
       "task": "docs/tasks/plasma-turret-narrow-sweep.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "User explicitly requested narrow turret sweep and answered yes to16visual headings plus smooth total0–15degree projectile arc; design worker finished. Independent feature implementation can proceed while map selection is pending.",
+      "questions": [],
+      "approval": "User explicitly requested narrow turret sweep and answered yes to16visual headings plus smooth total0–15degree projectile arc; design worker finished. Independent feature implementation can proceed while map selection is pending."
     }
   ],
   "events": [
@@ -1323,6 +1325,36 @@
         "plasma-turret-narrow-sweep",
         "Add narrow sweep bursts to plasma turrets",
         "Mounted plasma turrets use tank-style sweep bursts with agreed 0–15-degree arc semantics while preserving operator-independent aiming and existing mounting behavior."
+      ]
+    },
+    {
+      "at": "2026-10-04T18:10:15.069Z",
+      "command": "move",
+      "ticket": "TRI-029",
+      "details": [
+        "Review",
+        "Director inspected visual contact sheet and design/runtime boundary; independent concept geometry passed all75 placements/routes and reachable firing lanes. Plasma pickup label and lane connectivity review findings fixed in9169766. Worker full suite passed."
+      ]
+    },
+    {
+      "at": "2026-10-04T18:10:52.536Z",
+      "command": "move",
+      "ticket": "TRI-029",
+      "details": [
+        "Done",
+        "Visual proposals reviewed; independent concept geometry75placements/routes/reachable lanes passed; worker full suite passed. New-map implementation awaits user selection, not implied by design Done. Squash6fa6a25.",
+        "/root",
+        "6fa6a25e7402cc04587520d5a9a034a1ba4677c9",
+        "9169766d67278da92389d1789c4dc48ffd398361"
+      ]
+    },
+    {
+      "at": "2026-10-04T18:10:52.600Z",
+      "command": "move",
+      "ticket": "TRI-031",
+      "details": [
+        "Ready",
+        "User explicitly requested narrow turret sweep and answered yes to16visual headings plus smooth total0–15degree projectile arc; design worker finished. Independent feature implementation can proceed while map selection is pending."
       ]
     }
   ]

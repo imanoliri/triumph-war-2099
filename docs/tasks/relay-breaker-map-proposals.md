@@ -24,3 +24,5 @@ Worker owns design/artifact creation and feasibility inspection, stops Review wi
 
 - [2026-10-04 / 043](../journal/2026-10-04-043-relay-breaker-map-proposals.md)
 
+
+- [Director acceptance / selection pending](../journal/2026-10-04-044-relay-breaker-map-proposals-director.md)
