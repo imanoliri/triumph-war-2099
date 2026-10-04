@@ -414,10 +414,16 @@
       "id": "TRI-031",
       "title": "Add narrow sweep bursts to plasma turrets",
       "task": "docs/tasks/plasma-turret-narrow-sweep.md",
-      "status": "Ready",
-      "reason": "User explicitly requested narrow turret sweep and answered yes to16visual headings plus smooth total0–15degree projectile arc; design worker finished. Independent feature implementation can proceed while map selection is pending.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User explicitly requested narrow turret sweep and answered yes to16visual headings plus smooth total0–15degree projectile arc; design worker finished. Independent feature implementation can proceed while map selection is pending."
+      "approval": "User explicitly requested narrow turret sweep and answered yes to16visual headings plus smooth total0–15degree projectile arc; design worker finished. Independent feature implementation can proceed while map selection is pending.",
+      "worker": {
+        "id": "/root/turret_sweep_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-plasma-turret-narrow-sweep",
+        "branch": "feature/plasma-turret-narrow-sweep"
+      },
+      "branch": "feature/plasma-turret-narrow-sweep"
     }
   ],
   "events": [
@@ -1355,6 +1361,15 @@
       "details": [
         "Ready",
         "User explicitly requested narrow turret sweep and answered yes to16visual headings plus smooth total0–15degree projectile arc; design worker finished. Independent feature implementation can proceed while map selection is pending."
+      ]
+    },
+    {
+      "at": "2026-10-04T18:11:17.612Z",
+      "command": "dispatch",
+      "ticket": "TRI-031",
+      "details": [
+        "../triumph-plasma-turret-narrow-sweep",
+        "/root/turret_sweep_worker"
       ]
     }
   ]
