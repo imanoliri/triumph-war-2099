@@ -1,3 +1,4 @@
+if (require.main === module) process.chdir(require('node:path').resolve(__dirname, '..'));
 // Independent reader for the documented MMF 1.x event record format.
 const fs=require('node:fs'),{chunks}=require('./inspect-original.cjs');
 const objects=JSON.parse(fs.readFileSync('work/recovered/objects.json')),frames=JSON.parse(fs.readFileSync('work/recovered/frames.json'));

@@ -1,3 +1,6 @@
+from pathlib import Path
+import os
+os.chdir(Path(__file__).resolve().parents[1])
 import json,struct,os,math
 from PIL import Image,ImageDraw
 root='work/recovered';dest='assets'

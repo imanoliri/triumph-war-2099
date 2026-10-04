@@ -1,0 +1,72 @@
+# Current gameplay design
+
+This is the current approved recreation design. Recovered source rules live in assets/original-rules.js; custom balance constants live in src/balance.js. DEVELOPMENT-NOTES contains history and superseded values.
+
+## Directional asymmetry
+
+Regular soldiers, robots and AI commanders fire in four cardinal directions. Their AI aligns to firing lanes. Commandos fire in eight directions. The selected commander's mouse aiming supports arbitrary directions. Bugs spit only along their facing with a ±11.25° cone. This asymmetry is intentional: disciplined infantry wins direct engagements, while bugs use movement and facing differently. Do not make all units omnidirectional as a cleanup.
+
+## Combat values
+
+| Unit | HP | Damage | Burst | Rest | Acquisition delay |
+| --- | --- | --- | --- | --- | --- |
+| Soldier | 1 | 1 | 3–6 | 0.8–1.8 s | 0.2–0.8 s |
+| Commando | 1 | 1 | 5–7 | 0.8–1.2 s | 0.2–0.4 s |
+| Robot | 7 | 1 | 3–6 | 0.8–1.8 s | 0.2–0.8 s |
+| Tank | 8 | 5 | 9–12 | 2.5–3.5 s | 0.4–1.2 s |
+| Commander | 1 | 1 | Continuous player fire | Weapon cooldown | None |
+| Normal bug, normal difficulty | 4 | 1 | One spit | 3.8–5.4 s | AI decision timing |
+| Queen, normal difficulty | 50 | 1 | One spit | Normal bug + 0.4 s | AI decision timing |
+| Red bug | 5 | 1 | One spit | 2.6–4.2 s | AI decision timing |
+
+Normal infantry shot intervals: 0.38 s, Defend 0.20 s, flame 0.18 s. Commandos retain 0.38 s in Defend; flame remains 0.18 s. Tanks use 0.20 s. Commander normal/plasma interval 0.25 s, flame 0.18 s. Target loss interrupts bursts; target switching preserves rest and adds acquisition delay. Perception adds separate reaction delays. No armor or defense roll exists.
+
+Tank autonomous barrages choose the densest visible bug group within 300 px, sweep 25–80°, lock the arc for that burst and reverse direction next burst. A nest is the fallback. Explicit focus attacks sweep 15° centered on the assigned target. Tank shot volume is twice its original recreation setting (0.16 versus 0.08).
+
+Red bugs have 200 px sight and fixed HP/cooldowns across difficulty settings. Each newly created ground bug independently has a 10% red chance. Placed source bugs remain normal. Red and normal bugs can consume a growplant to become a queen. Commandos have a blue bandana; red bugs a red abdomen band, drawn over source sprites.
+
+## AI and terrain
+
+Friendly troops detect visible targets at 245 px, tanks at 300 px, cannon operators at 360 px. Bugs detect at 175 px, red bugs at 200 px. Walls block sight and projectiles. Walking clearance is separate from projectile visibility, allowing attacks on boundary nests.
+
+Bugs have randomized approach/wander/pause choices (40/35/25%), short remembered movement goals, limited focus and breaks between pursuits. Friendly troops retain visible targets, align to firing lanes and react faster. Normal patrols, Follow tracks the assigned commander, Attack advances, Defend holds nearby. Keep randomness; bugs should not behave as perfect pursuit agents.
+
+Navigation uses a shared 16 px grid and four-neighbor distance fields. Unlocked doors open when human units approach; locked doors require their terminal. Static backdrop placements use top-left coordinates; active sprites use hotspots. Rendered terrain and collision masks must be regenerated together.
+
+## Player orders and pause
+
+Physical KeyboardEvent.code bindings support German QWERTZ. Commander selectors transfer WASD/V/B and mouse control to the selected commander; computer teammates manage unselected commanders 2 and 3. Hold left mouse to aim/fire, right mouse to grenade. Immediate drag selects troops; Shift adds/toggles selection.
+
+With troops selected: ground right-click attack-moves; double right-click empty ground force-moves without stopping to fight; enemy right-click focuses attacks (double-click also works). Double right-click usable objects forces travel/use. Groups toggle a door once; locks and terminal flags retain source dependencies. Infantry/commandos collect pickups, consume flowers and occupy cannons. Tanks/robots can operate doors and terminals.
+
+Pause leaves the battlefield visible with a small banner. Selection, squad orders, movement/focus/use orders remain available and execute after resume. Combat, movement, arrivals and timers freeze. Controls/Units preserve an existing pause.
+
+## Reinforcements and rally flags
+
+Yellow eagles call ground soldiers, bronze support calls tanks or indoor robots, blue calls aircraft/infiltration commandos. BLITZ uses each map's recovered creation list. Outdoor carriers stop at least five seconds, unloading one soldier each second below the population cap. New ground units land on clear terrain; aircraft headings that miss the map turn toward it.
+
+Rally button: top-right beside Army/Wave. Physical R toggles placement, left-click clear ground places numbered flags, right-click a flag removes it, Escape exits before toggling pause. Multiple flags and paused editing work. Yellow/bronze/BLITZ soldiers, tanks and robots attack-move to the nearest reachable flag by grid route distance. Locked doors block routes; unlocked doors are traversable. Commandos are excluded, including BLITZ. Each arriving unit chooses its destination independently. Player orders override it. Removing flags changes future arrivals; assigned units keep their destinations. Flags reset on restart/mission change.
+
+Infantry/commandos automatically seek reachable usable eagles within 250 px when no enemy/nest is visible within 245 px and no explicit movement/use/focus order is active. Each eagle has one claimant. Combat pauses the trip; afterward the unit resumes and returns to its origin (or current leader for Follow). New player orders cancel it.
+
+Commanders return after ten seconds while live army units or incoming support remain, with a brief shield. An empty army without commanders/support loses. Barrels and lingering barrel fire damage enemies only; all friendly units and commanders are immune.
+
+## Mission completion
+
+All living bugs and nests must be cleared. Additional original requirements are retained:
+
+| Mission | Additional requirement |
+| --- | --- |
+| Desert Canyon / Desert Rocks / Retake Base | 35 seconds elapsed |
+| Flash Back | 35 seconds and laser terminal 257 active |
+| Hold Base | 200 normal bug kills; 30 seconds elapsed |
+| Hanger | Source completion uses enemy clearance |
+| Inside 1st Level | All eight required security terminals active |
+| Caves | Required terminal 436 active |
+| Crystal Chamber | 150 normal and 50 queen kills; crystal extracted and intact |
+
+The Remaining HUD uses the same progress calculation as automatic victory. Queen death offspring are still enemies. Carrier kills count toward wave quotas. Crystal HP is 7; destruction loses its mission. Final extraction starts after its source-derived terminal/kill trigger, then completion additionally requires the wave quota and clearance. New bug births resolve to clear playable terrain.
+
+## Fidelity and ownership
+
+Original art, maps, audio, MIDI and decoded data came from the user's installed game by Anthony Lopes / DarkSun Games. Editable source was not found. Engine/AI and many timings are reconstructed; current custom balance is not claimed to reproduce all original behavior. Audio uses original notes plus an optional ignored machine-local Windows sample bank; synth envelopes/effects differ.

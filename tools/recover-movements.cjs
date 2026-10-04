@@ -1,3 +1,4 @@
+if (require.main === module) process.chdir(require('node:path').resolve(__dirname, '..'));
 const fs=require('node:fs'),{chunks}=require('./inspect-original.cjs'),objects=JSON.parse(fs.readFileSync('work/recovered/objects.json'));
 const b=fs.readFileSync('work/original-chunks/9-2229.bin');let p=4,count=0;
 for(let i=0;i<b.readUInt32LE(0);i++){

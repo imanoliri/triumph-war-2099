@@ -1,3 +1,4 @@
+if (require.main === module) process.chdir(require('node:path').resolve(__dirname, '..'));
 const fs=require('node:fs'),events=JSON.parse(fs.readFileSync('work/recovered/events.json'));
 const objects=JSON.parse(fs.readFileSync('work/recovered/objects.json')),frames=JSON.parse(fs.readFileSync('work/recovered/frames.json'));
 const constant=p=>p?.expression?.tokens?.length===1?p.expression.tokens[0].value:undefined;

@@ -1,3 +1,4 @@
+if (require.main === module) process.chdir(require('node:path').resolve(__dirname, '..'));
 // Decode original Standard MIDI Files into offline browser scheduling data.
 const fs=require('node:fs'),vm=require('node:vm');
 const context={window:{}};vm.runInNewContext(fs.readFileSync('assets/audio/catalog.js','utf8'),context);

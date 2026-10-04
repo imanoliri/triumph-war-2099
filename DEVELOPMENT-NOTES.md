@@ -251,3 +251,12 @@
 - Tagged support sources and assigned attack-move at each eligible arrival: yellow carrier/indoor soldiers, bronze tanks/robots, Blitzkrieg soldiers/tanks/robots. Aircraft/infiltration commandos are excluded, including Blitzkrieg. Existing units are not reassigned when flags change. Player orders override rally destinations; arrival uses existing attack-move holding/combat behavior.
 - Mission restart/change clears flags and placement mode. Updated Controls, Units and README and exposed rally state through existing state API.
 - Syntax and full simulation checks passed, including button/R/Escape/paused input, scaled coordinates, no placement shots/grenades, route-distance selection, locked/unlocked doors, flag deletion, player override, yellow/bronze/Blitz arrivals, commando exclusion and mission reset. Live browser layout remains unverified.
+
+
+## 2026-10-04 — Sustainable development foundations
+- Preserved the rally checkpoint eab0bb0 as milestone-playable-2026-10-04 and advanced local main forward to it without rewriting history. Created chore/development-foundations for maintenance.
+- Added AGENTS, current design/architecture/status/setup/workflow docs, backlog, task/session/playtest templates and real branch/session records. Task CLI creates one bounded branch plus instructions and numbered handoffs, with isolated worktree support and dirty-tree/path safeguards.
+- Added dependency-free npm aliases and repository-rooted developer commands; packaging moved into tools with default exclusion of local MIDI bank. Optional recovery takes an explicit executable path; no external workspace scratch directory is required. Added GitHub issue/PR templates and Windows/Linux CI configuration locally; no remote publication performed.
+- Began behavior-preserving extraction into src/balance.js, src/missions.js and src/rally.js; updated runtime script order and preview allowlist. Remaining game.js systems have bounded backlog tasks.
+- Full simulation/music/project checks passed; disposable Git branch/worktree/session and loopback HTTP allowlist checks passed. Default and personal ZIP integrity/module membership/bank exclusion checked. Full optional recovery rehearsed in an isolated checkout; all binary assets match and generated JSON/JS differs only in serialization/newlines. Recovered-assets suite passes without local sample bank.
+- Browser/audio playtest remains not run; live checklist and report explicitly record the gap. Initial mission completion report remains pending live reproduction despite all-nine automated victory checks.

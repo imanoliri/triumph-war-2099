@@ -1,0 +1,17 @@
+{
+  "name": "triumph-war-2099-recreation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local fan reconstruction; original assets retain their authorship",
+  "engines": {"node": ">=20"},
+  "scripts": {
+    "start": "node serve.cjs",
+    "check": "node tools/dev.cjs check",
+    "test": "node tools/dev.cjs test",
+    "doctor": "node tools/dev.cjs doctor",
+    "package": "node tools/dev.cjs package",
+    "assets:recover": "node tools/dev.cjs recover",
+    "music:bank": "node tools/dev.cjs bank",
+    "task": "node tools/task.cjs"
+  }
+}

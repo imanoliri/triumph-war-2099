@@ -1,3 +1,4 @@
+if (require.main === module) process.chdir(require('node:path').resolve(__dirname, '..'));
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 let scheduled=0,interval,stopped=0;
 class Context{

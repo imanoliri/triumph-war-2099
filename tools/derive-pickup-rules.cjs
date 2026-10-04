@@ -1,6 +1,7 @@
+if (require.main === module) process.chdir(require('node:path').resolve(__dirname, '..'));
 // Recover random item rolls, pickup handles and count limits from original events.
 const fs=require('node:fs'),zlib=require('node:zlib');
-const events=JSON.parse(zlib.gunzipSync(fs.readFileSync('research/events.json.gz')));
+const events=JSON.parse(fs.existsSync('work/recovered/events.json')?fs.readFileSync('work/recovered/events.json','utf8'):zlib.gunzipSync(fs.readFileSync('research/events.json.gz')));
 const value=p=>p?.expression?.tokens?.length===1?p.expression.tokens[0].value:undefined;
 const types={'Ground Reinforcements':'troops','Airial Reinforcements':'air','Ground Support':'tank','BLITZ!':'blitz','Auto Gun':'auto','Plasma Gun':'plasma','Flame Gun':'flame','1 Grenade':'grenade'};
 const maps={};

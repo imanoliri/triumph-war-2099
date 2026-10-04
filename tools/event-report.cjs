@@ -1,3 +1,4 @@
+if (require.main === module) process.chdir(require('node:path').resolve(__dirname, '..'));
 const fs=require('node:fs');
 const all=JSON.parse(fs.readFileSync('work/recovered/events.json'));
 const operations={a:{1:'position',2:'x=',3:'y=',4:'stop',5:'start',6:'speed=',14:'look',17:'animation=',23:'direction=',24:'destroy',26:'hide',27:'show',29:'shoot',31:'variable=',32:'variable+=',33:'variable-=',35:'flag on',36:'flag off',40:'frame='},c:{'-33':'all destroyed','-32':'count','-27':'variable','-25':'flag on','-24':'flag off','-17':'x','-16':'y','-14':'collision','-13':'terrain collision','-4':'overlap','-3':'animation'}};

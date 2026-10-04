@@ -1,0 +1,15 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),{spawnSync}=require('node:child_process'),{python}=require('./python.cjs');
+const root=path.resolve(__dirname,'..');process.chdir(root);
+function run(command,args){const result=spawnSync(command,args,{cwd:root,stdio:'inherit',windowsHide:true});if(result.error)throw result.error;if(result.status!==0)throw Error(`${command} exited with ${result.status}`);}
+function syntax(){const files=fs.readdirSync(root).filter(f=>/\.(js|cjs)$/.test(f)).concat(...['src','tools'].map(dir=>fs.readdirSync(dir).filter(f=>/\.(js|cjs)$/.test(f)).map(f=>`${dir}/${f}`)));for(const file of files)run(process.execPath,['--check',file]);console.log(`Syntax checked ${files.length} scripts.`);}
+function main(){const [command,...args]=process.argv.slice(2);
+ if(command==='check'){syntax();run(process.execPath,['tools/check-project.cjs']);}
+ else if(command==='test'){syntax();for(const file of ['check-project.cjs','check-recreation.cjs','check-music.cjs','check-tooling.cjs'])run(process.execPath,['tools/'+file]);}
+ else if(command==='doctor'){console.log(`Repository: ${root}\nNode: ${process.version}`);for(const file of ['assets/original-data.js','assets/maps/5.png','assets/audio/music-data.js']){if(!fs.existsSync(file))throw Error('Missing shipped asset: '+file);}console.log('Shipped assets present. No install step or npm dependencies required.');console.log(fs.existsSync('assets/audio/gm-bank.js')?'Local MIDI bank present.':'Local MIDI bank absent: oscillator fallback will be used.');try{const p=python();console.log('Python: '+p.join(' '));}catch(e){console.log(e.message+' Playing and simulation checks only require Node.');}}
+ else if(command==='package'){const p=python();run(p[0],[...p.slice(1),'tools/package-recreation.py',...args]);}
+ else if(command==='bank'){const p=python();run(p[0],[...p.slice(1),'tools/build-windows-midi-bank.py',...args]);}
+ else if(command==='recover'){if(args.length!==1)throw Error('Usage: node tools/dev.cjs recover <original.exe>');const source=path.resolve(args[0]);if(!fs.existsSync(source))throw Error('Original executable not found: '+source);const p=python();run(p[0],[...p.slice(1),'-c','from PIL import Image']);run(process.execPath,['tools/inspect-original.cjs',source]);run(process.execPath,['tools/recover-original.cjs']);run(p[0],[...p.slice(1),'tools/render-recovered.py']);run(p[0],[...p.slice(1),'tools/build-original-assets.py']);for(const f of ['enrich-object-data','recover-movements'])run(process.execPath,['tools/'+f+'.cjs']);run(p[0],[...p.slice(1),'tools/build-original-assets.py']);for(const f of ['recover-events','derive-original-rules','derive-support-rules','derive-pickup-rules','recover-audio','decode-sounds','build-music'])run(process.execPath,['tools/'+f+'.cjs']);console.log('Assets recovered. Review generated diffs before committing.');}
+ else throw Error('Commands: doctor, check, test, package, recover <original.exe>, bank [gm.dls]');
+}
+try{main();}catch(e){console.error(e.message);process.exitCode=1;}

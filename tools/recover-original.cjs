@@ -1,3 +1,4 @@
+if (require.main === module) process.chdir(require('node:path').resolve(__dirname, '..'));
 const fs=require('node:fs'),{inflateOld,chunks}=require('./inspect-original.cjs');
 const out='work/recovered';fs.mkdirSync(out+'/image-data',{recursive:true});
 const bank=fs.readFileSync('work/original-chunks/37-6666.bin'),images=[];let p=4;

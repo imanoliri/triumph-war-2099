@@ -1,3 +1,6 @@
+from pathlib import Path
+import os
+os.chdir(Path(__file__).resolve().parents[1])
 import json,base64,os,sys
 from PIL import Image,ImageDraw
 root=sys.argv[1] if len(sys.argv)>1 else 'work/recovered';dest='assets';os.makedirs(dest+'/maps',exist_ok=True)
@@ -40,6 +43,7 @@ for fi in [5,7,9,11,13,15,17,19,21]:
 data={'images':{i['handle']:i for i in images},'objects':{o['handle']:o for o in objects},'maps':maps,'title':frames[2]}
 open(dest+'/original-data.js','w',encoding='utf8').write('window.ORIGINAL='+json.dumps(data,separators=(',',':'))+';\n')
 provenance_path=dest+'/provenance.json'
-previous=json.load(open(provenance_path)) if os.path.exists(provenance_path) else {}
-open(provenance_path,'w').write(json.dumps({**previous,'source':'C:/Games/DarkSunGames/2099_23.exe','originalAuthor':'Anthony Lopes / DarkSun Games','images':len(images),'objectDefinitions':len(objects),'frames':len(frames),'gameplayFrames':[m['index'] for m in maps],'extraction':'MMF 1.x image bank and frame chunks; RGB555 pixels; static backdrop collision masks'},indent=2))
+source_info=json.load(open('work/source.json',encoding='utf-8')) if os.path.exists('work/source.json') else {}
+previous=json.load(open(provenance_path,encoding='utf-8')) if os.path.exists(provenance_path) else {}
+open(provenance_path,'w',encoding='utf-8').write(json.dumps({**previous,'source':source_info.get('source',previous.get('source','User-supplied original executable')),'originalAuthor':'Anthony Lopes / DarkSun Games','images':len(images),'objectDefinitions':len(objects),'frames':len(frames),'gameplayFrames':[m['index'] for m in maps],'extraction':'MMF 1.x image bank and frame chunks; RGB555 pixels; static backdrop collision masks'},indent=2))
 print('Generated nine original backgrounds, collision masks, placements, animation metadata and briefings')

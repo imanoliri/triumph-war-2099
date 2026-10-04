@@ -4,8 +4,12 @@ The generated bank is machine-local and excluded from Git. Regenerate it on each
 Windows installation; this script does not change the system DLS file.
 """
 from pathlib import Path
+import os
+os.chdir(Path(__file__).resolve().parents[1])
+
+from pathlib import Path
 import struct, base64, json, hashlib, sys
-source = Path(sys.argv[1] if len(sys.argv)>1 else 'C:/Windows/System32/drivers/gm.dls')
+source = Path(sys.argv[1] if len(sys.argv)>1 else str(Path(os.environ.get('WINDIR','C:/Windows'))/'System32/drivers/gm.dls'))
 b = source.read_bytes()
 def chunks(start,end):
     while start+8<=end:

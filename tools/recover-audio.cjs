@@ -1,3 +1,4 @@
+if (require.main === module) process.chdir(require('node:path').resolve(__dirname, '..'));
 // Reads MMF 1.x bank records using the format described by Anaconda's loaders.
 const fs=require('node:fs'),{inflateOld}=require('./inspect-original.cjs');
 const dest='assets/audio';fs.mkdirSync(dest,{recursive:true});

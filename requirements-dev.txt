@@ -1,0 +1,2 @@
+# Only optional image recovery needs this; runtime/checks have no dependencies.
+Pillow==12.3.0

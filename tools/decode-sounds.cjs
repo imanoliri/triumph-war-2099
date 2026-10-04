@@ -1,3 +1,4 @@
+if (require.main === module) process.chdir(require('node:path').resolve(__dirname, '..'));
 // Independently written MS ADPCM decoder. Coefficients come from each WAV header.
 const fs=require('node:fs'),root='assets/audio';
 const adaptation=[230,230,230,230,307,409,512,614,768,614,512,409,307,230,230,230];
