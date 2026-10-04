@@ -21,3 +21,5 @@ Pre-fix Hanger reproduction confirmed in disposable VM. Implementation checks/br
 Review worker final diff/commit/checks; independently verify actual reproduction and all-nine eligibility regressions, plus live feedback smoke if available. Squash-merge accepted fix, then record resulting SHA in subsequent administrative checkpoint. No publication authorized.
 
 User subsequently confirmed: 'yeah, it seems to be population cap!' Prioritize clear temporary availability feedback and retain capped existing eagles until troop numbers drop. Cap unchanged.
+
+User also requested tactical mode not pause music. Approved separate TRI-013 tactical-music, queued Ready after TRI-012; one worker remains active.

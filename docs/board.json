@@ -168,6 +168,15 @@
         "branch": "fix/eagle-pickup-fix"
       },
       "branch": "fix/eagle-pickup-fix"
+    },
+    {
+      "id": "TRI-013",
+      "title": "Keep music playing in tactical mode",
+      "task": "docs/tasks/tactical-music.md",
+      "status": "Ready",
+      "reason": "User explicitly requested music continue during tactical mode on 2026-10-04.",
+      "questions": [],
+      "approval": "User explicitly requested music continue during tactical mode on 2026-10-04."
     }
   ],
   "events": [
@@ -417,6 +426,25 @@
       "details": [
         "In progress",
         "Population-cap diagnosis confirmed by user and relayed; continue availability feedback and invalid-spawn fix."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:33:49.852Z",
+      "command": "create",
+      "ticket": "TRI-013",
+      "details": [
+        "tactical-music",
+        "Keep music playing in tactical mode",
+        "Entering or starting tactical mode freezes simulation without pausing music; switching missions and audio controls retain their normal behavior."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:33:49.968Z",
+      "command": "move",
+      "ticket": "TRI-013",
+      "details": [
+        "Ready",
+        "User explicitly requested music continue during tactical mode on 2026-10-04."
       ]
     }
   ]
