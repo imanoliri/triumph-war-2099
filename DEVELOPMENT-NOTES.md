@@ -117,3 +117,10 @@
 
 - User requested regular soldiers be able to collect reinforcement eagles. Expanded infantry contact pickups to ground reinforcement, aerial reinforcement, ground support and BLITZ, using the existing support creation rules, sound and single-use removal. Rejected calls leave the pickup available. This is a requested extension of the original commander-only collection events.
 - Logic checks pass for all four eagle types on outdoor and indoor maps, confirming troop-triggered support, one activation per eagle and preserving a ground eagle when the infantry cap prevents its use. The full nine-map regression suite also passes. Live play remains unverified.
+
+## 2026-10-04 — commander selection and mouse weapons
+
+- User requested four commander selectors and four order buttons above them, with WASD and mouse weapons for the chosen commander. Added two rows below the battlefield: Normal/Follow/Attack/Defend above Commander 1/2/3/4, active highlights and mode guidance.
+- WASD and V/B follow the selected commander. Selecting commanders 2/3 temporarily overrides their teammate AI; unselected commander 1 no longer duplicates WASD/fire input. Mouse clicking aims and fires in the nearest cardinal direction, and right-click throws a grenade with existing cooldown/count limits. A selection ring identifies the controlled commander. Dead commanders cannot fire; order buttons disable when unavailable.
+- Troop drag selection and right-click attack-move remain available. Dragging/selecting troops switches mouse to troop mode; clicking a commander selector clears that selection and returns to mouse firing/grenades. Mouse short-clicks on empty ground fire; drag gestures do not.
+- Checks pass for every selector, exclusive WASD ownership, selected-shot owner/direction, mouse grenades and cooldown, all four order buttons, canvas pointer actions, troop-mode switching and dead commander input. Full gameplay regression suite passes. Live UI appearance/input remains unverified due browser permissions.
