@@ -17,3 +17,7 @@ User requested this ticket on 2026-10-04 for refinement in the director conversa
 
 ## Sessions
 
+
+## Refinement decisions — 2026-10-04
+
+User selected both original fidelity and custom balance (option 3). First, a delegated worker will audit the original difficulty rules and current recreation, distinguishing recovered evidence, live observations and approximations. Present findings to the director/user before choosing custom values. Then agree deliberate improvements with original rules retained as a documented baseline. This direction does not authorize unspecified balance changes or dispatch yet. Still refine desired player challenge, preferred balance levers, setting count/default, mission coverage and acceptance; split research and implementation into bounded tasks if needed.
