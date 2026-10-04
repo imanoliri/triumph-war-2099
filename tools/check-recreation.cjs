@@ -13,7 +13,7 @@ class Image {constructor(){this.complete=true;this.naturalWidth=20;}}
 class Audio {cloneNode(){return this}play(){return Promise.resolve()}}
 const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.from(s,'base64').toString('latin1'),document:{querySelector:id=>elements[id],createElement:()=>canvas},window:{addEventListener:(name,cb)=>handlers[name]=cb},requestAnimationFrame:cb=>sandbox.nextFrame=cb};
 vm.createContext(sandbox);
-for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','src/balance.js','src/missions.js','src/rally.js','src/vent-bugs.js','game.js']){
+for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','src/breeding.js','src/balance.js','src/missions.js','src/rally.js','src/vent-bugs.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
  if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival,toggleRally,addRally,removeRally,assignRally});})();');
  vm.runInContext(source,sandbox);
@@ -22,6 +22,37 @@ const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let ti
 function resumeSimulation(){if(api.state().paused)elements['#pause'].onclick();}
 function frames(n){for(let i=0;i<n;i++){time+=16.6667;sandbox.nextFrame(time)}}
 assert.equal(api.state().mode,'briefing');assert.equal(api.missions.length,9);
+// Approved Normal baseline; source roll ceiling is not a movement-speed setting.
+{
+ const motion={veryeasy:22/24,easy:23/24,normal:1,hard:25/24,veryhard:27/24};
+ for(const [setting,mult] of Object.entries(motion)){
+  elements['#difficulty'].value=setting;api.loadMission(1);const st=sandbox.window.__fixture().state;
+  assert.equal(sandbox.window.TriumphBalance.motionMultipliers[setting],mult);assert.equal(st.difficulty.speed,undefined);elements['#units'].onclick();const guide=elements['#unit-cards'].innerHTML;assert(!guide.includes('NaN')&&!guide.includes('Infinity'),'Finite Units guide for '+setting);assert(guide.includes(setting==='normal'?'4% opportunity / 0.5 s; birth after 1.8 s':`Spawn: ${(5/mult).toFixed(1)}–${(9/mult).toFixed(1)} s`),'Exact nest cadence for '+setting);elements['#units-close'].onclick();assert.equal(st.difficulty.evolutionRollMax,{veryeasy:22,easy:23,normal:24,hard:25,veryhard:27}[setting]);
+  assert(st.nests.every(n=>setting==='normal'?n.breeding&&n.breeding.next===.5:!n.breeding&&n.timer>=2&&n.timer<=9));if(setting!=='normal'){const f=sandbox.window.__fixture();st.flowers=[];st.t=2;for(const roll of [22,23,24,25,26,27])f.spawnPickupRoll(roll);assert.equal(st.flowers.length,0,'Other profiles retain no random plants');}
+ }
+ elements['#difficulty'].value='normal';
+ for(let mission=1;mission<=9;mission++){
+  api.loadMission(mission);const f=sandbox.window.__fixture(),st=f.state;st.t=2;st.flowers=[];st.pickups=[];
+  for(const roll of [21,25])f.spawnPickupRoll(roll);assert.equal(st.flowers.length,0);
+  for(const roll of [22,23,24])f.spawnPickupRoll(roll);
+  assert.equal(st.flowers.length,mission<=3?3:0,'Exact recovered global guards for mission '+mission);
+  f.spawnPickupRoll(22);f.spawnPickupRoll(22);assert.equal(st.flowers.length,mission<=3?4:0,'Source <=3 permits fourth plant');
+  assert(!st.pickups.some(p=>p.type==='growplant'),'Plants are not collectible rewards');for(const flower of st.flowers)assert(!f.blocked(flower.x,flower.y));
+  st.mode='playing';resumeSimulation();st.humans=st.humans.filter(u=>u.type==='commander');for(const u of st.humans){u.external={until:1e6};u.shieldUntil=1e6;}
+  st.aliens=[];st.vents=[];st.flowers=[];st.pickupClock=1e6;st.reinforcements=[];st.t=40;st.wave=null;for(const terminal of st.terminals)terminal.active=true;if(st.crystal)st.crystal.recovered=true;
+  const nest={x:900,y:700,hp:50,breeding:sandbox.window.TriumphBreeding.create(1)};st.nests=[nest];
+  // Force a successful opportunity using an independently seeded first roll.
+  for(let seed=0;seed<100000;seed++){const b=sandbox.window.TriumphBreeding.create(seed);if(sandbox.window.TriumphBreeding.roll(b)<=3){nest.breeding=sandbox.window.TriumphBreeding.create(seed);break;}}
+  f.update(.5);assert(nest.breeding.busy);assert(!f.missionProgress().ready,'Pending birth retains live nest objective');
+  elements['#pause'].onclick();const before=JSON.stringify(nest.breeding);f.update(3);assert.equal(JSON.stringify(nest.breeding),before,'Tactical freeze preserves pending birth');elements['#pause'].onclick();
+  nest.hp=0;f.update(.02);assert.equal(st.aliens.length,0);assert.equal(st.mode,'victory','Destroyed pending birth permits completion on mission '+mission);
+ }
+ api.loadMission(1);const f=sandbox.window.__fixture(),st=f.state;st.mode='playing';resumeSimulation();st.nests=[];st.pickupClock=1e6;
+ const u=st.humans.find(u=>u.type==='commander');u.external={until:1e6};const score=st.score[u.id-1];st.flowers=[{x:u.x,y:u.y,alive:true,object:108}];f.update(.01);assert.equal(st.flowers[0].alive,false);assert.equal(st.score[u.id-1],score,'Commander destroys plant without pickup reward');
+ for(const type of ['soldier','redbug']){st.aliens=[];st.flowers=[{x:800,y:700,alive:true,object:108}];const a=f.spawnGroundBug(800,700);a.type=type;a.cool=100;f.update(.01);assert.equal(a.type,'queen');assert.equal(a.hp,50);assert.equal(st.flowers[0].alive,false);}
+ api.loadMission(1);assert(sandbox.window.__fixture().state.nests.every(n=>n.breeding.clock===0&&!n.breeding.busy),'Restart resets all pending breeding');
+ console.log('Passed Normal semantics, preserved non-Normal profiles, growplant guards/cap/contact and all-nine pending birth freeze/destroy/completion/restart checks.');
+}
 elements['#start'].onclick();resumeSimulation();assert.equal(api.state().mode,'playing');
 assert.equal(api.state().activeCommander,null);assert.equal(api.state().mouseMode,'troops');elements['#cmd-1'].onclick();const start=api.state().commanders[0].x;handlers.keydown(event('KeyD'));frames(30);handlers.keyup(event('KeyD'));assert(api.state().commanders[0].x>start+25,'Player 1 movement should respond');
 handlers.keydown(event('KeyB'));handlers.keyup(event('KeyB'));assert(api.state().commanders[0].selecting);handlers.keydown(event('KeyW'));handlers.keyup(event('KeyW'));assert.equal(api.state().commanders[0].order,2);

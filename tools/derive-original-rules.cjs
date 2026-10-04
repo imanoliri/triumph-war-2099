@@ -28,7 +28,7 @@ for(const frame of events.filter(f=>[5,7,9,11,13,15,17,19,21].includes(f.frame))
  }
  maps[frame.frame]=rule;
 }
-const result={maps,difficulty:{veryeasy:{bug:2,queen:20,speed:22,medium:true,easy:true},easy:{bug:3,queen:40,speed:23,medium:false,easy:true},normal:{bug:4,queen:50,speed:24,medium:true,easy:false},hard:{bug:5,queen:65,speed:25,medium:false,easy:false},veryhard:{bug:6,queen:80,speed:27,medium:false,easy:false}},eggHealth:50,crystalHealth:7,grenadeCooldown:.330,commanderFire:{auto:.250,plasma:.250,flame:.180},waves:{13:{start:25,interval:.250,normalKills:200,queenKills:0},21:{start:30,interval:.250,queenInterval:.500,normalKills:150,queenKills:50}}};
+const result={maps,difficulty:{veryeasy:{bug:2,queen:20,evolutionRollMax:22,medium:true,easy:true},easy:{bug:3,queen:40,evolutionRollMax:23,medium:false,easy:true},normal:{bug:4,queen:50,evolutionRollMax:24,medium:true,easy:false},hard:{bug:5,queen:65,evolutionRollMax:25,medium:false,easy:false},veryhard:{bug:6,queen:80,evolutionRollMax:27,medium:false,easy:false}},eggHealth:50,crystalHealth:7,grenadeCooldown:.330,commanderFire:{auto:.250,plasma:.250,flame:.180},waves:{13:{start:25,interval:.250,normalKills:200,queenKills:0},21:{start:30,interval:.250,queenInterval:.500,normalKills:150,queenKills:50}}};
 fs.writeFileSync('assets/original-rules.js','window.ORIGINAL_RULES='+JSON.stringify(result)+';\n');
 fs.writeFileSync('work/recovered/rules.json',JSON.stringify(result,null,2));
 console.log(Object.entries(maps).map(([id,r])=>`${r.name}: ${Object.keys(r.terminals).length} terminals, required [${r.victoryTerminals}], minimum ${r.minimumTime}s`).join('\n'));

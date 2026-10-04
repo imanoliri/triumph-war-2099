@@ -7,6 +7,7 @@ index.html loads recovered asset globals, music.js, navigation.js, support.js, s
 | File | Responsibility |
 | --- | --- |
 | game.js | State lifecycle, simulation orchestration, combat, support integration, input and main drawing |
+| src/breeding.js | Finite Normal nest opportunities, seeded RNG and birth animation phase with explicit capacity/emission inputs |
 | src/balance.js | Custom burst, specialist and sweep tuning; separate from recovered rules |
 | src/missions.js | Pure mission progress/automatic completion requirements |
 | src/rally.js | Reachable rally destination selection and flag rendering |

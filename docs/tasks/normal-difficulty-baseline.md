@@ -1,7 +1,7 @@
 # Restore Normal breeding and evolution baseline
 
 - Ticket: TRI-021; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `fix/normal-difficulty-baseline`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,9 @@ Restore Normal breeding and evolution baseline
 
 ## Acceptance criteria
 
-- [ ] Normal uses corrected difficulty semantics, source-style nest opportunity/finite birth and eligible growplant rolls; other profiles and approved gameplay remain intact, checks and explicit fidelity limits recorded.
+- [x] Normal uses corrected difficulty semantics, source-style nest opportunity/finite birth and eligible growplant rolls; other profiles and approved gameplay remain intact, checks and explicit fidelity limits recorded.
+
+Implementation/evidence: [Normal baseline](../research/normal-difficulty-baseline.md). Worker stops at Review; director acceptance/integration remains pending.
 
 ## Scope and decisions
 
@@ -17,3 +19,5 @@ User explicitly approved on 2026-10-04 the recommended first Normal correction a
 
 ## Sessions
 
+- [2026-10-04 / 032](../journal/2026-10-04-032-normal-difficulty-baseline.md)
+- [2026-10-04 / 033](../journal/2026-10-04-033-normal-difficulty-baseline.md)

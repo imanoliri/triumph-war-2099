@@ -25,6 +25,14 @@ Tank autonomous barrages choose the densest visible bug group within 300 px, swe
 
 Red bugs have 200 px sight and fixed HP/cooldowns across difficulty settings. Each newly created ground bug independently has a 10% red chance. Placed source bugs remain normal. Red and normal bugs can consume a growplant to become a queen. Commandos have a blue bandana; red bugs a red abdomen band, drawn over source sprites.
 
+## Normal breeding and evolution baseline
+
+Recovered difficulty values use `evolutionRollMax` (22/23/24/25/27); the third value is a growplant item-roll ceiling, not source movement speed. Explicit custom motion multipliers preserve existing movement on all five settings (22/24, 23/24, 1, 25/24, 27/24). Existing AI, health, placements, wave quotas, resources and red-bug policy remain unchanged.
+
+Normal nests independently roll 0–99 every 0.5 simulation seconds, beginning at 0.5 seconds. Rolls 0–3 start a finite birth phase only below the ordinary-bug cap. Busy nests cannot restart; frame9 emits once at 1.8 seconds and the phase finishes at 2.4 seconds. A full cap at emission consumes that birth without deferred retry. Destroyed nests cancel pending births; live nests already count toward completion. Tactical mode freezes the clock; mission restart resets it. The recovered twelve-frame birth animation is displayed during the phase. Independent coordinate-seeded RNG and the 50 Hz animation-speed conversion are explicit approximations, not measured native timing/correlation. Other settings retain their prior 2–9 second initial delay and custom 5–9 second recurring timers divided by the preserved multiplier.
+
+Normal growplants use the existing one-second item opportunities and source Random(100) in Canyon / Random(150) elsewhere. Only rolls22–24 qualify, with at most three live plants before creation (allowing a fourth). Recovered global15 guards permit missions1–3 and block copied branches in missions4–9; placed Hanger/Caves plants remain. Plants use their source helper/offset when clear, otherwise the existing bounded clear-terrain item placement fallback. They are flowers, never pickup rewards. Commander consumption and ordinary/red bug evolution to a full-health queen remain unchanged. See [verification and fidelity limits](research/normal-difficulty-baseline.md).
+
 ## AI and terrain
 
 Friendly troops detect visible targets at 245 px, tanks at 300 px, cannon operators at 360 px. Bugs detect at 175 px, red bugs at 200 px. Walls block sight and projectiles. Walking clearance is separate from projectile visibility, allowing attacks on boundary nests.
