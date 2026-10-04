@@ -19,3 +19,5 @@ User requested this ticket on 2026-10-04 for refinement in the director conversa
 
 
 User explicitly requested creating new missions after TRI-022 on 2026-10-04. Workflow task is now integrated. Scope question presented: three mixed-objective missions (assault/defense/infiltration), one polished mission first, or five-mission mini-campaign, using existing assets and separate custom campaign. Await scope preference while completing workflow checkpoint; fresh bounded workers own design/implementation. No expansion of recovered source campaign or unrelated regeneration.
+
+[TRI-023](custom-mission-design.md) owns independent concrete design/feasibility for assault/defense/infiltration candidates while count preference is pending. This necessary preparation does not assume silent approval of campaign size. Implementation follows agreed scope in bounded mission branches; original nine missions remain distinguishable.

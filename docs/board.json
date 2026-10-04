@@ -313,6 +313,15 @@
         "reviewedImplementationCommit": "be6bde650b6585f9ea1b219989ad4045ece503ef",
         "squashCommit": "7a04024d9c5a2fbe4c9e5a46c93a59e9a0c84f63"
       }
+    },
+    {
+      "id": "TRI-023",
+      "title": "Design playable custom mission candidates",
+      "task": "docs/tasks/custom-mission-design.md",
+      "status": "Ready",
+      "reason": "User authorized new mission creation; independent design/feasibility is necessary while count preference remains pending. No gameplay changes in design ticket.",
+      "questions": [],
+      "approval": "User authorized new mission creation; independent design/feasibility is necessary while count preference remains pending. No gameplay changes in design ticket."
     }
   ],
   "events": [
@@ -995,6 +1004,25 @@
         "/root",
         "7a04024d9c5a2fbe4c9e5a46c93a59e9a0c84f63",
         "be6bde650b6585f9ea1b219989ad4045ece503ef"
+      ]
+    },
+    {
+      "at": "2026-10-04T17:29:33.888Z",
+      "command": "create",
+      "ticket": "TRI-023",
+      "details": [
+        "custom-mission-design",
+        "Design playable custom mission candidates",
+        "Deliver distinct assault, defense and infiltration mission designs with existing-asset layouts, reachable objectives, support/enemy placements and measurable checks; identify bounded implementation tasks and pending count choice, without gameplay changes."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:29:33.988Z",
+      "command": "move",
+      "ticket": "TRI-023",
+      "details": [
+        "Ready",
+        "User authorized new mission creation; independent design/feasibility is necessary while count preference remains pending. No gameplay changes in design ticket."
       ]
     }
   ]
