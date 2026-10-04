@@ -265,6 +265,15 @@
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
       "questions": []
+    },
+    {
+      "id": "TRI-020",
+      "title": "Audit original difficulty and propose mixed balance profiles",
+      "task": "docs/tasks/difficulty-audit.md",
+      "status": "Ready",
+      "reason": "User authorized audit and concrete tuning proposal after choosing source-faithful Normal and mixed tactical/attrition nest controls. No gameplay changes.",
+      "questions": [],
+      "approval": "User authorized audit and concrete tuning proposal after choosing source-faithful Normal and mixed tactical/attrition nest controls. No gameplay changes."
     }
   ],
   "events": [
@@ -800,6 +809,25 @@
         "new-missions",
         "New missions",
         "Refine mission concepts, count, objectives, maps and measurable acceptance here before dispatch."
+      ]
+    },
+    {
+      "at": "2026-10-04T15:56:20.703Z",
+      "command": "create",
+      "ticket": "TRI-020",
+      "details": [
+        "difficulty-audit",
+        "Audit original difficulty and propose mixed balance profiles",
+        "Produce an evidenced original/current difficulty matrix and concrete per-setting/per-mission proposal with Normal closest to source, explicit limits and measurable acceptance; change no gameplay."
+      ]
+    },
+    {
+      "at": "2026-10-04T15:56:20.806Z",
+      "command": "move",
+      "ticket": "TRI-020",
+      "details": [
+        "Ready",
+        "User authorized audit and concrete tuning proposal after choosing source-faithful Normal and mixed tactical/attrition nest controls. No gameplay changes."
       ]
     }
   ]
