@@ -430,10 +430,16 @@
       "id": "TRI-030",
       "title": "Hide standing soldier sprite while mounted in turret",
       "task": "docs/tasks/mounted-soldier-duplicate-sprite.md",
-      "status": "Ready",
-      "reason": "User authorized queue execution; scoped duplicate mounted sprite fix follows TRI-028",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User authorized queue execution; scoped duplicate mounted sprite fix follows TRI-028"
+      "approval": "User authorized queue execution; scoped duplicate mounted sprite fix follows TRI-028",
+      "worker": {
+        "id": "/root/mounted_render_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-mounted-soldier-duplicate-sprite",
+        "branch": "fix/mounted-soldier-duplicate-sprite"
+      },
+      "branch": "fix/mounted-soldier-duplicate-sprite"
     },
     {
       "id": "TRI-031",
@@ -1936,6 +1942,15 @@
         "/root",
         "6909eeb5524b2f4c274bb099c4e8d32190d144eb",
         "0769605abeb5f9f585d0043e89399b0dd2d7486b"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:59:08.161Z",
+      "command": "dispatch",
+      "ticket": "TRI-030",
+      "details": [
+        "../triumph-mounted-soldier-duplicate-sprite",
+        "/root/mounted_render_worker"
       ]
     }
   ]
