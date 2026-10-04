@@ -1,6 +1,6 @@
 # Project status
 
-Updated: 2026-10-04. Latest integrated gameplay tasks: commander selection (TRI-009) and attack-move interactions (TRI-010). Tactical mode (TRI-011) is implemented on its task branch for Review; integration status remains in BOARD.
+Updated: 2026-10-04. Latest integrated gameplay tasks: commander selection (TRI-009), attack-move interactions (TRI-010) and tactical mode (TRI-011). All three passed independent director review and were squash-integrated; integration commits are recorded in BOARD.
 
 ## Checkpoints
 
@@ -23,7 +23,7 @@ Nine recovered maps/sprites/audio/MIDI; all four commanders use AI unless explic
 
 ## Verification distinction
 
-Full project/simulation/music/tooling checks passed both in the working checkout and a clean export of tracked source without the local bank. The mocked simulation checks cover all nine missions and recent controls/support behavior. Music checks verify scheduling with mocked audio. The director recorded limited live browser commander selector/toggle UI checks; full AI, attack-move interaction and balance playtests remain unverified. The director checked tactical-mode start/restart visuals, mode button toggling, Controls/Units restoration and a 390×844 viewport; limited live queued movement and mission-selector deployment also passed. Details are in the tactical-mode session. Audible matching remains unverified. The user's own play reports informed fixes but are not a recorded comprehensive acceptance pass.
+Full project/simulation/music/tooling checks passed both in the working checkout and a clean export of tracked source without the local bank. The mocked simulation checks cover all nine missions and recent controls/support behavior. Music checks verify scheduling with mocked audio. The director recorded limited live browser commander selector/toggle UI checks; full AI, attack-move interaction and balance playtests remain unverified. The director checked tactical-mode start/restart visuals, mode button toggling, Controls/Units restoration and a 390×844 viewport; limited live queued movement and mission-selector deployment also passed. Details are in the [limited browser playtest](playtests/2026-10-04-commanders-tactical-mode.md) and tactical-mode session. Audible matching remains unverified. The user's own play reports informed fixes but are not a recorded comprehensive acceptance pass.
 
 The reported mission-not-finishing issue was not reproduced as a universal completion failure. All nine completion fixtures pass; off-map births and carrier wave accounting were corrected. Keep TRI-001 open until the live scenario is reproduced or a full acceptance pass establishes resolution.
 

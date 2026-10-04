@@ -21,3 +21,9 @@ Review TRI-009 worker commit/checks; squash-integrate when acceptance passes. Th
 TRI-009 reviewed and squash-integrated as 766607c1276a4ff041b02dd2e43b76526e930ee1 from worker d7cef2e; full director checks passed. Next: TRI-010.
 
 TRI-010 reviewed and squash-integrated as c8c4d5e9b0795dfcf45dbc852d122b626c954d46 from fa2bebc. Final director suite passed after unavailable-support fixture correction; live mechanics unverified. Next: TRI-011 tactical presentation/start.
+
+TRI-011 reviewed and squash-integrated as 03f75fcd2411545a5193e4a8c6d035c8de6f253e from b13c96abd78918003c48f2acfcfd04462188d84f. Independent final full suite passed; limited browser playtest recorded in docs/playtests/2026-10-04-commanders-tactical-mode.md. All three approved tickets are Done. No publication; unrelated provenance edit remains preserved.
+
+## Final handoff
+
+Requested features complete on main: TRI-009 766607c, TRI-010 c8c4d5e, TRI-011 03f75fc. No further implementation action required. Broad browser mechanics/balance/audio and all-nine live completion remain follow-up backlog checks, not passing claims. Worktrees preserved.

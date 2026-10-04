@@ -131,16 +131,17 @@
       "id": "TRI-011",
       "title": "Tactical mode presentation and mission start",
       "task": "docs/tasks/tactical-mode.md",
-      "status": "Review",
-      "reason": "Worker b13c96a; director reviewed final runtime/style/docs and independently passed full suite; live start/restart/visor/dialog/queued-order/mission-selector smoke passed.",
+      "status": "Done",
+      "reason": "Director independent final checks and browser UI/queued-order smoke passed; all-nine startup verified in VM. Squash 03f75fc; broad mechanics/audio playtests unverified.",
       "questions": [],
       "approval": "User requested this feature on 2026-10-04; task captures tactical presentation and mission start.",
-      "worker": {
-        "id": "/root/commander_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-tactical-mode",
-        "branch": "feature/tactical-mode"
-      },
-      "branch": "feature/tactical-mode"
+      "branch": "feature/tactical-mode",
+      "completion": {
+        "evidence": "Director independent final checks and browser UI/queued-order smoke passed; all-nine startup verified in VM. Squash 03f75fc; broad mechanics/audio playtests unverified.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "b13c96abd78918003c48f2acfcfd04462188d84f",
+        "squashCommit": "03f75fcd2411545a5193e4a8c6d035c8de6f253e"
+      }
     }
   ],
   "events": [
@@ -298,6 +299,18 @@
       "details": [
         "Review",
         "Worker b13c96a; director reviewed final runtime/style/docs and independently passed full suite; live start/restart/visor/dialog/queued-order/mission-selector smoke passed."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:23:07.394Z",
+      "command": "move",
+      "ticket": "TRI-011",
+      "details": [
+        "Done",
+        "Director independent final checks and browser UI/queued-order smoke passed; all-nine startup verified in VM. Squash 03f75fc; broad mechanics/audio playtests unverified.",
+        "/root",
+        "03f75fc",
+        "b13c96a"
       ]
     }
   ]
