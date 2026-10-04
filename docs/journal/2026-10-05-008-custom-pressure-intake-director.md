@@ -15,3 +15,5 @@ After dispatch: user added programmed Silent Return three-airdrop formation at~2
 Further user request: ground robots50% faster. Created separate approved TRI-038, movement1.5x only, preserving weapons/health/firing and other unit speeds. Queue after037/028/030; pressure worker stays on existing scope. No concurrent implementation worker.
 
 Further user request: Last Convoy restores original map grenade/weapon caches. Separate approved TRI-039 after037, before028/030/038. Restore recovered static pickup types/positions, not source support/enemies/random generation. Preserve current challenge profiles. TRI-037 still excludes Last Convoy; no parallel worker.
+
+Latest user instruction withdraws039: leave Last Convoy as it is now. Returned cache task to Backlog, explicitly withdrawn, no implementation started. Current queue after037 is028,030,038. Last Convoy remains immutable in037.

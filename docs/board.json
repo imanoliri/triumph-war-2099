@@ -542,8 +542,8 @@
       "id": "TRI-039",
       "title": "Restore original map grenade and weapon caches in Last Convoy",
       "task": "docs/tasks/last-convoy-source-caches.md",
-      "status": "Ready",
-      "reason": "User requested original grenade/weapon caches in Last Convoy2026-10-05; source pickup restoration only, next after pressure037",
+      "status": "Backlog",
+      "reason": "Withdrawn by user2026-10-05: leave Last Convoy as it is now; no worker dispatched",
       "questions": [],
       "approval": "User requested original grenade/weapon caches in Last Convoy2026-10-05; source pickup restoration only, next after pressure037"
     }
@@ -1868,6 +1868,15 @@
       "details": [
         "Ready",
         "User requested original grenade/weapon caches in Last Convoy2026-10-05; source pickup restoration only, next after pressure037"
+      ]
+    },
+    {
+      "at": "2026-10-04T22:54:06.778Z",
+      "command": "move",
+      "ticket": "TRI-039",
+      "details": [
+        "Backlog",
+        "Withdrawn by user2026-10-05: leave Last Convoy as it is now; no worker dispatched"
       ]
     }
   ]

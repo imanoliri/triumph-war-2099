@@ -18,3 +18,7 @@ Restore original map grenade and weapon caches in Last Convoy
 Verify correct source enumeration, all caches represented, reachable actual positions/door use, ordinary collection including duplicate commander weapon retention, cap-independent grenade/weapon behavior, restart/difficulty initialization and original/custom isolation. Run relevant/full checks and record actual browser evidence separately. After current TRI-037, before remaining timing/render/speed tickets, one isolated worker stops Review. Do not modify installed original game or regenerate unrelated assets.
 
 ## Sessions
+
+## Withdrawn by user
+
+Latest2026-10-05 instruction: "nah, leave last convoy as it is now". This supersedes cache restoration approval above. Return to Backlog as withdrawn; do not dispatch or implement. Last Convoy remains exactly current. No worker or implementation existed for039 when withdrawn.
