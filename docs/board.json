@@ -430,10 +430,16 @@
       "id": "TRI-032",
       "title": "Build Split Ridge as a new Relay Breaker map",
       "task": "docs/tasks/relay-breaker-split-ridge.md",
-      "status": "Ready",
-      "reason": "User selectedA Split Ridge and explicitly requested preservingB/C; narrow sweep accepted, now implement selected custom terrain under recorded scope.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User selectedA Split Ridge and explicitly requested preservingB/C; narrow sweep accepted, now implement selected custom terrain under recorded scope."
+      "approval": "User selectedA Split Ridge and explicitly requested preservingB/C; narrow sweep accepted, now implement selected custom terrain under recorded scope.",
+      "worker": {
+        "id": "/root/split_ridge_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-relay-breaker-split-ridge",
+        "branch": "feature/relay-breaker-split-ridge"
+      },
+      "branch": "feature/relay-breaker-split-ridge"
     }
   ],
   "events": [
@@ -1420,6 +1426,15 @@
       "details": [
         "Ready",
         "User selectedA Split Ridge and explicitly requested preservingB/C; narrow sweep accepted, now implement selected custom terrain under recorded scope."
+      ]
+    },
+    {
+      "at": "2026-10-04T18:18:01.733Z",
+      "command": "dispatch",
+      "ticket": "TRI-032",
+      "details": [
+        "../triumph-relay-breaker-split-ridge",
+        "/root/split_ridge_worker"
       ]
     }
   ]
