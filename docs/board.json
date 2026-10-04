@@ -147,8 +147,8 @@
       "id": "TRI-012",
       "title": "Fix rendered reinforcement eagles that cannot be collected",
       "task": "docs/tasks/eagle-pickup-fix.md",
-      "status": "Review",
-      "reason": "Director reproduced source mismatch, reviewed eligibility/cap feedback/contrast diff, full suite and final affected simulation passed. Worker9e96844. Live capped-label check unverified.",
+      "status": "Done",
+      "reason": "Independent full suite and final affected regression checks passed; source guards/caps retained with clear feedback and later retry. Squash29b2041. Live feedback not verified.",
       "questions": [
         {
           "number": 1,
@@ -162,12 +162,13 @@
         }
       ],
       "approval": "User reported visible randomly unpickable eagles on 2026-10-04; approved bounded diagnosis/fix and regression scope.",
-      "worker": {
-        "id": "/root/commander_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-eagle-pickup-fix",
-        "branch": "fix/eagle-pickup-fix"
-      },
-      "branch": "fix/eagle-pickup-fix"
+      "branch": "fix/eagle-pickup-fix",
+      "completion": {
+        "evidence": "Independent full suite and final affected regression checks passed; source guards/caps retained with clear feedback and later retry. Squash29b2041. Live feedback not verified.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "9e96844e833052e871e1b8c7e2012bf8f440ab42",
+        "squashCommit": "29b20417448e27c432302faf88eb331532242c9d"
+      }
     },
     {
       "id": "TRI-013",
@@ -538,6 +539,18 @@
       "details": [
         "Review",
         "Director reproduced source mismatch, reviewed eligibility/cap feedback/contrast diff, full suite and final affected simulation passed. Worker9e96844. Live capped-label check unverified."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:40:02.318Z",
+      "command": "move",
+      "ticket": "TRI-012",
+      "details": [
+        "Done",
+        "Independent full suite and final affected regression checks passed; source guards/caps retained with clear feedback and later retry. Squash29b2041. Live feedback not verified.",
+        "/root",
+        "29b2041",
+        "9e96844"
       ]
     }
   ]

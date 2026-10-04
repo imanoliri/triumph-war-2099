@@ -29,3 +29,5 @@ User reported closed-door room pathing wall-shortcut stalls. Approved separate T
 User requested commanders leave already-equipped weapon pickups. Approved TRI-015 duplicate-commander-weapons, queued after TRI-014; preserve existing weapon identities and other collectors.
 
 User requested mounted plasma cannons always fire in16 directions independent of operator. Approved separate TRI-016 plasma-cannon-directions, queued after TRI-015; unmounted asymmetry preserved.
+
+TRI-012 accepted and squash-integrated29b20417448e27c432302faf88eb331532242c9d from reviewed9e96844e833052e871e1b8c7e2012bf8f440ab42. Independent full suite passed; final contrast-only change verified by affected simulation. Task session-link merge conflict resolved preserving both worker and director sessions. Live cap-label display remains unverified. Next: TRI-013 tactical music, then TRI-014 pathing, TRI-015 duplicate weapons, TRI-016 cannon directions.
