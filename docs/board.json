@@ -366,10 +366,16 @@
       "id": "TRI-026",
       "title": "Add Silent Return infiltration mission",
       "task": "docs/tasks/custom-silent-return.md",
-      "status": "Ready",
-      "reason": "User requested new missions after workflow and continued work; first two and selectedA map accepted. Proceed queued bounded infiltration scope from accepted design, existing map reuse disclosed.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User requested new missions after workflow and continued work; first two and selectedA map accepted. Proceed queued bounded infiltration scope from accepted design, existing map reuse disclosed."
+      "approval": "User requested new missions after workflow and continued work; first two and selectedA map accepted. Proceed queued bounded infiltration scope from accepted design, existing map reuse disclosed.",
+      "worker": {
+        "id": "/root/silent_return_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-silent-return",
+        "branch": "feature/custom-silent-return"
+      },
+      "branch": "feature/custom-silent-return"
     },
     {
       "id": "TRI-027",
@@ -1467,6 +1473,15 @@
       "details": [
         "Ready",
         "User requested new missions after workflow and continued work; first two and selectedA map accepted. Proceed queued bounded infiltration scope from accepted design, existing map reuse disclosed."
+      ]
+    },
+    {
+      "at": "2026-10-04T21:47:36.160Z",
+      "command": "dispatch",
+      "ticket": "TRI-026",
+      "details": [
+        "../triumph-custom-silent-return",
+        "/root/silent_return_worker"
       ]
     }
   ]
