@@ -47,3 +47,5 @@ Local main preserves the accepted playable milestone; individual branches carry 
 [DEVELOPMENT-NOTES](DEVELOPMENT-NOTES.md) is chronological history. The [archived prototype README](docs/archive/README-prototype.md) records early details, some superseded by DESIGN.
 
 Director coordination: [local board](docs/BOARD.md), [director instructions](docs/DIRECTOR.md), [worker instructions](docs/WORKER.md).
+
+Reinforcement eagles use mission support eligibility. Random eagles only spawn when currently usable; existing temporarily capped eagles remain and show TROOPS FULL · WAIT FOR SPACE until troops are lost. SUPPORT UNAVAILABLE marks a missing applicable mission support rule.
