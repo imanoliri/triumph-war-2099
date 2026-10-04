@@ -14,7 +14,7 @@ const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.f
 vm.createContext(sandbox);
 for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
- if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep});})();');
+ if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival});})();');
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
@@ -260,4 +260,15 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  canvasHandlers.pointerdown({clientX:100+440/2,clientY:50+390/2,button:0,shiftKey:false,pointerId:44,preventDefault:noop});canvasHandlers.pointerup({clientX:100+460/2,clientY:50+420/2,button:0,shiftKey:false,pointerId:44,preventDefault:noop});const click=timeStamp=>({clientX:100+terminal.x/2,clientY:50+terminal.y/2,button:2,timeStamp,pointerId:45,preventDefault:noop});canvasHandlers.pointerdown(click(5000));canvasHandlers.pointerdown(click(5100));assert.equal(troop.useOrder.kind,'terminal','Double right click usable issues use rather than force move');assert.equal(troop.attackMove,null);
  terminal.used=false;troop.x=470;state.rocks=[{x:480,y:350,w:8,h:100}];f.useOrderStep(troop,.1);assert.equal(terminal.used,false,'Cannot operate terminal through intervening wall');state.rocks=[];
  console.log('Passed usable hit detection, terminal activation/source unlock, shared door open/close, locked-door waiting, movement cancellation, double-click use and blocked interaction sight.');
+}
+
+{
+ for(let mission=1;mission<=9;mission++){
+  api.loadMission(mission);const f=sandbox.window.__fixture(),state=f.state;state.mode='playing';state.t=100;state.bullets=[];state.aliens=[];state.nests.forEach(n=>n.hp=0);state.terminals.forEach(t=>t.active=true);state.waveKills={normal:999,queen:999};if(state.crystal)state.crystal.recovered=true;
+  const merits=state.merits;assert(f.missionProgress().ready);f.update(.01);assert.equal(state.mode,'victory',`Cleared mission ${mission} completes automatically`);const reward=state.merits;assert(reward>merits);f.update(.1);assert.equal(state.merits,reward,'Victory reward applies once');
+ }
+ api.loadMission(3);let f=sandbox.window.__fixture(),state=f.state;state.mode='playing';state.t=100;state.aliens=[];state.nests.forEach(n=>n.hp=0);assert.equal(f.missionProgress().terminals,1);f.update(.01);assert.equal(state.mode,'playing','Terminal prerequisite still required');state.terminals.find(t=>t.object===257).active=true;f.update(.01);assert.equal(state.mode,'victory','Final terminal automatically completes cleared mission');
+ api.loadMission(5);f=sandbox.window.__fixture();state=f.state;state.mode='playing';state.t=100;assert.equal(f.missionProgress().wave,200);assert(!f.missionProgress().ready,'Wave quota cannot be skipped');
+ api.loadMission(4);f=sandbox.window.__fixture();state=f.state;state.aliens=[];for(const [x,y] of [[-50,100],[1100,400],[500,810],[500,5]]){const bug=f.spawnGroundBug(x,y);assert(bug.x>=16&&bug.x<=1008&&bug.y>=44&&bug.y<=744);assert(!f.blocked(bug.x,bug.y),'New bug resolves onto clear playable terrain');}
+ console.log('Passed automatic victory and single rewards in all nine missions, terminal/wave prerequisites, progress reporting and clear-ground bug births at map boundaries.');
 }

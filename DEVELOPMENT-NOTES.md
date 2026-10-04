@@ -224,3 +224,10 @@
 - Shared group actions toggle a door only once. Locked doors wait for their source terminal; targeted terminal use preserves source unlocks and mission flags. Interaction sight prevents activating through another wall. Units pause combat and supply trips during the order and hold after completion; new player orders cancel it.
 - Infantry/commandos can collect pickups, consume flowers and occupy cannons. Tanks/robots can operate doors and terminals. Crystal recovery preserves the existing Caves contact rule and other mission/extraction prerequisites.
 - Updated Controls, terminal description and README. Syntax and simulation checks passed, including targeted terminal unlocks, shared door open/close, locked-door waiting, cancellation, double-click dispatch and blocked interaction sight. Live browser gameplay remains unverified.
+
+
+## 2026-10-04 — Mission completion diagnosis and progress
+- User reported missions remaining open after clearing enemies. Could not reproduce a blanket completion failure: simulated all nine missions with every requirement fulfilled and each automatically wins once. Original recovered rules also require nests, wave quotas, terminal flags or crystal extraction in the relevant missions.
+- Found bug births used unrestricted coordinates, allowing nest/queen offspring outside the playable area or inside terrain. New ground bug births now resolve to clear playable positions. Carrier crush kills now use the common kill routine so wave counters advance.
+- Centralized completion requirements in missionProgress, used both by automatic victory and a bottom-right Remaining status listing live bugs, nests, wave quota, terminal count, timer and crystal extraction. Exposed the same progress through the existing state API. Required mission objectives remain intact.
+- Syntax and full simulation checks passed, with new all-nine automatic completion/single reward checks, terminal/wave prerequisites, and clear-ground births at map boundaries. Live gameplay remains unverified; the exact cause of the user's current session is not confirmed.

@@ -133,3 +133,7 @@ Tank focus attacks use a 10° sweep centered on the assigned target. Autonomous 
 With troops selected, double right-click a door, terminal, pickup, cannon, alien flower or crystal objective to send eligible units there and use it. They route around terrain and pause combat and automatic eagle trips until the action finishes. New movement, attack or squad orders cancel the interaction. A cyan marker indicates the order.
 
 Groups operate doors once: closed doors open, open doors close. Locked doors wait for their linked terminal to unlock them. Terminals preserve their recovered door unlocks and objective flags. Pickups, flowers and cannons require infantry or commandos; tanks and robots can operate doors and terminals. Crystal objectives retain mission prerequisites and extraction rules.
+
+
+### Automatic mission completion
+Missions complete automatically when all living bugs and nests are cleared and the mission's wave, terminal, timer and crystal requirements are satisfied. A bottom-right battlefield status lists remaining requirements. New bug births resolve onto clear playable terrain, preventing unseen off-map survivors; carrier kills count toward wave quotas.
