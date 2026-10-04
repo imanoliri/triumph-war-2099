@@ -233,6 +233,15 @@
         "reviewedImplementationCommit": "0f65d07871f4ee7d89f33f8f83cd03bdbb8f81c0",
         "squashCommit": "c3e885f9baf08c56d4f774c3f17cade45fbd58a5"
       }
+    },
+    {
+      "id": "TRI-017",
+      "title": "Recover and recreate ceiling vent bugs",
+      "task": "docs/tasks/vent-bugs.md",
+      "status": "Ready",
+      "reason": "User approved original-game vent bug research/recreation and explicitly directed director delegation on 2026-10-04.",
+      "questions": [],
+      "approval": "User approved original-game vent bug research/recreation and explicitly directed director delegation on 2026-10-04."
     }
   ],
   "events": [
@@ -699,6 +708,25 @@
         "/root",
         "c3e885f9baf08c56d4f774c3f17cade45fbd58a5",
         "0f65d07871f4ee7d89f33f8f83cd03bdbb8f81c0"
+      ]
+    },
+    {
+      "at": "2026-10-04T15:06:00.047Z",
+      "command": "create",
+      "ticket": "TRI-017",
+      "details": [
+        "vent-bugs",
+        "Recover and recreate ceiling vent bugs",
+        "Original-source evidence establishes mission placement, ceiling roaming, human-contact drop and vent return; recreation implements those rules with regression checks and documented live-verification limits."
+      ]
+    },
+    {
+      "at": "2026-10-04T15:06:20.820Z",
+      "command": "move",
+      "ticket": "TRI-017",
+      "details": [
+        "Ready",
+        "User approved original-game vent bug research/recreation and explicitly directed director delegation on 2026-10-04."
       ]
     }
   ]
