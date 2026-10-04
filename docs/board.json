@@ -270,16 +270,17 @@
       "id": "TRI-020",
       "title": "Audit original difficulty and propose mixed balance profiles",
       "task": "docs/tasks/difficulty-audit.md",
-      "status": "Review",
-      "reason": "Reviewed fd63bbb plus whitespace checkpoint7ad69f7; independent diagnostic and 45-selection/source coordinate/Normal subset consistency pass; worker full suite passed; no runtime/assets changes. Live/native limits and unapproved values retained.",
+      "status": "Done",
+      "reason": "Research accepted: independent matrix/45-layout consistency and syntax/diff checks passed; worker full suite passed. No gameplay changes; user must agree proposed implementation. Squashfe90071, source/native/live limits documented.",
       "questions": [],
       "approval": "User authorized audit and concrete tuning proposal after choosing source-faithful Normal and mixed tactical/attrition nest controls. No gameplay changes.",
-      "worker": {
-        "id": "/root/commander_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-difficulty-audit",
-        "branch": "chore/difficulty-audit"
-      },
-      "branch": "chore/difficulty-audit"
+      "branch": "chore/difficulty-audit",
+      "completion": {
+        "evidence": "Research accepted: independent matrix/45-layout consistency and syntax/diff checks passed; worker full suite passed. No gameplay changes; user must agree proposed implementation. Squashfe90071, source/native/live limits documented.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "7ad69f770476f2ef2c4095906cf8e13351c65ddf",
+        "squashCommit": "fe90071f20273e86894885119aa4405734bd2c0b"
+      }
     }
   ],
   "events": [
@@ -852,6 +853,18 @@
       "details": [
         "Review",
         "Reviewed fd63bbb plus whitespace checkpoint7ad69f7; independent diagnostic and 45-selection/source coordinate/Normal subset consistency pass; worker full suite passed; no runtime/assets changes. Live/native limits and unapproved values retained."
+      ]
+    },
+    {
+      "at": "2026-10-04T16:56:59.452Z",
+      "command": "move",
+      "ticket": "TRI-020",
+      "details": [
+        "Done",
+        "Research accepted: independent matrix/45-layout consistency and syntax/diff checks passed; worker full suite passed. No gameplay changes; user must agree proposed implementation. Squashfe90071, source/native/live limits documented.",
+        "/root",
+        "fe90071f20273e86894885119aa4405734bd2c0b",
+        "7ad69f770476f2ef2c4095906cf8e13351c65ddf"
       ]
     }
   ]

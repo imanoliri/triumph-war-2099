@@ -28,3 +28,5 @@ User explicitly authorized this bounded research/proposal phase on 2026-10-04 af
 - [Diagnostic matrices](../../research/difficulty-audit.json) and [candidate instance selections](../../research/difficulty-proposal.json)
 
 No gameplay/assets changed. Current Normal breeding differs from recovered opportunities; adopting a correction and its animation approximation requires agreement. Native fine collision and live difficulty ordering remain unverified.
+
+- [2026-10-04 / 031 — director acceptance](../journal/2026-10-04-031-difficulty-audit-director.md)
