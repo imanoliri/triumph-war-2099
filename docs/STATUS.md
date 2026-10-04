@@ -1,6 +1,6 @@
 # Project status
 
-Updated: 2026-10-04. Latest integrated gameplay tasks: TRI-009 through TRI-016, covering commander selection, attack-move interactions, tactical mode, eagle availability, music independence, closed-door routing, duplicate weapon protection and sixteen-direction plasma cannons. All passed independent director review and were squash-integrated; integration commits are recorded in BOARD.
+Updated: 2026-10-04. Latest integrated gameplay tasks: TRI-009 through TRI-017, covering commander selection, attack-move interactions, tactical mode, eagle availability, music independence, closed-door routing, duplicate weapon protection and sixteen-direction plasma cannons. All passed independent director review and were squash-integrated; integration commits are recorded in BOARD.
 
 ## Checkpoints
 

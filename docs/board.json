@@ -238,16 +238,17 @@
       "id": "TRI-017",
       "title": "Recover and recreate ceiling vent bugs",
       "task": "docs/tasks/vent-bugs.md",
-      "status": "Review",
-      "reason": "Worker implementation7f640ce and documentation checkpointd9b35c7 reviewed; independent full suite passes. Original launch access denied and worker browser unavailable; documented source/motion approximation limits accepted.",
+      "status": "Done",
+      "reason": "Independent source/diff review and full suite passed; missions7–9 lifecycle, phase immunity and victory accounting accepted. Original access denied/browser unavailable; motion/contact/render conversion limitations recorded. Squash5672220.",
       "questions": [],
       "approval": "User approved original-game vent bug research/recreation and explicitly directed director delegation on 2026-10-04.",
-      "worker": {
-        "id": "/root/commander_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-vent-bugs",
-        "branch": "feature/vent-bugs"
-      },
-      "branch": "feature/vent-bugs"
+      "branch": "feature/vent-bugs",
+      "completion": {
+        "evidence": "Independent source/diff review and full suite passed; missions7–9 lifecycle, phase immunity and victory accounting accepted. Original access denied/browser unavailable; motion/contact/render conversion limitations recorded. Squash5672220.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "d9b35c7eee3d3fc448dc47588189c6b141f2dede",
+        "squashCommit": "5672220f057bc9bdf10449a1ded352e1e8d526ca"
+      }
     }
   ],
   "events": [
@@ -751,6 +752,18 @@
       "details": [
         "Review",
         "Worker implementation7f640ce and documentation checkpointd9b35c7 reviewed; independent full suite passes. Original launch access denied and worker browser unavailable; documented source/motion approximation limits accepted."
+      ]
+    },
+    {
+      "at": "2026-10-04T15:31:52.307Z",
+      "command": "move",
+      "ticket": "TRI-017",
+      "details": [
+        "Done",
+        "Independent source/diff review and full suite passed; missions7–9 lifecycle, phase immunity and victory accounting accepted. Original access denied/browser unavailable; motion/contact/render conversion limitations recorded. Squash5672220.",
+        "/root",
+        "5672220f057bc9bdf10449a1ded352e1e8d526ca",
+        "d9b35c7eee3d3fc448dc47588189c6b141f2dede"
       ]
     }
   ]

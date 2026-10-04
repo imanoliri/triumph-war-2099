@@ -20,3 +20,5 @@ User approved research and recreation on 2026-10-04. One worker researches the i
 - [2026-10-04 / 024](../journal/2026-10-04-024-vent-bugs.md)
 - [2026-10-04 / 025](../journal/2026-10-04-025-vent-bugs.md)
 - [2026-10-04 / 026](../journal/2026-10-04-026-vent-bugs.md)
+
+- [2026-10-04 / 027 — director acceptance](../journal/2026-10-04-027-vent-bugs-director.md)
