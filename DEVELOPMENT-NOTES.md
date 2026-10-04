@@ -181,3 +181,6 @@
 
 ## 2026-10-04 — Tank shot volume
 - Increased tank gun sound playback volume by 50%, from 0.08 to 0.12. Other weapon volumes are unchanged.
+
+## 2026-10-04 — Tank shot volume doubled from baseline
+- Set tank gun volume to 0.16: 100% above its original 0.08 baseline (previous setting 0.12). Interpreted the requested total increase as twice the original volume.
