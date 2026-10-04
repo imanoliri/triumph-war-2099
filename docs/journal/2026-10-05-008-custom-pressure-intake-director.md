@@ -7,3 +7,5 @@ Queue: finish active TRI-027, then TRI-037, then approved TRI-028 and TRI-030. D
 Next action: review TRI-027 when ready; prepare fresh TRI-037 worker from merged main. Preserve unrelated provenance edits.
 
 Subsequent user extension: include Silent Return too, at all five difficulties. Task scope now covers all three custom missions. Preserve infiltration unlock/laser/all-survivors extraction and enemies-may-remain victory. Earlier Silent Return exclusion is superseded; original campaign exclusion remains.
+
+Latest user correction: Last Convoy was hard enough. Remove Last Convoy from TRI-037; preserve its current TRI-034 profiles exactly. Approved follow-up now only Relay Breaker and Silent Return across all five difficulties. No worker has been dispatched for037, so no implementation must be undone.

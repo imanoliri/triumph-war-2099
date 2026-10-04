@@ -1,4 +1,4 @@
-# Increase all three custom missions' pressure across every difficulty
+# Increase Relay Breaker and Silent Return pressure across every difficulty
 
 - Ticket: TRI-037; state in [local board](../BOARD.md).
 - Branch: not started
@@ -9,7 +9,7 @@ Increase custom mission pressure across every difficulty
 
 ## Acceptance criteria
 
-- [ ] Relay Breaker, Last Convoy and Silent Return sustain materially higher pressure at every selectable difficulty through nests and encounter/resource tuning appropriate to each objective, with original campaign isolated and measured evidence.
+- [ ] Relay Breaker and Silent Return sustain materially higher pressure at every selectable difficulty through nests and encounter/resource tuning appropriate to each objective, with original campaign and Last Convoy balance isolated and measured evidence.
 
 ## Scope and decisions
 
@@ -22,5 +22,7 @@ User approved this concrete follow-up scope after prior bounded retune was merge
 ## Sessions
 
 ## User scope extension
+
+**Latest authoritative scope:** user subsequently clarified Last Convoy was hard enough. TRI-037 covers **Relay Breaker and Silent Return only**, all five difficulties. Preserve Last Convoy's current TRI-034 profiles exactly. This supersedes all earlier inclusions of Last Convoy below and above; retain chronological decisions for evidence. Do not modify Convoy nests, waves, support, starting armies or objectives.
 
 2026-10-05 user explicitly added Silent Return to this follow-up. This supersedes its earlier exclusion above. All three custom missions now belong to TRI-037; original campaign remains excluded. Silent Return must retain legitimate access unlock, laser activation and return of every living ground human with a noncommander and no support inbound; enemies may remain. Add pressure along approach and return routes with reachable/targetable nest placements or existing spawn mechanisms. Do not turn infiltration into enemy extermination, block the access/laser/extraction, bypass door unlocks or introduce new enemy mechanics. Assess all five selectable difficulties and update briefing/guide to explain continuing pressure. Separate before/after evidence per mission and difficulty; freeze collision/terrain. Numerical tuning worker-owned under the same bounded task.
