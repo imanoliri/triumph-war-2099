@@ -286,10 +286,16 @@
       "id": "TRI-021",
       "title": "Restore Normal breeding and evolution baseline",
       "task": "docs/tasks/normal-difficulty-baseline.md",
-      "status": "Ready",
-      "reason": "User approved recommended bounded Normal semantic/birth/growplant baseline; custom other profiles remain unapproved.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User approved recommended bounded Normal semantic/birth/growplant baseline; custom other profiles remain unapproved."
+      "approval": "User approved recommended bounded Normal semantic/birth/growplant baseline; custom other profiles remain unapproved.",
+      "worker": {
+        "id": "/root/commander_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-normal-difficulty-baseline",
+        "branch": "fix/normal-difficulty-baseline"
+      },
+      "branch": "fix/normal-difficulty-baseline"
     }
   ],
   "events": [
@@ -893,6 +899,15 @@
       "details": [
         "Ready",
         "User approved recommended bounded Normal semantic/birth/growplant baseline; custom other profiles remain unapproved."
+      ]
+    },
+    {
+      "at": "2026-10-04T16:59:51.952Z",
+      "command": "dispatch",
+      "ticket": "TRI-021",
+      "details": [
+        "../triumph-normal-difficulty-baseline",
+        "/root/commander_worker"
       ]
     }
   ]
