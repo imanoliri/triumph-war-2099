@@ -25,3 +25,5 @@ User subsequently confirmed: 'yeah, it seems to be population cap!' Prioritize c
 User also requested tactical mode not pause music. Approved separate TRI-013 tactical-music, queued Ready after TRI-012; one worker remains active.
 
 User reported closed-door room pathing wall-shortcut stalls. Approved separate TRI-014 closed-door-pathing, queued after TRI-013. Preserve locked doors and source coordinate conventions.
+
+User requested commanders leave already-equipped weapon pickups. Approved TRI-015 duplicate-commander-weapons, queued after TRI-014; preserve existing weapon identities and other collectors.
