@@ -174,10 +174,16 @@
       "id": "TRI-013",
       "title": "Keep music playing in tactical mode",
       "task": "docs/tasks/tactical-music.md",
-      "status": "Ready",
-      "reason": "User explicitly requested music continue during tactical mode on 2026-10-04.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User explicitly requested music continue during tactical mode on 2026-10-04."
+      "approval": "User explicitly requested music continue during tactical mode on 2026-10-04.",
+      "worker": {
+        "id": "/root/commander_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-tactical-music",
+        "branch": "fix/tactical-music"
+      },
+      "branch": "fix/tactical-music"
     },
     {
       "id": "TRI-014",
@@ -551,6 +557,15 @@
         "/root",
         "29b2041",
         "9e96844"
+      ]
+    },
+    {
+      "at": "2026-10-04T14:40:28.665Z",
+      "command": "dispatch",
+      "ticket": "TRI-013",
+      "details": [
+        "../triumph-tactical-music",
+        "/root/commander_worker"
       ]
     }
   ]
