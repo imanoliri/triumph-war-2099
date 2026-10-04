@@ -206,8 +206,8 @@
       "id": "TRI-015",
       "title": "Preserve duplicate commander weapon pickups",
       "task": "docs/tasks/duplicate-commander-weapons.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Workerf473be9; director reviewed duplicate matching/early return/AI filtering and independent full suite passed. Live weapons unverified.",
       "questions": [],
       "approval": "User explicitly requested preventing duplicate commander weapon consumption on 2026-10-04.",
       "worker": {
@@ -640,6 +640,15 @@
       "details": [
         "../triumph-duplicate-commander-weapons",
         "/root/commander_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T14:54:15.282Z",
+      "command": "move",
+      "ticket": "TRI-015",
+      "details": [
+        "Review",
+        "Workerf473be9; director reviewed duplicate matching/early return/AI filtering and independent full suite passed. Live weapons unverified."
       ]
     }
   ]
