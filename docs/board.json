@@ -148,8 +148,14 @@
       "title": "Fix rendered reinforcement eagles that cannot be collected",
       "task": "docs/tasks/eagle-pickup-fix.md",
       "status": "In progress",
-      "reason": "Dispatched approved ticket",
-      "questions": [],
+      "reason": "User reproduction detail recorded and relayed; continue shared-rule diagnosis.",
+      "questions": [
+        {
+          "number": 1,
+          "question": "Which missions/colors and collector types did the user observe?",
+          "answer": "User: I think it is in all missions, regardless of commander or soldier. No specific color identified."
+        }
+      ],
       "approval": "User reported visible randomly unpickable eagles on 2026-10-04; approved bounded diagnosis/fix and regression scope.",
       "worker": {
         "id": "/root/commander_worker",
@@ -354,6 +360,32 @@
       "details": [
         "../triumph-eagle-pickup-fix",
         "/root/commander_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T14:29:54.819Z",
+      "command": "ask",
+      "ticket": "TRI-012",
+      "details": [
+        "Which missions/colors and collector types did the user observe?"
+      ]
+    },
+    {
+      "at": "2026-10-04T14:29:54.879Z",
+      "command": "answer",
+      "ticket": "TRI-012",
+      "details": [
+        "1",
+        "User: I think it is in all missions, regardless of commander or soldier. No specific color identified."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:29:54.939Z",
+      "command": "move",
+      "ticket": "TRI-012",
+      "details": [
+        "In progress",
+        "User reproduction detail recorded and relayed; continue shared-rule diagnosis."
       ]
     }
   ]
