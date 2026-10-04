@@ -177,6 +177,15 @@
       "reason": "User explicitly requested music continue during tactical mode on 2026-10-04.",
       "questions": [],
       "approval": "User explicitly requested music continue during tactical mode on 2026-10-04."
+    },
+    {
+      "id": "TRI-014",
+      "title": "Fix soldiers routing through walls near closed doors",
+      "task": "docs/tasks/closed-door-pathing.md",
+      "status": "Ready",
+      "reason": "User reported wall-shortcut closed-door soldier routing on 2026-10-04 and requested bounded fix.",
+      "questions": [],
+      "approval": "User reported wall-shortcut closed-door soldier routing on 2026-10-04 and requested bounded fix."
     }
   ],
   "events": [
@@ -445,6 +454,25 @@
       "details": [
         "Ready",
         "User explicitly requested music continue during tactical mode on 2026-10-04."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:34:30.471Z",
+      "command": "create",
+      "ticket": "TRI-014",
+      "details": [
+        "closed-door-pathing",
+        "Fix soldiers routing through walls near closed doors",
+        "Reproduce soldiers stalling against a room wall when routing through a closed door, and fix navigation while preserving locked-door and interaction rules."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:34:30.592Z",
+      "command": "move",
+      "ticket": "TRI-014",
+      "details": [
+        "Ready",
+        "User reported wall-shortcut closed-door soldier routing on 2026-10-04 and requested bounded fix."
       ]
     }
   ]
