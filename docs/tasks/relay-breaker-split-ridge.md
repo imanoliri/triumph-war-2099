@@ -1,7 +1,7 @@
 # Build Split Ridge as a new Relay Breaker map
 
 - Ticket: TRI-032; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/relay-breaker-split-ridge`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Build Split Ridge as a new Relay Breaker map
 
 ## Acceptance criteria
 
-- [ ] Relay Breaker loads a purpose-built Split Ridge terrain image/mask and agreed placements, with playable routes and support delivery; originals and saved B/C concepts preserved.
+- [x] Relay Breaker loads a purpose-built Split Ridge terrain image/mask and agreed placements, with playable routes and support delivery; originals and saved B/C concepts preserved.
 
 ## Scope and decisions
 
@@ -22,3 +22,10 @@ Acceptance evidence: actual compiled terrain/mask align with artwork; all spawn/
 ## Sessions
 
 
+- [2026-10-04 / 047](../journal/2026-10-04-047-relay-breaker-split-ridge.md)
+
+## Acceptance evidence / Review
+
+Custom terrain/mask and exact proposal A placements are implemented; focused physical simulation and full suite/package pass. Browser final-art/tactical/partial troop/support smoke passed. Full live Normal victory/time/casualties/births and audio remain unverified, requiring director review acceptance or a follow-up live pass. See session047 and its playtest. B/C remain untouched/unregistered. Worker stops at Review; no merge/publication.
+
+Director accepted TRI-032 implementation after independent full-suite pass, runtime/mask/art/source-isolation review and live deployment/northern-route smoke. Full Normal completion, audio and balance remain explicitly unverified; acceptance does not convert these limits into passing playtests.
