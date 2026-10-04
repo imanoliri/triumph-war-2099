@@ -99,8 +99,8 @@
       "id": "TRI-009",
       "title": "AI commanders unless explicitly selected",
       "task": "docs/tasks/commander-selection.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker d7cef2e; director reviewed runtime diff, live selector smoke and independently passed full test suite.",
       "questions": [],
       "approval": "User requested this feature on 2026-10-04; task captures commander default and explicit selection.",
       "worker": {
@@ -215,6 +215,15 @@
       "details": [
         "../triumph-commander-selection",
         "/root/commander_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T12:55:09.973Z",
+      "command": "move",
+      "ticket": "TRI-009",
+      "details": [
+        "Review",
+        "Worker d7cef2e; director reviewed runtime diff, live selector smoke and independently passed full test suite."
       ]
     }
   ]
