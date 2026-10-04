@@ -206,10 +206,16 @@
       "id": "TRI-015",
       "title": "Preserve duplicate commander weapon pickups",
       "task": "docs/tasks/duplicate-commander-weapons.md",
-      "status": "Ready",
-      "reason": "User explicitly requested preventing duplicate commander weapon consumption on 2026-10-04.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User explicitly requested preventing duplicate commander weapon consumption on 2026-10-04."
+      "approval": "User explicitly requested preventing duplicate commander weapon consumption on 2026-10-04.",
+      "worker": {
+        "id": "/root/commander_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-duplicate-commander-weapons",
+        "branch": "fix/duplicate-commander-weapons"
+      },
+      "branch": "fix/duplicate-commander-weapons"
     },
     {
       "id": "TRI-016",
@@ -625,6 +631,15 @@
         "/root",
         "4416f26",
         "0bdc25d"
+      ]
+    },
+    {
+      "at": "2026-10-04T14:51:26.999Z",
+      "command": "dispatch",
+      "ticket": "TRI-015",
+      "details": [
+        "../triumph-duplicate-commander-weapons",
+        "/root/commander_worker"
       ]
     }
   ]
