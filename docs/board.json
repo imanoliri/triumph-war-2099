@@ -366,16 +366,17 @@
       "id": "TRI-026",
       "title": "Add Silent Return infiltration mission",
       "task": "docs/tasks/custom-silent-return.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent full suite/runtime review pass; actual terminal/door/return/support extraction tests and live marker/deployment smoke. Full manual completion/audio unverified accepted. Squash7293cb4.",
       "questions": [],
       "approval": "User requested new missions after workflow and continued work; first two and selectedA map accepted. Proceed queued bounded infiltration scope from accepted design, existing map reuse disclosed.",
-      "worker": {
-        "id": "/root/silent_return_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-silent-return",
-        "branch": "feature/custom-silent-return"
-      },
-      "branch": "feature/custom-silent-return"
+      "branch": "feature/custom-silent-return",
+      "completion": {
+        "evidence": "Independent full suite/runtime review pass; actual terminal/door/return/support extraction tests and live marker/deployment smoke. Full manual completion/audio unverified accepted. Squash7293cb4.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "b399b9fd55bc250645f1d476b39cb5854141607c",
+        "squashCommit": "7293cb4b18a8c2ccce8f0682b640350be4a8eb19"
+      }
     },
     {
       "id": "TRI-027",
@@ -453,9 +454,10 @@
       "id": "TRI-033",
       "title": "Prepare reusable map art kit and AI handoff prompts",
       "task": "docs/tasks/map-art-handoff-kit.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "User explicitly requested art kit ticket directly after current Silent Return, including adequate director/artist prompts and skills or workflows. Silent Return accepted; kit only, no art replacement.",
+      "questions": [],
+      "approval": "User explicitly requested art kit ticket directly after current Silent Return, including adequate director/artist prompts and skills or workflows. Silent Return accepted; kit only, no art replacement."
     },
     {
       "id": "TRI-034",
@@ -1518,6 +1520,36 @@
         "custom-mission-challenge",
         "Increase challenge in Relay Breaker and Last Convoy",
         "Retune the two new custom missions to provide meaningful tactical and sustained pressure at agreed difficulty, with measured playtest evidence and original campaign balance unchanged."
+      ]
+    },
+    {
+      "at": "2026-10-04T21:55:28.471Z",
+      "command": "move",
+      "ticket": "TRI-026",
+      "details": [
+        "Review",
+        "Director independent final full suite and unlock/open/return/extraction diff review pass; live selector/deployment/extraction marker smoke verified. Initial in-progress fixture syntax issue fixed. Full manual completion/audio unverified accepted explicitly."
+      ]
+    },
+    {
+      "at": "2026-10-04T21:55:55.976Z",
+      "command": "move",
+      "ticket": "TRI-026",
+      "details": [
+        "Done",
+        "Independent full suite/runtime review pass; actual terminal/door/return/support extraction tests and live marker/deployment smoke. Full manual completion/audio unverified accepted. Squash7293cb4.",
+        "/root",
+        "7293cb4b18a8c2ccce8f0682b640350be4a8eb19",
+        "b399b9fd55bc250645f1d476b39cb5854141607c"
+      ]
+    },
+    {
+      "at": "2026-10-04T21:55:56.036Z",
+      "command": "move",
+      "ticket": "TRI-033",
+      "details": [
+        "Ready",
+        "User explicitly requested art kit ticket directly after current Silent Return, including adequate director/artist prompts and skills or workflows. Silent Return accepted; kit only, no art replacement."
       ]
     }
   ]

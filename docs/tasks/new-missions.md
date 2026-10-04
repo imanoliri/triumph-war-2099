@@ -29,3 +29,5 @@ Bounded follow-up tickets: [TRI-025 Last Convoy](custom-last-convoy.md), [TRI-02
 User steering: requested visual proposals for a new Relay Breaker map, for direct review/alignment before implementation. [TRI-029](relay-breaker-map-proposals.md) follows active defense ticket; infiltration remains queued. Existing Relay Breaker currently reuses Desert Rocks, disclosed honestly.
 
 User selected new-map A Split Ridge; TRI-032 implements purpose-built terrain after active turret sweep. Preserve B Relay Basin and C Switchback Mesa for potential later missions.
+
+Initial three scenarios implemented: Relay Breaker, Last Convoy, Silent Return. Purpose-built Split Ridge accepted a7d2a18; alternatives saved. User reports first two tooeasy even on harderdifficulty, recorded TRI-034; do not claim balanced/playtested release. TRI-033 art handoff kit next by explicit user priority. Intake remains open pending further balance/art work.

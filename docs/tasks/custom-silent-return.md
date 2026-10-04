@@ -21,3 +21,5 @@ Meaningful regression checks: locked laser room inaccessible before legitimate a
 
 
 - [2026-10-04 / 049](../journal/2026-10-04-049-custom-silent-return.md)
+
+- [Director acceptance / squash](../journal/2026-10-04-050-custom-silent-return-director.md)
