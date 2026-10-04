@@ -22,3 +22,5 @@ User explicitly requested creating new missions after workflow simplification on
 ## Sessions
 
 - [2026-10-04 / 037](../journal/2026-10-04-037-custom-mission-design.md)
+
+- [Director acceptance and next implementation](../journal/2026-10-04-038-custom-mission-design-director.md)

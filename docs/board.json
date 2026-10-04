@@ -318,16 +318,26 @@
       "id": "TRI-023",
       "title": "Design playable custom mission candidates",
       "task": "docs/tasks/custom-mission-design.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Design acceptance reviewed; independent geometry check passed, worker full suite passed. No runtime changes; live limits explicit. Squash d49158a.",
       "questions": [],
       "approval": "User authorized new mission creation; independent design/feasibility is necessary while count preference remains pending. No gameplay changes in design ticket.",
-      "worker": {
-        "id": "/root/mission_design_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-mission-design",
-        "branch": "chore/custom-mission-design"
-      },
-      "branch": "chore/custom-mission-design"
+      "branch": "chore/custom-mission-design",
+      "completion": {
+        "evidence": "Design acceptance reviewed; independent geometry check passed, worker full suite passed. No runtime changes; live limits explicit. Squash d49158a.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "dd2fb2a469f6a5da27e5d8ee9d2d99799833f52d",
+        "squashCommit": "d49158a037c9f39870e7e3510442526436d591ac"
+      }
+    },
+    {
+      "id": "TRI-024",
+      "title": "Add custom mission registry and Relay Breaker",
+      "task": "docs/tasks/custom-relay-breaker.md",
+      "status": "Ready",
+      "reason": "User explicitly requested new mission creation after current task; first independently viable registry and assault scope recorded from accepted design, optional count answer unsubmitted.",
+      "questions": [],
+      "approval": "User explicitly requested new mission creation after current task; first independently viable registry and assault scope recorded from accepted design, optional count answer unsubmitted."
     }
   ],
   "events": [
@@ -1038,6 +1048,46 @@
       "details": [
         "../triumph-custom-mission-design",
         "/root/mission_design_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T17:39:30.937Z",
+      "command": "move",
+      "ticket": "TRI-023",
+      "details": [
+        "Review",
+        "Director reviewed committed metadata and scoped diff; independent geometry diagnostic passed 88 placements and 18 firing lanes. Live playtest unavailable."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:39:48.117Z",
+      "command": "move",
+      "ticket": "TRI-023",
+      "details": [
+        "Done",
+        "Design acceptance reviewed; independent geometry check passed, worker full suite passed. No runtime changes; live limits explicit. Squash d49158a.",
+        "/root",
+        "d49158a037c9f39870e7e3510442526436d591ac",
+        "dd2fb2a469f6a5da27e5d8ee9d2d99799833f52d"
+      ]
+    },
+    {
+      "at": "2026-10-04T17:39:48.177Z",
+      "command": "create",
+      "ticket": "TRI-024",
+      "details": [
+        "custom-relay-breaker",
+        "Add custom mission registry and Relay Breaker",
+        "Playable separately labelled Relay Breaker assault requires both unique relays and enemy clearance; all nine originals and their progress preserved; checks and honest live limitations recorded."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:40:36.341Z",
+      "command": "move",
+      "ticket": "TRI-024",
+      "details": [
+        "Ready",
+        "User explicitly requested new mission creation after current task; first independently viable registry and assault scope recorded from accepted design, optional count answer unsubmitted."
       ]
     }
   ]
