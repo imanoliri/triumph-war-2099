@@ -27,4 +27,4 @@ Relevant regression checks and browser playtest scenarios. Separate automated ev
 
 ## Completion and review
 
-Record commits, results, known limitations and merge/issue status. Update current docs and the latest session handoff.
+Record commits, results, known limitations and merge/issue status. Accepted branches must be squash-merged into main as one task commit; record that resulting commit. Update current docs and the latest session handoff.

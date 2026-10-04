@@ -262,3 +262,7 @@
 - Browser/audio playtest remains not run; live checklist and report explicitly record the gap. Initial mission completion report remains pending live reproduction despite all-nine automated victory checks.
 
 - Final tracked-source export also passed doctor, all checks and default packaging without the ignored MIDI bank or external scratch data. Reviewed foundations fast-forwarded into local main; no remote push performed.
+
+
+## 2026-10-04 — Squash merge policy
+- User requires one commit on main per completed task. Updated AGENTS, workflow, README/status, branch/session templates and PR checklist. Added local/GitHub squash procedures and resulting commit recording. Preserved pre-policy history and milestone tags. Applied squash integration to this documentation task.

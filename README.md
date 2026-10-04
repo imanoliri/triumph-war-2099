@@ -42,6 +42,6 @@ Automated checks use mocked canvas/audio and cannot establish live graphics, aud
 
 995 sprites, 623 object definitions, nine gameplay maps, 62 PCM sound effects and 14 MIDI tracks are included. The generated Windows sample bank is machine-local and ignored; default packages use fallback synthesis if it is absent. See [PROJECT](PROJECT.md), assets/provenance.json and research/ for authorship and recovery evidence.
 
-Local main preserves the accepted playable milestone; individual branches carry new work. GitHub publication state/visibility is documented in STATUS. No publishing is implied by local commits.
+Local main preserves the accepted playable milestone; individual branches carry new work. Accepted task branches are always squash-merged into main as one commit per task. GitHub publication state/visibility is documented in STATUS. No publishing is implied by local commits.
 
 [DEVELOPMENT-NOTES](DEVELOPMENT-NOTES.md) is chronological history. The [archived prototype README](docs/archive/README-prototype.md) records early details, some superseded by DESIGN.

@@ -9,6 +9,10 @@ Updated: 2026-10-04. Current maintenance task: docs/tasks/development-foundation
 - `chore/development-foundations` introduced project/session instructions, portable commands, verification workflow and initial module extraction; it was fast-forwarded into local main after maintenance review. The branch and milestone history are retained.
 - Git origin is configured for imanoliri/triumph-war-2099. This maintenance task has not published to GitHub or changed repository visibility. Prior publication/visibility decisions remain unresolved; check actual remote state before publishing.
 
+## Merge policy
+
+All accepted task branches now squash-merge into main as one commit per task. Earlier fast-forward history and milestone tags are retained; this policy does not rewrite existing history.
+
 ## Implemented
 
 Nine recovered maps/sprites/audio/MIDI; commander controls with German physical keys; selection/attack-move/force/focus/use orders; terrain-aware randomized AI; burst fire; commandos/red bugs; tank sweeps; support/respawn; enemy-only barrels; Units manual; visible mission progress; tactical pause; yellow/bronze/BLITZ rally flags excluding commandos.

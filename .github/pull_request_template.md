@@ -17,3 +17,5 @@ Link docs/tasks/<slug>.md and the issue/backlog ID.
 - [ ] DESIGN, Controls/Units and setup docs updated where affected
 - [ ] Session handoff includes next action and evidence
 - [ ] Recovered assets/authorship preserved; local MIDI bank excluded
+
+- [ ] Merge using **Squash and merge**: one main commit for this task

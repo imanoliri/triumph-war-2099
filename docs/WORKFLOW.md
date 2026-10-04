@@ -7,7 +7,7 @@
 3. Start a fresh chat attached to that checkout. Give it the task path; the checked-out repository carries the context.
 4. Implement the acceptance criteria, add focused regressions, run local checks and perform the relevant browser playtest when available.
 5. Update current documentation, complete the session handoff and commit scoped files. Review the diff and the verification evidence.
-6. After acceptance, merge into main and mark the backlog/task complete. Tag meaningful playable releases. Keep incomplete or unverified work identified.
+6. After acceptance, squash-merge into main and mark the backlog/task complete. Tag meaningful playable releases. Keep incomplete or unverified work identified.
 
 ## Start a feature branch
 
@@ -47,7 +47,17 @@ Suggested opening prompt:
 - Compare the branch to main; inspect game behavior, generated-data changes and documentation together.
 - `node tools/dev.cjs test` runs syntax, repository checks, simulation and music checks. Browser acceptance is recorded in `docs/playtests/`.
 - Unavailable browser access is a verification gap, not a passing playtest. Keep visual/audio changes awaiting playtest.
-- Merge accepted changes with a merge commit when retaining one task per branch is useful. Do not force-push shared branches.
+- Always squash-merge accepted task branches: one meaningful commit on main per completed task, even if the branch contains many implementation/session commits. Do not use merge commits or fast-forward task branches into main.
+- On GitHub, use **Squash and merge**. For local merges, after review and with a clean checkout:
+
+  ```text
+  git switch main
+  git merge --squash feature/example-feature
+  git commit -m "Add example feature"
+  ```
+
+- Use a commit title that describes the complete player-facing change or maintenance outcome; reference the issue when applicable. Record the resulting squash commit in the task/session handoff.
+- Start subsequent tasks from main; do not reuse a completed, squash-merged branch. Existing pre-policy history and milestone tags remain intact. Do not rewrite or force-push shared history.
 - Before switching/merging, preserve unrelated modifications and check Git status. Never auto-stash another person's changes.
 - For larger work, leave a draft task state and session handoff at each stopping point. Branch records are instructions; the task name is not automatic authorization to expand scope.
 

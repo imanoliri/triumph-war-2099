@@ -26,4 +26,4 @@ Include failures, incomplete acceptance criteria and needed user input.
 
 ## Next action / handoff
 
-Give the exact next step, useful commands and final commit. If complete, state what a reviewer should check and whether the branch was merged.
+Give the exact next step, useful commands and final commit. If complete, state what a reviewer should check and whether the branch was squash-merged, including the resulting main commit.
