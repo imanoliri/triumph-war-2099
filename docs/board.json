@@ -424,6 +424,14 @@
         "branch": "feature/plasma-turret-narrow-sweep"
       },
       "branch": "feature/plasma-turret-narrow-sweep"
+    },
+    {
+      "id": "TRI-032",
+      "title": "Build Split Ridge as a new Relay Breaker map",
+      "task": "docs/tasks/relay-breaker-split-ridge.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -1370,6 +1378,16 @@
       "details": [
         "../triumph-plasma-turret-narrow-sweep",
         "/root/turret_sweep_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T18:13:06.880Z",
+      "command": "create",
+      "ticket": "TRI-032",
+      "details": [
+        "relay-breaker-split-ridge",
+        "Build Split Ridge as a new Relay Breaker map",
+        "Relay Breaker loads a purpose-built Split Ridge terrain image/mask and agreed placements, with playable routes and support delivery; originals and saved B/C concepts preserved."
       ]
     }
   ]

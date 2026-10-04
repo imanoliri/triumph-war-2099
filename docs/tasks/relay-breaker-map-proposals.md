@@ -26,3 +26,5 @@ Worker owns design/artifact creation and feasibility inspection, stops Review wi
 
 
 - [Director acceptance / selection pending](../journal/2026-10-04-044-relay-breaker-map-proposals-director.md)
+
+User selected A: Split Ridge on2026-10-04 and explicitly asked to save B/C for later missions. Alternatives retained with PNG/SVG/metadata in repository; implementation [TRI-032](relay-breaker-split-ridge.md) follows active turret sweep.

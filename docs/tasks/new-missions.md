@@ -27,3 +27,5 @@ Director working scope is three independent custom scenarios using existing asse
 Bounded follow-up tickets: [TRI-025 Last Convoy](custom-last-convoy.md), [TRI-026 Silent Return](custom-silent-return.md). Begin only after preceding registry/mission review and acceptance.
 
 User steering: requested visual proposals for a new Relay Breaker map, for direct review/alignment before implementation. [TRI-029](relay-breaker-map-proposals.md) follows active defense ticket; infiltration remains queued. Existing Relay Breaker currently reuses Desert Rocks, disclosed honestly.
+
+User selected new-map A Split Ridge; TRI-032 implements purpose-built terrain after active turret sweep. Preserve B Relay Basin and C Switchback Mesa for potential later missions.
