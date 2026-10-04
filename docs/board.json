@@ -147,8 +147,8 @@
       "id": "TRI-012",
       "title": "Fix rendered reinforcement eagles that cannot be collected",
       "task": "docs/tasks/eagle-pickup-fix.md",
-      "status": "In progress",
-      "reason": "Population-cap diagnosis confirmed by user and relayed; continue availability feedback and invalid-spawn fix.",
+      "status": "Review",
+      "reason": "Director reproduced source mismatch, reviewed eligibility/cap feedback/contrast diff, full suite and final affected simulation passed. Worker9e96844. Live capped-label check unverified.",
       "questions": [
         {
           "number": 1,
@@ -529,6 +529,15 @@
       "details": [
         "Ready",
         "User explicitly requested 16-direction plasma cannon shooting for all operators on 2026-10-04."
+      ]
+    },
+    {
+      "at": "2026-10-04T14:39:22.600Z",
+      "command": "move",
+      "ticket": "TRI-012",
+      "details": [
+        "Review",
+        "Director reproduced source mismatch, reviewed eligibility/cap feedback/contrast diff, full suite and final affected simulation passed. Worker9e96844. Live capped-label check unverified."
       ]
     }
   ]
