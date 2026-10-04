@@ -1,5 +1,7 @@
 # Campaign, place and faction brainstorm
 
+Expanded into the [campaign design pack](campaigns/README.md): campaign spine, fourteen planet dossiers, three initial mission briefs and a compact agent implementation workflow. Draft mechanics remain proposals pending refinement.
+
 Recorded2026-10-05; planning only. No campaign/unit/runtime implementation authorized.
 
 ## User direction
