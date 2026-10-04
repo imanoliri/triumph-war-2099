@@ -1,7 +1,7 @@
 # Recover and recreate ceiling vent bugs
 
 - Ticket: TRI-017; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/vent-bugs`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Recover and recreate ceiling vent bugs
 
 ## Acceptance criteria
 
-- [ ] Original-source evidence establishes mission placement, ceiling roaming, human-contact drop and vent return; recreation implements those rules with regression checks and documented live-verification limits.
+- [x] Original-source evidence establishes mission placement, ceiling roaming, human-contact drop and vent return; recreation implements those rules with regression checks and documented live-verification limits.
 
 ## Scope and decisions
 
@@ -17,3 +17,6 @@ User approved research and recreation on 2026-10-04. One worker researches the i
 
 ## Sessions
 
+- [2026-10-04 / 024](../journal/2026-10-04-024-vent-bugs.md)
+- [2026-10-04 / 025](../journal/2026-10-04-025-vent-bugs.md)
+- [2026-10-04 / 026](../journal/2026-10-04-026-vent-bugs.md)
