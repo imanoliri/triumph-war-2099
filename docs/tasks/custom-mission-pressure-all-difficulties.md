@@ -1,4 +1,4 @@
-# Increase custom mission pressure across every difficulty
+# Increase all three custom missions' pressure across every difficulty
 
 - Ticket: TRI-037; state in [local board](../BOARD.md).
 - Branch: not started
@@ -9,7 +9,7 @@ Increase custom mission pressure across every difficulty
 
 ## Acceptance criteria
 
-- [ ] Relay Breaker and Last Convoy sustain materially higher pressure at every selectable difficulty through additional nests and encounter/resource tuning, with original campaign isolated and measured evidence.
+- [ ] Relay Breaker, Last Convoy and Silent Return sustain materially higher pressure at every selectable difficulty through nests and encounter/resource tuning appropriate to each objective, with original campaign isolated and measured evidence.
 
 ## Scope and decisions
 
@@ -20,3 +20,7 @@ Run after the currently active TRI-027 alignment fix, before remaining queued ti
 User approved this concrete follow-up scope after prior bounded retune was merged; do not reopen/rewrite TRI-034 history. Numerical choices belong to worker with evidence, refinement via director only for material new mechanics/layout.
 
 ## Sessions
+
+## User scope extension
+
+2026-10-05 user explicitly added Silent Return to this follow-up. This supersedes its earlier exclusion above. All three custom missions now belong to TRI-037; original campaign remains excluded. Silent Return must retain legitimate access unlock, laser activation and return of every living ground human with a noncommander and no support inbound; enemies may remain. Add pressure along approach and return routes with reachable/targetable nest placements or existing spawn mechanisms. Do not turn infiltration into enemy extermination, block the access/laser/extraction, bypass door unlocks or introduce new enemy mechanics. Assess all five selectable difficulties and update briefing/guide to explain continuing pressure. Separate before/after evidence per mission and difficulty; freeze collision/terrain. Numerical tuning worker-owned under the same bounded task.

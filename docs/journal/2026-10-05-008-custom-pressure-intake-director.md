@@ -5,3 +5,5 @@ User now sees TRI-034 changes but reports they are still insufficient; explicitl
 Queue: finish active TRI-027, then TRI-037, then approved TRI-028 and TRI-030. Desert035/036 refinement remains pending. No second worker dispatched. Prior TRI-034 acceptance records bounded implementation evidence, not calibrated difficulty; preserve its squash history.
 
 Next action: review TRI-027 when ready; prepare fresh TRI-037 worker from merged main. Preserve unrelated provenance edits.
+
+Subsequent user extension: include Silent Return too, at all five difficulties. Task scope now covers all three custom missions. Preserve infiltration unlock/laser/all-survivors extraction and enemies-may-remain victory. Earlier Silent Return exclusion is superseded; original campaign exclusion remains.
