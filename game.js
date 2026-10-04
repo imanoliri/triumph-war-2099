@@ -74,7 +74,7 @@ function burstReady(u,target){
  if(!b.remaining)b.remaining=rule.min+Math.floor(rnd()*(rule.max-rule.min+1));return true;
 }
 function finishBurstShot(u){const rule=u.team==='human'&&burstRules[u.type];if(!rule)return;const b=u.burst;if(--b.remaining===0)b.restUntil=s.t+rule.restMin+rnd()*(rule.restMax-rule.restMin);}
-const tankSweepRules={range:300,minArc:Math.PI/18,maxArc:Math.PI*4/9,padding:Math.PI/18};
+const tankSweepRules={range:300,minArc:25*Math.PI/180,focusArc:15*Math.PI/180,maxArc:Math.PI*4/9,padding:Math.PI/18};
 const angleDifference=(a,b)=>Math.atan2(Math.sin(a-b),Math.cos(a-b));
 function tankGroup(u,fallback){
  const r=tankSweepRules,seen=s.aliens.filter(a=>a.alive&&a.hp>0&&dist(u,a)<r.range&&visible(u,a)).map(a=>({target:a,angle:Math.atan2(a.y-u.y,a.x-u.x)}));
@@ -84,7 +84,7 @@ function tankGroup(u,fallback){
 }
 function aimTank(u,target){
  const locked=u.sweep&&u.burst?.remaining>0;
- const focused=u.focusTarget===target,group=locked?null:focused?{target,center:Math.atan2(target.y-u.y,target.x-u.x),width:tankSweepRules.minArc}:tankGroup(u,target),aim=locked?u.burst.target:group.target;
+ const focused=u.focusTarget===target,group=locked?null:focused?{target,center:Math.atan2(target.y-u.y,target.x-u.x),width:tankSweepRules.focusArc}:tankGroup(u,target),aim=locked?u.burst.target:group.target;
  if(!aim||aim.alive===false||aim.hp<=0||!visible(u,aim)||dist(u,aim)>=tankSweepRules.range){trackBurst(u,null);return;}
  if(!burstReady(u,aim)||u.cool>0)return;
  if(!u.sweep){const sign=u.nextSweepSign||1;u.nextSweepSign=-sign;u.sweep={start:group.center-sign*group.width/2,width:group.width,sign,total:u.burst.remaining,index:0};}
@@ -140,7 +140,7 @@ function showUnits(){
  ['Commander','Commander1',1,'Bullet: 1; grenade: 12 to bugs, 15 to nests','0.25 s (4 shots/s); flame: 0.18 s','Keyboard / AI fires in four directions; selected mouse commander aims freely. Moves at 85 px/s, commands nearby troops and collects weapons/support. Returns after 10 s if army or incoming support remain; return shield lasts 0.6 s. Grenades: 0.33 s cooldown, up to 8 carried.'],
  ['Infantry','Troop',1,'1 per bullet','0.38 s (2.63 shots/s); Defend: 0.20 s (5/s)',burstText('soldier')+' Four-direction fire with firing-lane alignment. Sees visible enemies within 245 px. Normal patrols, Follow stays with its commander, Attack advances, Defend holds position. Collects weapons/eagles and occupies cannons. When clear of enemies, temporarily seeks usable eagles within 250 px, then returns. Combat pauses the trip; player orders cancel it.'],
  ['Commando','Troop',1,'1 per bullet','0.38 s (2.63 shots/s); flame: 0.18 s',burstText('commando')+' Blue bandana. Fires in eight directions, including diagonals. Delivered by blue-eagle air and infiltration support; retains normal infantry orders, sight, pickups, health and damage, including automatic eagle trips when no enemies are in range.'],
- ['Tank','Tank',8,'5 per bullet','0.20 s (5 shots/s)',burstText('tank')+' Sweeps a locked 10–80° arc toward the densest visible bug group within 300 px; narrow for tight groups, wider for spread groups. Alternates sweep direction between bursts. Falls back to a nest when no bugs are visible. Uses squad orders and terrain routing. Right-click an enemy to focus a 10° sweep across that target. Walls stop shots.'],
+ ['Tank','Tank',8,'5 per bullet','0.20 s (5 shots/s)',burstText('tank')+' Sweeps a locked 25–80° arc toward the densest visible bug group within 300 px; narrow for tight groups, wider for spread groups. Alternates sweep direction between bursts. Falls back to a nest when no bugs are visible. Uses squad orders and terrain routing. Right-click an enemy to focus a 15° sweep across that target. Walls stop shots.'],
  ['Ground robot','ground bot',7,'1 per bullet','0.38 s; Defend: 0.20 s; flame: 0.18 s',burstText('robot')+' Uses squad orders, terrain routing and four-direction fire. Detects enemies within 245 px.'],
  ['Krate ground bug','Krate Ground Bug',h.bug,'Spit: 1; melee: 1',`${base.toFixed(1)}–${(base+1.6).toFixed(1)} s spit; melee: 1 s`,'Sees 175 px with clear sight. Spits in its facing direction ±11.25°. Randomly approaches, wanders or pauses. Focus lasts 1.5–3.5 s, then breaks for 1–3 s; may skip shooting. Evolves at a growplant.'],
  ['Red Krate bug','Krate Ground Bug',specialistRules.redbug.hp,'Spit: 1; melee: 1',`${specialistRules.redbug.fireMin}–${specialistRules.redbug.fireMax} s spit; melee: 1 s`,`Red abdomen band. ${specialistRules.redbug.sight} px sight, blocked by terrain. ${specialistRules.redbug.spawnChance*100}% chance among newly spawned ground bugs from nests, queens and waves. Fixed health/cooldown across difficulties; normal facing cone and randomized behavior. Can evolve into a normal queen.`],

@@ -231,3 +231,8 @@
 - Found bug births used unrestricted coordinates, allowing nest/queen offspring outside the playable area or inside terrain. New ground bug births now resolve to clear playable positions. Carrier crush kills now use the common kill routine so wave counters advance.
 - Centralized completion requirements in missionProgress, used both by automatic victory and a bottom-right Remaining status listing live bugs, nests, wave quota, terminal count, timer and crystal extraction. Exposed the same progress through the existing state API. Required mission objectives remain intact.
 - Syntax and full simulation checks passed, with new all-nine automatic completion/single reward checks, terminal/wave prerequisites, and clear-ground births at map boundaries. Live gameplay remains unverified; the exact cause of the user's current session is not confirmed.
+
+
+## 2026-10-04 — Separate tank sweep widths
+- Changed normal/autonomous tank minimum sweep to 25°; spread groups can still widen it to 80°. Direct focus attacks use a 15° sweep centered on the assigned target.
+- Added a separate focusArc setting and updated Units, README and sweep regression expectations. Burst cadence, count, cooldown, damage and target selection retain their existing settings.
