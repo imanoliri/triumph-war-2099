@@ -438,20 +438,36 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  console.log('Passed all four commanders duplicate auto/flame/rapid/plasma contact with no reward/effects, weapon switches, other collectors, grenade/support behavior and AI upgrade/eagle choice.');
 }
 
-// Cannon orientation/ballistics override the operator's on-foot direction count.
+// Cannon visual orientation and sweep ballistics override on-foot direction counts.
 {
  api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mode='playing';resumeSimulation();state.mask=null;state.rocks=[];state.doors=[];state.props=[];state.pickups=[];state.pickupClock=100;state.aliens=[];state.nests=[{x:980,y:740,hp:50,timer:1e6}];
  const matches=(shot,angle)=>assert(Math.abs(shot.dx-Math.cos(angle))<1e-9&&Math.abs(shot.dy-Math.sin(angle))<1e-9,'Projectile must use expected cannon direction');
  for(const type of ['soldier','commando']){
-  const directions=new Set();for(let n=0;n<16;n++){const angle=n*Math.PI/8,u={x:500,y:400,type,team:'human',alive:true,hp:1,weapon:2,cannon:0,cool:0,order:0},target={x:500+100*Math.cos(angle),y:400+100*Math.sin(angle),team:'alien',alive:true,hp:100};state.cannons=[{x:500,y:400,occupant:u}];state.bullets=[];f.aimHuman(u,target,.5);assert.equal(state.bullets.length,0,'Mounted operator retains burst reaction');state.t=u.burst.readyAt;f.aimHuman(u,target,.5);assert.equal(state.bullets.length,1);matches(state.bullets[0],angle);assert(Math.abs(Math.sin(u.angle-angle))<1e-9,'Operator/render angle matches cannon vector');directions.add(state.bullets[0].dx.toFixed(8)+','+state.bullets[0].dy.toFixed(8));assert.equal(u.x,500);assert.equal(u.y,400,'Mounted aim never performs firing-lane movement');assert.equal(u.cool,.38);assert(state.bullets[0].plasma);assert.equal(state.bullets[0].damage,1);assert.equal(state.bullets[0].life,1.1);}assert.equal(directions.size,16,'Every operator supports all sixteen headings');
+  const directions=new Set();for(let n=0;n<16;n++){const angle=n*Math.PI/8,u={x:500,y:400,type,team:'human',alive:true,hp:1,weapon:2,cannon:0,cool:0,order:0},target={x:500+100*Math.cos(angle),y:400+100*Math.sin(angle),team:'alien',alive:true,hp:100};state.cannons=[{x:500,y:400,occupant:u}];state.bullets=[];f.aimHuman(u,target,.5);assert.equal(state.bullets.length,0,'Mounted operator retains burst reaction');state.t=u.burst.readyAt;f.aimHuman(u,target,.5);assert.equal(state.bullets.length,1);matches(state.bullets[0],u.sweep.start);assert(Math.abs(Math.sin(u.angle-Math.round(u.sweep.start/(Math.PI/8))*Math.PI/8))<1e-9,'Render remains sixteen-way');directions.add(state.bullets[0].dx.toFixed(8)+','+state.bullets[0].dy.toFixed(8));assert.equal(u.x,500);assert.equal(u.y,400,'Mounted aim never performs firing-lane movement');assert.equal(u.cool,.38);assert(state.bullets[0].plasma);assert.equal(state.bullets[0].damage,1);assert.equal(state.bullets[0].life,1.1);}assert.equal(directions.size,16,'Every operator supports all sixteen headings');
   for(const [input,expected] of [[Math.PI/16-1e-6,0],[Math.PI/16+1e-6,Math.PI/8],[-Math.PI/16+1e-6,0],[-Math.PI/16-1e-6,-Math.PI/8],[Math.PI-1e-6,Math.PI],[-Math.PI+1e-6,-Math.PI],[2*Math.PI+.2,Math.PI/8],[.51,Math.PI/8]]){const u={x:500,y:400,type,team:'human',weapon:2,cannon:0,cool:0,order:3,angle:input};state.bullets=[];f.fire(u,true);matches(state.bullets[0],expected);assert.equal(u.cool,type==='commando'?.38:.20,'Cannon preserves existing operator/order cooldown');}
-  const offAngle=.51,u={x:500,y:400,type,team:'human',alive:true,hp:1,weapon:2,cannon:0,cool:0,order:0},target={x:500+100*Math.cos(offAngle),y:400+100*Math.sin(offAngle),alive:true,hp:100};state.bullets=[];f.aimHuman(u,target,.5);state.t=u.burst.readyAt;f.aimHuman(u,target,.5);matches(state.bullets[0],Math.PI/8,'Off-angle aim quantizes before emission');
+  const offAngle=.51,u={x:500,y:400,type,team:'human',alive:true,hp:1,weapon:2,cannon:0,cool:0,order:0},target={x:500+100*Math.cos(offAngle),y:400+100*Math.sin(offAngle),alive:true,hp:100};state.bullets=[];f.aimHuman(u,target,.5);state.t=u.burst.readyAt;f.aimHuman(u,target,.5);matches(state.bullets[0],u.sweep.start);assert(u.sweep.width>=0&&u.sweep.width<=15*Math.PI/180);
   state.humans=[u];state.cannons=[{x:u.x,y:u.y,occupant:u}];f.selection.clear();f.selection.add(u);f.attackMoveTo({x:700,y:400});assert.equal(u.cannon,undefined);assert.equal(state.cannons[0].occupant,null);u.cool=0;u.angle=offAngle;state.bullets=[];f.fire(u);matches(state.bullets[0],type==='soldier'?0:Math.PI/4,'Dismount restores on-foot directions');
  }
  for(const type of ['soldier','commando']){const u={x:500,y:400,type,team:'human',alive:true,hp:1,weapon:0,cool:0,order:0},gun={x:510,y:400};state.humans=[u];state.cannons=[gun];f.update(.02);assert.equal(gun.occupant,u,'Normal proximity mounts '+type);assert.equal(u.cannon,0);f.selection.clear();f.selection.add(u);f.useOrderTo({kind:'cannon',target:gun,...gun});f.useOrderStep(u,.02);assert.equal(u.cannon,0,'Explicit use mounts either operator');}
  const u={x:500,y:400,type:'soldier',team:'human',alive:true,hp:1,weapon:0,cool:0,order:2,attackMove:{x:700,y:400}};state.humans=[u];state.cannons=[{x:512,y:400}];f.attackMoveStep(u,null,.02);assert.equal(u.cannon,0,'Attack-move turret mount retains sixteen-direction operator state');
+ // Boundary widths, locked center, direction reversal and interruption retain operator timing.
+ for(const type of ['soldier','commando'])for(const width of [0,15*Math.PI/180]){
+  const u={x:500,y:400,type,team:'human',alive:true,hp:1,weapon:2,cannon:0,cool:0,order:0},target={x:400,y:401,alive:true,hp:100};
+  state.bullets=[];f.aimHuman(u,target,0);state.t=u.burst.readyAt;
+  // Pin only the arc boundary via an active fixture sweep; burst acquisition is real.
+  f.aimHuman(u,target,0);const total=u.sweep.total,center=Math.atan2(1,-100),sign=u.sweep.sign;
+  u.sweep={start:center-sign*width/2,width,sign,total,index:0};u.burst.remaining=total;u.cool=0;state.bullets=[];
+  target.y=430;
+  for(let i=0;i<total;i++){f.aimHuman(u,target,0);matches(state.bullets.at(-1),center+sign*width*(i/(total-1)-.5));assert.equal(u.cool,.38);u.cool=0;state.t+=.38;}
+  assert.equal(u.burst.remaining,0);const rest=u.burst.restUntil-state.t+.38,r=f.burstRules[type];assert(rest>=r.restMin-1e-9&&rest<=r.restMax+1e-9);
+  state.t=u.burst.restUntil;f.aimHuman(u,target,0);assert.equal(u.sweep.sign,-sign);assert(u.sweep.width<=15*Math.PI/180);
+  target.alive=false;u.cool=0;const count=state.bullets.length;f.aimHuman(u,target,0);assert.equal(state.bullets.length,count);assert.equal(u.sweep,null);
+ }
+ const maxArc=sandbox.window.TriumphBalance.cannonSweepRules.maxArc;sandbox.window.TriumphBalance.cannonSweepRules.maxArc=0;
+ const zero={x:500,y:400,type:'soldier',team:'human',alive:true,hp:1,weapon:2,cannon:0,cool:0,order:0},zeroTarget={x:600,y:410,alive:true,hp:100};state.bullets=[];f.aimHuman(zero,zeroTarget,0);state.t=zero.burst.readyAt;f.aimHuman(zero,zeroTarget,0);assert.equal(zero.sweep.width,0);matches(state.bullets[0],Math.atan2(10,100));sandbox.window.TriumphBalance.cannonSweepRules.maxArc=maxArc;
+ state.humans=[zero];state.cannons=[{x:zero.x,y:zero.y,occupant:zero}];f.selection.clear();f.selection.add(zero);f.focusAttackTo(zeroTarget);assert.equal(zero.cannon,undefined);assert.equal(zero.sweep,null,'Explicit focus dismounts and cancels locked sweep');
  elements['#units'].onclick();assert(elements['#unit-cards'].innerHTML.includes('16 equally spaced directions'));elements['#units-close'].onclick();
- console.log('Passed both cannon operators all16 aim/projectile headings, boundaries/wrap/off-angle quantization, preserved burst/plasma/cooldown, proximity/use/attack-move mounts and dismount direction restoration.');
+ console.log('Passed both cannon operators all16 visual headings and continuous sweep starts, boundaries/wrap/off-angle quantization, preserved burst/plasma/cooldown, proximity/use/attack-move mounts and dismount direction restoration.');
 }
 
 {
