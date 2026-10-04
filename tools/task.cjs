@@ -14,18 +14,42 @@ function session(slug,cwd,branch,base){
  fs.writeFileSync(file,fill('SESSION.md',{SLUG:slug,BRANCH:branch,BASE:base,SESSION:id,DATE:date}),'utf8');
  const task=path.join(cwd,'docs/tasks',slug+'.md');let record=fs.readFileSync(task,'utf8');if(!record.includes('## Sessions'))record+='\n## Sessions\n\n';record+=`- [${date} / ${id}](../journal/${name})\n`;fs.writeFileSync(task,record,'utf8');console.log('Session: '+file);
 }
-function main(){const [command,name,...options]=process.argv.slice(2);if(!name)throw Error('Usage: task.cjs start <feature|fix|chore>/<slug> [--issue N | --ticket ID] [--worktree path] | session <slug>');
- if(command==='start'){
+function validateParentRepo(result){
+ if(result.status===0)throw Error('Worktree destination must be outside existing repositories.');
+ const diagnostic=(result.stderr||result.error?.message||'').trim();
+ if(result.status!==128||!/^fatal: not a git repository \(or any of the parent directories\): \.git$/.test(diagnostic))throw Error('Cannot validate worktree parent repository: '+(diagnostic||'Git exited '+result.status));
+}
+function main(){const [command,name,...options]=process.argv.slice(2);if(!name)throw Error('Usage: task.cjs start|prepare <feature|fix|chore>/<slug> [--issue N | --ticket ID] [--worktree path] | session <slug>');
+ if(command==='start'||command==='prepare'){
   if(!/^(feature|fix|chore)\/[a-z][a-z0-9-]{0,70}$/.test(name))throw Error('Use feature/<slug>, fix/<slug> or chore/<slug> with lowercase letters, digits and hyphens.');
   let issue='local backlog',destination=null,ticket=null;for(let i=0;i<options.length;i++){if(options[i]==='--issue'&&/^\d+$/.test(options[i+1]||''))issue='#'+options[++i];else if(options[i]==='--ticket'&&/^[A-Z]+-\d{3,}$/.test(options[i+1]||''))ticket=options[++i];else if(options[i]==='--worktree'&&options[i+1])destination=path.resolve(root,options[++i]);else throw Error('Invalid option: '+options[i]);}
-  git(['diff','--exit-code']);git(['diff','--cached','--exit-code']);if(git(['ls-files','--others','--exclude-standard']))throw Error('Commit or move untracked task files before starting another branch.');
+  if(command==='prepare'){
+   if(!ticket||!destination||issue!=='local backlog')throw Error('Preparation requires --ticket and --worktree, without --issue.');
+   if(git(['branch','--show-current'])!=='main')throw Error('Prepare from the director main checkout.');
+   if(git(['diff','--cached','--name-only']))throw Error('Commit staged changes before preparation.');
+   if(git(['diff','--name-only','HEAD','--','docs/board.json'])||git(['ls-files','--others','--exclude-standard','--','docs/board.json']))throw Error('Commit authoritative board changes before preparation.');
+   const board=JSON.parse(fs.readFileSync(path.join(root,'docs/board.json'),'utf8'));
+   if(board.tickets.some(t=>t.worker&&['In progress','Blocked','Review'].includes(t.status)))throw Error('One active worker allowed.');
+   const taskPath='docs/tasks/'+name.split('/')[1]+'.md';
+   if(git(['diff','--name-only','HEAD','--',taskPath])||git(['ls-files','--others','--exclude-standard','--',taskPath]))throw Error('Commit authoritative task changes before preparation.');
+   if(!git(['ls-tree','--name-only','main','--',taskPath]))throw Error('Approved task must be committed on main.');
+   if(!fs.existsSync(path.dirname(destination)))throw Error('Worktree parent must exist.');
+   destination=path.join(fs.realpathSync(path.dirname(destination)),path.basename(destination));
+   const parentRepo=spawnSync('git',['rev-parse','--show-toplevel'],{cwd:path.dirname(destination),encoding:'utf8',windowsHide:true});
+   validateParentRepo(parentRepo);
+   const contains=(a,b)=>{const rel=path.relative(a,b);return rel===''||(!rel.startsWith('..'+path.sep)&&rel!=='..'&&!path.isAbsolute(rel));};
+   for(const line of git(['worktree','list','--porcelain']).split('\n'))if(line.startsWith('worktree ')){const checkout=fs.realpathSync(line.slice(9));if(contains(checkout,destination)||contains(destination,checkout))throw Error('Worktree destination overlaps an existing checkout.');}
+  }else{
+   git(['diff','--exit-code']);git(['diff','--cached','--exit-code']);if(git(['ls-files','--others','--exclude-standard']))throw Error('Commit or move untracked task files before starting another branch.');
+  }
   const slug=name.split('/')[1],base=git(['rev-parse','main']);let cwd=root;
-  let approvedTask=null;if(ticket){const board=JSON.parse(fs.readFileSync(path.join(root,'docs/board.json'),'utf8'));const record=board.tickets.find(t=>t.id===ticket);if(!record||record.status!=='Ready'||!record.approval||record.task!==`docs/tasks/${slug}.md`)throw Error('Matching Ready ticket with recorded approval required.');approvedTask=fs.readFileSync(path.join(root,record.task),'utf8');}
+  let approvedTask=null;if(ticket){const board=JSON.parse(fs.readFileSync(path.join(root,'docs/board.json'),'utf8'));const record=board.tickets.find(t=>t.id===ticket);if(!record||record.status!=='Ready'||!record.approval||record.task!==`docs/tasks/${slug}.md`)throw Error('Matching Ready ticket with recorded approval required.');if(record.questions?.some(q=>!q.answer))throw Error('Unanswered questions remain.');approvedTask=fs.readFileSync(path.join(root,record.task),'utf8');if(!/^- \[ \] .+/m.test(approvedTask.split('## Acceptance criteria')[1]?.split('\n## ')[0]||''))throw Error('Task needs concrete pending acceptance criteria.');}
   if(!ticket&&fs.existsSync(path.join(root,'docs/tasks',slug+'.md')))throw Error('Task record already exists. Resume its branch and use session instead.');
   if(destination){if(fs.existsSync(destination))throw Error('Worktree destination must not already exist.');git(['worktree','add','-b',name,destination,'main']);cwd=destination;}else git(['switch','-c',name,'main']);
-  const file=path.join(cwd,'docs/tasks',slug+'.md');fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,approvedTask?approvedTask.replace(/^- Branch:.*$/m,`- Branch: \`${name}\``):fill('TASK.md',{SLUG:slug,BRANCH:name,BASE:base,ISSUE:issue}),'utf8');console.log('Checkout: '+cwd+'\nTask: '+file);session(slug,cwd,name,base);
+  const file=path.join(cwd,'docs/tasks',slug+'.md');fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,approvedTask?approvedTask.replace(/^- Branch:.*$/m,`- Branch: \`${name}\``):fill('TASK.md',{SLUG:slug,BRANCH:name,BASE:base,ISSUE:issue}),'utf8');console.log('Checkout: '+cwd+'\nTask: '+file);session(slug,cwd,name,base);if(command==='prepare')console.log(require('./board.cjs').prompt({id:ticket,task:'docs/tasks/'+slug+'.md',worker:{checkout:cwd,branch:name}}));
  }else if(command==='session'){
   if(!/^[a-z][a-z0-9-]{0,70}$/.test(name)||!fs.existsSync(path.join(root,'docs/tasks',name+'.md')))throw Error('Existing task slug required.');const branch=git(['branch','--show-current']);const task=fs.readFileSync(path.join(root,'docs/tasks',name+'.md'),'utf8');if(!task.includes('Branch: `'+branch+'`'))throw Error('Switch to the task branch before starting its next session.');session(name,root,branch,git(['rev-parse','HEAD']));
- }else throw Error('Commands: start, session');
+ }else throw Error('Commands: start, prepare, session');
 }
-try{main();}catch(e){console.error(e.message);process.exitCode=1;}
+if(require.main===module)try{main();}catch(e){console.error(e.message);process.exitCode=1;}
+module.exports={validateParentRepo};

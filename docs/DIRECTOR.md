@@ -17,7 +17,7 @@ The user authorized the director to start, resume, steer and interrupt workers f
 - `docs/journal/YYYY-MM-DD-NNN-<slug>.md`: chronological decisions, actions, checks and exact next action; linked from the task. Director and worker can each have a session journal for the same ticket.
 - Git: implementation history and accepted squash commit on main.
 
-Board events retain dated lifecycle reasons and relay answers; detailed execution narrative belongs in the journal. The director alone edits board state in the director checkout. A worker's copied board can be stale; the worker reports to the director and updates its own task/journal. Do not run multiple directors editing the board simultaneously. Board changes and planning records are ordinary scoped Git commits. Commit accepted planning records on main before creating a task worktree, so the task is available to the new branch. These administrative commits are distinct from the one squash commit per implementation task.
+Board events retain dated lifecycle reasons and relay answers; detailed execution narrative belongs in the journal. The director alone edits board state in the director checkout. A worker's copied board can be stale; the worker reports to the director and updates its own task/journal. Do not run multiple directors editing the board simultaneously. Board changes and planning records are ordinary scoped Git commits. Consolidate accepted scope, approval and planning into one administrative checkpoint on main before preparation, so the task is available to the new branch. These administrative commits are distinct from the one squash commit per implementation task.
 
 ## Intake and execution
 
@@ -35,21 +35,21 @@ Board events retain dated lifecycle reasons and relay answers; detailed executio
 
    The reason is an evidence record, not a substitute for asking the user when a material choice remains open. Existing TRI-001 through TRI-007 are Backlog proposals, not approved work. TRI-008 is historical Done with linked prior verification.
 
-3. Commit planning records, then create an isolated branch/worktree from main:
+3. Commit the scope/approval checkpoint, then prepare an isolated branch/worktree from main:
 
    ```text
-   node tools/task.cjs start feature/medics --ticket TRI-009 --worktree ../triumph-medics
+   node tools/task.cjs prepare feature/medics --ticket TRI-009 --worktree ../triumph-medics
    ```
 
-   The task helper preserves the ticket's scope and creates the chronological session. It does not start an agent or change board state.
+   Preparation preserves the approved committed task, creates one initial session, and prints the concise linked worker contract. It allows unrelated unstaged director edits and untracked files; it rejects staged changes, dirty authoritative task/board records, unsafe destinations and active-worker overlap. It never stashes, resets or cleans. It does not start an agent or change board state.
 
-4. Start one collaboration worker in that checkout using `docs/templates/WORKER-PROMPT.md` and the task/latest journal. Save the returned **actual** worker ID, then generate the durable dispatch prompt and bind the worker:
+4. Start one fresh minimal-context collaboration worker (`spawn_agent`, `fork_turns: "none"`) with the printed contract. Save the returned **actual** worker ID, then generate the durable dispatch prompt and bind the worker:
 
    ```text
    node tools/board.cjs dispatch TRI-009 ../triumph-medics /root/medics_worker
    ```
 
-   Send the generated prompt to that worker as steering if needed. The director invokes available agent tools; the Node helper only prepares records/prompts. It needs no API key and never launches an agent. One worker remains bound through In progress, Blocked and Review; finish or explicitly park it before starting another ticket. A saved local Git project is not configured in the desktop app; do not claim `create_thread` dispatch is available. Collaboration workers are the current operational path.
+   The dispatch output uses the same contract; do not send a duplicate unless recovery or changed pointers require it. The director invokes available agent tools; the Node helper only prepares records/prompts. It needs no API key and never launches an agent. One worker remains bound through In progress, Blocked and Review; finish or explicitly park it before starting another ticket. Use collaboration messaging/followup for steering and bounded `wait_agent` calls for completion/events; inspect the agent tree when recovering. Avoid repeated unchanged status narration, while keeping required user communication cadence. A saved local Git project is not configured in the desktop app; do not claim `create_thread` dispatch is available. Collaboration workers are the current operational path.
 
 ## Questions, steering and stopping
 
@@ -79,13 +79,13 @@ node tools/board.cjs move TRI-009 Done "Acceptance reviewed; relevant checks pas
 
 Done refuses unchecked acceptance, unanswered questions, self review, absent main commits, commits that do not change the ticket task record, and merge commits. This is a record-validation gate; it cannot prove that a human reviewed the code or that a supplied main commit contains all intended code changes. A single-parent commit alone is not proof of a squash; the director confirms the actual integration. The director must verify both. The CLI has no merge/publish command.
 
-The final commit cannot contain its own SHA. Record the squash result in a small subsequent administrative board/handoff commit; do not rewrite the accepted squash or pretend its SHA was known before integration. Historical Done imports are explicitly labelled and retain their prior evidence.
+Consolidate review, Done, final SHA and handoff into one subsequent administrative completion checkpoint when possible. Publication remains separately authorized; record its outcome in that checkpoint if already available. The final commit cannot contain its own SHA. Record the squash result in a small subsequent administrative board/handoff commit; do not rewrite the accepted squash or pretend its SHA was known before integration. Historical Done imports are explicitly labelled and retain their prior evidence.
 
 ## Recovery in a fresh director chat
 
 Read AGENTS, this document, BOARD/board.json, the active ticket's task and latest director/worker journals. Inspect recorded checkout Git status/branch/HEAD. Compare worker report and commits to main before any transition. Agent IDs are session-local handles and may no longer be live; inspect the available agent tree before messaging them. Never invent a desktop thread ID or blindly recreate a checkout.
 
-If the worker no longer exists, start a replacement in the **same existing checkout and branch**, inspect unfinished edits first, then run `dispatch` with its new actual ID. The generated prompt includes latest session and persisted answers. `node tools/task.cjs session <slug>` creates the new worker journal. A blocked unanswered decision remains blocked until resolved. Never assume a vanished worker means its task is Done.
+Resume the same live worker and checkout for unfinished work when available; a new bounded ticket gets a fresh minimal-context worker. If the worker no longer exists, start a replacement in the **same existing checkout and branch**, inspect unfinished edits first, then run `dispatch` with its new actual ID. The generated prompt includes latest session and persisted answers. The replacement reads the previous handoff, then `node tools/task.cjs session <slug>` creates its one new run journal. Dispatch itself never creates a journal. A blocked unanswered decision remains blocked until resolved. Never assume a vanished worker means its task is Done.
 
 ## Optional native board migration
 

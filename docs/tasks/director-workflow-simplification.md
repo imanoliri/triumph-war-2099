@@ -1,7 +1,7 @@
 # Simplify director worker dispatch and handoffs
 
 - Ticket: TRI-022; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `chore/director-workflow-simplification`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Simplify director worker dispatch and handoffs
 
 ## Acceptance criteria
 
-- [ ] Implement safe streamlined preparation/dispatch records, one useful session per run, concise fresh-worker contracts and consolidated completion guidance; disposable lifecycle checks pass without weakening isolation/review or changing gameplay.
+- [x] Implement safe streamlined preparation/dispatch records, one useful session per run, concise fresh-worker contracts and consolidated completion guidance; disposable lifecycle checks pass without weakening isolation/review or changing gameplay.
 
 ## Scope and decisions
 
@@ -17,3 +17,4 @@ User explicitly authorized implementation of the discussed workflow simplificati
 
 ## Sessions
 
+- [2026-10-04 / 035](../journal/2026-10-04-035-director-workflow-simplification.md)

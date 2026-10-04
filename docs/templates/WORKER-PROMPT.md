@@ -1,9 +1,5 @@
-# Worker dispatch prompt
+# Worker dispatch contract
 
-Implement local ticket <ID> in checkout <absolute worktree path>, branch <branch>.
-Read AGENTS.md, docs/WORKER.md, docs/tasks/<slug>.md and its latest linked journal.
-I am the director. Approved scope and acceptance are in that task; send material questions and results to me. Routine implementation decisions are autonomous.
-Inspect existing edits/commits first. Create your own chronological session journal. Complete the approved scope, checks, descriptions and durable handoff. Make a scoped commit and stop at Review.
-Do not edit the director checkout, delegate, start chats, merge or publish. Report checkout, branch, commit, check evidence, limitations, questions and next action.
+Use the contract printed by `tools/task.cjs prepare` or `tools/board.cjs dispatch`: ticket, checkout, branch, task/session pointers and expected Review return. Scope lives in the task; policy lives in AGENTS and WORKER. Do not copy them into the prompt.
 
-After spawning, the director records the actual worker ID via `tools/board.cjs dispatch` and sends the generated recovery-aware prompt if needed. Never substitute an invented thread ID.
+The director spawns a fresh minimal-context collaboration worker for a new bounded ticket, then binds its actual returned ID with dispatch. CLI helpers never launch agents or invent IDs. Prepared workers use their initial journal; recovery follows WORKER in the preserved checkout.
