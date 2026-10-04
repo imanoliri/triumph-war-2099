@@ -238,8 +238,8 @@
       "id": "TRI-017",
       "title": "Recover and recreate ceiling vent bugs",
       "task": "docs/tasks/vent-bugs.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker implementation7f640ce and documentation checkpointd9b35c7 reviewed; independent full suite passes. Original launch access denied and worker browser unavailable; documented source/motion approximation limits accepted.",
       "questions": [],
       "approval": "User approved original-game vent bug research/recreation and explicitly directed director delegation on 2026-10-04.",
       "worker": {
@@ -742,6 +742,15 @@
       "details": [
         "../triumph-vent-bugs",
         "/root/commander_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T15:31:08.745Z",
+      "command": "move",
+      "ticket": "TRI-017",
+      "details": [
+        "Review",
+        "Worker implementation7f640ce and documentation checkpointd9b35c7 reviewed; independent full suite passes. Original launch access denied and worker browser unavailable; documented source/motion approximation limits accepted."
       ]
     }
   ]
