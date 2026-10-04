@@ -19,3 +19,5 @@ Worker original-game launch timed out, then returned GetCursorPos Access denied;
 ## Next action / handoff
 
 Publish reviewed main through previously user-authorized ordinary Git and verify remote HEAD equals local. No task branches/tags/ignored MIDI bank publication. Preserve unrelated assets/provenance.json edit. Implementation complete; browser/original fidelity follow-up should use the documented checklist when access is available. Native GitHub board migration remains separate.
+
+Publication completed: ordinary git push origin main succeeded; git ls-remote --heads origin main matched local f0ea212e114efcc82f7d3a73d0e0c76cf6939f3d. This administrative checkpoint corrects the remaining stale Review description and records evidence; push it and verify latest HEAD once. No implementation remains pending. Future optional action is the unavailable live acceptance checklist.

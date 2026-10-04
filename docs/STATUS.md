@@ -1,6 +1,6 @@
 # Project status
 
-Updated: 2026-10-04. Latest integrated gameplay tasks: TRI-009 through TRI-017, covering commander selection, attack-move interactions, tactical mode, eagle availability, music independence, closed-door routing, duplicate weapon protection and sixteen-direction plasma cannons. All passed independent director review and were squash-integrated; integration commits are recorded in BOARD.
+Updated: 2026-10-04. Latest integrated gameplay tasks: TRI-009 through TRI-017, covering commander selection, attack-move interactions, tactical mode, eagle availability, music independence, closed-door routing, duplicate weapon protection, sixteen-direction plasma cannons and ceiling vent bugs. All passed independent director review and were squash-integrated; integration commits are recorded in BOARD.
 
 ## Checkpoints
 
@@ -58,6 +58,6 @@ TRI-015 duplicate commander weapons (integrated): matching auto/flame/rapid/plas
 TRI-016 plasma cannon directions (integrated): both mounted operator types use 16-direction aim/projectiles, while on-foot infantry/commando rules remain. Direction/boundary/mount/dismount regressions cover the behavior; live cannon rendering/audio remains unverified.
 
 
-TRI-017 ceiling bugs (implementation pending director review): source-backed missions7–9 placement/contact/drop, ordinary ground combat, probabilistic vent return in7/8 and lifecycle completion accounting. Final return debug group remains disabled. Dedicated source/lifecycle and runtime VM regressions cover the behavior. Original native launch timed out then returned access denied; no original gameplay or live vent rendering/audio/full mission completion was observed. Geometry, ballistic conversion and finite animation cadence are explicit approximations in [research notes](research/vent-bugs.md).
+TRI-017 ceiling bugs (integrated): source-backed missions7–9 placement/contact/drop, ordinary ground combat, probabilistic vent return in7/8 and lifecycle completion accounting. Final return debug group remains disabled. Dedicated source/lifecycle and runtime VM regressions cover the behavior. Original native launch timed out then returned access denied; no original gameplay or live vent rendering/audio/full mission completion was observed. Geometry, ballistic conversion and finite animation cadence are explicit approximations in [research notes](research/vent-bugs.md).
 
 TRI-017 browser follow-up: worker in-app tab creation reports "Browser is not available: iab" and browser inventory is empty. No browser vent observations were obtained; [requested smoke scenarios are recorded as not run](playtests/2026-10-04-vent-bugs.md). Independent director source/diff review and full suite passed at7f640ce.
