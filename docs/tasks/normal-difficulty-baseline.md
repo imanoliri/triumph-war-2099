@@ -21,3 +21,5 @@ User explicitly approved on 2026-10-04 the recommended first Normal correction a
 
 - [2026-10-04 / 032](../journal/2026-10-04-032-normal-difficulty-baseline.md)
 - [2026-10-04 / 033](../journal/2026-10-04-033-normal-difficulty-baseline.md)
+
+- [2026-10-04 / 034 — director acceptance](../journal/2026-10-04-034-normal-difficulty-baseline-director.md)

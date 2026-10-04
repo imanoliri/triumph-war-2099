@@ -286,16 +286,17 @@
       "id": "TRI-021",
       "title": "Restore Normal breeding and evolution baseline",
       "task": "docs/tasks/normal-difficulty-baseline.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent full suite and final affected recreation/guide checks pass. Normal semantic/breeding/growplant correction accepted; other profiles preserved, source RNG/animation/live limits retained. Squashb95f73f published via ordinary Git.",
       "questions": [],
       "approval": "User approved recommended bounded Normal semantic/birth/growplant baseline; custom other profiles remain unapproved.",
-      "worker": {
-        "id": "/root/commander_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-normal-difficulty-baseline",
-        "branch": "fix/normal-difficulty-baseline"
-      },
-      "branch": "fix/normal-difficulty-baseline"
+      "branch": "fix/normal-difficulty-baseline",
+      "completion": {
+        "evidence": "Independent full suite and final affected recreation/guide checks pass. Normal semantic/breeding/growplant correction accepted; other profiles preserved, source RNG/animation/live limits retained. Squashb95f73f published via ordinary Git.",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "078f0af38792806d75dfc2afdae21671b02e4272",
+        "squashCommit": "b95f73ff82c684392a8eabcadae99e2e0c9ea526"
+      }
     }
   ],
   "events": [
@@ -908,6 +909,27 @@
       "details": [
         "../triumph-normal-difficulty-baseline",
         "/root/commander_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T17:13:37.212Z",
+      "command": "move",
+      "ticket": "TRI-021",
+      "details": [
+        "Review",
+        "Reviewed worker079e3fd plus guide fix078f0af; independent full suite passed before UI follow-up and affected recreation checks passed afterward. Normal lifecycle/plant guards/custom separation accepted; live/native fidelity limits documented."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:14:03.355Z",
+      "command": "move",
+      "ticket": "TRI-021",
+      "details": [
+        "Done",
+        "Independent full suite and final affected recreation/guide checks pass. Normal semantic/breeding/growplant correction accepted; other profiles preserved, source RNG/animation/live limits retained. Squashb95f73f published via ordinary Git.",
+        "/root",
+        "b95f73ff82c684392a8eabcadae99e2e0c9ea526",
+        "078f0af38792806d75dfc2afdae21671b02e4272"
       ]
     }
   ]

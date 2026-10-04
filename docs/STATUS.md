@@ -21,7 +21,7 @@ Chronological session journals use `docs/journal/YYYY-MM-DD-NNN-feature-name.md`
 
 Nine recovered maps/sprites/audio/MIDI; all four commanders use AI unless explicitly selected, with troop-control default and German physical keys; selection/attack-move/force/focus/use orders, soldier route-side eagle collection and enemy-dependent turret priority; terrain-aware randomized AI; burst fire; commandos/red bugs; tank sweeps; support/respawn; enemy-only barrels; Units manual; visible mission progress; tactical mode with startup freeze and blue-green visor; yellow/bronze/BLITZ rally flags excluding commandos.
 
-Normal baseline correction (TRI-021, awaiting director review): corrected recovered evolution-roll semantics; Normal finite seeded nest breeding and mission-eligible growplant regeneration. Other difficulty motion/timers, layouts, HP, waves and resources are preserved. Source animation conversion/RNG correlation and live pressure remain unverified; see [baseline evidence](research/normal-difficulty-baseline.md).
+Normal baseline correction (TRI-021, integrated): corrected recovered evolution-roll semantics; Normal finite seeded nest breeding and mission-eligible growplant regeneration. Other difficulty motion/timers, layouts, HP, waves and resources are preserved. Source animation conversion/RNG correlation and live pressure remain unverified; see [baseline evidence](research/normal-difficulty-baseline.md).
 
 ## Verification distinction
 
