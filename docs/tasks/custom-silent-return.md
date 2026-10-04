@@ -1,7 +1,7 @@
 # Add Silent Return infiltration mission
 
 - Ticket: TRI-026; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/custom-silent-return`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Add Silent Return infiltration mission
 
 ## Acceptance criteria
 
-- [ ] Separate custom infiltration mission requires legitimate access unlock and laser activation followed by support-aware living-human extraction, while preserving original Flash Back behavior.
+- [x] Separate custom infiltration mission requires legitimate access unlock and laser activation followed by support-aware living-human extraction, while preserving original Flash Back behavior.
 
 ## Scope and decisions
 
@@ -20,3 +20,4 @@ Meaningful regression checks: locked laser room inaccessible before legitimate a
 ## Sessions
 
 
+- [2026-10-04 / 049](../journal/2026-10-04-049-custom-silent-return.md)
