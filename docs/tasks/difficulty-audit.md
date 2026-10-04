@@ -1,7 +1,7 @@
 # Audit original difficulty and propose mixed balance profiles
 
 - Ticket: TRI-020; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `chore/difficulty-audit`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Audit original difficulty and propose mixed balance profiles
 
 ## Acceptance criteria
 
-- [ ] Produce an evidenced original/current difficulty matrix and concrete per-setting/per-mission proposal with Normal closest to source, explicit limits and measurable acceptance; change no gameplay.
+- [x] Produce an evidenced original/current difficulty matrix and concrete per-setting/per-mission proposal with Normal closest to source, explicit limits and measurable acceptance; change no gameplay.
 
 ## Scope and decisions
 
@@ -17,3 +17,14 @@ User explicitly authorized this bounded research/proposal phase on 2026-10-04 af
 
 ## Sessions
 
+- [2026-10-04 / 029](../journal/2026-10-04-029-difficulty-audit.md)
+- [2026-10-04 / 030](../journal/2026-10-04-030-difficulty-audit.md)
+
+## Audit outputs
+
+- [Concise findings for refinement](../research/difficulty-findings.md)
+- [Detailed source/current evidence](../research/difficulty-audit.md)
+- [Unapproved numeric profiles and staged acceptance](../research/difficulty-proposal.md)
+- [Diagnostic matrices](../../research/difficulty-audit.json) and [candidate instance selections](../../research/difficulty-proposal.json)
+
+No gameplay/assets changed. Current Normal breeding differs from recovered opportunities; adopting a correction and its animation approximation requires agreement. Native fine collision and live difficulty ordering remain unverified.
