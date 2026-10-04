@@ -1,7 +1,7 @@
 # Hide standing soldier sprite while mounted in turret
 
 - Ticket: TRI-030; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `fix/mounted-soldier-duplicate-sprite`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,11 @@ Hide standing soldier sprite while mounted in turret
 
 ## Acceptance criteria
 
-- [ ] Mounted soldiers render only the seated turret operator; standing sprite returns after dismount without changing turret combat or controls.
+- [x] Mounted soldiers render only the seated turret operator; standing sprite returns after dismount without changing turret combat or controls.
+
+## Review evidence
+
+The human draw pass excludes only a live human whose indexed cannon still identifies it as the occupant. Cannon animation 11 and the separate selection pass remain intact. Draw-call regressions cover soldier/commando mount, seated composite, selection, dismount, stale index, death cleanup and restart. Existing sixteen-heading/continuous-sweep checks and the full suite pass. [Live Hold Base report](../playtests/2026-10-05-mounted-soldier/report.md) records before/after and paused ground-order dismount screenshots. Ready for director review; not merged.
 
 ## Scope and decisions
 
@@ -22,3 +26,4 @@ User observed 2026-10-04 that a soldier manning a turret appears both correctly 
 2026-10-05 user authorized continuing the queue. Execute this scoped rendering fix after TRI-028 with the existing observable acceptance, preserving mounted combat and controls. Separate worker ticket; no asset regeneration.
 
 
+- [2026-10-05 / 014](../journal/2026-10-05-014-mounted-soldier-duplicate-sprite.md)

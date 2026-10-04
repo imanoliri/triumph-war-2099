@@ -15,7 +15,7 @@ const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.f
 vm.createContext(sandbox);
 for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','src/breeding.js','src/balance.js','assets/custom/split-ridge/terrain.js','src/custom-missions.js','src/missions.js','src/rally.js','src/vent-bugs.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
- if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,setSeed:value=>seed=value>>>0,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival,toggleRally,addRally,removeRally,assignRally});})();');
+ if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,setSeed:value=>seed=value>>>0,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival,toggleRally,addRally,removeRally,assignRally,drawSprites:()=>{const calls=[],previous=sprite;try{sprite=(...args)=>{calls.push(args);return true;};draw();}finally{sprite=previous;}return calls;}});})();');
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
@@ -476,6 +476,31 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  ({f,state,commander}=setup());commander.weapon=0;const duplicate={x:400,y:425,type:'auto'},upgrade={x:450,y:400,type:'plasma'};state.pickups=[duplicate,upgrade];f.update(.1);assert(commander.x>400&&commander.y===400,'AI ignores nearest matching gun and pursues needed upgrade');assert(state.pickups.includes(duplicate));
  ({f,state,commander}=setup());commander.weapon=2;state.pickups=[{x:400,y:425,type:'plasma'},{x:450,y:400,type:'troops'}];f.update(.1);assert(commander.x>400&&commander.y===400,'Duplicate filtering retains available reinforcement eagle as AI goal');
  console.log('Passed all four commanders duplicate auto/flame/rapid/plasma contact with no reward/effects, weapon switches, other collectors, grenade/support behavior and AI upgrade/eagle choice.');
+}
+
+// The occupied cannon composite owns its operator sprite; human rendering and selection remain independent.
+{
+ for(const type of ['soldier','commando']){
+  api.loadMission(5);const f=sandbox.window.__fixture(),state=f.state,gun=state.cannons[0];state.mode='playing';resumeSimulation();
+  const u={x:gun.x,y:gun.y,type,team:'human',alive:true,hp:1,weapon:0,cool:0,order:0,angle:0};
+  state.humans.push(u);f.selection.clear();f.selection.add(u);
+  const humanCalls=()=>f.drawSprites().filter(c=>c[0]===52&&c[1]===u.x&&c[2]===u.y);
+  assert.equal(humanCalls().length,1,'On-foot '+type+' is drawn');
+  f.useOrderTo({kind:'cannon',target:gun,...gun});f.useOrderStep(u,.02);
+  assert.equal(gun.occupant,u);assert.equal(u.cannon,0);
+  const rings=[];ctx.ellipse=(...args)=>rings.push(args);
+  const mounted=f.drawSprites();delete ctx.ellipse;
+  assert.equal(mounted.filter(c=>c[0]===52&&c[1]===u.x&&c[2]===u.y).length,0,'Mounted '+type+' standing sprite suppressed');
+  assert(mounted.some(c=>c[0]===gun.object&&c[1]===gun.x&&c[2]===gun.y&&c[4]===11),'Seated operator cannon animation remains');
+  assert(rings.some(r=>r[0]===u.x&&r[1]===u.y+5&&r[2]===13),'Mounted selection ring remains');
+  f.attackMoveTo({x:u.x+80,y:u.y+80},true);
+  assert.equal(gun.occupant,null);assert.equal(humanCalls().length,1,'Dismount restores '+type+' sprite');
+  u.cannon=0;assert.equal(humanCalls().length,1,'Stale mount index does not hide an unoccupied human');
+  gun.occupant=u;u.alive=false;assert.equal(humanCalls().length,0,'Dead operator is not drawn as a human');
+  f.update(.02);assert.equal(gun.occupant,null,'Dead occupant is cleared');
+  api.loadMission(5);const fresh=sandbox.window.__fixture();assert(fresh.state.cannons.every(c=>!c.occupant),'Restart clears mounted render ownership');
+ }
+ console.log('Passed mounted soldier/commando standing suppression, seated composite, selection ring, dismount/stale-index/death and restart draw checks.');
 }
 
 // Cannon visual orientation and sweep ballistics override on-foot direction counts.
