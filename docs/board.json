@@ -222,8 +222,8 @@
       "id": "TRI-016",
       "title": "Give plasma cannons 16-direction fire for every operator",
       "task": "docs/tasks/plasma-cannon-directions.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Reviewed worker 0f65d07871f4ee7d89f33f8f83cd03bdbb8f81c0; independent full checks passed; mounted aim/fire precedence and dismount reviewed; live cannon rendering/audio unverified.",
       "questions": [],
       "approval": "User explicitly requested 16-direction plasma cannon shooting for all operators on 2026-10-04.",
       "worker": {
@@ -677,6 +677,15 @@
       "details": [
         "../triumph-plasma-cannon-directions",
         "/root/commander_worker"
+      ]
+    },
+    {
+      "at": "2026-10-04T14:59:05.880Z",
+      "command": "move",
+      "ticket": "TRI-016",
+      "details": [
+        "Review",
+        "Reviewed worker 0f65d07871f4ee7d89f33f8f83cd03bdbb8f81c0; independent full checks passed; mounted aim/fire precedence and dismount reviewed; live cannon rendering/audio unverified."
       ]
     }
   ]
