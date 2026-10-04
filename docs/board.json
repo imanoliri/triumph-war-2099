@@ -318,10 +318,16 @@
       "id": "TRI-023",
       "title": "Design playable custom mission candidates",
       "task": "docs/tasks/custom-mission-design.md",
-      "status": "Ready",
-      "reason": "User authorized new mission creation; independent design/feasibility is necessary while count preference remains pending. No gameplay changes in design ticket.",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User authorized new mission creation; independent design/feasibility is necessary while count preference remains pending. No gameplay changes in design ticket."
+      "approval": "User authorized new mission creation; independent design/feasibility is necessary while count preference remains pending. No gameplay changes in design ticket.",
+      "worker": {
+        "id": "/root/mission_design_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-mission-design",
+        "branch": "chore/custom-mission-design"
+      },
+      "branch": "chore/custom-mission-design"
     }
   ],
   "events": [
@@ -1023,6 +1029,15 @@
       "details": [
         "Ready",
         "User authorized new mission creation; independent design/feasibility is necessary while count preference remains pending. No gameplay changes in design ticket."
+      ]
+    },
+    {
+      "at": "2026-10-04T17:29:55.354Z",
+      "command": "dispatch",
+      "ticket": "TRI-023",
+      "details": [
+        "../triumph-custom-mission-design",
+        "/root/mission_design_worker"
       ]
     }
   ]
