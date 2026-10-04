@@ -41,4 +41,8 @@ The reported mission-not-finishing issue was not reproduced as a universal compl
 2. Extract combat/burst logic as one behavior-preserving task.
 3. Resolve publication scope/visibility, then publish and transfer local backlog items to GitHub Issues.
 
-Use BACKLOG for item scope and WORKFLOW for starting a fresh branch/chat. Do not use the old conversation as the only source of instructions.
+Use BOARD for workflow state, linked task records for scope, and DIRECTOR/WORKFLOW for starting or recovering a worker. Do not use the old conversation as the only source of instructions.
+
+## Director coordination
+
+A thin local ticket board and one isolated implementation worker support director-only user interaction. See DIRECTOR and BOARD. No native GitHub issues/project synchronization is configured: issue creation required unavailable approval, saved browser permission denies GitHub, and no Projects connector/gh CLI is available. Code/assets stay unpublished.

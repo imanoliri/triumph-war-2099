@@ -2,12 +2,12 @@
 
 ## Daily workflow
 
-1. Pick one backlog item or issue. Agree on gameplay/UI decisions before implementing material design changes.
+1. The director agrees on one ticket with the user; follow [DIRECTOR](DIRECTOR.md) for intake, approved dispatch and question relay.
 2. Create a branch and task record using the command below, or resume the task's existing branch.
-3. Start a fresh chat attached to that checkout. Give it the task path; the checked-out repository carries the context.
+3. The director starts one implementation worker in that checkout with the task/latest journal. The user continues talking to the director; see WORKER.
 4. Implement the acceptance criteria, add focused regressions, run local checks and perform the relevant browser playtest when available.
 5. Update current documentation, complete the session handoff and commit scoped files. Review the diff and the verification evidence.
-6. After acceptance, squash-merge into main and mark the backlog/task complete. Tag meaningful playable releases. Keep incomplete or unverified work identified.
+6. The director independently reviews, squash-merges accepted work into main, then records Done and integration evidence in the board. Tag meaningful playable releases. Keep incomplete or unverified work identified.
 
 ## Start a feature branch
 
@@ -71,7 +71,7 @@ At session start, read the task and its latest linked journal. During work, appe
 
 ## Backlog and GitHub
 
-Use `docs/BACKLOG.md` until remote publication is resolved. Stable IDs can be copied into GitHub Issues using the supplied issue templates. Keep one authoritative status for each item; link a GitHub issue from its task record once it exists.
+Use the local docs/board.json and generated BOARD.md; BACKLOG describes intake. Task records own scope/acceptance. Optional issue links do not imply native synchronization. See DIRECTOR for the blocked remote setup and migration.
 
 The GitHub workflow and PR templates are checked in locally and become active only after authorized publication. No automation here publishes original assets or the machine-local MIDI bank.
 
@@ -81,7 +81,8 @@ The GitHub workflow and PR templates are checked in locally and become active on
 - ARCHITECTURE: current code boundaries and data flow.
 - STATUS: current checkpoint and verification limitations.
 - DEVELOPMENT-NOTES: chronological history; it can contain superseded numbers.
-- Task files: feature scope, acceptance, current status and session links.
+- Board JSON: workflow status, approved dispatch, questions/answers and review/integration evidence; BOARD is generated.
+- Task files: feature scope, acceptance and session links; link board state rather than duplicating it.
 - Journal files: chronological session history, decisions, evidence and handoff.
 - README: installation, controls and entry points.
 

@@ -1,0 +1,30 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{spawnSync}=require('node:child_process');
+const root=path.resolve(__dirname,'..'),scratch=path.join(root,'work','director-'+Date.now()),fixture=path.join(scratch,'director');
+fs.mkdirSync(path.join(fixture,'tools'),{recursive:true});fs.mkdirSync(path.join(fixture,'docs/templates'),{recursive:true});fs.mkdirSync(path.join(fixture,'docs/tasks'),{recursive:true});
+for(const f of ['tools/board.cjs','tools/task.cjs','docs/templates/SESSION.md','docs/templates/TASK.md'])fs.copyFileSync(path.join(root,f),path.join(fixture,f));
+fs.writeFileSync(path.join(fixture,'docs/board.json'),JSON.stringify({version:1,tickets:[]}));
+function run(command,args,cwd=fixture,ok=true){const r=spawnSync(command,args,{cwd,encoding:'utf8',windowsHide:true});if(ok)assert.equal(r.status,0,r.stderr||r.stdout);else assert.notEqual(r.status,0,'Expected refusal: '+args.join(' '));return r.stdout;}
+function git(args,cwd=fixture){return run('git',['-c',`safe.directory=${cwd.replaceAll('\\','/')}`,'-c','user.name=Fixture','-c','user.email=fixture@local.invalid',...args],cwd).trim();}
+function board(args,ok=true){return run(process.execPath,['tools/board.cjs',...args],fixture,ok);}
+function read(){return JSON.parse(fs.readFileSync(path.join(fixture,'docs/board.json'),'utf8'));}
+git(['init','-b','main']);git(['add','.']);git(['commit','-m','Baseline']);
+board(['create','TST-001','example','Example feature','Verified example behavior']);board(['create','TST-002','another','Another feature','Verified other behavior']);
+board(['create','TST-003','../../escape','Unsafe','Criterion'],false);board(['move','TST-001','Done','Skip lifecycle'],false);board(['move','TST-001','Ready','User approved bounded example']);board(['move','TST-002','Ready','User approved another']);
+git(['add','.']);git(['commit','-m','Planning records']);fs.writeFileSync(path.join(fixture,'unrelated.txt'),'unrelated');git(['add','.']);git(['commit','-m','Unrelated main change']);const unrelated=git(['rev-parse','HEAD']);
+const worker=path.join(scratch,'worker');run(process.execPath,['tools/task.cjs','start','feature/example','--ticket','TST-001','--worktree',worker]);
+const another=path.join(scratch,'another');run(process.execPath,['tools/task.cjs','start','feature/another','--ticket','TST-002','--worktree',another]);
+board(['dispatch','TST-001',fixture,'/root/worker'],false);
+const otherRepo=path.join(scratch,'unrelated-repo');fs.mkdirSync(otherRepo);git(['init','-b','feature/example'],otherRepo);fs.mkdirSync(path.join(otherRepo,'docs/tasks'),{recursive:true});fs.mkdirSync(path.join(otherRepo,'docs/journal'),{recursive:true});fs.copyFileSync(path.join(worker,'docs/tasks/example.md'),path.join(otherRepo,'docs/tasks/example.md'));for(const f of fs.readdirSync(path.join(worker,'docs/journal')))fs.copyFileSync(path.join(worker,'docs/journal',f),path.join(otherRepo,'docs/journal',f));const refused=spawnSync(process.execPath,['tools/board.cjs','dispatch','TST-001',otherRepo,'/root/worker'],{cwd:fixture,encoding:'utf8',windowsHide:true});assert.notEqual(refused.status,0);assert(refused.stderr.includes('Worker must share this Git repository.'));
+const prompt=board(['dispatch','TST-001',worker,'/root/worker']);assert(prompt.includes('docs/tasks/example.md'));assert(/docs\/journal\/\d{4}-\d{2}-\d{2}-\d{3}-example.md/.test(prompt));assert(prompt.includes('Do not edit the director checkout'));
+board(['dispatch','TST-002',another,'/root/another'],false);board(['ask','TST-001','Material decision?']);assert.equal(read().tickets[0].status,'Blocked');board(['move','TST-001','In progress','Resume without answer'],false);board(['dispatch','TST-001',worker,'/root/replacement'],false);
+board(['answer','TST-001','1','User agreed answer']);board(['answer','TST-001','1','Overwrite answer'],false);const originalApproval=read().tickets[0].approval;board(['move','TST-001','Ready','Parked worker; keep approved scope']);assert.equal(read().tickets[0].approval,originalApproval);assert(!read().tickets[0].worker);const recovered=board(['dispatch','TST-001',worker,'/root/replacement']);assert(recovered.includes('User agreed answer'));assert.equal(read().tickets[0].worker.id,'/root/replacement');
+board(['move','TST-001','Review','Worker checks passed; evidence in journal']);board(['move','TST-001','Done','Pretend done','/root/director',unrelated,unrelated],false);
+const task=path.join(worker,'docs/tasks/example.md');fs.writeFileSync(task,fs.readFileSync(task,'utf8').replace('- [ ]','- [x]'));git(['add','.'],worker);git(['commit','-m','Implement example'],worker);const source=git(['rev-parse','HEAD'],worker);
+// Even completed criteria cannot make an unrelated main commit count as integration.
+const directorTask=path.join(fixture,'docs/tasks/example.md');fs.writeFileSync(directorTask,fs.readFileSync(task,'utf8'));board(['move','TST-001','Done','Wrong integration','/root/director',unrelated,source],false);git(['restore','--','docs/tasks/example.md']);
+git(['merge','--squash','feature/example']);git(['add','.']);git(['commit','-m','Squash example feature']);const squash=git(['rev-parse','HEAD']);
+board(['move','TST-001','Done','Self review','/root/replacement',squash,source],false);board(['move','TST-001','Done','Independently reviewed criteria and checks','/root/director',squash,source]);const done=read().tickets[0];assert.equal(done.status,'Done');assert.equal(done.completion.reviewedImplementationCommit,source);assert.equal(done.completion.squashCommit,squash);assert(!done.worker);assert(read().events.some(e=>e.command==='answer'));assert(fs.readFileSync(path.join(fixture,'docs/BOARD.md'),'utf8').includes('TST-001 | Done'));
+board(['dispatch','TST-002',another,'/root/another']);
+console.log('Passed disposable director board lifecycle, ticket-preserving task/worktree start, prompt/session links, path/refusal, unrelated-repository refusal, single worker, blocked question/answer recovery, false-Done and self-review refusal, reviewed squash integration and generated board.');
+console.log('Fixtures retained under ignored '+scratch);

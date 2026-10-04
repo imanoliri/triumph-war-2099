@@ -45,3 +45,5 @@ Automated checks use mocked canvas/audio and cannot establish live graphics, aud
 Local main preserves the accepted playable milestone; individual branches carry new work. Accepted task branches are always squash-merged into main as one commit per task. GitHub publication state/visibility is documented in STATUS. No publishing is implied by local commits.
 
 [DEVELOPMENT-NOTES](DEVELOPMENT-NOTES.md) is chronological history. The [archived prototype README](docs/archive/README-prototype.md) records early details, some superseded by DESIGN.
+
+Director coordination: [local board](docs/BOARD.md), [director instructions](docs/DIRECTOR.md), [worker instructions](docs/WORKER.md).

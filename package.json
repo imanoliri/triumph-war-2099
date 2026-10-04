@@ -12,6 +12,7 @@
     "package": "node tools/dev.cjs package",
     "assets:recover": "node tools/dev.cjs recover",
     "music:bank": "node tools/dev.cjs bank",
-    "task": "node tools/task.cjs"
+    "task": "node tools/task.cjs",
+    "board": "node tools/board.cjs"
   }
 }

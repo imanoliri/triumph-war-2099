@@ -3,7 +3,7 @@
 - Branch: `{{BRANCH}}`
 - Base: `main` at `{{BASE}}`
 - Issue: {{ISSUE}}
-- Status: planned
+- Workflow state: link the ticket in [local board](../BOARD.md); do not duplicate state here.
 
 ## Goal and user-visible outcome
 

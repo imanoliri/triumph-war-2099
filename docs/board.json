@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "location": "local",
+  "tickets": [
+    {
+      "id": "TRI-001",
+      "title": "Reproduce live mission completion report",
+      "priority": "High",
+      "task": "docs/tasks/mission-completion.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-002",
+      "title": "Browser acceptance pass",
+      "priority": "High",
+      "task": "docs/tasks/browser-acceptance.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-003",
+      "title": "Extract remaining game.js systems",
+      "priority": "Medium",
+      "task": "docs/tasks/extract-game-systems.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-004",
+      "title": "Audible MIDI comparison",
+      "priority": "Medium",
+      "task": "docs/tasks/midi-comparison.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-005",
+      "title": "Fidelity audit",
+      "priority": "Medium",
+      "task": "docs/tasks/fidelity-audit.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-006",
+      "title": "Publication and issue tracking",
+      "priority": "Medium",
+      "task": "docs/tasks/publication-tracking.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-007",
+      "title": "Gamepad controls",
+      "priority": "Low",
+      "task": "docs/tasks/gamepad-controls.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-008",
+      "title": "Complete asset recovery rehearsal",
+      "priority": "Medium",
+      "task": "docs/tasks/recovery-rehearsal.md",
+      "status": "Done",
+      "reason": "Historical completed recovery rehearsal; see linked evidence",
+      "questions": [],
+      "completion": {
+        "historical": true,
+        "evidence": "docs/journal/2026-10-04-001-development-foundations.md; docs/tasks/development-foundations.md",
+        "checkpoint": "milestone-development-foundations-2026-10-04"
+      }
+    },
+    {
+      "id": "DIR-001",
+      "title": "Thin director and implementation worker workflow",
+      "task": "docs/tasks/director-workflow.md",
+      "status": "Review",
+      "approval": "User: do it! (2026-10-04); approved thin director layer and delegated worker coordination",
+      "branch": "chore/director-workflow",
+      "worker": {
+        "id": "/root/director_workflow_worker",
+        "checkout": "C:/Users/user/Documents/Codex/2026-10-03/he/outputs/triumph-director-worker",
+        "branch": "chore/director-workflow"
+      },
+      "reason": "Worker implementation complete; full local suite passed; evidence in journal 2026-10-04-005; independent review and squash pending",
+      "questions": []
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-10-04T12:34:38.181Z",
+      "command": "move",
+      "ticket": "DIR-001",
+      "details": [
+        "Review",
+        "Worker implementation complete; full local suite passed; evidence in journal 2026-10-04-005; independent review and squash pending"
+      ]
+    }
+  ]
+}
