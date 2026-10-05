@@ -74,17 +74,18 @@
       "title": "Fidelity audit",
       "priority": "Medium",
       "task": "docs/tasks/fidelity-audit.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent805-group/28-object verifier, resolver syntax and scoped review pass; full worker suite pass, native measurement limits and proposals explicit",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/6",
       "approval": "Autonomous user mandate; research-only five-system source fidelity audit",
-      "worker": {
-        "id": "/root/fidelity_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-fidelity-audit",
-        "branch": "chore/fidelity-audit"
-      },
-      "branch": "chore/fidelity-audit"
+      "branch": "chore/fidelity-audit",
+      "completion": {
+        "evidence": "Independent805-group/28-object verifier, resolver syntax and scoped review pass; full worker suite pass, native measurement limits and proposals explicit",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "d711228947e4934a5157c6936552ed7038c3029f",
+        "squashCommit": "caaa09157fe4399cd0cd774f2742495fb2cebc24"
+      }
     },
     {
       "id": "TRI-006",
@@ -105,13 +106,17 @@
       "reason": "Independent module/production probes and final57605 full suite pass; browser no-controller smoke reviewed, physical hardware unverified",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/7",
-      "approval": "Autonomous user mandate; standard Gamepad mapping and hardware-evidence limits recorded",
+      "approval": "Director incorrectly inferred approval from broad queue mandate; user explicitly challenged gamepad scope. No explicit user feature request.",
       "branch": "feature/gamepad-controls",
       "completion": {
         "evidence": "Independent module/production probes and final57605 full suite pass; browser no-controller smoke reviewed, physical hardware unverified",
         "reviewer": "/root",
         "reviewedImplementationCommit": "2aaf501db313c0e4ec473f3508ab437009bac0b6",
         "squashCommit": "da7889dcbd74382ea9704ad162cfd00099e06da3"
+      },
+      "authorizationCorrection": {
+        "evidence": "docs/journal/2026-10-05-039-director-queue.md",
+        "policy": "Future feature proposals need explicit approval; no rollback requested."
       }
     },
     {
@@ -2958,6 +2963,35 @@
       "details": [
         "../triumph-fidelity-audit",
         "/root/fidelity_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T18:06:10.546Z",
+      "command": "move",
+      "ticket": "TRI-005",
+      "details": [
+        "Review",
+        "Reviewedd7112289; independent compact evidence verifier and syntax pass, worker full suite exit0; research-only limits and proposals retained"
+      ]
+    },
+    {
+      "at": "2026-10-05T18:06:59.716Z",
+      "command": "move",
+      "ticket": "TRI-005",
+      "details": [
+        "Done",
+        "Independent805-group/28-object verifier, resolver syntax and scoped review pass; full worker suite pass, native measurement limits and proposals explicit",
+        "/root",
+        "caaa09157fe4399cd0cd774f2742495fb2cebc24",
+        "d711228947e4934a5157c6936552ed7038c3029f"
+      ]
+    },
+    {
+      "at": "2026-10-05T18:07:01.466Z",
+      "command": "director-authorization-correction",
+      "ticket": "TRI-007",
+      "details": [
+        "Director incorrectly inferred approval from broad queue mandate; user explicitly challenged gamepad scope. No explicit user feature request."
       ]
     }
   ]
