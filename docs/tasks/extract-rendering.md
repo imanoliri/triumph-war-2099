@@ -17,6 +17,8 @@ Approved under the autonomous mandate below; implementation stops at Review.
 
 ## Sessions
 
+- [2026-10-05 / 039 — director integration](../journal/2026-10-05-039-director-queue.md)
+
 - [2026-10-05 / 038](../journal/2026-10-05-038-extract-rendering.md)
 
 ## Scope — autonomous mandate 2026-10-05

@@ -29,10 +29,34 @@
       "title": "Extract remaining game.js systems",
       "priority": "Medium",
       "task": "docs/tasks/extract-game-systems.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
+      "status": "Done",
+      "reason": "Administrative umbrella: all four separate extractions accepted and combined regression suite passed",
       "questions": [],
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/4"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/4",
+      "approval": "User autonomous queue mandate",
+      "completion": {
+        "kind": "administrative-umbrella",
+        "reviewer": "/root",
+        "evidence": "docs/journal/2026-10-05-039-director-queue.md",
+        "children": [
+          {
+            "ticket": "TRI-042",
+            "squashCommit": "aeda0116e8768183c6a20f8c956b985946b6eda7"
+          },
+          {
+            "ticket": "TRI-043",
+            "squashCommit": "98837db4ab84433a4a68533be808fba71618e8e9"
+          },
+          {
+            "ticket": "TRI-044",
+            "squashCommit": "ba252ff676bcfb29d91a22c45c2e3799c2b3fdbb"
+          },
+          {
+            "ticket": "TRI-045",
+            "squashCommit": "a625997f5a8e0f654877d172b28d8bbd1d0647be"
+          }
+        ]
+      }
     },
     {
       "id": "TRI-004",
@@ -771,17 +795,18 @@
       "id": "TRI-045",
       "title": "Extract battlefield rendering system",
       "task": "docs/tasks/extract-rendering.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Full51661 exit0; independent expanded rendering oracle, screenshot visual/hash review and final range diffcheck pass",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/14",
       "approval": "User autonomous queue mandate; reviewed bounded rendering scope, execute after TRI-044",
-      "worker": {
-        "id": "/root/rendering_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-extract-rendering",
-        "branch": "chore/extract-rendering"
-      },
-      "branch": "chore/extract-rendering"
+      "branch": "chore/extract-rendering",
+      "completion": {
+        "evidence": "Full51661 exit0; independent expanded rendering oracle, screenshot visual/hash review and final range diffcheck pass",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "2589d9554a0d568fbd8be01064ca7e7e936748ba",
+        "squashCommit": "a625997f5a8e0f654877d172b28d8bbd1d0647be"
+      }
     },
     {
       "id": "TRI-046",
@@ -2852,6 +2877,35 @@
       "details": [
         "../triumph-extract-rendering",
         "/root/rendering_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T17:41:46.438Z",
+      "command": "move",
+      "ticket": "TRI-045",
+      "details": [
+        "Review",
+        "Reviewed2589d955; independent rendering oracle and screenshot hashes pass, full51661 exit0; docs whitespace follow-up only"
+      ]
+    },
+    {
+      "at": "2026-10-05T17:41:59.033Z",
+      "command": "move",
+      "ticket": "TRI-045",
+      "details": [
+        "Done",
+        "Full51661 exit0; independent expanded rendering oracle, screenshot visual/hash review and final range diffcheck pass",
+        "/root",
+        "a625997f5a8e0f654877d172b28d8bbd1d0647be",
+        "2589d9554a0d568fbd8be01064ca7e7e936748ba"
+      ]
+    },
+    {
+      "at": "2026-10-05T17:42:55.722Z",
+      "command": "director-umbrella-reconciliation",
+      "ticket": "TRI-003",
+      "details": [
+        "Administrative umbrella: all four separate extractions accepted and combined regression suite passed"
       ]
     }
   ]

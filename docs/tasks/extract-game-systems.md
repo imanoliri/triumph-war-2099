@@ -9,13 +9,15 @@ Extract remaining game.js systems
 
 ## Acceptance criteria
 
-- [ ] Separate combat/bursts, orders/input, support lifecycle and rendering in individual behavior-preserving branches; regression suite remains green
+- [x] Separate combat/bursts, orders/input, support lifecycle and rendering in individual behavior-preserving branches; regression suite remains green
 
 ## Scope and decisions
 
-Backlog proposal. Agree bounded scope and verification with the user before Ready. TRI-003 is an umbrella; split into one system per approved task before execution.
+Administrative umbrella completed through the four separately accepted child branches under the user's autonomous mandate. Actual integration/check evidence is recorded in session039; broader live acceptance remains separately queued.
 
 ## Sessions
+
+- [2026-10-05 / 039 — umbrella completion audit](../journal/2026-10-05-039-director-queue.md)
 
 ## Autonomous execution plan — 2026-10-05
 
