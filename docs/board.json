@@ -771,11 +771,17 @@
       "id": "TRI-045",
       "title": "Extract battlefield rendering system",
       "task": "docs/tasks/extract-rendering.md",
-      "status": "Ready",
-      "reason": "User autonomous queue mandate; reviewed bounded rendering scope, execute after TRI-044",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/14",
-      "approval": "User autonomous queue mandate; reviewed bounded rendering scope, execute after TRI-044"
+      "approval": "User autonomous queue mandate; reviewed bounded rendering scope, execute after TRI-044",
+      "worker": {
+        "id": "/root/rendering_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-extract-rendering",
+        "branch": "chore/extract-rendering"
+      },
+      "branch": "chore/extract-rendering"
     },
     {
       "id": "TRI-046",
@@ -2837,6 +2843,15 @@
         "/root",
         "ba252ff676bcfb29d91a22c45c2e3799c2b3fdbb",
         "41d3945cbd90f389471eb3c94f37e01665e2a723"
+      ]
+    },
+    {
+      "at": "2026-10-05T17:28:32.081Z",
+      "command": "dispatch",
+      "ticket": "TRI-045",
+      "details": [
+        "../triumph-extract-rendering",
+        "/root/rendering_worker"
       ]
     }
   ]
