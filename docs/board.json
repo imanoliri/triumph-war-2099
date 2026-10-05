@@ -694,6 +694,15 @@
       "questions": [],
       "approval": "Autonomous mandate; verified Windows CI failure, bounded portability fix queued immediately after046",
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/16"
+    },
+    {
+      "id": "TRI-048",
+      "title": "Synchronize player help and playtest expectations",
+      "task": "docs/tasks/current-player-help.md",
+      "status": "Ready",
+      "reason": "Autonomous mandate; verified stale Controls Relay counts and PLAYTEST tank-rest values",
+      "questions": [],
+      "approval": "Autonomous mandate; verified stale Controls Relay counts and PLAYTEST tank-rest values"
     }
   ],
   "events": [
@@ -2453,6 +2462,25 @@
       "details": [
         "Ready",
         "Autonomous mandate; verified Windows CI failure, bounded portability fix queued immediately after046"
+      ]
+    },
+    {
+      "at": "2026-10-05T10:56:20.001Z",
+      "command": "create",
+      "ticket": "TRI-048",
+      "details": [
+        "current-player-help",
+        "Synchronize player help and playtest expectations",
+        "Correct stale displayed mission pressure and tank-rest descriptions against accepted runtime; preserve behavior and clearly distinguish original/custom rules"
+      ]
+    },
+    {
+      "at": "2026-10-05T10:56:21.737Z",
+      "command": "move",
+      "ticket": "TRI-048",
+      "details": [
+        "Ready",
+        "Autonomous mandate; verified stale Controls Relay counts and PLAYTEST tank-rest values"
       ]
     }
   ]
