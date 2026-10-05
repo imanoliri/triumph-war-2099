@@ -899,17 +899,18 @@
       "id": "TRI-050",
       "title": "Harbor Watch maritime mission",
       "task": "docs/tasks/harbor-watch.md",
-      "status": "Review",
-      "reason": "Reviewed71761701; independent Harbor/hash/project/difficulty checks, real Normal242 browser win and full39830 exit0",
+      "status": "Done",
+      "reason": "Independent final Harbor/difficulty/project/geometry review and full39830 pass; real Normal242 completion, calibration/audio limits retained",
       "questions": [],
       "approval": "User explicitly requested more missions from existing table; maritime defense immediately after TRI-049",
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/19",
-      "worker": {
-        "id": "/root/harbor_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-harbor-watch",
-        "branch": "feature/harbor-watch"
-      },
-      "branch": "feature/harbor-watch"
+      "branch": "feature/harbor-watch",
+      "completion": {
+        "evidence": "Independent final Harbor/difficulty/project/geometry review and full39830 pass; real Normal242 completion, calibration/audio limits retained",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "71761701fbdcb803c35690d9e74a0dbc68df7054",
+        "squashCommit": "8e6ca1bfa493c959205e9d83a0806c8e8223093b"
+      }
     },
     {
       "id": "TRI-051",
@@ -3177,6 +3178,18 @@
       "details": [
         "Review",
         "Reviewed71761701; independent Harbor/hash/project/difficulty checks, real Normal242 browser win and full39830 exit0"
+      ]
+    },
+    {
+      "at": "2026-10-05T22:30:39.690Z",
+      "command": "move",
+      "ticket": "TRI-050",
+      "details": [
+        "Done",
+        "Independent final Harbor/difficulty/project/geometry review and full39830 pass; real Normal242 completion, calibration/audio limits retained",
+        "/root",
+        "8e6ca1bfa493c959205e9d83a0806c8e8223093b",
+        "71761701fbdcb803c35690d9e74a0dbc68df7054"
       ]
     }
   ]
