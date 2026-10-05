@@ -24,4 +24,6 @@ User authorized reasonable design decisions to finish the queue. Implement brows
 
 ## Sessions
 
+- [2026-10-05 / 039 — director review/integration](../journal/2026-10-05-039-director-queue.md)
+
 - [2026-10-05 / 040](../journal/2026-10-05-040-gamepad-controls.md)
