@@ -88,77 +88,12 @@ function visible(a,b){
 const specialistRules=window.TriumphBalance.specialistRules;
 const infantryType=u=>['soldier','commando'].includes(u.type);
 const burstRules=window.TriumphBalance.burstRules;
-function trackBurst(u,target){
- const rule=u.team==='human'&&burstRules[u.type];if(!rule)return;
- const b=u.burst??={target:null,remaining:0,readyAt:0,restUntil:0};
- if(target&&(target.alive===false||target.hp<=0||!visible(u,target)))target=null;
- if(b.target!==target){b.target=target;b.remaining=0;u.sweep=null;if(target)b.readyAt=Math.max(b.restUntil,s.t+rule.delayMin+rnd()*(rule.delayMax-rule.delayMin));}
-}
-function burstReady(u,target){
- const rule=u.team==='human'&&burstRules[u.type];if(!rule)return true;
- trackBurst(u,target);const b=u.burst;if(!b.target||s.t<b.readyAt||s.t<b.restUntil)return false;
- if(!b.remaining)b.remaining=rule.min+Math.floor(rnd()*(rule.max-rule.min+1));return true;
-}
-function finishBurstShot(u){const rule=u.team==='human'&&burstRules[u.type];if(!rule)return;const b=u.burst;if(--b.remaining===0)b.restUntil=s.t+rule.restMin+rnd()*(rule.restMax-rule.restMin);}
 const tankSweepRules=window.TriumphBalance.tankSweepRules;
-const angleDifference=(a,b)=>Math.atan2(Math.sin(a-b),Math.cos(a-b));
-function tankGroup(u,fallback){
- const r=tankSweepRules,seen=s.aliens.filter(a=>a.alive&&a.hp>0&&dist(u,a)<r.range&&visible(u,a)).map(a=>({target:a,angle:Math.atan2(a.y-u.y,a.x-u.x)}));
- let best=null;
- for(const seed of seen){const group=seen.filter(p=>{const offset=angleDifference(p.angle,seed.angle);return offset>=-1e-9&&offset<=r.maxArc;}),offsets=group.map(p=>angleDifference(p.angle,seed.angle)),low=Math.min(...offsets),high=Math.max(...offsets);if(!best||group.length>best.count||group.length===best.count&&dist(u,seed.target)<dist(u,best.target))best={target:seed.target,count:group.length,center:seed.angle+(low+high)/2,width:Math.max(r.minArc,Math.min(r.maxArc,high-low+r.padding))};}
- return best||{target:fallback,count:0,center:Math.atan2(fallback.y-u.y,fallback.x-u.x),width:r.minArc};
-}
-function aimTank(u,target){
- const locked=u.sweep&&u.burst?.remaining>0;
- const focused=u.focusTarget===target,group=locked?null:focused?{target,center:Math.atan2(target.y-u.y,target.x-u.x),width:tankSweepRules.focusArc}:tankGroup(u,target),aim=locked?u.burst.target:group.target;
- if(!aim||aim.alive===false||aim.hp<=0||!visible(u,aim)||dist(u,aim)>=tankSweepRules.range){trackBurst(u,null);return;}
- if(!burstReady(u,aim)||u.cool>0)return;
- if(!u.sweep){const sign=u.nextSweepSign||1;u.nextSweepSign=-sign;u.sweep={start:group.center-sign*group.width/2,width:group.width,sign,total:u.burst.remaining,index:0};}
- const sweep=u.sweep;u.angle=focused?Math.atan2(aim.y-u.y,aim.x-u.x)+sweep.sign*sweep.width*(sweep.index/(sweep.total-1)-.5):sweep.start+sweep.sign*sweep.width*sweep.index/(sweep.total-1);fire(u);sweep.index++;finishBurstShot(u);if(!u.burst.remaining)u.sweep=null;
-}
-// Mounted sweeps lock their center for the existing operator burst; sprites remain 16-way.
-function aimCannon(u,target){
- const aim=u.sweep&&u.burst?.remaining>0?u.burst.target:target;
- if(!aim||aim.alive===false||aim.hp<=0||!visible(u,aim)||dist(u,aim)>=360){trackBurst(u,null);return;}
- if(!burstReady(u,aim)||u.cool>0)return;
- if(!u.sweep){const sign=u.nextSweepSign||1,width=rnd()*window.TriumphBalance.cannonSweepRules.maxArc;u.nextSweepSign=-sign;u.sweep={start:Math.atan2(aim.y-u.y,aim.x-u.x)-sign*width/2,width,sign,total:u.burst.remaining,index:0};}
- const sweep=u.sweep,angle=sweep.start+sweep.sign*sweep.width*sweep.index/(sweep.total-1);
- u.angle=cannonAngle(angle);fire(u,false,angle);sweep.index++;finishBurstShot(u);if(!u.burst.remaining)u.sweep=null;
-}
-// Test the quantized weapon ray, not the direct sight line to a diagonal target.
-function humanFiringLane(u,target){
- const dx=target.x-u.x,dy=target.y-u.y,c=Math.cos(u.angle),sn=Math.sin(u.angle),along=dx*c+dy*sn,across=dx*sn-dy*c;
- const radius=s.nests.includes(target)?26:target.type==='queen'||target.type==='tank'?17:8;
- const range=u.type==='dune-guard'&&u.cannon===undefined?120:['rider-scout','field-mechanic'].includes(u.type)&&u.cannon===undefined?180:u.weapon===1?145:u.weapon===2?319:638;
- if(Math.abs(across)>=radius-1||along+radius<=10)return false;
- const entry=Math.max(10,along-Math.sqrt(radius*radius-across*across)+1);
- if(entry>range+10)return false;
- for(let travel=10;travel<=entry;travel+=Math.min(4,entry-travel||4)){
-  const x=u.x+c*travel,y=u.y+sn*travel;
-  if(blocked(x,y)||s.props.some(p=>p.hp>0&&x>=p.left&&x<p.left+p.w&&y>=p.top&&y<p.top+p.h))return false;
- }
- return true;
-}
-function aimHuman(u,target,dt){
- if(u.cannon!==undefined){aimCannon(u,target);return;}
- if(u.type==='tank'){aimTank(u,target);return;}
- const heading=()=> (u.type==='commando'?diagonal:cardinal)(Math.atan2(target.y-u.y,target.x-u.x));
- u.angle=heading();trackBurst(u,target);
- if(!humanFiringLane(u,target)&&dt&&u.order!==3){
-  const c=Math.cos(u.angle),sn=Math.sin(u.angle),dx=target.x-u.x,dy=target.y-u.y,offset=-dx*sn+dy*c;
-  const radius=s.nests.includes(target)?26:target.type==='queen'||target.type==='tank'?17:8;
-  // Slide onto the legal lane; close when range or terrain prevents a shot.
-  if(Math.abs(offset)>=radius-1)navigate(u,-sn*offset,c*offset,dt,u.type==='commander'?55:36);
-  else navigate(u,dx,dy,dt,u.type==='commander'?55:36);
-  u.angle=heading();
- }
- if(visible(u,target)&&humanFiringLane(u,target)&&burstReady(u,target)&&u.cool<=0){fire(u);finishBurstShot(u);}
- else if(!visible(u,target))trackBurst(u,null);
-}
+const {enemyFireDelay,trackBurst,burstReady,finishBurstShot,tankGroup,aimTank,aimCannon,humanFiringLane,aimHuman,fire,burst}=window.TriumphCombat.create({getState:()=>s,burstRules,tankSweepRules,cannonSweepRules:window.TriumphBalance.cannonSweepRules,rnd,visible,dist,blocked,navigate,cardinal,diagonal,cannonAngle,getDifficulty:()=>document.querySelector('#difficulty').value,bugFireBases:window.TriumphBalance.bugFireBases,specialistRules,desertRiders:window.TriumphDesertRiders,originalAudio:()=>window.ORIGINAL_AUDIO,sound,tone});
+function stepProjectiles(dt){window.TriumphProjectiles.step(s,dt,{W,H,blocked,dist,damage,destroyProp,wormExposed:window.TriumphDesertWorm.exposed,sound,tone,burst});}
 
 function nearest(u,list,max=Infinity){let best=null,d=max;for(const a of list){if(a.alive===false||a.hp<=0)continue;const t=dist(u,a);if(t<d){best=a;d=t;}}return best;}
-function fire(u,freeAim=false,projectileAngle){if(u.cool>0)return;if(u.type==='dune-guard'&&u.cannon===undefined){s.bullets.push(...window.TriumphDesertRiders.pellets(u,{x:u.x+Math.cos(u.angle)*100,y:u.y+Math.sin(u.angle)*100}));u.cool=window.TriumphDesertRiders.rules.guardCooldown;sound(11,.08);return;}if(u.cannon!==undefined)u.angle=cannonAngle(u.angle);else if(u.type==='commando')u.angle=diagonal(u.angle);else if(!freeAim&&u.team==='human'&&['soldier','commander','robot'].includes(u.type))u.angle=cardinal(u.angle);u.cool=u.team==='alien'?enemyFireDelay(u):['rider-scout','field-mechanic'].includes(u.type)?.6:u.type==='tank'?.2:u.type==='air'?.3:u.type==='commander'?(u.weapon===1?.180:.250):u.weapon===1?.180:u.type==='commando'?.38:u.order===3?.20:.38;const angles=[u.team==='alien'?(u.shotOffset||0):0];for(const a of angles){const angle=(u.cannon!==undefined&&projectileAngle!==undefined?projectileAngle:u.angle)+a;s.bullets.push({x:u.x+Math.cos(angle)*10,y:u.y+Math.sin(angle)*10,dx:Math.cos(angle),dy:Math.sin(angle),team:u.team,owner:u.id,life:u.weapon===1?.5:u.weapon===2?1.1:2.2,speed:u.team==='alien'?120:290,damage:u.type==='tank'?5:1,plasma:u.weapon===2});}if(window.ORIGINAL_AUDIO)sound(u.team==='alien'?0:u.weapon===1?13:u.weapon===2?12:u.type==='tank'?24:11,u.type==='commander'?.25:u.type==='tank'?.16:.08);else if(u.type==='commander')tone(110+rnd()*80,.025,.013);}
-function burst(x,y,size=12,color='#f5a641'){s.effects.push({x,y,size,color,t:.4});}
+
 function bugArrival(x,y){const point={x:Math.max(16,Math.min(W-16,x)),y:Math.max(44,Math.min(H-24,y))};return window.TriumphNavigation?.destination(point,point,blocked)||point;}
 function wormBlocked(x,y){return x<0||x>=W||y<36||y>=H||blocked(x,y);}
 function wormRouteBlocked(x,y){return !window.TriumphDesertWorm.clear(x,y,wormBlocked);}
@@ -203,7 +138,7 @@ const pickupWeapon=type=>({auto:0,rapid:1,flame:1,plasma:2})[type];
 const duplicateCommanderWeapon=(u,p)=>u.type==='commander'&&pickupWeapon(p.type)!==undefined&&u.weapon===pickupWeapon(p.type);
 function pickup(u,p){if(duplicateCommanderWeapon(u,p))return false;if(['blitz','troops','tank','air'].includes(p.type)){if(!reinforce(p.type))return false;}else if(p.type==='grenade')u.grenades=Math.min(8,u.grenades+1);else {u.weapon=['rapid','flame'].includes(p.type)?1:p.type==='auto'?0:2;u.weaponTime=Infinity;}if(u.id)s.score[u.id-1]+=25;burst(p.x,p.y,15,'#ffed7b');tone(650,.1);return true;}
 const bugFireBases=window.TriumphBalance.bugFireBases;
-function enemyFireDelay(u){if(u.type==='redbug'){const r=specialistRules.redbug;return r.fireMin+rnd()*(r.fireMax-r.fireMin);}const difficulty=document.querySelector('#difficulty').value,base=bugFireBases[difficulty]||3.8;return base+rnd()*1.6+(u.type==='queen'?.4:0);}
+
 let unitsWasPaused=false,controlsWasPaused=false;
 function showUnits(){
  unitsWasPaused=paused;paused=true;drag=null;keys.clear();
@@ -277,7 +212,7 @@ function update(dt){if(s.mode!=='playing'||paused)return;if(s.customMission?.obj
  for(const a of s.aliens){if(!a.alive)continue;if(a.type==='desert-worm'){window.TriumphDesertWorm.step(a,dt,{humans:s.humans,blocked:wormBlocked,damage,route:(u,target)=>window.TriumphNavigation.step(u,target,wormRouteBlocked,navigationRevision())});continue;}a.cool=Math.max(0,a.cool-dt);const target=perceive(a,[...s.humans.filter(u=>u.alive),...(s.crystal&&!s.crystal.recovered&&s.crystal.y>36?[s.crystal]:[])],240);if(target){const d=dist(a,target);bugIntent(a,target,dt,mult);const desired=Math.atan2(target.y-a.y,target.x-a.x),turn=Math.atan2(Math.sin(desired-a.angle),Math.cos(desired-a.angle));if(d<=55&&a.intent?.mode==='approach')a.angle+=Math.max(-1.0*dt,Math.min(1.0*dt,turn));const offset=Math.atan2(Math.sin(desired-a.angle),Math.cos(desired-a.angle));a.shotOffset=Math.max(-Math.PI/16,Math.min(Math.PI/16,offset));if(d<13&&a.cool<=0){if(target===s.crystal){s.crystal.hp--;sound(56,.4);}else damage(target,1,0);a.cool=1;}else if(d<(a.type==='redbug'?specialistRules.redbug.sight:175)&&Math.abs(offset)<=Math.PI/16&&visible(a,target)&&a.cool<=0&&s.t>=(a.spitDecision||0)){a.spitDecision=s.t+.8+rnd()*1.4;if(rnd()<.5)fire(a);}}else patrol(a,dt,(a.type==='queen'?13:22)*mult);if(a.type==='queen'&&(a.spawnCool||0)<s.t){a.spawnCool=s.t+7;if(s.aliens.filter(a=>a.alive&&a.type!=='queen').length<(s.rules?.maxAliens||50)){spawnGroundBug(a.x+15,a.y+15);}}if(a.type!=='queen')for(const f of s.flowers)if(f.alive&&dist(a,f)<16){f.alive=false;a.type='queen';a.hp=s.difficulty?.queen||50;a.object=152;burst(a.x,a.y,22,'#ca88af');}}
  window.TriumphDesertRiders.updateMines(s.desertMines||[],dt,{aliens:s.aliens,blocked:wormBlocked,visible,damage,burst});
  for(const n of s.nests){if(n.breeding){window.TriumphBreeding.advance(n,dt,{capacity:()=>s.aliens.filter(a=>a.alive&&a.type!=='queen').length<(s.rules?.maxAliens||50),spawn:n=>spawnGroundBug(n.x-25+rnd()*50,n.y+20)});continue;}if(n.hp<=0)continue;n.timer-=dt;if(n.timer<=0){n.timer=n.customInterval||(5+rnd()*4)/mult;if(s.aliens.filter(a=>a.alive&&a.type!=='queen').length<(s.rules?.maxAliens||50)){spawnGroundBug(n.x-25+rnd()*50,n.y+20);}}}
- for(let i=s.bullets.length-1;i>=0;i--){const b=s.bullets[i];b.x+=b.dx*b.speed*dt;b.y+=b.dy*b.speed*dt;b.life-=dt;let hit=false;if(b.team==='human')for(const p of s.props||[])if(p.hp>0&&b.x>=p.left&&b.x<p.left+p.w&&b.y>=p.top&&b.y<p.top+p.h){p.hp-=b.damage;hit=true;if(p.hp<=0)destroyProp(p);break;}if(b.team==='alien')for(const d of s.doors||[])if(!d.open&&b.x>=d.x&&b.x<d.x+d.w&&b.y>=d.y&&b.y<d.y+d.h){d.damage++;sound(34,.12);if(d.durability&&d.damage>=d.durability){d.open=true;d.destroyed=true;burst(d.cx,d.cy,30);sound(23,.4);}hit=true;break;}hit=hit||b.x<0||b.x>W||b.y<0||b.y>H||blocked(b.x,b.y);if(!hit&&b.team==='human'&&s.terminal&&!s.terminal.active&&dist(b,s.terminal)<14){s.terminal.active=true;if(s.gate)s.gate.open=true;hit=true;tone(800,.15);}if(!hit&&b.team==='alien'&&s.reinforcements.some(r=>r.kind==='carrier'&&dist(r,b)<30))hit=true;if(!hit&&b.team==='alien'&&s.humans.some(u=>u.alive&&u.shieldUntil>s.t&&dist(u,b)<24))hit=true;if(!hit){const targets=b.team==='human'?s.aliens:s.humans;for(const a of targets)if(a.alive&&(a.type!=='desert-worm'||window.TriumphDesertWorm.exposed(a))&&dist(a,b)<(a.type==='desert-worm'?12:a.type==='queen'?17:a.type==='tank'||a.type==='convoy-crawler'?17:8)){damage(a,b.damage,b.owner);hit=true;break;}}if(!hit&&b.team==='human')for(const n of s.nests)if(n.hp>0&&dist(n,b)<26){n.hp-=b.damage;hit=true;if(n.hp<=0){burst(n.x,n.y,40);if(b.owner)s.score[b.owner-1]+=100;}break;}if(!hit&&b.team==='alien'&&s.crystal&&dist(b,s.crystal)<14){s.crystal.hp-=b.damage;hit=true;}if(hit&&b.plasma&&!b.spark){for(let k=0;k<6;k++){const a=k*Math.PI/3;s.bullets.push({...b,dx:Math.cos(a),dy:Math.sin(a),life:.2,speed:160,damage:1,spark:true});}burst(b.x,b.y,10,'#66bbff');}if(hit||b.life<=0)s.bullets.splice(i,1);}
+ stepProjectiles(dt);
  for(const c of s.cannons||[])if(c.occupant&&!c.occupant.alive)c.occupant=null;for(const f of s.fires||[])if(f.until>s.t)for(const a of s.aliens)if(a.alive&&dist(a,f)<18)damage(a,1,0);if(s.fires)s.fires=s.fires.filter(f=>f.until>s.t);s.effects=s.effects.filter(e=>(e.t-=dt)>0);s.aliens=s.aliens.filter(a=>a.alive);s.pickupTimer-=dt;if(!s.originalMap&&s.pickupTimer<0){s.pickupTimer=18;if(s.pickups.length<10)s.pickups.push({x:100+rnd()*760,y:60+rnd()*560,type:['troops','grenade','rapid','plasma','tank','air'][Math.floor(rnd()*6)]});}if(s.hold>0)s.hold=Math.max(0,s.hold-dt);
  window.TriumphMissions.emitWaves(s,spawnGroundBug);
  if(s.wave){s.waveRemaining=Math.max(0,s.wave.normalKills-s.waveKills.normal)+Math.max(0,s.wave.queenKills-s.waveKills.queen);if(s.t>=s.wave.start&&s.aliens.length<(s.rules?.maxAliens||50)){s.waveClock-=dt;const advanced=s.wave.queenKills>0&&s.waveKills.normal>=s.wave.normalKills;if(s.waveClock<=0&&s.waveRemaining>0){s.waveClock=advanced?s.wave.queenInterval:s.wave.interval;const x=s.level===4?(rnd()<.5?16:1008):40+rnd()*940,y=rnd()<.5?45:740;if(advanced){const a=unit(x,y,'alien','queen');a.hp=s.difficulty.queen;s.aliens.push(a);}else spawnGroundBug(x,y);}}}if(s.crystal&&s.level===8&&s.wave&&s.waveKills.normal>=s.wave.normalKills&&s.waveKills.queen>=(s.wave.extractionQueenThreshold??40)&&[...Object.keys(s.rules.terminals)].every(id=>s.terminals.some(t=>t.object===Number(id)&&t.active))){s.crystal.extracting=true;s.crystal.y-=20*dt;if(s.crystal.y<-30)s.crystal.recovered=true;}const army=s.humans.filter(u=>u.alive&&u.type!=='commander').length,commanders=s.humans.filter(u=>u.alive&&u.type==='commander').length;if((s.customMission?.objective.rescueCrawlers&&missionProgress().lost)||(s.customMission?.objective.atLeastOneNonCommander&&army===0)||(army===0&&commanders===0&&!hasRespawnSupport())||(s.crystal&&s.crystal.hp<=0)){s.mode='defeat';tone(50,.5);}else if(missionProgress().ready){s.mode='victory';s.merits+=100+army*3+s.kills;tone(600,.3);} }
