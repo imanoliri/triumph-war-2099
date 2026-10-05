@@ -13,9 +13,9 @@ class Image {constructor(){this.complete=true;this.naturalWidth=20;}}
 class Audio {cloneNode(){return this}play(){return Promise.resolve()}}
 const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.from(s,'base64').toString('latin1'),document:{querySelector:id=>elements[id],createElement:()=>canvas},window:{addEventListener:(name,cb)=>handlers[name]=cb},requestAnimationFrame:cb=>sandbox.nextFrame=cb};
 vm.createContext(sandbox);
-for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','src/breeding.js','src/balance.js','assets/custom/split-ridge/terrain.js','src/custom-missions.js','src/missions.js','src/rally.js','src/vent-bugs.js','game.js']){
+for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','src/breeding.js','src/balance.js','assets/custom/split-ridge/terrain.js','src/custom-missions.js','src/missions.js','src/rally.js','src/vent-bugs.js','src/desert-worm.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
- if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,setSeed:value=>seed=value>>>0,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival,toggleRally,addRally,removeRally,assignRally,drawSprites:()=>{const calls=[],previous=sprite;try{sprite=(...args)=>{calls.push(args);return true;};draw();}finally{sprite=previous;}return calls;}});})();');
+ if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,setSeed:value=>seed=value>>>0,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,spawnDesertWorm,supportExplosion,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival,toggleRally,addRally,removeRally,assignRally,drawSprites:()=>{const calls=[],previous=sprite;try{sprite=(...args)=>{calls.push(args);return true;};draw();}finally{sprite=previous;}return calls;}});})();');
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
@@ -590,4 +590,17 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
   assert(Math.abs(run('robot',approved,'travel',true)/run('robot',1,'travel',true)-1.5)<1e-8,'Fallback navigation applies multiplier once');
  }finally{balance.groundRobotMovementMultiplier=approved;}
  console.log('Passed robot 1.5x distance across travel/attack/force/rally/focus/use/aim/patrol/follow/defend/hunt, fallback routing and unchanged other-unit controls.');
+}
+
+// TRI-035: dormant custom actor exercises real combat/mission integration.
+{
+ api.loadMission(1);const f=sandbox.window.__fixture(),st=f.state;st.rocks=[];st.props=[];st.doors=[];st.mask=new Uint8Array(1024*768);st.aliens=[];st.nests=[];st.fires=[];st.mode='playing';
+ const worm=f.spawnDesertWorm(500,400);assert(worm);assert.equal(st.aliens.length,1);const human={x:550,y:400,type:'soldier',team:'human',alive:true,hp:8,id:0};st.humans=[human];
+ f.damage(worm,100,1);f.kill(worm,1);assert.equal(worm.hp,16);assert(worm.alive);assert(!f.visible(human,worm));assert.equal(f.enemyAt(worm),null);human.focusTarget=worm;assert.equal(f.focusAttackStep(human,.01),false);assert.equal(human.focusTarget,null,'Prior exposed focus drops on burrow');
+ f.grenade({...human,angle:Math.PI,grenades:1});f.supportExplosion(worm.x,worm.y);assert.equal(worm.hp,16,'Grenade/support underground immunity');
+ st.bullets=[{x:worm.x,y:worm.y,dx:0,dy:0,speed:0,life:2,team:'human',damage:5,owner:1}];resumeSimulation();f.update(.01);assert.equal(st.bullets.length,1,'Burrow does not absorb bullets');
+ worm.phase='warning';worm.phaseTime=1.2;worm.telegraph={x:500,y:400,dx:1,dy:0,range:260,width:24};assert(f.visible(human,worm));assert.equal(f.enemyAt(worm),worm);f.update(.01);assert.equal(worm.hp,11,'Exposed projectile damage');f.damage(worm,20,1);assert(!worm.alive);assert.equal(st.kills,1);assert(st.score[0]>=10);
+ for(let n=1;n<=9;n++){api.loadMission(n);assert(!sandbox.window.__fixture().state.aliens.some(a=>a.type==='desert-worm'));}
+ for(const m of sandbox.window.TriumphCustomMissions.list){api.loadCustomMission(m.id);assert(!sandbox.window.__fixture().state.aliens.some(a=>a.type==='desert-worm'));}
+ console.log('Passed dormant worm combat guards, projectile passthrough/exposed damage, kill accounting and original/custom isolation.');
 }

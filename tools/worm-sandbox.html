@@ -1,0 +1,17 @@
+<!doctype html><meta charset="utf-8"><title>TRI-035 isolated worm sandbox</title>
+<style>body{background:#211c17;color:#ffe5b3;font:16px monospace}canvas{background:#a8824e;max-width:100%}button{padding:12px}</style>
+<h1>Isolated custom worm sandbox</h1><p>Authored shapes: burrow / exposed warning / charge / recovery. No mission data or audio. Start cycle, then Dodge to move the troop off the committed lane.</p>
+<button id="start">Start cycle</button> <button id="warn">Start at warning</button> <button id="dodge">Dodge diagonally</button><p id="status">Ready</p><canvas id="preview" width="900" height="400"></canvas>
+<script src="/src/desert-worm.js"></script><script>
+const mod=window.TriumphDesertWorm,ctx=document.querySelector('canvas').getContext('2d');
+let u=null,h=null,last=0,time=0,run=false;
+const blocked=(x,y)=>x<0||x>=900||y<0||y>=400||(x>=620&&x<=630);
+document.querySelector('#start').onclick=()=>{u=mod.create(110,280,blocked);h={x:260,y:280,hp:8,alive:true,type:'soldier'};run=true;};
+document.querySelector('#warn').onclick=()=>{document.querySelector('#start').onclick();mod.step(u,1,{humans:[h],blocked,damage:(target,n)=>target.hp-=n});};
+document.querySelector('#dodge').onclick=()=>{if(h){h.x+=30;h.y+=55;}};
+function frame(ms){const dt=Math.min(.04,(ms-last)/1000);last=ms;time+=dt;ctx.clearRect(0,0,900,400);ctx.fillStyle='#3b3327';ctx.fillRect(620,0,10,400);
+ ['burrow','warning','charge','recovery'].forEach((phase,i)=>{const actor=mod.create(70+i*190,95,()=>false);actor.phase=phase;if(phase==='warning'||phase==='charge')actor.telegraph={x:actor.x,y:actor.y,dx:1,dy:0,range:130,width:24};mod.draw(ctx,actor,time);ctx.fillStyle='#241c13';ctx.fillText(phase,40+i*190,140);});
+ if(u){if(run)mod.step(u,dt,{humans:[h],blocked,damage:(target,n)=>target.hp-=n});if(u.phase==='recovery')run=false;mod.draw(ctx,u,time);ctx.fillStyle='#5fb4ec';ctx.fillRect(h.x-6,h.y-6,12,12);document.querySelector('#status').textContent=`Phase: ${u.phase}; troop HP: ${h.hp}; worm: (${u.x.toFixed(0)}, ${u.y.toFixed(0)})`;}
+ requestAnimationFrame(frame);
+}requestAnimationFrame(frame);
+</script>
