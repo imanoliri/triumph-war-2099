@@ -707,11 +707,17 @@
       "id": "TRI-048",
       "title": "Synchronize player help and playtest expectations",
       "task": "docs/tasks/current-player-help.md",
-      "status": "Ready",
-      "reason": "Autonomous mandate; verified stale Controls Relay counts and PLAYTEST tank-rest values",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
       "approval": "Autonomous mandate; verified stale Controls Relay counts and PLAYTEST tank-rest values",
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/17"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/17",
+      "worker": {
+        "id": "/root/player_help_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-current-player-help",
+        "branch": "chore/current-player-help"
+      },
+      "branch": "chore/current-player-help"
     }
   ],
   "events": [
@@ -2541,6 +2547,15 @@
         "/root",
         "e477e2b4276e25617ab5521c8212792fda0652d5",
         "9017ab56edfb1a472aec7a85f3827d65668d1704"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:17:27.411Z",
+      "command": "dispatch",
+      "ticket": "TRI-048",
+      "details": [
+        "../triumph-current-player-help",
+        "/root/player_help_worker"
       ]
     }
   ]
