@@ -26,7 +26,7 @@
   if(u.phase==='recovery'){if(u.phaseTime<=0){u.phase='burrow';u.phaseTime=rules.burrowTime;u.telegraph=null;}return;}
   const lane=u.telegraph,travel=Math.min(u.remaining,rules.chargeSpeed*dt);
   for(let moved=0;moved<travel;){const n=Math.min(2,travel-moved),x=u.x+lane.dx*n,y=u.y+lane.dy*n;if(!clear(x,y,blocked)){u.remaining=0;break;}u.x=x;u.y=y;moved+=n;u.remaining-=n;
-   for(const h of humans)if(ground(h)&&!u.chargeHits.has(h)&&Math.hypot(h.x-u.x,h.y-u.y)<=rules.radius+(h.type==='tank'?17:8)){u.chargeHits.add(h);damage(h,rules.damage,0);}
+   for(const h of humans)if(ground(h)&&!u.chargeHits.has(h)&&Math.hypot(h.x-u.x,h.y-u.y)<=rules.radius+(h.type==='tank'||h.type==='convoy-crawler'?17:8)){u.chargeHits.add(h);damage(h,rules.damage,0);}
   }
   if(u.remaining<=0){u.phase='recovery';u.phaseTime=rules.recoveryTime;u.telegraph=null;}
  }

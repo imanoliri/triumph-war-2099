@@ -1,7 +1,7 @@
 # Implement Desert Rider soldiers and convoy crawler
 
 - Ticket: TRI-040; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/desert-rider-roster`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Implement Desert Rider soldiers and convoy crawler
 
 ## Acceptance criteria
 
-- [ ] Implement approved scout auto-evade, five-pellet short-range shotgun guard, vehicle-repair mechanic and6HP route-following crawler with diagonal charge evade and finite automatic mines, isolated from existing units.
+- [x] Implement approved scout auto-evade, five-pellet short-range shotgun guard, vehicle-repair mechanic and6HP route-following crawler with diagonal charge evade and finite automatic mines, isolated from existing units.
 
 ## Scope and decisions
 
@@ -18,3 +18,8 @@ Confirmed user mechanics in [desert brief](../planning/campaigns/missions/desert
 ## Sessions
 
 Queue refinement: execute after035 and bounded041 map proposals.041 supplies user review material;040 can implement opt-in unit behavior while map choice is pending. Scope and approved abilities unchanged.
+- [2026-10-05 / 024](../journal/2026-10-05-024-desert-rider-roster.md)
+
+## Review handoff
+
+Implementation and explicit tuning: [Desert Rider design](../design/desert-riders.md). Disposable module/runtime regressions cover special abilities, shared controls, terrain/navigation and existing roster isolation. Isolated live evidence: [sandbox playtest](../playtests/2026-10-05-tri-040-riders.md). Fixed-kit infantry does not mount cannons or collect pickups; no current mission activation. Worker stops at Review; TRI-036 owns later route/objective placement after map selection.

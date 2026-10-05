@@ -13,9 +13,9 @@ class Image {constructor(){this.complete=true;this.naturalWidth=20;}}
 class Audio {cloneNode(){return this}play(){return Promise.resolve()}}
 const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.from(s,'base64').toString('latin1'),document:{querySelector:id=>elements[id],createElement:()=>canvas},window:{addEventListener:(name,cb)=>handlers[name]=cb},requestAnimationFrame:cb=>sandbox.nextFrame=cb};
 vm.createContext(sandbox);
-for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','src/breeding.js','src/balance.js','assets/custom/split-ridge/terrain.js','src/custom-missions.js','src/missions.js','src/rally.js','src/vent-bugs.js','src/desert-worm.js','game.js']){
+for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','src/breeding.js','src/balance.js','assets/custom/split-ridge/terrain.js','src/custom-missions.js','src/missions.js','src/rally.js','src/vent-bugs.js','src/desert-worm.js','src/desert-riders.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
- if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,setSeed:value=>seed=value>>>0,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,spawnDesertWorm,supportExplosion,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival,toggleRally,addRally,removeRally,assignRally,drawSprites:()=>{const calls=[],previous=sprite;try{sprite=(...args)=>{calls.push(args);return true;};draw();}finally{sprite=previous;}return calls;}});})();');
+ if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,setSeed:value=>seed=value>>>0,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,spawnDesertWorm,spawnDesertRider,supportExplosion,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival,toggleRally,addRally,removeRally,assignRally,drawSprites:()=>{const calls=[],previous=sprite;try{sprite=(...args)=>{calls.push(args);return true;};draw();}finally{sprite=previous;}return calls;}});})();');
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
@@ -603,4 +603,26 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  for(let n=1;n<=9;n++){api.loadMission(n);assert(!sandbox.window.__fixture().state.aliens.some(a=>a.type==='desert-worm'));}
  for(const m of sandbox.window.TriumphCustomMissions.list){api.loadCustomMission(m.id);assert(!sandbox.window.__fixture().state.aliens.some(a=>a.type==='desert-worm'));}
  console.log('Passed dormant worm combat guards, projectile passthrough/exposed damage, kill accounting and original/custom isolation.');
+}
+
+// TRI-040: opt-in infantry uses the established order/controller paths.
+{
+ api.loadMission(1);resumeSimulation();const f=sandbox.window.__fixture(),st=f.state;st.mask=new Uint8Array(1024*768);st.rocks=[];st.props=[];st.doors=[];st.nests=[];st.pickups=[];st.cannons=[];st.aliens=[];st.humans=[];st.mode='playing';
+ const target={x:450,y:420,type:'soldier',team:'alien',alive:true,hp:100,cool:999};st.aliens=[target];
+ for(const type of ['rider-scout','field-mechanic','dune-guard']){
+  const u=f.spawnDesertRider(type,300,300);u.order=3;u.anchor={x:300,y:300};st.humans=[u];st.bullets=[];f.aimHuman(u,target,0);assert.equal(st.bullets.length,0,type+' Defend holds diagonal target without wasting cardinal shot');assert.equal(u.x,300);
+  target.x=400;target.y=300;f.aimHuman(u,target,0);assert.equal(st.bullets.length,type==='dune-guard'?5:1);assert(st.bullets.every(b=>b.team==='human'));if(type==='dune-guard'){u.cool=Math.max(0,u.cool-.5);f.aimHuman(u,target,0);assert.equal(st.bullets.length,5,'Shotgun cooldown holds');u.cool=Math.max(0,u.cool-.61);f.aimHuman(u,target,0);assert.equal(st.bullets.length,10,'Shotgun resumes after 1.1s');}target.x=450;target.y=420;
+  u.cool=0;u.attackMove={x:400,y:300,force:true};st.bullets=[];f.update(.1);assert.equal(st.bullets.length,0,type+' force-move suppresses fire');assert(u.x>300);u.attackMove=null;
+  u.focusTarget=target;u.order=2;const x=u.x,y=u.y;assert(f.focusAttackStep(u,.1));assert(u.x!==x||u.y!==y,type+' focus pursues legal firing lane');
+  const terminal={x:u.x,y:u.y,object:253,active:false};st.terminals=[terminal];f.selection.clear();f.selection.add(u);f.useOrderTo({kind:'terminal',target:terminal,x:terminal.x,y:terminal.y});assert(u.useOrder,type+' accepts terminal use');f.useOrderStep(u,.1);assert(terminal.used,type+' executes terminal use');
+ }
+ for(const type of ['rider-scout','dune-guard','field-mechanic']){
+  st.humans=[];st.aliens=[];st.mask=null;st.rocks=[{x:480,y:200,w:20,h:170},{x:480,y:430,w:20,h:170},{x:480,y:200,w:300,h:20},{x:480,y:580,w:300,h:20},{x:760,y:200,w:20,h:400}];const door={x:480,y:370,w:20,h:60,cx:490,cy:400,open:false,locked:false};st.doors=[door];const u=f.spawnDesertRider(type,300,300);for(let i=0;i<1100;i++)f.navigate(u,650-u.x,300-u.y,.02,36);assert(Math.hypot(u.x-650,u.y-300)<2,type+' full-body route opens unlocked door');assert(door.open);
+  door.open=false;door.locked=true;u.x=300;u.y=300;for(let i=0;i<100;i++)f.navigate(u,650-u.x,300-u.y,.02,36);assert(u.x<480,type+' respects locked door');
+ }
+ st.rocks=[];st.doors=[];st.mask=new Uint8Array(1024*768);st.humans=[];
+ const scout=f.spawnDesertRider('rider-scout',300,300);const leader={x:440,y:300,id:1,type:'commander',alive:true,hp:1};st.humans=[scout,leader];st.aliens=[];scout.order=1;scout.anchor={x:200,y:300};f.update(.1);assert(scout.x>300,'Follow ignores stale Defend anchor');
+ for(let n=1;n<=9;n++){api.loadMission(n);assert(!sandbox.window.__fixture().state.humans.some(sandbox.window.TriumphDesertRiders.isRider));}
+ for(const m of sandbox.window.TriumphCustomMissions.list){api.loadCustomMission(m.id);assert(!sandbox.window.__fixture().state.humans.some(sandbox.window.TriumphDesertRiders.isRider));}
+ console.log('Passed Rider shared cardinal lane/Defend, exact guard pellets, force/focus, terminal use, Follow anchor and all existing mission roster isolation.');
 }
