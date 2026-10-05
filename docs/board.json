@@ -736,28 +736,31 @@
       "id": "TRI-043",
       "title": "Extract troop orders and input system",
       "task": "docs/tasks/extract-orders-input.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
+      "status": "Ready",
+      "reason": "User autonomous queue mandate; reviewed bounded behavior-preserving scope, execute after TRI-042",
       "questions": [],
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/12"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/12",
+      "approval": "User autonomous queue mandate; reviewed bounded behavior-preserving scope, execute after TRI-042"
     },
     {
       "id": "TRI-044",
       "title": "Extract support lifecycle system",
       "task": "docs/tasks/extract-support-lifecycle.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
+      "status": "Ready",
+      "reason": "User autonomous queue mandate; reviewed bounded support lifecycle scope, execute after TRI-043",
       "questions": [],
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/13"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/13",
+      "approval": "User autonomous queue mandate; reviewed bounded support lifecycle scope, execute after TRI-043"
     },
     {
       "id": "TRI-045",
       "title": "Extract battlefield rendering system",
       "task": "docs/tasks/extract-rendering.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
+      "status": "Ready",
+      "reason": "User autonomous queue mandate; reviewed bounded rendering scope, execute after TRI-044",
       "questions": [],
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/14"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/14",
+      "approval": "User autonomous queue mandate; reviewed bounded rendering scope, execute after TRI-044"
     },
     {
       "id": "TRI-046",
@@ -2693,6 +2696,33 @@
       "details": [
         "../triumph-extract-combat-bursts",
         "/root/combat_extract_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:25:11.148Z",
+      "command": "move",
+      "ticket": "TRI-043",
+      "details": [
+        "Ready",
+        "User autonomous queue mandate; reviewed bounded behavior-preserving scope, execute after TRI-042"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:25:11.203Z",
+      "command": "move",
+      "ticket": "TRI-044",
+      "details": [
+        "Ready",
+        "User autonomous queue mandate; reviewed bounded support lifecycle scope, execute after TRI-043"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:25:11.257Z",
+      "command": "move",
+      "ticket": "TRI-045",
+      "details": [
+        "Ready",
+        "User autonomous queue mandate; reviewed bounded rendering scope, execute after TRI-044"
       ]
     }
   ]
