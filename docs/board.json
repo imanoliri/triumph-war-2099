@@ -916,17 +916,18 @@
       "id": "TRI-051",
       "title": "Reinforcement eagles in new missions",
       "task": "docs/tasks/custom-mission-reinforcement-eagles.md",
-      "status": "Review",
-      "reason": "Reviewed a397fdd; independent audit96509 and full77531 pass; limited real Dunes delivery, original behavior and Convoy scope preserved",
+      "status": "Done",
+      "reason": "Independent scoped/support/mission review and full77531 pass; real limited Dunes delivery, original support and withdrawn Convoy balance preserved",
       "questions": [],
       "approval": "User explicitly requested reinforcement eagles on new maps; integrate049/050 directly and audit earlier custom missions after050",
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/20",
-      "worker": {
-        "id": "/root/eagle_audit_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-mission-reinforcement-eagles",
-        "branch": "feature/custom-mission-reinforcement-eagles"
-      },
-      "branch": "feature/custom-mission-reinforcement-eagles"
+      "branch": "feature/custom-mission-reinforcement-eagles",
+      "completion": {
+        "evidence": "Independent scoped/support/mission review and full77531 pass; real limited Dunes delivery, original support and withdrawn Convoy balance preserved",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "a397fddbd59827cd90b64bebeb7288c7758fb282",
+        "squashCommit": "96ce28c9b42f787d194862b722eee57b589c716b"
+      }
     },
     {
       "id": "TRI-052",
@@ -3301,6 +3302,18 @@
       "details": [
         "Review",
         "Reviewed a397fdd; independent audit96509 and full77531 pass; limited real Dunes delivery, original behavior and Convoy scope preserved"
+      ]
+    },
+    {
+      "at": "2026-10-05T22:56:18.680Z",
+      "command": "move",
+      "ticket": "TRI-051",
+      "details": [
+        "Done",
+        "Independent scoped/support/mission review and full77531 pass; real limited Dunes delivery, original support and withdrawn Convoy balance preserved",
+        "/root",
+        "96ce28c9b42f787d194862b722eee57b589c716b",
+        "a397fddbd59827cd90b64bebeb7288c7758fb282"
       ]
     }
   ]

@@ -53,3 +53,5 @@ Parent tab3 on2108 later displayed Normal Dunes MISSION COMPLETE164/Army18 with9
 ## Eagle audit accepted review
 
 Clean worker a397fddbd59827cd90b64bebeb7288c7758fb282 independently reviewed; focused audit96509 exit0, full77531 exit0, final range whitespace passes. Exact custom mission oracle preserves all behavior except two Dunes caches and supply text; old Relay expectation and exact Convoy suffix corrections reviewed. Original immutable support/combat/input/rendering pass. Controlled isolated Dunes tab4 confirms northern pickup and five rendered infantry; attribution-limited tab3 victory is not completion proof. Hosted Harbor run37382943750 terminal success. Accept for squash, preserving unrelated provenance. Next TRI-052 columns, then054 diagonal fire, then053 capital mission.
+
+Accepted reinforcement squash96ce28c9b42f787d194862b722eee57b589c716b; clean integration, no conflict. Board Done records both exact SHAs. Publish and dispatch approved052 from current main.
