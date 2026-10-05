@@ -882,17 +882,18 @@
       "id": "TRI-049",
       "title": "Whiteout Signal snow mission",
       "task": "docs/tasks/whiteout-signal.md",
-      "status": "Review",
-      "reason": "Reviewed b2081d29; independent Whiteout/support/project checks and ordinary Normal128 browser victory; final worker full suite exit0",
+      "status": "Done",
+      "reason": "Independent Whiteout/support/project checks, full worker suite exit0 and real Normal128 browser completion accepted; calibration/audio limits recorded",
       "questions": [],
       "approval": "User explicitly requested more missions from existing table; snow relay rescue first",
-      "worker": {
-        "id": "/root/whiteout_recovery_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-whiteout-signal",
-        "branch": "feature/whiteout-signal"
-      },
       "branch": "feature/whiteout-signal",
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/18"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/18",
+      "completion": {
+        "evidence": "Independent Whiteout/support/project checks, full worker suite exit0 and real Normal128 browser completion accepted; calibration/audio limits recorded",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "b2081d298852d6c43d995ef3196bb6dd37e949a8",
+        "squashCommit": "76166a16217aeac18b8e16aaca59b6d6e25221a8"
+      }
     },
     {
       "id": "TRI-050",
@@ -3140,6 +3141,18 @@
       "details": [
         "Review",
         "Reviewed b2081d29; independent Whiteout/support/project checks and ordinary Normal128 browser victory; final worker full suite exit0"
+      ]
+    },
+    {
+      "at": "2026-10-05T22:15:05.318Z",
+      "command": "move",
+      "ticket": "TRI-049",
+      "details": [
+        "Done",
+        "Independent Whiteout/support/project checks, full worker suite exit0 and real Normal128 browser completion accepted; calibration/audio limits recorded",
+        "/root",
+        "76166a16217aeac18b8e16aaca59b6d6e25221a8",
+        "b2081d298852d6c43d995ef3196bb6dd37e949a8"
       ]
     }
   ]
