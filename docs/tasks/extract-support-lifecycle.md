@@ -17,6 +17,8 @@ Backlog proposal; director must record user agreement before Ready.
 
 ## Sessions
 
+- [2026-10-05 / 036 — director recovery and access prerequisite](../journal/2026-10-05-036-director-recovery.md)
+
 ## Scope — autonomous mandate 2026-10-05
 
 Child of TRI-003, after TRI-043. Extract carrier/drop/air/infiltration arrivals, eligibility/cap reservations and return lifecycle through explicit state/services. Preserve source support types and mission timing, commander respawn, custom scheduled waves/airdrops and victory pending-arrival gates; no new support balancing. Verify seeded lifecycle, cap/retry/delivery/death/restart/tactical sequences and full suite. Update boundaries and separately record actual browser evidence. Stop Review.

@@ -760,7 +760,7 @@
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/13",
       "approval": "User autonomous queue mandate; reviewed bounded support lifecycle scope, execute after TRI-043",
       "worker": {
-        "id": "/root/support_extract_worker",
+        "id": "/root/support_recovery_worker",
         "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-extract-support-lifecycle",
         "branch": "chore/extract-support-lifecycle"
       },
@@ -2797,6 +2797,15 @@
       "details": [
         "../triumph-extract-support-lifecycle",
         "/root/support_extract_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T17:19:08.745Z",
+      "command": "dispatch",
+      "ticket": "TRI-044",
+      "details": [
+        "../triumph-extract-support-lifecycle",
+        "/root/support_recovery_worker"
       ]
     }
   ]
