@@ -6,7 +6,8 @@ index.html loads recovered asset globals, music.js, navigation.js, support.js, s
 
 | File | Responsibility |
 | --- | --- |
-| game.js | State lifecycle, simulation orchestration, world damage/kill accounting, support adapters, input wiring and main drawing |
+| game.js | State lifecycle, simulation orchestration, world damage/kill accounting, support adapters, input wiring and rendering adapters |
+| src/rendering.js | Per-draw explicit context/state/input/assets/view/services for battlefield, sprites, markers and HUD; no DOM or persistent mission state |
 | src/support-lifecycle.js | Explicit-service source eligibility/creation, helper/carrier/air/infiltration and drop lifecycle, scheduled reservations and commander return |
 | src/orders.js | Explicit-state troop order issue/step, shared use jobs, focus and attack-move interactions |
 | src/input.js | Owned keyboard/selection/commander/pointer/rally state and decisions; modal pause restoration |
@@ -50,7 +51,7 @@ tools/check-recreation.cjs creates a mocked DOM/canvas VM, injects fixtures and 
 
 ## Gradual module extraction
 
-The first maintenance step extracts balance, mission progress and rally helpers without changing gameplay. Combat/projectiles and orders/input are now extracted. Support lifecycle is now extracted; game.js retains most rendering for a separate behavior-preserving task. Add/update regression coverage at each boundary; do not combine extraction with new balance changes.
+The first maintenance step extracts balance, mission progress and rally helpers without changing gameplay. Combat/projectiles and orders/input are now extracted. Support lifecycle and rendering are now extracted. Add/update regression coverage at each boundary; do not combine extraction with new balance changes.
 
 Route fields are cached separately per stable collision callback and revision. Human planning uses an openable-door predicate; actual move/weapon collision and alien planning use solid-door rules. Door revision includes open, locked and destroyed bits so terminal unlocks and destruction invalidate the appropriate fields. Rally collision callbacks are memoized, avoiding a fresh policy identity per selection. Mission begin resets all route contexts.
 
@@ -76,3 +77,5 @@ TRI-043: `TriumphOrders.create` receives the current mission getter, input selec
 `tools/check-input.cjs` loads immutable game.js at `a6fed3313515a02bc2ab49e7ab6b380fd3bbe870` with fail-loud single-anchor substitution guards. Four seeded source-mission sequences compare full world state, public snapshots and reference aliases after keyboard/pointer decisions, tactical freeze, commander selection/deselection, physical key release/repeat, focus/use/force precedence, Shift selection, shared use jobs, rally, held free fire, modal restore, blur and mission replacement. Independent expected-behavior assertions ensure covered sequences remain meaningful. This Git-history fixture is test-only and never packaged.
 
 TRI-044: `TriumphSupportLifecycle.create` receives a current-state getter and named source data/path, navigation, RNG, actor creation, rally, world damage/kill, combat and audio services. It initializes only support-owned arrays/helpers/clocks; actors and return timers remain mission-owned. Source pickup-roll generation, custom wave emission, world initialization/damage/kill and mission progress stay outside. Scheduled aircraft retain their distinct in-flight drop reservation rule; ordinary source drops retain their original cap checks and RNG chronology. Runtime wrappers preserve existing callers and test access. `tools/check-support.cjs` compares six seeded full-state/reference-alias sequences to immutable game.js at `1e866aafd06268e6dc47ae3b791b5a2dd2e1dad0`, guarded against missing/duplicate loader anchors. Baseline history is test-only and never packaged.
+
+TRI-045: `TriumphRendering.draw` receives the current mission, input, context, original/background assets, view constants and named rendering/status services on every frame. Sprite lookup receives explicit time, source registry and image loader; image cache/load ownership remains in runtime. Rendering retains the historical invalid-selection Set cleanup, so it is stateless but not a pure function. DOM controls/input remain outside. Original sprite hotspots, direction/frame choice, source/custom overlays, draw ordering and mounted standing suppression are unchanged. `tools/check-rendering.cjs` compares all canvas calls, property assignments, transforms and image source/coordinates with immutable game.js at `23c6cf9f6a427bc6a0c85b63e148a75ffe3df52f`; guarded harness substitutions fail for absent/duplicate anchors. Git-history baseline remains test-only.
