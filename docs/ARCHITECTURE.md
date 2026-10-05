@@ -6,7 +6,10 @@ index.html loads recovered asset globals, music.js, navigation.js, support.js, s
 
 | File | Responsibility |
 | --- | --- |
-| game.js | State lifecycle, simulation orchestration, world damage/kill accounting, support integration, input and main drawing |
+| game.js | State lifecycle, simulation orchestration, world damage/kill accounting, support integration, input wiring and main drawing |
+| src/orders.js | Explicit-state troop order issue/step, shared use jobs, focus and attack-move interactions |
+| src/input.js | Owned keyboard/selection/commander/pointer/rally state and decisions; modal pause restoration |
+| src/input-dom.js | DOM event registration, CSS-to-world pointer normalization and native capture boundary |
 | src/combat.js | Explicit-service firing/aiming/lane calculations and unit-owned burst/sweep lifecycle |
 | src/projectiles.js | Explicit-state projectile advancement, collision priority, plasma spark lifecycle and owner propagation |
 | src/breeding.js | Finite Normal nest opportunities, seeded RNG and birth animation phase with explicit capacity/emission inputs |
@@ -22,7 +25,7 @@ index.html loads recovered asset globals, music.js, navigation.js, support.js, s
 | assets/support-rules.js / pickup-rules.js | Source support creation and pickup roll rules |
 | serve.cjs | Read-only loopback runtime allowlist |
 
-game.js owns mutable `s`, unit selection, rally placement state and input. Extracted modules receive state/callbacks explicitly and do not hold stale state across begin/loadMission. The seeded random generator supports repeatable fixtures.
+game.js owns mutable `s` and simulation pause. `TriumphInput.createState` owns held keys, selection, commander mode, drag/click state and rally placement. Extracted modules receive state/callbacks explicitly and do not hold stale state across begin/loadMission. The seeded random generator supports repeatable fixtures.
 
 ## Simulation
 
@@ -46,7 +49,7 @@ tools/check-recreation.cjs creates a mocked DOM/canvas VM, injects fixtures and 
 
 ## Gradual module extraction
 
-The first maintenance step extracts balance, mission progress and rally helpers without changing gameplay. game.js still contains combat, input/support orchestration and most rendering. Next extract combat/burst functions with explicit callbacks, then orders/input, support lifecycle and rendering as separate behavior-preserving tasks. Add/update regression coverage at each boundary; do not combine extraction with new balance changes.
+The first maintenance step extracts balance, mission progress and rally helpers without changing gameplay. Combat/projectiles and orders/input are now extracted. game.js retains support orchestration and most rendering; extract support lifecycle and rendering as separate behavior-preserving tasks. Add/update regression coverage at each boundary; do not combine extraction with new balance changes.
 
 Route fields are cached separately per stable collision callback and revision. Human planning uses an openable-door predicate; actual move/weapon collision and alien planning use solid-door rules. Door revision includes open, locked and destroyed bits so terminal unlocks and destruction invalidate the appropriate fields. Rally collision callbacks are memoized, avoiding a fresh policy identity per selection. Mission begin resets all route contexts.
 
@@ -66,3 +69,7 @@ TRI-036: Beneath the Dunes metadata/profile counts and routes live in src/custom
 TRI-042: `TriumphCombat.create` receives named rules, RNG, current-state/difficulty/audio getters and visibility, terrain, movement, quantization, desert-pellet and audio services. It owns no world state: bursts/sweeps stay on units, bullets/effects stay on the caller's current mission. The limited `getState:()=>s` getter follows every begin/loadMission replacement; it is not a generic environment proxy. The independent `TriumphProjectiles.step(s,dt,services)` advances backwards through the original bullet list, retains collision priority and appends six plasma sparks without stepping them until the next tick. World damage/kill/score, prop explosions and grenades remain in game.js and are invoked through named services. Human free/cardinal/diagonal aiming, mounted visual/projectile heading separation, tank grouping/focus locks, RNG order and numerical rules are unchanged.
 
 `tools/check-combat.cjs` reads immutable pre-extraction game.js from commit `6a39b420da2b30c9a2f0550b2c95c2e2d93ce2ea` into a disposable VM alongside the post-extraction runtime. Thirty seeded firing sequences compare burst/sweep timers, bullets, units and subsequent RNG consumption; six real mission simulations compare full mutable state and reference aliases. This baseline is test-only, fetched from Git history (CI already fetches full history); it is never loaded by the browser or packaged. Existing independent rule regressions remain authoritative for intended behavior.
+
+TRI-043: `TriumphOrders.create` receives the current mission getter, input selection and named navigation/combat/use services. It owns order replacement, shared use-job identity, focus validation and attack-move execution; supply lifecycle and world interactions remain named caller services. `TriumphInput.create` owns direct commander decisions, physical key presets, click timing/precedence, held mouse fire, rally and modal restore bookkeeping. `src/input-dom.js` converts browser events to point/code records; DOM panels/dialog content and rendering remain in game.js. The input object is retained across mission replacement while reset clears mission-specific references; neither decision module captures a mission state snapshot. Simulation pause stays with the runtime and is accessed through explicit getters/setters.
+
+`tools/check-input.cjs` loads immutable game.js at `a6fed3313515a02bc2ab49e7ab6b380fd3bbe870` with fail-loud single-anchor substitution guards. Four seeded source-mission sequences compare full world state, public snapshots and reference aliases after keyboard/pointer decisions, tactical freeze, commander selection/deselection, physical key release/repeat, focus/use/force precedence, Shift selection, shared use jobs, rally, held free fire, modal restore, blur and mission replacement. Independent expected-behavior assertions ensure covered sequences remain meaningful. This Git-history fixture is test-only and never packaged.

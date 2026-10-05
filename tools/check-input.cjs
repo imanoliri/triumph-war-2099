@@ -1,0 +1,33 @@
+'use strict';
+if(require.main===module)process.chdir(require('node:path').resolve(__dirname,'..'));
+const fs=require('node:fs'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
+const baseline=execFileSync('git',['show','a6fed3313515a02bc2ab49e7ab6b380fd3bbe870:game.js'],{encoding:'utf8',windowsHide:true});
+const fixture=fs.readFileSync('tools/check-recreation.cjs','utf8').split('const api=sandbox.window.triumph')[0];
+const anchor="let source=fs.readFileSync(''+file,'utf8');",replacement="let source=file==='game.js'&&baseline?baseline:fs.readFileSync(''+file,'utf8');";
+function inject(source){assert.equal(source.split(anchor).length-1,1,'Input fixture loader anchor must exist exactly once; immutable baseline must not fall back');const result=source.replace(anchor,replacement);assert(result!==source&&!result.includes(anchor)&&result.split(replacement).length-1===1,'Input baseline substitution must apply exactly once');return result;}
+assert.throws(()=>inject(fixture.replace(anchor,'')),/anchor must exist exactly once/);assert.throws(()=>inject(fixture+'\n'+anchor),/anchor must exist exactly once/);
+function load(old){return new Function('require','module','__dirname','baseline',inject(fixture)+'\nreturn {sandbox,handlers,canvasHandlers,elements};')(require,{},__dirname,old?baseline:null);}
+const plain=value=>{const seen=new Map();return JSON.parse(JSON.stringify(value,(key,v)=>{if(v&&typeof v==='object'){if(seen.has(v))return {$ref:seen.get(v)};seen.set(v,seen.size);}return v;}));};
+function sequence(box,mission,seed){const {sandbox:b,handlers:h,canvasHandlers:c,elements:e}=box,api=b.window.triumph,out=[];let timestamp=0;
+ const snap=label=>out.push([label,plain({hint:e['#command-hint'].textContent,public:api.state(),world:b.window.__fixture().state})]);
+ const key=(code,up=false,repeat=false)=>{h[up?'keyup':'keydown']({code,repeat,preventDefault(){}});snap((up?'release ':'key ')+code);};
+ const pointer=(name,x,y,button=0,shiftKey=false)=>{timestamp+=100;c[name]({clientX:100+x/2,clientY:50+y/2,button,shiftKey,pointerId:1,timeStamp:timestamp,preventDefault(){}});snap(name+' '+button);};
+ const right=(x,y)=>pointer('pointerdown',x,y,2),click=(x,y,shift=false)=>{pointer('pointerdown',x,y,0,shift);pointer('pointerup',x,y,0,shift);};
+ api.loadMission(mission);let f=b.window.__fixture(),s=f.state;f.setSeed(seed);snap('briefing AI defaults');assert.equal(api.state().activeCommander,null);right(400,300);key('Enter');const frozen=s.t;f.update(.4);assert.equal(s.t,frozen,'Tactical simulation freezes');
+ for(const id of [1,2,3,4]){e['#cmd-'+id].onclick();snap('select '+id);key('KeyI');key('BracketLeft');key('NumpadMultiply');key('KeyI',true);key('BracketLeft',true);key('NumpadMultiply',true);key('KeyW');key('KeyW',false,true);e['#pause'].onclick();f.update(.04);snap('direct movement '+id);key('KeyW',true);key('KeyB');key('KeyA');key('KeyA',true);key('KeyB',true);key('KeyV');key('KeyB');f.update(.04);snap('physical fire grenade');key('KeyB',true);key('KeyV',true);e['#cmd-'+id].onclick();snap('deselect '+id);if(!api.state().paused)e['#pause'].onclick();}
+ e['#options'].onclick();key('Space');snap('Controls captures input');e['#close'].onclick();snap('Controls tactical restore');e['#units'].onclick();key('KeyR');e['#units-close'].onclick();snap('Units tactical restore');
+ // Clear fixture terrain for deterministic input destinations, retaining live object aliases.
+ s.mask=null;s.rocks=[];s.doors=[];s.props=[];s.cannons=[];s.pickups=[];s.flowers=[];s.aliens=[];s.nests=[];
+ const troops=s.humans.filter(u=>u.type!=='commander').slice(0,3);s.humans=s.humans.filter(u=>u.type==='commander').concat(troops);troops.forEach((u,j)=>{u.x=200+j*30;u.y=200;});
+ pointer('pointerdown',180,180);pointer('pointermove',280,220);pointer('pointerup',280,220);right(400,350);right(400,350);snap('double empty force');assert(troops.every(u=>u.attackMove.force),'Double empty ground sets force');
+ const bug={x:500,y:300,hp:20,alive:true,type:'soldier',team:'alien'};s.aliens=[bug];right(500,300);bug.x+=8;right(508,300);right(508,300);snap('moving enemy triple focus');assert(troops.every(u=>u.focusTarget===bug&&!u.attackMove),'Moving triple enemy click retains focus');
+ const nest={x:600,y:300,hp:20};s.nests=[nest];right(625,300);right(630,300);snap('boundary nest focus');
+ s.terminals=[{x:700,y:300,active:false}];right(700,300);right(700,300);snap('double terminal shared use');assert(troops.every(u=>u.useOrder.kind==='terminal'&&!u.focusTarget),'Double terminal replaces focus');assert.equal(troops[0].useOrder,troops[1].useOrder);
+ s.doors=[{x:740,y:280,w:20,h:40,cx:750,cy:300,open:false,locked:false}];right(750,300);right(750,300);snap('double door shared use');
+ click(200,200);click(230,200,true);click(230,200,true);snap('Shift add toggle');
+ key('KeyR');click(350,450);click(450,450);right(350,450);key('Escape');snap('rally exit preserves tactical');
+ e['#cmd-2'].onclick();e['#pause'].onclick();pointer('pointerdown',600,400);f.update(.2);pointer('pointermove',610,410);f.update(.04);pointer('pointerup',610,410);snap('held free mouse fire');right(620,400);e['#options'].onclick();e['#close'].onclick();assert.equal(api.state().paused,false,'Controls restore running mode');e['#units'].onclick();e['#units-close'].onclick();assert.equal(api.state().paused,false,'Units restore running mode');pointer('pointerdown',400,500);c.pointercancel();snap('pointer cancellation');pointer('pointerdown',400,500);c.lostpointercapture();snap('capture loss');h.blur();snap('blur clears held controls and pauses');
+ key('F2');snap('restart resets input ownership');api.loadMission(mission===1?3:1);key('Enter');e['#cmd-3'].onclick();key('KeyD');e['#pause'].onclick();b.window.__fixture().update(.04);key('KeyD',true);snap('replacement mission current-state services');return out;
+}
+for(const mission of [1,3])for(const seed of [77,812])assert.deepEqual(sequence(load(false),mission,seed),sequence(load(true),mission,seed),'Immutable input/order sequence mission '+mission+' seed '+seed);
+console.log('Passed four immutable pre/post input sequences: commander ownership, physical keys/repeats/releases, shared use aliases, focus/use/force precedence, Shift selection, tactical/modal restoration, rally, mouse aim/fire, blur and replacement missions.');
