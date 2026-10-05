@@ -916,8 +916,8 @@
       "id": "TRI-051",
       "title": "Reinforcement eagles in new missions",
       "task": "docs/tasks/custom-mission-reinforcement-eagles.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Reviewed a397fdd; independent audit96509 and full77531 pass; limited real Dunes delivery, original behavior and Convoy scope preserved",
       "questions": [],
       "approval": "User explicitly requested reinforcement eagles on new maps; integrate049/050 directly and audit earlier custom missions after050",
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/20",
@@ -3292,6 +3292,15 @@
       "details": [
         "Ready",
         "User renewed more table missions on2026-10-06; bounded capital District Twelve after requested fixes"
+      ]
+    },
+    {
+      "at": "2026-10-05T22:55:57.342Z",
+      "command": "move",
+      "ticket": "TRI-051",
+      "details": [
+        "Review",
+        "Reviewed a397fdd; independent audit96509 and full77531 pass; limited real Dunes delivery, original behavior and Convoy scope preserved"
       ]
     }
   ]
