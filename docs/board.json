@@ -709,7 +709,8 @@
       "status": "Ready",
       "reason": "Autonomous mandate; verified stale Controls Relay counts and PLAYTEST tank-rest values",
       "questions": [],
-      "approval": "Autonomous mandate; verified stale Controls Relay counts and PLAYTEST tank-rest values"
+      "approval": "Autonomous mandate; verified stale Controls Relay counts and PLAYTEST tank-rest values",
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/17"
     }
   ],
   "events": [
