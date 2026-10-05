@@ -1,0 +1,3474 @@
+{
+  "method": "Disposable VM all45 initialization/source-ID checks. Grid routes and actual projectile LOS to firing points after progressively reachable terminal interactions/unlocked door opening, no actor walking/playthrough. Seed46046 independent one-nest 1800s cap-clear .02s breeding stream; no combat, native timing or human calibration claim. NestHitWork is nominal 1-damage work, not elapsed cleanup.",
+  "reports": [
+    {
+      "mission": 1,
+      "difficulty": "veryeasy",
+      "nests": 2,
+      "nestHitWork": 70,
+      "terminalsReached": 0,
+      "firing": [
+        {
+          "id": 157,
+          "point": {
+            "x": 782,
+            "y": 135
+          }
+        },
+        {
+          "id": 298,
+          "point": {
+            "x": 558,
+            "y": 395
+          }
+        }
+      ]
+    },
+    {
+      "mission": 1,
+      "difficulty": "easy",
+      "nests": 2,
+      "nestHitWork": 80,
+      "terminalsReached": 0,
+      "firing": [
+        {
+          "id": 157,
+          "point": {
+            "x": 782,
+            "y": 135
+          }
+        },
+        {
+          "id": 298,
+          "point": {
+            "x": 558,
+            "y": 395
+          }
+        }
+      ]
+    },
+    {
+      "mission": 1,
+      "difficulty": "normal",
+      "nests": 3,
+      "nestHitWork": 150,
+      "terminalsReached": 0,
+      "firing": [
+        {
+          "id": 157,
+          "point": {
+            "x": 782,
+            "y": 135
+          }
+        },
+        {
+          "id": 298,
+          "point": {
+            "x": 558,
+            "y": 395
+          }
+        },
+        {
+          "id": 299,
+          "point": {
+            "x": 856,
+            "y": 555
+          }
+        }
+      ]
+    },
+    {
+      "mission": 1,
+      "difficulty": "hard",
+      "nests": 4,
+      "nestHitWork": 200,
+      "terminalsReached": 0,
+      "firing": [
+        {
+          "id": 157,
+          "point": {
+            "x": 782,
+            "y": 135
+          }
+        },
+        {
+          "id": 49,
+          "point": {
+            "x": 986,
+            "y": 157
+          }
+        },
+        {
+          "id": 298,
+          "point": {
+            "x": 558,
+            "y": 395
+          }
+        },
+        {
+          "id": 299,
+          "point": {
+            "x": 856,
+            "y": 555
+          }
+        }
+      ]
+    },
+    {
+      "mission": 1,
+      "difficulty": "veryhard",
+      "nests": 4,
+      "nestHitWork": 220,
+      "terminalsReached": 0,
+      "firing": [
+        {
+          "id": 157,
+          "point": {
+            "x": 782,
+            "y": 135
+          }
+        },
+        {
+          "id": 49,
+          "point": {
+            "x": 986,
+            "y": 157
+          }
+        },
+        {
+          "id": 298,
+          "point": {
+            "x": 558,
+            "y": 395
+          }
+        },
+        {
+          "id": 299,
+          "point": {
+            "x": 856,
+            "y": 555
+          }
+        }
+      ]
+    },
+    {
+      "mission": 2,
+      "difficulty": "veryeasy",
+      "nests": 2,
+      "nestHitWork": 70,
+      "terminalsReached": 0,
+      "firing": [
+        {
+          "id": 157,
+          "point": {
+            "x": 661,
+            "y": 240
+          }
+        },
+        {
+          "id": 16,
+          "point": {
+            "x": 251,
+            "y": 43
+          }
+        }
+      ]
+    },
+    {
+      "mission": 2,
+      "difficulty": "easy",
+      "nests": 3,
+      "nestHitWork": 120,
+      "terminalsReached": 0,
+      "firing": [
+        {
+          "id": 157,
+          "point": {
+            "x": 661,
+            "y": 240
+          }
+        },
+        {
+          "id": 28,
+          "point": {
+            "x": 511,
+            "y": 345
+          }
+        },
+        {
+          "id": 16,
+          "point": {
+            "x": 251,
+            "y": 43
+          }
+        }
+      ]
+    },
+    {
+      "mission": 2,
+      "difficulty": "normal",
+      "nests": 4,
+      "nestHitWork": 200,
+      "terminalsReached": 0,
+      "firing": [
+        {
+          "id": 157,
+          "point": {
+            "x": 661,
+            "y": 240
+          }
+        },
+        {
+          "id": 159,
+          "point": {
+            "x": 982,
+            "y": 72
+          }
+        },
+        {
+          "id": 28,
+          "point": {
+            "x": 511,
+            "y": 345
+          }
+        },
+        {
+          "id": 16,
+          "point": {
+            "x": 251,
+            "y": 43
+          }
+        }
+      ]
+    },
+    {
+      "mission": 2,
+      "difficulty": "hard",
+      "nests": 5,
+      "nestHitWork": 250,
+      "terminalsReached": 0,
+      "firing": [
+        {
+          "id": 157,
+          "point": {
+            "x": 661,
+            "y": 240
+          }
+        },
+        {
+          "id": 159,
+          "point": {
+            "x": 982,
+            "y": 72
+          }
+        },
+        {
+          "id": 28,
+          "point": {
+            "x": 511,
+            "y": 345
+          }
+        },
+        {
+          "id": 301,
+          "point": {
+            "x": 968,
+            "y": 83
+          }
+        },
+        {
+          "id": 16,
+          "point": {
+            "x": 251,
+            "y": 43
+          }
+        }
+      ]
+    },
+    {
+      "mission": 2,
+      "difficulty": "veryhard",
+      "nests": 6,
+      "nestHitWork": 330,
+      "terminalsReached": 0,
+      "firing": [
+        {
+          "id": 157,
+          "point": {
+            "x": 661,
+            "y": 240
+          }
+        },
+        {
+          "id": 159,
+          "point": {
+            "x": 982,
+            "y": 72
+          }
+        },
+        {
+          "id": 28,
+          "point": {
+            "x": 511,
+            "y": 345
+          }
+        },
+        {
+          "id": 301,
+          "point": {
+            "x": 968,
+            "y": 83
+          }
+        },
+        {
+          "id": 302,
+          "point": {
+            "x": 781,
+            "y": 540
+          }
+        },
+        {
+          "id": 16,
+          "point": {
+            "x": 251,
+            "y": 43
+          }
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "difficulty": "veryeasy",
+      "nests": 6,
+      "nestHitWork": 210,
+      "terminalsReached": 2,
+      "firing": [
+        {
+          "id": 216,
+          "point": {
+            "x": 338,
+            "y": 533
+          }
+        },
+        {
+          "id": 219,
+          "point": {
+            "x": 568,
+            "y": 600
+          }
+        },
+        {
+          "id": 226,
+          "point": {
+            "x": 946,
+            "y": 555
+          }
+        },
+        {
+          "id": 228,
+          "point": {
+            "x": 76,
+            "y": 600
+          }
+        },
+        {
+          "id": 230,
+          "point": {
+            "x": 63,
+            "y": 303
+          }
+        },
+        {
+          "id": 231,
+          "point": {
+            "x": 758,
+            "y": 332
+          }
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "difficulty": "easy",
+      "nests": 8,
+      "nestHitWork": 320,
+      "terminalsReached": 2,
+      "firing": [
+        {
+          "id": 216,
+          "point": {
+            "x": 338,
+            "y": 533
+          }
+        },
+        {
+          "id": 217,
+          "point": {
+            "x": 339,
+            "y": 600
+          }
+        },
+        {
+          "id": 219,
+          "point": {
+            "x": 568,
+            "y": 600
+          }
+        },
+        {
+          "id": 226,
+          "point": {
+            "x": 946,
+            "y": 555
+          }
+        },
+        {
+          "id": 228,
+          "point": {
+            "x": 76,
+            "y": 600
+          }
+        },
+        {
+          "id": 230,
+          "point": {
+            "x": 63,
+            "y": 303
+          }
+        },
+        {
+          "id": 231,
+          "point": {
+            "x": 758,
+            "y": 332
+          }
+        },
+        {
+          "id": 274,
+          "point": {
+            "x": 554,
+            "y": 567
+          }
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "difficulty": "normal",
+      "nests": 11,
+      "nestHitWork": 550,
+      "terminalsReached": 2,
+      "firing": [
+        {
+          "id": 215,
+          "point": {
+            "x": 566,
+            "y": 600
+          }
+        },
+        {
+          "id": 216,
+          "point": {
+            "x": 338,
+            "y": 533
+          }
+        },
+        {
+          "id": 217,
+          "point": {
+            "x": 339,
+            "y": 600
+          }
+        },
+        {
+          "id": 219,
+          "point": {
+            "x": 568,
+            "y": 600
+          }
+        },
+        {
+          "id": 225,
+          "point": {
+            "x": 946,
+            "y": 600
+          }
+        },
+        {
+          "id": 226,
+          "point": {
+            "x": 946,
+            "y": 555
+          }
+        },
+        {
+          "id": 228,
+          "point": {
+            "x": 76,
+            "y": 600
+          }
+        },
+        {
+          "id": 230,
+          "point": {
+            "x": 63,
+            "y": 303
+          }
+        },
+        {
+          "id": 231,
+          "point": {
+            "x": 758,
+            "y": 332
+          }
+        },
+        {
+          "id": 274,
+          "point": {
+            "x": 554,
+            "y": 567
+          }
+        },
+        {
+          "id": 275,
+          "point": {
+            "x": 891,
+            "y": 599
+          }
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "difficulty": "hard",
+      "nests": 12,
+      "nestHitWork": 600,
+      "terminalsReached": 2,
+      "firing": [
+        {
+          "id": 215,
+          "point": {
+            "x": 566,
+            "y": 600
+          }
+        },
+        {
+          "id": 216,
+          "point": {
+            "x": 338,
+            "y": 533
+          }
+        },
+        {
+          "id": 217,
+          "point": {
+            "x": 339,
+            "y": 600
+          }
+        },
+        {
+          "id": 219,
+          "point": {
+            "x": 568,
+            "y": 600
+          }
+        },
+        {
+          "id": 225,
+          "point": {
+            "x": 946,
+            "y": 600
+          }
+        },
+        {
+          "id": 226,
+          "point": {
+            "x": 946,
+            "y": 555
+          }
+        },
+        {
+          "id": 227,
+          "point": {
+            "x": 946,
+            "y": 510
+          }
+        },
+        {
+          "id": 228,
+          "point": {
+            "x": 76,
+            "y": 600
+          }
+        },
+        {
+          "id": 230,
+          "point": {
+            "x": 63,
+            "y": 303
+          }
+        },
+        {
+          "id": 231,
+          "point": {
+            "x": 758,
+            "y": 332
+          }
+        },
+        {
+          "id": 274,
+          "point": {
+            "x": 554,
+            "y": 567
+          }
+        },
+        {
+          "id": 275,
+          "point": {
+            "x": 891,
+            "y": 599
+          }
+        }
+      ]
+    },
+    {
+      "mission": 3,
+      "difficulty": "veryhard",
+      "nests": 14,
+      "nestHitWork": 770,
+      "terminalsReached": 2,
+      "firing": [
+        {
+          "id": 215,
+          "point": {
+            "x": 566,
+            "y": 600
+          }
+        },
+        {
+          "id": 216,
+          "point": {
+            "x": 338,
+            "y": 533
+          }
+        },
+        {
+          "id": 217,
+          "point": {
+            "x": 339,
+            "y": 600
+          }
+        },
+        {
+          "id": 219,
+          "point": {
+            "x": 568,
+            "y": 600
+          }
+        },
+        {
+          "id": 220,
+          "point": {
+            "x": 256,
+            "y": 600
+          }
+        },
+        {
+          "id": 225,
+          "point": {
+            "x": 946,
+            "y": 600
+          }
+        },
+        {
+          "id": 226,
+          "point": {
+            "x": 946,
+            "y": 555
+          }
+        },
+        {
+          "id": 227,
+          "point": {
+            "x": 946,
+            "y": 510
+          }
+        },
+        {
+          "id": 228,
+          "point": {
+            "x": 76,
+            "y": 600
+          }
+        },
+        {
+          "id": 229,
+          "point": {
+            "x": 151,
+            "y": 600
+          }
+        },
+        {
+          "id": 230,
+          "point": {
+            "x": 63,
+            "y": 303
+          }
+        },
+        {
+          "id": 231,
+          "point": {
+            "x": 758,
+            "y": 332
+          }
+        },
+        {
+          "id": 274,
+          "point": {
+            "x": 554,
+            "y": 567
+          }
+        },
+        {
+          "id": 275,
+          "point": {
+            "x": 891,
+            "y": 599
+          }
+        }
+      ]
+    },
+    {
+      "mission": 4,
+      "difficulty": "veryeasy",
+      "nests": 3,
+      "nestHitWork": 105,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 309,
+          "point": {
+            "x": 588,
+            "y": 165
+          }
+        },
+        {
+          "id": 311,
+          "point": {
+            "x": 783,
+            "y": 177
+          }
+        },
+        {
+          "id": 307,
+          "point": {
+            "x": 31,
+            "y": 401
+          }
+        }
+      ]
+    },
+    {
+      "mission": 4,
+      "difficulty": "easy",
+      "nests": 4,
+      "nestHitWork": 160,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 309,
+          "point": {
+            "x": 588,
+            "y": 165
+          }
+        },
+        {
+          "id": 312,
+          "point": {
+            "x": 303,
+            "y": 655
+          }
+        },
+        {
+          "id": 311,
+          "point": {
+            "x": 783,
+            "y": 177
+          }
+        },
+        {
+          "id": 307,
+          "point": {
+            "x": 31,
+            "y": 401
+          }
+        }
+      ]
+    },
+    {
+      "mission": 4,
+      "difficulty": "normal",
+      "nests": 5,
+      "nestHitWork": 250,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 106,
+          "point": {
+            "x": 282,
+            "y": 585
+          }
+        },
+        {
+          "id": 309,
+          "point": {
+            "x": 588,
+            "y": 165
+          }
+        },
+        {
+          "id": 312,
+          "point": {
+            "x": 303,
+            "y": 655
+          }
+        },
+        {
+          "id": 311,
+          "point": {
+            "x": 783,
+            "y": 177
+          }
+        },
+        {
+          "id": 307,
+          "point": {
+            "x": 31,
+            "y": 401
+          }
+        }
+      ]
+    },
+    {
+      "mission": 4,
+      "difficulty": "hard",
+      "nests": 7,
+      "nestHitWork": 350,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 106,
+          "point": {
+            "x": 282,
+            "y": 585
+          }
+        },
+        {
+          "id": 306,
+          "point": {
+            "x": 926,
+            "y": 555
+          }
+        },
+        {
+          "id": 309,
+          "point": {
+            "x": 588,
+            "y": 165
+          }
+        },
+        {
+          "id": 312,
+          "point": {
+            "x": 303,
+            "y": 655
+          }
+        },
+        {
+          "id": 311,
+          "point": {
+            "x": 783,
+            "y": 177
+          }
+        },
+        {
+          "id": 301,
+          "point": {
+            "x": 106,
+            "y": 479
+          }
+        },
+        {
+          "id": 307,
+          "point": {
+            "x": 31,
+            "y": 401
+          }
+        }
+      ]
+    },
+    {
+      "mission": 4,
+      "difficulty": "veryhard",
+      "nests": 10,
+      "nestHitWork": 550,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 106,
+          "point": {
+            "x": 282,
+            "y": 585
+          }
+        },
+        {
+          "id": 108,
+          "point": {
+            "x": 300,
+            "y": 622
+          }
+        },
+        {
+          "id": 306,
+          "point": {
+            "x": 926,
+            "y": 555
+          }
+        },
+        {
+          "id": 309,
+          "point": {
+            "x": 588,
+            "y": 165
+          }
+        },
+        {
+          "id": 312,
+          "point": {
+            "x": 303,
+            "y": 655
+          }
+        },
+        {
+          "id": 311,
+          "point": {
+            "x": 783,
+            "y": 177
+          }
+        },
+        {
+          "id": 301,
+          "point": {
+            "x": 106,
+            "y": 479
+          }
+        },
+        {
+          "id": 307,
+          "point": {
+            "x": 31,
+            "y": 401
+          }
+        },
+        {
+          "id": 325,
+          "point": {
+            "x": 925,
+            "y": 507
+          }
+        },
+        {
+          "id": 326,
+          "point": {
+            "x": 925,
+            "y": 530
+          }
+        }
+      ]
+    },
+    {
+      "mission": 5,
+      "difficulty": "veryeasy",
+      "nests": 0,
+      "nestHitWork": 0,
+      "terminalsReached": 0,
+      "firing": []
+    },
+    {
+      "mission": 5,
+      "difficulty": "easy",
+      "nests": 0,
+      "nestHitWork": 0,
+      "terminalsReached": 0,
+      "firing": []
+    },
+    {
+      "mission": 5,
+      "difficulty": "normal",
+      "nests": 0,
+      "nestHitWork": 0,
+      "terminalsReached": 0,
+      "firing": []
+    },
+    {
+      "mission": 5,
+      "difficulty": "hard",
+      "nests": 0,
+      "nestHitWork": 0,
+      "terminalsReached": 0,
+      "firing": []
+    },
+    {
+      "mission": 5,
+      "difficulty": "veryhard",
+      "nests": 0,
+      "nestHitWork": 0,
+      "terminalsReached": 0,
+      "firing": []
+    },
+    {
+      "mission": 6,
+      "difficulty": "veryeasy",
+      "nests": 12,
+      "nestHitWork": 420,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 230,
+          "point": {
+            "x": 526,
+            "y": 525
+          }
+        },
+        {
+          "id": 232,
+          "point": {
+            "x": 526,
+            "y": 555
+          }
+        },
+        {
+          "id": 238,
+          "point": {
+            "x": 436,
+            "y": 585
+          }
+        },
+        {
+          "id": 243,
+          "point": {
+            "x": 436,
+            "y": 555
+          }
+        },
+        {
+          "id": 245,
+          "point": {
+            "x": 106,
+            "y": 601
+          }
+        },
+        {
+          "id": 241,
+          "point": {
+            "x": 211,
+            "y": 585
+          }
+        },
+        {
+          "id": 246,
+          "point": {
+            "x": 26,
+            "y": 43
+          }
+        },
+        {
+          "id": 247,
+          "point": {
+            "x": 23,
+            "y": 43
+          }
+        },
+        {
+          "id": 249,
+          "point": {
+            "x": 47,
+            "y": 46
+          }
+        },
+        {
+          "id": 253,
+          "point": {
+            "x": 806,
+            "y": 47
+          }
+        },
+        {
+          "id": 254,
+          "point": {
+            "x": 803,
+            "y": 47
+          }
+        },
+        {
+          "id": 325,
+          "point": {
+            "x": 122,
+            "y": 487
+          }
+        }
+      ]
+    },
+    {
+      "mission": 6,
+      "difficulty": "easy",
+      "nests": 18,
+      "nestHitWork": 720,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 218,
+          "point": {
+            "x": 616,
+            "y": 525
+          }
+        },
+        {
+          "id": 219,
+          "point": {
+            "x": 616,
+            "y": 555
+          }
+        },
+        {
+          "id": 220,
+          "point": {
+            "x": 571,
+            "y": 585
+          }
+        },
+        {
+          "id": 223,
+          "point": {
+            "x": 571,
+            "y": 525
+          }
+        },
+        {
+          "id": 224,
+          "point": {
+            "x": 571,
+            "y": 555
+          }
+        },
+        {
+          "id": 227,
+          "point": {
+            "x": 526,
+            "y": 585
+          }
+        },
+        {
+          "id": 230,
+          "point": {
+            "x": 526,
+            "y": 525
+          }
+        },
+        {
+          "id": 232,
+          "point": {
+            "x": 526,
+            "y": 555
+          }
+        },
+        {
+          "id": 238,
+          "point": {
+            "x": 436,
+            "y": 585
+          }
+        },
+        {
+          "id": 243,
+          "point": {
+            "x": 436,
+            "y": 555
+          }
+        },
+        {
+          "id": 245,
+          "point": {
+            "x": 106,
+            "y": 601
+          }
+        },
+        {
+          "id": 241,
+          "point": {
+            "x": 211,
+            "y": 585
+          }
+        },
+        {
+          "id": 246,
+          "point": {
+            "x": 26,
+            "y": 43
+          }
+        },
+        {
+          "id": 247,
+          "point": {
+            "x": 23,
+            "y": 43
+          }
+        },
+        {
+          "id": 249,
+          "point": {
+            "x": 47,
+            "y": 46
+          }
+        },
+        {
+          "id": 253,
+          "point": {
+            "x": 806,
+            "y": 47
+          }
+        },
+        {
+          "id": 254,
+          "point": {
+            "x": 803,
+            "y": 47
+          }
+        },
+        {
+          "id": 325,
+          "point": {
+            "x": 122,
+            "y": 487
+          }
+        }
+      ]
+    },
+    {
+      "mission": 6,
+      "difficulty": "normal",
+      "nests": 24,
+      "nestHitWork": 1200,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 212,
+          "point": {
+            "x": 661,
+            "y": 495
+          }
+        },
+        {
+          "id": 213,
+          "point": {
+            "x": 661,
+            "y": 525
+          }
+        },
+        {
+          "id": 214,
+          "point": {
+            "x": 661,
+            "y": 555
+          }
+        },
+        {
+          "id": 215,
+          "point": {
+            "x": 616,
+            "y": 585
+          }
+        },
+        {
+          "id": 216,
+          "point": {
+            "x": 632,
+            "y": 465
+          }
+        },
+        {
+          "id": 217,
+          "point": {
+            "x": 640,
+            "y": 495
+          }
+        },
+        {
+          "id": 218,
+          "point": {
+            "x": 616,
+            "y": 525
+          }
+        },
+        {
+          "id": 219,
+          "point": {
+            "x": 616,
+            "y": 555
+          }
+        },
+        {
+          "id": 220,
+          "point": {
+            "x": 571,
+            "y": 585
+          }
+        },
+        {
+          "id": 223,
+          "point": {
+            "x": 571,
+            "y": 525
+          }
+        },
+        {
+          "id": 224,
+          "point": {
+            "x": 571,
+            "y": 555
+          }
+        },
+        {
+          "id": 227,
+          "point": {
+            "x": 526,
+            "y": 585
+          }
+        },
+        {
+          "id": 230,
+          "point": {
+            "x": 526,
+            "y": 525
+          }
+        },
+        {
+          "id": 232,
+          "point": {
+            "x": 526,
+            "y": 555
+          }
+        },
+        {
+          "id": 238,
+          "point": {
+            "x": 436,
+            "y": 585
+          }
+        },
+        {
+          "id": 243,
+          "point": {
+            "x": 436,
+            "y": 555
+          }
+        },
+        {
+          "id": 245,
+          "point": {
+            "x": 106,
+            "y": 601
+          }
+        },
+        {
+          "id": 241,
+          "point": {
+            "x": 211,
+            "y": 585
+          }
+        },
+        {
+          "id": 246,
+          "point": {
+            "x": 26,
+            "y": 43
+          }
+        },
+        {
+          "id": 247,
+          "point": {
+            "x": 23,
+            "y": 43
+          }
+        },
+        {
+          "id": 249,
+          "point": {
+            "x": 47,
+            "y": 46
+          }
+        },
+        {
+          "id": 253,
+          "point": {
+            "x": 806,
+            "y": 47
+          }
+        },
+        {
+          "id": 254,
+          "point": {
+            "x": 803,
+            "y": 47
+          }
+        },
+        {
+          "id": 325,
+          "point": {
+            "x": 122,
+            "y": 487
+          }
+        }
+      ]
+    },
+    {
+      "mission": 6,
+      "difficulty": "hard",
+      "nests": 30,
+      "nestHitWork": 1500,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 212,
+          "point": {
+            "x": 661,
+            "y": 495
+          }
+        },
+        {
+          "id": 213,
+          "point": {
+            "x": 661,
+            "y": 525
+          }
+        },
+        {
+          "id": 214,
+          "point": {
+            "x": 661,
+            "y": 555
+          }
+        },
+        {
+          "id": 215,
+          "point": {
+            "x": 616,
+            "y": 585
+          }
+        },
+        {
+          "id": 216,
+          "point": {
+            "x": 632,
+            "y": 465
+          }
+        },
+        {
+          "id": 217,
+          "point": {
+            "x": 640,
+            "y": 495
+          }
+        },
+        {
+          "id": 218,
+          "point": {
+            "x": 616,
+            "y": 525
+          }
+        },
+        {
+          "id": 219,
+          "point": {
+            "x": 616,
+            "y": 555
+          }
+        },
+        {
+          "id": 220,
+          "point": {
+            "x": 571,
+            "y": 585
+          }
+        },
+        {
+          "id": 223,
+          "point": {
+            "x": 571,
+            "y": 525
+          }
+        },
+        {
+          "id": 224,
+          "point": {
+            "x": 571,
+            "y": 555
+          }
+        },
+        {
+          "id": 227,
+          "point": {
+            "x": 526,
+            "y": 585
+          }
+        },
+        {
+          "id": 230,
+          "point": {
+            "x": 526,
+            "y": 525
+          }
+        },
+        {
+          "id": 232,
+          "point": {
+            "x": 526,
+            "y": 555
+          }
+        },
+        {
+          "id": 238,
+          "point": {
+            "x": 436,
+            "y": 585
+          }
+        },
+        {
+          "id": 243,
+          "point": {
+            "x": 436,
+            "y": 555
+          }
+        },
+        {
+          "id": 245,
+          "point": {
+            "x": 106,
+            "y": 601
+          }
+        },
+        {
+          "id": 234,
+          "point": {
+            "x": 704,
+            "y": 410
+          }
+        },
+        {
+          "id": 239,
+          "point": {
+            "x": 302,
+            "y": 588
+          }
+        },
+        {
+          "id": 241,
+          "point": {
+            "x": 211,
+            "y": 585
+          }
+        },
+        {
+          "id": 246,
+          "point": {
+            "x": 26,
+            "y": 43
+          }
+        },
+        {
+          "id": 247,
+          "point": {
+            "x": 23,
+            "y": 43
+          }
+        },
+        {
+          "id": 249,
+          "point": {
+            "x": 47,
+            "y": 46
+          }
+        },
+        {
+          "id": 253,
+          "point": {
+            "x": 806,
+            "y": 47
+          }
+        },
+        {
+          "id": 254,
+          "point": {
+            "x": 803,
+            "y": 47
+          }
+        },
+        {
+          "id": 258,
+          "point": {
+            "x": 837,
+            "y": 47
+          }
+        },
+        {
+          "id": 204,
+          "point": {
+            "x": 89,
+            "y": 67
+          }
+        },
+        {
+          "id": 206,
+          "point": {
+            "x": 801,
+            "y": 42
+          }
+        },
+        {
+          "id": 305,
+          "point": {
+            "x": 805,
+            "y": 47
+          }
+        },
+        {
+          "id": 325,
+          "point": {
+            "x": 122,
+            "y": 487
+          }
+        }
+      ]
+    },
+    {
+      "mission": 6,
+      "difficulty": "veryhard",
+      "nests": 36,
+      "nestHitWork": 1980,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 212,
+          "point": {
+            "x": 661,
+            "y": 495
+          }
+        },
+        {
+          "id": 213,
+          "point": {
+            "x": 661,
+            "y": 525
+          }
+        },
+        {
+          "id": 214,
+          "point": {
+            "x": 661,
+            "y": 555
+          }
+        },
+        {
+          "id": 215,
+          "point": {
+            "x": 616,
+            "y": 585
+          }
+        },
+        {
+          "id": 216,
+          "point": {
+            "x": 632,
+            "y": 465
+          }
+        },
+        {
+          "id": 217,
+          "point": {
+            "x": 640,
+            "y": 495
+          }
+        },
+        {
+          "id": 218,
+          "point": {
+            "x": 616,
+            "y": 525
+          }
+        },
+        {
+          "id": 219,
+          "point": {
+            "x": 616,
+            "y": 555
+          }
+        },
+        {
+          "id": 220,
+          "point": {
+            "x": 571,
+            "y": 585
+          }
+        },
+        {
+          "id": 221,
+          "point": {
+            "x": 571,
+            "y": 465
+          }
+        },
+        {
+          "id": 222,
+          "point": {
+            "x": 571,
+            "y": 495
+          }
+        },
+        {
+          "id": 223,
+          "point": {
+            "x": 571,
+            "y": 525
+          }
+        },
+        {
+          "id": 224,
+          "point": {
+            "x": 571,
+            "y": 555
+          }
+        },
+        {
+          "id": 227,
+          "point": {
+            "x": 526,
+            "y": 585
+          }
+        },
+        {
+          "id": 230,
+          "point": {
+            "x": 526,
+            "y": 525
+          }
+        },
+        {
+          "id": 232,
+          "point": {
+            "x": 526,
+            "y": 555
+          }
+        },
+        {
+          "id": 233,
+          "point": {
+            "x": 481,
+            "y": 585
+          }
+        },
+        {
+          "id": 235,
+          "point": {
+            "x": 481,
+            "y": 525
+          }
+        },
+        {
+          "id": 236,
+          "point": {
+            "x": 481,
+            "y": 555
+          }
+        },
+        {
+          "id": 238,
+          "point": {
+            "x": 436,
+            "y": 585
+          }
+        },
+        {
+          "id": 243,
+          "point": {
+            "x": 436,
+            "y": 555
+          }
+        },
+        {
+          "id": 245,
+          "point": {
+            "x": 106,
+            "y": 601
+          }
+        },
+        {
+          "id": 229,
+          "point": {
+            "x": 661,
+            "y": 465
+          }
+        },
+        {
+          "id": 234,
+          "point": {
+            "x": 704,
+            "y": 410
+          }
+        },
+        {
+          "id": 239,
+          "point": {
+            "x": 302,
+            "y": 588
+          }
+        },
+        {
+          "id": 241,
+          "point": {
+            "x": 211,
+            "y": 585
+          }
+        },
+        {
+          "id": 246,
+          "point": {
+            "x": 26,
+            "y": 43
+          }
+        },
+        {
+          "id": 247,
+          "point": {
+            "x": 23,
+            "y": 43
+          }
+        },
+        {
+          "id": 249,
+          "point": {
+            "x": 47,
+            "y": 46
+          }
+        },
+        {
+          "id": 253,
+          "point": {
+            "x": 806,
+            "y": 47
+          }
+        },
+        {
+          "id": 254,
+          "point": {
+            "x": 803,
+            "y": 47
+          }
+        },
+        {
+          "id": 258,
+          "point": {
+            "x": 837,
+            "y": 47
+          }
+        },
+        {
+          "id": 204,
+          "point": {
+            "x": 89,
+            "y": 67
+          }
+        },
+        {
+          "id": 206,
+          "point": {
+            "x": 801,
+            "y": 42
+          }
+        },
+        {
+          "id": 305,
+          "point": {
+            "x": 805,
+            "y": 47
+          }
+        },
+        {
+          "id": 325,
+          "point": {
+            "x": 122,
+            "y": 487
+          }
+        }
+      ]
+    },
+    {
+      "mission": 7,
+      "difficulty": "veryeasy",
+      "nests": 12,
+      "nestHitWork": 420,
+      "terminalsReached": 8,
+      "firing": [
+        {
+          "id": 175,
+          "point": {
+            "x": 423,
+            "y": 650
+          }
+        },
+        {
+          "id": 179,
+          "point": {
+            "x": 996,
+            "y": 525
+          }
+        },
+        {
+          "id": 189,
+          "point": {
+            "x": 115,
+            "y": 323
+          }
+        },
+        {
+          "id": 312,
+          "point": {
+            "x": 790,
+            "y": 321
+          }
+        },
+        {
+          "id": 325,
+          "point": {
+            "x": 535,
+            "y": 232
+          }
+        },
+        {
+          "id": 326,
+          "point": {
+            "x": 610,
+            "y": 106
+          }
+        },
+        {
+          "id": 338,
+          "point": {
+            "x": 356,
+            "y": 184
+          }
+        },
+        {
+          "id": 340,
+          "point": {
+            "x": 729,
+            "y": 114
+          }
+        },
+        {
+          "id": 341,
+          "point": {
+            "x": 124,
+            "y": 326
+          }
+        },
+        {
+          "id": 342,
+          "point": {
+            "x": 755,
+            "y": 326
+          }
+        },
+        {
+          "id": 403,
+          "point": {
+            "x": 129,
+            "y": 111
+          }
+        },
+        {
+          "id": 406,
+          "point": {
+            "x": 727,
+            "y": 109
+          }
+        }
+      ]
+    },
+    {
+      "mission": 7,
+      "difficulty": "easy",
+      "nests": 16,
+      "nestHitWork": 640,
+      "terminalsReached": 8,
+      "firing": [
+        {
+          "id": 175,
+          "point": {
+            "x": 423,
+            "y": 650
+          }
+        },
+        {
+          "id": 179,
+          "point": {
+            "x": 996,
+            "y": 525
+          }
+        },
+        {
+          "id": 189,
+          "point": {
+            "x": 115,
+            "y": 323
+          }
+        },
+        {
+          "id": 312,
+          "point": {
+            "x": 790,
+            "y": 321
+          }
+        },
+        {
+          "id": 324,
+          "point": {
+            "x": 185,
+            "y": 597
+          }
+        },
+        {
+          "id": 325,
+          "point": {
+            "x": 535,
+            "y": 232
+          }
+        },
+        {
+          "id": 326,
+          "point": {
+            "x": 610,
+            "y": 106
+          }
+        },
+        {
+          "id": 338,
+          "point": {
+            "x": 356,
+            "y": 184
+          }
+        },
+        {
+          "id": 340,
+          "point": {
+            "x": 729,
+            "y": 114
+          }
+        },
+        {
+          "id": 341,
+          "point": {
+            "x": 124,
+            "y": 326
+          }
+        },
+        {
+          "id": 342,
+          "point": {
+            "x": 755,
+            "y": 326
+          }
+        },
+        {
+          "id": 349,
+          "point": {
+            "x": 576,
+            "y": 298
+          }
+        },
+        {
+          "id": 403,
+          "point": {
+            "x": 129,
+            "y": 111
+          }
+        },
+        {
+          "id": 404,
+          "point": {
+            "x": 111,
+            "y": 321
+          }
+        },
+        {
+          "id": 405,
+          "point": {
+            "x": 604,
+            "y": 102
+          }
+        },
+        {
+          "id": 406,
+          "point": {
+            "x": 727,
+            "y": 109
+          }
+        }
+      ]
+    },
+    {
+      "mission": 7,
+      "difficulty": "normal",
+      "nests": 20,
+      "nestHitWork": 1000,
+      "terminalsReached": 8,
+      "firing": [
+        {
+          "id": 214,
+          "point": {
+            "x": 483,
+            "y": 650
+          }
+        },
+        {
+          "id": 175,
+          "point": {
+            "x": 423,
+            "y": 650
+          }
+        },
+        {
+          "id": 179,
+          "point": {
+            "x": 996,
+            "y": 525
+          }
+        },
+        {
+          "id": 183,
+          "point": {
+            "x": 236,
+            "y": 649
+          }
+        },
+        {
+          "id": 189,
+          "point": {
+            "x": 115,
+            "y": 323
+          }
+        },
+        {
+          "id": 312,
+          "point": {
+            "x": 790,
+            "y": 321
+          }
+        },
+        {
+          "id": 324,
+          "point": {
+            "x": 185,
+            "y": 597
+          }
+        },
+        {
+          "id": 325,
+          "point": {
+            "x": 535,
+            "y": 232
+          }
+        },
+        {
+          "id": 326,
+          "point": {
+            "x": 610,
+            "y": 106
+          }
+        },
+        {
+          "id": 338,
+          "point": {
+            "x": 356,
+            "y": 184
+          }
+        },
+        {
+          "id": 340,
+          "point": {
+            "x": 729,
+            "y": 114
+          }
+        },
+        {
+          "id": 341,
+          "point": {
+            "x": 124,
+            "y": 326
+          }
+        },
+        {
+          "id": 342,
+          "point": {
+            "x": 755,
+            "y": 326
+          }
+        },
+        {
+          "id": 349,
+          "point": {
+            "x": 576,
+            "y": 298
+          }
+        },
+        {
+          "id": 401,
+          "point": {
+            "x": 757,
+            "y": 321
+          }
+        },
+        {
+          "id": 402,
+          "point": {
+            "x": 412,
+            "y": 655
+          }
+        },
+        {
+          "id": 403,
+          "point": {
+            "x": 129,
+            "y": 111
+          }
+        },
+        {
+          "id": 404,
+          "point": {
+            "x": 111,
+            "y": 321
+          }
+        },
+        {
+          "id": 405,
+          "point": {
+            "x": 604,
+            "y": 102
+          }
+        },
+        {
+          "id": 406,
+          "point": {
+            "x": 727,
+            "y": 109
+          }
+        }
+      ]
+    },
+    {
+      "mission": 7,
+      "difficulty": "hard",
+      "nests": 20,
+      "nestHitWork": 1000,
+      "terminalsReached": 8,
+      "firing": [
+        {
+          "id": 214,
+          "point": {
+            "x": 483,
+            "y": 650
+          }
+        },
+        {
+          "id": 175,
+          "point": {
+            "x": 423,
+            "y": 650
+          }
+        },
+        {
+          "id": 179,
+          "point": {
+            "x": 996,
+            "y": 525
+          }
+        },
+        {
+          "id": 183,
+          "point": {
+            "x": 236,
+            "y": 649
+          }
+        },
+        {
+          "id": 189,
+          "point": {
+            "x": 115,
+            "y": 323
+          }
+        },
+        {
+          "id": 312,
+          "point": {
+            "x": 790,
+            "y": 321
+          }
+        },
+        {
+          "id": 324,
+          "point": {
+            "x": 185,
+            "y": 597
+          }
+        },
+        {
+          "id": 325,
+          "point": {
+            "x": 535,
+            "y": 232
+          }
+        },
+        {
+          "id": 326,
+          "point": {
+            "x": 610,
+            "y": 106
+          }
+        },
+        {
+          "id": 338,
+          "point": {
+            "x": 356,
+            "y": 184
+          }
+        },
+        {
+          "id": 340,
+          "point": {
+            "x": 729,
+            "y": 114
+          }
+        },
+        {
+          "id": 341,
+          "point": {
+            "x": 124,
+            "y": 326
+          }
+        },
+        {
+          "id": 342,
+          "point": {
+            "x": 755,
+            "y": 326
+          }
+        },
+        {
+          "id": 349,
+          "point": {
+            "x": 576,
+            "y": 298
+          }
+        },
+        {
+          "id": 401,
+          "point": {
+            "x": 757,
+            "y": 321
+          }
+        },
+        {
+          "id": 402,
+          "point": {
+            "x": 412,
+            "y": 655
+          }
+        },
+        {
+          "id": 403,
+          "point": {
+            "x": 129,
+            "y": 111
+          }
+        },
+        {
+          "id": 404,
+          "point": {
+            "x": 111,
+            "y": 321
+          }
+        },
+        {
+          "id": 405,
+          "point": {
+            "x": 604,
+            "y": 102
+          }
+        },
+        {
+          "id": 406,
+          "point": {
+            "x": 727,
+            "y": 109
+          }
+        }
+      ]
+    },
+    {
+      "mission": 7,
+      "difficulty": "veryhard",
+      "nests": 20,
+      "nestHitWork": 1100,
+      "terminalsReached": 8,
+      "firing": [
+        {
+          "id": 214,
+          "point": {
+            "x": 483,
+            "y": 650
+          }
+        },
+        {
+          "id": 175,
+          "point": {
+            "x": 423,
+            "y": 650
+          }
+        },
+        {
+          "id": 179,
+          "point": {
+            "x": 996,
+            "y": 525
+          }
+        },
+        {
+          "id": 183,
+          "point": {
+            "x": 236,
+            "y": 649
+          }
+        },
+        {
+          "id": 189,
+          "point": {
+            "x": 115,
+            "y": 323
+          }
+        },
+        {
+          "id": 312,
+          "point": {
+            "x": 790,
+            "y": 321
+          }
+        },
+        {
+          "id": 324,
+          "point": {
+            "x": 185,
+            "y": 597
+          }
+        },
+        {
+          "id": 325,
+          "point": {
+            "x": 535,
+            "y": 232
+          }
+        },
+        {
+          "id": 326,
+          "point": {
+            "x": 610,
+            "y": 106
+          }
+        },
+        {
+          "id": 338,
+          "point": {
+            "x": 356,
+            "y": 184
+          }
+        },
+        {
+          "id": 340,
+          "point": {
+            "x": 729,
+            "y": 114
+          }
+        },
+        {
+          "id": 341,
+          "point": {
+            "x": 124,
+            "y": 326
+          }
+        },
+        {
+          "id": 342,
+          "point": {
+            "x": 755,
+            "y": 326
+          }
+        },
+        {
+          "id": 349,
+          "point": {
+            "x": 576,
+            "y": 298
+          }
+        },
+        {
+          "id": 401,
+          "point": {
+            "x": 757,
+            "y": 321
+          }
+        },
+        {
+          "id": 402,
+          "point": {
+            "x": 412,
+            "y": 655
+          }
+        },
+        {
+          "id": 403,
+          "point": {
+            "x": 129,
+            "y": 111
+          }
+        },
+        {
+          "id": 404,
+          "point": {
+            "x": 111,
+            "y": 321
+          }
+        },
+        {
+          "id": 405,
+          "point": {
+            "x": 604,
+            "y": 102
+          }
+        },
+        {
+          "id": 406,
+          "point": {
+            "x": 727,
+            "y": 109
+          }
+        }
+      ]
+    },
+    {
+      "mission": 8,
+      "difficulty": "veryeasy",
+      "nests": 12,
+      "nestHitWork": 420,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 403,
+          "point": {
+            "x": 388,
+            "y": 41
+          }
+        },
+        {
+          "id": 245,
+          "point": {
+            "x": 347,
+            "y": 44
+          }
+        },
+        {
+          "id": 248,
+          "point": {
+            "x": 478,
+            "y": 45
+          }
+        },
+        {
+          "id": 256,
+          "point": {
+            "x": 368,
+            "y": 101
+          }
+        },
+        {
+          "id": 267,
+          "point": {
+            "x": 495,
+            "y": 407
+          }
+        },
+        {
+          "id": 268,
+          "point": {
+            "x": 192,
+            "y": 465
+          }
+        },
+        {
+          "id": 280,
+          "point": {
+            "x": 302,
+            "y": 676
+          }
+        },
+        {
+          "id": 281,
+          "point": {
+            "x": 450,
+            "y": 673
+          }
+        },
+        {
+          "id": 301,
+          "point": {
+            "x": 305,
+            "y": 46
+          }
+        },
+        {
+          "id": 303,
+          "point": {
+            "x": 549,
+            "y": 54
+          }
+        },
+        {
+          "id": 426,
+          "point": {
+            "x": 808,
+            "y": 312
+          }
+        },
+        {
+          "id": 428,
+          "point": {
+            "x": 836,
+            "y": 345
+          }
+        }
+      ]
+    },
+    {
+      "mission": 8,
+      "difficulty": "easy",
+      "nests": 17,
+      "nestHitWork": 680,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 403,
+          "point": {
+            "x": 388,
+            "y": 41
+          }
+        },
+        {
+          "id": 245,
+          "point": {
+            "x": 347,
+            "y": 44
+          }
+        },
+        {
+          "id": 248,
+          "point": {
+            "x": 478,
+            "y": 45
+          }
+        },
+        {
+          "id": 256,
+          "point": {
+            "x": 368,
+            "y": 101
+          }
+        },
+        {
+          "id": 267,
+          "point": {
+            "x": 495,
+            "y": 407
+          }
+        },
+        {
+          "id": 268,
+          "point": {
+            "x": 192,
+            "y": 465
+          }
+        },
+        {
+          "id": 269,
+          "point": {
+            "x": 195,
+            "y": 448
+          }
+        },
+        {
+          "id": 270,
+          "point": {
+            "x": 174,
+            "y": 491
+          }
+        },
+        {
+          "id": 275,
+          "point": {
+            "x": 149,
+            "y": 520
+          }
+        },
+        {
+          "id": 278,
+          "point": {
+            "x": 150,
+            "y": 521
+          }
+        },
+        {
+          "id": 280,
+          "point": {
+            "x": 302,
+            "y": 676
+          }
+        },
+        {
+          "id": 281,
+          "point": {
+            "x": 450,
+            "y": 673
+          }
+        },
+        {
+          "id": 286,
+          "point": {
+            "x": 117,
+            "y": 551
+          }
+        },
+        {
+          "id": 301,
+          "point": {
+            "x": 305,
+            "y": 46
+          }
+        },
+        {
+          "id": 303,
+          "point": {
+            "x": 549,
+            "y": 54
+          }
+        },
+        {
+          "id": 426,
+          "point": {
+            "x": 808,
+            "y": 312
+          }
+        },
+        {
+          "id": 428,
+          "point": {
+            "x": 836,
+            "y": 345
+          }
+        }
+      ]
+    },
+    {
+      "mission": 8,
+      "difficulty": "normal",
+      "nests": 22,
+      "nestHitWork": 1100,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 403,
+          "point": {
+            "x": 388,
+            "y": 41
+          }
+        },
+        {
+          "id": 245,
+          "point": {
+            "x": 347,
+            "y": 44
+          }
+        },
+        {
+          "id": 248,
+          "point": {
+            "x": 478,
+            "y": 45
+          }
+        },
+        {
+          "id": 256,
+          "point": {
+            "x": 368,
+            "y": 101
+          }
+        },
+        {
+          "id": 267,
+          "point": {
+            "x": 495,
+            "y": 407
+          }
+        },
+        {
+          "id": 268,
+          "point": {
+            "x": 192,
+            "y": 465
+          }
+        },
+        {
+          "id": 269,
+          "point": {
+            "x": 195,
+            "y": 448
+          }
+        },
+        {
+          "id": 270,
+          "point": {
+            "x": 174,
+            "y": 491
+          }
+        },
+        {
+          "id": 271,
+          "point": {
+            "x": 169,
+            "y": 492
+          }
+        },
+        {
+          "id": 275,
+          "point": {
+            "x": 149,
+            "y": 520
+          }
+        },
+        {
+          "id": 278,
+          "point": {
+            "x": 150,
+            "y": 521
+          }
+        },
+        {
+          "id": 279,
+          "point": {
+            "x": 157,
+            "y": 518
+          }
+        },
+        {
+          "id": 280,
+          "point": {
+            "x": 302,
+            "y": 676
+          }
+        },
+        {
+          "id": 281,
+          "point": {
+            "x": 450,
+            "y": 673
+          }
+        },
+        {
+          "id": 286,
+          "point": {
+            "x": 117,
+            "y": 551
+          }
+        },
+        {
+          "id": 287,
+          "point": {
+            "x": 191,
+            "y": 490
+          }
+        },
+        {
+          "id": 300,
+          "point": {
+            "x": 79,
+            "y": 551
+          }
+        },
+        {
+          "id": 301,
+          "point": {
+            "x": 305,
+            "y": 46
+          }
+        },
+        {
+          "id": 302,
+          "point": {
+            "x": 192,
+            "y": 464
+          }
+        },
+        {
+          "id": 303,
+          "point": {
+            "x": 549,
+            "y": 54
+          }
+        },
+        {
+          "id": 426,
+          "point": {
+            "x": 808,
+            "y": 312
+          }
+        },
+        {
+          "id": 428,
+          "point": {
+            "x": 836,
+            "y": 345
+          }
+        }
+      ]
+    },
+    {
+      "mission": 8,
+      "difficulty": "hard",
+      "nests": 27,
+      "nestHitWork": 1350,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 403,
+          "point": {
+            "x": 388,
+            "y": 41
+          }
+        },
+        {
+          "id": 243,
+          "point": {
+            "x": 417,
+            "y": 42
+          }
+        },
+        {
+          "id": 245,
+          "point": {
+            "x": 347,
+            "y": 44
+          }
+        },
+        {
+          "id": 246,
+          "point": {
+            "x": 287,
+            "y": 46
+          }
+        },
+        {
+          "id": 248,
+          "point": {
+            "x": 478,
+            "y": 45
+          }
+        },
+        {
+          "id": 250,
+          "point": {
+            "x": 409,
+            "y": 41
+          }
+        },
+        {
+          "id": 253,
+          "point": {
+            "x": 317,
+            "y": 44
+          }
+        },
+        {
+          "id": 256,
+          "point": {
+            "x": 368,
+            "y": 101
+          }
+        },
+        {
+          "id": 258,
+          "point": {
+            "x": 387,
+            "y": 94
+          }
+        },
+        {
+          "id": 267,
+          "point": {
+            "x": 495,
+            "y": 407
+          }
+        },
+        {
+          "id": 268,
+          "point": {
+            "x": 192,
+            "y": 465
+          }
+        },
+        {
+          "id": 269,
+          "point": {
+            "x": 195,
+            "y": 448
+          }
+        },
+        {
+          "id": 270,
+          "point": {
+            "x": 174,
+            "y": 491
+          }
+        },
+        {
+          "id": 271,
+          "point": {
+            "x": 169,
+            "y": 492
+          }
+        },
+        {
+          "id": 275,
+          "point": {
+            "x": 149,
+            "y": 520
+          }
+        },
+        {
+          "id": 278,
+          "point": {
+            "x": 150,
+            "y": 521
+          }
+        },
+        {
+          "id": 279,
+          "point": {
+            "x": 157,
+            "y": 518
+          }
+        },
+        {
+          "id": 280,
+          "point": {
+            "x": 302,
+            "y": 676
+          }
+        },
+        {
+          "id": 281,
+          "point": {
+            "x": 450,
+            "y": 673
+          }
+        },
+        {
+          "id": 286,
+          "point": {
+            "x": 117,
+            "y": 551
+          }
+        },
+        {
+          "id": 287,
+          "point": {
+            "x": 191,
+            "y": 490
+          }
+        },
+        {
+          "id": 300,
+          "point": {
+            "x": 79,
+            "y": 551
+          }
+        },
+        {
+          "id": 301,
+          "point": {
+            "x": 305,
+            "y": 46
+          }
+        },
+        {
+          "id": 302,
+          "point": {
+            "x": 192,
+            "y": 464
+          }
+        },
+        {
+          "id": 303,
+          "point": {
+            "x": 549,
+            "y": 54
+          }
+        },
+        {
+          "id": 426,
+          "point": {
+            "x": 808,
+            "y": 312
+          }
+        },
+        {
+          "id": 428,
+          "point": {
+            "x": 836,
+            "y": 345
+          }
+        }
+      ]
+    },
+    {
+      "mission": 8,
+      "difficulty": "veryhard",
+      "nests": 30,
+      "nestHitWork": 1650,
+      "terminalsReached": 1,
+      "firing": [
+        {
+          "id": 403,
+          "point": {
+            "x": 388,
+            "y": 41
+          }
+        },
+        {
+          "id": 243,
+          "point": {
+            "x": 417,
+            "y": 42
+          }
+        },
+        {
+          "id": 245,
+          "point": {
+            "x": 347,
+            "y": 44
+          }
+        },
+        {
+          "id": 246,
+          "point": {
+            "x": 287,
+            "y": 46
+          }
+        },
+        {
+          "id": 248,
+          "point": {
+            "x": 478,
+            "y": 45
+          }
+        },
+        {
+          "id": 250,
+          "point": {
+            "x": 409,
+            "y": 41
+          }
+        },
+        {
+          "id": 253,
+          "point": {
+            "x": 317,
+            "y": 44
+          }
+        },
+        {
+          "id": 256,
+          "point": {
+            "x": 368,
+            "y": 101
+          }
+        },
+        {
+          "id": 258,
+          "point": {
+            "x": 387,
+            "y": 94
+          }
+        },
+        {
+          "id": 263,
+          "point": {
+            "x": 480,
+            "y": 218
+          }
+        },
+        {
+          "id": 264,
+          "point": {
+            "x": 343,
+            "y": 450
+          }
+        },
+        {
+          "id": 267,
+          "point": {
+            "x": 495,
+            "y": 407
+          }
+        },
+        {
+          "id": 268,
+          "point": {
+            "x": 192,
+            "y": 465
+          }
+        },
+        {
+          "id": 269,
+          "point": {
+            "x": 195,
+            "y": 448
+          }
+        },
+        {
+          "id": 270,
+          "point": {
+            "x": 174,
+            "y": 491
+          }
+        },
+        {
+          "id": 271,
+          "point": {
+            "x": 169,
+            "y": 492
+          }
+        },
+        {
+          "id": 275,
+          "point": {
+            "x": 149,
+            "y": 520
+          }
+        },
+        {
+          "id": 278,
+          "point": {
+            "x": 150,
+            "y": 521
+          }
+        },
+        {
+          "id": 279,
+          "point": {
+            "x": 157,
+            "y": 518
+          }
+        },
+        {
+          "id": 280,
+          "point": {
+            "x": 302,
+            "y": 676
+          }
+        },
+        {
+          "id": 281,
+          "point": {
+            "x": 450,
+            "y": 673
+          }
+        },
+        {
+          "id": 286,
+          "point": {
+            "x": 117,
+            "y": 551
+          }
+        },
+        {
+          "id": 287,
+          "point": {
+            "x": 191,
+            "y": 490
+          }
+        },
+        {
+          "id": 300,
+          "point": {
+            "x": 79,
+            "y": 551
+          }
+        },
+        {
+          "id": 301,
+          "point": {
+            "x": 305,
+            "y": 46
+          }
+        },
+        {
+          "id": 302,
+          "point": {
+            "x": 192,
+            "y": 464
+          }
+        },
+        {
+          "id": 303,
+          "point": {
+            "x": 549,
+            "y": 54
+          }
+        },
+        {
+          "id": 426,
+          "point": {
+            "x": 808,
+            "y": 312
+          }
+        },
+        {
+          "id": 428,
+          "point": {
+            "x": 836,
+            "y": 345
+          }
+        },
+        {
+          "id": 429,
+          "point": {
+            "x": 854,
+            "y": 345
+          }
+        }
+      ]
+    },
+    {
+      "mission": 9,
+      "difficulty": "veryeasy",
+      "nests": 0,
+      "nestHitWork": 0,
+      "terminalsReached": 2,
+      "firing": []
+    },
+    {
+      "mission": 9,
+      "difficulty": "easy",
+      "nests": 0,
+      "nestHitWork": 0,
+      "terminalsReached": 2,
+      "firing": []
+    },
+    {
+      "mission": 9,
+      "difficulty": "normal",
+      "nests": 0,
+      "nestHitWork": 0,
+      "terminalsReached": 2,
+      "firing": []
+    },
+    {
+      "mission": 9,
+      "difficulty": "hard",
+      "nests": 0,
+      "nestHitWork": 0,
+      "terminalsReached": 2,
+      "firing": []
+    },
+    {
+      "mission": 9,
+      "difficulty": "veryhard",
+      "nests": 0,
+      "nestHitWork": 0,
+      "terminalsReached": 2,
+      "firing": []
+    }
+  ],
+  "pressure": [
+    {
+      "difficulty": "veryeasy",
+      "independentRolls": 100000,
+      "binHits": 2048,
+      "cappedBirths": 0,
+      "seconds": 1800,
+      "opportunities": 3600,
+      "successes": 78,
+      "births": 74,
+      "busySkipped": 4
+    },
+    {
+      "difficulty": "easy",
+      "independentRolls": 100000,
+      "binHits": 3061,
+      "cappedBirths": 0,
+      "seconds": 1800,
+      "opportunities": 3600,
+      "successes": 115,
+      "births": 104,
+      "busySkipped": 10
+    },
+    {
+      "difficulty": "normal",
+      "independentRolls": 100000,
+      "binHits": 4039,
+      "cappedBirths": 0,
+      "seconds": 1800,
+      "opportunities": 3600,
+      "successes": 150,
+      "births": 132,
+      "busySkipped": 17
+    },
+    {
+      "difficulty": "hard",
+      "independentRolls": 100000,
+      "binHits": 5062,
+      "cappedBirths": 0,
+      "seconds": 1800,
+      "opportunities": 3600,
+      "successes": 196,
+      "births": 170,
+      "busySkipped": 25
+    },
+    {
+      "difficulty": "veryhard",
+      "independentRolls": 100000,
+      "binHits": 6008,
+      "cappedBirths": 0,
+      "seconds": 1800,
+      "opportunities": 3600,
+      "successes": 236,
+      "births": 191,
+      "busySkipped": 44
+    }
+  ]
+}
