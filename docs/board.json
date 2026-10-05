@@ -647,6 +647,14 @@
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
       "questions": []
+    },
+    {
+      "id": "TRI-046",
+      "title": "Implement mixed original-mission difficulty profiles",
+      "task": "docs/tasks/difficulty-profile-tuning.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -2284,6 +2292,16 @@
         "extract-rendering",
         "Extract battlefield rendering system",
         "Extract battlefield rendering with explicit state/assets inputs; preserve coordinate/sprite and mounted rendering conventions"
+      ]
+    },
+    {
+      "at": "2026-10-05T07:02:08.597Z",
+      "command": "create",
+      "ticket": "TRI-046",
+      "details": [
+        "difficulty-profile-tuning",
+        "Implement mixed original-mission difficulty profiles",
+        "Implement documented five-setting tactical/attrition profiles for original missions, keeping Normal baseline and custom mission profiles isolated; verify layouts and pressure"
       ]
     }
   ]

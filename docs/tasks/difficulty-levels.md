@@ -17,6 +17,8 @@ User requested this ticket on 2026-10-04 for refinement in the director conversa
 
 ## Sessions
 
+2026-10-05 autonomous queue mandate authorizes director selection of remaining initial tuning. [TRI-046](difficulty-profile-tuning.md) implements the documented TRI-020 mixed original-mission candidate profiles, retaining Normal reference and excluding the optional resource boost. Existing custom retunes do not substitute for these original-mission profiles. Parent closes after child review and evidence reconciliation; human calibration/native timing limitations remain explicit.
+
 
 ## Refinement decisions — 2026-10-04
 
