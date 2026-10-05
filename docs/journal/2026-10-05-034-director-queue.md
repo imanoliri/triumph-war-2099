@@ -13,3 +13,9 @@ TRI-043 /root/orders_extract_worker runs in ../triumph-extract-orders-input, cho
 Then TRI-044 support lifecycle and TRI-045 rendering, both Ready, sequential isolated branches. TRI-003 umbrella closes only after all four actual accepted extractions. Next controls/research/auditory work and necessary bounded fixes, then full TRI-001/002 final-build acceptance. All-nine Normal and four-custom live scope is preserved.
 
 TRI-006 native Project prerequisite was revalidated: browser signed out, no linked Project and no Project connector operation; exact next access/migration action is in publication-tracking. Issues are real mirrors, not a native Project. TRI-039 remains withdrawn. Original-game research belongs to a worker. Unrelated assets/provenance.json remains unstaged.
+
+## TRI-043 accepted and latest next action
+
+Worker0f60e3d9d797cae2e35db5a251a37d33143bb93b independently reviewed; squash98837db4ab84433a4a68533be808fba71618e8e9. Root focused43381 exited0 with strengthened rendered-hint comparison and immutable mission/input alias sequences. Worker full56306, focused62141 and project/diff checks passed. Root ordinary IAB2143 review found two implementation-name hint leaks; worker restored source wording and added actual DOM hints to immutable snapshots. Final reload verified tactical deployment, all four exclusive selectors/deselection, Controls restore, physical R/Escape precedence and F2 ownership reset/redeploy. Browser evidence is attributed to director; no hidden-state injection, audio/full gameplay or persisted screenshot claim. Temporary tab/server closed.
+
+Latest next action: dispatch Ready TRI-044 support lifecycle in an isolated branch from integrated main, then TRI-045. Check hosted CI for pushed043 rather than inferring its result from prior042 green run. Move toward controls/research and final full acceptance afterward; goal remains active. Preserve unrelated provenance and withdrawn039.

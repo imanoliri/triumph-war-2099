@@ -737,17 +737,18 @@
       "id": "TRI-043",
       "title": "Extract troop orders and input system",
       "task": "docs/tasks/extract-orders-input.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent input baseline43381 and final DOM smoke pass, full18-check worker suite and scoped review accepted; broader gameplay/audio remains queued",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/12",
       "approval": "User autonomous queue mandate; reviewed bounded behavior-preserving scope, execute after TRI-042",
-      "worker": {
-        "id": "/root/orders_extract_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-extract-orders-input",
-        "branch": "chore/extract-orders-input"
-      },
-      "branch": "chore/extract-orders-input"
+      "branch": "chore/extract-orders-input",
+      "completion": {
+        "evidence": "Independent input baseline43381 and final DOM smoke pass, full18-check worker suite and scoped review accepted; broader gameplay/audio remains queued",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "0f60e3d9d797cae2e35db5a251a37d33143bb93b",
+        "squashCommit": "98837db4ab84433a4a68533be808fba71618e8e9"
+      }
     },
     {
       "id": "TRI-044",
@@ -2760,6 +2761,27 @@
       "details": [
         "../triumph-extract-orders-input",
         "/root/orders_extract_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:57:02.841Z",
+      "command": "move",
+      "ticket": "TRI-043",
+      "details": [
+        "Review",
+        "Reviewed0f60e3d9; independent input43381, scoped interfaces/diff and final ordinary browser smoke pass; full worker suite56306 exits0"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:57:36.787Z",
+      "command": "move",
+      "ticket": "TRI-043",
+      "details": [
+        "Done",
+        "Independent input baseline43381 and final DOM smoke pass, full18-check worker suite and scoped review accepted; broader gameplay/audio remains queued",
+        "/root",
+        "98837db4ab84433a4a68533be808fba71618e8e9",
+        "0f60e3d9d797cae2e35db5a251a37d33143bb93b"
       ]
     }
   ]

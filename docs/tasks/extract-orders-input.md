@@ -17,6 +17,8 @@ Approved under the autonomous mandate on 2026-10-05; TRI-043 is the bounded orde
 
 ## Sessions
 
+- [Director integration and queue checkpoint034](../journal/2026-10-05-034-director-queue.md)
+
 ## Scope — autonomous mandate 2026-10-05
 
 Child of TRI-003, after TRI-042. Extract troop order handling and keyboard/mouse/controller input ownership through explicit interfaces. Preserve German physical-key controls, AI-default commanders, deliberate aiming, selection/focus/use/force/rally, tactical queued orders and modal restoration. Keep DOM boundary separate from decision helpers; no state injection or unrelated UX redesign. Meaningful before/after input sequences and full suite; actual browser smoke separately recorded. No balance changes. Stop Review.
