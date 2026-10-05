@@ -25,3 +25,9 @@ Authenticated GitHub connector read and issue creation now succeed. Created [tra
 
 Current GitHub tool inventory has issue/repository/PR tools but no native Projects operation. Native Project creation remains unresolved; do not claim issue mirrors satisfy the user's Project request. Ordinary code publication already succeeds through authorized Git. Previous issue-approval failure is historical, not current. Later bounded worker must inspect allowed Project routes and CI evidence, preserving access restrictions.
 
+## Current publication evidence — 2026-10-05
+
+TRI-047 is accepted as e477e2b4276e25617ab5521c8212792fda0652d5. Actual hosted feature run37301448979 and merged-main runs37301993040 and37302717167 pass full Windows and Ubuntu jobs. Earlier Windows failure is resolved; current CI is verified. Pending nonwithdrawn tickets have real mirrors through issue17; accepted child and reconciled planning issues were closed remotely after main publication. Local board remains authoritative. This does not create a native Project or resolve future distribution/visibility decisions. Native Project still requires an authenticated supported route; ignored MIDI bank remains unpublished.
+
+Fresh director IAB revalidation after TRI-048: repository Projects page finished loading and states "There are no projects linked to this repository." Header still shows Sign in; no create control. Temporary inspection tab closed. Current GitHub tool inventory has no Project operation. Exact next action: provide an authenticated browser session or supported native Project connector, create/link the requested Project, choose one authoritative status source and verify each migrated item/state. Issue mirrors and local board do not satisfy this remaining deliverable; do not extract credentials to bypass this prerequisite.
+
