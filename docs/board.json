@@ -510,10 +510,16 @@
       "id": "TRI-035",
       "title": "Add desert charging worms",
       "task": "docs/tasks/desert-charging-worm.md",
-      "status": "Ready",
-      "reason": "User chose desert and confirmed worm phases/cardinal charge/underground protection, then authorized queue execution; numerical defaults worker-owned opt-in unit after038",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User chose desert and confirmed worm phases/cardinal charge/underground protection, then authorized queue execution; numerical defaults worker-owned opt-in unit after038"
+      "approval": "User chose desert and confirmed worm phases/cardinal charge/underground protection, then authorized queue execution; numerical defaults worker-owned opt-in unit after038",
+      "worker": {
+        "id": "/root/worm_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-desert-charging-worm",
+        "branch": "feature/desert-charging-worm"
+      },
+      "branch": "feature/desert-charging-worm"
     },
     {
       "id": "TRI-036",
@@ -2048,6 +2054,15 @@
         "/root",
         "c7f0fd3026a777b0f0e4c92c62e8c0c71ee835af",
         "2df12c3b40778c3f6c075caa278a3e7fa26506c1"
+      ]
+    },
+    {
+      "at": "2026-10-05T05:40:50.613Z",
+      "command": "dispatch",
+      "ticket": "TRI-035",
+      "details": [
+        "../triumph-desert-charging-worm",
+        "/root/worm_worker"
       ]
     }
   ]
