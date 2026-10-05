@@ -1,0 +1,1068 @@
+{
+  "method": "Seed 36036, actual VM update at 0.1s, default stationary orders OR two split Desert Rider groups assigned attack-move60px ahead of their crawler every2s after repair; no actor teleport, manual shots or support, stop at120s or mission outcome. Custom mine/evade/repair behavior active. Diagnostic only; not human difficulty calibration.",
+  "logs": [
+    {
+      "strategy": "default",
+      "difficulty": "veryeasy",
+      "initialArmy": 14,
+      "time": 120,
+      "mode": "playing",
+      "progress": {
+        "rescued": 0,
+        "lost": false,
+        "stranded": false,
+        "ready": false,
+        "label": "C1 NEEDS ESCORT 2/4 · C2 NEEDS ESCORT 1/4"
+      },
+      "snapshots": [
+        {
+          "time": 20,
+          "army": 13,
+          "crawlers": [
+            {
+              "hp": 2,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 1,
+          "kills": 1,
+          "waves": 2
+        },
+        {
+          "time": 40,
+          "army": 13,
+          "crawlers": [
+            {
+              "hp": 2,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 3,
+          "waves": 4
+        },
+        {
+          "time": 60,
+          "army": 13,
+          "crawlers": [
+            {
+              "hp": 2,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 3,
+          "waves": 4
+        },
+        {
+          "time": 80,
+          "army": 13,
+          "crawlers": [
+            {
+              "hp": 2,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 3,
+          "waves": 4
+        },
+        {
+          "time": 100,
+          "army": 13,
+          "crawlers": [
+            {
+              "hp": 2,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 3,
+          "waves": 4
+        },
+        {
+          "time": 120,
+          "army": 13,
+          "crawlers": [
+            {
+              "hp": 2,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 3,
+          "waves": 4
+        }
+      ]
+    },
+    {
+      "strategy": "default",
+      "difficulty": "easy",
+      "initialArmy": 13,
+      "time": 120,
+      "mode": "playing",
+      "progress": {
+        "rescued": 0,
+        "lost": false,
+        "stranded": false,
+        "ready": false,
+        "label": "C1 NEEDS ESCORT 2/4 · C2 NEEDS ESCORT 1/4"
+      },
+      "snapshots": [
+        {
+          "time": 20,
+          "army": 10,
+          "crawlers": [
+            {
+              "hp": 5,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            },
+            {
+              "hp": 4.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 2,
+          "kills": 0,
+          "waves": 2
+        },
+        {
+          "time": 40,
+          "army": 4,
+          "crawlers": [
+            {
+              "hp": 3,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            },
+            {
+              "hp": 2.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 2,
+          "waves": 5
+        },
+        {
+          "time": 60,
+          "army": 4,
+          "crawlers": [
+            {
+              "hp": 3,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            },
+            {
+              "hp": 2.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 3,
+          "waves": 5
+        },
+        {
+          "time": 80,
+          "army": 4,
+          "crawlers": [
+            {
+              "hp": 3,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            },
+            {
+              "hp": 2.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 4,
+          "waves": 5
+        },
+        {
+          "time": 100,
+          "army": 4,
+          "crawlers": [
+            {
+              "hp": 3,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            },
+            {
+              "hp": 2.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 4,
+          "waves": 5
+        },
+        {
+          "time": 120,
+          "army": 4,
+          "crawlers": [
+            {
+              "hp": 3,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 2.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 4,
+          "waves": 5
+        }
+      ]
+    },
+    {
+      "strategy": "default",
+      "difficulty": "normal",
+      "initialArmy": 12,
+      "time": 120,
+      "mode": "playing",
+      "progress": {
+        "rescued": 0,
+        "lost": false,
+        "stranded": false,
+        "ready": false,
+        "label": "C1 NEEDS ESCORT 2/4 · C2 LOST"
+      },
+      "snapshots": [
+        {
+          "time": 20,
+          "army": 8,
+          "crawlers": [
+            {
+              "hp": 4,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            },
+            {
+              "hp": 4.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 2,
+          "kills": 1,
+          "waves": 4
+        },
+        {
+          "time": 40,
+          "army": 2,
+          "crawlers": [
+            {
+              "hp": 2,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": -1.9,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 1,
+          "kills": 4,
+          "waves": 8
+        },
+        {
+          "time": 60,
+          "army": 1,
+          "crawlers": [
+            {
+              "hp": 2,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": -1.9,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 5,
+          "waves": 8
+        },
+        {
+          "time": 80,
+          "army": 1,
+          "crawlers": [
+            {
+              "hp": 2,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": -1.9,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 5,
+          "waves": 8
+        },
+        {
+          "time": 100,
+          "army": 1,
+          "crawlers": [
+            {
+              "hp": 2,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": -1.9,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 5,
+          "waves": 8
+        },
+        {
+          "time": 120,
+          "army": 1,
+          "crawlers": [
+            {
+              "hp": 2,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": -1.9,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 5,
+          "waves": 8
+        }
+      ]
+    },
+    {
+      "strategy": "default",
+      "difficulty": "hard",
+      "initialArmy": 11,
+      "time": 120,
+      "mode": "playing",
+      "progress": {
+        "rescued": 0,
+        "lost": false,
+        "stranded": false,
+        "ready": false,
+        "label": "C1 NEEDS ESCORT 2/4 · C2 LOST"
+      },
+      "snapshots": [
+        {
+          "time": 20,
+          "army": 5,
+          "crawlers": [
+            {
+              "hp": 6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            },
+            {
+              "hp": 2.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 3,
+          "kills": 0,
+          "waves": 6
+        },
+        {
+          "time": 40,
+          "army": 3,
+          "crawlers": [
+            {
+              "hp": 3,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            },
+            {
+              "hp": 2.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 1,
+          "kills": 2,
+          "waves": 11
+        },
+        {
+          "time": 60,
+          "army": 3,
+          "crawlers": [
+            {
+              "hp": 3,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 0.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 5,
+          "waves": 11
+        },
+        {
+          "time": 80,
+          "army": 3,
+          "crawlers": [
+            {
+              "hp": 1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 0.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 7,
+          "waves": 11
+        },
+        {
+          "time": 100,
+          "army": 2,
+          "crawlers": [
+            {
+              "hp": 1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": -0.9,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 7,
+          "waves": 11
+        },
+        {
+          "time": 120,
+          "army": 2,
+          "crawlers": [
+            {
+              "hp": 1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": -0.9,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 7,
+          "waves": 11
+        }
+      ]
+    },
+    {
+      "strategy": "default",
+      "difficulty": "veryhard",
+      "initialArmy": 10,
+      "time": 36.2,
+      "mode": "defeat",
+      "progress": {
+        "rescued": 0,
+        "lost": true,
+        "stranded": false,
+        "ready": false,
+        "label": "C1 LOST · C2 LOST"
+      },
+      "snapshots": [
+        {
+          "time": 20,
+          "army": 4,
+          "crawlers": [
+            {
+              "hp": 6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 0.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 3,
+          "kills": 1,
+          "waves": 9
+        }
+      ]
+    },
+    {
+      "strategy": "escort",
+      "difficulty": "veryeasy",
+      "initialArmy": 14,
+      "time": 39.9,
+      "mode": "victory",
+      "progress": {
+        "rescued": 1,
+        "lost": false,
+        "stranded": false,
+        "ready": true,
+        "label": "C1 SAVED · C2 ESCORT 3/4"
+      },
+      "snapshots": [
+        {
+          "time": 20,
+          "army": 13,
+          "crawlers": [
+            {
+              "hp": 2,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            }
+          ],
+          "worms": 1,
+          "kills": 1,
+          "waves": 2
+        }
+      ]
+    },
+    {
+      "strategy": "escort",
+      "difficulty": "easy",
+      "initialArmy": 13,
+      "time": 120,
+      "mode": "playing",
+      "progress": {
+        "rescued": 0,
+        "lost": false,
+        "stranded": false,
+        "ready": false,
+        "label": "C1 NEEDS ESCORT 2/4 · C2 LOST"
+      },
+      "snapshots": [
+        {
+          "time": 20,
+          "army": 7,
+          "crawlers": [
+            {
+              "hp": 4.6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 4.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            }
+          ],
+          "worms": 2,
+          "kills": 1,
+          "waves": 2
+        },
+        {
+          "time": 40,
+          "army": 2,
+          "crawlers": [
+            {
+              "hp": 4.6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 2.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            }
+          ],
+          "worms": 0,
+          "kills": 4,
+          "waves": 5
+        },
+        {
+          "time": 60,
+          "army": 2,
+          "crawlers": [
+            {
+              "hp": 4.6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 0.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            }
+          ],
+          "worms": 0,
+          "kills": 4,
+          "waves": 5
+        },
+        {
+          "time": 80,
+          "army": 1,
+          "crawlers": [
+            {
+              "hp": 4.6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": -0.9,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 2
+            }
+          ],
+          "worms": 0,
+          "kills": 5,
+          "waves": 5
+        },
+        {
+          "time": 100,
+          "army": 1,
+          "crawlers": [
+            {
+              "hp": 4.6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": -0.9,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 2
+            }
+          ],
+          "worms": 0,
+          "kills": 5,
+          "waves": 5
+        },
+        {
+          "time": 120,
+          "army": 1,
+          "crawlers": [
+            {
+              "hp": 4.6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": -0.9,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 2
+            }
+          ],
+          "worms": 0,
+          "kills": 5,
+          "waves": 5
+        }
+      ]
+    },
+    {
+      "strategy": "escort",
+      "difficulty": "normal",
+      "initialArmy": 12,
+      "time": 66.9,
+      "mode": "victory",
+      "progress": {
+        "rescued": 1,
+        "lost": false,
+        "stranded": false,
+        "ready": true,
+        "label": "C1 SAVED · C2 NEEDS ESCORT 2/4"
+      },
+      "snapshots": [
+        {
+          "time": 20,
+          "army": 6,
+          "crawlers": [
+            {
+              "hp": 6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 4.05,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            }
+          ],
+          "worms": 2,
+          "kills": 1,
+          "waves": 4
+        },
+        {
+          "time": 40,
+          "army": 3,
+          "crawlers": [
+            {
+              "hp": 3,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 4.05,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            }
+          ],
+          "worms": 0,
+          "kills": 4,
+          "waves": 8
+        },
+        {
+          "time": 60,
+          "army": 3,
+          "crawlers": [
+            {
+              "hp": 2,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 3
+            },
+            {
+              "hp": 4.05,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            }
+          ],
+          "worms": 0,
+          "kills": 5,
+          "waves": 8
+        }
+      ]
+    },
+    {
+      "strategy": "escort",
+      "difficulty": "hard",
+      "initialArmy": 11,
+      "time": 120,
+      "mode": "playing",
+      "progress": {
+        "rescued": 0,
+        "lost": false,
+        "stranded": false,
+        "ready": false,
+        "label": "C1 NEEDS ESCORT 3/4 · C2 LOST"
+      },
+      "snapshots": [
+        {
+          "time": 20,
+          "army": 5,
+          "crawlers": [
+            {
+              "hp": 5.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 2.05,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 3,
+          "kills": 0,
+          "waves": 6
+        },
+        {
+          "time": 40,
+          "army": 2,
+          "crawlers": [
+            {
+              "hp": 3.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 3
+            },
+            {
+              "hp": -1.95,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 1,
+          "kills": 2,
+          "waves": 11
+        },
+        {
+          "time": 60,
+          "army": 1,
+          "crawlers": [
+            {
+              "hp": 3.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 3
+            },
+            {
+              "hp": -1.95,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 7,
+          "waves": 11
+        },
+        {
+          "time": 80,
+          "army": 1,
+          "crawlers": [
+            {
+              "hp": 2.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 3
+            },
+            {
+              "hp": -1.95,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 7,
+          "waves": 11
+        },
+        {
+          "time": 100,
+          "army": 1,
+          "crawlers": [
+            {
+              "hp": 1.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 3
+            },
+            {
+              "hp": -1.95,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 7,
+          "waves": 11
+        },
+        {
+          "time": 120,
+          "army": 1,
+          "crawlers": [
+            {
+              "hp": 1.1,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 3
+            },
+            {
+              "hp": -1.95,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 0,
+          "kills": 7,
+          "waves": 11
+        }
+      ]
+    },
+    {
+      "strategy": "escort",
+      "difficulty": "veryhard",
+      "initialArmy": 10,
+      "time": 50.3,
+      "mode": "defeat",
+      "progress": {
+        "rescued": 0,
+        "lost": true,
+        "stranded": false,
+        "ready": false,
+        "label": "C1 LOST · C2 LOST"
+      },
+      "snapshots": [
+        {
+          "time": 20,
+          "army": 3,
+          "crawlers": [
+            {
+              "hp": 6,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": 2.05,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 3,
+          "kills": 2,
+          "waves": 9
+        },
+        {
+          "time": 40,
+          "army": 1,
+          "crawlers": [
+            {
+              "hp": 4,
+              "alive": true,
+              "repaired": true,
+              "routeIndex": 2
+            },
+            {
+              "hp": -1.95,
+              "alive": false,
+              "repaired": true,
+              "routeIndex": 1
+            }
+          ],
+          "worms": 3,
+          "kills": 5,
+          "waves": 14
+        }
+      ]
+    }
+  ]
+}

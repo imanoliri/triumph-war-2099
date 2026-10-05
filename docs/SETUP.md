@@ -64,3 +64,5 @@ The external workspace work/ folder used during early development is no longer r
 ## Verification and limitations
 
 See PLAYTEST for manual scenarios. Log failures with mission, difficulty, steps, expected/actual result and a screenshot. Keep local MIDI banks, original executable copies and scratch data out of Git. Authorship and publication state are in PROJECT and STATUS.
+
+Beneath the Dunes checks: `node tools/check-beneath-dunes.cjs`; art contract: `node docs/art-kit/beneath-dunes/verify.cjs`; reproducible seed36036 full-runtime default/attack-move probe: `node tools/probe-beneath-dunes.cjs` (rewrites docs/design/beneath-dunes-pressure.json). Terrain-only authoring: run tools/build-beneath-dunes.py with an existing Pillow-capable Python; this builds only that custom map. Do not regenerate recovered assets.

@@ -1,0 +1,322 @@
+{
+  "ticket": "TRI-036",
+  "map": "beneath-dunes",
+  "dimensions": [
+    1024,
+    768
+  ],
+  "acceptedLayout": "A—Twin Crescent",
+  "terrain": "assets/custom/beneath-dunes/terrain.png",
+  "baselineTerrainSHA256": "0b67ffbd64b21ebe572843daa21a91d007d87aee05d64e846850479fa5728ed2",
+  "authoringSource": "tools/build-beneath-dunes.py",
+  "seed": 36036,
+  "immutableFiles": {
+    "docs/planning/campaigns/maps/beneath-dunes/geometry.json": "086baa67a2d4e6bca8ff5e2d2475d769ec52386b5b66af984060518841ec2f0a",
+    "assets/custom/beneath-dunes/collision.png": "5cef3efc9aba89e50abcb0a6ced3504a5e1d967c61a254fea10fba348540bb3e",
+    "assets/custom/beneath-dunes/terrain.js": "956ec595638ab41d4dd9ce7460d164ac11c2ea3aa09c1ebe4f52346f737fb5c7"
+  },
+  "geometry": {
+    "id": "a",
+    "title": "A / Twin Crescent",
+    "rocks": [
+      [
+        350,
+        300,
+        660,
+        470
+      ],
+      [
+        100,
+        630,
+        230,
+        700
+      ],
+      [
+        780,
+        85,
+        900,
+        145
+      ]
+    ],
+    "crawlers": [
+      [
+        180,
+        360
+      ],
+      [
+        180,
+        410
+      ]
+    ],
+    "deployment": [
+      [
+        90,
+        290
+      ],
+      [
+        90,
+        330
+      ],
+      [
+        90,
+        370
+      ]
+    ],
+    "extraction": [
+      910,
+      390
+    ],
+    "routes": [
+      [
+        [
+          180,
+          360
+        ],
+        [
+          250,
+          230
+        ],
+        [
+          680,
+          230
+        ],
+        [
+          910,
+          390
+        ]
+      ],
+      [
+        [
+          180,
+          410
+        ],
+        [
+          330,
+          590
+        ],
+        [
+          700,
+          590
+        ],
+        [
+          910,
+          390
+        ]
+      ]
+    ],
+    "worms": [
+      [
+        300,
+        100,
+        0,
+        1
+      ],
+      [
+        700,
+        690,
+        0,
+        -1
+      ],
+      [
+        900,
+        570,
+        -1,
+        0
+      ]
+    ],
+    "nests": [
+      [
+        300,
+        100
+      ],
+      [
+        700,
+        690
+      ]
+    ],
+    "refuges": [
+      [
+        330,
+        280
+      ],
+      [
+        660,
+        510
+      ]
+    ],
+    "note": "Two broad arcs around one central mesa; balanced approach and retreat."
+  },
+  "placements": {
+    "commanders": [
+      [
+        90,
+        290
+      ],
+      [
+        90,
+        330
+      ],
+      [
+        90,
+        370
+      ],
+      [
+        90,
+        410
+      ]
+    ],
+    "scouts": [
+      [
+        130,
+        260
+      ],
+      [
+        130,
+        460
+      ]
+    ],
+    "mechanics": [
+      [
+        150,
+        350
+      ],
+      [
+        150,
+        420
+      ]
+    ],
+    "guardSuperset": [
+      [
+        85,
+        470
+      ],
+      [
+        125,
+        470
+      ],
+      [
+        85,
+        504
+      ],
+      [
+        125,
+        504
+      ],
+      [
+        85,
+        538
+      ],
+      [
+        125,
+        538
+      ],
+      [
+        85,
+        572
+      ],
+      [
+        125,
+        572
+      ]
+    ],
+    "crawlers": [
+      [
+        180,
+        360
+      ],
+      [
+        180,
+        410
+      ]
+    ],
+    "bugAndWavePoints": [
+      [
+        300,
+        100
+      ],
+      [
+        700,
+        690
+      ],
+      [
+        900,
+        570
+      ]
+    ],
+    "wormSuperset": [
+      [
+        300,
+        100
+      ],
+      [
+        700,
+        690
+      ],
+      [
+        900,
+        570
+      ]
+    ],
+    "extraction": [
+      910,
+      390
+    ]
+  },
+  "profiles": {
+    "veryeasy": {
+      "guards": 8,
+      "worms": 1,
+      "waves": [
+        18,
+        36
+      ],
+      "arrivalBudget": 4
+    },
+    "easy": {
+      "guards": 7,
+      "worms": 2,
+      "waves": [
+        16,
+        32
+      ],
+      "arrivalBudget": 5
+    },
+    "normal": {
+      "guards": 6,
+      "worms": 2,
+      "waves": [
+        14,
+        28
+      ],
+      "arrivalBudget": 8
+    },
+    "hard": {
+      "guards": 5,
+      "worms": 3,
+      "waves": [
+        12,
+        24
+      ],
+      "arrivalBudget": 11
+    },
+    "veryhard": {
+      "guards": 4,
+      "worms": 3,
+      "waves": [
+        10,
+        20
+      ],
+      "arrivalBudget": 14
+    }
+  },
+  "references": [
+    "docs/art-kit/library.png",
+    "docs/art-kit/elements.png",
+    "docs/art-kit/sprites.png",
+    "docs/art-kit/palette.png",
+    "assets/maps/7.png",
+    "assets/provenance.json"
+  ],
+  "provenance": "Baseline terrain and actor silhouettes custom authored; recovered reference atlas/maps remain Anthony Lopes / DarkSun Games material. No recovered pixels in terrain.",
+  "hashPolicy": "SHA256 of raw binary bytes; UTF8 text canonicalized to LF line endings, matching Git content across autocrlf checkouts."
+}
