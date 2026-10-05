@@ -15,6 +15,8 @@ Fix Windows director Git repository identity check
 
 Approved bounded maintenance ticket. Use native filesystem canonicalization for Git common-directory and isolated-checkout comparisons; preserve strict rejection of unrelated repositories and the director checkout. Gameplay and assets are outside scope.
 
+Hosted candidate run 37301094619 exposed a separate verification prerequisite: the default shallow Actions checkout omits the immutable pre-difficulty baseline used by `check-difficulty-profiles.cjs`. Director extended this same bounded CI maintenance ticket to fetch full checkout history, preserving the independent baseline comparison. No test skipping or baseline substitution.
+
 ## Sessions
 
 ## Evidence and bounded scope — 2026-10-05

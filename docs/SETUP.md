@@ -18,6 +18,8 @@ node tools/dev.cjs test
 
 `check` validates script syntax and repository references/assets. `test` additionally runs the mocked-canvas gameplay suite and mocked-audio music suite. These are not browser playtests. npm aliases are in package.json; on Windows use `npm.cmd` if PowerShell blocks npm.ps1.
 
+The difficulty regression suite reads an immutable accepted baseline from Git history. Use a full clone for `test`; in an existing shallow clone run `git fetch --unshallow` first. The Windows/Ubuntu Actions matrix checks out full history with `fetch-depth: 0` for this comparison.
+
 ## ZIP packaging
 
 Python 3.10+ is required; packaging uses only the standard library. Set the PYTHON environment variable to an executable path if Python is not on PATH. The runner also recognizes the Windows `py -3` launcher.

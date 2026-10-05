@@ -43,3 +43,10 @@ Acceptance remains unchecked until actual hosted Windows and Ubuntu CI pass. Ori
 ## Next action / handoff
 
 Director may push the candidate branch for the existing push workflow. Local full suite session12568 completed exit0. Candidate implementation commit: `4fee42f7b57bbbf4b7f18bde5fb8124c6533d04b`. Review native comparisons, real alias regression and preserved unrelated-repository guards. No merge/publication performed by worker; no squash SHA yet. Candidate commit is the commit containing this record; obtain with `git rev-parse HEAD`.
+
+## Hosted candidate follow-up — history prerequisite
+
+- Director pushed implementation candidate `4fee42f`; actual [run37301094619](https://github.com/imanoliri/triumph-war-2099/actions/runs/37301094619) failed Ubuntu job111733728702 before director checks. Connector log explicitly shows `fetch-depth: 1`, depth-one fetch, then `git show 6b41ca15b67c4cdabe2048de2f2c2819ed381dc1:game.js` failure in check-difficulty-profiles.cjs:30. Windows job111733728838 canceled by matrix failfast; it proves neither a Windows pass nor failure for this candidate.
+- Director explicitly extended the same bounded CI maintenance ticket to its history prerequisite. Minimal workflow change sets `actions/checkout@v4` `fetch-depth: 0`. Full history preserves the independent immutable accepted-runtime comparison; no baseline or test was changed/skipped. SETUP documents the requirement for local shallow clones.
+- Disposable local depth-one clone under `C:/Users/user/AppData/Local/Temp/triumph-shallow-c310fd921d9c47d585f3cbcb3c30b297` reproduced absent baseline `game.js`. After `git fetch --unshallow`, `git cat-file -e` succeeded for baseline game.js, src/balance.js and src/breeding.js (all exit0). Source shared repo was read-only; clone/fetch mutations were confined to disposable clone.
+- Prior full local suite exit0 remains applicable to unchanged code. Rerunning affected difficulty baseline suite in unified session49334. Hosted acceptance remains pending next director push.
