@@ -899,8 +899,8 @@
       "id": "TRI-050",
       "title": "Harbor Watch maritime mission",
       "task": "docs/tasks/harbor-watch.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Reviewed71761701; independent Harbor/hash/project/difficulty checks, real Normal242 browser win and full39830 exit0",
       "questions": [],
       "approval": "User explicitly requested more missions from existing table; maritime defense immediately after TRI-049",
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/19",
@@ -3168,6 +3168,15 @@
       "details": [
         "../triumph-harbor-watch",
         "/root/harbor_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T22:30:22.210Z",
+      "command": "move",
+      "ticket": "TRI-050",
+      "details": [
+        "Review",
+        "Reviewed71761701; independent Harbor/hash/project/difficulty checks, real Normal242 browser win and full39830 exit0"
       ]
     }
   ]
