@@ -690,17 +690,18 @@
       "id": "TRI-047",
       "title": "Fix Windows director Git repository identity check",
       "task": "docs/tasks/windows-director-ci.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Exact reviewed changes passed independent director check and hosted full Windows/Ubuntu matrix",
       "questions": [],
       "approval": "Autonomous mandate; verified Windows CI failure, bounded portability fix queued immediately after046",
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/16",
-      "worker": {
-        "id": "/root/windows_ci_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-windows-director-ci",
-        "branch": "fix/windows-director-ci"
-      },
-      "branch": "fix/windows-director-ci"
+      "branch": "fix/windows-director-ci",
+      "completion": {
+        "evidence": "Exact reviewed changes passed independent director check and hosted full Windows/Ubuntu matrix",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "9017ab56edfb1a472aec7a85f3827d65668d1704",
+        "squashCommit": "e477e2b4276e25617ab5521c8212792fda0652d5"
+      }
     },
     {
       "id": "TRI-048",
@@ -2519,6 +2520,27 @@
       "details": [
         "../triumph-windows-director-ci",
         "/root/windows_ci_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:16:36.298Z",
+      "command": "move",
+      "ticket": "TRI-047",
+      "details": [
+        "Review",
+        "Reviewed9017ab56; independent alias guards passed and hosted run37301448979 Windows/Ubuntu full suite success"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:17:00.595Z",
+      "command": "move",
+      "ticket": "TRI-047",
+      "details": [
+        "Done",
+        "Exact reviewed changes passed independent director check and hosted full Windows/Ubuntu matrix",
+        "/root",
+        "e477e2b4276e25617ab5521c8212792fda0652d5",
+        "9017ab56edfb1a472aec7a85f3827d65668d1704"
       ]
     }
   ]
