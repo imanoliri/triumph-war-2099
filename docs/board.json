@@ -927,6 +927,33 @@
         "branch": "feature/custom-mission-reinforcement-eagles"
       },
       "branch": "feature/custom-mission-reinforcement-eagles"
+    },
+    {
+      "id": "TRI-052",
+      "title": "Spread Silent Return airdrops into parallel columns",
+      "task": "docs/tasks/silent-return-air-columns.md",
+      "status": "Ready",
+      "reason": "User explicitly requested three tight parallel Silent Return airdrop columns on2026-10-06; horizontal correction after051",
+      "questions": [],
+      "approval": "User explicitly requested three tight parallel Silent Return airdrop columns on2026-10-06; horizontal correction after051"
+    },
+    {
+      "id": "TRI-053",
+      "title": "Add District Twelve capital mission",
+      "task": "docs/tasks/district-twelve.md",
+      "status": "Ready",
+      "reason": "User renewed more table missions on2026-10-06; bounded capital District Twelve after requested fixes",
+      "questions": [],
+      "approval": "User renewed more table missions on2026-10-06; bounded capital District Twelve after requested fixes"
+    },
+    {
+      "id": "TRI-054",
+      "title": "Enable diagonal fire for custom desert infantry",
+      "task": "docs/tasks/desert-rider-diagonal-fire.md",
+      "status": "Ready",
+      "reason": "User explicitly requested diagonal shooting for custom desert soldiers on2026-10-06; scoped eight-direction fix after052",
+      "questions": [],
+      "approval": "User explicitly requested diagonal shooting for custom desert soldiers on2026-10-06; scoped eight-direction fix after052"
     }
   ],
   "events": [
@@ -3205,6 +3232,63 @@
       "details": [
         "../triumph-custom-mission-reinforcement-eagles",
         "/root/eagle_audit_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T22:38:07.985Z",
+      "command": "create",
+      "ticket": "TRI-052",
+      "details": [
+        "silent-return-air-columns",
+        "Spread Silent Return airdrops into parallel columns",
+        "Three tight parallel flight columns with about one soldier gap; preserve timing, drops and mission rules"
+      ]
+    },
+    {
+      "at": "2026-10-05T22:38:08.046Z",
+      "command": "create",
+      "ticket": "TRI-053",
+      "details": [
+        "district-twelve",
+        "Add District Twelve capital mission",
+        "New urban local-guard transit defense with finite assault, terminals, timed relief and usable eagle support"
+      ]
+    },
+    {
+      "at": "2026-10-05T22:38:51.235Z",
+      "command": "create",
+      "ticket": "TRI-054",
+      "details": [
+        "desert-rider-diagonal-fire",
+        "Enable diagonal fire for custom desert infantry",
+        "Desert Rider scout, guard and mechanic shoot diagonally while existing weapons and other units stay unchanged"
+      ]
+    },
+    {
+      "at": "2026-10-05T22:38:53.096Z",
+      "command": "move",
+      "ticket": "TRI-052",
+      "details": [
+        "Ready",
+        "User explicitly requested three tight parallel Silent Return airdrop columns on2026-10-06; horizontal correction after051"
+      ]
+    },
+    {
+      "at": "2026-10-05T22:38:53.153Z",
+      "command": "move",
+      "ticket": "TRI-054",
+      "details": [
+        "Ready",
+        "User explicitly requested diagonal shooting for custom desert soldiers on2026-10-06; scoped eight-direction fix after052"
+      ]
+    },
+    {
+      "at": "2026-10-05T22:38:53.212Z",
+      "command": "move",
+      "ticket": "TRI-053",
+      "details": [
+        "Ready",
+        "User renewed more table missions on2026-10-06; bounded capital District Twelve after requested fixes"
       ]
     }
   ]
