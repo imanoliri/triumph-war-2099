@@ -673,11 +673,17 @@
       "id": "TRI-046",
       "title": "Implement mixed original-mission difficulty profiles",
       "task": "docs/tasks/difficulty-profile-tuning.md",
-      "status": "Ready",
-      "reason": "Autonomous user mandate; documented original-mission candidate profiles selected",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/15",
-      "approval": "Autonomous user mandate; documented original-mission candidate profiles selected"
+      "approval": "Autonomous user mandate; documented original-mission candidate profiles selected",
+      "worker": {
+        "id": "/root/difficulty_profiles_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-difficulty-profile-tuning",
+        "branch": "feature/difficulty-profile-tuning"
+      },
+      "branch": "feature/difficulty-profile-tuning"
     }
   ],
   "events": [
@@ -2409,6 +2415,15 @@
         "/root",
         "105975ca07bb7a9175df545bd96ef8a002809d19",
         "890e6f36baf1ce4a12ed213212456b1b3351766f"
+      ]
+    },
+    {
+      "at": "2026-10-05T07:25:16.036Z",
+      "command": "dispatch",
+      "ticket": "TRI-046",
+      "details": [
+        "../triumph-difficulty-profile-tuning",
+        "/root/difficulty_profiles_worker"
       ]
     }
   ]
