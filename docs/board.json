@@ -584,6 +584,15 @@
       "reason": "User confirmed faction abilities and finite automines, queue execution authorized; opt-in roster after035 before036",
       "questions": [],
       "approval": "User confirmed faction abilities and finite automines, queue execution authorized; opt-in roster after035 before036"
+    },
+    {
+      "id": "TRI-041",
+      "title": "Prepare Beneath the Dunes map proposals",
+      "task": "docs/tasks/beneath-the-dunes-map-proposals.md",
+      "status": "Ready",
+      "reason": "Necessary review proposals for user-selected desert mission; bounded design only, before mission layout approval, after035",
+      "questions": [],
+      "approval": "Necessary review proposals for user-selected desert mission; bounded design only, before mission layout approval, after035"
     }
   ],
   "events": [
@@ -2063,6 +2072,25 @@
       "details": [
         "../triumph-desert-charging-worm",
         "/root/worm_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T05:42:42.762Z",
+      "command": "create",
+      "ticket": "TRI-041",
+      "details": [
+        "beneath-the-dunes-map-proposals",
+        "Prepare Beneath the Dunes map proposals",
+        "Deliver three visibly distinct new desert layouts with two disabled crawlers, reachable mechanic/escort routes and extraction, annotated cardinal worm charge lanes and collision/route evidence for user selection."
+      ]
+    },
+    {
+      "at": "2026-10-05T05:42:44.423Z",
+      "command": "move",
+      "ticket": "TRI-041",
+      "details": [
+        "Ready",
+        "Necessary review proposals for user-selected desert mission; bounded design only, before mission layout approval, after035"
       ]
     }
   ]

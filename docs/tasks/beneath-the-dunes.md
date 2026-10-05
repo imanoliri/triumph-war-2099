@@ -21,6 +21,8 @@ User selected a stranded-convoy rescue on the frontier desert planet on 2026-10-
 
 Prerequisites: TRI-035 worms, TRI-040 confirmed human faction roster. Mission vehicle count, loss/success rule and schematic map remain for user refinement; do not dispatch036 before those choices are recorded.
 
+Map review dependency: [TRI-041 proposals](beneath-the-dunes-map-proposals.md). User must select a shown layout before036 freezes geometry. Queue035→041→040→036, with040 able to proceed while map choice is pending.
+
 Actual subsequent user answer2026-10-05: two crawlers; saving one is enough. Rescue victory requires at least one repaired crawler reaching extraction; both destroyed fails vehicle rescue. This supersedes pending vehicle-count/loss choice above. Approved Field mechanic repairs, normal escort routing with diagonal evade and limited automines apply. Schematic map review remains before036 dispatch; numerical repair/escort/timing/force profiles may be worker-owned after geometry approval.
 
 2026-10-05 confirmed faction roster: Rider scout automatically evades nearby bugs; Dune guard shotgun fires five short-range pellets in an arc; Field mechanic repairs nearby vehicles; Convoy crawler has 6 HP and ordinary escort-route movement plus diagonal auto-evade against cardinal worm charges. User accepted limited automatic mines, dropped behind the crawler after an evade. Exact ammunition and tuning remain worker-owned implementation choices after bounded scope preparation. Human unit/vehicle behavior should be split into a prerequisite ticket before mission integration rather than silently expanding the mission branch. Sand buggy was proposed but not selected.
