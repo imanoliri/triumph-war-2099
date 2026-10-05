@@ -20,6 +20,8 @@ User selected a stranded-convoy rescue on the frontier desert planet on 2026-10-
 
 ## Sessions
 
+- [2026-10-05 / 027 director integration](../journal/2026-10-05-027-beneath-the-dunes-director.md)
+
 2026-10-05 user selected **A—Twin Crescent** in reply to the presented A/B/C packet. Freeze runtime geometry from A in [geometry.json](../planning/campaigns/maps/beneath-dunes/geometry.json); preserve B/C for later missions. TRI-035 and TRI-040 are merged prerequisites. Mission-specific roster counts, disabled starting damage/repair threshold, escort eligibility/proximity, extraction radius and difficulty encounter timing are bounded worker-owned tuning; document and verify them. Use existing worms and faction abilities unchanged, no new worm-producing nest mechanic. The illustrative N? anchors may be omitted or mapped to existing ordinary bug nests. Runtime geometry and readable baseline visuals belong here; decorative art polish remains a separate delegated ticket.
 
 ## Further user decisions

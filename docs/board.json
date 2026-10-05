@@ -540,17 +540,18 @@
       "id": "TRI-036",
       "title": "Create Beneath the Dunes desert convoy rescue",
       "task": "docs/tasks/beneath-the-dunes.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent final suite/rescue/art checks passed; active probes and partial live repair/arc evidence reviewed; warning/full-human-rescue gaps retained for acceptance",
       "questions": [],
       "approval": "User selected A Twin Crescent; confirmed two crawlers save one; worm and roster prerequisites merged, numerical mission tuning delegated",
-      "worker": {
-        "id": "/root/desert_mission_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-beneath-the-dunes",
-        "branch": "feature/beneath-the-dunes"
-      },
       "branch": "feature/beneath-the-dunes",
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/10"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/10",
+      "completion": {
+        "evidence": "Independent final suite/rescue/art checks passed; active probes and partial live repair/arc evidence reviewed; warning/full-human-rescue gaps retained for acceptance",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "890e6f36baf1ce4a12ed213212456b1b3351766f",
+        "squashCommit": "105975ca07bb7a9175df545bd96ef8a002809d19"
+      }
     },
     {
       "id": "TRI-037",
@@ -2387,6 +2388,27 @@
       "details": [
         "Ready",
         "Autonomous user mandate; documented original-mission candidate profiles selected"
+      ]
+    },
+    {
+      "at": "2026-10-05T07:23:42.943Z",
+      "command": "move",
+      "ticket": "TRI-036",
+      "details": [
+        "Review",
+        "Worker 890e6f3; independent full suite, focused rescue and art verifier pass; partial live limits accepted explicitly"
+      ]
+    },
+    {
+      "at": "2026-10-05T07:24:35.287Z",
+      "command": "move",
+      "ticket": "TRI-036",
+      "details": [
+        "Done",
+        "Independent final suite/rescue/art checks passed; active probes and partial live repair/arc evidence reviewed; warning/full-human-rescue gaps retained for acceptance",
+        "/root",
+        "105975ca07bb7a9175df545bd96ef8a002809d19",
+        "890e6f36baf1ce4a12ed213212456b1b3351766f"
       ]
     }
   ]
