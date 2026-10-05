@@ -9,7 +9,7 @@ New missions
 
 ## Acceptance criteria
 
-- [ ] Refine mission concepts, count, objectives, maps and measurable acceptance here before dispatch.
+- [x] Refine mission concepts, count, objectives, maps and measurable acceptance here before dispatch.
 
 ## Scope and decisions
 
@@ -31,3 +31,7 @@ User steering: requested visual proposals for a new Relay Breaker map, for direc
 User selected new-map A Split Ridge; TRI-032 implements purpose-built terrain after active turret sweep. Preserve B Relay Basin and C Switchback Mesa for potential later missions.
 
 Initial three scenarios implemented: Relay Breaker, Last Convoy, Silent Return. Purpose-built Split Ridge accepted a7d2a18; alternatives saved. User reports first two tooeasy even on harderdifficulty, recorded TRI-034; do not claim balanced/playtested release. TRI-033 art handoff kit next by explicit user priority. Intake remains open pending further balance/art work.
+
+## Director umbrella closure — 2026-10-05
+
+Agreed bounded mission set is implemented: Relay Breaker, Last Convoy, Silent Return and selected A/Twin Crescent Beneath the Dunes. Accepted children TRI-023/024/025/026/032/033/034/035/036/037/040/041 cover concepts, objectives, custom geometry, art handoff workflow, pressure and desert roster/worms. Director verified all recorded squash commits are on main. The fourteen-world brainstorming pack and saved alternative maps remain future concepts, not fourteen approved implementation tickets. Withdrawn TRI-039 stays withdrawn. This administrative planning umbrella closes without a separate implementation or fabricated squash. Full live outcomes remain TRI-001/002; no balanced-release claim. See [director checkpoint029](../journal/2026-10-05-029-director-queue.md).

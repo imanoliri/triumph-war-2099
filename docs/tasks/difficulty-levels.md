@@ -9,7 +9,7 @@ Difficulty levels
 
 ## Acceptance criteria
 
-- [ ] Refine desired difficulty behavior, agreed balance parameters and measurable acceptance here before dispatch.
+- [x] Refine desired difficulty behavior, agreed balance parameters and measurable acceptance here before dispatch.
 
 ## Scope and decisions
 
@@ -41,3 +41,7 @@ TRI-021 Normal baseline correction accepted and squash-integrated b95f73ff82c684
 ## TRI-046 evidence reconciliation — 2026-10-05
 
 The approved autonomous child implements the original-mission five-setting matrix, exact source-coordinate nested subsets and wave/crystal targets, retaining Normal and custom mission baselines and excluding optional resource relief. [Current values and evidence](../design/difficulty-profiles.md) distinguish seeded pressure/nominal cleanup work from human calibration. Full browser clears, casualty/recovery/cleanup timing and native animation/correlation parity remain unverified. Parent completion requires director child review/evidence reconciliation; initial implementation does not resolve these calibration limits.
+
+## Director umbrella closure — 2026-10-05
+
+Planning/refinement acceptance met and approved child work independently reviewed: TRI-020 source audit/proposal, TRI-021 Normal correction, TRI-034/037 custom pressure, TRI-046 original profiles. Director verified each recorded squash is an ancestor of current main. This administrative umbrella has no separate implementation or fabricated squash; child commits remain authoritative. TRI-001/002 retain outstanding live completion and acceptance evidence; no calibrated-release claim. See [director checkpoint029](../journal/2026-10-05-029-director-queue.md).

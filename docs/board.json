@@ -266,19 +266,103 @@
       "id": "TRI-018",
       "title": "Difficulty levels",
       "task": "docs/tasks/difficulty-levels.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
+      "status": "Done",
+      "reason": "Administrative umbrella reconciliation: planning acceptance and accepted child integrations verified; live calibration limits remain separate",
       "questions": [],
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/8"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/8",
+      "approval": "User autonomous mandate and prior child scope approvals",
+      "completion": {
+        "kind": "administrative-umbrella",
+        "reviewer": "/root",
+        "evidence": "docs/journal/2026-10-05-029-director-queue.md",
+        "children": [
+          {
+            "ticket": "TRI-020",
+            "squashCommit": "fe90071f20273e86894885119aa4405734bd2c0b"
+          },
+          {
+            "ticket": "TRI-021",
+            "squashCommit": "b95f73ff82c684392a8eabcadae99e2e0c9ea526"
+          },
+          {
+            "ticket": "TRI-034",
+            "squashCommit": "7f9fce1ee9e117392d5105741ce5c157d4bf1a77"
+          },
+          {
+            "ticket": "TRI-037",
+            "squashCommit": "20fdbba880b4956abbe86a9b18e202bf87041cc3"
+          },
+          {
+            "ticket": "TRI-046",
+            "squashCommit": "7bb26ab705a70e73f7b13a711c5e839277d91c44"
+          }
+        ]
+      }
     },
     {
       "id": "TRI-019",
       "title": "New missions",
       "task": "docs/tasks/new-missions.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
+      "status": "Done",
+      "reason": "Administrative umbrella reconciliation: planning acceptance and accepted child integrations verified; live calibration limits remain separate",
       "questions": [],
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/9"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/9",
+      "approval": "User autonomous mandate and prior child scope approvals",
+      "completion": {
+        "kind": "administrative-umbrella",
+        "reviewer": "/root",
+        "evidence": "docs/journal/2026-10-05-029-director-queue.md",
+        "children": [
+          {
+            "ticket": "TRI-023",
+            "squashCommit": "d49158a037c9f39870e7e3510442526436d591ac"
+          },
+          {
+            "ticket": "TRI-024",
+            "squashCommit": "b507f2cc6aaf1e625d7edda149217bf648286e5c"
+          },
+          {
+            "ticket": "TRI-025",
+            "squashCommit": "c4feff21da8cf82e97bbb4127999a55f066ee2ef"
+          },
+          {
+            "ticket": "TRI-026",
+            "squashCommit": "7293cb4b18a8c2ccce8f0682b640350be4a8eb19"
+          },
+          {
+            "ticket": "TRI-032",
+            "squashCommit": "a7d2a187d98d14a2e96ad1e5c0f7493f1acfd6a6"
+          },
+          {
+            "ticket": "TRI-033",
+            "squashCommit": "1729ef53cf2c1290dbe3fbee717a5ff994f392a8"
+          },
+          {
+            "ticket": "TRI-034",
+            "squashCommit": "7f9fce1ee9e117392d5105741ce5c157d4bf1a77"
+          },
+          {
+            "ticket": "TRI-035",
+            "squashCommit": "24a2a9bb78d9e52b42541e6e41ac7dd3e63a7a96"
+          },
+          {
+            "ticket": "TRI-036",
+            "squashCommit": "105975ca07bb7a9175df545bd96ef8a002809d19"
+          },
+          {
+            "ticket": "TRI-037",
+            "squashCommit": "20fdbba880b4956abbe86a9b18e202bf87041cc3"
+          },
+          {
+            "ticket": "TRI-040",
+            "squashCommit": "a5b8123437275e766685b7d8f5390eea0f0eb731"
+          },
+          {
+            "ticket": "TRI-041",
+            "squashCommit": "4b23618ebbfed3de3315973fc36c183fa56e636b"
+          }
+        ]
+      }
     },
     {
       "id": "TRI-020",
@@ -2556,6 +2640,22 @@
       "details": [
         "../triumph-current-player-help",
         "/root/player_help_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:19:34.536Z",
+      "command": "director-umbrella-reconciliation",
+      "ticket": "TRI-018",
+      "details": [
+        "Administrative umbrella reconciliation: planning acceptance and accepted child integrations verified; live calibration limits remain separate"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:19:34.537Z",
+      "command": "director-umbrella-reconciliation",
+      "ticket": "TRI-019",
+      "details": [
+        "Administrative umbrella reconciliation: planning acceptance and accepted child integrations verified; live calibration limits remain separate"
       ]
     }
   ]
