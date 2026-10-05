@@ -3,7 +3,12 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {validateParentRepo}=require('./task.cjs');
 assert.doesNotThrow(()=>validateParentRepo({status:128,stderr:'fatal: not a git repository (or any of the parent directories): .git\n'}));
 for(const result of [{status:128,stderr:'fatal: detected dubious ownership in repository'}, {status:128,stderr:'fatal: permission denied'}, {status:null,error:{message:'spawn git ENOENT'}}, {status:1,stderr:''}])assert.throws(()=>validateParentRepo(result),/Cannot validate worktree parent repository/);
-const root=path.resolve(__dirname,'..'),scratch=fs.mkdtempSync(path.join(require('node:os').tmpdir(),'triumph-director-')),fixture=path.join(scratch,'director');
+const root=path.resolve(__dirname,'..'),scratch=fs.mkdtempSync(path.join(require('node:os').tmpdir(),'triumph-director-'));
+let fixture=path.join(scratch,'director fixture');fs.mkdirSync(fixture);
+if(process.platform==='win32'){
+ const alias=spawnSync('cmd',['/d','/c','for %I in (.) do @echo %~sI'],{cwd:fixture,encoding:'utf8',windowsHide:true});assert.equal(alias.status,0,alias.stderr);fixture=alias.stdout.trim();
+ console.log('Windows director fixture alias: '+fixture+'; native: '+fs.realpathSync.native(fixture));
+}
 fs.mkdirSync(path.join(fixture,'tools'),{recursive:true});fs.mkdirSync(path.join(fixture,'docs/templates'),{recursive:true});fs.mkdirSync(path.join(fixture,'docs/tasks'),{recursive:true});
 for(const f of ['tools/board.cjs','tools/task.cjs','docs/templates/SESSION.md','docs/templates/TASK.md'])fs.copyFileSync(path.join(root,f),path.join(fixture,f));
 fs.writeFileSync(path.join(fixture,'docs/board.json'),JSON.stringify({version:1,tickets:[]}));
@@ -16,6 +21,12 @@ board(['create','TST-001','example','Example feature','Verified example behavior
 board(['create','TST-003','../../escape','Unsafe','Criterion'],false);board(['move','TST-001','Done','Skip lifecycle'],false);board(['move','TST-001','Ready','User approved bounded example']);board(['move','TST-002','Ready','User approved another']);
 git(['add','.']);git(['commit','-m','Planning records']);fs.writeFileSync(path.join(fixture,'unrelated.txt'),'unrelated');git(['add','.']);git(['commit','-m','Unrelated main change']);const unrelated=git(['rev-parse','HEAD']);
 const worker=path.join(scratch,'worker');
+if(process.platform==='win32'&&fixture!==fs.realpathSync.native(fixture)){
+ // This relative common-dir retains the alias in the old JS realpath implementation.
+ const common=path.resolve(fixture,git(['rev-parse','--git-common-dir']));
+ assert.notEqual(fs.realpathSync(common),fs.realpathSync.native(common));
+ console.log('Exercising Git director dispatch with a real Windows 8.3 directory alias.');
+}else if(process.platform==='win32')console.log('Windows 8.3 alias unavailable; ordinary directory lifecycle remains covered.');
 const dirty=path.join(fixture,'unrelated.txt');fs.writeFileSync(dirty,'preserved dirty director');fs.writeFileSync(path.join(fixture,'untracked.txt'),'preserved untracked');
 const prepare=args=>run(process.execPath,['tools/task.cjs','prepare',...args],fixture,false);
 prepare(['feature/example','--ticket','TST-001','--worktree',path.join(fixture,'nested')]);
