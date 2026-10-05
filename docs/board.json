@@ -526,10 +526,16 @@
       "id": "TRI-036",
       "title": "Create Beneath the Dunes desert convoy rescue",
       "task": "docs/tasks/beneath-the-dunes.md",
-      "status": "Ready",
-      "reason": "User selected A Twin Crescent; confirmed two crawlers save one; worm and roster prerequisites merged, numerical mission tuning delegated",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User selected A Twin Crescent; confirmed two crawlers save one; worm and roster prerequisites merged, numerical mission tuning delegated"
+      "approval": "User selected A Twin Crescent; confirmed two crawlers save one; worm and roster prerequisites merged, numerical mission tuning delegated",
+      "worker": {
+        "id": "/root/desert_mission_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-beneath-the-dunes",
+        "branch": "feature/beneath-the-dunes"
+      },
+      "branch": "feature/beneath-the-dunes"
     },
     {
       "id": "TRI-037",
@@ -2197,6 +2203,15 @@
       "details": [
         "Ready",
         "User selected A Twin Crescent; confirmed two crawlers save one; worm and roster prerequisites merged, numerical mission tuning delegated"
+      ]
+    },
+    {
+      "at": "2026-10-05T06:54:58.768Z",
+      "command": "dispatch",
+      "ticket": "TRI-036",
+      "details": [
+        "../triumph-beneath-the-dunes",
+        "/root/desert_mission_worker"
       ]
     }
   ]
