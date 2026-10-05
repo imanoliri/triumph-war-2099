@@ -903,6 +903,15 @@
       "questions": [],
       "approval": "User explicitly requested more missions from existing table; maritime defense immediately after TRI-049",
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/19"
+    },
+    {
+      "id": "TRI-051",
+      "title": "Reinforcement eagles in new missions",
+      "task": "docs/tasks/custom-mission-reinforcement-eagles.md",
+      "status": "Ready",
+      "reason": "User explicitly requested reinforcement eagles on new maps; integrate049/050 directly and audit earlier custom missions after050",
+      "questions": [],
+      "approval": "User explicitly requested reinforcement eagles on new maps; integrate049/050 directly and audit earlier custom missions after050"
     }
   ],
   "events": [
@@ -3093,6 +3102,25 @@
       "details": [
         "../triumph-whiteout-signal",
         "/root/whiteout_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T18:18:07.365Z",
+      "command": "create",
+      "ticket": "TRI-051",
+      "details": [
+        "custom-mission-reinforcement-eagles",
+        "Reinforcement eagles in new missions",
+        "Audit and supply usable reinforcement eagles on existing custom maps, with cap-safe pickup and actual delivery"
+      ]
+    },
+    {
+      "at": "2026-10-05T18:18:29.291Z",
+      "command": "move",
+      "ticket": "TRI-051",
+      "details": [
+        "Ready",
+        "User explicitly requested reinforcement eagles on new maps; integrate049/050 directly and audit earlier custom missions after050"
       ]
     }
   ]

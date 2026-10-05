@@ -20,3 +20,7 @@ New maritime-world local Navy mission: defend an island harbor through a finite 
 User explicitly requested more missions from the existing world table on 2026-10-05. Execute directly after TRI-049. This approved task supersedes Harbor Watch brief's draft-only gate for this mission. Read docs/planning/campaigns/missions/harbor-watch.md, maritime dossier and campaign agent kit. Worker chooses and records reasonable existing-unit roster, hold duration, budgets and newly authored geometry. Navy identity comes from briefing, map and existing roster roles. No boats, amphibious movement, ship convoy, structure HP, new faction abilities or campaign persistence. Preserve all world dossiers and Last Convoy. One bounded worker, no nested delegation, stop at Review, never merge/publish.
 
 ## Sessions
+
+## Reinforcement eagle requirement (user steering)
+
+User explicitly requested reinforcement eagles for new maps on 2026-10-05. Provide accessible usable reinforcement eagles with explicit finite/replenishing supply policy explained in briefing. Verify actual troop/support delivery on the custom map, pickup preservation and feedback at population cap, and restart reset. Include supply in defense balance without unlimited safe farming.

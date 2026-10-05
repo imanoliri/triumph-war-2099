@@ -20,3 +20,7 @@ New snow-world expedition mission: activate the research station relay and retur
 User explicitly requested more missions from the existing world table on 2026-10-05. Director selects Whiteout Signal first, then Harbor Watch. This approved task supersedes the snow brief's draft-only gate for this mission. Read docs/planning/campaigns/missions/whiteout-signal.md, its planet dossier and campaign agent kit. Worker chooses and records reasonable existing-unit roster, survivor count, activation range, new geometry and numerical balance defaults, reusing established objective patterns. The map must be newly authored, not a recolor. Preserve all fourteen world dossiers and existing missions, especially Last Convoy. No new ice enemies, civilian system, environmental damage, campaign persistence or gamepad work. Follow map-specific art references/workflow; no nested delegation. Stop at Review, never merge or publish.
 
 ## Sessions
+
+## Reinforcement eagle requirement (user steering)
+
+User explicitly requested reinforcement eagles for new maps on 2026-10-05. Provide accessible usable reinforcement eagles with an explicit supply policy; a rendered pickup alone is insufficient. Verify actual support arrival on this custom geometry, preservation/feedback when population cap prevents use, and restart reset. Balance supply against substantial pressure; explain replenishment or finite availability in briefing. Preserve original source support conventions and avoid unlimited safe farming.
