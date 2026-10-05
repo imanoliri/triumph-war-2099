@@ -23,3 +23,7 @@ When available, run the original v2.3 game and compare the same mission/track. R
 ## Release criteria
 
 Automated suite green; required scenarios passed with recorded evidence; open failures classified; no live verification claims for skipped checks. A known limitation may be accepted explicitly by the user, with its scope documented.
+
+## Gamepad acceptance (TRI-007)
+
+With a physical standard-mapping controller, record browser/controller model and verify the help/status, connection without takeover, bumper commander ownership, analog movement, right-stick aiming, trigger fire/grenade edges and A interaction. Test D-pad orders during tactical freeze, Start resume with held controls, dialogs/focus loss, keyboard/mouse takeover, two controllers, unplug/reconnect and restart. Release all controls to rearm after each transition. A nonstandard controller must show unsupported mapping. These hardware checks remain separate from API/VM fixtures.

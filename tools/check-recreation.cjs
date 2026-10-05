@@ -2,7 +2,7 @@ if (require.main === module) process.chdir(require('node:path').resolve(__dirnam
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const handlers={},elements={},noop=()=>{};
 const ctx=new Proxy({}, {get:(o,k)=>o[k]||noop,set:(o,k,v)=>(o[k]=v,true)});
-for(const id of ['#rally','#cmd-1','#cmd-2','#cmd-3','#cmd-4','#order-0','#order-1','#order-2','#order-3','#command-hint','#units','#units-close','#units-context','#unit-cards'])elements[id]={setAttribute:noop};
+for(const id of ['#rally','#cmd-1','#cmd-2','#cmd-3','#cmd-4','#order-0','#order-1','#order-2','#order-3','#command-hint','#gamepad-status','#units','#units-close','#units-context','#unit-cards'])elements[id]={setAttribute:noop};
 const canvasHandlers={};const canvas={attributes:{},setAttribute(k,v){this.attributes[k]=v},getContext:()=>ctx,focus:noop,addEventListener:(name,cb)=>canvasHandlers[name]=cb,getBoundingClientRect:()=>({left:100,top:50,width:512,height:384}),setPointerCapture:noop,hasPointerCapture:()=>true,releasePointerCapture:noop};
 for(const id of ['#start','#pause','#reset','#options','#close'])elements[id]={setAttribute:noop};
 elements['#game']=canvas;elements['#bots']={checked:true};elements['#difficulty']={value:'normal'};
@@ -11,9 +11,9 @@ elements['#unit-guide']={open:false,showModal(){this.open=true},close(){this.ope
 elements['#mission']={value:'0'};
 class Image {constructor(){this.complete=true;this.naturalWidth=20;}}
 class Audio {cloneNode(){return this}play(){return Promise.resolve()}}
-const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.from(s,'base64').toString('latin1'),document:{querySelector:id=>elements[id],createElement:()=>canvas},window:{addEventListener:(name,cb)=>handlers[name]=cb},requestAnimationFrame:cb=>sandbox.nextFrame=cb};
+const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.from(s,'base64').toString('latin1'),navigator:{getGamepads:()=>[]},document:{hasFocus:()=>true,querySelector:id=>elements[id],createElement:()=>canvas},window:{addEventListener:(name,cb)=>handlers[name]=cb},requestAnimationFrame:cb=>sandbox.nextFrame=cb};
 vm.createContext(sandbox);
-for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','src/breeding.js','src/balance.js','assets/custom/split-ridge/terrain.js','assets/custom/beneath-dunes/terrain.js','src/custom-missions.js','src/missions.js','src/rally.js','src/vent-bugs.js','src/desert-worm.js','src/desert-riders.js','src/projectiles.js','src/combat.js','src/orders.js','src/input.js','src/input-dom.js','src/support-lifecycle.js','src/rendering.js','game.js']){
+for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','src/breeding.js','src/balance.js','assets/custom/split-ridge/terrain.js','assets/custom/beneath-dunes/terrain.js','src/custom-missions.js','src/missions.js','src/rally.js','src/vent-bugs.js','src/desert-worm.js','src/desert-riders.js','src/projectiles.js','src/combat.js','src/orders.js','src/input.js','src/gamepad.js','src/input-dom.js','src/support-lifecycle.js','src/rendering.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
  if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,setSeed:value=>seed=value>>>0,interact,update,fire,kill,blocked,grenade,reinforce,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,spawnDesertWorm,spawnDesertRider,supportExplosion,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival,toggleRally,addRally,removeRally,assignRally,drawSprites:()=>{const calls=[],previous=sprite;try{sprite=(...args)=>{calls.push(args);return true;};draw();}finally{sprite=previous;}return calls;}});})();');
  vm.runInContext(source,sandbox);
@@ -625,4 +625,17 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  for(let n=1;n<=9;n++){api.loadMission(n);assert(!sandbox.window.__fixture().state.humans.some(sandbox.window.TriumphDesertRiders.isRider));}
  for(const m of sandbox.window.TriumphCustomMissions.list){api.loadCustomMission(m.id);assert.equal(sandbox.window.__fixture().state.humans.some(sandbox.window.TriumphDesertRiders.isRider),m.id==='custom-desert-beneath-dunes');}
  console.log('Passed Rider shared cardinal lane/Defend, exact guard pellets, force/focus, terminal use, Follow anchor and all existing mission roster isolation.');
+}
+
+// TRI-007: production adapter through actual frame polling and commander update.
+{
+ const pad={index:0,connected:true,mapping:'standard',axes:[0,0,0,0],buttons:Array.from({length:17},()=>({pressed:false,value:0}))};
+ sandbox.navigator.getGamepads=()=>[pad];api.loadMission(1);elements['#start'].onclick();assert.equal(api.state().mode,'playing');assert.equal(api.state().paused,true);frames(1);
+ assert.equal(api.state().activeCommander,null);pad.buttons[5].pressed=true;frames(1);assert.equal(api.state().activeCommander,1);
+ pad.buttons[5].pressed=false;pad.buttons[9].pressed=true;frames(1);assert.equal(api.state().paused,false);pad.buttons[9].pressed=false;frames(2);
+ const f=sandbox.window.__fixture(),u=f.state.humans.find(u=>u.id===1);u.cool=0;pad.axes[2]=.7;pad.axes[3]=.7;pad.buttons[7].pressed=true;frames(1);
+ const bullet=f.state.bullets.find(b=>b.owner===1);assert(bullet&&Math.abs(bullet.dx-bullet.dy)<1e-8,'production runtime free-aim shot');
+ assert(elements['#gamepad-status'].textContent.includes('Commander 1'),'production connection status');
+ sandbox.navigator.getGamepads=()=>[];frames(1);assert.equal(api.state().activeCommander,null);assert.equal(api.state().mouseMode,'troops');
+ console.log('Passed production gamepad frame wiring, explicit tactical selection/resume, free-aim firing, status and disconnect AI release. No hardware claim.');
 }
