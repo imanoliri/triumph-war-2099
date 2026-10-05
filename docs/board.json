@@ -692,7 +692,8 @@
       "status": "Ready",
       "reason": "Autonomous mandate; verified Windows CI failure, bounded portability fix queued immediately after046",
       "questions": [],
-      "approval": "Autonomous mandate; verified Windows CI failure, bounded portability fix queued immediately after046"
+      "approval": "Autonomous mandate; verified Windows CI failure, bounded portability fix queued immediately after046",
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/16"
     }
   ],
   "events": [
