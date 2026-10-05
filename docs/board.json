@@ -615,6 +615,38 @@
         "reviewedImplementationCommit": "7484bbae94ab0d14797f205705f9a391081248ce",
         "squashCommit": "4b23618ebbfed3de3315973fc36c183fa56e636b"
       }
+    },
+    {
+      "id": "TRI-042",
+      "title": "Extract combat and burst system",
+      "task": "docs/tasks/extract-combat-bursts.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-043",
+      "title": "Extract troop orders and input system",
+      "task": "docs/tasks/extract-orders-input.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-044",
+      "title": "Extract support lifecycle system",
+      "task": "docs/tasks/extract-support-lifecycle.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-045",
+      "title": "Extract battlefield rendering system",
+      "task": "docs/tasks/extract-rendering.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -2212,6 +2244,46 @@
       "details": [
         "../triumph-beneath-the-dunes",
         "/root/desert_mission_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T06:59:31.079Z",
+      "command": "create",
+      "ticket": "TRI-042",
+      "details": [
+        "extract-combat-bursts",
+        "Extract combat and burst system",
+        "Extract combat/burst calculation and state lifecycle with explicit inputs; preserve current gameplay and all relevant regressions"
+      ]
+    },
+    {
+      "at": "2026-10-05T06:59:31.134Z",
+      "command": "create",
+      "ticket": "TRI-043",
+      "details": [
+        "extract-orders-input",
+        "Extract troop orders and input system",
+        "Extract orders/input ownership and handlers with explicit interfaces, preserving keyboard/mouse/tactical behavior"
+      ]
+    },
+    {
+      "at": "2026-10-05T06:59:31.188Z",
+      "command": "create",
+      "ticket": "TRI-044",
+      "details": [
+        "extract-support-lifecycle",
+        "Extract support lifecycle system",
+        "Extract carriers, drops and support lifecycle without changing timing, eligibility or cap rules"
+      ]
+    },
+    {
+      "at": "2026-10-05T06:59:31.242Z",
+      "command": "create",
+      "ticket": "TRI-045",
+      "details": [
+        "extract-rendering",
+        "Extract battlefield rendering system",
+        "Extract battlefield rendering with explicit state/assets inputs; preserve coordinate/sprite and mounted rendering conventions"
       ]
     }
   ]
