@@ -63,11 +63,17 @@
       "title": "Audible MIDI comparison",
       "priority": "Medium",
       "task": "docs/tasks/midi-comparison.md",
-      "status": "Ready",
-      "reason": "Autonomous user mandate; bounded audible comparison with explicit capture/access gate",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/5",
-      "approval": "Autonomous user mandate; bounded audible comparison with explicit capture/access gate"
+      "approval": "Autonomous user mandate; bounded audible comparison with explicit capture/access gate",
+      "worker": {
+        "id": "/root/midi_verification_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-midi-comparison",
+        "branch": "chore/midi-comparison"
+      },
+      "branch": "chore/midi-comparison"
     },
     {
       "id": "TRI-005",
@@ -2992,6 +2998,15 @@
       "ticket": "TRI-007",
       "details": [
         "Director incorrectly inferred approval from broad queue mandate; user explicitly challenged gamepad scope. No explicit user feature request."
+      ]
+    },
+    {
+      "at": "2026-10-05T18:07:31.961Z",
+      "command": "dispatch",
+      "ticket": "TRI-004",
+      "details": [
+        "../triumph-midi-comparison",
+        "/root/midi_verification_worker"
       ]
     }
   ]
