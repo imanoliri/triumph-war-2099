@@ -57,3 +57,7 @@ Clean worker a397fddbd59827cd90b64bebeb7288c7758fb282 independently reviewed; fo
 Accepted reinforcement squash96ce28c9b42f787d194862b722eee57b589c716b; clean integration, no conflict. Board Done records both exact SHAs. Publish and dispatch approved052 from current main.
 
 Published f0023e4 via ordinary Git. Prepared052 in ../triumph-silent-return-air-columns at f0023e4, initial005, dispatched actual /root/silent_columns_worker. Only one bounded active worker; next054 then053.
+
+## Silent columns accepted review
+
+Clean worker cc74001e192f03a602d75d180623b22011edd273 reviewed. Three x472/520/568 with48px centers leave24-29px sprite gap; y328/392/520 and entry stagger unchanged. Independent check-custom-pressure passes all-five exact points/caps/connected landings/freeze/restart/extraction. Full78985 exit0; support lifecycle runtime unchanged, exact oracle normalization reviewed. Actual worker Normal flight and landing screenshot reviewed, limits explicit. Accept squash; next054.

@@ -933,8 +933,8 @@
       "id": "TRI-052",
       "title": "Spread Silent Return airdrops into parallel columns",
       "task": "docs/tasks/silent-return-air-columns.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Reviewed cc74001; independent five-profile formation check, full78985 exit0 and actual flight/landing screenshots accepted",
       "questions": [],
       "approval": "User explicitly requested three tight parallel Silent Return airdrop columns on2026-10-06; horizontal correction after051",
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/21",
@@ -3329,6 +3329,15 @@
       "details": [
         "../triumph-silent-return-air-columns",
         "/root/silent_columns_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T23:04:47.214Z",
+      "command": "move",
+      "ticket": "TRI-052",
+      "details": [
+        "Review",
+        "Reviewed cc74001; independent five-profile formation check, full78985 exit0 and actual flight/landing screenshots accepted"
       ]
     }
   ]
