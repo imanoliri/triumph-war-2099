@@ -1,5 +1,7 @@
 # Beneath the Dunes — schematic selection packet (TRI-041)
 
+User selected **A—Twin Crescent** on 2026-10-05 for TRI-036. B—Broken Wells and C—Three-Table Crossing remain saved concepts for later missions. The selection approves schematic geometry; runtime and art acceptance remain separate.
+
 Three entirely custom layouts, drawn with deterministic Python/Pillow and SVG primitives. No recovered pixels, source-game maps, Split Ridge masks or saved Relay B/C concepts were copied. These are annotated design overlays, **not terrain exports or installed missions**. Select one before the mission worker freezes a new collision contract and placements; later art work follows the existing [artist workflow](../../../../art-kit/artist-workflow.md) and [agent kit](../../agent-kit.md).
 
 Open [contact sheet](contact-sheet.png), then inspect native-size [A](a.png), [B](b.png), [C](c.png). Editable vector sources are [a.svg](a.svg), [b.svg](b.svg), [c.svg](c.svg); [build.py](build.py) is the deterministic authoring source. [geometry.json](geometry.json) supplies proposed rock rectangles, actor hotspots, route polylines, refuges and cardinal lanes; [validation.json](validation.json) records checks and route encounter coordinates. SVG/PNG annotations are overlays only and must not be baked into later terrain.

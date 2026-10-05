@@ -9,13 +9,18 @@ Create Beneath the Dunes desert convoy rescue
 
 ## Acceptance criteria
 
-- [ ] Implement the approved desert convoy-rescue objective and new map, with reachable routes, charging-worm encounters, difficulty profiles and separately recorded live evidence.
+- [ ] Add selectable Beneath the Dunes using approved layout A—Twin Crescent, with distinct custom terrain and both reachable escort arcs; preserve B/C proposal files.
+- [ ] Place confirmed Desert Rider roster and charging worms; two disabled six-HP crawlers require mechanic repair before escort. At least one repaired crawler reaching extraction wins; both destroyed loses. No infantry substitute, evade immunity or unlimited mines.
+- [ ] Provide all-five difficulty profiles, readable briefing/objective/repair/escort progress, tactical start, restart and original/custom mission isolation. Document initial tuning and challenge limits.
+- [ ] Verify actual full-body routes, repair and victory/loss gates with relevant regressions and full suite; separately record browser gameplay evidence and limitations. Prepare a map-specific terrain/art contract for later delegated polish.
 
 ## Scope and decisions
 
 User selected a stranded-convoy rescue on the frontier desert planet on 2026-10-05. See [mission refinement](../planning/campaigns/missions/desert-operation.md). Depends on TRI-035 charging worms. User explicitly chose repair and escort of actual convoy vehicles. Vehicle repair/escort is new scoped behavior to refine, not an infantry-rescue substitute. Obtain reviewed schematic layout before freezing geometry; create map-specific art contract and references, preserving every other world in the campaign pack. Initial roster, support, rescue eligibility, victory/loss gates and difficulty parameters require refinement. Runtime mission implementation and delegated art polish remain separate bounded work; no campaign-wide progression or under-city enemies in scope.
 
 ## Sessions
+
+2026-10-05 user selected **A—Twin Crescent** in reply to the presented A/B/C packet. Freeze runtime geometry from A in [geometry.json](../planning/campaigns/maps/beneath-dunes/geometry.json); preserve B/C for later missions. TRI-035 and TRI-040 are merged prerequisites. Mission-specific roster counts, disabled starting damage/repair threshold, escort eligibility/proximity, extraction radius and difficulty encounter timing are bounded worker-owned tuning; document and verify them. Use existing worms and faction abilities unchanged, no new worm-producing nest mechanic. The illustrative N? anchors may be omitted or mapped to existing ordinary bug nests. Runtime geometry and readable baseline visuals belong here; decorative art polish remains a separate delegated ticket.
 
 ## Further user decisions
 
