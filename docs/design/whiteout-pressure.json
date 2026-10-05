@@ -1,0 +1,60 @@
+{
+  "method": "Full VM runtime at .02s up to 60s, default AI at starting positions, no orders/healing/teleports. Not skilled-player challenge or completion evidence. RNG is ordinary runtime random.",
+  "logs": [
+    {
+      "difficulty": "veryeasy",
+      "time": 60,
+      "mode": "playing",
+      "army": 19,
+      "bugs": 31,
+      "kills": 13,
+      "emitted": 6,
+      "budget": 27,
+      "interval": 6
+    },
+    {
+      "difficulty": "easy",
+      "time": 60,
+      "mode": "playing",
+      "army": 18,
+      "bugs": 44,
+      "kills": 13,
+      "emitted": 14,
+      "budget": 37,
+      "interval": 5
+    },
+    {
+      "difficulty": "normal",
+      "time": 60,
+      "mode": "playing",
+      "army": 15,
+      "bugs": 50,
+      "kills": 31,
+      "emitted": 24,
+      "budget": 47,
+      "interval": 3.6
+    },
+    {
+      "difficulty": "hard",
+      "time": 60,
+      "mode": "playing",
+      "army": 12,
+      "bugs": 50,
+      "kills": 20,
+      "emitted": 15,
+      "budget": 61,
+      "interval": 2.5
+    },
+    {
+      "difficulty": "veryhard",
+      "time": 60,
+      "mode": "playing",
+      "army": 2,
+      "bugs": 50,
+      "kills": 28,
+      "emitted": 31,
+      "budget": 78,
+      "interval": 1.8
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Whiteout Signal
 
-Status: draft for user refinement, not an approved implementation. Planet: [snow-world](../planets/snow-world.md).
+Status: implemented for TRI-049 Review under the [approved task](../../../tasks/whiteout-signal.md). Planet: [snow-world](../planets/snow-world.md). The proposal below preserves planning history; current objective, geometry and profiles are recorded in DESIGN and the task/session handoff.
 
 ## Player experience
 
@@ -29,3 +29,5 @@ Prove reachable starts/objectives/return routes and spawn/support clearance. Exe
 ## Next decision
 
 Agree the objective and minimal roster, choose a layout, then turn this brief into one bounded ticket using [the agent kit](../agent-kit.md).
+
+Whiteout Signal is now implemented under TRI-049: newly authored snow map, relay/party/extraction mission and five custom pressure profiles. Three finite troop eagle caches supply reinforcements. The approved task supersedes this brief's draft-only gate. Exact objective, cap, loss and profile decisions are in DESIGN and assets/custom/whiteout-signal/README.md; verification/session043 preserve limits. Further Nivalis missions remain proposals.
