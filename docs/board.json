@@ -737,11 +737,17 @@
       "id": "TRI-043",
       "title": "Extract troop orders and input system",
       "task": "docs/tasks/extract-orders-input.md",
-      "status": "Ready",
-      "reason": "User autonomous queue mandate; reviewed bounded behavior-preserving scope, execute after TRI-042",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/12",
-      "approval": "User autonomous queue mandate; reviewed bounded behavior-preserving scope, execute after TRI-042"
+      "approval": "User autonomous queue mandate; reviewed bounded behavior-preserving scope, execute after TRI-042",
+      "worker": {
+        "id": "/root/orders_extract_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-extract-orders-input",
+        "branch": "chore/extract-orders-input"
+      },
+      "branch": "chore/extract-orders-input"
     },
     {
       "id": "TRI-044",
@@ -2745,6 +2751,15 @@
         "/root",
         "aeda0116e8768183c6a20f8c956b985946b6eda7",
         "76bc1b359dd4b149173e90a7443bf4197344029d"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:42:38.449Z",
+      "command": "dispatch",
+      "ticket": "TRI-043",
+      "details": [
+        "../triumph-extract-orders-input",
+        "/root/orders_extract_worker"
       ]
     }
   ]
