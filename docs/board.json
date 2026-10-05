@@ -791,17 +791,18 @@
       "id": "TRI-048",
       "title": "Synchronize player help and playtest expectations",
       "task": "docs/tasks/current-player-help.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Accepted copy-only audit; independent project/source review, worker full suite and ordinary live DOM passed; audio/gameplay unclaimed",
       "questions": [],
       "approval": "Autonomous mandate; verified stale Controls Relay counts and PLAYTEST tank-rest values",
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/17",
-      "worker": {
-        "id": "/root/player_help_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-current-player-help",
-        "branch": "chore/current-player-help"
-      },
-      "branch": "chore/current-player-help"
+      "branch": "chore/current-player-help",
+      "completion": {
+        "evidence": "Accepted copy-only audit; independent project/source review, worker full suite and ordinary live DOM passed; audio/gameplay unclaimed",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "46110a8228399014eacb889c4665aa9133c11658",
+        "squashCommit": "d08cb725b71415353dc4e5ea2e2bd84850ac9adb"
+      }
     }
   ],
   "events": [
@@ -2656,6 +2657,27 @@
       "ticket": "TRI-019",
       "details": [
         "Administrative umbrella reconciliation: planning acceptance and accepted child integrations verified; live calibration limits remain separate"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:23:24.382Z",
+      "command": "move",
+      "ticket": "TRI-048",
+      "details": [
+        "Review",
+        "Reviewed46110a82 copy against accepted runtime; independent project check and worker full/focused/live DOM evidence pass"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:23:48.273Z",
+      "command": "move",
+      "ticket": "TRI-048",
+      "details": [
+        "Done",
+        "Accepted copy-only audit; independent project/source review, worker full suite and ordinary live DOM passed; audio/gameplay unclaimed",
+        "/root",
+        "d08cb725b71415353dc4e5ea2e2bd84850ac9adb",
+        "46110a8228399014eacb889c4665aa9133c11658"
       ]
     }
   ]
