@@ -590,16 +590,17 @@
       "id": "TRI-041",
       "title": "Prepare Beneath the Dunes map proposals",
       "task": "docs/tasks/beneath-the-dunes-map-proposals.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Proposal deliverables and independent geometry/visual review accepted; user layout selection still required before runtime036",
       "questions": [],
       "approval": "Necessary review proposals for user-selected desert mission; bounded design only, before mission layout approval, after035",
-      "worker": {
-        "id": "/root/desert_map_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-beneath-dunes-map-proposals",
-        "branch": "chore/beneath-the-dunes-map-proposals"
-      },
-      "branch": "chore/beneath-the-dunes-map-proposals"
+      "branch": "chore/beneath-the-dunes-map-proposals",
+      "completion": {
+        "evidence": "Proposal deliverables and independent geometry/visual review accepted; user layout selection still required before runtime036",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "7484bbae94ab0d14797f205705f9a391081248ce",
+        "squashCommit": "4b23618ebbfed3de3315973fc36c183fa56e636b"
+      }
     }
   ],
   "events": [
@@ -2128,6 +2129,27 @@
       "details": [
         "../triumph-beneath-dunes-map-proposals",
         "/root/desert_map_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T06:06:35.132Z",
+      "command": "move",
+      "ticket": "TRI-041",
+      "details": [
+        "Review",
+        "Reviewed7484bba contact sheet; independent3216 swept-route samples, charge/refuge/dimensions passed; worker full suite passed"
+      ]
+    },
+    {
+      "at": "2026-10-05T06:06:35.863Z",
+      "command": "move",
+      "ticket": "TRI-041",
+      "details": [
+        "Done",
+        "Proposal deliverables and independent geometry/visual review accepted; user layout selection still required before runtime036",
+        "/root",
+        "4b23618ebbfed3de3315973fc36c183fa56e636b",
+        "7484bbae94ab0d14797f205705f9a391081248ce"
       ]
     }
   ]
