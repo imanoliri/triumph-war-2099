@@ -690,11 +690,17 @@
       "id": "TRI-047",
       "title": "Fix Windows director Git repository identity check",
       "task": "docs/tasks/windows-director-ci.md",
-      "status": "Ready",
-      "reason": "Autonomous mandate; verified Windows CI failure, bounded portability fix queued immediately after046",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
       "approval": "Autonomous mandate; verified Windows CI failure, bounded portability fix queued immediately after046",
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/16"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/16",
+      "worker": {
+        "id": "/root/windows_ci_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-windows-director-ci",
+        "branch": "fix/windows-director-ci"
+      },
+      "branch": "fix/windows-director-ci"
     },
     {
       "id": "TRI-048",
@@ -2503,6 +2509,15 @@
         "/root",
         "7bb26ab705a70e73f7b13a711c5e839277d91c44",
         "db49b78345db5173a65263a5d30d16d951016c79"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:02:28.899Z",
+      "command": "dispatch",
+      "ticket": "TRI-047",
+      "details": [
+        "../triumph-windows-director-ci",
+        "/root/windows_ci_worker"
       ]
     }
   ]
