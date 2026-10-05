@@ -1,0 +1,149 @@
+{
+  "method": "2px sampled swept square bounds; all four diagonal endpoint sweeps",
+  "results": [
+    {
+      "id": "a",
+      "routes": [
+        {
+          "length": 858,
+          "samples": 433,
+          "bodyPlusDodgeSquareClear": true,
+          "exposedThreatAccess": [
+            {
+              "worm": 1,
+              "routePoint": [
+                292.0,
+                230.0
+              ],
+              "triggerDistance": 130.2,
+              "unblockedTargetingSightline": true
+            }
+          ]
+        },
+        {
+          "length": 894,
+          "samples": 451,
+          "bodyPlusDodgeSquareClear": true,
+          "exposedThreatAccess": [
+            {
+              "worm": 2,
+              "routePoint": [
+                692.0,
+                590.0
+              ],
+              "triggerDistance": 100.3,
+              "unblockedTargetingSightline": true
+            },
+            {
+              "worm": 3,
+              "routePoint": [
+                720.3,
+                570.7
+              ],
+              "triggerDistance": 179.7,
+              "unblockedTargetingSightline": true
+            }
+          ]
+        }
+      ],
+      "placementsClear": true,
+      "sharedAmbushRouteSwitchClear": true,
+      "supportAccessClear": true,
+      "cardinalLanesClear": true,
+      "refugesOutsideShownWormPlusCrawlerSweep": true
+    },
+    {
+      "id": "b",
+      "routes": [
+        {
+          "length": 813,
+          "samples": 411,
+          "bodyPlusDodgeSquareClear": true,
+          "exposedThreatAccess": [
+            {
+              "worm": 1,
+              "routePoint": [
+                280.0,
+                242.0
+              ],
+              "triggerDistance": 170.2,
+              "unblockedTargetingSightline": true
+            }
+          ]
+        },
+        {
+          "length": 1208,
+          "samples": 609,
+          "bodyPlusDodgeSquareClear": true,
+          "exposedThreatAccess": [
+            {
+              "worm": 2,
+              "routePoint": [
+                820.0,
+                422.0
+              ],
+              "triggerDistance": 100.3,
+              "unblockedTargetingSightline": true
+            }
+          ]
+        }
+      ],
+      "placementsClear": true,
+      "sharedAmbushRouteSwitchClear": true,
+      "supportAccessClear": true,
+      "cardinalLanesClear": true,
+      "refugesOutsideShownWormPlusCrawlerSweep": true
+    },
+    {
+      "id": "c",
+      "routes": [
+        {
+          "length": 1364,
+          "samples": 689,
+          "bodyPlusDodgeSquareClear": true,
+          "exposedThreatAccess": [
+            {
+              "worm": 1,
+              "routePoint": [
+                163.3,
+                466.7
+              ],
+              "triggerDistance": 53.7,
+              "unblockedTargetingSightline": true
+            },
+            {
+              "worm": 2,
+              "routePoint": [
+                643.7,
+                269.6
+              ],
+              "triggerDistance": 179.8,
+              "unblockedTargetingSightline": true
+            }
+          ]
+        },
+        {
+          "length": 1232,
+          "samples": 623,
+          "bodyPlusDodgeSquareClear": true,
+          "exposedThreatAccess": [
+            {
+              "worm": 3,
+              "routePoint": [
+                865.3,
+                596.3
+              ],
+              "triggerDistance": 65.0,
+              "unblockedTargetingSightline": true
+            }
+          ]
+        }
+      ],
+      "placementsClear": true,
+      "sharedAmbushRouteSwitchClear": true,
+      "supportAccessClear": true,
+      "cardinalLanesClear": true,
+      "refugesOutsideShownWormPlusCrawlerSweep": true
+    }
+  ]
+}

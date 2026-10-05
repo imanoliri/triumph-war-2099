@@ -1,7 +1,7 @@
 # Prepare Beneath the Dunes map proposals
 
 - Ticket: TRI-041; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `chore/beneath-the-dunes-map-proposals`
 
 ## Goal and user-visible outcome
 
@@ -9,7 +9,7 @@ Prepare Beneath the Dunes map proposals
 
 ## Acceptance criteria
 
-- [ ] Deliver three visibly distinct new desert layouts with two disabled crawlers, reachable mechanic/escort routes and extraction, annotated cardinal worm charge lanes and collision/route evidence for user selection.
+- [x] Deliver three visibly distinct new desert layouts with two disabled crawlers, reachable mechanic/escort routes and extraction, annotated cardinal worm charge lanes and collision/route evidence for user selection.
 
 ## Scope and decisions
 
@@ -20,3 +20,8 @@ Use existing1024x768 coordinate convention (or explicit approved proposal dimens
 After035, execute this design worker before040 so user can review while friendly units are implemented. One isolated worker stops Review; director presents artifacts and records user choice before036. Links and compact contract rather than prompt duplication; art polish uses later map-specific immutable manifest.
 
 ## Sessions
+- [2026-10-05 / 022](../journal/2026-10-05-022-beneath-the-dunes-map-proposals.md)
+
+## Review packet
+
+[Selection packet](../planning/campaigns/maps/beneath-dunes/README.md) contains contact sheet, three native PNG/SVG outputs, deterministic authoring source, proposed geometry and validation. All six escort routes pass full body plus diagonal dodge clearance and exposed threat access checks. User selection remains required before runtime/immutable art geometry; this task makes no gameplay integration or browser playability claim.

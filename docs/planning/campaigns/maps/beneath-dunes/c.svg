@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">
+<rect x="0" y="0" width="1023" height="767" fill="#ddc393" stroke="#ddc393"/>
+<rect x="0" y="0" width="1024" height="32" fill="#263940" stroke="#263940"/>
+<text x="14" y="20" font-family="Arial,sans-serif" font-size="16" fill="#ffffff">C / Three-Table Crossing    |    HUD reserved 0..31</text>
+<polyline points="165,600 160,200 480,200 630,330 680,110 900,110" fill="none" stroke="#e9d4ac" stroke-width="98" stroke-linejoin="round"/>
+<polyline points="215,600 450,650 850,650 930,370 940,110 900,110" fill="none" stroke="#e9d4ac" stroke-width="98" stroke-linejoin="round"/>
+<rect x="260" y="260" width="150" height="140" fill="#776950" stroke="#413f36"/>
+<text x="268" y="283" font-family="Arial,sans-serif" font-size="16" fill="#282922">ROCK</text>
+<rect x="550" y="430" width="160" height="130" fill="#776950" stroke="#413f36"/>
+<text x="558" y="453" font-family="Arial,sans-serif" font-size="16" fill="#282922">ROCK</text>
+<rect x="740" y="160" width="130" height="130" fill="#776950" stroke="#413f36"/>
+<text x="748" y="183" font-family="Arial,sans-serif" font-size="16" fill="#282922">ROCK</text>
+<polyline points="165,600 160,200 480,200 630,330 680,110 900,110" fill="none" stroke="#257d87" stroke-width="5" stroke-linejoin="round"/>
+<text x="168" y="192" font-family="Arial,sans-serif" font-size="16" fill="#282922">Escort 1</text>
+<polyline points="215,600 450,650 850,650 930,370 940,110 900,110" fill="none" stroke="#625aa1" stroke-width="5" stroke-linejoin="round"/>
+<text x="458" y="642" font-family="Arial,sans-serif" font-size="16" fill="#282922">Escort 2</text>
+<polyline points="110,460 370,460" fill="none" stroke="#dda061" stroke-width="24" stroke-linejoin="round"/>
+<polyline points="110,460 370,460" fill="none" stroke="#9a472e" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="110" cy="460" r="12" fill="#9a472e"/>
+<text x="132" y="470" font-family="Arial,sans-serif" font-size="16" fill="#282922">W spawn</text>
+<text x="340" y="489" font-family="Arial,sans-serif" font-size="16" fill="#282922">charge</text>
+<polyline points="650,90 650,350" fill="none" stroke="#dda061" stroke-width="24" stroke-linejoin="round"/>
+<polyline points="650,90 650,350" fill="none" stroke="#9a472e" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="650" cy="90" r="12" fill="#9a472e"/>
+<text x="672" y="100" font-family="Arial,sans-serif" font-size="16" fill="#282922">W spawn</text>
+<text x="620" y="379" font-family="Arial,sans-serif" font-size="16" fill="#282922">charge</text>
+<polyline points="930,590 670,590" fill="none" stroke="#dda061" stroke-width="24" stroke-linejoin="round"/>
+<polyline points="930,590 670,590" fill="none" stroke="#9a472e" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="930" cy="590" r="12" fill="#9a472e"/>
+<text x="952" y="600" font-family="Arial,sans-serif" font-size="16" fill="#282922">W spawn</text>
+<text x="640" y="619" font-family="Arial,sans-serif" font-size="16" fill="#282922">charge</text>
+<rect x="92" y="442" width="36" height="36" fill="#5b332e" stroke="#5b332e"/>
+<text x="65" y="435" font-family="Arial,sans-serif" font-size="16" fill="#282922">N? nest</text>
+<rect x="632" y="72" width="36" height="36" fill="#5b332e" stroke="#5b332e"/>
+<text x="605" y="65" font-family="Arial,sans-serif" font-size="16" fill="#282922">N? nest</text>
+<rect x="148" y="588" width="34" height="24" fill="#183c57" stroke="#183c57"/>
+<text x="155" y="577" font-family="Arial,sans-serif" font-size="16" fill="#282922">C1</text>
+<rect x="198" y="588" width="34" height="24" fill="#183c57" stroke="#183c57"/>
+<text x="205" y="635" font-family="Arial,sans-serif" font-size="16" fill="#282922">C2</text>
+<circle cx="85" cy="510" r="8" fill="#276853"/>
+<text x="99" y="515" font-family="Arial,sans-serif" font-size="16" fill="#282922">S</text>
+<circle cx="85" cy="550" r="8" fill="#276853"/>
+<text x="99" y="555" font-family="Arial,sans-serif" font-size="16" fill="#282922">G</text>
+<circle cx="85" cy="590" r="8" fill="#276853"/>
+<text x="99" y="595" font-family="Arial,sans-serif" font-size="16" fill="#282922">M</text>
+<circle cx="440" cy="420" r="10" fill="#3e7862"/>
+<text x="405" y="449" font-family="Arial,sans-serif" font-size="16" fill="#282922">refuge</text>
+<circle cx="730" cy="620" r="10" fill="#3e7862"/>
+<text x="695" y="649" font-family="Arial,sans-serif" font-size="16" fill="#282922">refuge</text>
+<rect x="870" y="85" width="60" height="50" fill="#dcead4" stroke="#276853"/>
+<text x="842" y="155" font-family="Arial,sans-serif" font-size="16" fill="#282922">EXTRACT &gt;=1</text>
+<text x="14" y="732" font-family="Arial,sans-serif" font-size="16" fill="#282922">PROPOSAL | C1/C2: disabled 6HP | S: scout | G: shotgun guard | M: mechanic | N?: optional nest</text>
+<text x="14" y="756" font-family="Arial,sans-serif" font-size="16" fill="#282922">98px route envelope = 17px body + 32px/axis diagonal evade; amber lanes = 24px x 260px</text>
+</svg>
