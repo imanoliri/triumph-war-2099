@@ -720,17 +720,18 @@
       "id": "TRI-042",
       "title": "Extract combat and burst system",
       "task": "docs/tasks/extract-combat-bursts.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Final independent seeded/projectile equivalence and loader guards pass; worker full/final focused checks and narrow live smoke accepted with timing/audio/full campaign gaps",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/11",
       "approval": "Autonomous user mandate; bounded behavior-preserving combat extraction",
-      "worker": {
-        "id": "/root/combat_extract_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-extract-combat-bursts",
-        "branch": "chore/extract-combat-bursts"
-      },
-      "branch": "chore/extract-combat-bursts"
+      "branch": "chore/extract-combat-bursts",
+      "completion": {
+        "evidence": "Final independent seeded/projectile equivalence and loader guards pass; worker full/final focused checks and narrow live smoke accepted with timing/audio/full campaign gaps",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "76bc1b359dd4b149173e90a7443bf4197344029d",
+        "squashCommit": "aeda0116e8768183c6a20f8c956b985946b6eda7"
+      }
     },
     {
       "id": "TRI-043",
@@ -2723,6 +2724,27 @@
       "details": [
         "Ready",
         "User autonomous queue mandate; reviewed bounded rendering scope, execute after TRI-044"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:41:32.732Z",
+      "command": "move",
+      "ticket": "TRI-042",
+      "details": [
+        "Review",
+        "Reviewed76bc1b35; final independent before/after/projectile checks88179 and loader guard pass, worker full/focused/live smoke evidence accepted"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:42:07.241Z",
+      "command": "move",
+      "ticket": "TRI-042",
+      "details": [
+        "Done",
+        "Final independent seeded/projectile equivalence and loader guards pass; worker full/final focused checks and narrow live smoke accepted with timing/audio/full campaign gaps",
+        "/root",
+        "aeda0116e8768183c6a20f8c956b985946b6eda7",
+        "76bc1b359dd4b149173e90a7443bf4197344029d"
       ]
     }
   ]
