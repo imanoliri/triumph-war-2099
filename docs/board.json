@@ -549,16 +549,17 @@
       "id": "TRI-038",
       "title": "Increase ground robot movement speed by 50 percent",
       "task": "docs/tasks/ground-robot-speed.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent movement/route/cadence isolation review and full suite passed; no live playtest claimed",
       "questions": [],
       "approval": "User explicitly requested robot50% movement increase 2026-10-05; separate bounded ticket after current pressure and queued tank/turret fixes",
-      "worker": {
-        "id": "/root/robot_speed_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-ground-robot-speed",
-        "branch": "feature/ground-robot-speed"
-      },
-      "branch": "feature/ground-robot-speed"
+      "branch": "feature/ground-robot-speed",
+      "completion": {
+        "evidence": "Independent movement/route/cadence isolation review and full suite passed; no live playtest claimed",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "2df12c3b40778c3f6c075caa278a3e7fa26506c1",
+        "squashCommit": "c7f0fd3026a777b0f0e4c92c62e8c0c71ee835af"
+      }
     },
     {
       "id": "TRI-039",
@@ -2026,6 +2027,27 @@
       "details": [
         "Ready",
         "User confirmed faction abilities and finite automines, queue execution authorized; opt-in roster after035 before036"
+      ]
+    },
+    {
+      "at": "2026-10-05T05:40:17.227Z",
+      "command": "move",
+      "ticket": "TRI-038",
+      "details": [
+        "Review",
+        "Reviewed2df12c3 movement multiplier/caller tests; independent full suite passed, simulation-only limitation explicit"
+      ]
+    },
+    {
+      "at": "2026-10-05T05:40:18.024Z",
+      "command": "move",
+      "ticket": "TRI-038",
+      "details": [
+        "Done",
+        "Independent movement/route/cadence isolation review and full suite passed; no live playtest claimed",
+        "/root",
+        "c7f0fd3026a777b0f0e4c92c62e8c0c71ee835af",
+        "2df12c3b40778c3f6c075caa278a3e7fa26506c1"
       ]
     }
   ]
