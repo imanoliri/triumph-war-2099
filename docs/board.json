@@ -882,10 +882,16 @@
       "id": "TRI-049",
       "title": "Whiteout Signal snow mission",
       "task": "docs/tasks/whiteout-signal.md",
-      "status": "Ready",
-      "reason": "User explicitly requested more missions from existing table; snow relay rescue first",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User explicitly requested more missions from existing table; snow relay rescue first"
+      "approval": "User explicitly requested more missions from existing table; snow relay rescue first",
+      "worker": {
+        "id": "/root/whiteout_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-whiteout-signal",
+        "branch": "feature/whiteout-signal"
+      },
+      "branch": "feature/whiteout-signal"
     },
     {
       "id": "TRI-050",
@@ -3076,6 +3082,15 @@
       "details": [
         "Ready",
         "User explicitly requested more missions from existing table; maritime defense immediately after TRI-049"
+      ]
+    },
+    {
+      "at": "2026-10-05T18:13:10.252Z",
+      "command": "dispatch",
+      "ticket": "TRI-049",
+      "details": [
+        "../triumph-whiteout-signal",
+        "/root/whiteout_worker"
       ]
     }
   ]
