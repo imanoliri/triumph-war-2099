@@ -720,11 +720,17 @@
       "id": "TRI-042",
       "title": "Extract combat and burst system",
       "task": "docs/tasks/extract-combat-bursts.md",
-      "status": "Ready",
-      "reason": "Autonomous user mandate; bounded behavior-preserving combat extraction",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/11",
-      "approval": "Autonomous user mandate; bounded behavior-preserving combat extraction"
+      "approval": "Autonomous user mandate; bounded behavior-preserving combat extraction",
+      "worker": {
+        "id": "/root/combat_extract_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-extract-combat-bursts",
+        "branch": "chore/extract-combat-bursts"
+      },
+      "branch": "chore/extract-combat-bursts"
     },
     {
       "id": "TRI-043",
@@ -2678,6 +2684,15 @@
         "/root",
         "d08cb725b71415353dc4e5ea2e2bd84850ac9adb",
         "46110a8228399014eacb889c4665aa9133c11658"
+      ]
+    },
+    {
+      "at": "2026-10-05T11:24:19.552Z",
+      "command": "dispatch",
+      "ticket": "TRI-042",
+      "details": [
+        "../triumph-extract-combat-bursts",
+        "/root/combat_extract_worker"
       ]
     }
   ]
