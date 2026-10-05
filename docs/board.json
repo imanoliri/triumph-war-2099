@@ -581,16 +581,17 @@
       "id": "TRI-040",
       "title": "Implement Desert Rider soldiers and convoy crawler",
       "task": "docs/tasks/desert-rider-roster.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Acceptance reviewed; independent full suite and rider regression passed; live sandbox evidence scoped, mission remains dormant",
       "questions": [],
       "approval": "User confirmed faction abilities and finite automines, queue execution authorized; opt-in roster after035 before036",
-      "worker": {
-        "id": "/root/desert_roster_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-desert-rider-roster",
-        "branch": "feature/desert-rider-roster"
-      },
-      "branch": "feature/desert-rider-roster"
+      "branch": "feature/desert-rider-roster",
+      "completion": {
+        "evidence": "Acceptance reviewed; independent full suite and rider regression passed; live sandbox evidence scoped, mission remains dormant",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "c7686a3afd758805f1cf02ce9a76ef00dffc3ce5",
+        "squashCommit": "a5b8123437275e766685b7d8f5390eea0f0eb731"
+      }
     },
     {
       "id": "TRI-041",
@@ -2165,6 +2166,27 @@
       "details": [
         "../triumph-desert-rider-roster",
         "/root/desert_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T06:26:30.922Z",
+      "command": "move",
+      "ticket": "TRI-040",
+      "details": [
+        "Review",
+        "Worker c7686a3; independent full suite exit 0, focused rider check and scoped evidence accepted"
+      ]
+    },
+    {
+      "at": "2026-10-05T06:26:53.620Z",
+      "command": "move",
+      "ticket": "TRI-040",
+      "details": [
+        "Done",
+        "Acceptance reviewed; independent full suite and rider regression passed; live sandbox evidence scoped, mission remains dormant",
+        "/root",
+        "a5b8123437275e766685b7d8f5390eea0f0eb731",
+        "c7686a3afd758805f1cf02ce9a76ef00dffc3ce5"
       ]
     }
   ]

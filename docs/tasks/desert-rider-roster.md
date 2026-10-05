@@ -19,6 +19,7 @@ Confirmed user mechanics in [desert brief](../planning/campaigns/missions/desert
 
 Queue refinement: execute after035 and bounded041 map proposals.041 supplies user review material;040 can implement opt-in unit behavior while map choice is pending. Scope and approved abilities unchanged.
 - [2026-10-05 / 024](../journal/2026-10-05-024-desert-rider-roster.md)
+- [2026-10-05 / 025 director review](../journal/2026-10-05-025-desert-rider-roster-director.md)
 
 ## Review handoff
 
