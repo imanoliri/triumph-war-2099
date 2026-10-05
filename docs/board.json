@@ -891,7 +891,8 @@
         "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-whiteout-signal",
         "branch": "feature/whiteout-signal"
       },
-      "branch": "feature/whiteout-signal"
+      "branch": "feature/whiteout-signal",
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/18"
     },
     {
       "id": "TRI-050",
@@ -900,7 +901,8 @@
       "status": "Ready",
       "reason": "User explicitly requested more missions from existing table; maritime defense immediately after TRI-049",
       "questions": [],
-      "approval": "User explicitly requested more missions from existing table; maritime defense immediately after TRI-049"
+      "approval": "User explicitly requested more missions from existing table; maritime defense immediately after TRI-049",
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/19"
     }
   ],
   "events": [
