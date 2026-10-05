@@ -9,7 +9,8 @@
       "task": "docs/tasks/mission-completion.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
-      "questions": []
+      "questions": [],
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/2"
     },
     {
       "id": "TRI-002",
@@ -18,7 +19,8 @@
       "task": "docs/tasks/browser-acceptance.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
-      "questions": []
+      "questions": [],
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/3"
     },
     {
       "id": "TRI-003",
@@ -27,7 +29,8 @@
       "task": "docs/tasks/extract-game-systems.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
-      "questions": []
+      "questions": [],
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/4"
     },
     {
       "id": "TRI-004",
@@ -36,7 +39,8 @@
       "task": "docs/tasks/midi-comparison.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
-      "questions": []
+      "questions": [],
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/5"
     },
     {
       "id": "TRI-005",
@@ -45,7 +49,8 @@
       "task": "docs/tasks/fidelity-audit.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
-      "questions": []
+      "questions": [],
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/6"
     },
     {
       "id": "TRI-006",
@@ -54,7 +59,8 @@
       "task": "docs/tasks/publication-tracking.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
-      "questions": []
+      "questions": [],
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/1"
     },
     {
       "id": "TRI-007",
@@ -63,7 +69,8 @@
       "task": "docs/tasks/gamepad-controls.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
-      "questions": []
+      "questions": [],
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/7"
     },
     {
       "id": "TRI-008",
@@ -256,7 +263,8 @@
       "task": "docs/tasks/difficulty-levels.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
-      "questions": []
+      "questions": [],
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/8"
     },
     {
       "id": "TRI-019",
@@ -264,7 +272,8 @@
       "task": "docs/tasks/new-missions.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
-      "questions": []
+      "questions": [],
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/9"
     },
     {
       "id": "TRI-020",
@@ -535,7 +544,8 @@
         "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-beneath-the-dunes",
         "branch": "feature/beneath-the-dunes"
       },
-      "branch": "feature/beneath-the-dunes"
+      "branch": "feature/beneath-the-dunes",
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/10"
     },
     {
       "id": "TRI-037",
@@ -622,7 +632,8 @@
       "task": "docs/tasks/extract-combat-bursts.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
-      "questions": []
+      "questions": [],
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/11"
     },
     {
       "id": "TRI-043",
@@ -630,7 +641,8 @@
       "task": "docs/tasks/extract-orders-input.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
-      "questions": []
+      "questions": [],
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/12"
     },
     {
       "id": "TRI-044",
@@ -638,7 +650,8 @@
       "task": "docs/tasks/extract-support-lifecycle.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
-      "questions": []
+      "questions": [],
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/13"
     },
     {
       "id": "TRI-045",
@@ -646,7 +659,8 @@
       "task": "docs/tasks/extract-rendering.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
-      "questions": []
+      "questions": [],
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/14"
     },
     {
       "id": "TRI-046",
@@ -654,7 +668,8 @@
       "task": "docs/tasks/difficulty-profile-tuning.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
-      "questions": []
+      "questions": [],
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/15"
     }
   ],
   "events": [
@@ -728,7 +743,7 @@
       ]
     },
     {
-      "at": "2026-10-04T12:50:20.380Z",
+      "at": "2026-10-04T12:50:20.38Z",
       "command": "move",
       "ticket": "TRI-011",
       "details": [
@@ -898,7 +913,7 @@
       ]
     },
     {
-      "at": "2026-10-04T14:33:04.380Z",
+      "at": "2026-10-04T14:33:04.38Z",
       "command": "move",
       "ticket": "TRI-012",
       "details": [
@@ -983,7 +998,7 @@
       ]
     },
     {
-      "at": "2026-10-04T14:39:22.600Z",
+      "at": "2026-10-04T14:39:22.6Z",
       "command": "move",
       "ticket": "TRI-012",
       "details": [
@@ -1022,7 +1037,7 @@
       ]
     },
     {
-      "at": "2026-10-04T14:43:57.820Z",
+      "at": "2026-10-04T14:43:57.82Z",
       "command": "move",
       "ticket": "TRI-013",
       "details": [
@@ -1103,7 +1118,7 @@
       ]
     },
     {
-      "at": "2026-10-04T14:59:05.880Z",
+      "at": "2026-10-04T14:59:05.88Z",
       "command": "move",
       "ticket": "TRI-016",
       "details": [
@@ -1134,7 +1149,7 @@
       ]
     },
     {
-      "at": "2026-10-04T15:06:20.820Z",
+      "at": "2026-10-04T15:06:20.82Z",
       "command": "move",
       "ticket": "TRI-017",
       "details": [
@@ -1212,7 +1227,7 @@
       ]
     },
     {
-      "at": "2026-10-04T15:56:35.400Z",
+      "at": "2026-10-04T15:56:35.4Z",
       "command": "dispatch",
       "ticket": "TRI-020",
       "details": [
@@ -1457,7 +1472,7 @@
       ]
     },
     {
-      "at": "2026-10-04T17:53:35.100Z",
+      "at": "2026-10-04T17:53:35.1Z",
       "command": "move",
       "ticket": "TRI-024",
       "details": [
@@ -1516,7 +1531,7 @@
       ]
     },
     {
-      "at": "2026-10-04T18:02:32.390Z",
+      "at": "2026-10-04T18:02:32.39Z",
       "command": "move",
       "ticket": "TRI-025",
       "details": [
@@ -1586,7 +1601,7 @@
       ]
     },
     {
-      "at": "2026-10-04T18:10:52.600Z",
+      "at": "2026-10-04T18:10:52.6Z",
       "command": "move",
       "ticket": "TRI-031",
       "details": [
@@ -1604,7 +1619,7 @@
       ]
     },
     {
-      "at": "2026-10-04T18:13:06.880Z",
+      "at": "2026-10-04T18:13:06.88Z",
       "command": "create",
       "ticket": "TRI-032",
       "details": [
@@ -1683,7 +1698,7 @@
       ]
     },
     {
-      "at": "2026-10-04T21:47:36.160Z",
+      "at": "2026-10-04T21:47:36.16Z",
       "command": "dispatch",
       "ticket": "TRI-026",
       "details": [
@@ -1692,7 +1707,7 @@
       ]
     },
     {
-      "at": "2026-10-04T21:49:13.810Z",
+      "at": "2026-10-04T21:49:13.81Z",
       "command": "create",
       "ticket": "TRI-033",
       "details": [
@@ -1916,7 +1931,7 @@
       ]
     },
     {
-      "at": "2026-10-04T22:39:46.070Z",
+      "at": "2026-10-04T22:39:46.07Z",
       "command": "ask",
       "ticket": "TRI-037",
       "details": [
@@ -2225,7 +2240,7 @@
       ]
     },
     {
-      "at": "2026-10-05T06:26:53.620Z",
+      "at": "2026-10-05T06:26:53.62Z",
       "command": "move",
       "ticket": "TRI-040",
       "details": [

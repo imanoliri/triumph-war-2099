@@ -1,5 +1,7 @@
 # Autonomous queue mandate — 2026-10-05
 
+GitHub connector revalidation now permits issue writes: pending nonwithdrawn tickets mirrored as issues #1–15, with issueUrl in local board. No native Project tool found; status authority stays local. This supersedes historical issue-write-unavailable notes, not any browser restrictions.
+
 User selected desert layout A, then explicitly requested autonomous completion of all queued issues while away, logging decisions, and setting a goal. Goal is active. Director remains coordinator; workers own implementation/research and stop at Review.
 
 Start with TRI-036 in its prepared isolated checkout. Then inspect each remaining ticket, refine a bounded task using reasonable documented choices, and dispatch sequentially. Review and squash accepted work; ordinary GitHub pushes are already authorized. Do not silently revive withdrawn TRI-039: latest user instruction leaves Last Convoy unchanged. TRI-018/019 are umbrella tickets and must reconcile completed child work before inventing more scope. Broad refactors must remain behavior-preserving and bounded independently from balance.
