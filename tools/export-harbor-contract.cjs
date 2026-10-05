@@ -1,0 +1,3 @@
+'use strict';
+process.chdir(require('node:path').resolve(__dirname,'..'));
+const fs=require('fs'),vm=require('vm');const box={window:{}};vm.createContext(box);vm.runInContext(fs.readFileSync('src/custom-missions.js','utf8'),box);const m=box.window.TriumphCustomMissions.get('custom-maritime-harbor-watch'),p='assets/custom/harbor-watch/manifest.json',manifest=JSON.parse(fs.readFileSync(p));manifest.mission=m;manifest.difficultyProfiles=box.window.TriumphCustomMissions.profiles[m.id];manifest.references=['docs/art-kit/README.md','docs/art-kit/manifest.json','docs/art-kit/library.png','docs/art-kit/sprites.json','docs/planning/campaigns/planets/maritime-world.md'];fs.writeFileSync(p,JSON.stringify(manifest,null,2)+'\n');

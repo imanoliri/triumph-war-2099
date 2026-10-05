@@ -1,0 +1,576 @@
+{
+  "source": "tools/build-harbor-watch.py",
+  "seed": 50050,
+  "coordinateConvention": "1024x768; top-left origin; actors use recovered hotspots; row-major LSB-first mask",
+  "referenceCatalog": "docs/art-kit/manifest.json",
+  "collisionSHA256": "4f6a87a7cf5eed6fa34a3a9a60d4c72d50a5039461ecdcbd96c717aebe2fb61f",
+  "maskSHA256": "66010a5803178f83739acf1ff2be8686194e69cb1e3d253b862bd00b5325442f",
+  "terrainSHA256": "0118138511630e1c6f4c25648caf645f9f0722eaa63c643b2ccc93db1c5d55ee",
+  "geometry": "geometry.json",
+  "mission": {
+    "id": "custom-maritime-harbor-watch",
+    "name": "Harbor Watch",
+    "role": "harbor-defense",
+    "baseMapIndex": 7,
+    "fixtureMission": 2,
+    "terrainId": "harbor-watch",
+    "commanders": [
+      [
+        220,
+        320
+      ],
+      [
+        220,
+        355
+      ],
+      [
+        220,
+        390
+      ],
+      [
+        220,
+        425
+      ]
+    ],
+    "soldiers": [
+      [
+        270,
+        310
+      ],
+      [
+        270,
+        345
+      ],
+      [
+        270,
+        380
+      ],
+      [
+        270,
+        415
+      ],
+      [
+        310,
+        330
+      ],
+      [
+        310,
+        365
+      ],
+      [
+        310,
+        400
+      ],
+      [
+        310,
+        435
+      ],
+      [
+        350,
+        345
+      ],
+      [
+        350,
+        400
+      ]
+    ],
+    "commandos": [],
+    "robots": [
+      [
+        180,
+        375
+      ]
+    ],
+    "terminals": [],
+    "nests": [
+      [
+        475,
+        150
+      ],
+      [
+        505,
+        355
+      ],
+      [
+        475,
+        565
+      ],
+      [
+        450,
+        675
+      ]
+    ],
+    "bugs": [
+      [
+        420,
+        170
+      ],
+      [
+        460,
+        170
+      ],
+      [
+        430,
+        375
+      ],
+      [
+        470,
+        375
+      ],
+      [
+        420,
+        585
+      ],
+      [
+        460,
+        585
+      ],
+      [
+        410,
+        680
+      ]
+    ],
+    "support": [
+      {
+        "type": "troops",
+        "object": 63,
+        "x": 150,
+        "y": 205
+      },
+      {
+        "type": "troops",
+        "object": 63,
+        "x": 150,
+        "y": 540
+      },
+      {
+        "type": "troops",
+        "object": 63,
+        "x": 300,
+        "y": 680
+      }
+    ],
+    "weapons": [
+      {
+        "type": "plasma",
+        "object": 54,
+        "x": 180,
+        "y": 460
+      }
+    ],
+    "route": [
+      [
+        225,
+        375
+      ],
+      [
+        440,
+        170
+      ],
+      [
+        930,
+        170
+      ],
+      [
+        930,
+        375
+      ],
+      [
+        225,
+        375
+      ],
+      [
+        440,
+        585
+      ],
+      [
+        930,
+        585
+      ],
+      [
+        930,
+        680
+      ],
+      [
+        225,
+        680
+      ],
+      [
+        140,
+        585
+      ],
+      [
+        140,
+        170
+      ],
+      [
+        225,
+        375
+      ]
+    ],
+    "objective": {
+      "minimumTime": 120,
+      "waveBudgetEmitted": true,
+      "clearEnemies": true,
+      "atLeastOneNonCommander": true
+    },
+    "randomPickups": false,
+    "vents": false,
+    "waves": [],
+    "brief": "Navy: hold 120s, then clear all bugs and pending assault. Three docks; south causeway flank; west sheltered route. Four nests have finite birth budgets; destroy early to cancel or let exhaust. Empty nests need not die. Keep a noncommander alive, even with support inbound. Three yellow troop eagles, no refill; full cap retains them."
+  },
+  "difficultyProfiles": {
+    "veryeasy": {
+      "soldiers": 10,
+      "nestInterval": 7,
+      "nestBudget": 4,
+      "waves": [
+        {
+          "at": 24,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ]
+          ],
+          "bugsPerPoint": 2
+        },
+        {
+          "at": 50,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ],
+            [
+              400,
+              680
+            ]
+          ],
+          "bugsPerPoint": 2
+        },
+        {
+          "at": 85,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ],
+            [
+              400,
+              680
+            ]
+          ],
+          "bugsPerPoint": 3
+        }
+      ]
+    },
+    "easy": {
+      "soldiers": 10,
+      "nestInterval": 6,
+      "nestBudget": 5,
+      "waves": [
+        {
+          "at": 20,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ]
+          ],
+          "bugsPerPoint": 3
+        },
+        {
+          "at": 50,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ],
+            [
+              400,
+              680
+            ]
+          ],
+          "bugsPerPoint": 3
+        },
+        {
+          "at": 85,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ],
+            [
+              400,
+              680
+            ]
+          ],
+          "bugsPerPoint": 4
+        }
+      ]
+    },
+    "normal": {
+      "soldiers": 8,
+      "nestInterval": 4.5,
+      "nestBudget": 7,
+      "waves": [
+        {
+          "at": 16,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ]
+          ],
+          "bugsPerPoint": 4
+        },
+        {
+          "at": 50,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ],
+            [
+              400,
+              680
+            ]
+          ],
+          "bugsPerPoint": 4
+        },
+        {
+          "at": 85,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ],
+            [
+              400,
+              680
+            ]
+          ],
+          "bugsPerPoint": 5
+        }
+      ]
+    },
+    "hard": {
+      "soldiers": 6,
+      "nestInterval": 3,
+      "nestBudget": 10,
+      "waves": [
+        {
+          "at": 12,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ]
+          ],
+          "bugsPerPoint": 5
+        },
+        {
+          "at": 50,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ],
+            [
+              400,
+              680
+            ]
+          ],
+          "bugsPerPoint": 5
+        },
+        {
+          "at": 85,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ],
+            [
+              400,
+              680
+            ]
+          ],
+          "bugsPerPoint": 6
+        }
+      ]
+    },
+    "veryhard": {
+      "soldiers": 4,
+      "nestInterval": 2.4,
+      "nestBudget": 13,
+      "waves": [
+        {
+          "at": 10,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ]
+          ],
+          "bugsPerPoint": 6
+        },
+        {
+          "at": 50,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ],
+            [
+              400,
+              680
+            ]
+          ],
+          "bugsPerPoint": 6
+        },
+        {
+          "at": 85,
+          "points": [
+            [
+              440,
+              170
+            ],
+            [
+              455,
+              375
+            ],
+            [
+              440,
+              585
+            ],
+            [
+              400,
+              680
+            ]
+          ],
+          "bugsPerPoint": 8
+        }
+      ]
+    }
+  },
+  "references": [
+    "docs/art-kit/README.md",
+    "docs/art-kit/manifest.json",
+    "docs/art-kit/library.png",
+    "docs/art-kit/sprites.json",
+    "docs/planning/campaigns/planets/maritime-world.md"
+  ]
+}

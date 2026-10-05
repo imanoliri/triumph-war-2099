@@ -138,3 +138,23 @@ Gamepad controls (TRI-007, custom): standard-mapping browser controllers only. A
 New authored Nivalis snow terrain: activate station relay, approach within70px to acquire three designated human soldiers, extract at least one living designated soldier inside western80px pad. Commander/start-army extraction cannot win. Party acquired once and only with three free noncommander population slots including pending landing drops; HUD reports slot shortage. Party loss after acquisition or ordinary total army exhaustion causes defeat; enemies may remain, no timeout. Fixed three yellow troop eagles on north/south/station supply finite carrier arrivals; no random refill. Four nests maintain pressure until destroyed. Five explicit profiles: initial soldiers8/8/7/5/4, fixed nest intervals6/5/3.6/2.5/1.8s, flank budgets27/37/47/61/78. Snow affects visuals/collision only, no freezing or visibility mechanic. Controls/aiming/barrel rules unchanged.
 
 Whiteout troop caches wait at full infantry population (including pending landing drops) with the existing TROOPS FULL / WAIT FOR SPACE feedback; successful carrier calls are finite and unload only while slots are available. Existing original/other-custom support eligibility remains unchanged.
+
+## Harbor Watch (TRI-050)
+
+Custom `custom-maritime-harbor-watch`, Pelagos local Navy defense, uses newly authored harbor terrain. Three docks connect west defense yard to east breakwater; southern causeway is a flank and west yard is sheltered repositioning. Water is blocked. Existing soldiers/robot/bugs/commanders/support are reused; no boat, structure HP, amphibious movement or campaign persistence.
+
+Hold at least120 simulation seconds, exhaust or destroy the four finite nests and emit all finite waves, then clear every living bug/transitioning bug. Empty nests may remain alive. Destroying a nest cancels its unused birth budget. A source birth blocked by cap stays due and retains budget; scheduled waves retain pending entries and drain at existing0.5s cadence after capacity returns. Last noncommander dying is immediate defeat even with a commander/carrier remaining. No timeout or additional survivor quota. Existing Last Convoy contract is unchanged.
+
+| Difficulty | Soldiers + robot | Initial bugs | Nest births each / interval | Finite wave budget | First wave |
+| --- | --- | --- | --- | --- | --- |
+| Very easy | 10 + 1 | 7 | 4 / 7s | 26 | 24s |
+| Easy | 10 + 1 | 7 | 5 / 6s | 37 | 20s |
+| Normal | 8 + 1 | 7 | 7 / 4.5s | 48 | 16s |
+| Hard | 6 + 1 | 7 | 10 / 3s | 59 | 12s |
+| Very hard | 4 + 1 | 7 | 13 / 2.4s | 74 | 10s |
+
+Second/final waves trigger at50/85s. Wave points are dock mouths (440,170),(455,375),(440,585), with causeway (400,680) joining later. Nests are (475,150),(505,355),(475,565),(450,675). They engage existing short-range combat/patrol without changing AI. Seven initial bugs and profile totals are finite maxima; nest destruction reduces actual births. Stronger difficulty keeps source HP/combat conventions and increases source/wave work while reducing defenders.
+
+Three finite yellow troop eagles at(150,205),(150,540),(300,680) invoke recovered carrier support and never refill. Full infantry cap including pending drops retains the pickup and shows TROOPS FULL / WAIT FOR SPACE. Ordinary AI may collect caches. Supply counts in balance; carrier soldiers land through existing reachable-clear-ground correction. Army exhaustion is stricter than recoverable ordinary campaigns. Plasma is available at(180,460).
+
+`design/harbor-pressure.json` records one seeded default-AI full-runtime120s probe: Normal69kills/Army19/four remaining bugs, Hard91/Army10/seven bugs, Very hard103/Army1/27bugs. Easier settings clear bugs but still respect hold. Default AI may gather eagles, so army counts include reinforcements. This measures engaged pressure/casualties, not skilled-player difficulty or completion. A remote eastern first draft produced little contact and cap congestion; final near-mouth placements correct this without combat changes. Dedicated VM lifecycle tests cover cap-deferred births/waves, cleanup/destruction/hold/loss, routes and all three real carrier deliveries. Browser evidence remains distinct in the Harbor playtest record.

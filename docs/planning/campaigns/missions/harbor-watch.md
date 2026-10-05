@@ -1,31 +1,13 @@
 # Harbor Watch
 
-Status: draft for user refinement, not an approved implementation. Planet: [maritime-world](../planets/maritime-world.md).
+Status: TRI-050 approved implementation candidate, awaiting director Review. Planet: [Pelagos](../planets/maritime-world.md). Authoritative task: [harbor-watch](../../../tasks/harbor-watch.md).
 
-## Player experience
+Local Navy defenders hold120s on a newly authored island harbor. Three dock approaches converge on the western yard; a southern causeway is a flank and a sheltered west route permits regrouping. Water is blocked. Frozen schematic/mask/hotspots/profile evidence is [the map contract](../../../../assets/custom/harbor-watch/README.md).
 
-Local Navy command. Hold an island harbor through a finite assault until the expedition can establish a safe landing.
+Four existing nests have explicit finite budgets on every difficulty. Destroying one cancels unused births; empty live nests do not require destruction. All scheduled assault must emit before victory; capped births and waves retain unused budgets. After120s clear all remaining bugs/transitioning bugs while retaining at least one noncommander. Last noncommander dying fails even with support inbound. No timeout, structure HP or expedition arrival actor.
 
-## Proposed map
+Four commanders, difficulty-scaled10/10/8/6/4 soldiers and one existing ground robot defend against seven initial bugs plus finite sources/waves. Profiles and exact budgets are in [DESIGN](../../../DESIGN.md#harbor-watch-tri-050). Three finite yellow troop eagles supply recovered carrier troops; no refill. Full cap retains eagle/feedback; pending drops reserve space. Default AI can collect caches. Plasma provides existing weapon support.
 
-Three dock approaches converge on a defense area; a causeway permits a flank while a sheltered route keeps infantry repositioning possible. Prepare schematic alternatives for review; dimensions, mask, placements, pickups and support corridors are not frozen.
+No boats, amphibious movement, ship convoy, new faction abilities or campaign persistence. Naval identity comes from the authored terrain, local-command briefing and reused roles. Existing missions, Last Convoy, source conventions and dossiers remain intact.
 
-## Objective contract to refine
-
-Finite arrival budget emitted and enemies cleared after the agreed hold duration, with the approved defending survivors remaining; harbor structure HP is an optional new mechanic. Decide timeout, defeated rescue targets, commander eligibility, reinforcement cap and extraction arrivals explicitly.
-
-## Forces and pressure
-
-Initial roster and numerical profiles remain unset. Use existing unit roles for the smallest first playable scope. Define finite/infinite enemy sources, spawn lanes and refill cadence for each approved difficulty. Test flanks and regroup opportunities alongside attack pressure. Normal must be checked separately from Hard/Very Hard.
-
-## Dependencies and exclusions
-
-First version can use ground bugs and existing troop support. Boats, amphibious movement and an actual ship convoy require separate tickets. No campaign persistence, new environmental damage or unselected faction abilities are authorized by this brief.
-
-## Acceptance plan after refinement
-
-Prove reachable starts/objectives/return routes and spawn/support clearance. Exercise victory gates, loss, population cap, restart, progress isolation and original-campaign regression. Browser evidence must cover briefing, tactical startup, actual combat and objective feedback. Report skilled-player challenge separately from simulation and stationary AI probes.
-
-## Next decision
-
-Agree the objective and minimal roster, choose a layout, then turn this brief into one bounded ticket using [the agent kit](../agent-kit.md).
+Focused VM checks prove dock/causeway/sheltered routes, spawn/support clearance, cap retention, wave/source exhaustion, hold/cleanup/loss/restart/isolation and actual carrier delivery at each cache. Seeded default-AI pressure across all five profiles is separate from [real browser evidence](../../../playtests/2026-10-06-harbor-watch.md), and does not establish human difficulty calibration.
