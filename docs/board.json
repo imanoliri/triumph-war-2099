@@ -882,8 +882,8 @@
       "id": "TRI-049",
       "title": "Whiteout Signal snow mission",
       "task": "docs/tasks/whiteout-signal.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Reviewed b2081d29; independent Whiteout/support/project checks and ordinary Normal128 browser victory; final worker full suite exit0",
       "questions": [],
       "approval": "User explicitly requested more missions from existing table; snow relay rescue first",
       "worker": {
@@ -3131,6 +3131,15 @@
       "details": [
         "../triumph-whiteout-signal",
         "/root/whiteout_recovery_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T22:14:22.613Z",
+      "command": "move",
+      "ticket": "TRI-049",
+      "details": [
+        "Review",
+        "Reviewed b2081d29; independent Whiteout/support/project checks and ordinary Normal128 browser victory; final worker full suite exit0"
       ]
     }
   ]

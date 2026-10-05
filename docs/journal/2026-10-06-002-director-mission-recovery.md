@@ -13,3 +13,9 @@ Main starts at 33efcf62d79eedf4a86aa25be3c9ce4bd3369fcb; origin/main matches via
 ## Next action
 
 Review final TRI-049 candidate and evidence independently, return any findings to its worker, squash accepted implementation, record actual SHAs and publish through ordinary Git. Then prepare one bounded Harbor Watch worker from updated main, followed by TRI-051. Retain original mission/browser acceptance tickets and documented auditory access blocker; never substitute simulation for live/audio acceptance.
+
+## Independent Whiteout review
+
+Reviewed scoped runtime/objective/support/rendering diff and authored snow terrain image. Returned findings requiring real eagle contact/cap feedback/all-placement delivery and actual update victory, reservation and isolation proofs. Worker fixed snow-only full-cap eagle retention; original support eligibility remains unchanged. Director focused Whiteout check passed; dev check passed (65 script syntax plus project references); immutable six-sequence support check22601 exited0. Initial attempt used nonexistent check-support-lifecycle.cjs; corrected to actual check-support.cjs, not a production failure. Final range whitespace passes.
+
+Actual Normal browser run through ordinary UI reached MISSION COMPLETE, 128 merits, one remaining infantry after relay acquisition and force-return to pad. Detailed evidence is docs/playtests/2026-10-06-whiteout-director.md and three screenshots, committed f6543e7. No state injection or fake victory. Worker separate Normal defeat is retained; all-difficulty calibration/audio not inferred. Requested consolidation of contradictory new STATUS paragraphs and planning draft status. Final worker full suite and exact candidate commit still pending.
