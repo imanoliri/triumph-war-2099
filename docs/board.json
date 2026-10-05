@@ -684,6 +684,15 @@
         "branch": "feature/difficulty-profile-tuning"
       },
       "branch": "feature/difficulty-profile-tuning"
+    },
+    {
+      "id": "TRI-047",
+      "title": "Fix Windows director Git repository identity check",
+      "task": "docs/tasks/windows-director-ci.md",
+      "status": "Ready",
+      "reason": "Autonomous mandate; verified Windows CI failure, bounded portability fix queued immediately after046",
+      "questions": [],
+      "approval": "Autonomous mandate; verified Windows CI failure, bounded portability fix queued immediately after046"
     }
   ],
   "events": [
@@ -2424,6 +2433,25 @@
       "details": [
         "../triumph-difficulty-profile-tuning",
         "/root/difficulty_profiles_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T07:29:29.345Z",
+      "command": "create",
+      "ticket": "TRI-047",
+      "details": [
+        "windows-director-ci",
+        "Fix Windows director Git repository identity check",
+        "Reproduce and fix GitHub Windows director workflow failure without weakening unrelated-repository guards; verify Windows and Ubuntu CI"
+      ]
+    },
+    {
+      "at": "2026-10-05T07:29:30.994Z",
+      "command": "move",
+      "ticket": "TRI-047",
+      "details": [
+        "Ready",
+        "Autonomous mandate; verified Windows CI failure, bounded portability fix queued immediately after046"
       ]
     }
   ]
