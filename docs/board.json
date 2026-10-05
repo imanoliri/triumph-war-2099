@@ -95,11 +95,17 @@
       "title": "Gamepad controls",
       "priority": "Low",
       "task": "docs/tasks/gamepad-controls.md",
-      "status": "Ready",
-      "reason": "Autonomous user mandate; standard Gamepad mapping and hardware-evidence limits recorded",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/7",
-      "approval": "Autonomous user mandate; standard Gamepad mapping and hardware-evidence limits recorded"
+      "approval": "Autonomous user mandate; standard Gamepad mapping and hardware-evidence limits recorded",
+      "worker": {
+        "id": "/root/gamepad_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-gamepad-controls",
+        "branch": "feature/gamepad-controls"
+      },
+      "branch": "feature/gamepad-controls"
     },
     {
       "id": "TRI-008",
@@ -2906,6 +2912,15 @@
       "ticket": "TRI-003",
       "details": [
         "Administrative umbrella: all four separate extractions accepted and combined regression suite passed"
+      ]
+    },
+    {
+      "at": "2026-10-05T17:43:23.685Z",
+      "command": "dispatch",
+      "ticket": "TRI-007",
+      "details": [
+        "../triumph-gamepad-controls",
+        "/root/gamepad_worker"
       ]
     }
   ]
