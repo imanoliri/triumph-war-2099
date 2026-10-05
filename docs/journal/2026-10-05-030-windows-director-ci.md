@@ -4,7 +4,7 @@
 - Date: 2026-10-05 (Europe/Berlin); session 030
 - Branch: `fix/windows-director-ci`
 - Starting commit: `a81fc62f4a8619bb06f61695268d61a3ad0c168e`
-- Status: candidate for hosted review; local full suite in progress
+- Status: Review; local checks complete, hosted matrix pending
 
 ## Starting context
 
@@ -31,7 +31,7 @@ The Windows disposable director fixture now enters its actual DOS 8.3 alias via 
 | Old implementation + alias regression | expected failure | Same successful-dispatch assertion; actual long/short common-dir mismatch printed |
 | `node tools/check-director.cjs` | passed | Real Windows alias `TR1428~1/DIRECT~1`, native long path; all lifecycle/guards |
 | `node tools/check-tooling.cjs` | passed | Disposable task/worktree, journal, serving and refusal checks |
-| `node tools/dev.cjs test` | running | Worker unified execution session12568; syntax50 scripts and gameplay checks passing so far |
+| `node tools/dev.cjs test` | passed | Session12568 completed exit0; syntax50 scripts, all simulation/music/tooling/director checks; real alias TR408B~1/DIRECT~1 |
 | `git diff --check` | passed | No whitespace errors |
 | Hosted Windows/Ubuntu matrix | pending | Director owns candidate push and run review |
 | Live browser playtest | not performed | Maintenance tooling only; rendering/audio/playability not claimed |
@@ -42,4 +42,4 @@ Acceptance remains unchecked until actual hosted Windows and Ubuntu CI pass. Ori
 
 ## Next action / handoff
 
-Director may push the candidate branch for the existing push workflow. Worker continues local full suite session12568 and appends final result. Review native comparisons, real alias regression and preserved unrelated-repository guards. No merge/publication performed by worker; no squash SHA yet. Candidate commit is the commit containing this record; obtain with `git rev-parse HEAD`.
+Director may push the candidate branch for the existing push workflow. Local full suite session12568 completed exit0. Candidate implementation commit: `4fee42f7b57bbbf4b7f18bde5fb8124c6533d04b`. Review native comparisons, real alias regression and preserved unrelated-repository guards. No merge/publication performed by worker; no squash SHA yet. Candidate commit is the commit containing this record; obtain with `git rev-parse HEAD`.
