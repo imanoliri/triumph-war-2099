@@ -933,17 +933,18 @@
       "id": "TRI-052",
       "title": "Spread Silent Return airdrops into parallel columns",
       "task": "docs/tasks/silent-return-air-columns.md",
-      "status": "Review",
-      "reason": "Reviewed cc74001; independent five-profile formation check, full78985 exit0 and actual flight/landing screenshots accepted",
+      "status": "Done",
+      "reason": "Independent five-profile formation/support review, full78985 and real flight/landing screenshots accepted",
       "questions": [],
       "approval": "User explicitly requested three tight parallel Silent Return airdrop columns on2026-10-06; horizontal correction after051",
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/21",
-      "worker": {
-        "id": "/root/silent_columns_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-silent-return-air-columns",
-        "branch": "feature/silent-return-air-columns"
-      },
-      "branch": "feature/silent-return-air-columns"
+      "branch": "feature/silent-return-air-columns",
+      "completion": {
+        "evidence": "Independent five-profile formation/support review, full78985 and real flight/landing screenshots accepted",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "cc74001e192f03a602d75d180623b22011edd273",
+        "squashCommit": "ee5ce57dead1b239e859dc695ae2cf201a8fb394"
+      }
     },
     {
       "id": "TRI-053",
@@ -3338,6 +3339,18 @@
       "details": [
         "Review",
         "Reviewed cc74001; independent five-profile formation check, full78985 exit0 and actual flight/landing screenshots accepted"
+      ]
+    },
+    {
+      "at": "2026-10-05T23:05:12.427Z",
+      "command": "move",
+      "ticket": "TRI-052",
+      "details": [
+        "Done",
+        "Independent five-profile formation/support review, full78985 and real flight/landing screenshots accepted",
+        "/root",
+        "ee5ce57dead1b239e859dc695ae2cf201a8fb394",
+        "cc74001e192f03a602d75d180623b22011edd273"
       ]
     }
   ]

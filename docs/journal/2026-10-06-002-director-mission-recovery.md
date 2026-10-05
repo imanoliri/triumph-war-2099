@@ -61,3 +61,5 @@ Published f0023e4 via ordinary Git. Prepared052 in ../triumph-silent-return-air-
 ## Silent columns accepted review
 
 Clean worker cc74001e192f03a602d75d180623b22011edd273 reviewed. Three x472/520/568 with48px centers leave24-29px sprite gap; y328/392/520 and entry stagger unchanged. Independent check-custom-pressure passes all-five exact points/caps/connected landings/freeze/restart/extraction. Full78985 exit0; support lifecycle runtime unchanged, exact oracle normalization reviewed. Actual worker Normal flight and landing screenshot reviewed, limits explicit. Accept squash; next054.
+
+Accepted Silent columns squash ee5ce57dead1b239e859dc695ae2cf201a8fb394 without conflict. Board Done records exact SHAs. Publish; prepare054 diagonal-fire fix from current main.
