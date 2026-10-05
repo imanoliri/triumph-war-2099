@@ -510,16 +510,17 @@
       "id": "TRI-035",
       "title": "Add desert charging worms",
       "task": "docs/tasks/desert-charging-worm.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Aligned warning/footprint/detour/immunity/phase evidence accepted; independent checks pass, live sandbox dodge/contact recorded, dormant mission limitation explicit",
       "questions": [],
       "approval": "User chose desert and confirmed worm phases/cardinal charge/underground protection, then authorized queue execution; numerical defaults worker-owned opt-in unit after038",
-      "worker": {
-        "id": "/root/worm_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-desert-charging-worm",
-        "branch": "feature/desert-charging-worm"
-      },
-      "branch": "feature/desert-charging-worm"
+      "branch": "feature/desert-charging-worm",
+      "completion": {
+        "evidence": "Aligned warning/footprint/detour/immunity/phase evidence accepted; independent checks pass, live sandbox dodge/contact recorded, dormant mission limitation explicit",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "2f1b04ffc3d9d154f1fddd2e601f705c0c86b01d",
+        "squashCommit": "24a2a9bb78d9e52b42541e6e41ac7dd3e63a7a96"
+      }
     },
     {
       "id": "TRI-036",
@@ -2091,6 +2092,27 @@
       "details": [
         "Ready",
         "Necessary review proposals for user-selected desert mission; bounded design only, before mission layout approval, after035"
+      ]
+    },
+    {
+      "at": "2026-10-05T05:56:01.712Z",
+      "command": "move",
+      "ticket": "TRI-035",
+      "details": [
+        "Review",
+        "Reviewed2f1b04f lifecycle/combat; independent full suite and final affected checks pass; browser sandbox report inspected"
+      ]
+    },
+    {
+      "at": "2026-10-05T05:56:02.476Z",
+      "command": "move",
+      "ticket": "TRI-035",
+      "details": [
+        "Done",
+        "Aligned warning/footprint/detour/immunity/phase evidence accepted; independent checks pass, live sandbox dodge/contact recorded, dormant mission limitation explicit",
+        "/root",
+        "24a2a9bb78d9e52b42541e6e41ac7dd3e63a7a96",
+        "2f1b04ffc3d9d154f1fddd2e601f705c0c86b01d"
       ]
     }
   ]
