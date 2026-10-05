@@ -581,10 +581,16 @@
       "id": "TRI-040",
       "title": "Implement Desert Rider soldiers and convoy crawler",
       "task": "docs/tasks/desert-rider-roster.md",
-      "status": "Ready",
-      "reason": "User confirmed faction abilities and finite automines, queue execution authorized; opt-in roster after035 before036",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User confirmed faction abilities and finite automines, queue execution authorized; opt-in roster after035 before036"
+      "approval": "User confirmed faction abilities and finite automines, queue execution authorized; opt-in roster after035 before036",
+      "worker": {
+        "id": "/root/desert_roster_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-desert-rider-roster",
+        "branch": "feature/desert-rider-roster"
+      },
+      "branch": "feature/desert-rider-roster"
     },
     {
       "id": "TRI-041",
@@ -2150,6 +2156,15 @@
         "/root",
         "4b23618ebbfed3de3315973fc36c183fa56e636b",
         "7484bbae94ab0d14797f205705f9a391081248ce"
+      ]
+    },
+    {
+      "at": "2026-10-05T06:07:16.861Z",
+      "command": "dispatch",
+      "ticket": "TRI-040",
+      "details": [
+        "../triumph-desert-rider-roster",
+        "/root/desert_roster_worker"
       ]
     }
   ]
