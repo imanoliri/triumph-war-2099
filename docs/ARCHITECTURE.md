@@ -6,7 +6,8 @@ index.html loads recovered asset globals, music.js, navigation.js, support.js, s
 
 | File | Responsibility |
 | --- | --- |
-| game.js | State lifecycle, simulation orchestration, world damage/kill accounting, support integration, input wiring and main drawing |
+| game.js | State lifecycle, simulation orchestration, world damage/kill accounting, support adapters, input wiring and main drawing |
+| src/support-lifecycle.js | Explicit-service source eligibility/creation, helper/carrier/air/infiltration and drop lifecycle, scheduled reservations and commander return |
 | src/orders.js | Explicit-state troop order issue/step, shared use jobs, focus and attack-move interactions |
 | src/input.js | Owned keyboard/selection/commander/pointer/rally state and decisions; modal pause restoration |
 | src/input-dom.js | DOM event registration, CSS-to-world pointer normalization and native capture boundary |
@@ -49,7 +50,7 @@ tools/check-recreation.cjs creates a mocked DOM/canvas VM, injects fixtures and 
 
 ## Gradual module extraction
 
-The first maintenance step extracts balance, mission progress and rally helpers without changing gameplay. Combat/projectiles and orders/input are now extracted. game.js retains support orchestration and most rendering; extract support lifecycle and rendering as separate behavior-preserving tasks. Add/update regression coverage at each boundary; do not combine extraction with new balance changes.
+The first maintenance step extracts balance, mission progress and rally helpers without changing gameplay. Combat/projectiles and orders/input are now extracted. Support lifecycle is now extracted; game.js retains most rendering for a separate behavior-preserving task. Add/update regression coverage at each boundary; do not combine extraction with new balance changes.
 
 Route fields are cached separately per stable collision callback and revision. Human planning uses an openable-door predicate; actual move/weapon collision and alien planning use solid-door rules. Door revision includes open, locked and destroyed bits so terminal unlocks and destruction invalidate the appropriate fields. Rally collision callbacks are memoized, avoiding a fresh policy identity per selection. Mission begin resets all route contexts.
 
@@ -73,3 +74,5 @@ TRI-042: `TriumphCombat.create` receives named rules, RNG, current-state/difficu
 TRI-043: `TriumphOrders.create` receives the current mission getter, input selection and named navigation/combat/use services. It owns order replacement, shared use-job identity, focus validation and attack-move execution; supply lifecycle and world interactions remain named caller services. `TriumphInput.create` owns direct commander decisions, physical key presets, click timing/precedence, held mouse fire, rally and modal restore bookkeeping. `src/input-dom.js` converts browser events to point/code records; DOM panels/dialog content and rendering remain in game.js. The input object is retained across mission replacement while reset clears mission-specific references; neither decision module captures a mission state snapshot. Simulation pause stays with the runtime and is accessed through explicit getters/setters.
 
 `tools/check-input.cjs` loads immutable game.js at `a6fed3313515a02bc2ab49e7ab6b380fd3bbe870` with fail-loud single-anchor substitution guards. Four seeded source-mission sequences compare full world state, public snapshots and reference aliases after keyboard/pointer decisions, tactical freeze, commander selection/deselection, physical key release/repeat, focus/use/force precedence, Shift selection, shared use jobs, rally, held free fire, modal restore, blur and mission replacement. Independent expected-behavior assertions ensure covered sequences remain meaningful. This Git-history fixture is test-only and never packaged.
+
+TRI-044: `TriumphSupportLifecycle.create` receives a current-state getter and named source data/path, navigation, RNG, actor creation, rally, world damage/kill, combat and audio services. It initializes only support-owned arrays/helpers/clocks; actors and return timers remain mission-owned. Source pickup-roll generation, custom wave emission, world initialization/damage/kill and mission progress stay outside. Scheduled aircraft retain their distinct in-flight drop reservation rule; ordinary source drops retain their original cap checks and RNG chronology. Runtime wrappers preserve existing callers and test access. `tools/check-support.cjs` compares six seeded full-state/reference-alias sequences to immutable game.js at `1e866aafd06268e6dc47ae3b791b5a2dd2e1dad0`, guarded against missing/duplicate loader anchors. Baseline history is test-only and never packaged.
