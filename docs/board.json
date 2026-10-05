@@ -74,11 +74,17 @@
       "title": "Fidelity audit",
       "priority": "Medium",
       "task": "docs/tasks/fidelity-audit.md",
-      "status": "Ready",
-      "reason": "Autonomous user mandate; research-only five-system source fidelity audit",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/6",
-      "approval": "Autonomous user mandate; research-only five-system source fidelity audit"
+      "approval": "Autonomous user mandate; research-only five-system source fidelity audit",
+      "worker": {
+        "id": "/root/fidelity_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-fidelity-audit",
+        "branch": "chore/fidelity-audit"
+      },
+      "branch": "chore/fidelity-audit"
     },
     {
       "id": "TRI-006",
@@ -2943,6 +2949,15 @@
         "/root",
         "da7889dcbd74382ea9704ad162cfd00099e06da3",
         "2aaf501db313c0e4ec473f3508ab437009bac0b6"
+      ]
+    },
+    {
+      "at": "2026-10-05T17:58:07.781Z",
+      "command": "dispatch",
+      "ticket": "TRI-005",
+      "details": [
+        "../triumph-fidelity-audit",
+        "/root/fidelity_worker"
       ]
     }
   ]
