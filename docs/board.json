@@ -63,16 +63,11 @@
       "title": "Audible MIDI comparison",
       "priority": "Medium",
       "task": "docs/tasks/midi-comparison.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Ready",
+      "reason": "Explicitly parked verification branch/worktree and session042; user prioritizes new table missions",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/5",
       "approval": "Autonomous user mandate; bounded audible comparison with explicit capture/access gate",
-      "worker": {
-        "id": "/root/midi_verification_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-midi-comparison",
-        "branch": "chore/midi-comparison"
-      },
       "branch": "chore/midi-comparison"
     },
     {
@@ -882,6 +877,24 @@
         "reviewedImplementationCommit": "46110a8228399014eacb889c4665aa9133c11658",
         "squashCommit": "d08cb725b71415353dc4e5ea2e2bd84850ac9adb"
       }
+    },
+    {
+      "id": "TRI-049",
+      "title": "Whiteout Signal snow mission",
+      "task": "docs/tasks/whiteout-signal.md",
+      "status": "Ready",
+      "reason": "User explicitly requested more missions from existing table; snow relay rescue first",
+      "questions": [],
+      "approval": "User explicitly requested more missions from existing table; snow relay rescue first"
+    },
+    {
+      "id": "TRI-050",
+      "title": "Harbor Watch maritime mission",
+      "task": "docs/tasks/harbor-watch.md",
+      "status": "Ready",
+      "reason": "User explicitly requested more missions from existing table; maritime defense immediately after TRI-049",
+      "questions": [],
+      "approval": "User explicitly requested more missions from existing table; maritime defense immediately after TRI-049"
     }
   ],
   "events": [
@@ -3007,6 +3020,62 @@
       "details": [
         "../triumph-midi-comparison",
         "/root/midi_verification_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T18:11:49.953Z",
+      "command": "move",
+      "ticket": "TRI-004",
+      "details": [
+        "Blocked",
+        "Actual original launch and audio capture/listening unavailable; worker fbb8cba preserved with unchecked acceptance"
+      ]
+    },
+    {
+      "at": "2026-10-05T18:11:50.020Z",
+      "command": "move",
+      "ticket": "TRI-004",
+      "details": [
+        "Ready",
+        "Explicitly parked verification branch/worktree and session042; user prioritizes new table missions"
+      ]
+    },
+    {
+      "at": "2026-10-05T18:11:50.085Z",
+      "command": "create",
+      "ticket": "TRI-049",
+      "details": [
+        "whiteout-signal",
+        "Whiteout Signal snow mission",
+        "Distinct snow map, relay activation and survivor extraction with substantial nest pressure"
+      ]
+    },
+    {
+      "at": "2026-10-05T18:11:50.151Z",
+      "command": "create",
+      "ticket": "TRI-050",
+      "details": [
+        "harbor-watch",
+        "Harbor Watch maritime mission",
+        "Distinct island harbor map and finite multi-lane defense with substantial nest pressure"
+      ]
+    },
+    {
+      "at": "2026-10-05T18:12:49.681Z",
+      "command": "move",
+      "ticket": "TRI-049",
+      "details": [
+        "Ready",
+        "User explicitly requested more missions from existing table; snow relay rescue first"
+      ]
+    },
+    {
+      "at": "2026-10-05T18:12:49.746Z",
+      "command": "move",
+      "ticket": "TRI-050",
+      "details": [
+        "Ready",
+        "User explicitly requested more missions from existing table; maritime defense immediately after TRI-049"
       ]
     }
   ]
