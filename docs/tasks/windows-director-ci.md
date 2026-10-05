@@ -1,7 +1,7 @@
 # Fix Windows director Git repository identity check
 
 - Ticket: TRI-047; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `fix/windows-director-ci`
 
 ## Goal and user-visible outcome
 
@@ -9,11 +9,13 @@ Fix Windows director Git repository identity check
 
 ## Acceptance criteria
 
-- [ ] Reproduce and fix GitHub Windows director workflow failure without weakening unrelated-repository guards; verify Windows and Ubuntu CI
+- [x] Reproduce and fix GitHub Windows director workflow failure without weakening unrelated-repository guards; verify Windows and Ubuntu CI
 
 ## Scope and decisions
 
-Backlog proposal; director must record user agreement before Ready.
+Approved bounded maintenance ticket. Use native filesystem canonicalization for Git common-directory and isolated-checkout comparisons; preserve strict rejection of unrelated repositories and the director checkout. Gameplay and assets are outside scope.
+
+Hosted candidate run 37301094619 exposed a separate verification prerequisite: the default shallow Actions checkout omits the immutable pre-difficulty baseline used by `check-difficulty-profiles.cjs`. Director extended this same bounded CI maintenance ticket to fetch full checkout history, preserving the independent baseline comparison. No test skipping or baseline substitution.
 
 ## Sessions
 
@@ -22,3 +24,8 @@ Backlog proposal; director must record user agreement before Ready.
 Director checked actual [run 37277644513](https://github.com/imanoliri/triumph-war-2099/actions/runs/37277644513) for pushed main 5d0d908: Ubuntu job111658132433 succeeded; Windows job111658132770 failed after all gameplay checks, in tools/check-director.cjs:37 through board dispatch, asserting `Worker must share this Git repository` (exit1 versus expected0). Local Windows full suite passes; hosted Windows failure must be reproduced from exact Git/common-directory/path behavior. Do not infer cause solely from this message.
 
 Use disposable fixtures, preserve strict rejection of genuinely unrelated repositories, don't globally disable safe.directory or skip Windows tests, and make the smallest portability fix with meaningful regression evidence. Keep gameplay/difficulty changes out. Run director/tooling plus full suite and record hosted matrix results after authorized director integration/push; a locally green check alone does not prove remote resolution. Execute after active TRI-046, before other queued runtime work. User autonomous mandate authorizes bounded fix.
+- [2026-10-05 / 030](../journal/2026-10-05-030-windows-director-ci.md)
+
+## Review evidence
+
+Candidate b1659ceb13707e96d455dc73f3c13e7a8d86b89d passed the actual hosted [Windows and Ubuntu matrix](https://github.com/imanoliri/triumph-war-2099/actions/runs/37301448979). Windows job111734877903 exercised a real RUNNER~1/TRIUMP~1/DIRECT~1 alias; Ubuntu job111734877699 and Windows both passed the full suite, including strict unrelated-repository guards. Local old-code alias reproduction and current local full suite are recorded in session030. Original failed run's unlogged path spelling remains an inference.
