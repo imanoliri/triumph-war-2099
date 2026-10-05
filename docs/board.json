@@ -754,17 +754,18 @@
       "id": "TRI-044",
       "title": "Extract support lifecycle system",
       "task": "docs/tasks/extract-support-lifecycle.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Independent support47559, final full57290 and scoped live smoke passed; timing/audio/full acceptance gaps retained",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/13",
       "approval": "User autonomous queue mandate; reviewed bounded support lifecycle scope, execute after TRI-043",
-      "worker": {
-        "id": "/root/support_finish_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-extract-support-lifecycle",
-        "branch": "chore/extract-support-lifecycle"
-      },
-      "branch": "chore/extract-support-lifecycle"
+      "branch": "chore/extract-support-lifecycle",
+      "completion": {
+        "evidence": "Independent support47559, final full57290 and scoped live smoke passed; timing/audio/full acceptance gaps retained",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "41d3945cbd90f389471eb3c94f37e01665e2a723",
+        "squashCommit": "ba252ff676bcfb29d91a22c45c2e3799c2b3fdbb"
+      }
     },
     {
       "id": "TRI-045",
@@ -2815,6 +2816,27 @@
       "details": [
         "../triumph-extract-support-lifecycle",
         "/root/support_finish_worker"
+      ]
+    },
+    {
+      "at": "2026-10-05T17:27:13.501Z",
+      "command": "move",
+      "ticket": "TRI-044",
+      "details": [
+        "Review",
+        "Reviewed41d3945c; independent support47559 exit0, worker final suite57290 exit0 and focused live delivery/restart evidence accepted"
+      ]
+    },
+    {
+      "at": "2026-10-05T17:28:04.402Z",
+      "command": "move",
+      "ticket": "TRI-044",
+      "details": [
+        "Done",
+        "Independent support47559, final full57290 and scoped live smoke passed; timing/audio/full acceptance gaps retained",
+        "/root",
+        "ba252ff676bcfb29d91a22c45c2e3799c2b3fdbb",
+        "41d3945cbd90f389471eb3c94f37e01665e2a723"
       ]
     }
   ]
