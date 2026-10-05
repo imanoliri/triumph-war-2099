@@ -590,10 +590,16 @@
       "id": "TRI-041",
       "title": "Prepare Beneath the Dunes map proposals",
       "task": "docs/tasks/beneath-the-dunes-map-proposals.md",
-      "status": "Ready",
-      "reason": "Necessary review proposals for user-selected desert mission; bounded design only, before mission layout approval, after035",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "Necessary review proposals for user-selected desert mission; bounded design only, before mission layout approval, after035"
+      "approval": "Necessary review proposals for user-selected desert mission; bounded design only, before mission layout approval, after035",
+      "worker": {
+        "id": "/root/desert_map_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-beneath-dunes-map-proposals",
+        "branch": "chore/beneath-the-dunes-map-proposals"
+      },
+      "branch": "chore/beneath-the-dunes-map-proposals"
     }
   ],
   "events": [
@@ -2113,6 +2119,15 @@
         "/root",
         "24a2a9bb78d9e52b42541e6e41ac7dd3e63a7a96",
         "2f1b04ffc3d9d154f1fddd2e601f705c0c86b01d"
+      ]
+    },
+    {
+      "at": "2026-10-05T05:56:31.919Z",
+      "command": "dispatch",
+      "ticket": "TRI-041",
+      "details": [
+        "../triumph-beneath-dunes-map-proposals",
+        "/root/desert_map_worker"
       ]
     }
   ]
