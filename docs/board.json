@@ -911,7 +911,8 @@
       "status": "Ready",
       "reason": "User explicitly requested reinforcement eagles on new maps; integrate049/050 directly and audit earlier custom missions after050",
       "questions": [],
-      "approval": "User explicitly requested reinforcement eagles on new maps; integrate049/050 directly and audit earlier custom missions after050"
+      "approval": "User explicitly requested reinforcement eagles on new maps; integrate049/050 directly and audit earlier custom missions after050",
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/20"
     }
   ],
   "events": [

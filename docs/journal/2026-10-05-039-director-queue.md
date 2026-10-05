@@ -41,3 +41,7 @@ TRI-004 worker fbb8cba6bf69249732dad276cbc589223abe7ffa preserved on chore/midi-
 ## Reinforcement supply steering
 
 User explicitly requested reinforcement eagles on new missions/maps. Relayed immediately to active049 worker: accessible supply, actual geometry-valid delivery, cap retention/feedback and balanced explicit supply policy. Updated049/050 authoritative scope. Approved051 audits earlier custom missions after050, preserving adequate supply, Silent Return's timed formation and Last Convoy balance. This is explicit user feature authority, not audit-derived scope expansion.
+
+TRI-051 real mirrored issue20 created and verified open. Early049 review flagged cap bypass and flat placeholder-like terrain; worker now adds explicit deferred party acquisition and improves map identity. Further review requires supply delivery proof and no nondeterministic tracked evidence writes from ordinary test runs. Implementation/review remains in progress, no completion claimed.
+
+Hosted integrated gamepad commit run37352332863 is now verified terminal success on both Windows111905997689 and Ubuntu111905997919 via public jobs API. This confirms CI only; it does not change the explicit gamepad authorization mistake or physical hardware verification limit. Improved049 terrain independently viewed; snow ridge texture, station antenna/windows, route tracks and extraction lights now legible. Final worker suite/browser scope pending.
