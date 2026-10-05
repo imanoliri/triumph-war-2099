@@ -548,3 +548,46 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  }
  console.log('Passed runtime vent freeze, AI/focus/projectile/grenade immunity, one-per-phase progress, normal grounded damage and all three mission completion paths.');
 }
+
+// TRI-038: compare actual callers with the previous rate over equivalent dt/routes.
+{
+ const balance=sandbox.window.TriumphBalance,approved=balance.groundRobotMovementMultiplier;
+ assert.equal(approved,1.5);
+ function run(type,mult,scenario,fallback=false){
+  balance.groundRobotMovementMultiplier=mult;api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mode='playing';resumeSimulation();f.setSeed(123);
+  state.mask=null;state.rocks=[];state.doors=[];state.props=[];state.pickups=[];state.cannons=[];state.aliens=[];state.nests=[];state.gate=null;state.pickupClock=100;
+  const u={id:90,x:300,y:400,team:'human',type,alive:true,hp:type==='robot'?7:1,cool:100,weapon:0,order:2};state.humans=[u];
+  if(scenario==='route')state.rocks=[{x:340,y:200,w:20,h:300}];
+  const target={x:800,y:400,team:'alien',type:'bug',hp:100,alive:true};
+  if(scenario==='focus') {state.aliens=[target];u.focusTarget=target;}
+  if(scenario==='use'){state.terminals=[target];u.useOrder={kind:'terminal',target};}
+  if(['attack','force'].includes(scenario))u.attackMove={x:800,y:400,force:scenario==='force'};
+  if(scenario==='rally'){f.addRally({x:800,y:400});f.assignRally(u);}
+  if(scenario==='patrol')u.patrol={x:800,y:400,until:100,pause:0};
+  if(scenario==='follow'){u.order=1;u.leader=91;state.humans.push({id:91,x:800,y:400,type:'commander',team:'human',alive:true,hp:1,cool:100,order:3});}
+  if(scenario==='defend'){u.order=3;u.anchor={x:800,y:400};}
+  if(scenario==='hunt')state.aliens=[target];
+  const nav=sandbox.window.TriumphNavigation;if(fallback)sandbox.window.TriumphNavigation=null;
+  let distance=0;
+  try{for(let i=0;i<10;i++){const x=u.x,y=u.y;state.t+=.02;
+   if(scenario==='aim'){target.x=420;target.y=430;f.aimHuman(u,target,.02);}
+   else if(scenario==='patrol')f.patrol(u,.02,24);
+   else if(scenario==='focus')f.focusAttackStep(u,.02);
+   else if(scenario==='use')f.useOrderStep(u,.02);
+   else if(['attack','force','rally'].includes(scenario))f.attackMoveStep(u,null,.02);
+   else if(['follow','defend','hunt'].includes(scenario))f.update(.02);
+   else f.navigate(u,500,0,.02,36);
+   distance+=Math.hypot(u.x-x,u.y-y);assert(!f.blocked(u.x,u.y));
+  }}finally{sandbox.window.TriumphNavigation=nav;}
+  if(scenario==='route')assert(Math.abs(u.y-400)>1,'Terrain route bends around wall');
+  assert.equal(u.hp,type==='robot'?7:1);return distance;
+ }
+ try{
+  for(const scenario of ['travel','route','attack','force','rally','focus','use','aim','patrol','follow','defend','hunt']){
+   const baseline=run('robot',1,scenario),faster=run('robot',approved,scenario);assert(baseline>0,scenario+' exercises movement');assert(Math.abs(faster/baseline-1.5)<1e-8,scenario+' moves 50% farther for equivalent dt');
+  }
+  for(const type of ['soldier','commando','tank','commander'])assert.equal(run(type,1,'travel'),run(type,approved,'travel'),type+' unchanged');
+  assert(Math.abs(run('robot',approved,'travel',true)/run('robot',1,'travel',true)-1.5)<1e-8,'Fallback navigation applies multiplier once');
+ }finally{balance.groundRobotMovementMultiplier=approved;}
+ console.log('Passed robot 1.5x distance across travel/attack/force/rally/focus/use/aim/patrol/follow/defend/hunt, fallback routing and unchanged other-unit controls.');
+}
