@@ -17,3 +17,7 @@ Backlog proposal. Agree bounded scope and verification with the user before Read
 
 ## Sessions
 
+## Autonomous mandate — 2026-10-05
+
+User authorized consuming the queue and logging reasonable decisions while away. Run after TRI-036. Use Normal and fresh starts for all nine recovered missions, record exact browser actions, Remaining values and source-objective completion. Prior disposable VM completion checks are a useful baseline, not live evidence. Use normal UI input; never inject game state, fake victory or treat a deployment smoke as a completed mission. Record actual browser capability limitations and unreproduced reports honestly. A reproduced production defect should be reported for its own bounded fix before broad acceptance resumes. Do not tag a verified release from incomplete evidence.
+
