@@ -916,11 +916,17 @@
       "id": "TRI-051",
       "title": "Reinforcement eagles in new missions",
       "task": "docs/tasks/custom-mission-reinforcement-eagles.md",
-      "status": "Ready",
-      "reason": "User explicitly requested reinforcement eagles on new maps; integrate049/050 directly and audit earlier custom missions after050",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
       "approval": "User explicitly requested reinforcement eagles on new maps; integrate049/050 directly and audit earlier custom missions after050",
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/20"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/20",
+      "worker": {
+        "id": "/root/eagle_audit_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-mission-reinforcement-eagles",
+        "branch": "feature/custom-mission-reinforcement-eagles"
+      },
+      "branch": "feature/custom-mission-reinforcement-eagles"
     }
   ],
   "events": [
@@ -3190,6 +3196,15 @@
         "/root",
         "8e6ca1bfa493c959205e9d83a0806c8e8223093b",
         "71761701fbdcb803c35690d9e74a0dbc68df7054"
+      ]
+    },
+    {
+      "at": "2026-10-05T22:31:16.594Z",
+      "command": "dispatch",
+      "ticket": "TRI-051",
+      "details": [
+        "../triumph-custom-mission-reinforcement-eagles",
+        "/root/eagle_audit_worker"
       ]
     }
   ]
