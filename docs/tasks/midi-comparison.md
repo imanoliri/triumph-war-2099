@@ -17,3 +17,7 @@ Backlog proposal. Agree bounded scope and verification with the user before Read
 
 ## Sessions
 
+## Autonomous mandate — 2026-10-05
+
+User authorized queue execution with logged decisions. Compare original/recreation MIDI playback using the existing machine-local optional bank, with recovered track/controller/envelope evidence. Never upload the ignored bank or modify the original installation. Actual listening is required by this ticket; mock scheduler checks, waveforms and playback-start UI alone cannot complete audible comparison. First verify allowed original launch/audio capture/listening capabilities. If unavailable, preserve research and log the exact blocker and next action; do not silently replace the listening requirement with simulations or claim audible verification. Any proposed synthesis fixes need a separately reviewed bounded child ticket with listening evidence.
+

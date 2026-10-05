@@ -7,20 +7,22 @@
       "title": "Reproduce live mission completion report",
       "priority": "High",
       "task": "docs/tasks/mission-completion.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
+      "status": "Ready",
+      "reason": "Autonomous user mandate; all-nine Normal live completion scope recorded",
       "questions": [],
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/2"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/2",
+      "approval": "Autonomous user mandate; all-nine Normal live completion scope recorded"
     },
     {
       "id": "TRI-002",
       "title": "Browser acceptance pass",
       "priority": "High",
       "task": "docs/tasks/browser-acceptance.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
+      "status": "Ready",
+      "reason": "Autonomous user mandate; checklist evidence distinct from simulation and dependent on mission results",
       "questions": [],
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/3"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/3",
+      "approval": "Autonomous user mandate; checklist evidence distinct from simulation and dependent on mission results"
     },
     {
       "id": "TRI-003",
@@ -37,20 +39,22 @@
       "title": "Audible MIDI comparison",
       "priority": "Medium",
       "task": "docs/tasks/midi-comparison.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
+      "status": "Ready",
+      "reason": "Autonomous user mandate; bounded audible comparison with explicit capture/access gate",
       "questions": [],
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/5"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/5",
+      "approval": "Autonomous user mandate; bounded audible comparison with explicit capture/access gate"
     },
     {
       "id": "TRI-005",
       "title": "Fidelity audit",
       "priority": "Medium",
       "task": "docs/tasks/fidelity-audit.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
+      "status": "Ready",
+      "reason": "Autonomous user mandate; research-only five-system source fidelity audit",
       "questions": [],
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/6"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/6",
+      "approval": "Autonomous user mandate; research-only five-system source fidelity audit"
     },
     {
       "id": "TRI-006",
@@ -67,10 +71,11 @@
       "title": "Gamepad controls",
       "priority": "Low",
       "task": "docs/tasks/gamepad-controls.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
+      "status": "Ready",
+      "reason": "Autonomous user mandate; standard Gamepad mapping and hardware-evidence limits recorded",
       "questions": [],
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/7"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/7",
+      "approval": "Autonomous user mandate; standard Gamepad mapping and hardware-evidence limits recorded"
     },
     {
       "id": "TRI-008",
@@ -630,10 +635,11 @@
       "id": "TRI-042",
       "title": "Extract combat and burst system",
       "task": "docs/tasks/extract-combat-bursts.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
+      "status": "Ready",
+      "reason": "Autonomous user mandate; bounded behavior-preserving combat extraction",
       "questions": [],
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/11"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/11",
+      "approval": "Autonomous user mandate; bounded behavior-preserving combat extraction"
     },
     {
       "id": "TRI-043",
@@ -666,10 +672,11 @@
       "id": "TRI-046",
       "title": "Implement mixed original-mission difficulty profiles",
       "task": "docs/tasks/difficulty-profile-tuning.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
+      "status": "Ready",
+      "reason": "Autonomous user mandate; documented original-mission candidate profiles selected",
       "questions": [],
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/15"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/15",
+      "approval": "Autonomous user mandate; documented original-mission candidate profiles selected"
     }
   ],
   "events": [
@@ -2317,6 +2324,69 @@
         "difficulty-profile-tuning",
         "Implement mixed original-mission difficulty profiles",
         "Implement documented five-setting tactical/attrition profiles for original missions, keeping Normal baseline and custom mission profiles isolated; verify layouts and pressure"
+      ]
+    },
+    {
+      "at": "2026-10-05T07:11:43.213Z",
+      "command": "move",
+      "ticket": "TRI-001",
+      "details": [
+        "Ready",
+        "Autonomous user mandate; all-nine Normal live completion scope recorded"
+      ]
+    },
+    {
+      "at": "2026-10-05T07:11:43.265Z",
+      "command": "move",
+      "ticket": "TRI-002",
+      "details": [
+        "Ready",
+        "Autonomous user mandate; checklist evidence distinct from simulation and dependent on mission results"
+      ]
+    },
+    {
+      "at": "2026-10-05T07:11:43.315Z",
+      "command": "move",
+      "ticket": "TRI-004",
+      "details": [
+        "Ready",
+        "Autonomous user mandate; bounded audible comparison with explicit capture/access gate"
+      ]
+    },
+    {
+      "at": "2026-10-05T07:11:43.365Z",
+      "command": "move",
+      "ticket": "TRI-005",
+      "details": [
+        "Ready",
+        "Autonomous user mandate; research-only five-system source fidelity audit"
+      ]
+    },
+    {
+      "at": "2026-10-05T07:11:43.418Z",
+      "command": "move",
+      "ticket": "TRI-007",
+      "details": [
+        "Ready",
+        "Autonomous user mandate; standard Gamepad mapping and hardware-evidence limits recorded"
+      ]
+    },
+    {
+      "at": "2026-10-05T07:11:43.469Z",
+      "command": "move",
+      "ticket": "TRI-042",
+      "details": [
+        "Ready",
+        "Autonomous user mandate; bounded behavior-preserving combat extraction"
+      ]
+    },
+    {
+      "at": "2026-10-05T07:11:43.520Z",
+      "command": "move",
+      "ticket": "TRI-046",
+      "details": [
+        "Ready",
+        "Autonomous user mandate; documented original-mission candidate profiles selected"
       ]
     }
   ]
