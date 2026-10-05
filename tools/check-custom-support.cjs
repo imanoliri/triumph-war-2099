@@ -3,9 +3,9 @@ process.chdir(require('node:path').resolve(__dirname,'..'));
 const fs=require('fs'),assert=require('assert/strict');
 const source=fs.readFileSync('tools/check-recreation.cjs','utf8').split('const api=sandbox.window.triumph')[0];
 const b=new Function('require','module','__dirname',source+';sandbox.testContext=ctx;return sandbox;')(require,{},__dirname),w=b.window;
-// Immutable pre-ticket mission data: only supply brief text and Dunes caches may differ.
+// Immutable pre-ticket mission data: only supply brief text, Dunes caches and TRI-052 scheduled x may differ.
 const prior={window:{}};require('vm').runInNewContext(require('child_process').execFileSync('git',['show','69e4f9af76ddc4292eff270eac7891a4be0e8698:src/custom-missions.js'],{encoding:'utf8',windowsHide:true}),prior);
-for(const d of ['veryeasy','easy','normal','hard','veryhard'])for(const m of w.TriumphCustomMissions.list){const now=JSON.parse(JSON.stringify(w.TriumphCustomMissions.resolve(m.id,d))),old=JSON.parse(JSON.stringify(prior.window.TriumphCustomMissions.resolve(m.id,d)));delete now.brief;delete old.brief;if(m.id==='custom-desert-beneath-dunes'){assert.deepEqual(now.support,[{type:'troops',object:63,x:250,y:230},{type:'troops',object:63,x:330,y:590}]);now.support=[];}assert.deepEqual(now,old,'Only approved supply/text delta '+m.id+' '+d);}
+for(const d of ['veryeasy','easy','normal','hard','veryhard'])for(const m of w.TriumphCustomMissions.list){const now=JSON.parse(JSON.stringify(w.TriumphCustomMissions.resolve(m.id,d))),old=JSON.parse(JSON.stringify(prior.window.TriumphCustomMissions.resolve(m.id,d)));delete now.brief;delete old.brief;if(m.id==='custom-flash-silent-return'){assert.deepEqual(now.scheduledAir,{at:20,points:[[472,328],[520,392],[568,520]]});now.scheduledAir.points.forEach(p=>p[0]=520);}if(m.id==='custom-desert-beneath-dunes'){assert.deepEqual(now.support,[{type:'troops',object:63,x:250,y:230},{type:'troops',object:63,x:330,y:590}]);now.support=[];}assert.deepEqual(now,old,'Only approved supply/text/scheduled-x delta '+m.id+' '+d);}
 let f,s;
 function fresh(id,d='normal'){b.document.querySelector('#difficulty').value=d;w.triumph.loadCustomMission(id);f=w.__fixture();s=f.state;f.setSeed(51051);}
 function count(){return s.humans.filter(u=>u.alive&&['soldier','commando'].includes(u.type)).length;}
