@@ -14,7 +14,7 @@ function contact(u){u.external={until:1e6};s.mode='playing';if(w.triumph.state()
 const records=[];
 for(const m of w.TriumphCustomMissions.list)for(const d of ['veryeasy','easy','normal','hard','veryhard']){
  fresh(m.id,d);const expected=JSON.parse(JSON.stringify(s.pickups.filter(p=>['troops','air','tank'].includes(p.type))));
- if(m.role==='rescue')assert.deepEqual(expected.map(p=>[p.type,p.x,p.y]),[['troops',250,230],['troops',330,590]]);
+ if(m.role==='rescue')assert.deepEqual(expected.map(p=>[p.type,p.x,p.y]),m.id==='custom-desert-beneath-dunes-variant-b'?[['troops',280,420],['troops',820,370]]:[['troops',250,230],['troops',330,590]]);
  for(let index=0;index<expected.length;index++){
   fresh(m.id,d);s.customAirPending=false;const p=s.pickups.filter(p=>['troops','air','tank'].includes(p.type))[index],u=s.humans[0],before=s.humans.length;
   // Physical commander navigation from authored spawn, no terrain/door clearing or teleport.
