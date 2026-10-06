@@ -1050,8 +1050,8 @@
       "id": "TRI-061",
       "title": "Enable diagonal fire for all soldier unit types",
       "task": "docs/tasks/all-soldiers-diagonal-fire.md",
-      "status": "Queued",
-      "reason": "User requested queuing diagonal fire for all soldiers directly after active TRI-055",
+      "status": "Ready",
+      "reason": "User approved enabling diagonal fire for all soldier unit types on 2026-10-06",
       "questions": [],
       "approval": "User requested enabling diagonal fire for all soldier unit types on 2026-10-06"
     }
@@ -3756,6 +3756,15 @@
         "/root/director",
         "d9fe922610bf19b736d762f891ab3a599c71db5f",
         "d9110fe2533eba86be046c764ef08934b87d20c4"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:20:30.872Z",
+      "command": "move",
+      "ticket": "TRI-061",
+      "details": [
+        "Ready",
+        "User approved enabling diagonal fire for all soldier unit types on 2026-10-06"
       ]
     }
   ]
