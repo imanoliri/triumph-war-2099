@@ -99,6 +99,8 @@ Resume the same live worker and checkout for unfinished work when available; a n
 
 ## Native GitHub Project mirror
 
-GitHub Project [Triumph War 2099](https://github.com/users/imanoliri/projects/6) mirrors local board states via `node tools/github-project.cjs`. Local `docs/board.json` remains master; the remote board is refreshed at director checkpoints.
+GitHub Project [Triumph War 2099](https://github.com/users/imanoliri/projects/6) mirrors local board states via `node tools/github-project.cjs`. Local `docs/board.json` remains master.
+
+**Mandatory Requirement:** The director MUST always run `node tools/github-project.cjs` immediately following any ticket creation (`create`), state transition (`move`), `dispatch`, or completion (`Done`) so the remote GitHub Project board stays synchronized in real time.
 
 If `node tools/github-project.cjs` fails due to a transient GraphQL API error (`gh api graphql --input - failed`), retry the command. Local board state remains authoritative and safe across API retries.
