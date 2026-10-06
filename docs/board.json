@@ -993,10 +993,16 @@
       "id": "TRI-055",
       "title": "Implement Relay Basin map proposal B",
       "task": "docs/tasks/relay-basin-assault.md",
-      "status": "Ready",
-      "reason": "Director preparing ticket for worker dispatch",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User approved new mission tickets; queuing Relay Basin proposal B mission"
+      "approval": "User approved new mission tickets; queuing Relay Basin proposal B mission",
+      "worker": {
+        "id": "91479696-55c6-4934-9408-a26ed0ef1de3",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-relay-basin-assault",
+        "branch": "feature/relay-basin-assault"
+      },
+      "branch": "feature/relay-basin-assault"
     },
     {
       "id": "TRI-056",
@@ -3682,6 +3688,15 @@
       "details": [
         "Ready",
         "Director preparing ticket for worker dispatch"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:12:46.619Z",
+      "command": "dispatch",
+      "ticket": "TRI-055",
+      "details": [
+        "../triumph-relay-basin-assault",
+        "91479696-55c6-4934-9408-a26ed0ef1de3"
       ]
     }
   ]
