@@ -1121,10 +1121,17 @@
       "id": "TRI-063",
       "title": "Proactive attack-move guard stance with local engagement leash",
       "task": "docs/tasks/attack-move-guard-leash.md",
-      "status": "Ready",
-      "reason": "User approved start of execution on 2026-10-06",
+      "status": "Done",
+      "reason": "Proactive attack-move guard stance with 50px local engagement leash implemented and verified",
       "questions": [],
-      "approval": "User approved start of execution on 2026-10-06"
+      "approval": "User approved start of execution on 2026-10-06",
+      "branch": "feature/attack-move-guard-leash",
+      "completion": {
+        "evidence": "Proactive attack-move guard stance with 50px local engagement leash implemented and verified",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "b3f97802a5af84ef28a55df7da6de3164d84778c",
+        "squashCommit": "4fb47b2d149f16c47fe99edd32e8e56464abc8ed"
+      }
     },
     {
       "id": "TRI-064",
@@ -4246,6 +4253,36 @@
       "details": [
         "Ready",
         "User approved start of execution on 2026-10-06"
+      ]
+    },
+    {
+      "at": "2026-10-06T22:13:44.778Z",
+      "command": "dispatch",
+      "ticket": "TRI-063",
+      "details": [
+        "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-attack-move-guard-leash",
+        "/root/guard_leash_worker"
+      ]
+    },
+    {
+      "at": "2026-10-06T22:19:53.141Z",
+      "command": "move",
+      "ticket": "TRI-063",
+      "details": [
+        "Review",
+        "Worker commit d21f60561f3cc2d42e3a46b1dc665022b658a990; checks and limitations in the linked journal"
+      ]
+    },
+    {
+      "at": "2026-10-06T23:27:32.142Z",
+      "command": "move",
+      "ticket": "TRI-063",
+      "details": [
+        "Done",
+        "Proactive attack-move guard stance with 50px local engagement leash implemented and verified",
+        "/root/director",
+        "4fb47b2d149f16c47fe99edd32e8e56464abc8ed",
+        "b3f97802a5af84ef28a55df7da6de3164d84778c"
       ]
     }
   ]
