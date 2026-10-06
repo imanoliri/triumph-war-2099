@@ -1100,6 +1100,47 @@
         "reviewedImplementationCommit": "678895097f922971cb9a1e0df6cd46f58c550dc7",
         "squashCommit": "edfb8ce8f7587f0e5f8f15869c59e92598658601"
       }
+    },
+    {
+      "id": "TRI-062",
+      "title": "Weapon-aware soldier AI and effective range positioning",
+      "task": "docs/tasks/weapon-aware-soldier-ai.md",
+      "status": "Ready",
+      "reason": "User approved start of execution on 2026-10-06",
+      "questions": [],
+      "approval": "User approved start of execution on 2026-10-06"
+    },
+    {
+      "id": "TRI-063",
+      "title": "Proactive attack-move guard stance with local engagement leash",
+      "task": "docs/tasks/attack-move-guard-leash.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-064",
+      "title": "Aggressive and reactive alien AI with acoustic awareness",
+      "task": "docs/tasks/aggressive-reactive-alien-ai.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-065",
+      "title": "High-fidelity pixel art sprites for custom soldier types",
+      "task": "docs/tasks/custom-soldier-sprite-art.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-066",
+      "title": "Environment world soldier rosters and 360-degree Snow Sniper unit",
+      "task": "docs/tasks/world-soldier-rosters-snow-sniper.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -4063,6 +4104,65 @@
         "/root/director",
         "3065c3c647bec813656f3d5ac0cf588c2a4dd1cd",
         "2e2470cf28fd7d387007a3612ac34bfb75aec103"
+      ]
+    },
+    {
+      "at": "2026-10-06T21:13:51.034Z",
+      "command": "create",
+      "ticket": "TRI-062",
+      "details": [
+        "weapon-aware-soldier-ai",
+        "Weapon-aware soldier AI and effective range positioning",
+        "Soldier AI adjusts pursuit distance and positioning to match effective weapon range (short-range flamethrower/shotgun close in, long-range plasma/sniper maintain standoff distance, and area spray cone overlaps multiple targets)."
+      ]
+    },
+    {
+      "at": "2026-10-06T21:13:52.407Z",
+      "command": "create",
+      "ticket": "TRI-063",
+      "details": [
+        "attack-move-guard-leash",
+        "Proactive attack-move guard stance with local engagement leash",
+        "Soldiers reaching attack-move destinations enter a proactive guard stance with a local movement leash (~40-60px) to step out, angle shots at nearby hostiles, and return to their original arrival position."
+      ]
+    },
+    {
+      "at": "2026-10-06T21:13:54.541Z",
+      "command": "create",
+      "ticket": "TRI-064",
+      "details": [
+        "aggressive-reactive-alien-ai",
+        "Aggressive and reactive alien AI with acoustic awareness",
+        "Bug AI responds to nearby gunfire and nest damage sound events within 280px, reduces wander/pause breaks during combat, and alerts adjacent bugs to swarm active threats."
+      ]
+    },
+    {
+      "at": "2026-10-06T21:13:56.478Z",
+      "command": "create",
+      "ticket": "TRI-065",
+      "details": [
+        "custom-soldier-sprite-art",
+        "High-fidelity pixel art sprites for custom soldier types",
+        "Custom soldier types (Desert Scout, Dune Guard, Field Mechanic, Snow Sniper) render authentic multi-directional pixel art sprites matching original Triumph 2099 aesthetic instead of procedural shapes."
+      ]
+    },
+    {
+      "at": "2026-10-06T21:13:58.268Z",
+      "command": "create",
+      "ticket": "TRI-066",
+      "details": [
+        "world-soldier-rosters-snow-sniper",
+        "Environment world soldier rosters and 360-degree Snow Sniper unit",
+        "Scenario world troop availability defines scenario specialists per environment, including the Nivalis Snow Sniper unit with 360-degree unconstrained aiming, 480px range, 4 damage, and Whiteout Signal deployment."
+      ]
+    },
+    {
+      "at": "2026-10-06T21:14:28.112Z",
+      "command": "move",
+      "ticket": "TRI-062",
+      "details": [
+        "Ready",
+        "User approved start of execution on 2026-10-06"
       ]
     }
   ]
