@@ -47,16 +47,18 @@ assert.ok(realDesired.every(d=>d.kind==='issue'||/^[A-Z]+-\d{3,}: /.test(d.title
 
 // In-memory GitHub fake implementing the adapter contract.
 function fakeGitHub(issues){
- let seq=0;const state={project:null,statusField:null,items:[],issues:JSON.parse(JSON.stringify(issues)),calls:[]};
+ let seq=0;const state={project:null,firstView:null,statusField:null,items:[],issues:JSON.parse(JSON.stringify(issues)),calls:[]};
  const api={
-  async fetch(){return JSON.parse(JSON.stringify({project:state.project,statusField:state.statusField,items:state.items,issues:state.issues}));},
+  async fetch(){return JSON.parse(JSON.stringify({project:state.project,firstView:state.firstView,statusField:state.statusField,items:state.items,issues:state.issues}));},
   async apply(a){
    state.calls.push(a.type);
    switch(a.type){
     case 'createProject':state.project={id:'P1',number:1,url:'https://github.com/users/x/projects/1',title:gp.config.title,shortDescription:gp.config.shortDescription,linked:true};
+     state.firstView={id:'V1',name:'Board',layout:'BOARD_LAYOUT'};
      state.statusField={id:'F1',options:['Todo','In Progress','Done'].map((name,i)=>({id:'o'+i,name,color:'GRAY',description:''}))};return;
     case 'linkRepository':state.project.linked=true;return;
     case 'updateProject':state.project.shortDescription=gp.config.shortDescription;return;
+    case 'updateView':state.firstView={id:'V1',name:'Board',layout:'BOARD_LAYOUT'};return;
     case 'setStatusOptions':state.statusField.options=gp.statusOptions.map(o=>({id:'s'+(++seq),...o}));for(const i of state.items)i.status=null;return;
     case 'addIssue':{assert.ok(state.issues[a.number]);const itemId='I'+(++seq);state.items.push({itemId,type:'ISSUE',number:a.number,status:null});return itemId;}
     case 'addDraft':{const itemId='I'+(++seq);state.items.push({itemId,type:'DRAFT_ISSUE',draftId:'D'+seq,title:a.title,body:a.body,status:null});return itemId;}

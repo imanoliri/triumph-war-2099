@@ -130,7 +130,7 @@ async function sync(board,api,{dryRun=false,log=()=>{},cfg=config}={}){
  let changes=0, allActions=[];
  for(let step=0;step<10;step++){
   const current=plan(board,remote,cfg);
-  const projAction=current.actions.find(a=>['createProject','linkRepository','updateProject','setStatusOptions'].includes(a.type));
+  const projAction=current.actions.find(a=>['createProject','linkRepository','updateProject','updateView','setStatusOptions'].includes(a.type));
   if(!projAction)break;
   log(describe(projAction));
   await api.apply(projAction,remote);
@@ -139,7 +139,7 @@ async function sync(board,api,{dryRun=false,log=()=>{},cfg=config}={}){
   remote=await api.fetch();
  }
  const finalPlan=plan(board,remote,cfg);
- const projRemaining=finalPlan.actions.filter(a=>['createProject','linkRepository','updateProject','setStatusOptions'].includes(a.type));
+ const projRemaining=finalPlan.actions.filter(a=>['createProject','linkRepository','updateProject','updateView','setStatusOptions'].includes(a.type));
  if(projRemaining.length)throw Error('Project setup did not converge: '+projRemaining.map(describe).join('; '));
  const itemActions=finalPlan.actions;
  const created=new Map();
@@ -158,6 +158,7 @@ function describe(a){
   case 'createProject':return `create Project "${config.title}" linked to ${config.owner}/${config.repo}`;
   case 'linkRepository':return `link Project to ${config.owner}/${config.repo}`;
   case 'updateProject':return 'update Project short description';
+  case 'updateView':return 'update default Project view to Board layout';
   case 'setStatusOptions':return 'set Status options to '+statusOptions.map(o=>o.name).join(', ');
   case 'addIssue':return `add issue #${a.number} for ${a.ticket}`;
   case 'addDraft':return `add draft "${a.title}"`;
@@ -210,18 +211,20 @@ function ghApi(gh){
  return {
   async fetch(){
    const found=findProject(),issues=fetchIssues();
-   if(!found)return {project:null,statusField:null,items:[],issues};
-   const items=[];let after=null,project=null,statusField=null;
+   if(!found)return {project:null,firstView:null,statusField:null,items:[],issues};
+   const items=[];let after=null,project=null,statusField=null,firstView=null;
    do{
     const d=graphql(`query($id:ID!,$a:String){node(id:$id){... on ProjectV2{id number url title shortDescription
      repositories(first:20){nodes{nameWithOwner}}
-     field(name:"Status"){... on ProjectV2SingleSelectField{id options{id name color description}}}
+     views(first:1){nodes{id name layout}}
+      field(name:"Status"){... on ProjectV2SingleSelectField{id options{id name color description}}}
      items(first:100,after:$a){pageInfo{hasNextPage endCursor} nodes{id type
       fieldValueByName(name:"Status"){... on ProjectV2ItemFieldSingleSelectValue{name}}
       content{... on Issue{number repository{nameWithOwner}} ... on DraftIssue{id title body}}}}}}}`,{id:found.id,a:after});
     const p=d.node;
     project={id:p.id,number:p.number,url:p.url,title:p.title,shortDescription:p.shortDescription||'',linked:p.repositories.nodes.some(r=>r.nameWithOwner===`${config.owner}/${config.repo}`)};
     statusField=p.field?{id:p.field.id,options:p.field.options}:null;
+    firstView=p.views?.nodes?.[0]||null;
     for(const n of p.items.nodes){
      const item={itemId:n.id,type:n.type,status:n.fieldValueByName?.name||null};
      if(n.type==='ISSUE'){if(n.content.repository.nameWithOwner!==`${config.owner}/${config.repo}`)item.type='FOREIGN_ISSUE';item.number=n.content.number;}
@@ -230,7 +233,7 @@ function ghApi(gh){
     }
     after=p.items.pageInfo.hasNextPage?p.items.pageInfo.endCursor:null;
    }while(after);
-   return {project,statusField,items,issues};
+   return {project,firstView,statusField,items,issues};
   },
   async apply(a,remote){
    const projectId=remote.project?.id;
@@ -238,6 +241,7 @@ function ghApi(gh){
     case 'createProject':{const {ownerId,repositoryId}=repoIds();graphql(`mutation($o:ID!,$r:ID!,$t:String!){createProjectV2(input:{ownerId:$o,repositoryId:$r,title:$t}){projectV2{id}}}`,{o:ownerId,r:repositoryId,t:config.title});return;}
     case 'linkRepository':graphql(`mutation($p:ID!,$r:ID!){linkProjectV2ToRepository(input:{projectId:$p,repositoryId:$r}){repository{id}}}`,{p:projectId,r:repoIds().repositoryId});return;
     case 'updateProject':graphql(`mutation($p:ID!,$d:String!){updateProjectV2(input:{projectId:$p,shortDescription:$d}){projectV2{id}}}`,{p:projectId,d:config.shortDescription});return;
+    case 'updateView':graphql(`mutation($v:ID!,$n:String!){updateProjectV2View(input:{viewId:$v,name:$n,layout:BOARD_LAYOUT}){projectV2View{id}}}`,{v:remote.firstView.id,n:'Board'});return;
     case 'setStatusOptions':{
      if(!remote.statusField)throw Error('Project has no built-in Status field.');
      graphql(`mutation($f:ID!,$o:[ProjectV2SingleSelectFieldOptionInput!]){updateProjectV2Field(input:{fieldId:$f,singleSelectOptions:$o}){projectV2Field{... on ProjectV2SingleSelectField{id}}}}`,{f:remote.statusField.id,o:statusOptions});return;}
