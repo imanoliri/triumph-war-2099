@@ -85,3 +85,9 @@ Clean8562316ad6eeeb98cef8016876c3bc2d5c47f7e9 reviewed; full suite exit0, indepe
 Accepted053 squash268ee9409ad72ab8f44112b1c176e3b49338cc6e clean/no conflict; Done records exactSHAs. Publish mission; next001 all-nine ordinary-UI Normal verification from integrated build.
 
 Publishedcce2b2b; issue23 verified closed completed. Prepared001 all-nine Normal live verification atcce2b2b in ../triumph-mission-completion, initial008; dispatched actual/root/completion_worker. UI capability must be checked through documentedbrowser methods; no fake state/original launch claims. Stop on actual unsupportedcapability or reproduceddefect with durable evidence, acceptanceunchecked. After001,002broaderacceptance then004originalaudio.
+
+## Director handover to new director chat (2026-10-06 14:40)
+
+New director chat took over from repository records. User reports personally playing the full campaign: TRI-001, TRI-002 and TRI-004 withdrawn to Backlog with reasons; stale /root/completion_worker binding released, ../triumph-mission-completion checkout (empty session008, uncommitted) and parked midi checkout preserved untouched. Unrelated unstaged assets/provenance.json (no content diff) preserved.
+
+User asked for a native GitHub Project mirroring board/issues and approved TRI-006 now with autonomous defaults: local board authoritative, one-way gh-CLI mirror, drafts for historical tickets, withdrawn issues closed not planned, assets/visibility excluded. Director installed GitHub CLI 2.102.0 via winget and started interactive device login (project,repo,read:org scopes); no credential extraction. Next: commit checkpoint, prepare chore/publication-tracking worktree, dispatch worker after login completes.

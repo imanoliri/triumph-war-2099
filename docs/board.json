@@ -7,16 +7,11 @@
       "title": "Reproduce live mission completion report",
       "priority": "High",
       "task": "docs/tasks/mission-completion.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Backlog",
+      "reason": "User 2026-10-06: withdrawn; user played the full campaign personally, live verification not needed",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/2",
       "approval": "Autonomous user mandate; all-nine Normal live completion scope recorded",
-      "worker": {
-        "id": "/root/completion_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-mission-completion",
-        "branch": "chore/mission-completion"
-      },
       "branch": "chore/mission-completion"
     },
     {
@@ -24,8 +19,8 @@
       "title": "Browser acceptance pass",
       "priority": "High",
       "task": "docs/tasks/browser-acceptance.md",
-      "status": "Ready",
-      "reason": "Autonomous user mandate; checklist evidence distinct from simulation and dependent on mission results",
+      "status": "Backlog",
+      "reason": "User 2026-10-06: withdrawn; user played the full campaign personally, live verification not needed",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/3",
       "approval": "Autonomous user mandate; checklist evidence distinct from simulation and dependent on mission results"
@@ -69,8 +64,8 @@
       "title": "Audible MIDI comparison",
       "priority": "Medium",
       "task": "docs/tasks/midi-comparison.md",
-      "status": "Ready",
-      "reason": "Explicitly parked verification branch/worktree and session042; user prioritizes new table missions",
+      "status": "Backlog",
+      "reason": "User 2026-10-06: withdrawn; audible MIDI comparison skipped. Parked checkout preserved",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/5",
       "approval": "Autonomous user mandate; bounded audible comparison with explicit capture/access gate",
@@ -99,10 +94,11 @@
       "title": "Publication and issue tracking",
       "priority": "Medium",
       "task": "docs/tasks/publication-tracking.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
+      "status": "Ready",
+      "reason": "User approved TRI-006 Project-mirror scope and director defaults on 2026-10-06; see task",
       "questions": [],
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/1"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/1",
+      "approval": "User approved TRI-006 Project-mirror scope and director defaults on 2026-10-06; see task"
     },
     {
       "id": "TRI-007",
@@ -3440,6 +3436,60 @@
       "details": [
         "../triumph-mission-completion",
         "/root/completion_worker"
+      ]
+    },
+    {
+      "at": "2026-10-06T12:44:46.943Z",
+      "command": "move",
+      "ticket": "TRI-001",
+      "details": [
+        "Blocked",
+        "User withdrew ticket 2026-10-06; parking stale worker binding"
+      ]
+    },
+    {
+      "at": "2026-10-06T12:44:46.998Z",
+      "command": "move",
+      "ticket": "TRI-001",
+      "details": [
+        "Ready",
+        "Parked: stale worker /root/completion_worker released; checkout ../triumph-mission-completion preserved with empty session 008"
+      ]
+    },
+    {
+      "at": "2026-10-06T12:44:47.051Z",
+      "command": "move",
+      "ticket": "TRI-001",
+      "details": [
+        "Backlog",
+        "User 2026-10-06: withdrawn; user played the full campaign personally, live verification not needed"
+      ]
+    },
+    {
+      "at": "2026-10-06T12:44:47.105Z",
+      "command": "move",
+      "ticket": "TRI-002",
+      "details": [
+        "Backlog",
+        "User 2026-10-06: withdrawn; user played the full campaign personally, live verification not needed"
+      ]
+    },
+    {
+      "at": "2026-10-06T12:44:47.158Z",
+      "command": "move",
+      "ticket": "TRI-004",
+      "details": [
+        "Backlog",
+        "User 2026-10-06: withdrawn; audible MIDI comparison skipped. Parked checkout preserved"
+      ]
+    },
+    {
+      "at": "2026-10-06T12:45:45.792Z",
+      "command": "move",
+      "ticket": "TRI-006",
+      "details": [
+        "Ready",
+        "User approved TRI-006 Project-mirror scope and director defaults on 2026-10-06; see task"
       ]
     }
   ]

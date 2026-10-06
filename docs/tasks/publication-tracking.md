@@ -5,15 +5,27 @@
 
 ## Goal and user-visible outcome
 
-Publication and issue tracking
+The GitHub repository `imanoliri/triumph-war-2099` has a native GitHub Project board that shows every local board ticket with its current workflow state, and the director can refresh it repeatably from `docs/board.json`.
 
 ## Acceptance criteria
 
-- [ ] Resolve visibility/distribution scope; publish authorized files; enable CI and mirror this backlog into linked issues
+- [ ] A GitHub Project (v2) named "Triumph War 2099" exists under the repository owner and is linked to the repository.
+- [ ] Its single-select Status field has the local board states Backlog, Ready, In progress, Blocked, Review, Done, plus Withdrawn for tickets whose latest reason records a user withdrawal.
+- [ ] Every ticket in `docs/board.json` appears exactly once: tickets with an `issueUrl` as that real issue; tickets without one as a draft item titled `<ID>: <title>` whose body links the task record on main. No new issues are created for historical tickets.
+- [ ] Each item's Status matches the local board; issues of withdrawn tickets (TRI-001, TRI-002, TRI-004, TRI-039) are closed as not planned; other issues are closed exactly when the ticket is Done.
+- [ ] A dependency-free `tools/` helper (Node, invoking the installed `gh` CLI) performs an idempotent sync with a dry-run mode; rerunning it makes no changes. Offline regression checks cover the board-to-Project mapping without network access and run in `node tools/dev.cjs test`.
+- [ ] DIRECTOR, WORKFLOW, STATUS and the generated BOARD header state that the local board remains authoritative and the Project is a mirror refreshed at director checkpoints, including the Project URL.
+- [ ] Real remote results (Project URL, item count, sample state checks, sync rerun with zero changes) are recorded in the session journal.
 
 ## Scope and decisions
 
-Backlog proposal. Agree bounded scope and verification with the user before Ready. TRI-003 is an umbrella; split into one system per approved task before execution.
+User approved 2026-10-06 ("do TRI-006 right now, try to do everything on your own"). Director defaults recorded under that mandate:
+
+- Local `docs/board.json` stays the single authoritative status source; the Project is a one-way mirror (board to GitHub). No two-way sync.
+- Authentication uses the GitHub CLI (`gh`, installed 2026-10-06 at `C:\Program Files\GitHub CLI\gh.exe`) with the user's interactive device login and `project` scope. Never extract Git credential-helper tokens.
+- Repository visibility stays unchanged (public). Original-asset distribution/licensing stays an unresolved STATUS item and is excluded from this ticket. The ignored Windows MIDI bank stays unpublished.
+- No gameplay, asset or runtime changes. Existing issues are not retitled; historical Done tickets become draft items, not issues.
+- Earlier connector notes below are history; they predate the CLI route.
 
 ## Sessions
 
