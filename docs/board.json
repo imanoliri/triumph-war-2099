@@ -94,11 +94,17 @@
       "title": "Publication and issue tracking",
       "priority": "Medium",
       "task": "docs/tasks/publication-tracking.md",
-      "status": "Ready",
-      "reason": "User approved TRI-006 Project-mirror scope and director defaults on 2026-10-06; see task",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/1",
-      "approval": "User approved TRI-006 Project-mirror scope and director defaults on 2026-10-06; see task"
+      "approval": "User approved TRI-006 Project-mirror scope and director defaults on 2026-10-06; see task",
+      "worker": {
+        "id": "fdfd794d-b355-437f-aa49-6a77efe72a75",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-publication-tracking",
+        "branch": "chore/publication-tracking"
+      },
+      "branch": "chore/publication-tracking"
     },
     {
       "id": "TRI-007",
@@ -3490,6 +3496,15 @@
       "details": [
         "Ready",
         "User approved TRI-006 Project-mirror scope and director defaults on 2026-10-06; see task"
+      ]
+    },
+    {
+      "at": "2026-10-06T12:46:23.529Z",
+      "command": "dispatch",
+      "ticket": "TRI-006",
+      "details": [
+        "../triumph-publication-tracking",
+        "fdfd794d-b355-437f-aa49-6a77efe72a75"
       ]
     }
   ]
