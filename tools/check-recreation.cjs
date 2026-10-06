@@ -172,7 +172,7 @@ console.log('Passed held mouse autofire, normal weapon cooldown, moving diagonal
 
 {
 api.loadMission(1);const f=sandbox.window.__fixture(),state=f.state;state.mode='playing';resumeSimulation();state.mask=null;state.rocks=[];state.doors=[];state.props=[];
-for(const order of [0,1,2,3]){const troop={x:400,y:350,team:'human',type:'soldier',alive:true,hp:1,angle:0,cool:0,weapon:0,order},bug={x:510,y:430,team:'alien',type:'soldier',alive:true,hp:4};state.bullets=[];f.aimHuman(troop,bug,.1);assert.equal(state.bullets.length,0,'Friendly troops wait before firing');state.t=troop.burst.readyAt;f.aimHuman(troop,bug,0);assert.equal(state.bullets.length,0,'Friendly order '+order+' waits for a legal cardinal lane');if(order===3)assert.equal(troop.y,350,'Defenders hold while off lane');troop.y=bug.y;f.aimHuman(troop,bug,0);assert.equal(state.bullets.length,1,'Aligned friendly order '+order+' fires');assert(Math.abs(state.bullets[0].dy)<1e-12,'Friendly infantry shots remain cardinal');if(order===0||order===1)assert(troop.y>350,'Normal/Follow troops should step into a firing lane');if(order===3)assert.equal(troop.x,400,'Defenders should hold position');}
+for(const order of [0,1,2,3]){const troop={x:400,y:350,team:'human',type:'soldier',alive:true,hp:1,angle:0,cool:0,weapon:0,order},bug={x:510,y:430,team:'alien',type:'soldier',alive:true,hp:4};state.bullets=[];f.aimHuman(troop,bug,.1);assert.equal(state.bullets.length,0,'Friendly troops wait before firing');state.t=troop.burst.readyAt;f.aimHuman(troop,bug,0);assert.equal(state.bullets.length,0,'Friendly order '+order+' waits for a legal cardinal lane');if(order===3)assert(troop.y<350&&Math.hypot(troop.x-400,troop.y-350)<=50,'Defenders step out within leash radius while off lane');troop.y=bug.y;f.aimHuman(troop,bug,0);assert.equal(state.bullets.length,1,'Aligned friendly order '+order+' fires');assert(Math.abs(state.bullets[0].dy)<1e-12,'Friendly infantry shots remain cardinal');if(order===0||order===1)assert(troop.y>350,'Normal/Follow troops should step into a firing lane');if(order===3)assert(Math.abs(troop.x-400)<=5,'Defenders hold near anchor x');}
 const friendly={x:400,y:350,team:'human',alive:true,hp:1},bug={x:510,y:430,team:'alien',alive:true,hp:4};let friendlyTime=null,bugTime=null;state.t=0;for(let i=0;i<40;i++){state.t=i*.1;if(f.perceive(friendly,[bug],245)&&friendlyTime===null)friendlyTime=state.t;if(f.perceive(bug,[friendly],240)&&bugTime===null)bugTime=state.t;}assert(friendlyTime!==null&&bugTime!==null);assert(friendlyTime<bugTime,'Friendly troops should react sooner than bugs');state.t=bug.ai.focusUntil+.01;assert.equal(f.perceive(bug,[friendly],240),null,'Bugs should lose interest after a short focus interval');assert(bug.ai.boredUntil>state.t,'Bugs should take a wandering break');
 const farBug={x:400,y:350,team:'alien',alive:true,hp:4},farSoldier={x:600,y:350,team:'human',alive:true,hp:1};for(let i=0;i<50;i++){state.t+=.1;assert.equal(f.perceive(farBug,[farSoldier],240),null,'Bugs should not detect targets beyond reduced sight range');}
 const modes=new Set(),walker={x:400,y:350,team:'alien',type:'soldier',alive:true,hp:4,angle:0};for(let i=0;i<100;i++){state.t+=3.1;f.bugIntent(walker,friendly,.02,1);modes.add(walker.intent.mode);}assert(modes.has('approach')&&modes.has('wander')&&modes.has('pause'),'Bugs must vary approach, wandering and pauses');
@@ -693,4 +693,45 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
   assert([bugB,bugC,bugD].includes(sprayTarget),'Cone spray targeting prioritizes target cluster with highest enemy density in spray arc');
  }
  console.log('Passed weapon-aware soldier AI & effective range positioning checks (short-range close in, long-range standoff, spray cone density prioritization).');
-}
+ }
+
+ // TRI-063: Proactive attack-move guard stance with local engagement leash
+ {
+  api.loadMission(1);const f=sandbox.window.__fixture(),st=f.state;
+  st.mode='playing';st.rocks=[];st.doors=[];st.props=[];st.aliens=[];st.nests=[];st.bullets=[];st.cannons=[];
+
+  // 1. Soldiers reaching attack-move destination enter proactive guard stance with anchor
+  const soldier=st.humans.find(u=>u.type==='soldier')||f.addTroop(52,200,200);
+  st.humans=[soldier];
+  Object.assign(soldier,{x:200,y:200,team:'human',alive:true,hp:1,cool:0,weapon:0,order:2,attackMove:{x:208,y:200,force:false}});
+  f.update(.1);
+  assert.equal(soldier.attackMove,null,'Attack-move clears upon arrival at destination');
+  assert.equal(soldier.order,3,'Reaching attack-move destination transitions to order 3 guard stance');
+  assert(soldier.anchor&&Math.abs(soldier.anchor.x-soldier.x)<1e-6&&Math.abs(soldier.anchor.y-soldier.y)<1e-6,'Arrival position recorded as anchor');
+
+  // 2. Guard stance soldier steps out within leash radius to angle a legal firing lane at nearby hostiles
+  const anchorX=400,anchorY=350;
+  Object.assign(soldier,{x:anchorX,y:anchorY,order:3,anchor:{x:anchorX,y:anchorY},cool:0});
+  const bug={x:510,y:380,team:'alien',type:'soldier',alive:true,hp:10};
+  st.aliens=[bug];st.bullets=[];
+  const oldY=soldier.y;
+  for(let i=0;i<20;i++){st.t+=.05;soldier.cool=0;f.update(.05);}
+  assert(soldier.y>oldY,'Guard soldier steps out from anchor to align a legal firing lane');
+  assert(Math.hypot(soldier.x-anchorX,soldier.y-anchorY)<=50.1,'Guard soldier remains within leash radius from anchor while stepping out');
+  assert(st.bullets.length>0,'Guard soldier fires once legal lane is angled');
+
+  // 3. Guard soldier returns/leashes back to anchor position once target is clear
+  bug.hp=0;st.aliens=[];
+  for(let i=0;i<40;i++){st.t+=.05;f.update(.05);}
+  assert(Math.hypot(soldier.x-anchorX,soldier.y-anchorY)<=12,'Guard soldier leashes back to arrival anchor once clear of hostiles');
+
+  // 4. Leash radius strictly caps max distance from anchor when target is obstructed or far offset
+  Object.assign(soldier,{x:anchorX,y:anchorY,order:3,anchor:{x:anchorX,y:anchorY},cool:0});
+  const farOffsetBug={x:510,y:490,team:'alien',type:'soldier',alive:true,hp:10};
+  st.aliens=[farOffsetBug];
+  for(let i=0;i<60;i++){st.t+=.05;soldier.cool=0;f.update(.05);}
+  assert(Math.hypot(soldier.x-anchorX,soldier.y-anchorY)<=50.1,'Leash radius strictly caps maximum movement from anchor');
+
+  console.log('Passed TRI-063 proactive attack-move guard stance, local leash radius stepping/firing, return-to-anchor once clear, and strict leash cap.');
+ }
+

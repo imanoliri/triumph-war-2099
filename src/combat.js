@@ -81,13 +81,25 @@ function aimHuman(u,target,dt){
   return best;
  };
  u.angle=heading();trackBurst(u,target);
- if(!humanFiringLane(u,target)&&dt&&u.order!==3){
+ if(!humanFiringLane(u,target)&&dt){
   const c=Math.cos(u.angle),sn=Math.sin(u.angle),dx=target.x-u.x,dy=target.y-u.y,offset=-dx*sn+dy*c;
   const radius=getState().nests.includes(target)?26:target.type==='queen'||target.type==='tank'?17:8;
-  // Slide onto the legal lane; close when range or terrain prevents a shot.
-  if(Math.abs(offset)>=radius-1)navigate(u,-sn*offset,c*offset,dt,u.type==='commander'?55:36);
-  else navigate(u,dx,dy,dt,u.type==='commander'?55:36);
-  u.angle=heading();
+  const anchor=u.anchor||{x:u.x,y:u.y};
+  const leash=window.TriumphBalance?.guardLeashRadius||50;
+  const speed=u.type==='commander'?55:36;
+  let stepX=0,stepY=0;
+  if(Math.abs(offset)>=radius-1){stepX=-sn*offset;stepY=c*offset;}
+  else{stepX=dx;stepY=dy;}
+  const stepLen=Math.hypot(stepX,stepY);
+  const moveDist=speed*dt;
+  const nx=stepLen?u.x+(stepX/stepLen)*moveDist:u.x;
+  const ny=stepLen?u.y+(stepY/stepLen)*moveDist:u.y;
+  const nextDist=Math.hypot(nx-anchor.x,ny-anchor.y);
+  const curDist=Math.hypot(u.x-anchor.x,u.y-anchor.y);
+  if(u.order!==3||nextDist<=leash||nextDist<curDist){
+   navigate(u,stepX,stepY,dt,speed);
+   u.angle=heading();
+  }
  }
  if(visible(u,target)&&humanFiringLane(u,target)&&burstReady(u,target)&&u.cool<=0){fire(u);finishBurstShot(u);}
  else if(!visible(u,target))trackBurst(u,null);
