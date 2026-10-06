@@ -1,0 +1,65 @@
+{
+  "method": "Full VM runtime .02s up to 120s, deterministic mission seed, default AI at initial positions, no player orders or player-directed eagle collection; default AI may collect finite eagle caches. Separate from skilled-player difficulty and objective fixture proof. Generated only with explicit --record.",
+  "logs": [
+    {
+      "difficulty": "veryeasy",
+      "time": 120,
+      "mode": "playing",
+      "army": 22,
+      "bugs": 7,
+      "kills": 41,
+      "emitted": 26,
+      "budget": 26,
+      "nestBirthsRemaining": 0,
+      "interval": 7
+    },
+    {
+      "difficulty": "easy",
+      "time": 120,
+      "mode": "playing",
+      "army": 21,
+      "bugs": 6,
+      "kills": 55,
+      "emitted": 36,
+      "budget": 36,
+      "nestBirthsRemaining": 0,
+      "interval": 6
+    },
+    {
+      "difficulty": "normal",
+      "time": 120,
+      "mode": "playing",
+      "army": 21,
+      "bugs": 21,
+      "kills": 59,
+      "emitted": 46,
+      "budget": 46,
+      "nestBirthsRemaining": 0,
+      "interval": 4.5
+    },
+    {
+      "difficulty": "hard",
+      "time": 120,
+      "mode": "playing",
+      "army": 10,
+      "bugs": 50,
+      "kills": 52,
+      "emitted": 56,
+      "budget": 62,
+      "nestBirthsRemaining": 0,
+      "interval": 3
+    },
+    {
+      "difficulty": "veryhard",
+      "time": 120,
+      "mode": "playing",
+      "army": 13,
+      "bugs": 49,
+      "kills": 57,
+      "emitted": 48,
+      "budget": 78,
+      "nestBirthsRemaining": 0,
+      "interval": 2.4
+    }
+  ]
+}

@@ -160,3 +160,20 @@ Three finite yellow troop eagles at(150,205),(150,540),(300,680) invoke recovere
 `design/harbor-pressure.json` records one seeded default-AI full-runtime120s probe: Normal69kills/Army19/four remaining bugs, Hard91/Army10/seven bugs, Very hard103/Army1/27bugs. Easier settings clear bugs but still respect hold. Default AI may gather eagles, so army counts include reinforcements. This measures engaged pressure/casualties, not skilled-player difficulty or completion. A remote eastern first draft produced little contact and cap congestion; final near-mouth placements correct this without combat changes. Dedicated VM lifecycle tests cover cap-deferred births/waves, cleanup/destruction/hold/loss, routes and all three real carrier deliveries. Browser evidence remains distinct in the Harbor playtest record.
 
 TRI-051 custom reinforcement audit: Relay Breaker retains one yellow and, through Normal, one bronze eagle; Last Convoy retains the same supplies/profile placements and pressure. Silent Return retains its optional blue eagle (520,648), reachable along the access-terminal approach through already-unlocked door244 without using terminal253 first, and its three timed friendly commandos. Beneath the Dunes adds two finite yellow eagles at(250,230) and(330,590) on north/south escort routes. Whiteout Signal and Harbor Watch each retain three yellow caches. No mission refills these pickups. Custom support producing infantry retains the eagle and shows TROOPS FULL · WAIT FOR SPACE when living soldiers/commandos plus pending landing drops fill the existing cap. Carrier/ordinary-air/infiltration drops respect those reservations; Silent scheduled formation remains unchanged. Specialist riders/crawlers/robots/tanks keep their existing exclusion from the infantry support cap. Dunes commanders collect eagles; arriving ordinary soldiers can escort, never repair. Original support eligibility/delivery remains unchanged.
+
+
+## District Twelve (TRI-053)
+
+Crown local Metropolitan Guard mission `custom-capital-district-twelve` uses authored streets, west connected guard rooms, east plaza and north/south transit approaches. Activate terminals at(880,170)/(880,600), hold120s, wait for the once-only70s north-entering existing-aircraft relief (three commandos at210/258/306,385) and all support landings, then clear bugs, finite waves and unspent live nest budgets. Empty nests may remain. Destroying a nest cancels its remaining births. Army loss (last living noncommander) fails immediately, even with relief inbound; no timeout.
+
+| Difficulty | Soldiers + robot | Nest births each / interval | Wave budget | First wave |
+| --- | --- | --- | --- | --- |
+| Very easy | 10 + 1 | 4 / 7s | 26 | 24s |
+| Easy | 10 + 1 | 5 / 6s | 36 | 20s |
+| Normal | 8 + 1 | 7 / 4.5s | 46 | 16s |
+| Hard | 6 + 1 | 10 / 3s | 62 | 12s |
+| Very hard | 4 + 1 | 13 / 2.4s | 78 | 10s |
+
+Four commanders and six initial bugs at all settings. Second/final waves50/85s. Two finite yellow eagles at(150,170)/(150,600) invoke actual recovered carrier unloads; no refill and full infantry cap retains pickup. Scheduled aircraft wait at cap and reserve pending landing slots through the existing lifecycle. Plasma at(210,385). No civilian/new-unit/faction/campaign/rooftop/destruction/environmental mechanic. Controls, asymmetric aim, sprite hotspots and enemy-only barrel damage remain unchanged. Pressure evidence in design/district-pressure.json is a seeded default-AI120s encounter including autonomous supply gathering, separate from human calibration and fixture objective proof.
+
+TRI-053 seeded120s default-AI results: Very easy41kills/army22/7bugs, Easy55/21/6, Normal59/21/21, Hard52/10/50 (56of62 waves emitted), Very hard57/13/49 (48of78 emitted). All nest birth budgets exhausted. Hard settings reached the50-bug cap and retained finite wave backlog, which continues gating cleanup. Counts include autonomous eagle collection and timed relief. These probes establish substantial contact and finite pressure, not monotonic kill counts, human difficulty or guaranteed objective completion.

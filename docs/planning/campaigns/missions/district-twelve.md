@@ -1,31 +1,13 @@
 # District Twelve
 
-Status: draft for user refinement, not an approved implementation. Planet: [capital-world](../planets/capital-world.md).
+Status: implemented for TRI-053 review; approved bounded task supersedes earlier draft gate. Planet: [Crown capital-world](../planets/capital-world.md). Dossier proposals remain unchanged.
 
-## Player experience
+Local Metropolitan Guard holds a connected guard post and two transit streets until expedition relief arrives. Existing commanders, soldiers, robot, bugs, nests, carrier eagles and aircraft express the local-command identity. Evacuation is briefing context only; no civilian actors.
 
-Local Metropolitan Guard command, followed by a separate expedition relief mission. Keep a transit district open while expedition relief approaches. Protect the route between the guard post and evacuation plaza.
+Activate north-transit (880,170) and south-transit (880,600), hold 120 simulation seconds, wait for scheduled aircraft relief and all pending support/drop completion, exhaust or destroy finite nests and clear every living bug and finite wave. Last noncommander loss fails immediately, even with relief inbound. No timeout. Empty live nests do not gate completion after their finite birth budget expires; destroying a nest cancels unused births.
 
-## Proposed map
+New deterministic capital terrain contains west connected rooms with two broad wall passages, a sheltered west circuit, north/south transit streets, central street and east plaza connector. Two clear enemy approaches from both transit streets; all relief targets (210,385)/(258,385)/(306,385) connect to guard and plaza. Existing aircraft arrive once at70s from the north and drop one existing commando each. At full infantry cap they wait/retry while preserving drop reservations.
 
-Street and courtyard circuits with connected interiors; two enemy approaches and a relief entry with verified deployment clearance. Prepare schematic alternatives for review; dimensions, mask, placements, pickups and support corridors are not frozen.
+Five explicit profiles reuse four commanders, one robot, six initial bugs. Soldiers10/10/8/6/4; four nest budgets4/5/7/10/13 each at7/6/4.5/3/2.4s; waves26/36/46/62/78. First wave24/20/16/12/10s, second50s, final85s. Finite pressure rises while starting infantry decreases. Two yellow carrier eagles at(150,170)/(150,600), no refill; full cap retains pickup. Plasma at(210,385). Autonomous AI may collect supply in probes.
 
-## Objective contract to refine
-
-Hold through the approved finite assault and keep designated defenders alive; route/terminal conditions and the actual relief trigger need agreement. Decide timeout, defeated rescue targets, commander eligibility, reinforcement cap and extraction arrivals explicitly.
-
-## Forces and pressure
-
-Initial roster and numerical profiles remain unset. Use existing unit roles for the smallest first playable scope. Define finite/infinite enemy sources, spawn lanes and refill cadence for each approved difficulty. Test flanks and regroup opportunities alongside attack pressure. Normal must be checked separately from Hard/Very Hard.
-
-## Dependencies and exclusions
-
-Represent evacuation narratively in the first version, or refine civilian escort as its own system. Rooftop movement and destructible buildings are excluded by default. No campaign persistence, new environmental damage or unselected faction abilities are authorized by this brief.
-
-## Acceptance plan after refinement
-
-Prove reachable starts/objectives/return routes and spawn/support clearance. Exercise victory gates, loss, population cap, restart, progress isolation and original-campaign regression. Browser evidence must cover briefing, tactical startup, actual combat and objective feedback. Report skilled-player challenge separately from simulation and stationary AI probes.
-
-## Next decision
-
-Agree the objective and minimal roster, choose a layout, then turn this brief into one bounded ticket using [the agent kit](../agent-kit.md).
+No new units/abilities, rooftops, building destruction, environmental damage, campaign persistence or faction mechanics. Geometry/art/runtime contract and provenance: [authored map](../../../../assets/custom/district-twelve/README.md). Dedicated regression covers physical circuits/terminal orders, births/waves/caps, actual eagles and relief landings, hold/victory/loss and reset/isolation; browser and human challenge evidence stay separate.

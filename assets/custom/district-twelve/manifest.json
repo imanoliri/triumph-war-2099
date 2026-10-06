@@ -1,0 +1,16 @@
+{
+  "source": "tools/build-district-twelve.py",
+  "seed": 53053,
+  "geometry": "geometry.json",
+  "references": [
+    "docs/art-kit/manifest.json",
+    "docs/art-kit/README.md",
+    "docs/planning/campaigns/planets/capital-world.md"
+  ],
+  "coordinateConvention": "1024x768 top-left origin; recovered actor hotspots; row-major LSB-first mask",
+  "provenance": "Entire terrain authored in Pillow; no recovered or generated raster input. Runtime actors remain credited to Anthony Lopes / DarkSun Games.",
+  "collisionSHA256": "3f482dae11d581f1e8445646c3f738b019afbc90276528208586395834357e4b",
+  "terrainSHA256": "9d7995f1a2aae716f0fd8ace39e9c1617d071d3291a3fec8114adfccf9ba6f78",
+  "maskSHA256": "fd720c5817862bf0fbbb6ae5d8d4f9cc738e3277bce8dee115767c3698eb9a58",
+  "runtimeContract": "runtime-contract.json"
+}

@@ -1,0 +1,1392 @@
+{
+  "provenance": "Custom runtime placements from src/custom-missions.js; original sprite hotspots are retained, not terrain pixels.",
+  "profiles": {
+    "veryeasy": {
+      "id": "custom-capital-district-twelve",
+      "name": "District Twelve",
+      "role": "capital-defense",
+      "baseMapIndex": 7,
+      "fixtureMission": 2,
+      "terrainId": "district-twelve",
+      "commanders": [
+        [
+          210,
+          330
+        ],
+        [
+          210,
+          365
+        ],
+        [
+          210,
+          400
+        ],
+        [
+          210,
+          435
+        ]
+      ],
+      "soldiers": [
+        [
+          270,
+          310
+        ],
+        [
+          270,
+          345
+        ],
+        [
+          270,
+          380
+        ],
+        [
+          270,
+          415
+        ],
+        [
+          310,
+          330
+        ],
+        [
+          310,
+          365
+        ],
+        [
+          310,
+          400
+        ],
+        [
+          310,
+          435
+        ],
+        [
+          350,
+          345
+        ],
+        [
+          350,
+          400
+        ]
+      ],
+      "commandos": [],
+      "robots": [
+        [
+          180,
+          385
+        ]
+      ],
+      "terminals": [
+        {
+          "object": 257,
+          "x": 880,
+          "y": 170,
+          "key": "north-transit"
+        },
+        {
+          "object": 257,
+          "x": 880,
+          "y": 600,
+          "key": "south-transit"
+        }
+      ],
+      "nests": [
+        [
+          475,
+          150
+        ],
+        [
+          740,
+          150
+        ],
+        [
+          475,
+          580
+        ],
+        [
+          740,
+          580
+        ]
+      ],
+      "bugs": [
+        [
+          420,
+          170
+        ],
+        [
+          460,
+          170
+        ],
+        [
+          700,
+          170
+        ],
+        [
+          420,
+          600
+        ],
+        [
+          460,
+          600
+        ],
+        [
+          700,
+          600
+        ]
+      ],
+      "support": [
+        {
+          "type": "troops",
+          "object": 63,
+          "x": 150,
+          "y": 170
+        },
+        {
+          "type": "troops",
+          "object": 63,
+          "x": 150,
+          "y": 600
+        }
+      ],
+      "weapons": [
+        {
+          "type": "plasma",
+          "object": 54,
+          "x": 210,
+          "y": 385
+        }
+      ],
+      "route": [
+        [
+          210,
+          385
+        ],
+        [
+          210,
+          170
+        ],
+        [
+          880,
+          170
+        ],
+        [
+          880,
+          385
+        ],
+        [
+          880,
+          600
+        ],
+        [
+          210,
+          600
+        ],
+        [
+          115,
+          600
+        ],
+        [
+          115,
+          170
+        ],
+        [
+          210,
+          385
+        ]
+      ],
+      "scheduledAir": {
+        "at": 70,
+        "points": [
+          [
+            210,
+            385
+          ],
+          [
+            258,
+            385
+          ],
+          [
+            306,
+            385
+          ]
+        ]
+      },
+      "objective": {
+        "activate": [
+          "north-transit",
+          "south-transit"
+        ],
+        "minimumTime": 120,
+        "waveBudgetEmitted": true,
+        "clearEnemies": true,
+        "atLeastOneNonCommander": true,
+        "reliefDelivered": true
+      },
+      "randomPickups": false,
+      "vents": false,
+      "waves": [
+        {
+          "at": 24,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              420,
+              600
+            ]
+          ],
+          "bugsPerPoint": 3
+        },
+        {
+          "at": 50,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              700,
+              170
+            ],
+            [
+              420,
+              600
+            ],
+            [
+              700,
+              600
+            ]
+          ],
+          "bugsPerPoint": 2
+        },
+        {
+          "at": 85,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              700,
+              170
+            ],
+            [
+              420,
+              600
+            ],
+            [
+              700,
+              600
+            ]
+          ],
+          "bugsPerPoint": 3
+        }
+      ],
+      "brief": "veryeasy: 10 troops + robot; 26 arrivals; 4 nests x 4 births / 7s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
+      "profile": "veryeasy",
+      "nestInterval": 7,
+      "nestBudget": 4
+    },
+    "easy": {
+      "id": "custom-capital-district-twelve",
+      "name": "District Twelve",
+      "role": "capital-defense",
+      "baseMapIndex": 7,
+      "fixtureMission": 2,
+      "terrainId": "district-twelve",
+      "commanders": [
+        [
+          210,
+          330
+        ],
+        [
+          210,
+          365
+        ],
+        [
+          210,
+          400
+        ],
+        [
+          210,
+          435
+        ]
+      ],
+      "soldiers": [
+        [
+          270,
+          310
+        ],
+        [
+          270,
+          345
+        ],
+        [
+          270,
+          380
+        ],
+        [
+          270,
+          415
+        ],
+        [
+          310,
+          330
+        ],
+        [
+          310,
+          365
+        ],
+        [
+          310,
+          400
+        ],
+        [
+          310,
+          435
+        ],
+        [
+          350,
+          345
+        ],
+        [
+          350,
+          400
+        ]
+      ],
+      "commandos": [],
+      "robots": [
+        [
+          180,
+          385
+        ]
+      ],
+      "terminals": [
+        {
+          "object": 257,
+          "x": 880,
+          "y": 170,
+          "key": "north-transit"
+        },
+        {
+          "object": 257,
+          "x": 880,
+          "y": 600,
+          "key": "south-transit"
+        }
+      ],
+      "nests": [
+        [
+          475,
+          150
+        ],
+        [
+          740,
+          150
+        ],
+        [
+          475,
+          580
+        ],
+        [
+          740,
+          580
+        ]
+      ],
+      "bugs": [
+        [
+          420,
+          170
+        ],
+        [
+          460,
+          170
+        ],
+        [
+          700,
+          170
+        ],
+        [
+          420,
+          600
+        ],
+        [
+          460,
+          600
+        ],
+        [
+          700,
+          600
+        ]
+      ],
+      "support": [
+        {
+          "type": "troops",
+          "object": 63,
+          "x": 150,
+          "y": 170
+        },
+        {
+          "type": "troops",
+          "object": 63,
+          "x": 150,
+          "y": 600
+        }
+      ],
+      "weapons": [
+        {
+          "type": "plasma",
+          "object": 54,
+          "x": 210,
+          "y": 385
+        }
+      ],
+      "route": [
+        [
+          210,
+          385
+        ],
+        [
+          210,
+          170
+        ],
+        [
+          880,
+          170
+        ],
+        [
+          880,
+          385
+        ],
+        [
+          880,
+          600
+        ],
+        [
+          210,
+          600
+        ],
+        [
+          115,
+          600
+        ],
+        [
+          115,
+          170
+        ],
+        [
+          210,
+          385
+        ]
+      ],
+      "scheduledAir": {
+        "at": 70,
+        "points": [
+          [
+            210,
+            385
+          ],
+          [
+            258,
+            385
+          ],
+          [
+            306,
+            385
+          ]
+        ]
+      },
+      "objective": {
+        "activate": [
+          "north-transit",
+          "south-transit"
+        ],
+        "minimumTime": 120,
+        "waveBudgetEmitted": true,
+        "clearEnemies": true,
+        "atLeastOneNonCommander": true,
+        "reliefDelivered": true
+      },
+      "randomPickups": false,
+      "vents": false,
+      "waves": [
+        {
+          "at": 20,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              420,
+              600
+            ]
+          ],
+          "bugsPerPoint": 4
+        },
+        {
+          "at": 50,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              700,
+              170
+            ],
+            [
+              420,
+              600
+            ],
+            [
+              700,
+              600
+            ]
+          ],
+          "bugsPerPoint": 3
+        },
+        {
+          "at": 85,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              700,
+              170
+            ],
+            [
+              420,
+              600
+            ],
+            [
+              700,
+              600
+            ]
+          ],
+          "bugsPerPoint": 4
+        }
+      ],
+      "brief": "easy: 10 troops + robot; 36 arrivals; 4 nests x 5 births / 6s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
+      "profile": "easy",
+      "nestInterval": 6,
+      "nestBudget": 5
+    },
+    "normal": {
+      "id": "custom-capital-district-twelve",
+      "name": "District Twelve",
+      "role": "capital-defense",
+      "baseMapIndex": 7,
+      "fixtureMission": 2,
+      "terrainId": "district-twelve",
+      "commanders": [
+        [
+          210,
+          330
+        ],
+        [
+          210,
+          365
+        ],
+        [
+          210,
+          400
+        ],
+        [
+          210,
+          435
+        ]
+      ],
+      "soldiers": [
+        [
+          270,
+          310
+        ],
+        [
+          270,
+          345
+        ],
+        [
+          270,
+          380
+        ],
+        [
+          270,
+          415
+        ],
+        [
+          310,
+          330
+        ],
+        [
+          310,
+          365
+        ],
+        [
+          310,
+          400
+        ],
+        [
+          310,
+          435
+        ]
+      ],
+      "commandos": [],
+      "robots": [
+        [
+          180,
+          385
+        ]
+      ],
+      "terminals": [
+        {
+          "object": 257,
+          "x": 880,
+          "y": 170,
+          "key": "north-transit"
+        },
+        {
+          "object": 257,
+          "x": 880,
+          "y": 600,
+          "key": "south-transit"
+        }
+      ],
+      "nests": [
+        [
+          475,
+          150
+        ],
+        [
+          740,
+          150
+        ],
+        [
+          475,
+          580
+        ],
+        [
+          740,
+          580
+        ]
+      ],
+      "bugs": [
+        [
+          420,
+          170
+        ],
+        [
+          460,
+          170
+        ],
+        [
+          700,
+          170
+        ],
+        [
+          420,
+          600
+        ],
+        [
+          460,
+          600
+        ],
+        [
+          700,
+          600
+        ]
+      ],
+      "support": [
+        {
+          "type": "troops",
+          "object": 63,
+          "x": 150,
+          "y": 170
+        },
+        {
+          "type": "troops",
+          "object": 63,
+          "x": 150,
+          "y": 600
+        }
+      ],
+      "weapons": [
+        {
+          "type": "plasma",
+          "object": 54,
+          "x": 210,
+          "y": 385
+        }
+      ],
+      "route": [
+        [
+          210,
+          385
+        ],
+        [
+          210,
+          170
+        ],
+        [
+          880,
+          170
+        ],
+        [
+          880,
+          385
+        ],
+        [
+          880,
+          600
+        ],
+        [
+          210,
+          600
+        ],
+        [
+          115,
+          600
+        ],
+        [
+          115,
+          170
+        ],
+        [
+          210,
+          385
+        ]
+      ],
+      "scheduledAir": {
+        "at": 70,
+        "points": [
+          [
+            210,
+            385
+          ],
+          [
+            258,
+            385
+          ],
+          [
+            306,
+            385
+          ]
+        ]
+      },
+      "objective": {
+        "activate": [
+          "north-transit",
+          "south-transit"
+        ],
+        "minimumTime": 120,
+        "waveBudgetEmitted": true,
+        "clearEnemies": true,
+        "atLeastOneNonCommander": true,
+        "reliefDelivered": true
+      },
+      "randomPickups": false,
+      "vents": false,
+      "waves": [
+        {
+          "at": 16,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              420,
+              600
+            ]
+          ],
+          "bugsPerPoint": 5
+        },
+        {
+          "at": 50,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              700,
+              170
+            ],
+            [
+              420,
+              600
+            ],
+            [
+              700,
+              600
+            ]
+          ],
+          "bugsPerPoint": 4
+        },
+        {
+          "at": 85,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              700,
+              170
+            ],
+            [
+              420,
+              600
+            ],
+            [
+              700,
+              600
+            ]
+          ],
+          "bugsPerPoint": 5
+        }
+      ],
+      "brief": "normal: 8 troops + robot; 46 arrivals; 4 nests x 7 births / 4.5s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
+      "profile": "normal",
+      "nestInterval": 4.5,
+      "nestBudget": 7
+    },
+    "hard": {
+      "id": "custom-capital-district-twelve",
+      "name": "District Twelve",
+      "role": "capital-defense",
+      "baseMapIndex": 7,
+      "fixtureMission": 2,
+      "terrainId": "district-twelve",
+      "commanders": [
+        [
+          210,
+          330
+        ],
+        [
+          210,
+          365
+        ],
+        [
+          210,
+          400
+        ],
+        [
+          210,
+          435
+        ]
+      ],
+      "soldiers": [
+        [
+          270,
+          310
+        ],
+        [
+          270,
+          345
+        ],
+        [
+          270,
+          380
+        ],
+        [
+          270,
+          415
+        ],
+        [
+          310,
+          330
+        ],
+        [
+          310,
+          365
+        ]
+      ],
+      "commandos": [],
+      "robots": [
+        [
+          180,
+          385
+        ]
+      ],
+      "terminals": [
+        {
+          "object": 257,
+          "x": 880,
+          "y": 170,
+          "key": "north-transit"
+        },
+        {
+          "object": 257,
+          "x": 880,
+          "y": 600,
+          "key": "south-transit"
+        }
+      ],
+      "nests": [
+        [
+          475,
+          150
+        ],
+        [
+          740,
+          150
+        ],
+        [
+          475,
+          580
+        ],
+        [
+          740,
+          580
+        ]
+      ],
+      "bugs": [
+        [
+          420,
+          170
+        ],
+        [
+          460,
+          170
+        ],
+        [
+          700,
+          170
+        ],
+        [
+          420,
+          600
+        ],
+        [
+          460,
+          600
+        ],
+        [
+          700,
+          600
+        ]
+      ],
+      "support": [
+        {
+          "type": "troops",
+          "object": 63,
+          "x": 150,
+          "y": 170
+        },
+        {
+          "type": "troops",
+          "object": 63,
+          "x": 150,
+          "y": 600
+        }
+      ],
+      "weapons": [
+        {
+          "type": "plasma",
+          "object": 54,
+          "x": 210,
+          "y": 385
+        }
+      ],
+      "route": [
+        [
+          210,
+          385
+        ],
+        [
+          210,
+          170
+        ],
+        [
+          880,
+          170
+        ],
+        [
+          880,
+          385
+        ],
+        [
+          880,
+          600
+        ],
+        [
+          210,
+          600
+        ],
+        [
+          115,
+          600
+        ],
+        [
+          115,
+          170
+        ],
+        [
+          210,
+          385
+        ]
+      ],
+      "scheduledAir": {
+        "at": 70,
+        "points": [
+          [
+            210,
+            385
+          ],
+          [
+            258,
+            385
+          ],
+          [
+            306,
+            385
+          ]
+        ]
+      },
+      "objective": {
+        "activate": [
+          "north-transit",
+          "south-transit"
+        ],
+        "minimumTime": 120,
+        "waveBudgetEmitted": true,
+        "clearEnemies": true,
+        "atLeastOneNonCommander": true,
+        "reliefDelivered": true
+      },
+      "randomPickups": false,
+      "vents": false,
+      "waves": [
+        {
+          "at": 12,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              420,
+              600
+            ]
+          ],
+          "bugsPerPoint": 7
+        },
+        {
+          "at": 50,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              700,
+              170
+            ],
+            [
+              420,
+              600
+            ],
+            [
+              700,
+              600
+            ]
+          ],
+          "bugsPerPoint": 5
+        },
+        {
+          "at": 85,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              700,
+              170
+            ],
+            [
+              420,
+              600
+            ],
+            [
+              700,
+              600
+            ]
+          ],
+          "bugsPerPoint": 7
+        }
+      ],
+      "brief": "hard: 6 troops + robot; 62 arrivals; 4 nests x 10 births / 3s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
+      "profile": "hard",
+      "nestInterval": 3,
+      "nestBudget": 10
+    },
+    "veryhard": {
+      "id": "custom-capital-district-twelve",
+      "name": "District Twelve",
+      "role": "capital-defense",
+      "baseMapIndex": 7,
+      "fixtureMission": 2,
+      "terrainId": "district-twelve",
+      "commanders": [
+        [
+          210,
+          330
+        ],
+        [
+          210,
+          365
+        ],
+        [
+          210,
+          400
+        ],
+        [
+          210,
+          435
+        ]
+      ],
+      "soldiers": [
+        [
+          270,
+          310
+        ],
+        [
+          270,
+          345
+        ],
+        [
+          270,
+          380
+        ],
+        [
+          270,
+          415
+        ]
+      ],
+      "commandos": [],
+      "robots": [
+        [
+          180,
+          385
+        ]
+      ],
+      "terminals": [
+        {
+          "object": 257,
+          "x": 880,
+          "y": 170,
+          "key": "north-transit"
+        },
+        {
+          "object": 257,
+          "x": 880,
+          "y": 600,
+          "key": "south-transit"
+        }
+      ],
+      "nests": [
+        [
+          475,
+          150
+        ],
+        [
+          740,
+          150
+        ],
+        [
+          475,
+          580
+        ],
+        [
+          740,
+          580
+        ]
+      ],
+      "bugs": [
+        [
+          420,
+          170
+        ],
+        [
+          460,
+          170
+        ],
+        [
+          700,
+          170
+        ],
+        [
+          420,
+          600
+        ],
+        [
+          460,
+          600
+        ],
+        [
+          700,
+          600
+        ]
+      ],
+      "support": [
+        {
+          "type": "troops",
+          "object": 63,
+          "x": 150,
+          "y": 170
+        },
+        {
+          "type": "troops",
+          "object": 63,
+          "x": 150,
+          "y": 600
+        }
+      ],
+      "weapons": [
+        {
+          "type": "plasma",
+          "object": 54,
+          "x": 210,
+          "y": 385
+        }
+      ],
+      "route": [
+        [
+          210,
+          385
+        ],
+        [
+          210,
+          170
+        ],
+        [
+          880,
+          170
+        ],
+        [
+          880,
+          385
+        ],
+        [
+          880,
+          600
+        ],
+        [
+          210,
+          600
+        ],
+        [
+          115,
+          600
+        ],
+        [
+          115,
+          170
+        ],
+        [
+          210,
+          385
+        ]
+      ],
+      "scheduledAir": {
+        "at": 70,
+        "points": [
+          [
+            210,
+            385
+          ],
+          [
+            258,
+            385
+          ],
+          [
+            306,
+            385
+          ]
+        ]
+      },
+      "objective": {
+        "activate": [
+          "north-transit",
+          "south-transit"
+        ],
+        "minimumTime": 120,
+        "waveBudgetEmitted": true,
+        "clearEnemies": true,
+        "atLeastOneNonCommander": true,
+        "reliefDelivered": true
+      },
+      "randomPickups": false,
+      "vents": false,
+      "waves": [
+        {
+          "at": 10,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              420,
+              600
+            ]
+          ],
+          "bugsPerPoint": 9
+        },
+        {
+          "at": 50,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              700,
+              170
+            ],
+            [
+              420,
+              600
+            ],
+            [
+              700,
+              600
+            ]
+          ],
+          "bugsPerPoint": 6
+        },
+        {
+          "at": 85,
+          "points": [
+            [
+              420,
+              170
+            ],
+            [
+              700,
+              170
+            ],
+            [
+              420,
+              600
+            ],
+            [
+              700,
+              600
+            ]
+          ],
+          "bugsPerPoint": 9
+        }
+      ],
+      "brief": "veryhard: 4 troops + robot; 78 arrivals; 4 nests x 13 births / 2.4s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
+      "profile": "veryhard",
+      "nestInterval": 2.4,
+      "nestBudget": 13
+    }
+  }
+}
