@@ -1057,9 +1057,10 @@
       "id": "TRI-059",
       "title": "Implement Volcanic planet forge strike mission",
       "task": "docs/tasks/volcanic-forge-strike.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "Approved campaign backlog ticket",
+      "questions": [],
+      "approval": "Approved campaign backlog ticket"
     },
     {
       "id": "TRI-060",
@@ -3969,6 +3970,15 @@
         "/root/director",
         "8b9ced07d18ad3446597dac60a9a3f3304c6855f",
         "325364f71528f3848efba4cb3a3680757e7847e7"
+      ]
+    },
+    {
+      "at": "2026-10-06T19:21:55.066Z",
+      "command": "move",
+      "ticket": "TRI-059",
+      "details": [
+        "Ready",
+        "Approved campaign backlog ticket"
       ]
     }
   ]
