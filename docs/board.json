@@ -993,16 +993,17 @@
       "id": "TRI-055",
       "title": "Implement Relay Basin map proposal B",
       "task": "docs/tasks/relay-basin-assault.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Accepted Relay Basin proposal B map variant; verified via check-relay-basin and full test suite",
       "questions": [],
       "approval": "User approved new mission tickets; queuing Relay Basin proposal B mission",
-      "worker": {
-        "id": "91479696-55c6-4934-9408-a26ed0ef1de3",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-relay-basin-assault",
-        "branch": "feature/relay-basin-assault"
-      },
-      "branch": "feature/relay-basin-assault"
+      "branch": "feature/relay-basin-assault",
+      "completion": {
+        "evidence": "Accepted Relay Basin proposal B map variant; verified via check-relay-basin and full test suite",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "d9110fe2533eba86be046c764ef08934b87d20c4",
+        "squashCommit": "d9fe922610bf19b736d762f891ab3a599c71db5f"
+      }
     },
     {
       "id": "TRI-056",
@@ -3734,6 +3735,27 @@
       "details": [
         "Queued",
         "User requested queuing diagonal fire for all soldiers directly after active TRI-055"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:19:34.122Z",
+      "command": "move",
+      "ticket": "TRI-055",
+      "details": [
+        "Review",
+        "Worker commit d9110fe2533eba86be046c764ef08934b87d20c4; checks passed"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:19:46.455Z",
+      "command": "move",
+      "ticket": "TRI-055",
+      "details": [
+        "Done",
+        "Accepted Relay Basin proposal B map variant; verified via check-relay-basin and full test suite",
+        "/root/director",
+        "d9fe922610bf19b736d762f891ab3a599c71db5f",
+        "d9110fe2533eba86be046c764ef08934b87d20c4"
       ]
     }
   ]
