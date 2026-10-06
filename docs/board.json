@@ -1009,16 +1009,17 @@
       "id": "TRI-056",
       "title": "Implement Switchback Mesa map proposal C",
       "task": "docs/tasks/switchback-mesa-ambush.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Implemented Switchback Mesa map proposal C",
       "questions": [],
       "approval": "User approved new mission tickets; queuing Switchback Mesa proposal C mission",
-      "worker": {
-        "id": "143b5cc5-a85e-4d08-883d-1a564955a19e",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-switchback-mesa-ambush",
-        "branch": "feature/switchback-mesa-ambush"
-      },
-      "branch": "feature/switchback-mesa-ambush"
+      "branch": "feature/switchback-mesa-ambush",
+      "completion": {
+        "evidence": "Implemented Switchback Mesa map proposal C",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "b4accc5e5c2b3cbdbc115b90f2c5f2fcb9878e4a",
+        "squashCommit": "fdd0ffcd561e860a076f391cadc9c97550253bd4"
+      }
     },
     {
       "id": "TRI-057",
@@ -3853,6 +3854,27 @@
       "details": [
         "../triumph-switchback-mesa-ambush",
         "143b5cc5-a85e-4d08-883d-1a564955a19e"
+      ]
+    },
+    {
+      "at": "2026-10-06T18:54:50.070Z",
+      "command": "move",
+      "ticket": "TRI-056",
+      "details": [
+        "Review",
+        "TRI-056 implementation ready for review"
+      ]
+    },
+    {
+      "at": "2026-10-06T18:56:18.320Z",
+      "command": "move",
+      "ticket": "TRI-056",
+      "details": [
+        "Done",
+        "Implemented Switchback Mesa map proposal C",
+        "/root/director",
+        "fdd0ffcd561e860a076f391cadc9c97550253bd4",
+        "b4accc5e5c2b3cbdbc115b90f2c5f2fcb9878e4a"
       ]
     }
   ]
