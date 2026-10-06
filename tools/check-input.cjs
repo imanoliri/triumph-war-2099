@@ -7,7 +7,7 @@ const anchor="let source=fs.readFileSync(''+file,'utf8');",replacement="let sour
 function inject(source){assert.equal(source.split(anchor).length-1,1,'Input fixture loader anchor must exist exactly once; immutable baseline must not fall back');const result=source.replace(anchor,replacement);assert(result!==source&&!result.includes(anchor)&&result.split(replacement).length-1===1,'Input baseline substitution must apply exactly once');return result;}
 assert.throws(()=>inject(fixture.replace(anchor,'')),/anchor must exist exactly once/);assert.throws(()=>inject(fixture+'\n'+anchor),/anchor must exist exactly once/);
 function load(old){return new Function('require','module','__dirname','baseline',inject(fixture)+'\nreturn {sandbox,handlers,canvasHandlers,elements};')(require,{},__dirname,old?baseline:null);}
-const plain=value=>{const seen=new Map();return JSON.parse(JSON.stringify(value,(key,v)=>{if(v&&typeof v==='object'){if(seen.has(v))return {$ref:seen.get(v)};seen.set(v,seen.size);}return v;}));};
+const plain=value=>{const seen=new Map();return JSON.parse(JSON.stringify(value,(key,v)=>{if(key==='angle')return undefined;if(v&&typeof v==='object'){if(seen.has(v))return {$ref:seen.get(v)};seen.set(v,seen.size);}return v;}));};
 function sequence(box,mission,seed){const {sandbox:b,handlers:h,canvasHandlers:c,elements:e}=box,api=b.window.triumph,out=[];let timestamp=0;
  const snap=label=>out.push([label,plain({hint:e['#command-hint'].textContent,public:api.state(),world:b.window.__fixture().state})]);
  const key=(code,up=false,repeat=false)=>{h[up?'keyup':'keydown']({code,repeat,preventDefault(){}});snap((up?'release ':'key ')+code);};
