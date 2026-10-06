@@ -67,3 +67,7 @@ Accepted Silent columns squash ee5ce57dead1b239e859dc695ae2cf201a8fb394 without 
 Published202138d; issue21 verified closed completed. Prepared054 at202138d in ../triumph-desert-rider-diagonal-fire with initial006; dispatched actual /root/desert_diagonal_worker. User renewed continue, same authorized queue preserved. Next053 then verification001/002/004.
 
 054 review steering restored all30 immutable traces including9 near-axis Riders; worker reports pass. Dunes intended trajectory change isolated with dedicated objective/kit regressions retained. Root hidden tab5 on2110 actual ordinary-UI Normal deployment/combat shows diagonal weapon strokes; no attributable projectile screenshot or complete rescue claimed. Evidence in playtests/2026-10-06-desert-diagonal-director.md.
+
+## Desert diagonal fire accepted review
+
+Clean0a8e4f7db3d999458bd4663b332a3ea9d68e4cf5 reviewed; minimal custom-role heading and guard pellet snap changes. Final full24stage exit0, all30 immutable traces/four original simulations retained. All24 custom role/heading cases verify projectile direction, numerical kit/cooldown/range/off-lane/blocked guards and draw rotation. Independent check-desert-riders passes repair/evade/mines/weapon contracts. Dunes intended combat trajectory excluded only from historical equality, dedicated Dunes objective/regression retained. Root live diagonal strokes documented separately, no projectile/fullrescue/audio inference. Accept squash, next053.
