@@ -7,9 +7,17 @@ window.TriumphVents=(()=>{
  const eligible=u=>u.alive&&['commander','soldier','commando'].includes(u.type);
  const normal=a=>a.alive&&a.hp>0&&a.type==='soldier'&&(a.object===undefined||a.object===151);
  function actor(i,phase='ceiling',angle=0){return {x:i.x,y:i.y,object:i.object,phase,angle,age:0,mode:0,dropRoll:0,moving:true};}
- function initialize(s,map){s.vents=rules[map.index]?map.instances.filter(i=>i.object===rules[map.index].shadow).map(i=>actor(i)):[];s.ventClock={mode:0,contact:0,aim:0};}
+ function initialize(s,map){
+  if(s.customMission?.vents){
+   const points=Array.isArray(s.customMission.vents)?s.customMission.vents:[[350,180],[680,200],[480,600],[750,560]];
+   s.vents=points.map(([x,y])=>actor({x,y,object:475}));
+   s.ventClock={mode:0,contact:0,aim:0};
+   return;
+  }
+  s.vents=rules[map?.index]?map.instances.filter(i=>i.object===rules[map.index].shadow).map(i=>actor(i)):[];s.ventClock={mode:0,contact:0,aim:0};
+ }
  function update(s,dt,{random,blocked,spawn,sound}){
-  const rule=rules[s.originalMap?.index];if(!rule)return;
+  const rule=s.customMission?.vents?(typeof s.customMission.vents==='object'&&!Array.isArray(s.customMission.vents)?s.customMission.vents:{shadow:475,returnLimit:9,clearDrop:true}):rules[s.originalMap?.index];if(!rule)return;
   const clock=s.ventClock;clock.mode+=dt;clock.contact+=dt;clock.aim+=dt;
   const modeTick=clock.mode>=2,contactTick=clock.contact>=.1,aimTick=clock.aim>=.05;
   if(modeTick)clock.mode%=2;if(contactTick)clock.contact%=.1;if(aimTick)clock.aim%=.05;

@@ -31,7 +31,7 @@ for(let eagle=0;eagle<3;eagle++){
 fresh();assert(f.reinforce('troops'));s.humans.forEach(u=>u.alive=false);run();assert.equal(s.mode,'playing','Inbound carrier keeps exhausted army recoverable');
 fresh();s.terminals[0].active=true;s.humans[0].x=865;s.humans[0].y=205;s.rules.maxAliens=11;s.drops=[{finished:false,age:0,duration:1,x:150,y:390}];run();assert(s.rescueAcquired,'Exact cap includes reserved incoming soldier');f.updateSupport(2);assert.equal(s.humans.filter(u=>u.alive&&u.type!=='commander').length,11,'Landing after acquisition stays within cap');
 fresh();s.terminals[0].active=true;s.humans[0].x=865;s.humans[0].y=205;run();const survivor=s.humans.find(u=>u.rescueSurvivor);survivor.x=120;survivor.y=390;run();assert.equal(s.mode,'victory','Actual update awards extracted survivor victory');const merits=s.merits;f.update(.02);assert.equal(s.merits,merits,'Single reward');
-for(const m of w.TriumphCustomMissions.list.filter(m=>m.id!==id)){w.triumph.loadCustomMission(m.id);const st=w.__fixture().state;assert(!Object.hasOwn(st,'rescueAcquired'));assert(!st.humans.some(u=>u.rescueSurvivor));}
+for(const m of w.TriumphCustomMissions.list.filter(m=>m.id!==id&&!m.objective?.rescueSoldiers)){w.triumph.loadCustomMission(m.id);const st=w.__fixture().state;assert(!Object.hasOwn(st,'rescueAcquired'));assert(!st.humans.some(u=>u.rescueSurvivor));}
 for(let mission=1;mission<=9;mission++){w.triumph.loadMission(mission);const st=w.__fixture().state;assert(!Object.hasOwn(st,'rescueAcquired'));assert(!st.humans.some(u=>u.rescueSurvivor));}
 console.log("Passed Whiteout objective, profile, route, cap and actual eagle delivery checks.");
 if(!process.argv.includes("--record"))process.exit(0);
