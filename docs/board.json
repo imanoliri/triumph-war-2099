@@ -94,17 +94,18 @@
       "title": "Publication and issue tracking",
       "priority": "Medium",
       "task": "docs/tasks/publication-tracking.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Director reviewed diff, commit 9b7ff54 and full test suite. Native GitHub Project 6 active at https://github.com/users/imanoliri/projects/6 with 55 items.",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/1",
       "approval": "User approved TRI-006 Project-mirror scope and director defaults on 2026-10-06; see task",
-      "worker": {
-        "id": "fdfd794d-b355-437f-aa49-6a77efe72a75",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-publication-tracking",
-        "branch": "chore/publication-tracking"
-      },
-      "branch": "chore/publication-tracking"
+      "branch": "chore/publication-tracking",
+      "completion": {
+        "evidence": "Director reviewed diff, commit 9b7ff54 and full test suite. Native GitHub Project 6 active at https://github.com/users/imanoliri/projects/6 with 55 items.",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "9b7ff545e02771e4a9d8726fa3376de800c7ebee",
+        "squashCommit": "aa2c2a23f34c5e0ecc54711b8686f96b7e085fae"
+      }
     },
     {
       "id": "TRI-007",
@@ -3505,6 +3506,27 @@
       "details": [
         "../triumph-publication-tracking",
         "fdfd794d-b355-437f-aa49-6a77efe72a75"
+      ]
+    },
+    {
+      "at": "2026-10-06T13:38:26.217Z",
+      "command": "move",
+      "ticket": "TRI-006",
+      "details": [
+        "Review",
+        "Worker commit 9b7ff54; native GitHub Project 6 created with 55 items, offline suite green"
+      ]
+    },
+    {
+      "at": "2026-10-06T13:39:25.197Z",
+      "command": "move",
+      "ticket": "TRI-006",
+      "details": [
+        "Done",
+        "Director reviewed diff, commit 9b7ff54 and full test suite. Native GitHub Project 6 active at https://github.com/users/imanoliri/projects/6 with 55 items.",
+        "/root/director",
+        "aa2c2a2",
+        "9b7ff54"
       ]
     }
   ]
