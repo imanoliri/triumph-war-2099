@@ -950,11 +950,17 @@
       "id": "TRI-053",
       "title": "Add District Twelve capital mission",
       "task": "docs/tasks/district-twelve.md",
-      "status": "Ready",
-      "reason": "User renewed more table missions on2026-10-06; bounded capital District Twelve after requested fixes",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
       "approval": "User renewed more table missions on2026-10-06; bounded capital District Twelve after requested fixes",
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/23"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/23",
+      "worker": {
+        "id": "/root/district_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-district-twelve",
+        "branch": "feature/district-twelve"
+      },
+      "branch": "feature/district-twelve"
     },
     {
       "id": "TRI-054",
@@ -3388,6 +3394,15 @@
         "/root",
         "1a94af43208314923a581d56c822fb7a0dc94338",
         "0a8e4f7db3d999458bd4663b332a3ea9d68e4cf5"
+      ]
+    },
+    {
+      "at": "2026-10-06T05:46:59.722Z",
+      "command": "dispatch",
+      "ticket": "TRI-053",
+      "details": [
+        "../triumph-district-twelve",
+        "/root/district_worker"
       ]
     }
   ]
