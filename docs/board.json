@@ -1041,9 +1041,10 @@
       "id": "TRI-058",
       "title": "Implement Jungle planet canopy mission",
       "task": "docs/tasks/jungle-canopy-recon.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "Approved campaign backlog ticket",
+      "questions": [],
+      "approval": "Approved campaign backlog ticket"
     },
     {
       "id": "TRI-059",
@@ -3922,6 +3923,15 @@
         "/root/director",
         "c7ee935ae8b15dd2c4a82fde6afe458aad1f547c",
         "43efced638d54c21c28358462eb457a1fddea671"
+      ]
+    },
+    {
+      "at": "2026-10-06T19:11:54.713Z",
+      "command": "move",
+      "ticket": "TRI-058",
+      "details": [
+        "Ready",
+        "Approved campaign backlog ticket"
       ]
     }
   ]
