@@ -1,0 +1,60 @@
+{
+  "method": "Full VM runtime simulation",
+  "logs": [
+    {
+      "difficulty": "veryeasy",
+      "time": 60,
+      "mode": "playing",
+      "army": 14,
+      "bugs": 21,
+      "kills": 13,
+      "emitted": 3,
+      "budget": 11,
+      "interval": 7
+    },
+    {
+      "difficulty": "easy",
+      "time": 60,
+      "mode": "playing",
+      "army": 12,
+      "bugs": 26,
+      "kills": 14,
+      "emitted": 6,
+      "budget": 14,
+      "interval": 6
+    },
+    {
+      "difficulty": "normal",
+      "time": 60,
+      "mode": "playing",
+      "army": 13,
+      "bugs": 34,
+      "kills": 18,
+      "emitted": 6,
+      "budget": 22,
+      "interval": 4.5
+    },
+    {
+      "difficulty": "hard",
+      "time": 60,
+      "mode": "playing",
+      "army": 10,
+      "bugs": 50,
+      "kills": 15,
+      "emitted": 9,
+      "budget": 33,
+      "interval": 2.6
+    },
+    {
+      "difficulty": "veryhard",
+      "time": 60,
+      "mode": "playing",
+      "army": 3,
+      "bugs": 50,
+      "kills": 13,
+      "emitted": 12,
+      "budget": 44,
+      "interval": 2
+    }
+  ]
+}
