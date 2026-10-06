@@ -3,8 +3,8 @@
 const fs=require('node:fs'),path=require('node:path'),{spawnSync}=require('node:child_process');
 const root=path.resolve(__dirname,'..'),file=path.join(root,'docs/board.json');
 const {config:mirror}=require('./github-project.cjs'); // metadata only; render never contacts GitHub
-const states=['Backlog','Ready','In progress','Blocked','Review','Done'];
-const edges={Backlog:['Ready'],Ready:['In progress','Backlog'], 'In progress':['Blocked','Review'],Blocked:['In progress','Ready'],Review:['In progress','Done'],Done:[]};
+const states=['Backlog','Ready','Queued','In progress','Blocked','Review','Done'];
+const edges={Backlog:['Ready'],Ready:['Queued','In progress','Backlog'],Queued:['In progress','Ready','Backlog'],'In progress':['Blocked','Review'],Blocked:['In progress','Ready','Queued'],Review:['In progress','Done'],Done:[]};
 function required(value,label){if(typeof value!=='string'||!value.trim())throw Error(label+' required.');return value.trim();}
 function relative(value){if(typeof value!=='string'||!/^docs\/[a-zA-Z0-9/._-]+\.md$/.test(value)||value.split('/').includes('..'))throw Error('Expected a repository docs Markdown path.');const full=path.join(root,value);if(!fs.existsSync(full))throw Error('Missing record: '+value);return full;}
 function git(args,cwd=root){const r=spawnSync('git',['-c',`safe.directory=${cwd.replaceAll('\\','/')}`,...args],{cwd,encoding:'utf8',windowsHide:true});if(r.status!==0)throw Error((r.stderr||r.error?.message||'Git failed').trim());return r.stdout.trim();}
@@ -25,15 +25,15 @@ function main(){const [command,id,...args]=process.argv.slice(2);const b=read();
  const t=get(b,id);
  if(command==='move'){
   const [next,reason,reviewer,commit,sourceCommit]=args;required(reason,'Reason/evidence');if(!states.includes(next)||!edges[t.status].includes(next))throw Error('Invalid transition: '+t.status+' -> '+next);
-  if(next==='Ready'){criteria(t);if(t.status==='Backlog')t.approval=reason;}
+  if(next==='Ready'||next==='Queued'){criteria(t);if(t.status==='Backlog')t.approval=reason;}
   if(next==='In progress'){if(!t.approval||!t.worker)throw Error('Approved scope and bound worker required; use dispatch.');if(t.questions?.some(q=>!q.answer))throw Error('Unanswered questions remain.');if(b.tickets.some(x=>x.id!==id&&x.worker&&['In progress','Blocked','Review'].includes(x.status)))throw Error('One active worker allowed.');}
   if(next==='Done'){
    required(reviewer,'Independent reviewer');if(!/^[0-9a-f]{7,40}$/.test(commit||''))throw Error('Squash commit required.');if(!/^[0-9a-f]{7,40}$/.test(sourceCommit||''))throw Error('Reviewed implementation commit required.');const source=git(['rev-parse','--verify',sourceCommit+'^{commit}']);if(t.branch)git(['merge-base','--is-ancestor',source,t.branch]);if(!t.approval)throw Error('Approval record required.');if(t.questions?.some(q=>!q.answer))throw Error('Unanswered questions remain.');if(/^- \[ \]/m.test(criteria(t)))throw Error('Acceptance criteria not complete.');git(['merge-base','--is-ancestor',commit,'main']);if(git(['show','-s','--format=%P',commit]).split(' ').filter(Boolean).length!==1)throw Error('Expected a squash commit with one parent.');if(!git(['diff-tree','--no-commit-id','--name-only','-r',commit,'--',t.task]))throw Error('Integration commit must change this ticket task record.');if(t.worker&&reviewer===t.worker.id)throw Error('Worker cannot review itself.');t.completion={evidence:reason,reviewer,reviewedImplementationCommit:source,squashCommit:git(['rev-parse',commit])};delete t.worker;
   }
-  if(next==='Ready'||next==='Backlog')delete t.worker;t.status=next;t.reason=reason;save(b);return;
+  if(next==='Ready'||next==='Queued'||next==='Backlog')delete t.worker;t.status=next;t.reason=reason;save(b);return;
  }
  if(command==='dispatch'){
-  if(!['Ready','In progress','Blocked','Review'].includes(t.status)||!t.approval)throw Error('Ticket must have approved scope and be Ready or resumable.');if(t.questions?.some(q=>!q.answer))throw Error('Relay and answer pending questions before redispatch.');if(b.tickets.some(x=>x.id!==id&&x.worker&&['In progress','Blocked','Review'].includes(x.status)))throw Error('One active worker allowed.');const [checkout,worker]=args;criteria(t);const bound=bind(t,checkout,worker);const copy={...t,worker:bound};const output=prompt(copy);t.worker=bound;t.branch=bound.branch;if(t.status==='Ready')t.status='In progress';t.reason='Dispatched approved ticket';save(b);console.log(output);return;
+  if(!['Ready','Queued','In progress','Blocked','Review'].includes(t.status)||!t.approval)throw Error('Ticket must have approved scope and be Ready, Queued or resumable.');if(t.questions?.some(q=>!q.answer))throw Error('Relay and answer pending questions before redispatch.');if(b.tickets.some(x=>x.id!==id&&x.worker&&['In progress','Blocked','Review'].includes(x.status)))throw Error('One active worker allowed.');const [checkout,worker]=args;criteria(t);const bound=bind(t,checkout,worker);const copy={...t,worker:bound};const output=prompt(copy);t.worker=bound;t.branch=bound.branch;if(t.status==='Ready'||t.status==='Queued')t.status='In progress';t.reason='Dispatched approved ticket';save(b);console.log(output);return;
  }
  if(command==='ask'){
   if(t.status!=='In progress')throw Error('Questions require an active ticket.');const question=required(args[0],'Question');t.questions||=[];t.questions.push({number:t.questions.length+1,question});t.status='Blocked';t.reason='Awaiting director/user answer';save(b);return;

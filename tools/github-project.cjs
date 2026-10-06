@@ -16,10 +16,11 @@ const config={
 };
 const statusOptions=[
  {name:'Backlog',color:'GRAY',description:'Proposed; scope not yet approved'},
- {name:'Ready',color:'BLUE',description:'Approved scope; awaiting a worker'},
+ {name:'Ready',color:'BLUE',description:'Approved scope; awaiting queue/dispatch'},
+ {name:'Queued',color:'PURPLE',description:'Queued for upcoming worker dispatch'},
  {name:'In progress',color:'YELLOW',description:'Worker dispatched'},
  {name:'Blocked',color:'RED',description:'Awaiting a director/user answer'},
- {name:'Review',color:'PURPLE',description:'Worker finished; director review pending'},
+ {name:'Review',color:'PINK',description:'Worker finished; director review pending'},
  {name:'Done',color:'GREEN',description:'Reviewed and squash-merged into main'},
  {name:'Withdrawn',color:'ORANGE',description:'Withdrawn by the user; not planned'}
 ];

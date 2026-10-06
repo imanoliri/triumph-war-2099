@@ -20,7 +20,7 @@ const board={version:1,tickets:[
 
 // Mapping rules.
 assert.deepEqual(board.tickets.map(gp.projectStatus),['Withdrawn','Withdrawn','Done','In progress','Done','Ready','Review','Blocked','Backlog']);
-assert.deepEqual(gp.statusOptions.map(o=>o.name),['Backlog','Ready','In progress','Blocked','Review','Done','Withdrawn']);
+assert.deepEqual(gp.statusOptions.map(o=>o.name),['Backlog','Ready','Queued','In progress','Blocked','Review','Done','Withdrawn']);
 assert.throws(()=>gp.projectStatus(ticket('TST-010','Shipping')),/Unsupported board state/);
 assert.equal(gp.issueNumber(board.tickets[0]),2);
 assert.equal(gp.issueNumber(board.tickets[1]),null);
