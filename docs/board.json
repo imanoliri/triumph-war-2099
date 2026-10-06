@@ -960,11 +960,17 @@
       "id": "TRI-054",
       "title": "Enable diagonal fire for custom desert infantry",
       "task": "docs/tasks/desert-rider-diagonal-fire.md",
-      "status": "Ready",
-      "reason": "User explicitly requested diagonal shooting for custom desert soldiers on2026-10-06; scoped eight-direction fix after052",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
       "approval": "User explicitly requested diagonal shooting for custom desert soldiers on2026-10-06; scoped eight-direction fix after052",
-      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/22"
+      "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/22",
+      "worker": {
+        "id": "/root/desert_diagonal_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-desert-rider-diagonal-fire",
+        "branch": "feature/desert-rider-diagonal-fire"
+      },
+      "branch": "feature/desert-rider-diagonal-fire"
     }
   ],
   "events": [
@@ -3351,6 +3357,15 @@
         "/root",
         "ee5ce57dead1b239e859dc695ae2cf201a8fb394",
         "cc74001e192f03a602d75d180623b22011edd273"
+      ]
+    },
+    {
+      "at": "2026-10-06T05:40:06.140Z",
+      "command": "dispatch",
+      "ticket": "TRI-054",
+      "details": [
+        "../triumph-desert-rider-diagonal-fire",
+        "/root/desert_diagonal_worker"
       ]
     }
   ]
