@@ -1121,9 +1121,10 @@
       "id": "TRI-063",
       "title": "Proactive attack-move guard stance with local engagement leash",
       "task": "docs/tasks/attack-move-guard-leash.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "User approved start of execution on 2026-10-06",
+      "questions": [],
+      "approval": "User approved start of execution on 2026-10-06"
     },
     {
       "id": "TRI-064",
@@ -4236,6 +4237,15 @@
         "/root/director",
         "3b06e51a7d50d48b2b0567f1fb8a10856d27195a",
         "fc7d0962b17d02d5d981f4920a40774cf4074d1b"
+      ]
+    },
+    {
+      "at": "2026-10-06T22:13:32.370Z",
+      "command": "move",
+      "ticket": "TRI-063",
+      "details": [
+        "Ready",
+        "User approved start of execution on 2026-10-06"
       ]
     }
   ]
