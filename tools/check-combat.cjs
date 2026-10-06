@@ -24,7 +24,32 @@ function trace(box,type,seed,weapon=0,cannon=false){
 }
 for(const seed of [1,123,98213])for(const [type,weapon,cannon] of [['soldier',0,false],['commando',1,false],['robot',2,false],['tank',0,false],['soldier',2,true],['commando',2,true],['commander',0,false],['rider-scout',0,false],['field-mechanic',0,false],['dune-guard',0,false]])assert.deepEqual(trace(after,type,seed,weapon,cannon),trace(before,type,seed,weapon,cannon),'Seeded aiming/burst/shot/RNG '+type+' '+seed+' '+cannon);
 function simulation(box,mission,seed){const api=box.window.triumph;typeof mission==='number'?api.loadMission(mission):api.loadCustomMission(mission);const f=box.window.__fixture(),s=f.state;f.setSeed(seed);s.mode='playing';if(api.state().paused)box.document.querySelector('#pause').onclick();for(let i=0;i<500;i++)f.update(.04);return plain(s);}
-for(const mission of [1,3,'custom-desert-beneath-dunes'])for(const seed of [77,812])assert.deepEqual(simulation(after,mission,seed),simulation(before,mission,seed),'20s real runtime projectile/damage/state integration '+mission+' '+seed);
+// Dunes intentionally changes its eight-direction targeting trajectory in TRI-054;
+// dedicated Dunes/Rider checks cover objectives, repair/evasion/mines and exact kits.
+for(const mission of [1,3])for(const seed of [77,812])assert.deepEqual(simulation(after,mission,seed),simulation(before,mission,seed),'20s real runtime projectile/damage/state integration '+mission+' '+seed);
+// TRI-054: custom infantry alone gains eight legal firing/render headings.
+for(const type of ['rider-scout','dune-guard','field-mechanic'])for(let i=0;i<8;i++){
+ after.window.triumph.loadMission(1);const f=after.window.__fixture(),s=f.state,a=i*Math.PI/4;
+ s.mask=null;s.rocks=[];s.doors=[];s.props=[];s.nests=[];s.bullets=[];
+ const u={type,team:'human',id:1,x:300,y:300,hp:1,alive:true,angle:0,weapon:0,cool:0,order:3};
+ const t={type:'soldier',team:'alien',x:300+Math.cos(a)*90,y:300+Math.sin(a)*90,hp:10,alive:true};
+ s.humans=[u];s.aliens=[t];f.aimHuman(u,t,0);
+ assert(Math.abs(u.angle-a)<1e-9||Math.abs(u.angle-a+Math.PI*2)<1e-9);
+ assert.equal(s.bullets.length,type==='dune-guard'?5:1);const center=s.bullets[type==='dune-guard'?2:0];
+ assert(Math.abs(center.dx-Math.cos(a))<1e-9&&Math.abs(center.dy-Math.sin(a))<1e-9);
+ assert(s.bullets.every(b=>b.damage===1&&b.speed===290&&b.owner===1&&b.team==='human'));
+ assert.equal(u.cool,type==='dune-guard'?1.1:.6);
+ if(type==='dune-guard'){assert(s.bullets.every(b=>b.life*b.speed===120));const first=s.bullets[0],last=s.bullets[4];assert(Math.abs(Math.acos(first.dx*last.dx+first.dy*last.dy)-Math.PI/6)<1e-9);}
+ else assert.equal(center.life,2.2);
+ const calls=[],ctx=new Proxy({}, {get:(o,k)=>(...args)=>calls.push([k,...args]),set:()=>true});after.window.TriumphDesertRiders.draw(ctx,u);
+ assert.deepEqual(calls.filter(c=>c[0]==='rotate'),[['rotate',u.angle]],'Rendered weapon follows firing heading');
+ s.bullets=[];u.cool=0;t.x=u.x+80;t.y=u.y+25;f.aimHuman(u,t,0);assert.equal(s.bullets.length,0,'Defend waits off lane');
+ t.x=u.x+Math.cos(a)*90;t.y=u.y+Math.sin(a)*90;s.props=[{left:300+Math.cos(a)*40-5,top:300+Math.sin(a)*40-5,w:10,h:10,hp:2}];f.aimHuman(u,t,0);assert.equal(s.bullets.length,0,'Actual firing lane blocked');
+ s.props=[];t.x=u.x+Math.cos(a)*(type==='dune-guard'?140:200);t.y=u.y+Math.sin(a)*(type==='dune-guard'?140:200);f.aimHuman(u,t,0);assert.equal(s.bullets.length,0,'Kit range gate preserved');
+ u.cool=.1;f.fire(u);assert.equal(s.bullets.length,0,'Cooldown suppresses another shot');
+ u.cool=0;u.angle=a+.1;f.fire(u,true);assert(Math.abs(s.bullets[type==='dune-guard'?2:0].dx-Math.cos(a))<1e-9,'Direct fire quantizes custom heading');
+}
+console.log('Passed TRI-054 all eight Rider headings, matching rendered rotation, five-pellet spread, numerical kit contracts and off-lane/blocked holds.');
 // Direct and free aiming retain the source asymmetry, even without a target/burst.
 for(const box of [before,after]){box.window.triumph.loadMission(1);const f=box.window.__fixture();for(const [type,team,free] of [['commander','human',true],['commander','human',false],['commando','human',true],['soldier','alien',false]]){const u={type,team,id:1,x:300,y:300,angle:.6,weapon:0,cool:0,shotOffset:.15};f.fire(u,free);assert.equal(u.angle,type==='commando'?Math.PI/4:team==='human'&&!free?0:.6);}}
 // Isolated projectile contracts do not use the runtime or a copy of its implementation.
@@ -43,4 +68,4 @@ for(const blocker of ['shield','carrier','door','crystal']){
  const p=probe();p.s.bullets=[p.bullet({team:'alien'})];const human={x:110,y:100,alive:true,hp:5};p.s.humans=[human];if(blocker==='shield')human.shieldUntil=2;if(blocker==='carrier')p.s.reinforcements=[{kind:'carrier',x:110,y:100}];if(blocker==='door')p.s.doors=[{x:109,y:99,w:4,h:4,cx:111,cy:101,damage:0,durability:1}];if(blocker==='crystal'){p.s.humans=[];p.s.crystal={x:110,y:100,hp:7};}p.step(.1);assert.equal(human.hp,5);assert.equal(p.s.bullets.length,0);if(blocker==='door')assert(p.s.doors[0].destroyed&&p.s.doors[0].open);if(blocker==='crystal')assert.equal(p.s.crystal.hp,5);
 }
 console.log('Passed isolated collision priority, nest credit, plasma deferral/expiry, exposed worm, owner, shield/carrier, destructible door and crystal contracts.');
-console.log('Passed immutable pre-extraction comparison: 30 seeded 18s burst/sweep/shot traces, RNG continuation, six 20s real mission simulations and independent asymmetric headings.');
+console.log('Passed immutable pre-extraction comparison: 30 seeded 18s burst/sweep/shot traces, RNG continuation, four 20s real mission simulations and independent asymmetric headings.');
