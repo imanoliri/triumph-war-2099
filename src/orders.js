@@ -39,8 +39,11 @@ function focusAttackTo(target){const s=getState();
 function focusAttackStep(u,dt){const s=getState();
  const target=u.focusTarget;if(!target)return false;
  if(target.alive===false||target.hp<=0||(target.type==='desert-worm'&&!wormExposed(target))||!s.aliens.includes(target)&&!s.nests.includes(target)){u.focusTarget=null;trackBurst(u,null);u.order=3;u.anchor={x:u.x,y:u.y};return false;}
- const range=u.type==='tank'?300:u.type==='dune-guard'?120:['rider-scout','field-mechanic'].includes(u.type)?180:u.weapon===1?145:245;
- if(dist(u,target)>=range||!visible(u,target)){trackBurst(u,null);navigate(u,target.x-u.x,target.y-u.y,dt,u.type==='tank'?30:36);return true;}
+ const range=u.type==='tank'?300:u.type==='dune-guard'?120:['rider-scout','field-mechanic'].includes(u.type)?180:u.weapon===1?145:u.weapon===2?319:245;
+ const closeRange=u.weapon===2?265:u.weapon===1?125:u.type==='dune-guard'?100:range;
+ const d=dist(u,target);
+ if(d>=closeRange||!visible(u,target)){trackBurst(u,null);navigate(u,target.x-u.x,target.y-u.y,dt,u.type==='tank'?30:36);return true;}
+ else if(u.weapon===2&&d<140&&u.order!==3){const backX=u.x-(target.x-u.x),backY=u.y-(target.y-u.y);if(!blocked(backX,backY))navigate(u,u.x-target.x,u.y-target.y,dt,36);}
  aimHuman(u,target,dt*.85);return true;
 }
 function attackMoveInteraction(u,target,dt){const s=getState();

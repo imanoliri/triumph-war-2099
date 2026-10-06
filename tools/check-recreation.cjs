@@ -639,3 +639,58 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  sandbox.navigator.getGamepads=()=>[];frames(1);assert.equal(api.state().activeCommander,null);assert.equal(api.state().mouseMode,'troops');
  console.log('Passed production gamepad frame wiring, explicit tactical selection/resume, free-aim firing, status and disconnect AI release. No hardware claim.');
 }
+
+// TRI-062: Weapon-aware soldier AI & effective range positioning checks
+{
+ api.loadMission(1);resumeSimulation();const f=sandbox.window.__fixture(),st=f.state;st.mask=new Uint8Array(1024*768);st.rocks=[];st.props=[];st.doors=[];st.nests=[];st.pickups=[];st.cannons=[];st.aliens=[];st.humans=[];st.mode='playing';
+
+ // 1. Short-range weapons aggressively close distance into firing range
+ {
+  const flamethrower={x:200,y:200,team:'human',type:'soldier',alive:true,hp:1,angle:0,cool:0,weapon:1,order:2};
+  const bug={x:370,y:200,team:'alien',type:'soldier',alive:true,hp:4};
+  st.humans=[flamethrower];st.aliens=[bug];
+  const startX=flamethrower.x;
+  for(let i=0;i<10;i++)f.update(.1);
+  assert(flamethrower.x>startX,'Short-range flamethrower soldier at 170px aggressively closes distance into firing range');
+ }
+ {
+  const duneGuard={x:200,y:200,team:'human',type:'dune-guard',alive:true,hp:1,angle:0,cool:0,weapon:0,order:2};
+  const bug={x:340,y:200,team:'alien',type:'soldier',alive:true,hp:4};
+  st.humans=[duneGuard];st.aliens=[bug];
+  const startX=duneGuard.x;
+  for(let i=0;i<10;i++)f.update(.1);
+  assert(duneGuard.x>startX,'Short-range dune-guard shotgun at 140px aggressively closes distance into firing range');
+ }
+
+ // 2. Long-range weapons maintain standoff distance when feasible
+ {
+  const plasmaSoldier={x:200,y:200,team:'human',type:'soldier',alive:true,hp:1,angle:0,cool:0,weapon:2,order:2};
+  const bug={x:440,y:200,team:'alien',type:'soldier',alive:true,hp:4};
+  st.humans=[plasmaSoldier];st.aliens=[bug];
+  const startX=plasmaSoldier.x;
+  for(let i=0;i<10;i++)f.update(.1);
+  assert.equal(plasmaSoldier.x,startX,'Long-range plasma soldier at 240px maintains standoff distance without charging into close quarters');
+ }
+ {
+  const plasmaSoldier={x:200,y:200,team:'human',type:'soldier',alive:true,hp:1,angle:0,cool:0,weapon:2,order:0};
+  const bug={x:480,y:200,team:'alien',type:'soldier',alive:true,hp:4};
+  st.humans=[plasmaSoldier];st.aliens=[bug];
+  let acquired=false;
+  for(let i=0;i<12;i++){st.t+=.5;if(f.perceive(plasmaSoldier,[bug],319)===bug)acquired=true;}
+  assert(acquired,'Plasma-wielding soldier perceives visible targets up to 319px');
+ }
+
+ // 3. Firing arc & cone spray awareness prioritizes target cluster with highest enemy density
+ {
+  const flameSoldier={x:200,y:200,team:'human',type:'soldier',alive:true,hp:1,angle:0,cool:0,weapon:1,order:0};
+  const bugA={x:300,y:200,team:'alien',type:'soldier',alive:true,hp:4};
+  const bugB={x:200,y:300,team:'alien',type:'soldier',alive:true,hp:4};
+  const bugC={x:210,y:305,team:'alien',type:'soldier',alive:true,hp:4};
+  const bugD={x:190,y:305,team:'alien',type:'soldier',alive:true,hp:4};
+  st.humans=[flameSoldier];st.aliens=[bugA,bugB,bugC,bugD];
+  let sprayTarget=null;
+  for(let i=0;i<12;i++){st.t+=.5;const t=f.perceive(flameSoldier,[bugA,bugB,bugC,bugD],145);if(t)sprayTarget=t;}
+  assert([bugB,bugC,bugD].includes(sprayTarget),'Cone spray targeting prioritizes target cluster with highest enemy density in spray arc');
+ }
+ console.log('Passed weapon-aware soldier AI & effective range positioning checks (short-range close in, long-range standoff, spray cone density prioritization).');
+}

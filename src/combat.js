@@ -53,10 +53,33 @@ function humanFiringLane(u,target){
  }
  return true;
 }
+function sprayDensity(u,targetAngle,halfArc,range){
+ const s=getState(),hostiles=[...s.aliens,...s.nests].filter(a=>a.alive!==false&&a.hp>0&&dist(u,a)<=range&&visible(u,a));
+ let count=0;
+ for(const a of hostiles){
+  const angle=Math.atan2(a.y-u.y,a.x-u.x);
+  if(Math.abs(angleDifference(angle,targetAngle))<=halfArc)count++;
+ }
+ return count;
+}
 function aimHuman(u,target,dt){
  if(u.cannon!==undefined){aimCannon(u,target);return;}
  if(u.type==='tank'){aimTank(u,target);return;}
- const heading=()=> diagonal(Math.atan2(target.y-u.y,target.x-u.x));
+ const isSpray=u.weapon===1||u.type==='dune-guard';
+ const sprayArc=u.weapon===1?Math.PI/8:Math.PI/12,sprayRange=u.weapon===1?145:120;
+ const heading=()=>{
+  const direct=diagonal(Math.atan2(target.y-u.y,target.x-u.x));
+  if(!isSpray)return direct;
+  const targetAngle=Math.atan2(target.y-u.y,target.x-u.x);
+  const angles=[0,Math.PI/4,Math.PI/2,3*Math.PI/4,Math.PI,-3*Math.PI/4,-Math.PI/2,-Math.PI/4];
+  let best=direct,bestCount=-1;
+  for(const h of angles){
+   if(Math.abs(angleDifference(targetAngle,h))>Math.PI/3)continue;
+   const count=sprayDensity(u,h,sprayArc,sprayRange);
+   if(count>bestCount||(count===bestCount&&h===direct)){bestCount=count;best=h;}
+  }
+  return best;
+ };
  u.angle=heading();trackBurst(u,target);
  if(!humanFiringLane(u,target)&&dt&&u.order!==3){
   const c=Math.cos(u.angle),sn=Math.sin(u.angle),dx=target.x-u.x,dy=target.y-u.y,offset=-dx*sn+dy*c;
@@ -73,5 +96,5 @@ function aimHuman(u,target,dt){
 function fire(u,freeAim=false,projectileAngle){if(u.cool>0)return;if(u.type==='dune-guard'&&u.cannon===undefined){getState().bullets.push(...desertRiders.pellets(u,{x:u.x+Math.cos(u.angle)*100,y:u.y+Math.sin(u.angle)*100}));u.cool=desertRiders.rules.guardCooldown;sound(11,.08);return;}if(u.cannon!==undefined)u.angle=cannonAngle(u.angle);else if(!freeAim&&u.team==='human'&&u.type!=='tank')u.angle=diagonal(u.angle);u.cool=u.team==='alien'?enemyFireDelay(u):['rider-scout','field-mechanic'].includes(u.type)?.6:u.type==='tank'?.2:u.type==='air'?.3:u.type==='commander'?(u.weapon===1?.180:.250):u.weapon===1?.180:u.type==='commando'?.38:u.order===3?.20:.38;const angles=[u.team==='alien'?(u.shotOffset||0):0];for(const a of angles){const angle=(u.cannon!==undefined&&projectileAngle!==undefined?projectileAngle:u.angle)+a;getState().bullets.push({x:u.x+Math.cos(angle)*10,y:u.y+Math.sin(angle)*10,dx:Math.cos(angle),dy:Math.sin(angle),team:u.team,owner:u.id,life:u.weapon===1?.5:u.weapon===2?1.1:2.2,speed:u.team==='alien'?120:290,damage:u.type==='tank'?5:1,plasma:u.weapon===2});}if(originalAudio())sound(u.team==='alien'?0:u.weapon===1?13:u.weapon===2?12:u.type==='tank'?24:11,u.type==='commander'?.25:u.type==='tank'?.16:.08);else if(u.type==='commander')tone(110+rnd()*80,.025,.013);}
 function burst(x,y,size=12,color='#f5a641'){getState().effects.push({x,y,size,color,t:.4});}
 
-return {enemyFireDelay,trackBurst,burstReady,finishBurstShot,tankGroup,aimTank,aimCannon,humanFiringLane,aimHuman,fire,burst};
+return {enemyFireDelay,trackBurst,burstReady,finishBurstShot,tankGroup,aimTank,aimCannon,humanFiringLane,aimHuman,fire,burst,sprayDensity};
 }};
