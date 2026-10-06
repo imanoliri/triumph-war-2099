@@ -988,6 +988,56 @@
         "reviewedImplementationCommit": "0a8e4f7db3d999458bd4663b332a3ea9d68e4cf5",
         "squashCommit": "1a94af43208314923a581d56c822fb7a0dc94338"
       }
+    },
+    {
+      "id": "TRI-055",
+      "title": "Implement Relay Basin map proposal B",
+      "task": "docs/tasks/relay-basin-assault.md",
+      "status": "Queued",
+      "reason": "Queued as upcoming map variant mission for director dispatch",
+      "questions": [],
+      "approval": "User approved new mission tickets; queuing Relay Basin proposal B mission"
+    },
+    {
+      "id": "TRI-056",
+      "title": "Implement Switchback Mesa map proposal C",
+      "task": "docs/tasks/switchback-mesa-ambush.md",
+      "status": "Queued",
+      "reason": "Queued as upcoming map variant mission for director dispatch",
+      "questions": [],
+      "approval": "User approved new mission tickets; queuing Switchback Mesa proposal C mission"
+    },
+    {
+      "id": "TRI-057",
+      "title": "Implement Beneath the Dunes map proposal B",
+      "task": "docs/tasks/beneath-dunes-variant-b.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-058",
+      "title": "Implement Jungle planet canopy mission",
+      "task": "docs/tasks/jungle-canopy-recon.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-059",
+      "title": "Implement Volcanic planet forge strike mission",
+      "task": "docs/tasks/volcanic-forge-strike.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-060",
+      "title": "Implement Undercity planet tunnels breach mission",
+      "task": "docs/tasks/undercity-tunnels-breach.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
     }
   ],
   "events": [
@@ -3527,6 +3577,102 @@
         "/root/director",
         "aa2c2a2",
         "9b7ff54"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:05:15.497Z",
+      "command": "create",
+      "ticket": "TRI-055",
+      "details": [
+        "relay-basin-assault",
+        "Implement Relay Basin map proposal B",
+        "Add Relay Basin map variant B option with verified tile layout, objective geometry and balance checks"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:05:19.447Z",
+      "command": "create",
+      "ticket": "TRI-056",
+      "details": [
+        "switchback-mesa-ambush",
+        "Implement Switchback Mesa map proposal C",
+        "Add Switchback Mesa map variant C option with verified layout, elevation choked corridors, objective geometry and balance checks"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:05:41.105Z",
+      "command": "create",
+      "ticket": "TRI-057",
+      "details": [
+        "beneath-dunes-variant-b",
+        "Implement Beneath the Dunes map proposal B",
+        "Add Beneath the Dunes map variant B option with verified subterranean cavern layout and wave pressure calibration"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:05:49.131Z",
+      "command": "create",
+      "ticket": "TRI-058",
+      "details": [
+        "jungle-canopy-recon",
+        "Implement Jungle planet canopy mission",
+        "Add Jungle canopy recon mission with dense foliage tiles, custom ambush mechanics and objective verification"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:05:53.204Z",
+      "command": "create",
+      "ticket": "TRI-059",
+      "details": [
+        "volcanic-forge-strike",
+        "Implement Volcanic planet forge strike mission",
+        "Add Volcanic forge strike mission with thermal hazard choke points, industrial magma terrain and pressure calibration"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:05:58.047Z",
+      "command": "create",
+      "ticket": "TRI-060",
+      "details": [
+        "undercity-tunnels-breach",
+        "Implement Undercity planet tunnels breach mission",
+        "Add Undercity tunnels breach mission featuring subterranean vent bugs, terminal hack objectives and exit extraction zone"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:06:05.693Z",
+      "command": "move",
+      "ticket": "TRI-055",
+      "details": [
+        "Ready",
+        "User approved new mission tickets; queuing Relay Basin proposal B mission"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:06:11.103Z",
+      "command": "move",
+      "ticket": "TRI-055",
+      "details": [
+        "Queued",
+        "Queued as upcoming map variant mission for director dispatch"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:06:18.340Z",
+      "command": "move",
+      "ticket": "TRI-056",
+      "details": [
+        "Ready",
+        "User approved new mission tickets; queuing Switchback Mesa proposal C mission"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:06:25.072Z",
+      "command": "move",
+      "ticket": "TRI-056",
+      "details": [
+        "Queued",
+        "Queued as upcoming map variant mission for director dispatch"
       ]
     }
   ]
