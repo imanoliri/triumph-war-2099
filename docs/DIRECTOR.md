@@ -89,7 +89,7 @@ Read AGENTS, this document, BOARD/board.json, the active ticket's task and lates
 
 Resume the same live worker and checkout for unfinished work when available; a new bounded ticket gets a fresh minimal-context worker. If the worker no longer exists, start a replacement in the **same existing checkout and branch**, inspect unfinished edits first, then run `dispatch` with its new actual ID. The generated prompt includes latest session and persisted answers. The replacement reads the previous handoff, then `node tools/task.cjs session <slug>` creates its one new run journal. Dispatch itself never creates a journal. A blocked unanswered decision remains blocked until resolved. Never assume a vanished worker means its task is Done.
 
-## Optional native board migration
+## Native GitHub Project mirror
 
 GitHub repository `imanoliri/triumph-war-2099` was public and empty when checked on 2026-10-04. No issue was created: the issue connector required approval while session approval policy was never. Saved browser permission denies GitHub access; no gh CLI or native Projects connector is available. Do not bypass these restrictions. Local board operation is complete without remote synchronization; enabling remote writes/Projects is external setup work.
 

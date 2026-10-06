@@ -1,7 +1,7 @@
 # Publication and issue tracking
 
 - Ticket: TRI-006; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `chore/publication-tracking`
 
 ## Goal and user-visible outcome
 
@@ -9,13 +9,13 @@ The GitHub repository `imanoliri/triumph-war-2099` has a native GitHub Project b
 
 ## Acceptance criteria
 
-- [ ] A GitHub Project (v2) named "Triumph War 2099" exists under the repository owner and is linked to the repository.
-- [ ] Its single-select Status field has the local board states Backlog, Ready, In progress, Blocked, Review, Done, plus Withdrawn for tickets whose latest reason records a user withdrawal.
-- [ ] Every ticket in `docs/board.json` appears exactly once: tickets with an `issueUrl` as that real issue; tickets without one as a draft item titled `<ID>: <title>` whose body links the task record on main. No new issues are created for historical tickets.
-- [ ] Each item's Status matches the local board; issues of withdrawn tickets (TRI-001, TRI-002, TRI-004, TRI-039) are closed as not planned; other issues are closed exactly when the ticket is Done.
-- [ ] A dependency-free `tools/` helper (Node, invoking the installed `gh` CLI) performs an idempotent sync with a dry-run mode; rerunning it makes no changes. Offline regression checks cover the board-to-Project mapping without network access and run in `node tools/dev.cjs test`.
-- [ ] DIRECTOR, WORKFLOW, STATUS and the generated BOARD header state that the local board remains authoritative and the Project is a mirror refreshed at director checkpoints, including the Project URL.
-- [ ] Real remote results (Project URL, item count, sample state checks, sync rerun with zero changes) are recorded in the session journal.
+- [x] A GitHub Project (v2) named "Triumph War 2099" exists under the repository owner and is linked to the repository.
+- [x] Its single-select Status field has the local board states Backlog, Ready, In progress, Blocked, Review, Done, plus Withdrawn for tickets whose latest reason records a user withdrawal.
+- [x] Every ticket in `docs/board.json` appears exactly once: tickets with an `issueUrl` as that real issue; tickets without one as a draft item titled `<ID>: <title>` whose body links the task record on main. No new issues are created for historical tickets.
+- [x] Each item's Status matches the local board; issues of withdrawn tickets (TRI-001, TRI-002, TRI-004, TRI-039) are closed as not planned; other issues are closed exactly when the ticket is Done.
+- [x] A dependency-free `tools/` helper (Node, invoking the installed `gh` CLI) performs an idempotent sync with a dry-run mode; rerunning it makes no changes. Offline regression checks cover the board-to-Project mapping without network access and run in `node tools/dev.cjs test`.
+- [x] DIRECTOR, WORKFLOW, STATUS and the generated BOARD header state that the local board remains authoritative and the Project is a mirror refreshed at director checkpoints, including the Project URL.
+- [x] Real remote results (Project URL, item count, sample state checks, sync rerun with zero changes) are recorded in the session journal.
 
 ## Scope and decisions
 
@@ -43,3 +43,4 @@ TRI-047 is accepted as e477e2b4276e25617ab5521c8212792fda0652d5. Actual hosted f
 
 Fresh director IAB revalidation after TRI-048: repository Projects page finished loading and states "There are no projects linked to this repository." Header still shows Sign in; no create control. Temporary inspection tab closed. Current GitHub tool inventory has no Project operation. Exact next action: provide an authenticated browser session or supported native Project connector, create/link the requested Project, choose one authoritative status source and verify each migrated item/state. Issue mirrors and local board do not satisfy this remaining deliverable; do not extract credentials to bypass this prerequisite.
 
+- [2026-10-06 / 009](../journal/2026-10-06-009-publication-tracking.md)

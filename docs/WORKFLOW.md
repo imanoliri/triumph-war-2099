@@ -73,7 +73,7 @@ At session start, read the task and its latest linked journal. During work, appe
 
 ## Backlog and GitHub
 
-Use the local docs/board.json and generated BOARD.md; BACKLOG describes intake. Task records own scope/acceptance. Optional issue links do not imply native synchronization. See DIRECTOR for the blocked remote setup and migration.
+Use the local docs/board.json and generated BOARD.md; BACKLOG describes intake. Task records own scope/acceptance. GitHub Project [Triumph War 2099](https://github.com/users/imanoliri/projects/6) mirrors local board states via `node tools/github-project.cjs`. Local board.json remains authoritative.
 
 The GitHub workflow and PR templates are checked in locally and become active only after authorized publication. No automation here publishes original assets or the machine-local MIDI bank.
 

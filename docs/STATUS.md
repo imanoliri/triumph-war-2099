@@ -47,7 +47,7 @@ Use BOARD for workflow state, linked task records for scope, and DIRECTOR/WORKFL
 
 ## Director coordination
 
-A thin local ticket board and one isolated implementation worker support director-only user interaction. See DIRECTOR and BOARD. No native GitHub issues/project synchronization is configured: issue creation required unavailable approval, saved browser permission denies GitHub, and no Projects connector/gh CLI is available. Reviewed main is published through user-authorized Git; native board synchronization remains separate.
+A thin local ticket board and one isolated implementation worker support director-only user interaction. See DIRECTOR and BOARD. Native GitHub Project [Triumph War 2099](https://github.com/users/imanoliri/projects/6) is active and mirrored from docs/board.json via `node tools/github-project.cjs`. Local board.json remains authoritative.
 
 TRI-012 eagle fix (integrated): deterministic Hanger random bronze creation had no eligible support rule; new random eagle creation now shares collection eligibility. Existing temporarily capped eagles remain with an availability label. All-mission random-eagle collection by commanders and soldiers is regression-covered; the user report of intermittent unpickability in every mission is not fully reproduced, and live eagle-fix playability remains unverified.
 

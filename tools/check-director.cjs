@@ -10,7 +10,7 @@ if(process.platform==='win32'){
  console.log('Windows director fixture alias: '+fixture+'; native: '+fs.realpathSync.native(fixture));
 }
 fs.mkdirSync(path.join(fixture,'tools'),{recursive:true});fs.mkdirSync(path.join(fixture,'docs/templates'),{recursive:true});fs.mkdirSync(path.join(fixture,'docs/tasks'),{recursive:true});
-for(const f of ['tools/board.cjs','tools/task.cjs','docs/templates/SESSION.md','docs/templates/TASK.md'])fs.copyFileSync(path.join(root,f),path.join(fixture,f));
+for(const f of ['tools/board.cjs','tools/github-project.cjs','tools/task.cjs','docs/templates/SESSION.md','docs/templates/TASK.md'])fs.copyFileSync(path.join(root,f),path.join(fixture,f));
 fs.writeFileSync(path.join(fixture,'docs/board.json'),JSON.stringify({version:1,tickets:[]}));
 function run(command,args,cwd=fixture,ok=true){const r=spawnSync(command,args,{cwd,encoding:'utf8',windowsHide:true});if(ok)assert.equal(r.status,0,r.stderr||r.stdout);else assert.notEqual(r.status,0,'Expected refusal: '+args.join(' '));return r.stdout;}
 function git(args,cwd=fixture){return run('git',['-c',`safe.directory=${cwd.replaceAll('\\','/')}`,'-c','user.name=Fixture','-c','user.email=fixture@local.invalid',...args],cwd).trim();}
