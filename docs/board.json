@@ -7,11 +7,17 @@
       "title": "Reproduce live mission completion report",
       "priority": "High",
       "task": "docs/tasks/mission-completion.md",
-      "status": "Ready",
-      "reason": "Autonomous user mandate; all-nine Normal live completion scope recorded",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/2",
-      "approval": "Autonomous user mandate; all-nine Normal live completion scope recorded"
+      "approval": "Autonomous user mandate; all-nine Normal live completion scope recorded",
+      "worker": {
+        "id": "/root/completion_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-mission-completion",
+        "branch": "chore/mission-completion"
+      },
+      "branch": "chore/mission-completion"
     },
     {
       "id": "TRI-002",
@@ -3425,6 +3431,15 @@
         "/root",
         "268ee9409ad72ab8f44112b1c176e3b49338cc6e",
         "8562316ad6eeeb98cef8016876c3bc2d5c47f7e9"
+      ]
+    },
+    {
+      "at": "2026-10-06T05:58:56.150Z",
+      "command": "dispatch",
+      "ticket": "TRI-001",
+      "details": [
+        "../triumph-mission-completion",
+        "/root/completion_worker"
       ]
     }
   ]
