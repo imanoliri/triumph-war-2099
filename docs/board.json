@@ -1025,10 +1025,17 @@
       "id": "TRI-057",
       "title": "Implement Beneath the Dunes map proposal B",
       "task": "docs/tasks/beneath-dunes-variant-b.md",
-      "status": "Ready",
-      "reason": "Approved campaign backlog ticket",
+      "status": "Done",
+      "reason": "Implemented Beneath the Dunes map proposal B",
       "questions": [],
-      "approval": "Approved campaign backlog ticket"
+      "approval": "Approved campaign backlog ticket",
+      "branch": "feature/beneath-dunes-variant-b",
+      "completion": {
+        "evidence": "Implemented Beneath the Dunes map proposal B",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "43efced638d54c21c28358462eb457a1fddea671",
+        "squashCommit": "c7ee935ae8b15dd2c4a82fde6afe458aad1f547c"
+      }
     },
     {
       "id": "TRI-058",
@@ -3885,6 +3892,36 @@
       "details": [
         "Ready",
         "Approved campaign backlog ticket"
+      ]
+    },
+    {
+      "at": "2026-10-06T19:11:03.448Z",
+      "command": "dispatch",
+      "ticket": "TRI-057",
+      "details": [
+        "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-beneath-dunes-variant-b",
+        "worker-057"
+      ]
+    },
+    {
+      "at": "2026-10-06T19:11:06.146Z",
+      "command": "move",
+      "ticket": "TRI-057",
+      "details": [
+        "Review",
+        "TRI-057 implementation ready for review"
+      ]
+    },
+    {
+      "at": "2026-10-06T19:11:22.316Z",
+      "command": "move",
+      "ticket": "TRI-057",
+      "details": [
+        "Done",
+        "Implemented Beneath the Dunes map proposal B",
+        "/root/director",
+        "c7ee935ae8b15dd2c4a82fde6afe458aad1f547c",
+        "43efced638d54c21c28358462eb457a1fddea671"
       ]
     }
   ]
