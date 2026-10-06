@@ -1009,8 +1009,8 @@
       "id": "TRI-056",
       "title": "Implement Switchback Mesa map proposal C",
       "task": "docs/tasks/switchback-mesa-ambush.md",
-      "status": "Queued",
-      "reason": "Queued as upcoming map variant mission for director dispatch",
+      "status": "Ready",
+      "reason": "User approved mission tickets on 2026-10-06",
       "questions": [],
       "approval": "User approved new mission tickets; queuing Switchback Mesa proposal C mission"
     },
@@ -3829,6 +3829,15 @@
         "/root/director",
         "edfb8ce",
         "6788950"
+      ]
+    },
+    {
+      "at": "2026-10-06T17:53:21.647Z",
+      "command": "move",
+      "ticket": "TRI-056",
+      "details": [
+        "Ready",
+        "User approved mission tickets on 2026-10-06"
       ]
     }
   ]
