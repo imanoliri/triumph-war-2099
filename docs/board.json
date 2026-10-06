@@ -1172,6 +1172,15 @@
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
       "questions": []
+    },
+    {
+      "id": "TRI-069",
+      "title": "Fix starting reinforcement eagle collection in custom scenarios",
+      "task": "docs/tasks/custom-mission-eagle-collection-fix.md",
+      "status": "Ready",
+      "reason": "User approved starting reinforcement eagle collection fix for custom scenarios",
+      "questions": [],
+      "approval": "User approved starting reinforcement eagle collection fix for custom scenarios"
     }
   ],
   "events": [
@@ -4283,6 +4292,25 @@
         "/root/director",
         "4fb47b2d149f16c47fe99edd32e8e56464abc8ed",
         "b3f97802a5af84ef28a55df7da6de3164d84778c"
+      ]
+    },
+    {
+      "at": "2026-10-06T23:27:58.580Z",
+      "command": "create",
+      "ticket": "TRI-069",
+      "details": [
+        "custom-mission-eagle-collection-fix",
+        "Fix starting reinforcement eagle collection in custom scenarios",
+        "Allow infantry and attack-moving troops to collect starting reinforcement eagles across all custom scenarios (Whiteout Signal, Harbor Watch, District Twelve, Beneath the Dunes, Jungle Recon, Volcanic Forge, Undercity Tunnels)."
+      ]
+    },
+    {
+      "at": "2026-10-06T23:32:31.333Z",
+      "command": "move",
+      "ticket": "TRI-069",
+      "details": [
+        "Ready",
+        "User approved starting reinforcement eagle collection fix for custom scenarios"
       ]
     }
   ]
