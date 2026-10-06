@@ -1,0 +1,5 @@
+# Desert Rider diagonal heading — independent live review
+
+2026-10-06, director hidden IAB tab5, worker checkout feature/desert-rider-diagonal-fire on loopback2110. Browser version unavailable; screenshot1265×711. Normal fresh Beneath the Dunes: selector, Start, Space to resume, ordinary autonomous combat, then Space to freeze. No orders, game-state injection, teleport, enemy clearing or clock manipulation. Restart/Start/Space repeated ordinary deployment.
+
+[Heading screenshot](2026-10-06-desert-diagonal-heading.jpg) shows specialist black weapon strokes at diagonal angles (north-east near the upper-left squad and south-west near the lower-left squad), after actual ordinary gameplay. This verifies visible diagonal headings and rendering during the bounded observation. No screenshot captured a clearly attributable diagonal projectile; exact projectile heading, all-eight roles, numerical weapon rules and spread/cadence remain separate VM evidence. No completed rescue, all-difficulty calibration, audible audio or gamepad claim.
