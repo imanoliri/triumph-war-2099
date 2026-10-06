@@ -1025,9 +1025,10 @@
       "id": "TRI-057",
       "title": "Implement Beneath the Dunes map proposal B",
       "task": "docs/tasks/beneath-dunes-variant-b.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "Approved campaign backlog ticket",
+      "questions": [],
+      "approval": "Approved campaign backlog ticket"
     },
     {
       "id": "TRI-058",
@@ -3875,6 +3876,15 @@
         "/root/director",
         "fdd0ffcd561e860a076f391cadc9c97550253bd4",
         "b4accc5e5c2b3cbdbc115b90f2c5f2fcb9878e4a"
+      ]
+    },
+    {
+      "at": "2026-10-06T18:57:23.020Z",
+      "command": "move",
+      "ticket": "TRI-057",
+      "details": [
+        "Ready",
+        "Approved campaign backlog ticket"
       ]
     }
   ]
