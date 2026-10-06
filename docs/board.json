@@ -950,17 +950,18 @@
       "id": "TRI-053",
       "title": "Add District Twelve capital mission",
       "task": "docs/tasks/district-twelve.md",
-      "status": "Review",
-      "reason": "Reviewed8562316; independent District/project/hash/art checks, full suite and bounded real combat/terminal/eagle/relief observations pass",
+      "status": "Done",
+      "reason": "Independent scoped terrain/objective/support review and fullsuite pass; actual bounded Normal combat/terminal/eagle/relief observed with explicit win/calibration/audio limits",
       "questions": [],
       "approval": "User renewed more table missions on2026-10-06; bounded capital District Twelve after requested fixes",
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/23",
-      "worker": {
-        "id": "/root/district_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-district-twelve",
-        "branch": "feature/district-twelve"
-      },
-      "branch": "feature/district-twelve"
+      "branch": "feature/district-twelve",
+      "completion": {
+        "evidence": "Independent scoped terrain/objective/support review and fullsuite pass; actual bounded Normal combat/terminal/eagle/relief observed with explicit win/calibration/audio limits",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "8562316ad6eeeb98cef8016876c3bc2d5c47f7e9",
+        "squashCommit": "268ee9409ad72ab8f44112b1c176e3b49338cc6e"
+      }
     },
     {
       "id": "TRI-054",
@@ -3412,6 +3413,18 @@
       "details": [
         "Review",
         "Reviewed8562316; independent District/project/hash/art checks, full suite and bounded real combat/terminal/eagle/relief observations pass"
+      ]
+    },
+    {
+      "at": "2026-10-06T05:58:07.615Z",
+      "command": "move",
+      "ticket": "TRI-053",
+      "details": [
+        "Done",
+        "Independent scoped terrain/objective/support review and fullsuite pass; actual bounded Normal combat/terminal/eagle/relief observed with explicit win/calibration/audio limits",
+        "/root",
+        "268ee9409ad72ab8f44112b1c176e3b49338cc6e",
+        "8562316ad6eeeb98cef8016876c3bc2d5c47f7e9"
       ]
     }
   ]
