@@ -1055,7 +1055,7 @@
       "questions": [],
       "approval": "User requested enabling diagonal fire for all soldier unit types on 2026-10-06",
       "worker": {
-        "id": "8566a4d4-cb81-4c3a-8c7e-e9dae6fd4441",
+        "id": "c8088a8d-8584-4db0-b49c-631cb50f5322",
         "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-all-soldiers-diagonal-fire",
         "branch": "feature/all-soldiers-diagonal-fire"
       },
@@ -3789,6 +3789,15 @@
       "details": [
         "../triumph-all-soldiers-diagonal-fire",
         "8566a4d4-cb81-4c3a-8c7e-e9dae6fd4441"
+      ]
+    },
+    {
+      "at": "2026-10-06T17:20:00.652Z",
+      "command": "dispatch",
+      "ticket": "TRI-061",
+      "details": [
+        "../triumph-all-soldiers-diagonal-fire",
+        "c8088a8d-8584-4db0-b49c-631cb50f5322"
       ]
     }
   ]
