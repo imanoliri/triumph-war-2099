@@ -1105,10 +1105,17 @@
       "id": "TRI-062",
       "title": "Weapon-aware soldier AI and effective range positioning",
       "task": "docs/tasks/weapon-aware-soldier-ai.md",
-      "status": "Ready",
-      "reason": "User approved start of execution on 2026-10-06",
+      "status": "Done",
+      "reason": "Weapon-aware positioning and spray density targeting implemented and verified via unit tests",
       "questions": [],
-      "approval": "User approved start of execution on 2026-10-06"
+      "approval": "User approved start of execution on 2026-10-06",
+      "branch": "feature/weapon-aware-soldier-ai",
+      "completion": {
+        "evidence": "Weapon-aware positioning and spray density targeting implemented and verified via unit tests",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "fc7d0962b17d02d5d981f4920a40774cf4074d1b",
+        "squashCommit": "3b06e51a7d50d48b2b0567f1fb8a10856d27195a"
+      }
     },
     {
       "id": "TRI-063",
@@ -1138,6 +1145,22 @@
       "id": "TRI-066",
       "title": "Environment world soldier rosters and 360-degree Snow Sniper unit",
       "task": "docs/tasks/world-soldier-rosters-snow-sniper.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-067",
+      "title": "Expand game soundtrack with copyright-free synth and MIDI tracks",
+      "task": "docs/tasks/royalty-free-soundtrack-expansion.md",
+      "status": "Backlog",
+      "reason": "Awaiting agreed scope",
+      "questions": []
+    },
+    {
+      "id": "TRI-068",
+      "title": "Custom reinforcement eagle troop payload selection",
+      "task": "docs/tasks/reinforcement-payload-customization.md",
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
       "questions": []
@@ -4163,6 +4186,56 @@
       "details": [
         "Ready",
         "User approved start of execution on 2026-10-06"
+      ]
+    },
+    {
+      "at": "2026-10-06T21:14:42.656Z",
+      "command": "dispatch",
+      "ticket": "TRI-062",
+      "details": [
+        "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-weapon-aware-soldier-ai",
+        "/root/weapon_aware_worker"
+      ]
+    },
+    {
+      "at": "2026-10-06T21:31:57.682Z",
+      "command": "create",
+      "ticket": "TRI-067",
+      "details": [
+        "royalty-free-soundtrack-expansion",
+        "Expand game soundtrack with copyright-free synth and MIDI tracks",
+        "Integrate royalty-free MIDI/audio tracks into window.TriumphMusic selector matrix for campaign scenarios and UI selector without copyright issues or external network dependency."
+      ]
+    },
+    {
+      "at": "2026-10-06T21:31:59.455Z",
+      "command": "create",
+      "ticket": "TRI-068",
+      "details": [
+        "reinforcement-payload-customization",
+        "Custom reinforcement eagle troop payload selection",
+        "Allow configuring the specific troop composition (mixed soldier types: regular, commando, scout, guard, mechanic, sniper) for each incoming ground/air reinforcement carrier."
+      ]
+    },
+    {
+      "at": "2026-10-06T22:12:05.011Z",
+      "command": "move",
+      "ticket": "TRI-062",
+      "details": [
+        "Review",
+        "Worker commit fc7d0962b17d02d5d981f4920a40774cf4074d1b; checks and limitations in the linked journal"
+      ]
+    },
+    {
+      "at": "2026-10-06T22:13:20.381Z",
+      "command": "move",
+      "ticket": "TRI-062",
+      "details": [
+        "Done",
+        "Weapon-aware positioning and spray density targeting implemented and verified via unit tests",
+        "/root/director",
+        "3b06e51a7d50d48b2b0567f1fb8a10856d27195a",
+        "fc7d0962b17d02d5d981f4920a40774cf4074d1b"
       ]
     }
   ]
