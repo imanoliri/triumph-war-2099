@@ -1050,16 +1050,17 @@
       "id": "TRI-061",
       "title": "Enable diagonal fire for all soldier unit types",
       "task": "docs/tasks/all-soldiers-diagonal-fire.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Accepted 8-direction diagonal fire for all soldier unit types; full 27-suite test pass",
       "questions": [],
       "approval": "User requested enabling diagonal fire for all soldier unit types on 2026-10-06",
-      "worker": {
-        "id": "9f97548d-4f81-413c-960d-e542367f5267",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-all-soldiers-diagonal-fire",
-        "branch": "feature/all-soldiers-diagonal-fire"
-      },
-      "branch": "feature/all-soldiers-diagonal-fire"
+      "branch": "feature/all-soldiers-diagonal-fire",
+      "completion": {
+        "evidence": "Accepted 8-direction diagonal fire for all soldier unit types; full 27-suite test pass",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "678895097f922971cb9a1e0df6cd46f58c550dc7",
+        "squashCommit": "edfb8ce8f7587f0e5f8f15869c59e92598658601"
+      }
     }
   ],
   "events": [
@@ -3807,6 +3808,27 @@
       "details": [
         "../triumph-all-soldiers-diagonal-fire",
         "9f97548d-4f81-413c-960d-e542367f5267"
+      ]
+    },
+    {
+      "at": "2026-10-06T17:48:59.314Z",
+      "command": "move",
+      "ticket": "TRI-061",
+      "details": [
+        "Review",
+        "Worker commit 6788950d99bc4bcf428678280f68285fb70c8d76; all 27 test suites passed"
+      ]
+    },
+    {
+      "at": "2026-10-06T17:50:11.220Z",
+      "command": "move",
+      "ticket": "TRI-061",
+      "details": [
+        "Done",
+        "Accepted 8-direction diagonal fire for all soldier unit types; full 27-suite test pass",
+        "/root/director",
+        "edfb8ce",
+        "6788950"
       ]
     }
   ]
