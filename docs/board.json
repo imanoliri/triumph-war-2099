@@ -1044,6 +1044,15 @@
       "status": "Backlog",
       "reason": "Awaiting agreed scope",
       "questions": []
+    },
+    {
+      "id": "TRI-061",
+      "title": "Enable diagonal fire for all soldier unit types",
+      "task": "docs/tasks/all-soldiers-diagonal-fire.md",
+      "status": "Queued",
+      "reason": "User requested queuing diagonal fire for all soldiers directly after active TRI-055",
+      "questions": [],
+      "approval": "User requested enabling diagonal fire for all soldier unit types on 2026-10-06"
     }
   ],
   "events": [
@@ -3697,6 +3706,34 @@
       "details": [
         "../triumph-relay-basin-assault",
         "91479696-55c6-4934-9408-a26ed0ef1de3"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:13:30.686Z",
+      "command": "create",
+      "ticket": "TRI-061",
+      "details": [
+        "all-soldiers-diagonal-fire",
+        "Enable diagonal fire for all soldier unit types",
+        "All human and enemy infantry unit types aim and fire in 8 directions (including diagonals) while preserving existing weapon ranges, speeds and unit balance"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:13:37.122Z",
+      "command": "move",
+      "ticket": "TRI-061",
+      "details": [
+        "Ready",
+        "User requested enabling diagonal fire for all soldier unit types on 2026-10-06"
+      ]
+    },
+    {
+      "at": "2026-10-06T14:13:40.175Z",
+      "command": "move",
+      "ticket": "TRI-061",
+      "details": [
+        "Queued",
+        "User requested queuing diagonal fire for all soldiers directly after active TRI-055"
       ]
     }
   ]
