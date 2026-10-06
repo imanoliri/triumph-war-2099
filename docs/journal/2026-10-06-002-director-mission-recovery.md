@@ -71,3 +71,5 @@ Published202138d; issue21 verified closed completed. Prepared054 at202138d in ..
 ## Desert diagonal fire accepted review
 
 Clean0a8e4f7db3d999458bd4663b332a3ea9d68e4cf5 reviewed; minimal custom-role heading and guard pellet snap changes. Final full24stage exit0, all30 immutable traces/four original simulations retained. All24 custom role/heading cases verify projectile direction, numerical kit/cooldown/range/off-lane/blocked guards and draw rotation. Independent check-desert-riders passes repair/evade/mines/weapon contracts. Dunes intended combat trajectory excluded only from historical equality, dedicated Dunes objective/regression retained. Root live diagonal strokes documented separately, no projectile/fullrescue/audio inference. Accept squash, next053.
+
+Accepted054 squash1a94af43208314923a581d56c822fb7a0dc94338 without conflict. Board Done records exact SHAs; publish then prepare053 District Twelve.

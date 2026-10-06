@@ -960,17 +960,18 @@
       "id": "TRI-054",
       "title": "Enable diagonal fire for custom desert infantry",
       "task": "docs/tasks/desert-rider-diagonal-fire.md",
-      "status": "Review",
-      "reason": "Reviewed0a8e4f7; full24-stage suite and30 immutable traces pass; independent Rider kit check and limited live headings accepted",
+      "status": "Done",
+      "reason": "Independent Rider kit/source review, full24-stage suite and original immutable traces pass; limited live diagonal headings recorded",
       "questions": [],
       "approval": "User explicitly requested diagonal shooting for custom desert soldiers on2026-10-06; scoped eight-direction fix after052",
       "issueUrl": "https://github.com/imanoliri/triumph-war-2099/issues/22",
-      "worker": {
-        "id": "/root/desert_diagonal_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-desert-rider-diagonal-fire",
-        "branch": "feature/desert-rider-diagonal-fire"
-      },
-      "branch": "feature/desert-rider-diagonal-fire"
+      "branch": "feature/desert-rider-diagonal-fire",
+      "completion": {
+        "evidence": "Independent Rider kit/source review, full24-stage suite and original immutable traces pass; limited live diagonal headings recorded",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "0a8e4f7db3d999458bd4663b332a3ea9d68e4cf5",
+        "squashCommit": "1a94af43208314923a581d56c822fb7a0dc94338"
+      }
     }
   ],
   "events": [
@@ -3375,6 +3376,18 @@
       "details": [
         "Review",
         "Reviewed0a8e4f7; full24-stage suite and30 immutable traces pass; independent Rider kit check and limited live headings accepted"
+      ]
+    },
+    {
+      "at": "2026-10-06T05:46:24.458Z",
+      "command": "move",
+      "ticket": "TRI-054",
+      "details": [
+        "Done",
+        "Independent Rider kit/source review, full24-stage suite and original immutable traces pass; limited live diagonal headings recorded",
+        "/root",
+        "1a94af43208314923a581d56c822fb7a0dc94338",
+        "0a8e4f7db3d999458bd4663b332a3ea9d68e4cf5"
       ]
     }
   ]
