@@ -39,7 +39,7 @@ Friendly troops detect visible targets at 245 px, tanks at 300 px, cannon operat
 
 Bugs have randomized approach/wander/pause choices (40/35/25%), short remembered movement goals, limited focus and breaks between pursuits. Friendly troops retain visible targets, align to firing lanes and react faster. Normal patrols, Follow tracks the assigned commander, Attack advances, Defend holds nearby. Keep randomness; bugs should not behave as perfect pursuit agents.
 
-Navigation uses a shared 16 px grid and four-neighbor distance fields. Human routes plan through closed unlocked doors, then open them within 45 px before actual movement crosses. Locked doors require their terminal and remain solid to planning and movement; destroyed doors are traversable. Alien routes treat closed doors as solid. Static backdrop placements use top-left coordinates; active sprites use hotspots. Rendered terrain and collision masks must be regenerated together.
+Navigation uses a shared 16 px grid and four-neighbor distance fields. Human routes plan through closed unlocked doors, then open them within 45 px before actual movement crosses. Locked doors require their terminal and remain solid to planning and movement; destroyed doors are traversable. Alien routes treat closed doors as solid. Static backdrop placements use top-left coordinates; active sprites use hotspots. Rendered terrain and collision masks must be regenerated together. Custom terrain Python generators (`tools/build-*.py`) must apply an explicit ~20px inset clearance buffer when authoring obstacle polygons relative to squad waypoints and actor spawns so automated 18px clearance checks pass cleanly.
 
 ## Player orders and tactical mode
 

@@ -51,7 +51,15 @@ Board events retain dated lifecycle reasons and relay answers; detailed executio
    node tools/board.cjs dispatch TRI-009 ../triumph-medics /root/medics_worker
    ```
 
-   The dispatch output uses the same contract; do not send a duplicate unless recovery or changed pointers require it. The director invokes available agent tools; the Node helper only prepares records/prompts. It needs no API key and never launches an agent. One worker remains bound through In progress, Blocked and Review; finish or explicitly park it before starting another ticket. Use collaboration messaging/followup for steering and bounded `wait_agent` calls for completion/events; inspect the agent tree when recovering. Avoid repeated unchanged status narration, while keeping required user communication cadence. A saved local Git project is not configured in the desktop app; do not claim `create_thread` dispatch is available. Collaboration workers are the current operational path.
+   Always run `board.cjs dispatch` before or as part of launching the worker subagent so `docs/board.json` transitions from `Ready` to `In progress`. The dispatch output uses the same contract; do not send a duplicate unless recovery or changed pointers require it. The director invokes available agent tools; the Node helper only prepares records/prompts. It needs no API key and never launches an agent. One worker remains bound through In progress, Blocked and Review; finish or explicitly park it before starting another ticket. Use collaboration messaging/followup for steering and bounded `wait_agent` calls for completion/events; inspect the agent tree when recovering. Avoid repeated unchanged status narration, while keeping required user communication cadence. A saved local Git project is not configured in the desktop app; do not claim `create_thread` dispatch is available. Collaboration workers are the current operational path.
+
+## Quota pacing and automated recovery
+
+If a worker or subagent hits an API rate limit quota pause (`RESOURCE_EXHAUSTED` / 429) during long-running queue execution:
+- Inspect the log to get the exact reset window (e.g. ~18–19 minutes).
+- Schedule a one-shot background timer using the `schedule` tool (`DurationSeconds` equal to the reset window, `TimerCondition="never"`).
+- Notify the user of the scheduled reset time and pause execution cleanly.
+- When the timer fires, resume queue execution immediately without losing state or stopping the task train.
 
 ## Questions, steering and stopping
 
@@ -73,7 +81,7 @@ The worker stops at Review with a scoped commit and evidence; it never merges. T
 node tools/board.cjs move TRI-009 Review "Worker commit <SHA>; checks and limitations in the linked journal"
 ```
 
-After acceptance, the director follows WORKFLOW and **squash-merges** into main. Then record the real resulting commit:
+After acceptance, the director follows WORKFLOW and **squash-merges** into main. Query `git rev-parse HEAD` for the main squash SHA and `git rev-parse <branch>` for the reviewed worker feature SHA in the director checkout. Then record the real resulting commit pair:
 
 ```text
 node tools/board.cjs move TRI-009 Done "Acceptance reviewed; relevant checks passed; see journal evidence" /root/director <squash-SHA> <reviewed-worker-SHA>
@@ -91,6 +99,6 @@ Resume the same live worker and checkout for unfinished work when available; a n
 
 ## Native GitHub Project mirror
 
-GitHub repository `imanoliri/triumph-war-2099` was public and empty when checked on 2026-10-04. No issue was created: the issue connector required approval while session approval policy was never. Saved browser permission denies GitHub access; no gh CLI or native Projects connector is available. Do not bypass these restrictions. Local board operation is complete without remote synchronization; enabling remote writes/Projects is external setup work.
+GitHub Project [Triumph War 2099](https://github.com/users/imanoliri/projects/6) mirrors local board states via `node tools/github-project.cjs`. Local `docs/board.json` remains master; the remote board is refreshed at director checkpoints.
 
-After the user enables an authorized route, create real issues and a Project with the same states, record optional `issueUrl` per ticket, and link the authoritative task scope. Choose one workflow-status authority before switching to the native board; turn the local board into a snapshot/link view rather than maintaining competing statuses. Verify each actual remote transition. Publication of code/assets remains a separate decision; no local workflow command uploads anything.
+If `node tools/github-project.cjs` fails due to a transient GraphQL API error (`gh api graphql --input - failed`), retry the command. Local board state remains authoritative and safe across API retries.

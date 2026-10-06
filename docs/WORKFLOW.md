@@ -28,7 +28,7 @@ node tools/task.cjs start feature/example-feature --worktree ../triumph-example-
 
 Open the returned directory in the app. Do not run two implementation chats in one checkout. A worktree uses tracked assets; generate its ignored local MIDI bank separately if desired. Git commands may need an explicitly trusted safe.directory on machines with different ownership; never disable that check globally.
 
-For approved director tickets, use `task.cjs prepare <branch> --ticket <ID> --worktree <path>` as described in DIRECTOR. It preserves unrelated unstaged director files while requiring committed authoritative scope/approval board and an isolated destination. Generic `start` retains its clean-tree requirement.
+For approved director tickets, use `task.cjs prepare <branch> --ticket <ID> --worktree <path>` as described in DIRECTOR. Run `node tools/board.cjs dispatch <ID> <checkout> <workerID>` immediately to bind the worker and move ticket state to `In progress` before spawning the worker subagent. Preparation preserves the approved committed task, while requiring committed authoritative scope/approval board and an isolated destination. Generic `start` retains its clean-tree requirement.
 
 ## Resume or start another session
 
