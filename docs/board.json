@@ -1073,9 +1073,10 @@
       "id": "TRI-060",
       "title": "Implement Undercity planet tunnels breach mission",
       "task": "docs/tasks/undercity-tunnels-breach.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "Ready",
+      "reason": "Approved campaign backlog ticket",
+      "questions": [],
+      "approval": "Approved campaign backlog ticket"
     },
     {
       "id": "TRI-061",
@@ -4016,6 +4017,15 @@
         "/root/director",
         "5b0aaa3e32e6cd212eae69106bb7c6c2c113a5dd",
         "1e244874626654f19e7745926e94bfcb88810cc5"
+      ]
+    },
+    {
+      "at": "2026-10-06T19:34:41.841Z",
+      "command": "move",
+      "ticket": "TRI-060",
+      "details": [
+        "Ready",
+        "Approved campaign backlog ticket"
       ]
     }
   ]
