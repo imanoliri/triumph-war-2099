@@ -1313,8 +1313,8 @@
       "id": "TRI-075",
       "title": "Capital specialist roster",
       "task": "docs/tasks/capital-trooper-roster.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker b7c5ca7 handoff, implementation4aebda1; final full suite exit0; independent Capital/guide/menu checks passed; thin-wall geometry review finding fixed; saved browser artifacts independently inspected",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
       "worker": {
@@ -5498,6 +5498,15 @@
       "details": [
         "../triumph-capital-trooper-roster",
         "/root/capital_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-07T20:40:52.517Z",
+      "command": "move",
+      "ticket": "TRI-075",
+      "details": [
+        "Review",
+        "Worker b7c5ca7 handoff, implementation4aebda1; final full suite exit0; independent Capital/guide/menu checks passed; thin-wall geometry review finding fixed; saved browser artifacts independently inspected"
       ]
     }
   ]
