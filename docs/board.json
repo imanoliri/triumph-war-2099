@@ -1177,10 +1177,17 @@
       "id": "TRI-069",
       "title": "Fix starting reinforcement eagle collection in custom scenarios",
       "task": "docs/tasks/custom-mission-eagle-collection-fix.md",
-      "status": "Ready",
-      "reason": "User approved starting reinforcement eagle collection fix for custom scenarios",
+      "status": "Done",
+      "reason": "Fixed starting reinforcement eagle collection across all custom scenarios",
       "questions": [],
-      "approval": "User approved starting reinforcement eagle collection fix for custom scenarios"
+      "approval": "User approved starting reinforcement eagle collection fix for custom scenarios",
+      "branch": "fix/custom-mission-eagle-collection-fix",
+      "completion": {
+        "evidence": "Fixed starting reinforcement eagle collection across all custom scenarios",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "5e362fa7c79ef6c7b114fe55d570c77cb9323d6c",
+        "squashCommit": "0e642e144e6bc9dd8f162ff7c3a7b436c405978f"
+      }
     }
   ],
   "events": [
@@ -4311,6 +4318,36 @@
       "details": [
         "Ready",
         "User approved starting reinforcement eagle collection fix for custom scenarios"
+      ]
+    },
+    {
+      "at": "2026-10-06T23:33:00.168Z",
+      "command": "dispatch",
+      "ticket": "TRI-069",
+      "details": [
+        "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-mission-eagle-collection-fix",
+        "/root/eagle_collection_worker"
+      ]
+    },
+    {
+      "at": "2026-10-07T07:53:28.821Z",
+      "command": "move",
+      "ticket": "TRI-069",
+      "details": [
+        "Review",
+        "Worker completed task and verified all custom scenario eagle collections"
+      ]
+    },
+    {
+      "at": "2026-10-07T07:53:33.524Z",
+      "command": "move",
+      "ticket": "TRI-069",
+      "details": [
+        "Done",
+        "Fixed starting reinforcement eagle collection across all custom scenarios",
+        "/root/director",
+        "0e642e1",
+        "5e362fa7c79ef6c7b114fe55d570c77cb9323d6c"
       ]
     }
   ]
