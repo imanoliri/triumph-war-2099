@@ -30,5 +30,7 @@ function draw(){ctx.imageSmoothingEnabled=false;if(background.complete===undefin
 
 draw();
 }
-return {draw,sprite,variantMark};
+// Field-manual portraits use the same recovered infantry and custom marks as play.
+function guideSoldier(ctx,original,loadImage,type){ctx.clearRect(0,0,48,48);ctx.imageSmoothingEnabled=false;sprite(ctx,original,0,loadImage,52,24,24,0,0,0);variantMark(ctx,{type,x:24,y:24,angle:0});}
+return {draw,sprite,variantMark,guideSoldier};
 })();

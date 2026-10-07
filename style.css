@@ -11,3 +11,5 @@
 .battlefield{position:relative}#rally{position:absolute;top:1px;right:1px;width:7%;height:4.5%;padding:0;font-size:clamp(8px,1.2vw,13px)}#rally[aria-pressed="true"]{background:#42612b;color:#ecffd9;border-color:#a9e867}#rally:disabled{opacity:.5;cursor:default}
 
 #game[data-tactical="true"]{border-color:#55ddda;box-shadow:0 0 0 3px #16464a,0 0 20px #37d6c555}#pause[aria-pressed="true"]{background:#123d45;color:#aefff0;border-color:#55ddda}
+
+.unit-card canvas{width:48px;height:48px;flex:0 0 48px;border:0;background:transparent;image-rendering:pixelated}

@@ -36,3 +36,5 @@ TRI-052: Silent Return scheduled support forms three tight parallel horizontal c
 
 
 District Twelve (TRI-053): inspect both transit terminals, west guard-room/sheltered circuit, east plaza and two approaches. Deploy tactical freeze; observe live assault, two yellow carriers and70s aircraft/three commando landings. HUD must retain terminal/hold/source/pending-relief gates until satisfied, then cleanup; last noncommander loss fails even with relief inbound. Restart resets all schedules/caches. Record actual browser observations separately from VM proof.
+
+TRI-071: Open Units from original, Dunes and Snow missions; inspect Rider scout, Dune guard, Field mechanic and Snow sniper portraits against their current runtime appearance. Preserve original cards; scroll to all portraits and close/reopen the guide. Record actual browser screenshots separately from VM command parity.

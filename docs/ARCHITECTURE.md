@@ -90,3 +90,5 @@ TRI-050 Harbor Watch reuses the custom mission registry and terrain loader with 
 
 
 TRI-053 District Twelve reuses finite custom nest/wave lifecycle and scheduled aircraft. Custom objective reliefDelivered adds current pending schedule/reinforcement/drop counts to progress only for this mission; HUD and victory share the same pure gate. No new actor module. assets/custom/district-twelve has deterministic editable source, collision/terrain hashes, geometry and all-five runtime contract; originals and other terrain masks remain unchanged.
+
+TRI-071: Units custom soldier portraits use `TriumphRendering.guideSoldier` with recovered infantry object 52 and the existing runtime `variantMark`. The 48px canvas keeps original hotspots and unscaled pixels; game.js owns DOM creation and repaint after image loading. Original guide entries retain their image path. `tools/check-unit-guide.cjs` checks entries and runtime drawing parity.
