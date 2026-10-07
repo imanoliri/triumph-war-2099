@@ -1,7 +1,7 @@
 'use strict';
 // Advance only the caller's projectiles; all world/damage/audio services are explicit.
 window.TriumphProjectiles={
-step(s,dt,{W,H,blocked,dist,damage,destroyProp,wormExposed,sound,tone,burst}){
+step(s,dt,{W,H,blocked,dist,damage,destroyProp,wormExposed,sound,tone,burst,emitAcousticEvent}){
  for(let i=s.bullets.length-1;i>=0;i--){
   const b=s.bullets[i];b.x+=b.dx*b.speed*dt;b.y+=b.dy*b.speed*dt;b.life-=dt;
   let hit=false;
@@ -26,7 +26,7 @@ step(s,dt,{W,H,blocked,dist,damage,destroyProp,wormExposed,sound,tone,burst}){
    }
   }
   if(!hit&&b.team==='human')for(const n of s.nests)if(n.hp>0&&dist(n,b)<26){
-   n.hp-=b.damage;hit=true;if(n.hp<=0){burst(n.x,n.y,40);if(b.owner)s.score[b.owner-1]+=100;}break;
+   n.hp-=b.damage;hit=true;if(emitAcousticEvent)emitAcousticEvent({x:n.x,y:n.y},280);if(n.hp<=0){burst(n.x,n.y,40);if(b.owner)s.score[b.owner-1]+=100;}break;
   }
   if(!hit&&b.team==='alien'&&s.crystal&&dist(b,s.crystal)<14){s.crystal.hp-=b.damage;hit=true;}
   if(hit&&b.plasma&&!b.spark){

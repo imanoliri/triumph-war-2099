@@ -15,7 +15,7 @@ const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.f
 vm.createContext(sandbox);
 for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','src/breeding.js','src/balance.js','assets/custom/split-ridge/terrain.js','assets/custom/relay-basin/terrain.js','assets/custom/switchback-mesa/terrain.js','assets/custom/beneath-dunes/terrain.js','assets/custom/beneath-dunes-variant-b/terrain.js','assets/custom/whiteout-signal/terrain.js','assets/custom/harbor-watch/terrain.js','assets/custom/district-twelve/terrain.js','assets/custom/jungle-canopy/terrain.js','assets/custom/volcanic-forge/terrain.js','assets/custom/undercity-tunnels/terrain.js','src/custom-missions.js','src/missions.js','src/rally.js','src/vent-bugs.js','src/desert-worm.js','src/desert-riders.js','src/jungle-ambush.js','src/volcanic-hazards.js','src/projectiles.js','src/combat.js','src/orders.js','src/input.js','src/gamepad.js','src/input-dom.js','src/support-lifecycle.js','src/rendering.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
- if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,setSeed:value=>seed=value>>>0,interact,update,fire,kill,blocked,grenade,reinforce,reinforcementStatus,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,selectable,infantryType,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,spawnDesertWorm,spawnDesertRider,supportExplosion,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival,toggleRally,addRally,removeRally,assignRally,drawSprites:()=>{const calls=[],previous=sprite;try{sprite=(...args)=>{calls.push(args);return true;};draw();}finally{sprite=previous;}return calls;}});})();');
+  if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,setSeed:value=>seed=value>>>0,interact,update,fire,kill,blocked,grenade,reinforce,reinforcementStatus,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,selectable,infantryType,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,alertPack:typeof alertPack!=="undefined"?alertPack:null,emitAcousticEvent:typeof emitAcousticEvent!=="undefined"?emitAcousticEvent:null,trackBurst,burstRules,spawnGroundBug,spawnDesertWorm,spawnDesertRider,supportExplosion,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival,toggleRally,addRally,removeRally,assignRally,drawSprites:()=>{const calls=[],previous=sprite;try{sprite=(...args)=>{calls.push(args);return true;};draw();}finally{sprite=previous;}return calls;}});})();');
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
@@ -877,5 +877,63 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
    assert(defaultDropped.length>0&&defaultDropped.every(u=>u.type==='soldier'),'Omitted payload falls back to default soldier squad');
 
    console.log('Passed TRI-068 custom reinforcement eagle troop payload selection (ground carrier, air drop, eagle pickup and fallback squad rules).');
+  }
+
+  // TRI-064: Aggressive & reactive alien AI with acoustic awareness and pack coordination
+  {
+    api.loadMission(1);
+    const f=sandbox.window.__fixture(), st=f.state;
+    st.mode='playing';
+    resumeSimulation();
+
+    // 1. Acoustic Awareness: gunfire within 280px with clear LOS wakes bug up and turns it toward sound
+    const soldier={x:200,y:200,team:'human',type:'soldier',alive:true,hp:1,weapon:0,cool:0,order:0};
+    const bugUnaware={x:420,y:200,team:'alien',type:'soldier',alive:true,hp:4,angle:Math.PI,ai:{nextScan:100,boredUntil:100,target:null}};
+    const bugFar={x:600,y:200,team:'alien',type:'soldier',alive:true,hp:4,angle:Math.PI,ai:{nextScan:100,boredUntil:100,target:null}};
+    st.humans=[soldier];
+    st.aliens=[bugUnaware,bugFar];
+    st.props=[];st.doors=[];st.nests=[];st.bullets=[];
+
+    // Fire weapon from soldier at (200, 200)
+    f.fire(soldier);
+    assert.equal(bugUnaware.ai.boredUntil,0,'Nearby bug within 280px wakes up (bored cleared) on weapon fire');
+    assert.equal(bugFar.ai.boredUntil,100,'Bug beyond 280px radius is unaffected by weapon sound');
+
+    // 2. Nest Damage Acoustic Event
+    const nest={x:300,y:200,hp:50};
+    const nestBug={x:450,y:200,team:'alien',type:'soldier',alive:true,hp:4,angle:0,ai:{nextScan:100,boredUntil:100,target:null}};
+    st.nests=[nest];st.aliens=[nestBug];st.rocks=[];st.doors=[];st.props=[];
+    nest.hp-=10;
+    f.emitAcousticEvent(nest,280);
+    assert.equal(nestBug.ai.boredUntil,0,'Bug within 280px wakes up when nearby nest takes damage');
+    assert.equal(nestBug.intent?.mode,'approach','Bug investigates nest damage sound origin');
+
+    // 3. Combat focus & wander/pause break reduction
+    const targetBug={x:250,y:200,team:'alien',type:'soldier',alive:true,hp:4,ai:{target:soldier}};
+    st.humans=[soldier];st.aliens=[targetBug];
+    for(let step=0;step<10;step++){
+      st.t+=.1;
+      f.bugIntent(targetBug,soldier,.1,1);
+      assert.equal(targetBug.intent?.mode,'approach','Bug engaged in combat eliminates wander/pause breaks and maintains approach mode');
+    }
+
+    // 4. Pack Alerting: perceiving or taking damage alerts adjacent bugs within 160px
+    const mainBug={x:300,y:200,team:'alien',type:'soldier',alive:true,hp:4};
+    const packBugA={x:380,y:200,team:'alien',type:'soldier',alive:true,hp:4,ai:{target:null}};
+    const packBugB={x:550,y:200,team:'alien',type:'soldier',alive:true,hp:4,ai:{target:null}};
+    st.aliens=[mainBug,packBugA,packBugB];
+    st.humans=[soldier];soldier.x=280;soldier.y=200;
+
+    f.alertPack(mainBug,soldier,160);
+    assert.equal(packBugA.ai.target,soldier,'Adjacent bug within 160px is alerted to swarm threat');
+    assert.equal(packBugA.intent?.mode,'approach','Alerted pack bug enters approach mode toward threat');
+    assert.equal(packBugB.ai.target,null,'Bug beyond 160px radius is not alerted');
+
+    // Damaging main bug triggers pack alert
+    packBugA.ai.target=null;
+    f.damage(mainBug,1,soldier.id);
+    assert.equal(packBugA.ai.target,soldier,'Damaging bug alerts adjacent pack within 160px');
+
+    console.log('Passed TRI-064 aggressive and reactive alien AI with acoustic awareness, combat focus and pack alerting.');
   }
 
