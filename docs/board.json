@@ -1281,23 +1281,24 @@
       "id": "TRI-073",
       "title": "Desert Scout counterattack",
       "task": "docs/tasks/desert-trooper-roster.md",
-      "status": "Review",
-      "reason": "Worker ef785944 full suite exit0; independent combat/rider checks passed; scoped source and documentation reviewed; actual Units UI inspection recorded separately from unobserved live combat",
+      "status": "Done",
+      "reason": "Accepted Scout-only scope; worker full suite and director combat/rider checks passed; Units UI inspected, live combat/audio gap documented",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
-      "worker": {
-        "id": "/root/desert_roster_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-desert-trooper-roster",
-        "branch": "feature/desert-trooper-roster"
-      },
-      "branch": "feature/desert-trooper-roster"
+      "branch": "feature/desert-trooper-roster",
+      "completion": {
+        "evidence": "Accepted Scout-only scope; worker full suite and director combat/rider checks passed; Units UI inspected, live combat/audio gap documented",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "ef785944b17dc1db7f0ef98d9a18aec036221faa",
+        "squashCommit": "4621573ebd4baba7e917e4be59d62d4c749b3bad"
+      }
     },
     {
       "id": "TRI-074",
       "title": "Snow specialist roster",
       "task": "docs/tasks/snow-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "status": "Ready",
+      "reason": "User authorized sequential queue execution; accepted Snow scope retains Sniper and adds Winter Gunner only",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     },
@@ -5415,6 +5416,27 @@
       "details": [
         "Review",
         "Worker ef785944 full suite exit0; independent combat/rider checks passed; scoped source and documentation reviewed; actual Units UI inspection recorded separately from unobserved live combat"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:55:52.568Z",
+      "command": "move",
+      "ticket": "TRI-073",
+      "details": [
+        "Done",
+        "Accepted Scout-only scope; worker full suite and director combat/rider checks passed; Units UI inspected, live combat/audio gap documented",
+        "/root/director",
+        "4621573ebd4baba7e917e4be59d62d4c749b3bad",
+        "ef785944b17dc1db7f0ef98d9a18aec036221faa"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:56:05.228Z",
+      "command": "move",
+      "ticket": "TRI-074",
+      "details": [
+        "Ready",
+        "User authorized sequential queue execution; accepted Snow scope retains Sniper and adds Winter Gunner only"
       ]
     }
   ]
