@@ -33,3 +33,5 @@ User answered TRI-072 air question: five-slot repeating air pattern preserving a
 
 
 Director integration: TRI-072 accepted and squash-integrated as 0edaaf906b0aebc7b3e2b2de7d6b77437eace21b from reviewed worker 0c560fdf9d5596bb92befcfcdbd8f3a61ad56537. Worker full suite passed; director focused menu/support/custom-support checks and actual browser interaction passed (live arrivals/audio/victory not observed). Done mirrored successfully. Next: update prepared Desert checkout to main and dispatch TRI-073, then remaining approved world tickets sequentially.
+
+TRI-073 dispatched to /root/desert_roster_worker in preserved feature/desert-trooper-roster checkout after fast-forward to main6399c6b. Initial session012 retained. Scout-only scope confirmed; existing roster/deployments preserved. Board In progress and Project synchronized. Next: review worker evidence, squash accepted counterattack, then TRI-074 Snow.

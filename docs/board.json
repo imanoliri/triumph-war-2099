@@ -1281,10 +1281,16 @@
       "id": "TRI-073",
       "title": "Desert Scout counterattack",
       "task": "docs/tasks/desert-trooper-roster.md",
-      "status": "Ready",
-      "reason": "User authorized draining approved queue while away; TRI-072 parked for unanswered material air-count decision; next Desert Scout counterattack",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
+      "worker": {
+        "id": "/root/desert_roster_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-desert-trooper-roster",
+        "branch": "feature/desert-trooper-roster"
+      },
+      "branch": "feature/desert-trooper-roster"
     },
     {
       "id": "TRI-074",
@@ -5391,6 +5397,15 @@
         "/root/director",
         "0edaaf906b0aebc7b3e2b2de7d6b77437eace21b",
         "0c560fdf9d5596bb92befcfcdbd8f3a61ad56537"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:44:39.412Z",
+      "command": "dispatch",
+      "ticket": "TRI-073",
+      "details": [
+        "../triumph-desert-trooper-roster",
+        "/root/desert_roster_worker"
       ]
     }
   ]
