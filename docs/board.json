@@ -1259,8 +1259,8 @@
       "id": "TRI-072",
       "title": "Configure future ground and air eagle squads during missions",
       "task": "docs/tasks/reinforcement-composition-menu.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker0c560fd full suite exit0; director actual UI and independent menu/support/custom-support checks passed; specialist initialization finding fixed",
       "questions": [
         {
           "number": 1,
@@ -5369,6 +5369,15 @@
       "details": [
         "../triumph-reinforcement-composition-menu",
         "/root/reinforcement_menu_worker"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:41:41.792Z",
+      "command": "move",
+      "ticket": "TRI-072",
+      "details": [
+        "Review",
+        "Worker0c560fd full suite exit0; director actual UI and independent menu/support/custom-support checks passed; specialist initialization finding fixed"
       ]
     }
   ]
