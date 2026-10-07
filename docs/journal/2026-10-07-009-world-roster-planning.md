@@ -37,3 +37,5 @@ Director integration: TRI-072 accepted and squash-integrated as 0edaaf906b0aebc7
 TRI-073 dispatched to /root/desert_roster_worker in preserved feature/desert-trooper-roster checkout after fast-forward to main6399c6b. Initial session012 retained. Scout-only scope confirmed; existing roster/deployments preserved. Board In progress and Project synchronized. Next: review worker evidence, squash accepted counterattack, then TRI-074 Snow.
 
 TRI-073 Done: reviewed ef785944b17dc1db7f0ef98d9a18aec036221faa squash-integrated as 4621573ebd4baba7e917e4be59d62d4c749b3bad. Worker full suite and director focused checks passed; actual Units UI inspection separate from live combat/audio gap. Project synchronized. TRI-074 moved Ready on existing execution authorization; next prepare Snow worker.
+
+TRI-074 dispatched to actual /root/snow_roster_worker in isolated feature/snow-trooper-roster checkout from main8c41c26, session013. Board In progress and Project synchronized. Next: review Snow worker, squash acceptance, then Capital TRI-075; continue queue until exhausted, preserving any material unanswered decision.

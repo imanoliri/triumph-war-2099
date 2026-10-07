@@ -1297,10 +1297,16 @@
       "id": "TRI-074",
       "title": "Snow specialist roster",
       "task": "docs/tasks/snow-trooper-roster.md",
-      "status": "Ready",
-      "reason": "User authorized sequential queue execution; accepted Snow scope retains Sniper and adds Winter Gunner only",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
+      "worker": {
+        "id": "/root/snow_roster_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-snow-trooper-roster",
+        "branch": "feature/snow-trooper-roster"
+      },
+      "branch": "feature/snow-trooper-roster"
     },
     {
       "id": "TRI-075",
@@ -5437,6 +5443,15 @@
       "details": [
         "Ready",
         "User authorized sequential queue execution; accepted Snow scope retains Sniper and adds Winter Gunner only"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:57:00.579Z",
+      "command": "dispatch",
+      "ticket": "TRI-074",
+      "details": [
+        "../triumph-snow-trooper-roster",
+        "/root/snow_roster_worker"
       ]
     }
   ]
