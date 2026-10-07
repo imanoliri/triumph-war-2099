@@ -24,3 +24,6 @@ User decisions on 2026-10-07: open a menu/modal during the mission, edit the des
 
 
 
+
+Execution authorization 2026-10-07: user requested agents executing tickets one by one; earlier planning-only pause is revoked.
+

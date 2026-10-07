@@ -20,3 +20,8 @@ This combined table preserves all fourteen settings in the recorded brainstorm, 
 | Floating habitats / [Aerie](floating-habitats.md) | Sky crews, platform engineers | Flyers, platform climbers | Bridges, docking towers and platform defense |
 | Overgrown abandoned world / [Verdant Ruin](abandoned-world.md) | Reclamation enclaves | Fungal bugs, brood carriers | Derelict settlements, reclamation and escort |
 | Orbital scrapyard / [The Drift](orbital-scrapyard.md) | Salvagers, boarding mercenaries | Hull borers, close-range swarms | Linked derelicts, boarding and salvage extraction |
+
+## Trooper roster decisions
+
+See [world trooper refinement and tickets](../trooper-rosters.md) for the concrete roster mechanics approved on 2026-10-07. Those records supersede older friendly-force proposals where specified. Winter Gunner stays in Snow; Laser Cannon stays in Capital. Tunnel Listener is rejected. Planning queue only; no implementation dispatch.
+

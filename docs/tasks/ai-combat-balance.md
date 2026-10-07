@@ -21,3 +21,6 @@ User requested on 2026-10-07: enemy AI is too aggressive and difficult to win ag
 
 Planning checkpoint: user requested brainstorming, tickets and queue only. Worker stopped before board dispatch. Preserved prepared checkout; do not implement until final scope is agreed and execution authorized.
 
+
+Execution authorization 2026-10-07: user requested starting the session with agents executing tickets one by one; earlier planning-only pause is revoked.
+

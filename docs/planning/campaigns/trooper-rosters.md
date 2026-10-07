@@ -4,7 +4,7 @@ Planning only; no implementation dispatch. Read alongside [world table](planets/
 
 ## Selected identities and draft mechanics
 
-User selected Capital Shield Trooper and Laser Cannon, replacing the director's militia proposal. User specified medium laser range, approximately 3 damage to every enemy in a corridor half a soldier wide, with long recharge. User selected Jungle Recon: sprint with damage immunity while moving, and automatic dash with immunity to avoid damage while stationary. Numbers below are director proposals, not agreed balance.
+User selected Capital Shield Trooper and Laser Cannon, replacing the director's militia proposal. User specified medium laser range, approximately 3 damage to every enemy in a corridor half a soldier wide, with long recharge. User selected Jungle Recon: sprint with damage immunity while moving, and automatic dash with immunity to avoid damage while stationary. User subsequently accepted the concrete roster proposal with corrections recorded in the world tickets. Latest correction: Winter Gunner remains in Snow and Laser Cannon remains in Capital; no swap.
 
 | Unit | Draft in-game rules | Limits and implementation needs |
 | --- | --- | --- |
@@ -32,4 +32,23 @@ Each proposed specialist must state weapon range/damage/cooldown, target and tri
 
 ## Next planning action
 
-Resolve Capital shield behavior, laser reference width/range/recharge and Jungle Recon dash/cooldown rules with the user. Continue world-by-world comparison across all fourteen settings. Create bounded specialist tickets only after roster mechanics are agreed. No worker running for this planning work.
+World mechanics are approved as initial tuning, with implementation constraints in each ticket. Tunnel Listener is excluded without a replacement. Scouts gain a post-dash counterattack against their evade source; suppression stops rather than slows enemies. No worker dispatch until execution is authorized. Healing eligibility and exceptional enemy phases still require evidence or a material question, not silently expanded rules.
+
+## Agreed world tickets — 2026-10-07
+
+User approved the remaining roster proposals with corrections below. Planning queue only; no implementation dispatch. Each world ticket contains mechanics, limitations and acceptance. Unspecified tuning belongs to a worker within scope; material gameplay conflicts require a question. Worlds without runtime missions get opt-in units and disposable fixtures, not unsolicited mission creation.
+
+- TRI-073: [Desert Scout counterattack](../../tasks/desert-trooper-roster.md).
+- TRI-074: [Snow specialist roster](../../tasks/snow-trooper-roster.md).
+- TRI-075: [Capital specialist roster](../../tasks/capital-trooper-roster.md).
+- TRI-076: [Maritime specialist roster](../../tasks/maritime-trooper-roster.md).
+- TRI-077: [Undercity specialist roster](../../tasks/undercity-trooper-roster.md).
+- TRI-078: [Jungle specialist roster](../../tasks/jungle-trooper-roster.md).
+- TRI-079: [Industrial specialist roster](../../tasks/industrial-trooper-roster.md).
+- TRI-080: [Mercenary frontier specialist roster](../../tasks/mercenary-trooper-roster.md).
+- TRI-081: [Volcanic specialist roster](../../tasks/volcanic-trooper-roster.md).
+- TRI-082: [Toxic marsh specialist roster](../../tasks/toxic-marsh-trooper-roster.md).
+- TRI-083: [Airless moon specialist roster](../../tasks/airless-moon-trooper-roster.md).
+- TRI-084: [Floating habitat specialist roster](../../tasks/floating-habitats-trooper-roster.md).
+- TRI-085: [Abandoned world specialist roster](../../tasks/abandoned-world-trooper-roster.md).
+- TRI-086: [Orbital scrapyard specialist roster](../../tasks/orbital-scrapyard-trooper-roster.md).

@@ -18,3 +18,6 @@ User reported missing custom unit sprites in the Units tab on 2026-10-07. Fix gu
 ## Sessions
 
 
+
+Execution authorization 2026-10-07: user requested agents executing tickets one by one; earlier planning-only pause is revoked.
+

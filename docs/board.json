@@ -1249,6 +1249,132 @@
       "reason": "Planning queue only; user is brainstorming and has not authorized implementation execution",
       "questions": [],
       "approval": "User agreed persistent in-mission reinforcement menu with separate ground and air compositions; numerical limits and roster details remain planning refinements"
+    },
+    {
+      "id": "TRI-073",
+      "title": "Desert Scout counterattack",
+      "task": "docs/tasks/desert-trooper-roster.md",
+      "status": "Queued",
+      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "questions": [],
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+    },
+    {
+      "id": "TRI-074",
+      "title": "Snow specialist roster",
+      "task": "docs/tasks/snow-trooper-roster.md",
+      "status": "Queued",
+      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "questions": [],
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+    },
+    {
+      "id": "TRI-075",
+      "title": "Capital specialist roster",
+      "task": "docs/tasks/capital-trooper-roster.md",
+      "status": "Queued",
+      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "questions": [],
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+    },
+    {
+      "id": "TRI-076",
+      "title": "Maritime specialist roster",
+      "task": "docs/tasks/maritime-trooper-roster.md",
+      "status": "Queued",
+      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "questions": [],
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+    },
+    {
+      "id": "TRI-077",
+      "title": "Undercity specialist roster",
+      "task": "docs/tasks/undercity-trooper-roster.md",
+      "status": "Queued",
+      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "questions": [],
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+    },
+    {
+      "id": "TRI-078",
+      "title": "Jungle specialist roster",
+      "task": "docs/tasks/jungle-trooper-roster.md",
+      "status": "Queued",
+      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "questions": [],
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+    },
+    {
+      "id": "TRI-079",
+      "title": "Industrial specialist roster",
+      "task": "docs/tasks/industrial-trooper-roster.md",
+      "status": "Queued",
+      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "questions": [],
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+    },
+    {
+      "id": "TRI-080",
+      "title": "Mercenary frontier specialist roster",
+      "task": "docs/tasks/mercenary-trooper-roster.md",
+      "status": "Queued",
+      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "questions": [],
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+    },
+    {
+      "id": "TRI-081",
+      "title": "Volcanic specialist roster",
+      "task": "docs/tasks/volcanic-trooper-roster.md",
+      "status": "Queued",
+      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "questions": [],
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+    },
+    {
+      "id": "TRI-082",
+      "title": "Toxic marsh specialist roster",
+      "task": "docs/tasks/toxic-marsh-trooper-roster.md",
+      "status": "Queued",
+      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "questions": [],
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+    },
+    {
+      "id": "TRI-083",
+      "title": "Airless moon specialist roster",
+      "task": "docs/tasks/airless-moon-trooper-roster.md",
+      "status": "Queued",
+      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "questions": [],
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+    },
+    {
+      "id": "TRI-084",
+      "title": "Floating habitat specialist roster",
+      "task": "docs/tasks/floating-habitats-trooper-roster.md",
+      "status": "Queued",
+      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "questions": [],
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+    },
+    {
+      "id": "TRI-085",
+      "title": "Abandoned world specialist roster",
+      "task": "docs/tasks/abandoned-world-trooper-roster.md",
+      "status": "Queued",
+      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "questions": [],
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+    },
+    {
+      "id": "TRI-086",
+      "title": "Orbital scrapyard specialist roster",
+      "task": "docs/tasks/orbital-scrapyard-trooper-roster.md",
+      "status": "Queued",
+      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "questions": [],
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     }
   ],
   "events": [
@@ -4685,6 +4811,398 @@
       "details": [
         "Queued",
         "Planning queue only; user is brainstorming and has not authorized implementation execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:57:00.769Z",
+      "command": "create",
+      "ticket": "TRI-073",
+      "details": [
+        "desert-trooper-roster",
+        "Desert Scout counterattack",
+        "Implement the agreed world trooper mechanics with focused regression checks and preserve other world rosters"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:57:18.663Z",
+      "command": "move",
+      "ticket": "TRI-073",
+      "details": [
+        "Ready",
+        "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:57:24.205Z",
+      "command": "move",
+      "ticket": "TRI-073",
+      "details": [
+        "Queued",
+        "Roster planning queue; no worker dispatch until user authorizes execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:57:30.035Z",
+      "command": "create",
+      "ticket": "TRI-074",
+      "details": [
+        "snow-trooper-roster",
+        "Snow specialist roster",
+        "Implement the agreed world trooper mechanics with focused regression checks and preserve other world rosters"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:57:37.419Z",
+      "command": "move",
+      "ticket": "TRI-074",
+      "details": [
+        "Ready",
+        "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:57:45.132Z",
+      "command": "move",
+      "ticket": "TRI-074",
+      "details": [
+        "Queued",
+        "Roster planning queue; no worker dispatch until user authorizes execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:57:51.402Z",
+      "command": "create",
+      "ticket": "TRI-075",
+      "details": [
+        "capital-trooper-roster",
+        "Capital specialist roster",
+        "Implement the agreed world trooper mechanics with focused regression checks and preserve other world rosters"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:58:00.110Z",
+      "command": "move",
+      "ticket": "TRI-075",
+      "details": [
+        "Ready",
+        "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:58:08.488Z",
+      "command": "move",
+      "ticket": "TRI-075",
+      "details": [
+        "Queued",
+        "Roster planning queue; no worker dispatch until user authorizes execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:58:17.863Z",
+      "command": "create",
+      "ticket": "TRI-076",
+      "details": [
+        "maritime-trooper-roster",
+        "Maritime specialist roster",
+        "Implement the agreed world trooper mechanics with focused regression checks and preserve other world rosters"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:58:28.016Z",
+      "command": "move",
+      "ticket": "TRI-076",
+      "details": [
+        "Ready",
+        "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:58:39.787Z",
+      "command": "move",
+      "ticket": "TRI-076",
+      "details": [
+        "Queued",
+        "Roster planning queue; no worker dispatch until user authorizes execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:58:51.238Z",
+      "command": "create",
+      "ticket": "TRI-077",
+      "details": [
+        "undercity-trooper-roster",
+        "Undercity specialist roster",
+        "Implement the agreed world trooper mechanics with focused regression checks and preserve other world rosters"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:59:02.341Z",
+      "command": "move",
+      "ticket": "TRI-077",
+      "details": [
+        "Ready",
+        "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:59:13.092Z",
+      "command": "move",
+      "ticket": "TRI-077",
+      "details": [
+        "Queued",
+        "Roster planning queue; no worker dispatch until user authorizes execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:59:24.038Z",
+      "command": "create",
+      "ticket": "TRI-078",
+      "details": [
+        "jungle-trooper-roster",
+        "Jungle specialist roster",
+        "Implement the agreed world trooper mechanics with focused regression checks and preserve other world rosters"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:59:36.423Z",
+      "command": "move",
+      "ticket": "TRI-078",
+      "details": [
+        "Ready",
+        "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:59:48.802Z",
+      "command": "move",
+      "ticket": "TRI-078",
+      "details": [
+        "Queued",
+        "Roster planning queue; no worker dispatch until user authorizes execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:00:03.792Z",
+      "command": "create",
+      "ticket": "TRI-079",
+      "details": [
+        "industrial-trooper-roster",
+        "Industrial specialist roster",
+        "Implement the agreed world trooper mechanics with focused regression checks and preserve other world rosters"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:00:20.319Z",
+      "command": "move",
+      "ticket": "TRI-079",
+      "details": [
+        "Ready",
+        "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:00:35.294Z",
+      "command": "move",
+      "ticket": "TRI-079",
+      "details": [
+        "Queued",
+        "Roster planning queue; no worker dispatch until user authorizes execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:00:52.119Z",
+      "command": "create",
+      "ticket": "TRI-080",
+      "details": [
+        "mercenary-trooper-roster",
+        "Mercenary frontier specialist roster",
+        "Implement the agreed world trooper mechanics with focused regression checks and preserve other world rosters"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:01:11.211Z",
+      "command": "move",
+      "ticket": "TRI-080",
+      "details": [
+        "Ready",
+        "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:01:28.727Z",
+      "command": "move",
+      "ticket": "TRI-080",
+      "details": [
+        "Queued",
+        "Roster planning queue; no worker dispatch until user authorizes execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:01:45.486Z",
+      "command": "create",
+      "ticket": "TRI-081",
+      "details": [
+        "volcanic-trooper-roster",
+        "Volcanic specialist roster",
+        "Implement the agreed world trooper mechanics with focused regression checks and preserve other world rosters"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:02:03.736Z",
+      "command": "move",
+      "ticket": "TRI-081",
+      "details": [
+        "Ready",
+        "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:02:21.014Z",
+      "command": "move",
+      "ticket": "TRI-081",
+      "details": [
+        "Queued",
+        "Roster planning queue; no worker dispatch until user authorizes execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:02:37.845Z",
+      "command": "create",
+      "ticket": "TRI-082",
+      "details": [
+        "toxic-marsh-trooper-roster",
+        "Toxic marsh specialist roster",
+        "Implement the agreed world trooper mechanics with focused regression checks and preserve other world rosters"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:02:56.245Z",
+      "command": "move",
+      "ticket": "TRI-082",
+      "details": [
+        "Ready",
+        "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:03:15.031Z",
+      "command": "move",
+      "ticket": "TRI-082",
+      "details": [
+        "Queued",
+        "Roster planning queue; no worker dispatch until user authorizes execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:03:34.365Z",
+      "command": "create",
+      "ticket": "TRI-083",
+      "details": [
+        "airless-moon-trooper-roster",
+        "Airless moon specialist roster",
+        "Implement the agreed world trooper mechanics with focused regression checks and preserve other world rosters"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:03:55.439Z",
+      "command": "move",
+      "ticket": "TRI-083",
+      "details": [
+        "Ready",
+        "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:04:15.453Z",
+      "command": "move",
+      "ticket": "TRI-083",
+      "details": [
+        "Queued",
+        "Roster planning queue; no worker dispatch until user authorizes execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:04:34.673Z",
+      "command": "create",
+      "ticket": "TRI-084",
+      "details": [
+        "floating-habitats-trooper-roster",
+        "Floating habitat specialist roster",
+        "Implement the agreed world trooper mechanics with focused regression checks and preserve other world rosters"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:04:55.723Z",
+      "command": "move",
+      "ticket": "TRI-084",
+      "details": [
+        "Ready",
+        "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:05:18.483Z",
+      "command": "move",
+      "ticket": "TRI-084",
+      "details": [
+        "Queued",
+        "Roster planning queue; no worker dispatch until user authorizes execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:05:40.161Z",
+      "command": "create",
+      "ticket": "TRI-085",
+      "details": [
+        "abandoned-world-trooper-roster",
+        "Abandoned world specialist roster",
+        "Implement the agreed world trooper mechanics with focused regression checks and preserve other world rosters"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:06:04.185Z",
+      "command": "move",
+      "ticket": "TRI-085",
+      "details": [
+        "Ready",
+        "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:06:28.074Z",
+      "command": "move",
+      "ticket": "TRI-085",
+      "details": [
+        "Queued",
+        "Roster planning queue; no worker dispatch until user authorizes execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:07:21.952Z",
+      "command": "create",
+      "ticket": "TRI-086",
+      "details": [
+        "orbital-scrapyard-trooper-roster",
+        "Orbital scrapyard specialist roster",
+        "Implement the agreed world trooper mechanics with focused regression checks and preserve other world rosters"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:07:32.173Z",
+      "command": "move",
+      "ticket": "TRI-086",
+      "details": [
+        "Ready",
+        "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      ]
+    },
+    {
+      "at": "2026-10-07T15:07:42.290Z",
+      "command": "move",
+      "ticket": "TRI-086",
+      "details": [
+        "Queued",
+        "Roster planning queue; no worker dispatch until user authorizes execution"
       ]
     }
   ]
