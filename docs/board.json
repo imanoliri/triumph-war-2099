@@ -1297,23 +1297,24 @@
       "id": "TRI-074",
       "title": "Snow specialist roster",
       "task": "docs/tasks/snow-trooper-roster.md",
-      "status": "Review",
-      "reason": "Worker289ecea final full suite exit0; director winter/guide/menu checks and actual browser portrait/menu/save/world-isolation inspection passed; Units headcount review finding fixed",
+      "status": "Done",
+      "reason": "Accepted mechanics/order/terrain/world/deployment/delivery scope; final full suite and independent checks passed; actual UI evidence and live combat/audio limitations recorded",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
-      "worker": {
-        "id": "/root/snow_roster_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-snow-trooper-roster",
-        "branch": "feature/snow-trooper-roster"
-      },
-      "branch": "feature/snow-trooper-roster"
+      "branch": "feature/snow-trooper-roster",
+      "completion": {
+        "evidence": "Accepted mechanics/order/terrain/world/deployment/delivery scope; final full suite and independent checks passed; actual UI evidence and live combat/audio limitations recorded",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "289ecea4c8c722b0153c559a9dff1ffba8a67a44",
+        "squashCommit": "b376d9f1c73ef61857735790a08653e3cf102997"
+      }
     },
     {
       "id": "TRI-075",
       "title": "Capital specialist roster",
       "task": "docs/tasks/capital-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "status": "Ready",
+      "reason": "User authorized queue execution; Capital Shield Trooper and Laser Cannon remain in Capital; accepted task mechanics unchanged",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     },
@@ -5461,6 +5462,27 @@
       "details": [
         "Review",
         "Worker289ecea final full suite exit0; director winter/guide/menu checks and actual browser portrait/menu/save/world-isolation inspection passed; Units headcount review finding fixed"
+      ]
+    },
+    {
+      "at": "2026-10-07T20:15:38.181Z",
+      "command": "move",
+      "ticket": "TRI-074",
+      "details": [
+        "Done",
+        "Accepted mechanics/order/terrain/world/deployment/delivery scope; final full suite and independent checks passed; actual UI evidence and live combat/audio limitations recorded",
+        "/root/director",
+        "b376d9f1c73ef61857735790a08653e3cf102997",
+        "289ecea4c8c722b0153c559a9dff1ffba8a67a44"
+      ]
+    },
+    {
+      "at": "2026-10-07T20:15:50.687Z",
+      "command": "move",
+      "ticket": "TRI-075",
+      "details": [
+        "Ready",
+        "User authorized queue execution; Capital Shield Trooper and Laser Cannon remain in Capital; accepted task mechanics unchanged"
       ]
     }
   ]
