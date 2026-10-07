@@ -15,7 +15,7 @@ const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.f
 vm.createContext(sandbox);
 for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','src/breeding.js','src/balance.js','assets/custom/split-ridge/terrain.js','assets/custom/relay-basin/terrain.js','assets/custom/switchback-mesa/terrain.js','assets/custom/beneath-dunes/terrain.js','assets/custom/beneath-dunes-variant-b/terrain.js','assets/custom/whiteout-signal/terrain.js','assets/custom/harbor-watch/terrain.js','assets/custom/district-twelve/terrain.js','assets/custom/jungle-canopy/terrain.js','assets/custom/volcanic-forge/terrain.js','assets/custom/undercity-tunnels/terrain.js','src/custom-missions.js','src/missions.js','src/rally.js','src/vent-bugs.js','src/desert-worm.js','src/desert-riders.js','src/jungle-ambush.js','src/volcanic-hazards.js','src/projectiles.js','src/combat.js','src/orders.js','src/input.js','src/gamepad.js','src/input-dom.js','src/support-lifecycle.js','src/rendering.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
- if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,setSeed:value=>seed=value>>>0,interact,update,fire,kill,blocked,grenade,reinforce,reinforcementStatus,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,spawnDesertWorm,spawnDesertRider,supportExplosion,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival,toggleRally,addRally,removeRally,assignRally,drawSprites:()=>{const calls=[],previous=sprite;try{sprite=(...args)=>{calls.push(args);return true;};draw();}finally{sprite=previous;}return calls;}});})();');
+ if(file==='game.js')source=source.replace(/\}\)\(\);\s*$/, 'window.__fixture=()=>({state:s,setSeed:value=>seed=value>>>0,interact,update,fire,kill,blocked,grenade,reinforce,reinforcementStatus,updateSupport,pickup,navigate,move,aimHuman,perceive,enemyFireDelay,patrol,selectTroops,attackMoveTo,attackMoveStep,selection,selectable,infantryType,spawnPickupRoll,updatePickupSpawns,hasRespawnSupport,respawnCommander,damage,selectCommander,mouseCommanderAction,bugIntent,trackBurst,burstRules,spawnGroundBug,spawnDesertWorm,spawnDesertRider,supportExplosion,addTroop,variantMark,tankGroup,aimTank,tankSweepRules,supplyStep,cancelSupply,reinforcementRule,giveOrder,enemyAt,focusAttackTo,focusAttackStep,groundArrival,flightEntersMap,visible,usableAt,useOrderTo,useOrderStep,missionProgress,bugArrival,toggleRally,addRally,removeRally,assignRally,drawSprites:()=>{const calls=[],previous=sprite;try{sprite=(...args)=>{calls.push(args);return true;};draw();}finally{sprite=previous;}return calls;}});})();');
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
@@ -795,7 +795,7 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
 
    // Verify 360-degree unconstrained free aim
    const bug={x:sniper.x+200,y:sniper.y+73,team:'alien',type:'soldier',alive:true,hp:10};
-   st.aliens=[bug];st.bullets=[];st.nests=[];
+   st.aliens=[bug];st.bullets=[];st.nests=[];st.mask=null;st.rocks=[];st.doors=[];st.props=[];
    f.aimHuman(sniper,bug,0);
    const expectedAngle=Math.atan2(73,200);
    assert(Math.abs(sniper.angle-expectedAngle)<1e-4,'Snow sniper uses unconstrained 360-degree aiming');
@@ -812,8 +812,9 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
    assert.equal(bullet.sniper,true,'Sniper bullet has sniper tracer flag');
 
    // Verify perception & standoff range
+   sniper.ai={nextScan:0,target:bug,hesitateUntil:0};
    assert.equal(f.perceive(sniper,[bug],480),bug,'Perceives target within 480px standoff range');
-   bug.x=sniper.x+500;
+   bug.x=sniper.x+500;sniper.ai={nextScan:0,hesitateUntil:0};
    assert.equal(f.perceive(sniper,[bug],480),null,'Target beyond 480px range not perceived');
 
    // Verify rendering overlay
@@ -826,3 +827,55 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
 
    console.log('Passed TRI-066 environment world rosters mapping and Nivalis Snow Sniper 360-deg aiming, 480px standoff range, 4 damage, 1.2s cooldown, optics visor rendering and opt-in whiteout deployment.');
   }
+
+  {
+   // TRI-068 Custom reinforcement eagle troop payload selection verification
+   sandbox.window.triumph.loadMission(1);
+   const f=sandbox.window.__fixture(),st=f.state;
+   st.mode='playing';resumeSimulation();
+
+   // Test 1: Ground carrier with explicit payload array
+   st.humans=st.humans.filter(u=>u.type==='commander');
+   st.reinforcements=[];st.drops=[];
+   const payload=['soldier','commando','rider-scout','dune-guard','field-mechanic','snow-sniper'];
+   assert(f.reinforce('troops',{payload}),'Reinforce accepts custom payload object');
+   assert.equal(st.reinforcements[0].kind,'carrier');
+   assert.equal(st.reinforcements[0].payload.join(','),payload.join(','),'Carrier stores custom payload');
+
+   // Fast forward carrier unload and verify each dropped unit matches payload order
+   for(let i=0;i<500;i++){st.t+=.04;f.updateSupport(.04);}
+   const dropped=st.humans.filter(u=>u.type!=='commander');
+   assert.equal(dropped.length,6,'Carrier drops all 6 custom payload troops');
+   assert.equal(dropped.map(u=>u.type).join(','),payload.join(','),'Troops match payload order');
+
+   // Test 2: Air drop with custom payload array
+   st.humans=st.humans.filter(u=>u.type==='commander');
+   st.reinforcements=[];st.drops=[];
+   const airPayload=['snow-sniper','field-mechanic'];
+   assert(f.reinforce('air',{payload:airPayload}),'Reinforce air accepts custom payload');
+   for(let i=0;i<600;i++){st.t+=.04;f.updateSupport(.04);}
+   const airDropped=st.humans.filter(u=>u.type!=='commander');
+   assert.equal(airDropped.length,2,'Air support drops 2 custom payload troops');
+   assert.equal(airDropped.map(u=>u.type).join(','),airPayload.join(','),'Air dropped troops match custom payload');
+
+   // Test 3: Eagle pickup with custom payload
+   st.humans=st.humans.filter(u=>u.type==='commander');
+   st.reinforcements=[];st.drops=[];st.pickups=[{type:'troops',x:200,y:200,object:63,payload:['commando','rider-scout']}];
+   const collector=st.humans[0];
+   collector.x=200;collector.y=200;
+   f.pickup(collector,st.pickups[0]);
+   assert.equal(st.reinforcements.length,1,'Eagle pickup triggers reinforcement');
+   assert.equal(st.reinforcements[0].payload.join(','),'commando,rider-scout','Eagle pickup passes custom payload to reinforcement carrier');
+
+   // Test 4: Default fallback when payload is omitted
+   st.humans=st.humans.filter(u=>u.type==='commander');
+   st.reinforcements=[];st.drops=[];
+   assert(f.reinforce('troops'),'Default reinforce troops without payload');
+   assert.equal(st.reinforcements[0].payload,null,'Omitted payload falls back to null');
+   for(let i=0;i<500;i++){st.t+=.04;f.updateSupport(.04);}
+   const defaultDropped=st.humans.filter(u=>u.type!=='commander');
+   assert(defaultDropped.length>0&&defaultDropped.every(u=>u.type==='soldier'),'Omitted payload falls back to default soldier squad');
+
+   console.log('Passed TRI-068 custom reinforcement eagle troop payload selection (ground carrier, air drop, eagle pickup and fallback squad rules).');
+  }
+
