@@ -1153,9 +1153,16 @@
       "id": "TRI-066",
       "title": "Environment world soldier rosters and 360-degree Snow Sniper unit",
       "task": "docs/tasks/world-soldier-rosters-snow-sniper.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
+      "questions": [],
+      "approval": "User approved queue execution for soldier roster expansion and Snow Sniper",
+      "worker": {
+        "id": "/root/snow_sniper_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-world-soldier-rosters-snow-sniper",
+        "branch": "feature/world-soldier-rosters-snow-sniper"
+      },
+      "branch": "feature/world-soldier-rosters-snow-sniper"
     },
     {
       "id": "TRI-067",
@@ -4348,6 +4355,24 @@
         "/root/director",
         "0e642e1",
         "5e362fa7c79ef6c7b114fe55d570c77cb9323d6c"
+      ]
+    },
+    {
+      "at": "2026-10-07T07:54:32.597Z",
+      "command": "move",
+      "ticket": "TRI-066",
+      "details": [
+        "Ready",
+        "User approved queue execution for soldier roster expansion and Snow Sniper"
+      ]
+    },
+    {
+      "at": "2026-10-07T07:55:03.811Z",
+      "command": "dispatch",
+      "ticket": "TRI-066",
+      "details": [
+        "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-world-soldier-rosters-snow-sniper",
+        "/root/snow_sniper_worker"
       ]
     }
   ]
