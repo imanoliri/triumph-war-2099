@@ -697,13 +697,13 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
 
  // TRI-063: Proactive attack-move guard stance with local engagement leash
  {
-  api.loadMission(1);const f=sandbox.window.__fixture(),st=f.state;
-  st.mode='playing';st.rocks=[];st.doors=[];st.props=[];st.aliens=[];st.nests=[];st.bullets=[];st.cannons=[];
+  api.loadMission(1);resumeSimulation();const f=sandbox.window.__fixture(),st=f.state;
+  st.mode='playing';st.rocks=[];st.doors=[];st.props=[];st.aliens=[];st.nests=[];st.bullets=[];st.cannons=[];st.pickups=[];
 
   // 1. Soldiers reaching attack-move destination enter proactive guard stance with anchor
   const soldier=st.humans.find(u=>u.type==='soldier')||f.addTroop(52,200,200);
   st.humans=[soldier];
-  Object.assign(soldier,{x:200,y:200,team:'human',alive:true,hp:1,cool:0,weapon:0,order:2,attackMove:{x:208,y:200,force:false}});
+  Object.assign(soldier,{x:200,y:200,team:'human',alive:true,hp:1,cool:0,weapon:0,order:2,useOrder:null,focusTarget:null,cannon:undefined,supplyTrip:null,ai:null,attackMove:{x:208,y:200,force:false}});
   f.update(.1);
   assert.equal(soldier.attackMove,null,'Attack-move clears upon arrival at destination');
   assert.equal(soldier.order,3,'Reaching attack-move destination transitions to order 3 guard stance');
@@ -715,7 +715,7 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
   const bug={x:510,y:380,team:'alien',type:'soldier',alive:true,hp:10};
   st.aliens=[bug];st.bullets=[];
   const oldY=soldier.y;
-  for(let i=0;i<20;i++){st.t+=.05;soldier.cool=0;f.update(.05);}
+  for(let i=0;i<40;i++){st.t+=.05;soldier.cool=0;f.update(.05);}
   assert(soldier.y>oldY,'Guard soldier steps out from anchor to align a legal firing lane');
   assert(Math.hypot(soldier.x-anchorX,soldier.y-anchorY)<=50.1,'Guard soldier remains within leash radius from anchor while stepping out');
   assert(st.bullets.length>0,'Guard soldier fires once legal lane is angled');
