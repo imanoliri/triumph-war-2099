@@ -12,6 +12,7 @@ index.html loads recovered asset globals, music.js, navigation.js, support.js, s
 | src/orders.js | Explicit-state troop order issue/step, shared use jobs, focus and attack-move interactions |
 | src/input.js | Owned keyboard/selection/commander/pointer/rally state and decisions; modal pause restoration |
 | src/input-dom.js | DOM event registration, CSS-to-world pointer normalization and native capture boundary |
+| src/winter-gunner.js | Explicit unit position/clock setup, six-round cadence and reload state; custom Snow fixed kit |
 | src/combat.js | Explicit-service firing/aiming/lane calculations and unit-owned burst/sweep lifecycle |
 | src/projectiles.js | Explicit-state projectile advancement, collision priority, plasma spark lifecycle and owner propagation |
 | src/breeding.js | Finite Normal nest opportunities, seeded RNG and birth animation phase with explicit capacity/emission inputs |

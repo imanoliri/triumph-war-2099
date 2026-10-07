@@ -1,0 +1,7 @@
+# TRI-074 snow roster browser evidence boundary
+
+Worker session013, feature/snow-trooper-roster. Local production preview served http://127.0.0.1:2104. Explicit hidden IAB creation was unsupported in a subagent; retry without visibility options created a tab showing the real initial game UI. Director then took tab ownership; worker stopped UI interactions. Preview stopped after director finished.
+
+Director reported actual ordinary-UI checks: deploy Whiteout; ground and air menu offered Infantry, Snow sniper, Winter Gunner, Commando; save Winter Gunner slot1 in both, reopen persisted; Units displayed distinct rendered Winter Gunner portrait/readable full text and retained Snow Sniper; deploy District Twelve and menu excluded Winter Gunner. Director artifact/report is maintained separately in its checkout (docs/playtests/2026-10-07-winter-gunner-director.png and matching director record). These observations are attributed to director, not worker's own visual confirmation. The later Normal starting-infantry context correction to9 is verified by exact production guide fixture.
+
+No live Winter Gunner delivery animation, six-round combat cadence, move interruption, audio listening or full mission completion was observed in this run. Automated VM checks independently exercise actual production carrier/air lifecycle/factory/cap and aiming/fire/order mechanics; they are simulation evidence. Historical Whiteout pressure artifacts predate this roster; no balance/win-rate claim.

@@ -1,7 +1,7 @@
 # Snow specialist roster
 
 - Ticket: TRI-074; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/snow-trooper-roster`
 
 ## Goal and user-visible outcome
 
@@ -9,10 +9,10 @@ Provide the agreed snow specialist roster, integrated with implemented matching 
 
 ## Acceptance criteria
 
-- [ ] Implement each trooper mechanic listed below, including damage/range/timing, order behavior and terrain limits.
-- [ ] Add distinct world roster entries and meaningful Units-tab descriptions/sprite previews for new types; future TRI-072 ground/air menu exposes only eligible matching-world slots. Do not require TRI-072 to be implemented in this ticket.
-- [ ] Integrate specialists into existing matching-world missions with documented placements/payloads without changing objectives, map assets or unrelated enemy pressure. For worlds without runtime missions, provide opt-in roster definitions and disposable fixtures; do not create a mission.
-- [ ] Add relevant positive/negative regressions, run node tools/dev.cjs test, update DESIGN/Units/Controls where behavior changes, and record browser evidence or its absence separately.
+- [x] Implement each trooper mechanic listed below, including damage/range/timing, order behavior and terrain limits.
+- [x] Add distinct world roster entries and meaningful Units-tab descriptions/sprite previews for new types; future TRI-072 ground/air menu exposes only eligible matching-world slots. Do not require TRI-072 to be implemented in this ticket.
+- [x] Integrate specialists into existing matching-world missions with documented placements/payloads without changing objectives, map assets or unrelated enemy pressure. For worlds without runtime missions, provide opt-in roster definitions and disposable fixtures; do not create a mission.
+- [x] Add relevant positive/negative regressions, run node tools/dev.cjs test, update DESIGN/Units/Controls where behavior changes, and record browser evidence or its absence separately.
 
 ## Scope and decisions
 
@@ -28,3 +28,8 @@ Execution authorized by user on 2026-10-07: director dispatches agents one ticke
 
 - Planning approval and queue: [2026-10-07 roster checkpoint](../journal/2026-10-07-009-world-roster-planning.md).
 
+- [2026-10-07 / 013](../journal/2026-10-07-013-snow-trooper-roster.md)
+
+## Implementation evidence (Review)
+
+Session013 records the fixed-kit interpretation approved by director, all-five Whiteout two-for-two replacement/counts, Snow-only live reinforcement options and guide portrait, production timing/order/terrain and actual carrier/air factory/cap fixtures. Full-suite outcome and live limitations are in the handoff. The existing TRI-072 menu is implemented and integrated; authored default payloads remain unchanged until the player opts into a composition.
