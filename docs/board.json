@@ -1313,10 +1313,16 @@
       "id": "TRI-075",
       "title": "Capital specialist roster",
       "task": "docs/tasks/capital-trooper-roster.md",
-      "status": "Ready",
-      "reason": "User authorized queue execution; Capital Shield Trooper and Laser Cannon remain in Capital; accepted task mechanics unchanged",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
+      "worker": {
+        "id": "/root/capital_roster_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-capital-trooper-roster",
+        "branch": "feature/capital-trooper-roster"
+      },
+      "branch": "feature/capital-trooper-roster"
     },
     {
       "id": "TRI-076",
@@ -5483,6 +5489,15 @@
       "details": [
         "Ready",
         "User authorized queue execution; Capital Shield Trooper and Laser Cannon remain in Capital; accepted task mechanics unchanged"
+      ]
+    },
+    {
+      "at": "2026-10-07T20:16:52.820Z",
+      "command": "dispatch",
+      "ticket": "TRI-075",
+      "details": [
+        "../triumph-capital-trooper-roster",
+        "/root/capital_roster_worker"
       ]
     }
   ]
