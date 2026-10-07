@@ -72,3 +72,22 @@ for(const blocker of ['shield','carrier','door','crystal']){
 }
 console.log('Passed isolated collision priority, nest credit, plasma deferral/expiry, exposed worm, owner, shield/carrier, destructible door and crystal contracts.');
 console.log('Passed immutable pre-extraction comparison: 30 seeded 18s burst/sweep/shot traces, RNG continuation, four 20s real mission simulations and independent asymmetric headings.');
+
+// TRI-073: real shared update, ordinary projectiles, trigger identity and lane gates.
+function scoutCase(){runtime.window.triumph.loadMission(1);if(runtime.window.triumph.state().paused)runtime.document.querySelector('#pause').onclick();const f=runtime.window.__fixture(),s=f.state;s.mask=null;s.rocks=[];s.doors=[];s.props=[];s.nests=[];s.vents=[];s.pickups=[];s.reinforcements=[];s.aircraft=[];s.bullets=[];s.mode='playing';const u=f.spawnDesertRider('rider-scout',300,300),a={x:330,y:300,type:'soldier',team:'alien',alive:true,hp:999,cool:999,external:{until:1e6}};s.humans=[u];s.aliens=[a];return {f,s,u,a};}
+{
+ const {f,s,u,a}=scoutCase();u.cool=99;u.attackMove={x:500,y:300,force:true};const order=u.attackMove;f.update(.38);assert.equal(u.x,262);assert.equal(s.bullets.length,1,'Immediate first counter round ignores ordinary cooldown');assert.equal(u.counterattack.target,a);assert.equal(u.evadeCool,2.5);assert.equal(u.attackMove,order,'Force order retained');
+ const p=s.bullets[0];assert.equal(p.damage,1);assert.equal(p.speed,290);assert.equal(p.dx,1);assert.equal(p.dy,0);assert(!p.plasma&&!p.sniper);
+ f.update(.03);assert.equal(s.bullets.length,1);f.update(.03);assert.equal(s.bullets.length,2);f.update(.06);assert.equal(s.bullets.length,3);assert.equal(u.counterattack,null);assert.equal(u.cool,.6,'Ordinary cadence resumes after final counter');f.update(.1);assert.equal(s.bullets.length+999-a.hp,3,'Exactly one volley including landed ordinary rounds');assert.equal(u.attackMove,order);
+}
+for(const invalid of ['dead','removed','burrow','hidden','range','offlane','wall']){
+ const {f,s,u,a}=scoutCase();f.update(.38);assert.equal(s.bullets.length,1);const other={...a,x:320,hp:999};s.aliens.push(other);u.attackMove={x:600,y:300,force:true};
+ if(invalid==='dead'){a.hp=0;a.alive=false;}if(invalid==='removed')s.aliens=s.aliens.filter(t=>t!==a);if(invalid==='burrow'){a.type='desert-worm';a.phase='burrow';}if(invalid==='hidden'||invalid==='wall')s.props=[{left:290,top:280,w:5,h:40,hp:100}];if(invalid==='range')a.x=600;if(invalid==='offlane')a.y=320;
+ f.update(.06);assert.equal(u.counterattack,null,invalid+' cancels pending volley');assert(s.bullets.length<=1,invalid+' cannot substitute a nearby enemy');
+}
+{const {f,s,u}=scoutCase();s.rocks=[{x:240,y:240,w:120,h:120}];f.update(.38);assert(!u.counterattack,'Blocked dash grants no counter');assert.equal(s.bullets.length,0);}
+console.log('Passed Scout immediate three-round counter, 0.06 s cadence, ordinary projectile/cooldown, retained force order and dead/removed/burrow/LOS/range/lane/terrain cancellation.');
+
+{const {f,s,u}=scoutCase();f.update(.38);f.selection.add(u);f.attackMoveTo({x:500,y:400},true);const next=u.attackMove;assert(next.force);f.update(.06);f.update(.06);assert.equal(u.attackMove,next,'New explicit order survives pending counter');assert.equal(s.bullets.length,3);s.aliens=[];const x=u.x,y=u.y;f.update(.1);assert.equal(u.attackMove,next);assert(Math.hypot(u.x-x,u.y-y)>0,'New explicit order resumes after counter');}
+
+{const {f,s,u}=scoutCase();f.update(.38);f.update(.12);assert.equal(s.bullets.length,3,'Coarse update retains 0.06 s scheduled cadence');assert.equal(u.counterattack,null);}

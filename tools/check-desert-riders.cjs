@@ -38,3 +38,6 @@ c=create('convoy-crawler',290,300,rock,[{x:450,y:300}]);const nav=box.window.Tri
 for(let i=0;i<900;i++){r.step(c,.04,env({blocked:rock,route:(u,p,b)=>nav.step(u,p,b,'rock')}));assert(r.clear(c.x,c.y,17,rock));}assert.equal(c.routeIndex,1,'Crawler completes navigable route around terrain');
 for(const type of ['rider-scout','dune-guard','field-mechanic','convoy-crawler']){const calls=[],ctx=new Proxy({}, {get:(o,k)=>(...a)=>calls.push([k,...a]),set:()=>true});r.draw(ctx,create(type));assert.equal(calls[0][0],'save');assert.equal(calls.at(-1)[0],'restore');assert(calls.some(c=>c[0]==='fillRect'));}
 console.log('Passed Desert Rider timing, eight-direction five-pellet weapon, repair caps/range/LOS, warning evade, vulnerability, full-body sweep/navigation and finite enemy-only exposed mines.');
+
+// TRI-073: a partially completed dash or a new obstruction never grants a volley.
+{let fired=0;const u=create('rider-scout'),a={x:330,y:300,type:'soldier',team:'alien',alive:true,hp:4},e=env({aliens:[a],counterShot:()=>{fired++;return true;}});r.step(u,.1,e);assert(u.evade);assert.equal(u.evade.source,a);assert.equal(fired,0);e.blocked=x=>x<285;r.step(u,.1,e);assert.equal(u.evade,null);assert(!u.counterattack);assert.equal(fired,0);assert.equal(u.evadeCool,2.5);}

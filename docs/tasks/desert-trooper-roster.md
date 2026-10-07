@@ -1,7 +1,7 @@
 # Desert Scout counterattack
 
 - Ticket: TRI-073; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/desert-trooper-roster`
 
 ## Goal and user-visible outcome
 
@@ -9,10 +9,14 @@ Extend existing Desert Scout with its agreed post-dash counterattack.
 
 ## Acceptance criteria
 
-- [ ] Implement each trooper mechanic listed below, including damage/range/timing, order behavior and terrain limits.
-- [ ] Add distinct world roster entries and meaningful Units-tab descriptions/sprite previews for new types; future TRI-072 ground/air menu exposes only eligible matching-world slots. Do not require TRI-072 to be implemented in this ticket.
-- [ ] Integrate specialists into existing matching-world missions with documented placements/payloads without changing objectives, map assets or unrelated enemy pressure. For worlds without runtime missions, provide opt-in roster definitions and disposable fixtures; do not create a mission.
-- [ ] Add relevant positive/negative regressions, run node tools/dev.cjs test, update DESIGN/Units/Controls where behavior changes, and record browser evidence or its absence separately.
+- [x] Implement each trooper mechanic listed below, including damage/range/timing, order behavior and terrain limits.
+- [x] Add distinct world roster entries and meaningful Units-tab descriptions/sprite previews for new types; future TRI-072 ground/air menu exposes only eligible matching-world slots. Do not require TRI-072 to be implemented in this ticket.
+- [x] Integrate specialists into existing matching-world missions with documented placements/payloads without changing objectives, map assets or unrelated enemy pressure. For worlds without runtime missions, provide opt-in roster definitions and disposable fixtures; do not create a mission.
+- [x] Add relevant positive/negative regressions, run node tools/dev.cjs test, update DESIGN/Units/Controls where behavior changes, and record browser evidence or its absence separately.
+
+## Acceptance interpretation for TRI-073
+
+Director dispatch confirmed Scout-only scope: existing Desert roster, sprite previews, world/menu eligibility and mission deployments are preserved, with Scout description updated. No new type, payload, placement or mission is required. Existing all-five Dunes/variant-B and reinforcement/guide checks cover preservation; counterattack runtime checks cover the changed mechanic.
 
 ## Scope and decisions
 
@@ -28,3 +32,4 @@ Execution authorized by user on 2026-10-07: director dispatches agents one ticke
 
 - Planning approval and queue: [2026-10-07 roster checkpoint](../journal/2026-10-07-009-world-roster-planning.md).
 
+- [2026-10-07 / 012](../journal/2026-10-07-012-desert-trooper-roster.md)

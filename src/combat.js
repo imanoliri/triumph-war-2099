@@ -109,8 +109,10 @@ function aimHuman(u,target,dt){
  else if(!visible(u,target))trackBurst(u,null);
 }
 
+// Scout dash volleys share the ordinary eight-direction lane and projectile factory.
+function scoutCounterShot(u,target){u.angle=diagonal(Math.atan2(target.y-u.y,target.x-u.x));if(!visible(u,target)||!humanFiringLane(u,target))return false;u.cool=0;fire(u);return true;}
 function fire(u,freeAim=false,projectileAngle){if(u.cool>0)return;if(u.team==='human'&&emitAcousticEvent)emitAcousticEvent({x:u.x,y:u.y},280);if(u.type==='dune-guard'&&u.cannon===undefined){getState().bullets.push(...desertRiders.pellets(u,{x:u.x+Math.cos(u.angle)*100,y:u.y+Math.sin(u.angle)*100}));u.cool=desertRiders.rules.guardCooldown;sound(11,.08);return;}if(u.cannon!==undefined)u.angle=cannonAngle(u.angle);else if(!freeAim&&u.team==='human'&&u.type!=='tank'&&u.type!=='snow-sniper')u.angle=diagonal(u.angle);u.cool=u.team==='alien'?enemyFireDelay(u):u.type==='snow-sniper'?1.2:['rider-scout','field-mechanic'].includes(u.type)?.6:u.type==='tank'?.2:u.type==='air'?.3:u.type==='commander'?(u.weapon===1?.180:.250):u.weapon===1?.180:u.type==='commando'?.38:u.order===3?.20:.38;const angles=[u.team==='alien'?(u.shotOffset||0):0];for(const a of angles){const angle=(u.cannon!==undefined&&projectileAngle!==undefined?projectileAngle:u.angle)+a;getState().bullets.push({x:u.x+Math.cos(angle)*10,y:u.y+Math.sin(angle)*10,dx:Math.cos(angle),dy:Math.sin(angle),team:u.team,owner:u.id,life:u.type==='snow-sniper'?1.5:u.weapon===1?.5:u.weapon===2?1.1:2.2,speed:u.team==='alien'?120:u.type==='snow-sniper'?400:290,damage:u.type==='snow-sniper'?4:u.type==='tank'?5:1,plasma:u.weapon===2,...(u.type==='snow-sniper'?{sniper:true}:{})});}if(originalAudio())sound(u.team==='alien'?0:u.type==='snow-sniper'?11:u.weapon===1?13:u.weapon===2?12:u.type==='tank'?24:11,u.type==='commander'?.25:u.type==='tank'?.16:.08);else if(u.type==='commander')tone(110+rnd()*80,.025,.013);}
 function burst(x,y,size=12,color='#f5a641'){getState().effects.push({x,y,size,color,t:.4});}
 
-return {enemyFireDelay,trackBurst,burstReady,finishBurstShot,tankGroup,aimTank,aimCannon,humanFiringLane,aimHuman,fire,burst,sprayDensity};
+return {scoutCounterShot,enemyFireDelay,trackBurst,burstReady,finishBurstShot,tankGroup,aimTank,aimCannon,humanFiringLane,aimHuman,fire,burst,sprayDensity};
 }};
