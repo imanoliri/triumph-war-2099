@@ -1153,9 +1153,16 @@
       "id": "TRI-065",
       "title": "High-fidelity pixel art sprites for custom soldier types",
       "task": "docs/tasks/custom-soldier-sprite-art.md",
-      "status": "Backlog",
-      "reason": "Awaiting agreed scope",
-      "questions": []
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
+      "questions": [],
+      "approval": "User approved queue execution for custom soldier sprite art",
+      "worker": {
+        "id": "/root/sprite_art_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-soldier-sprite-art",
+        "branch": "feature/custom-soldier-sprite-art"
+      },
+      "branch": "feature/custom-soldier-sprite-art"
     },
     {
       "id": "TRI-066",
@@ -4489,6 +4496,24 @@
         "/root/director",
         "326b949",
         "fb29d44aabec3fcacba415f508b43ccfa9ba8f3c"
+      ]
+    },
+    {
+      "at": "2026-10-07T12:01:51.490Z",
+      "command": "move",
+      "ticket": "TRI-065",
+      "details": [
+        "Ready",
+        "User approved queue execution for custom soldier sprite art"
+      ]
+    },
+    {
+      "at": "2026-10-07T12:02:20.374Z",
+      "command": "dispatch",
+      "ticket": "TRI-065",
+      "details": [
+        "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-soldier-sprite-art",
+        "/root/sprite_art_worker"
       ]
     }
   ]
