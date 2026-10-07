@@ -1243,8 +1243,8 @@
       "id": "TRI-071",
       "title": "Show custom unit sprites in the Units tab",
       "task": "docs/tasks/custom-unit-guide-sprites.md",
-      "status": "Queued",
-      "reason": "Planning only; implementation waits until user finishes brainstorming and authorizes queue execution",
+      "status": "Ready",
+      "reason": "Sequential execution: TRI-070 accepted; prepare approved Units-tab sprite fix next",
       "questions": [],
       "approval": "User 2026-10-07 reported missing custom unit sprites in Units tab and requested tickets queued during director brainstorming"
     },
@@ -5240,6 +5240,15 @@
         "/root",
         "2e5b4b161353d42bceab0da947d021f27152fa4b",
         "8bc16d31de2b91a837c77f7ce155596fa5181a35"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:08:54.421Z",
+      "command": "move",
+      "ticket": "TRI-071",
+      "details": [
+        "Ready",
+        "Sequential execution: TRI-070 accepted; prepare approved Units-tab sprite fix next"
       ]
     }
   ]
