@@ -1240,6 +1240,15 @@
       "reason": "Planning only; implementation waits until user finishes brainstorming and authorizes queue execution",
       "questions": [],
       "approval": "User 2026-10-07 reported missing custom unit sprites in Units tab and requested tickets queued during director brainstorming"
+    },
+    {
+      "id": "TRI-072",
+      "title": "Configure future ground and air eagle squads during missions",
+      "task": "docs/tasks/reinforcement-composition-menu.md",
+      "status": "Queued",
+      "reason": "Planning queue only; user is brainstorming and has not authorized implementation execution",
+      "questions": [],
+      "approval": "User agreed persistent in-mission reinforcement menu with separate ground and air compositions; numerical limits and roster details remain planning refinements"
     }
   ],
   "events": [
@@ -4648,6 +4657,34 @@
       "details": [
         "Queued",
         "Planning only; implementation waits until user finishes brainstorming and authorizes queue execution"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:38:00.262Z",
+      "command": "create",
+      "ticket": "TRI-072",
+      "details": [
+        "reinforcement-composition-menu",
+        "Configure future ground and air eagle squads during missions",
+        "During a mission, configure separate ground and air troop compositions in a menu; future eagle pickups use the current matching selection until changed"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:38:22.202Z",
+      "command": "move",
+      "ticket": "TRI-072",
+      "details": [
+        "Ready",
+        "User agreed persistent in-mission reinforcement menu with separate ground and air compositions; numerical limits and roster details remain planning refinements"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:38:30.855Z",
+      "command": "move",
+      "ticket": "TRI-072",
+      "details": [
+        "Queued",
+        "Planning queue only; user is brainstorming and has not authorized implementation execution"
       ]
     }
   ]
