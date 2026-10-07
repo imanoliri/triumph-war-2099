@@ -886,7 +886,7 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
     st.mode='playing';
     resumeSimulation();
 
-    // 1. Acoustic Awareness: gunfire within 280px with clear LOS wakes bug up and turns it toward sound
+    // 1. Acoustic Awareness: gunfire within 220px with clear LOS wakes bug up and turns it toward sound
     const soldier={x:200,y:200,team:'human',type:'soldier',alive:true,hp:1,weapon:0,cool:0,order:0};
     const bugUnaware={x:420,y:200,team:'alien',type:'soldier',alive:true,hp:4,angle:Math.PI,ai:{nextScan:100,boredUntil:100,target:null}};
     const bugFar={x:600,y:200,team:'alien',type:'soldier',alive:true,hp:4,angle:Math.PI,ai:{nextScan:100,boredUntil:100,target:null}};
@@ -896,8 +896,8 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
 
     // Fire weapon from soldier at (200, 200)
     f.fire(soldier);
-    assert.equal(bugUnaware.ai.boredUntil,0,'Nearby bug within 280px wakes up (bored cleared) on weapon fire');
-    assert.equal(bugFar.ai.boredUntil,100,'Bug beyond 280px radius is unaffected by weapon sound');
+    assert.equal(bugUnaware.ai.boredUntil,0,'Nearby bug within 220px wakes up (bored cleared) on weapon fire');
+    assert.equal(bugFar.ai.boredUntil,100,'Bug beyond 220px radius is unaffected by weapon sound');
 
     // 2. Nest Damage Acoustic Event
     const nest={x:300,y:200,hp:50};
@@ -905,36 +905,36 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
     st.nests=[nest];st.aliens=[nestBug];st.rocks=[];st.doors=[];st.props=[];
     nest.hp-=10;
     f.emitAcousticEvent(nest,280);
-    assert.equal(nestBug.ai.boredUntil,0,'Bug within 280px wakes up when nearby nest takes damage');
+    assert.equal(nestBug.ai.boredUntil,0,'Bug within 220px wakes up when nearby nest takes damage');
     assert.equal(nestBug.intent?.mode,'approach','Bug investigates nest damage sound origin');
 
-    // 3. Combat focus & wander/pause break reduction
+    // 3. TRI-070 retains bounded randomized breaks during combat focus
     const targetBug={x:250,y:200,team:'alien',type:'soldier',alive:true,hp:4,ai:{target:soldier}};
     st.humans=[soldier];st.aliens=[targetBug];
     for(let step=0;step<10;step++){
       st.t+=.1;
       f.bugIntent(targetBug,soldier,.1,1);
-      assert.equal(targetBug.intent?.mode,'approach','Bug engaged in combat eliminates wander/pause breaks and maintains approach mode');
+      assert(['approach','wander','pause'].includes(targetBug.intent?.mode),'Engaged bug uses legal bounded intent');
     }
 
-    // 4. Pack Alerting: perceiving or taking damage alerts adjacent bugs within 160px
+    // 4. TRI-070 local pack alerts use 120px, sight and source cooldown
     const mainBug={x:300,y:200,team:'alien',type:'soldier',alive:true,hp:4};
     const packBugA={x:380,y:200,team:'alien',type:'soldier',alive:true,hp:4,ai:{target:null}};
     const packBugB={x:550,y:200,team:'alien',type:'soldier',alive:true,hp:4,ai:{target:null}};
     st.aliens=[mainBug,packBugA,packBugB];
     st.humans=[soldier];soldier.x=280;soldier.y=200;
 
-    f.alertPack(mainBug,soldier,160);
-    assert.equal(packBugA.ai.target,soldier,'Adjacent bug within 160px is alerted to swarm threat');
+    f.alertPack(mainBug,soldier);
+    assert.equal(packBugA.ai.target,soldier,'Adjacent bug within 120px is alerted to swarm threat');
     assert.equal(packBugA.intent?.mode,'approach','Alerted pack bug enters approach mode toward threat');
-    assert.equal(packBugB.ai.target,null,'Bug beyond 160px radius is not alerted');
+    assert.equal(packBugB.ai.target,null,'Bug beyond 120px radius is not alerted');
 
     // Damaging main bug triggers pack alert
-    packBugA.ai.target=null;
+    packBugA.ai.target=null;st.t+=2.5;
     f.damage(mainBug,1,soldier.id);
-    assert.equal(packBugA.ai.target,soldier,'Damaging bug alerts adjacent pack within 160px');
+    assert.equal(packBugA.ai.target,soldier,'Damaging bug alerts adjacent pack within 120px');
 
-    console.log('Passed TRI-064 aggressive and reactive alien AI with acoustic awareness, combat focus and pack alerting.');
+    console.log('Passed TRI-064/TRI-070 local acoustic awareness, randomized combat focus and throttled pack alerting.');
   }
 
   // TRI-065 High-fidelity pixel art sprite overlays for custom soldier types

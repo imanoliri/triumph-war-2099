@@ -35,6 +35,8 @@ requestAnimationFrame caps dt at 0.04 s, updates only while playing/unpaused, dr
 
 Unit orders and object references are mutable runtime state. Never persist raw live references in handoff documents. window.triumph.state() provides a JSON snapshot; loadMission(1..9) selects a mission; command(2/3,...) controls the assistant's commanders. Simulation fixtures expose internal helpers only in the test VM.
 
+TRI-070 authored defaults live in `window.TriumphBalance.combatAI` in src/balance.js; game.js owns local alarm/listener cooldowns, recruited-target provenance and friendly lane scoring. `tools/check-ai-balance.cjs` compares all affected runtime files to immutable starting commit `f5b627f5c569c122b226ae5e4504b92bb607715b`. Legacy weapon traces disable the named acoustic callback on both sides, and legacy input/support comparisons suppress autonomous acquisition/hearing/pack, because those unrelated AI decisions intentionally change RNG/outcomes. Their immutable source loaders and explicit firing/input/support assertions remain; full recreation and real combat simulations still execute production AI.
+
 ## Coordinates and collision
 
 The world is 1024×768; the top 36 px is HUD. Pointer coordinates scale from the canvas CSS size to world coordinates. DOM Rally button overlays the HUD; pointer actions on the canvas use the same scaled coordinates.

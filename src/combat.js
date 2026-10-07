@@ -89,7 +89,10 @@ function aimHuman(u,target,dt){
   const leash=window.TriumphBalance?.guardLeashRadius||50;
   const speed=u.type==='commander'?55:36;
   let stepX=0,stepY=0;
-  if(Math.abs(offset)>=radius-1){stepX=-sn*offset;stepY=c*offset;}
+  const range=u.type==='snow-sniper'?480:u.type==='dune-guard'?120:['rider-scout','field-mechanic'].includes(u.type)?180:u.weapon===1?145:u.weapon===2?319:638;
+  // Close into reach before sidestepping: short-range attack-movers must not stall outside range.
+  if(Math.hypot(dx,dy)>range){stepX=dx;stepY=dy;}
+  else if(Math.abs(offset)>=radius-1){stepX=-sn*offset;stepY=c*offset;}
   else{stepX=dx;stepY=dy;}
   const stepLen=Math.hypot(stepX,stepY);
   const moveDist=speed*dt;

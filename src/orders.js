@@ -62,6 +62,6 @@ function attackMoveInteraction(u,target,dt){const s=getState();
  else if(!gun.occupant){gun.occupant=u;u.cannon=s.cannons.indexOf(gun);u.x=gun.x;u.y=gun.y;u.weapon=2;}
  return true;
 }
-function attackMoveStep(u,target,dt){const s=getState();if(attackMoveInteraction(u,target,dt))return true;const goal=u.attackMove;if(!goal)return false;if(!goal.force&&target&&dist(u,target)<160){aimHuman(u,target,dt*.5);return true;}if(dist(u,goal)>12)navigate(u,goal.x-u.x,goal.y-u.y,dt,u.type==='tank'?30:36);else {u.attackMove=null;u.order=3;u.anchor={x:u.x,y:u.y};}return true;}
+function attackMoveStep(u,target,dt){const s=getState();if(attackMoveInteraction(u,target,dt))return true;const goal=u.attackMove;if(!goal)return false;const range=u.type==='snow-sniper'?480:u.type==='tank'?300:u.type==='dune-guard'?140:['rider-scout','field-mechanic'].includes(u.type)?180:u.weapon===1?165:u.weapon===2?319:245;if(!goal.force&&target&&dist(u,target)<range){aimHuman(u,target,dt*.85);return true;}if(dist(u,goal)>12)navigate(u,goal.x-u.x,goal.y-u.y,dt,u.type==='tank'?30:36);else {u.attackMove=null;u.order=3;u.anchor={x:u.x,y:u.y};}return true;}
 return {giveOrder,selectable,attackMoveTo,usableAt,useOrderTo,useSight,useOrderStep,enemyAt,focusAttackTo,focusAttackStep,attackMoveInteraction,attackMoveStep};
 }};

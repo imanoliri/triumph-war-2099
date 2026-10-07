@@ -13,8 +13,14 @@ function baselineFixture(source){
 assert.throws(()=>baselineFixture(fixture.replace(loaderAnchor,'')),/anchor must exist exactly once/);
 assert.throws(()=>baselineFixture(fixture+'\n'+loaderAnchor),/anchor must exist exactly once/);
 const injectedFixture=baselineFixture(fixture);
-function load(old=false){return new Function('require','module','__dirname','baseline',injectedFixture+'\nreturn sandbox;')(require,{},__dirname,old?baseline:null);}
-const before=load(true),after=load(),plain=v=>{const seen=new Map();return JSON.parse(JSON.stringify(v,(key,value)=>{if(value&&typeof value==='object'){if(seen.has(value))return {$ref:seen.get(value)};seen.set(value,seen.size);}return value;}));};
+function load(old=false,weaponOnly=false){
+ // TRI-070 intentionally changes acoustic AI/RNG. Compare the immutable weapon contract with
+ // that named service disabled on both sides; real-runtime simulations retain the service.
+ const hook='emitAcousticEvent:(origin,r)=>emitAcousticEvent(origin,r)';
+ const code=injectedFixture.replace(baselineLoader,baselineLoader+" if(file==='game.js'&&weaponOnly){if(!source.includes(hook))throw Error('Missing combat acoustic service');source=source.replace(hook,'emitAcousticEvent:()=>{}');}");
+ return new Function('require','module','__dirname','baseline','weaponOnly','hook',code+'\nreturn sandbox;')(require,{},__dirname,old?baseline:null,weaponOnly,hook);
+}
+const before=load(true,true),after=load(false,true),runtime=load(),plain=v=>{const seen=new Map();return JSON.parse(JSON.stringify(v,(key,value)=>{if(value&&typeof value==='object'){if(seen.has(value))return {$ref:seen.get(value)};seen.set(value,seen.size);}return value;}));};
 function trace(box,type,seed,weapon=0,cannon=false){
  box.window.triumph.loadMission(1);const f=box.window.__fixture(),s=f.state;s.mask=null;s.rocks=[];s.doors=[];s.props=[];s.nests=[];s.bullets=[];f.setSeed(seed);
  const u={x:300,y:300,team:'human',type,id:1,alive:true,hp:8,cool:0,weapon,order:3,angle:0};if(cannon)u.cannon=0;
@@ -25,7 +31,7 @@ function trace(box,type,seed,weapon=0,cannon=false){
 for(const seed of [1,123,98213])for(const [type,weapon,cannon] of [['soldier',0,false],['commando',1,false],['robot',2,false],['tank',0,false],['soldier',2,true],['commando',2,true],['commander',0,false],['rider-scout',0,false],['field-mechanic',0,false],['dune-guard',0,false]])assert.deepEqual(trace(after,type,seed,weapon,cannon),trace(before,type,seed,weapon,cannon),'Seeded aiming/burst/shot/RNG '+type+' '+seed+' '+cannon);
 function simulation(box,mission,seed){const api=box.window.triumph;typeof mission==='number'?api.loadMission(mission):api.loadCustomMission(mission);const f=box.window.__fixture(),s=f.state;f.setSeed(seed);s.mode='playing';if(api.state().paused)box.document.querySelector('#pause').onclick();for(let i=0;i<500;i++)f.update(.04);return plain(s);}
 // TRI-061: 8-direction targeting applies to all soldiers in real runtime simulation.
-for(const mission of [1,3])for(const seed of [77,812]){ const s=simulation(after,mission,seed); assert(s&&s.humans.length>0,'20s real runtime simulation '+mission+' '+seed); }
+for(const mission of [1,3])for(const seed of [77,812]){ const s=simulation(runtime,mission,seed); assert(s&&s.humans.length>0,'20s real runtime simulation '+mission+' '+seed); }
 // TRI-061: all human infantry soldier unit types gain eight legal firing/render headings.
 for(const type of ['soldier','commander','robot','commando','rider-scout','dune-guard','field-mechanic'])for(let i=0;i<8;i++){
  after.window.triumph.loadMission(1);const f=after.window.__fixture(),s=f.state,a=i*Math.PI/4;
