@@ -2,12 +2,13 @@ if (require.main === module) process.chdir(require('node:path').resolve(__dirnam
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const handlers={},elements={},noop=()=>{};
 const ctx=new Proxy({}, {get:(o,k)=>o[k]||noop,set:(o,k,v)=>(o[k]=v,true)});
-for(const id of ['#rally','#cmd-1','#cmd-2','#cmd-3','#cmd-4','#order-0','#order-1','#order-2','#order-3','#command-hint','#gamepad-status','#units','#units-close','#units-context','#unit-cards'])elements[id]={setAttribute:noop};
+for(const id of ['#rally','#cmd-1','#cmd-2','#cmd-3','#cmd-4','#order-0','#order-1','#order-2','#order-3','#command-hint','#gamepad-status','#units','#units-close','#units-context','#unit-cards','#reinforcements','#reinforcement-slots','#reinforcement-message','#reinforcement-save','#reinforcement-close'])elements[id]={setAttribute:noop};
 const canvasHandlers={};const canvas={attributes:{},setAttribute(k,v){this.attributes[k]=v},getContext:()=>ctx,focus:noop,addEventListener:(name,cb)=>canvasHandlers[name]=cb,getBoundingClientRect:()=>({left:100,top:50,width:512,height:384}),setPointerCapture:noop,hasPointerCapture:()=>true,releasePointerCapture:noop};
 for(const id of ['#start','#pause','#reset','#options','#close'])elements[id]={setAttribute:noop};
 elements['#game']=canvas;elements['#bots']={checked:true};elements['#difficulty']={value:'normal'};
 elements['#controls']={open:false,showModal(){this.open=true},close(){this.open=false}};
 elements['#unit-guide']={open:false,showModal(){this.open=true},close(){this.open=false;this.onclose()}};
+elements['#reinforcement-menu']={open:false,showModal(){this.open=true},close(){this.open=false;this.onclose()}};
 elements['#mission']={value:'0'};
 class Image {constructor(){this.complete=true;this.naturalWidth=20;}}
 class Audio {cloneNode(){return this}play(){return Promise.resolve()}}

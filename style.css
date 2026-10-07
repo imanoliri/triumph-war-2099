@@ -13,3 +13,5 @@
 #game[data-tactical="true"]{border-color:#55ddda;box-shadow:0 0 0 3px #16464a,0 0 20px #37d6c555}#pause[aria-pressed="true"]{background:#123d45;color:#aefff0;border-color:#55ddda}
 
 .unit-card canvas{width:48px;height:48px;flex:0 0 48px;border:0;background:transparent;image-rendering:pixelated}
+
+#reinforcement-menu fieldset{margin:1rem 0;padding:1rem;border:1px solid #788c91}#reinforcement-menu fieldset label{display:inline-block;margin:.35rem .7rem .35rem 0}#reinforcement-menu select{display:block;max-width:100%}
