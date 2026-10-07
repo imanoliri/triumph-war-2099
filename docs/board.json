@@ -1313,23 +1313,24 @@
       "id": "TRI-075",
       "title": "Capital specialist roster",
       "task": "docs/tasks/capital-trooper-roster.md",
-      "status": "Review",
-      "reason": "Worker b7c5ca7 handoff, implementation4aebda1; final full suite exit0; independent Capital/guide/menu checks passed; thin-wall geometry review finding fixed; saved browser artifacts independently inspected",
+      "status": "Done",
+      "reason": "Accepted Capital scope; final full suite and independent focused checks passed; thin-wall cutoff and original empty-state regression fixed; actual browser evidence separately limits timing/audio/completion claims",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
-      "worker": {
-        "id": "/root/capital_roster_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-capital-trooper-roster",
-        "branch": "feature/capital-trooper-roster"
-      },
-      "branch": "feature/capital-trooper-roster"
+      "branch": "feature/capital-trooper-roster",
+      "completion": {
+        "evidence": "Accepted Capital scope; final full suite and independent focused checks passed; thin-wall cutoff and original empty-state regression fixed; actual browser evidence separately limits timing/audio/completion claims",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "b7c5ca7ca33365d2719cf4c2b7cc7af536a91406",
+        "squashCommit": "4ec4b60bc39575009e9223e1c8e48f03d11f334c"
+      }
     },
     {
       "id": "TRI-076",
       "title": "Maritime specialist roster",
       "task": "docs/tasks/maritime-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "status": "Ready",
+      "reason": "User authorized sequential queue execution; approved Maritime Suppressor stops hit mobile enemies and Grenadier mechanics unchanged",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     },
@@ -5507,6 +5508,27 @@
       "details": [
         "Review",
         "Worker b7c5ca7 handoff, implementation4aebda1; final full suite exit0; independent Capital/guide/menu checks passed; thin-wall geometry review finding fixed; saved browser artifacts independently inspected"
+      ]
+    },
+    {
+      "at": "2026-10-07T20:41:13.208Z",
+      "command": "move",
+      "ticket": "TRI-075",
+      "details": [
+        "Done",
+        "Accepted Capital scope; final full suite and independent focused checks passed; thin-wall cutoff and original empty-state regression fixed; actual browser evidence separately limits timing/audio/completion claims",
+        "/root/director",
+        "4ec4b60bc39575009e9223e1c8e48f03d11f334c",
+        "b7c5ca7ca33365d2719cf4c2b7cc7af536a91406"
+      ]
+    },
+    {
+      "at": "2026-10-07T20:41:24.429Z",
+      "command": "move",
+      "ticket": "TRI-076",
+      "details": [
+        "Ready",
+        "User authorized sequential queue execution; approved Maritime Suppressor stops hit mobile enemies and Grenadier mechanics unchanged"
       ]
     }
   ]
