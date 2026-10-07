@@ -1153,16 +1153,17 @@
       "id": "TRI-065",
       "title": "High-fidelity pixel art sprites for custom soldier types",
       "task": "docs/tasks/custom-soldier-sprite-art.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "High-fidelity pixel art sprites for custom soldier types implemented and verified",
       "questions": [],
       "approval": "User approved queue execution for custom soldier sprite art",
-      "worker": {
-        "id": "/root/sprite_art_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-soldier-sprite-art",
-        "branch": "feature/custom-soldier-sprite-art"
-      },
-      "branch": "feature/custom-soldier-sprite-art"
+      "branch": "feature/custom-soldier-sprite-art",
+      "completion": {
+        "evidence": "High-fidelity pixel art sprites for custom soldier types implemented and verified",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "8678b7d7686733d6549ea2e1fa607568372c0458",
+        "squashCommit": "b6d96c30de251ccdb1ff303d306dd1f78ff1c651"
+      }
     },
     {
       "id": "TRI-066",
@@ -4514,6 +4515,27 @@
       "details": [
         "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-soldier-sprite-art",
         "/root/sprite_art_worker"
+      ]
+    },
+    {
+      "at": "2026-10-07T13:13:17.887Z",
+      "command": "move",
+      "ticket": "TRI-065",
+      "details": [
+        "Review",
+        "Worker completed task and verified pixel art sprite overlays across all custom soldier types"
+      ]
+    },
+    {
+      "at": "2026-10-07T13:13:28.161Z",
+      "command": "move",
+      "ticket": "TRI-065",
+      "details": [
+        "Done",
+        "High-fidelity pixel art sprites for custom soldier types implemented and verified",
+        "/root/director",
+        "b6d96c3",
+        "8678b7d7686733d6549ea2e1fa607568372c0458"
       ]
     }
   ]
