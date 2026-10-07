@@ -1243,16 +1243,17 @@
       "id": "TRI-071",
       "title": "Show custom unit sprites in the Units tab",
       "task": "docs/tasks/custom-unit-guide-sprites.md",
-      "status": "Review",
-      "reason": "Worker e911e86 full suite exit0, actual browser portraits verified; independent director guide/render checks and screenshot review passed",
+      "status": "Done",
+      "reason": "Independent guide/render regression and actual screenshot review passed; worker full suite exit0; scoped presentation fix accepted",
       "questions": [],
       "approval": "User 2026-10-07 reported missing custom unit sprites in Units tab and requested tickets queued during director brainstorming",
-      "worker": {
-        "id": "/root/unit_guide_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-custom-unit-guide-sprites",
-        "branch": "fix/custom-unit-guide-sprites"
-      },
-      "branch": "fix/custom-unit-guide-sprites"
+      "branch": "fix/custom-unit-guide-sprites",
+      "completion": {
+        "evidence": "Independent guide/render regression and actual screenshot review passed; worker full suite exit0; scoped presentation fix accepted",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "e911e86e97efd168a811510d720b10738c2f4e4f",
+        "squashCommit": "4ae11e93a69b8cc119939f924c3726ebd3721cbe"
+      }
     },
     {
       "id": "TRI-072",
@@ -5273,6 +5274,18 @@
       "details": [
         "Review",
         "Worker e911e86 full suite exit0, actual browser portraits verified; independent director guide/render checks and screenshot review passed"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:18:59.395Z",
+      "command": "move",
+      "ticket": "TRI-071",
+      "details": [
+        "Done",
+        "Independent guide/render regression and actual screenshot review passed; worker full suite exit0; scoped presentation fix accepted",
+        "/root",
+        "4ae11e93a69b8cc119939f924c3726ebd3721cbe",
+        "e911e86e97efd168a811510d720b10738c2f4e4f"
       ]
     }
   ]

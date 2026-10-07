@@ -19,3 +19,6 @@ TRI-070 complete: independent full suite exit0, scoped code review accepted with
 
 TRI-071 prepared from main b06b998, initial session010, isolated ../triumph-custom-unit-guide-sprites on fix/custom-unit-guide-sprites. Dispatched actual worker /root/unit_guide_worker; mirror succeeded at87items. No concurrent implementation worker; TRI-070 worker complete. Next exact action: receive TRI-071 Review report, independently inspect sprite/guide diff and verification, squash-integrate accepted fix, then prepare TRI-072 reinforcement menu.
 
+
+TRI-071 accepted and squash-integrated4ae11e93a69b8cc119939f924c3726ebd3721cbe from workere911e86e97efd168a811510d720b10738c2f4e4f. Independent scoped regressions/screenshots passed; worker full suite exit0. Next exact action: move TRI-072 Ready, checkpoint and prepare isolated reinforcement-composition-menu worker.
+

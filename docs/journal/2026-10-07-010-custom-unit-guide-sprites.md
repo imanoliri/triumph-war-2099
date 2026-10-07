@@ -42,3 +42,6 @@ No open design questions. Exact IAB engine version not exposed by available tool
 ## Next action / handoff
 
 Review commit: branch HEAD, title `Show existing custom soldier sprites in Units guide`; resolve exact SHA with `git log -1 --format=%H fix/custom-unit-guide-sprites`. Scoped implementation/docs/evidence committed; working tree clean. Next action: director independently review diff, focused/full-suite evidence and actual screenshots, then record Review and approved squash integration. Director reviews and squash-integrates; branch is not merged and resulting squash SHA belongs in a subsequent director checkpoint.
+
+Director acceptance: reviewed final scoped diff and actual browser screenshots; independent check-unit-guide and check-rendering passed, final focused guide rerun passed, worker full suite exit0. Squash4ae11e93a69b8cc119939f924c3726ebd3721cbe from reviewed workere911e86e97efd168a811510d720b10738c2f4e4f. Board Done; next TRI-072 menu. No broad gameplay/audio claim or publication.
+
