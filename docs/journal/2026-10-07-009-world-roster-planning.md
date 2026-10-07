@@ -16,3 +16,6 @@ Execution checkpoint: TRI-070 dispatched to /root/ai_balance_worker, preserved .
 
 TRI-070 complete: independent full suite exit0, scoped code review accepted with live calibration gap; squash2e5b4b161353d42bceab0da947d021f27152fa4b from worker8bc16d31de2b91a837c77f7ce155596fa5181a35. GitHub mirror recovered and synchronized 87 items; prior failure limitation resolved. Next exact action: prepare/dispatch TRI-071 custom-unit-guide-sprites on isolated branch.
 
+
+TRI-071 prepared from main b06b998, initial session010, isolated ../triumph-custom-unit-guide-sprites on fix/custom-unit-guide-sprites. Dispatched actual worker /root/unit_guide_worker; mirror succeeded at87items. No concurrent implementation worker; TRI-070 worker complete. Next exact action: receive TRI-071 Review report, independently inspect sprite/guide diff and verification, squash-integrate accepted fix, then prepare TRI-072 reinforcement menu.
+
