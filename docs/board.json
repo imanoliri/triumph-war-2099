@@ -1259,12 +1259,13 @@
       "id": "TRI-072",
       "title": "Configure future ground and air eagle squads during missions",
       "task": "docs/tasks/reinforcement-composition-menu.md",
-      "status": "Queued",
-      "reason": "Parked preserved menu checkout pending user air-count decision; continue other approved tickets while user away",
+      "status": "Ready",
+      "reason": "User answered air-pattern question; resume preserved checkout before newly prepared Scout ticket",
       "questions": [
         {
           "number": 1,
-          "question": "Default air delivery count is variable by flight/terrain/cap. Choose five-slot repeating composition, each possible flight/drop opportunity slot, or authorize fixed five-soldier air squad; user question pending"
+          "question": "Default air delivery count is variable by flight/terrain/cap. Choose five-slot repeating composition, each possible flight/drop opportunity slot, or authorize fixed five-soldier air squad; user question pending",
+          "answer": "User chose five-slot air pattern repeated along flight path; preserve existing cadence, terrain/cap and actual variable count"
         }
       ],
       "approval": "User agreed persistent in-mission reinforcement menu with separate ground and air compositions; numerical limits and roster details remain planning refinements",
@@ -5336,6 +5337,24 @@
       "details": [
         "Ready",
         "User authorized draining approved queue while away; TRI-072 parked for unanswered material air-count decision; next Desert Scout counterattack"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:23:15.101Z",
+      "command": "answer",
+      "ticket": "TRI-072",
+      "details": [
+        "1",
+        "User chose five-slot air pattern repeated along flight path; preserve existing cadence, terrain/cap and actual variable count"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:23:15.200Z",
+      "command": "move",
+      "ticket": "TRI-072",
+      "details": [
+        "Ready",
+        "User answered air-pattern question; resume preserved checkout before newly prepared Scout ticket"
       ]
     }
   ]

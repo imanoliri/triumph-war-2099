@@ -27,3 +27,6 @@ User decisions on 2026-10-07: open a menu/modal during the mission, edit the des
 
 Execution authorization 2026-10-07: user requested agents executing tickets one by one; earlier planning-only pause is revoked.
 
+
+User clarification 2026-10-07: air composition is a five-slot repeating pattern along the existing flight/drop path. Preserve variable actual delivered count, cadence, lifetime, terrain and caps; do not force a five-troop air limit. Ground composition uses its existing nominal five slots. Clearly label the air pattern and that flight conditions determine actual arrivals.
+
