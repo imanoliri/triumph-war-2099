@@ -1259,23 +1259,23 @@
       "id": "TRI-072",
       "title": "Configure future ground and air eagle squads during missions",
       "task": "docs/tasks/reinforcement-composition-menu.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
-      "questions": [],
+      "status": "Queued",
+      "reason": "Parked preserved menu checkout pending user air-count decision; continue other approved tickets while user away",
+      "questions": [
+        {
+          "number": 1,
+          "question": "Default air delivery count is variable by flight/terrain/cap. Choose five-slot repeating composition, each possible flight/drop opportunity slot, or authorize fixed five-soldier air squad; user question pending"
+        }
+      ],
       "approval": "User agreed persistent in-mission reinforcement menu with separate ground and air compositions; numerical limits and roster details remain planning refinements",
-      "worker": {
-        "id": "/root/reinforcement_menu_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-reinforcement-composition-menu",
-        "branch": "feature/reinforcement-composition-menu"
-      },
       "branch": "feature/reinforcement-composition-menu"
     },
     {
       "id": "TRI-073",
       "title": "Desert Scout counterattack",
       "task": "docs/tasks/desert-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "status": "Ready",
+      "reason": "User authorized draining approved queue while away; TRI-072 parked for unanswered material air-count decision; next Desert Scout counterattack",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     },
@@ -5310,6 +5310,32 @@
       "details": [
         "../triumph-reinforcement-composition-menu",
         "/root/reinforcement_menu_worker"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:22:04.086Z",
+      "command": "ask",
+      "ticket": "TRI-072",
+      "details": [
+        "Default air delivery count is variable by flight/terrain/cap. Choose five-slot repeating composition, each possible flight/drop opportunity slot, or authorize fixed five-soldier air squad; user question pending"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:22:09.063Z",
+      "command": "move",
+      "ticket": "TRI-072",
+      "details": [
+        "Queued",
+        "Parked preserved menu checkout pending user air-count decision; continue other approved tickets while user away"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:22:42.027Z",
+      "command": "move",
+      "ticket": "TRI-073",
+      "details": [
+        "Ready",
+        "User authorized draining approved queue while away; TRI-072 parked for unanswered material air-count decision; next Desert Scout counterattack"
       ]
     }
   ]
