@@ -1227,16 +1227,17 @@
       "id": "TRI-070",
       "title": "Rebalance enemy pressure and friendly soldier initiative",
       "task": "docs/tasks/ai-combat-balance.md",
-      "status": "Review",
-      "reason": "Worker 8bc16d3 full suite passes; comparative AI evidence and unavailable live calibration recorded in session008; director reviewing",
+      "status": "Done",
+      "reason": "Independent diff review and full node tools/dev.cjs test exit0; bounded comparative correction accepted; live calibration unverified in session008. Squash2e5b4b1",
       "questions": [],
       "approval": "User 2026-10-07 requested reduced enemy AI aggression/difficulty and more aggressive competent friendly soldiers; bounded AI-only correction",
-      "worker": {
-        "id": "/root/ai_balance_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-ai-combat-balance",
-        "branch": "fix/ai-combat-balance"
-      },
-      "branch": "fix/ai-combat-balance"
+      "branch": "fix/ai-combat-balance",
+      "completion": {
+        "evidence": "Independent diff review and full node tools/dev.cjs test exit0; bounded comparative correction accepted; live calibration unverified in session008. Squash2e5b4b1",
+        "reviewer": "/root",
+        "reviewedImplementationCommit": "8bc16d31de2b91a837c77f7ce155596fa5181a35",
+        "squashCommit": "2e5b4b161353d42bceab0da947d021f27152fa4b"
+      }
     },
     {
       "id": "TRI-071",
@@ -5227,6 +5228,18 @@
       "details": [
         "Review",
         "Worker 8bc16d3 full suite passes; comparative AI evidence and unavailable live calibration recorded in session008; director reviewing"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:08:08.938Z",
+      "command": "move",
+      "ticket": "TRI-070",
+      "details": [
+        "Done",
+        "Independent diff review and full node tools/dev.cjs test exit0; bounded comparative correction accepted; live calibration unverified in session008. Squash2e5b4b1",
+        "/root",
+        "2e5b4b161353d42bceab0da947d021f27152fa4b",
+        "8bc16d31de2b91a837c77f7ce155596fa5181a35"
       ]
     }
   ]

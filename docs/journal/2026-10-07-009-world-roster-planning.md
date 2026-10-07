@@ -13,3 +13,6 @@ User subsequently authorized starting the session and directed the director to l
 
 Execution checkpoint: TRI-070 dispatched to /root/ai_balance_worker, preserved ../triumph-ai-combat-balance on fix/ai-combat-balance, initial session008. Worker resumed with no prior implementation and received authorization plus bounded tuning guidance. Main approval checkpoint82fb80e, dispatch checkpointe23c911. Next exact action: await worker Review evidence, independently review/test, squash-integrate if accepted, record resulting SHA pair, then prepare and dispatch TRI-071. Mirror retry still fails GraphQL; do not infer remote board success.
 
+
+TRI-070 complete: independent full suite exit0, scoped code review accepted with live calibration gap; squash2e5b4b161353d42bceab0da947d021f27152fa4b from worker8bc16d31de2b91a837c77f7ce155596fa5181a35. GitHub mirror recovered and synchronized 87 items; prior failure limitation resolved. Next exact action: prepare/dispatch TRI-071 custom-unit-guide-sprites on isolated branch.
+
