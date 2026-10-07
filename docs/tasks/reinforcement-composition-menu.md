@@ -11,12 +11,14 @@ Configure future ground and air eagle squads during missions
 
 - [ ] During a mission, configure separate ground and air troop compositions in a menu; future eagle pickups use the current matching selection until changed
 - [ ] Both ground and air composition choices are restricted to the current mission world roster; unavailable types cannot be selected or applied.
+- [ ] Opening the reinforcement menu pauses gameplay; closing it automatically resumes play without a separate resume action.
 
 ## Scope and decisions
 
-User decisions on 2026-10-07: open a menu/modal during the mission, edit the desired reinforcement composition, and apply it to all future matching eagle pickups until changed again. Ground troop and air reinforcement eagles have separate compositions. The chooser is opened deliberately during play, not automatically on eagle collection. Already requested/inbound reinforcements retain their composition. Preserve support availability and population-cap rules. Planning only; no worker dispatch until user authorizes queue execution. User confirmed that available soldier types must be limited to the current mission world roster for both ground and air settings. Do not offer all unlocked types across worlds. Open design details: squad-size limits and pause behavior while menu is open.
+User decisions on 2026-10-07: open a menu/modal during the mission, edit the desired reinforcement composition, and apply it to all future matching eagle pickups until changed again. Ground troop and air reinforcement eagles have separate compositions. The chooser is opened deliberately during play, not automatically on eagle collection. Already requested/inbound reinforcements retain their composition. Preserve support availability and population-cap rules. Planning only; no worker dispatch until user authorizes queue execution. User confirmed that available soldier types must be limited to the current mission world roster for both ground and air settings. Do not offer all unlocked types across worlds. User confirmed that opening the reinforcement menu pauses gameplay and closing it automatically resumes play. Open design detail: squad-size limits.
 
 ## Sessions
+
 
 
 
