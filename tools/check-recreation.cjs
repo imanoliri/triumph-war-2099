@@ -766,3 +766,63 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
  }
 
 
+
+  {
+   // TRI-066 World rosters & Snow Sniper specialist unit verification
+   const rosters=sandbox.window.TriumphCustomMissions.worldRosters;
+   assert(rosters,'worldRosters exported on TriumphCustomMissions');
+   assert.equal(JSON.stringify(rosters.Snow),JSON.stringify(['soldier','snow-sniper','commando']));
+   assert.equal(JSON.stringify(rosters.Maritime),JSON.stringify(['soldier','commando']));
+   assert.equal(JSON.stringify(rosters.Capital),JSON.stringify(['soldier','commando']));
+   assert.equal(JSON.stringify(rosters.Desert),JSON.stringify(['rider-scout','dune-guard','field-mechanic','soldier']));
+   assert.equal(JSON.stringify(rosters.Jungle),JSON.stringify(['soldier','commando']));
+   assert.equal(JSON.stringify(rosters.Volcanic),JSON.stringify(['soldier','commando']));
+   assert.equal(JSON.stringify(rosters.Undercity),JSON.stringify(['soldier','commando']));
+
+   for(const m of sandbox.window.TriumphCustomMissions.list){
+    assert(m.environment,'Scenario '+m.id+' has environment');
+    assert.equal(JSON.stringify(m.worldRoster),JSON.stringify(rosters[m.environment]),'Scenario '+m.id+' has matching worldRoster');
+   }
+
+   sandbox.window.triumph.loadCustomMission('custom-snow-whiteout-signal'); resumeSimulation();
+   const f=sandbox.window.__fixture(),st=f.state;
+   assert.equal(st.customMission.optInSniper,true);
+   const snipers=st.humans.filter(u=>u.type==='snow-sniper');
+   assert.equal(snipers.length,2,'Whiteout Signal deploys opt-in snow snipers');
+
+   const sniper=snipers[0];
+   assert(f.selectable(sniper),'Snow sniper is selectable');
+
+   // Verify 360-degree unconstrained free aim
+   const bug={x:sniper.x+200,y:sniper.y+73,team:'alien',type:'soldier',alive:true,hp:10};
+   st.aliens=[bug];st.bullets=[];st.nests=[];
+   f.aimHuman(sniper,bug,0);
+   const expectedAngle=Math.atan2(73,200);
+   assert(Math.abs(sniper.angle-expectedAngle)<1e-4,'Snow sniper uses unconstrained 360-degree aiming');
+
+   // Verify firing properties: 4 damage, 1.2s cooldown, 400 speed, life 1.5, sniper tracer flag
+   sniper.cool=0;
+   f.fire(sniper);
+   assert.equal(sniper.cool,1.2,'Sniper weapon cooldown is 1.2s');
+   assert.equal(st.bullets.length,1);
+   const bullet=st.bullets[0];
+   assert.equal(bullet.damage,4,'Sniper rifle damage is 4');
+   assert.equal(bullet.speed,400,'Sniper bullet speed is 400');
+   assert.equal(bullet.life,1.5,'Sniper bullet life is 1.5');
+   assert.equal(bullet.sniper,true,'Sniper bullet has sniper tracer flag');
+
+   // Verify perception & standoff range
+   assert.equal(f.perceive(sniper,[bug],480),bug,'Perceives target within 480px standoff range');
+   bug.x=sniper.x+500;
+   assert.equal(f.perceive(sniper,[bug],480),null,'Target beyond 480px range not perceived');
+
+   // Verify rendering overlay
+   let drawn=false;
+   sandbox.window.TriumphRendering.variantMark({
+    save(){},restore(){},translate(){},rotate(){},
+    fillStyle:'',fillRect(){drawn=true;}
+   },sniper);
+   assert(drawn,'Snow sniper variantMark renders optics visor & camo overlay');
+
+   console.log('Passed TRI-066 environment world rosters mapping and Nivalis Snow Sniper 360-deg aiming, 480px standoff range, 4 damage, 1.2s cooldown, optics visor rendering and opt-in whiteout deployment.');
+  }
