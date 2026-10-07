@@ -1185,15 +1185,10 @@
       "id": "TRI-067",
       "title": "Expand game soundtrack with copyright-free synth and MIDI tracks",
       "task": "docs/tasks/royalty-free-soundtrack-expansion.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Ready",
+      "reason": "Parked preserved unfinished soundtrack branch; resume same checkout after prioritized AI feedback",
       "questions": [],
       "approval": "User approved queue execution for royalty-free soundtrack expansion",
-      "worker": {
-        "id": "/root/soundtrack_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-royalty-free-soundtrack-expansion",
-        "branch": "feature/royalty-free-soundtrack-expansion"
-      },
       "branch": "feature/royalty-free-soundtrack-expansion"
     },
     {
@@ -1227,6 +1222,15 @@
         "reviewedImplementationCommit": "5e362fa7c79ef6c7b114fe55d570c77cb9323d6c",
         "squashCommit": "0e642e144e6bc9dd8f162ff7c3a7b436c405978f"
       }
+    },
+    {
+      "id": "TRI-070",
+      "title": "Rebalance enemy pressure and friendly soldier initiative",
+      "task": "docs/tasks/ai-combat-balance.md",
+      "status": "Ready",
+      "reason": "User 2026-10-07 requested reduced enemy AI aggression/difficulty and more aggressive competent friendly soldiers; bounded AI-only correction",
+      "questions": [],
+      "approval": "User 2026-10-07 requested reduced enemy AI aggression/difficulty and more aggressive competent friendly soldiers; bounded AI-only correction"
     }
   ],
   "events": [
@@ -4561,6 +4565,43 @@
       "details": [
         "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-royalty-free-soundtrack-expansion",
         "/root/soundtrack_worker"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:33:18.569Z",
+      "command": "move",
+      "ticket": "TRI-067",
+      "details": [
+        "Blocked",
+        "Recovery: previous worker no longer active; preserve unfinished soundtrack checkout while user AI balance feedback takes priority"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:33:32.455Z",
+      "command": "move",
+      "ticket": "TRI-067",
+      "details": [
+        "Ready",
+        "Parked preserved unfinished soundtrack branch; resume same checkout after prioritized AI feedback"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:33:45.117Z",
+      "command": "create",
+      "ticket": "TRI-070",
+      "details": [
+        "ai-combat-balance",
+        "Rebalance enemy pressure and friendly soldier initiative",
+        "Reduce runaway enemy alert/pursuit pressure and improve friendly engagement reliability while preserving explicit orders and weapon aiming rules; relevant regression checks pass"
+      ]
+    },
+    {
+      "at": "2026-10-07T14:34:40.022Z",
+      "command": "move",
+      "ticket": "TRI-070",
+      "details": [
+        "Ready",
+        "User 2026-10-07 requested reduced enemy AI aggression/difficulty and more aggressive competent friendly soldiers; bounded AI-only correction"
       ]
     }
   ]
