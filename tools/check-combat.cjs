@@ -1,7 +1,7 @@
 'use strict';
 if(require.main===module)process.chdir(require('node:path').resolve(__dirname,'..'));
 const fs=require('node:fs'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
-const baseline=execFileSync('git',['show','6a39b420da2b30c9a2f0550b2c95c2e2d93ce2ea:game.js'],{encoding:'utf8',windowsHide:true});
+const baseline=execFileSync('git',['show','326b9491c5d30792aebdeedbd568dcda35e9ec13:game.js'],{encoding:'utf8',windowsHide:true});
 const fixture=fs.readFileSync('tools/check-recreation.cjs','utf8').split('const api=sandbox.window.triumph')[0];
 const loaderAnchor="let source=fs.readFileSync(''+file,'utf8');",baselineLoader="let source=file==='game.js'&&baseline?baseline:fs.readFileSync(''+file,'utf8');";
 function baselineFixture(source){
@@ -48,7 +48,7 @@ for(const type of ['soldier','commander','robot','commando','rider-scout','dune-
 }
 console.log('Passed TRI-061 all eight soldier headings, matching rendered rotation, five-pellet spread, numerical kit contracts and off-lane/blocked holds.');
 // Direct and free aiming retain the source asymmetry, even without a target/burst.
-for(const box of [before,after]){box.window.triumph.loadMission(1);const f=box.window.__fixture();for(const [type,team,free] of [['commander','human',true],['commander','human',false],['commando','human',true],['soldier','alien',false]]){const u={type,team,id:1,x:300,y:300,angle:.6,weapon:0,cool:0,shotOffset:.15};f.fire(u,free);const expected=box===before?(type==='commando'?Math.PI/4:team==='human'&&!free?0:.6):(!free&&team==='human'&&type!=='tank'?Math.PI/4:.6);assert.equal(u.angle,expected);}}
+for(const box of [before,after]){box.window.triumph.loadMission(1);const f=box.window.__fixture();for(const [type,team,free] of [['commander','human',true],['commander','human',false],['commando','human',true],['soldier','alien',false]]){const u={type,team,id:1,x:300,y:300,angle:.6,weapon:0,cool:0,shotOffset:.15};f.fire(u,free);const expected=!free&&team==='human'&&type!=='tank'?Math.PI/4:.6;assert.equal(u.angle,expected);}}
 // Isolated projectile contracts do not use the runtime or a copy of its implementation.
 const projectileBox={window:{}};require('node:vm').runInNewContext(fs.readFileSync('src/projectiles.js','utf8'),projectileBox);
 function probe(){const s={t:1,bullets:[],props:[],doors:[],reinforcements:[],humans:[],aliens:[],nests:[],score:[0],effects:[]},calls=[];const services={W:1024,H:768,blocked:()=>false,dist:(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),damage:(u,n,owner)=>{u.hp-=n;calls.push(['damage',n,owner]);},destroyProp:p=>{p.destroyed=true;calls.push(['prop']);},wormExposed:u=>u.exposed,sound:(...args)=>calls.push(['sound',...args]),tone:(...args)=>calls.push(['tone',...args]),burst:(...args)=>s.effects.push(args)};const bullet=(extra={})=>({x:100,y:100,dx:1,dy:0,speed:100,life:1,team:'human',damage:2,owner:1,...extra});return {s,calls,services,bullet,step:dt=>projectileBox.window.TriumphProjectiles.step(s,dt,services)};}

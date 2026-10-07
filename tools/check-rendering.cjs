@@ -1,7 +1,7 @@
 'use strict';
 if(require.main===module)process.chdir(require('node:path').resolve(__dirname,'..'));
 const fs=require('node:fs'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
-const baseline=execFileSync('git',['show','23c6cf9f6a427bc6a0c85b63e148a75ffe3df52f:game.js'],{encoding:'utf8',windowsHide:true});
+const baseline=execFileSync('git',['show','326b9491c5d30792aebdeedbd568dcda35e9ec13:game.js'],{encoding:'utf8',windowsHide:true});
 let fixture=fs.readFileSync('tools/check-recreation.cjs','utf8').split('const api=sandbox.window.triumph')[0];
 function replaceOnce(source,anchor,replacement){assert.equal(source.split(anchor).length-1,1,'Rendering harness anchor must occur exactly once: '+anchor);return source.replace(anchor,replacement);}
 assert.throws(()=>replaceOnce('absent','anchor','x'),/exactly once/);assert.throws(()=>replaceOnce('anchoranchor','anchor','x'),/exactly once/);

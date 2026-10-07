@@ -937,3 +937,54 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
     console.log('Passed TRI-064 aggressive and reactive alien AI with acoustic awareness, combat focus and pack alerting.');
   }
 
+  // TRI-065 High-fidelity pixel art sprite overlays for custom soldier types
+  {
+    api.loadMission(1);
+    resumeSimulation();
+    const rendering = sandbox.window.TriumphRendering;
+    assert(rendering && typeof rendering.variantMark === 'function', 'TriumphRendering.variantMark exported');
+
+    const specialistTypes = ['rider-scout', 'dune-guard', 'field-mechanic', 'snow-sniper'];
+
+    for (const type of specialistTypes) {
+      const colorsUsed = new Set();
+      let drawn = false;
+      let rotatedAngle = null;
+
+      const mockCtx = {
+        save() {},
+        restore() {},
+        translate(x, y) {},
+        rotate(a) { rotatedAngle = a; },
+        set fillStyle(val) { colorsUsed.add(val); },
+        get fillStyle() { return ''; },
+        fillRect(x, y, w, h) { drawn = true; }
+      };
+
+      const unit = { x: 250, y: 180, angle: Math.PI / 4, type };
+      rendering.variantMark(mockCtx, unit);
+
+      assert(drawn, `High-fidelity variantMark renders pixel art for ${type}`);
+      assert.equal(rotatedAngle, Math.PI / 4, `Directional heading angle aligned for ${type}`);
+
+      if (type === 'rider-scout') {
+        assert(colorsUsed.has('#d8c896'), 'Desert Scout renders desert sand armor palette');
+        assert(colorsUsed.has('#ffe066') || colorsUsed.has('#ffd700'), 'Desert Scout renders tracking visor');
+      } else if (type === 'dune-guard') {
+        assert(colorsUsed.has('#bf8057') || colorsUsed.has('#8c5230'), 'Dune Guard renders heavy desert blast armor');
+        assert(colorsUsed.has('#3a2e26'), 'Dune Guard renders shotgun scabbard');
+        assert(colorsUsed.has('#e69145'), 'Dune Guard renders hardened blast helmet visor');
+      } else if (type === 'field-mechanic') {
+        assert(colorsUsed.has('#75aaa0') || colorsUsed.has('#4a7870'), 'Field Mechanic renders sage teal engineer palette');
+        assert(colorsUsed.has('#50e3a6') || colorsUsed.has('#88ffc4'), 'Field Mechanic renders repair scanner visor');
+        assert(colorsUsed.has('#def2d5'), 'Field Mechanic renders toolkit harness');
+      } else if (type === 'snow-sniper') {
+        assert(colorsUsed.has('#f0f8ff'), 'Snow Sniper renders arctic snow ghillie cowl');
+        assert(colorsUsed.has('#00e5ff'), 'Snow Sniper renders cyan optics scope');
+      }
+    }
+
+    console.log('Passed TRI-065 high-fidelity pixel art sprite overlay rendering for custom soldier types across directional headings.');
+  }
+
+
