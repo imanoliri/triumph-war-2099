@@ -1329,10 +1329,16 @@
       "id": "TRI-076",
       "title": "Maritime specialist roster",
       "task": "docs/tasks/maritime-trooper-roster.md",
-      "status": "Ready",
-      "reason": "User authorized sequential queue execution; approved Maritime Suppressor stops hit mobile enemies and Grenadier mechanics unchanged",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
+      "worker": {
+        "id": "/root/maritime_roster_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-maritime-trooper-roster",
+        "branch": "feature/maritime-trooper-roster"
+      },
+      "branch": "feature/maritime-trooper-roster"
     },
     {
       "id": "TRI-077",
@@ -5529,6 +5535,15 @@
       "details": [
         "Ready",
         "User authorized sequential queue execution; approved Maritime Suppressor stops hit mobile enemies and Grenadier mechanics unchanged"
+      ]
+    },
+    {
+      "at": "2026-10-07T20:42:06.108Z",
+      "command": "dispatch",
+      "ticket": "TRI-076",
+      "details": [
+        "../triumph-maritime-trooper-roster",
+        "/root/maritime_roster_worker"
       ]
     }
   ]
