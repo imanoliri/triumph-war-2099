@@ -1153,16 +1153,17 @@
       "id": "TRI-066",
       "title": "Environment world soldier rosters and 360-degree Snow Sniper unit",
       "task": "docs/tasks/world-soldier-rosters-snow-sniper.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Environment world soldier rosters and 360-degree Snow Sniper unit implemented and verified",
       "questions": [],
       "approval": "User approved queue execution for soldier roster expansion and Snow Sniper",
-      "worker": {
-        "id": "/root/snow_sniper_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-world-soldier-rosters-snow-sniper",
-        "branch": "feature/world-soldier-rosters-snow-sniper"
-      },
-      "branch": "feature/world-soldier-rosters-snow-sniper"
+      "branch": "feature/world-soldier-rosters-snow-sniper",
+      "completion": {
+        "evidence": "Environment world soldier rosters and 360-degree Snow Sniper unit implemented and verified",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "404f7cb4541bd0b3294c6e94c6a5763d50c66b74",
+        "squashCommit": "1a57e99ef5616b223a41aa461f9af72a76478e7d"
+      }
     },
     {
       "id": "TRI-067",
@@ -4373,6 +4374,27 @@
       "details": [
         "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-world-soldier-rosters-snow-sniper",
         "/root/snow_sniper_worker"
+      ]
+    },
+    {
+      "at": "2026-10-07T08:21:49.016Z",
+      "command": "move",
+      "ticket": "TRI-066",
+      "details": [
+        "Review",
+        "Worker completed task and verified all environment rosters and Snow Sniper unit"
+      ]
+    },
+    {
+      "at": "2026-10-07T08:21:53.357Z",
+      "command": "move",
+      "ticket": "TRI-066",
+      "details": [
+        "Done",
+        "Environment world soldier rosters and 360-degree Snow Sniper unit implemented and verified",
+        "/root/director",
+        "1a57e99",
+        "404f7cb"
       ]
     }
   ]
