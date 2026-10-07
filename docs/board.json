@@ -1281,8 +1281,8 @@
       "id": "TRI-073",
       "title": "Desert Scout counterattack",
       "task": "docs/tasks/desert-trooper-roster.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker ef785944 full suite exit0; independent combat/rider checks passed; scoped source and documentation reviewed; actual Units UI inspection recorded separately from unobserved live combat",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
       "worker": {
@@ -5406,6 +5406,15 @@
       "details": [
         "../triumph-desert-trooper-roster",
         "/root/desert_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:55:24.687Z",
+      "command": "move",
+      "ticket": "TRI-073",
+      "details": [
+        "Review",
+        "Worker ef785944 full suite exit0; independent combat/rider checks passed; scoped source and documentation reviewed; actual Units UI inspection recorded separately from unobserved live combat"
       ]
     }
   ]
