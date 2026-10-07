@@ -1,6 +1,6 @@
 'use strict';
 // Combat state belongs to the caller. Access the current mission on every operation.
-window.TriumphCombat={create({getState,burstRules,tankSweepRules,cannonSweepRules,rnd,visible,dist,blocked,navigate,cardinal,diagonal,cannonAngle,getDifficulty,bugFireBases,specialistRules,desertRiders,originalAudio,sound,tone,emitAcousticEvent}){
+window.TriumphCombat={create({getState,burstRules,tankSweepRules,cannonSweepRules,rnd,visible,dist,blocked,navigate,cardinal,diagonal,cannonAngle,getDifficulty,bugFireBases,specialistRules,desertRiders,originalAudio,sound,tone,damage,emitAcousticEvent}){
 function enemyFireDelay(u){if(u.type==='redbug'){const r=specialistRules.redbug;return r.fireMin+rnd()*(r.fireMax-r.fireMin);}const difficulty=getDifficulty(),base=bugFireBases[difficulty]||3.8;return base+rnd()*1.6+(u.type==='queen'?.4:0);}
 function trackBurst(u,target){
  const rule=u.team==='human'&&burstRules[u.type];if(!rule)return;
@@ -40,10 +40,10 @@ function aimCannon(u,target){
  u.angle=cannonAngle(angle);fire(u,false,angle);sweep.index++;finishBurstShot(u);if(!u.burst.remaining)u.sweep=null;
 }
 // Test the quantized weapon ray, not the direct sight line to a diagonal target.
-function humanFiringLane(u,target){
+function humanFiringLane(u,target){if(u.type==='laser-cannon'){const s=getState(),ray=window.TriumphCapitalTroopers.trace(u,u.angle,{blocked,props:s.props});return window.TriumphCapitalTroopers.intersects(ray,target,s.nests);}
  const dx=target.x-u.x,dy=target.y-u.y,c=Math.cos(u.angle),sn=Math.sin(u.angle),along=dx*c+dy*sn,across=dx*sn-dy*c;
  const radius=getState().nests.includes(target)?26:target.type==='queen'||target.type==='tank'?17:8;
- const range=u.type==='winter-gunner'?280:u.type==='snow-sniper'?480:u.type==='dune-guard'&&u.cannon===undefined?120:['rider-scout','field-mechanic'].includes(u.type)&&u.cannon===undefined?180:u.weapon===1?145:u.weapon===2?319:638;
+ const range=u.type==='laser-cannon'?220:u.type==='winter-gunner'?280:u.type==='snow-sniper'?480:u.type==='dune-guard'&&u.cannon===undefined?120:['rider-scout','field-mechanic'].includes(u.type)&&u.cannon===undefined?180:u.weapon===1?145:u.weapon===2?319:638;
  if(Math.abs(across)>=radius-1||along+radius<=10)return false;
  const entry=Math.max(10,along-Math.sqrt(radius*radius-across*across)+1);
  if(entry>range+10)return false;
@@ -65,9 +65,11 @@ function sprayDensity(u,targetAngle,halfArc,range){
 function aimHuman(u,target,dt){
  if(u.cannon!==undefined){aimCannon(u,target);return;}
  if(u.type==='tank'){aimTank(u,target);return;}
+ if(u.type==='laser-cannon'&&!u.focusTarget){u.angle=window.TriumphCapitalTroopers.heading(u,target,getState(),{blocked,props:getState().props});const ray=window.TriumphCapitalTroopers.trace(u,u.angle,{blocked,props:getState().props});const hit=[...getState().aliens,...getState().nests].find(a=>a.alive!==false&&a.hp>0&&visible(u,a)&&window.TriumphCapitalTroopers.intersects(ray,a,getState().nests));if(hit)target=hit;}
  const isSpray=u.weapon===1||u.type==='dune-guard';
  const sprayArc=u.weapon===1?Math.PI/8:Math.PI/12,sprayRange=u.weapon===1?145:120;
  const heading=()=>{
+  if(u.type==='laser-cannon')return window.TriumphCapitalTroopers.heading(u,target,getState(),{blocked,props:getState().props});
   if(u.type==='snow-sniper')return Math.atan2(target.y-u.y,target.x-u.x);
   const direct=diagonal(Math.atan2(target.y-u.y,target.x-u.x));
   if(!isSpray)return direct;
@@ -89,7 +91,7 @@ function aimHuman(u,target,dt){
   const leash=window.TriumphBalance?.guardLeashRadius||50;
   const speed=u.type==='commander'?55:36;
   let stepX=0,stepY=0;
-  const range=u.type==='winter-gunner'?280:u.type==='snow-sniper'?480:u.type==='dune-guard'?120:['rider-scout','field-mechanic'].includes(u.type)?180:u.weapon===1?145:u.weapon===2?319:638;
+  const range=u.type==='laser-cannon'?220:u.type==='winter-gunner'?280:u.type==='snow-sniper'?480:u.type==='dune-guard'?120:['rider-scout','field-mechanic'].includes(u.type)?180:u.weapon===1?145:u.weapon===2?319:638;
   // Close into reach before sidestepping: short-range attack-movers must not stall outside range.
   if(Math.hypot(dx,dy)>range){stepX=dx;stepY=dy;}
   else if(Math.abs(offset)>=radius-1){stepX=-sn*offset;stepY=c*offset;}
@@ -111,7 +113,7 @@ function aimHuman(u,target,dt){
 
 // Scout dash volleys share the ordinary eight-direction lane and projectile factory.
 function scoutCounterShot(u,target){u.angle=diagonal(Math.atan2(target.y-u.y,target.x-u.x));if(!visible(u,target)||!humanFiringLane(u,target))return false;u.cool=0;fire(u);return true;}
-function fire(u,freeAim=false,projectileAngle){if(u.cool>0)return;if(u.type==='winter-gunner'&&!window.TriumphWinterGunner.ready(u,getState().t))return;if(u.team==='human'&&emitAcousticEvent)emitAcousticEvent({x:u.x,y:u.y},280);if(u.type==='dune-guard'&&u.cannon===undefined){getState().bullets.push(...desertRiders.pellets(u,{x:u.x+Math.cos(u.angle)*100,y:u.y+Math.sin(u.angle)*100}));u.cool=desertRiders.rules.guardCooldown;sound(11,.08);return;}if(u.cannon!==undefined)u.angle=cannonAngle(u.angle);else if(!freeAim&&u.team==='human'&&u.type!=='tank'&&u.type!=='snow-sniper')u.angle=diagonal(u.angle);u.cool=u.team==='alien'?enemyFireDelay(u):u.type==='snow-sniper'?1.2:['rider-scout','field-mechanic'].includes(u.type)?.6:u.type==='tank'?.2:u.type==='air'?.3:u.type==='commander'?(u.weapon===1?.180:.250):u.weapon===1?.180:u.type==='commando'?.38:u.order===3?.20:.38;const angles=[u.team==='alien'?(u.shotOffset||0):0];for(const a of angles){const angle=(u.cannon!==undefined&&projectileAngle!==undefined?projectileAngle:u.angle)+a;getState().bullets.push({x:u.x+Math.cos(angle)*10,y:u.y+Math.sin(angle)*10,dx:Math.cos(angle),dy:Math.sin(angle),team:u.team,owner:u.id,life:u.type==='winter-gunner'?280/290:u.type==='snow-sniper'?1.5:u.weapon===1?.5:u.weapon===2?1.1:2.2,speed:u.team==='alien'?120:u.type==='snow-sniper'?400:290,damage:u.type==='snow-sniper'?4:u.type==='tank'?5:1,plasma:u.weapon===2,...(u.type==='snow-sniper'?{sniper:true}:{})});}if(u.type==='winter-gunner')window.TriumphWinterGunner.fired(u,getState().t);if(originalAudio())sound(u.team==='alien'?0:u.type==='snow-sniper'?11:u.weapon===1?13:u.weapon===2?12:u.type==='tank'?24:11,u.type==='commander'?.25:u.type==='tank'?.16:.08);else if(u.type==='commander')tone(110+rnd()*80,.025,.013);}
+function fire(u,freeAim=false,projectileAngle){if(u.cool>0)return;if(u.type==='laser-cannon'){if(window.TriumphCapitalTroopers.fire(u,getState(),{blocked,damage,burst,emitAcousticEvent})){if(emitAcousticEvent)emitAcousticEvent(u,280);sound(12,.12);}return;}if(u.type==='winter-gunner'&&!window.TriumphWinterGunner.ready(u,getState().t))return;if(u.team==='human'&&emitAcousticEvent)emitAcousticEvent({x:u.x,y:u.y},280);if(u.type==='dune-guard'&&u.cannon===undefined){getState().bullets.push(...desertRiders.pellets(u,{x:u.x+Math.cos(u.angle)*100,y:u.y+Math.sin(u.angle)*100}));u.cool=desertRiders.rules.guardCooldown;sound(11,.08);return;}if(u.cannon!==undefined)u.angle=cannonAngle(u.angle);else if(!freeAim&&u.team==='human'&&u.type!=='tank'&&u.type!=='snow-sniper')u.angle=diagonal(u.angle);u.cool=u.team==='alien'?enemyFireDelay(u):u.type==='snow-sniper'?1.2:['rider-scout','field-mechanic'].includes(u.type)?.6:u.type==='tank'?.2:u.type==='air'?.3:u.type==='commander'?(u.weapon===1?.180:.250):u.weapon===1?.180:u.type==='commando'?.38:u.order===3?.20:.38;const angles=[u.team==='alien'?(u.shotOffset||0):0];for(const a of angles){const angle=(u.cannon!==undefined&&projectileAngle!==undefined?projectileAngle:u.angle)+a;getState().bullets.push({x:u.x+Math.cos(angle)*10,y:u.y+Math.sin(angle)*10,dx:Math.cos(angle),dy:Math.sin(angle),team:u.team,owner:u.id,life:u.type==='winter-gunner'?280/290:u.type==='snow-sniper'?1.5:u.weapon===1?.5:u.weapon===2?1.1:2.2,speed:u.team==='alien'?120:u.type==='snow-sniper'?400:290,damage:u.type==='snow-sniper'?4:u.type==='tank'?5:1,plasma:u.weapon===2,...(u.type==='snow-sniper'?{sniper:true}:{})});}if(u.type==='winter-gunner')window.TriumphWinterGunner.fired(u,getState().t);if(originalAudio())sound(u.team==='alien'?0:u.type==='snow-sniper'?11:u.weapon===1?13:u.weapon===2?12:u.type==='tank'?24:11,u.type==='commander'?.25:u.type==='tank'?.16:.08);else if(u.type==='commander')tone(110+rnd()*80,.025,.013);}
 function burst(x,y,size=12,color='#f5a641'){getState().effects.push({x,y,size,color,t:.4});}
 
 return {scoutCounterShot,enemyFireDelay,trackBurst,burstReady,finishBurstShot,tankGroup,aimTank,aimCannon,humanFiringLane,aimHuman,fire,burst,sprayDensity};

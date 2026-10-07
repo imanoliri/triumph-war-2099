@@ -29,14 +29,6 @@
       "soldiers": [
         [
           270,
-          310
-        ],
-        [
-          270,
-          345
-        ],
-        [
-          270,
           380
         ],
         [
@@ -283,8 +275,20 @@
           "bugsPerPoint": 3
         }
       ],
-      "brief": "veryeasy: 10 troops + robot; 26 arrivals; 4 nests x 4 births / 7s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
+      "brief": "veryeasy: 8 infantry + Shield Trooper + Laser Cannon + robot; 26 arrivals; 4 nests x 4 births / 7s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
       "profile": "veryeasy",
+      "shields": [
+        [
+          270,
+          310
+        ]
+      ],
+      "lasers": [
+        [
+          270,
+          345
+        ]
+      ],
       "nestInterval": 7,
       "nestBudget": 4
     },
@@ -314,14 +318,6 @@
         ]
       ],
       "soldiers": [
-        [
-          270,
-          310
-        ],
-        [
-          270,
-          345
-        ],
         [
           270,
           380
@@ -570,8 +566,20 @@
           "bugsPerPoint": 4
         }
       ],
-      "brief": "easy: 10 troops + robot; 36 arrivals; 4 nests x 5 births / 6s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
+      "brief": "easy: 8 infantry + Shield Trooper + Laser Cannon + robot; 36 arrivals; 4 nests x 5 births / 6s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
       "profile": "easy",
+      "shields": [
+        [
+          270,
+          310
+        ]
+      ],
+      "lasers": [
+        [
+          270,
+          345
+        ]
+      ],
       "nestInterval": 6,
       "nestBudget": 5
     },
@@ -601,14 +609,6 @@
         ]
       ],
       "soldiers": [
-        [
-          270,
-          310
-        ],
-        [
-          270,
-          345
-        ],
         [
           270,
           380
@@ -849,8 +849,20 @@
           "bugsPerPoint": 5
         }
       ],
-      "brief": "normal: 8 troops + robot; 46 arrivals; 4 nests x 7 births / 4.5s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
+      "brief": "normal: 6 infantry + Shield Trooper + Laser Cannon + robot; 46 arrivals; 4 nests x 7 births / 4.5s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
       "profile": "normal",
+      "shields": [
+        [
+          270,
+          310
+        ]
+      ],
+      "lasers": [
+        [
+          270,
+          345
+        ]
+      ],
       "nestInterval": 4.5,
       "nestBudget": 7
     },
@@ -880,14 +892,6 @@
         ]
       ],
       "soldiers": [
-        [
-          270,
-          310
-        ],
-        [
-          270,
-          345
-        ],
         [
           270,
           380
@@ -1120,8 +1124,20 @@
           "bugsPerPoint": 7
         }
       ],
-      "brief": "hard: 6 troops + robot; 62 arrivals; 4 nests x 10 births / 3s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
+      "brief": "hard: 4 infantry + Shield Trooper + Laser Cannon + robot; 62 arrivals; 4 nests x 10 births / 3s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
       "profile": "hard",
+      "shields": [
+        [
+          270,
+          310
+        ]
+      ],
+      "lasers": [
+        [
+          270,
+          345
+        ]
+      ],
       "nestInterval": 3,
       "nestBudget": 10
     },
@@ -1151,14 +1167,6 @@
         ]
       ],
       "soldiers": [
-        [
-          270,
-          310
-        ],
-        [
-          270,
-          345
-        ],
         [
           270,
           380
@@ -1383,8 +1391,20 @@
           "bugsPerPoint": 9
         }
       ],
-      "brief": "veryhard: 4 troops + robot; 78 arrivals; 4 nests x 13 births / 2.4s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
+      "brief": "veryhard: 2 infantry + Shield Trooper + Laser Cannon + robot; 78 arrivals; 4 nests x 13 births / 2.4s. Guard: activate north + south transit terminals. Hold 120s; relief aircraft arrive at 70s with three commandos. Wait for every landing, exhaust/destroy finite nests and clear all bugs/arrivals. Keep one noncommander alive; army loss fails even with relief inbound. Two yellow troop eagles in west rooms; no refill; full cap retains them. West rooms shelter regrouping; east plaza connects both fronts.",
       "profile": "veryhard",
+      "shields": [
+        [
+          270,
+          310
+        ]
+      ],
+      "lasers": [
+        [
+          270,
+          345
+        ]
+      ],
       "nestInterval": 2.4,
       "nestBudget": 13
     }

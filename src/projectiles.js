@@ -22,7 +22,7 @@ step(s,dt,{W,H,blocked,dist,damage,destroyProp,wormExposed,sound,tone,burst,emit
   if(!hit){
    const targets=b.team==='human'?s.aliens:s.humans;
    for(const a of targets)if(a.alive&&(a.type!=='desert-worm'||wormExposed(a))&&dist(a,b)<(a.type==='desert-worm'?12:a.type==='queen'?17:a.type==='tank'||a.type==='convoy-crawler'?17:8)){
-    damage(a,b.damage,b.owner);hit=true;break;
+    damage(a,b.damage,b.owner,{kind:'projectile',dx:b.dx,dy:b.dy});hit=true;break;
    }
   }
   if(!hit&&b.team==='human')for(const n of s.nests)if(n.hp>0&&dist(n,b)<26){
