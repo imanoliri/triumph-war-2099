@@ -47,7 +47,7 @@ function focusAttackStep(u,dt){const s=getState();
  aimHuman(u,target,dt*.85);return true;
 }
 function attackMoveInteraction(u,target,dt){const s=getState();
- if(u.type!=='soldier'||!s.originalMap||!u.attackMove||u.attackMove.force||u.useOrder||u.focusTarget||u.cannon!==undefined)return false;
+ if(u.type!=='soldier'||!u.attackMove||u.attackMove.force||u.useOrder||u.focusTarget||u.cannon!==undefined)return false;
  const revision=navigationRevision(),nav=navigation,next=nav?.step(u,u.attackMove,humanRouteBlocked,revision)||u.attackMove;
  const dx=next.x-u.x,dy=next.y-u.y,length=dx*dx+dy*dy;
  const nearby=p=>{if(dist(u,p)>56)return false;const t=length?Math.max(0,Math.min(1,((p.x-u.x)*dx+(p.y-u.y)*dy)/length)):0;if(Math.hypot(p.x-u.x-dx*t,p.y-u.y-dy*t)>24)return false;return nav?nav.routeDistance(u,p,humanRouteBlocked,revision)<=72:!blocked(p.x,p.y)&&visible(u,p);};

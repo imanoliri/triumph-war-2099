@@ -735,3 +735,34 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
   console.log('Passed TRI-063 proactive attack-move guard stance, local leash radius stepping/firing, return-to-anchor once clear, and strict leash cap.');
  }
 
+ {
+  const customScenarioIds=['custom-snow-whiteout-signal','custom-maritime-harbor-watch','custom-capital-district-twelve','custom-desert-beneath-dunes','custom-jungle-canopy-recon','custom-volcanic-forge-strike','custom-undercity-tunnels-breach'];
+  for(const id of customScenarioIds){
+   sandbox.window.triumph.loadCustomMission(id); resumeSimulation();
+   let f=sandbox.window.__fixture(),st=f.state;
+   st.mode='playing';st.aliens=[];st.nests=[];st.pickupClock=1000;st.rules.maxAliens=50;
+   const eagle=st.pickups.find(p=>['troops','air','tank','blitz'].includes(p.type));
+   assert(eagle,'Scenario '+id+' has starting reinforcement eagle');
+   let troop=st.humans.find(u=>u.alive&&u.type!=='commander'&&!sandbox.window.TriumphDesertRiders?.isRider?.(u));
+   if(!troop){troop={id:99,x:0,y:0,team:'human',type:'soldier',alive:true,hp:4,angle:0,cool:0,weapon:0,order:0};st.humans.push(troop);}
+   troop.x=eagle.x;troop.y=eagle.y;
+   const beforePickups=st.pickups.length;
+   f.update(.02);
+   assert(!st.pickups.includes(eagle),'Infantry walking over eagle in '+id+' collects it');
+   assert(st.pickups.length<beforePickups,'Pickup count decreases in '+id);
+
+   sandbox.window.triumph.loadCustomMission(id); resumeSimulation();
+   f=sandbox.window.__fixture();st=f.state;
+   st.mode='playing';st.aliens=[];st.nests=[];st.pickupClock=1000;st.rules.maxAliens=50;
+   const eagle2=st.pickups.find(p=>['troops','air','tank','blitz'].includes(p.type));
+   let soldier=st.humans.find(u=>u.type==='soldier');
+   if(!soldier){soldier={id:98,x:0,y:0,team:'human',type:'soldier',alive:true,hp:4,angle:0,cool:0,weapon:0,order:0};st.humans.push(soldier);}
+   soldier.x=eagle2.x-10;soldier.y=eagle2.y;
+   soldier.attackMove={x:eagle2.x+30,y:eagle2.y};soldier.order=2;
+   f.update(.02);
+   assert(!st.pickups.includes(eagle2),'Attack-moving soldier in '+id+' collects starting reinforcement eagle');
+  }
+  console.log('Passed starting reinforcement eagle collection for infantry and attack-moving troops across custom scenarios (Whiteout Signal, Harbor Watch, District Twelve, Beneath the Dunes, Jungle Recon, Volcanic Forge, Undercity Tunnels).');
+ }
+
+
