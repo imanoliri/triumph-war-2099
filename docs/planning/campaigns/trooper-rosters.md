@@ -1,6 +1,6 @@
 # World trooper roster refinement
 
-Planning only; no implementation dispatch. Read alongside [world table](planets/README.md). Recorded 2026-10-07. User wants all world rosters compared before specialist implementation tickets, with concrete mechanics that fit the game rather than speculative abilities.
+Roster planning record; user authorized sequential worker execution later on 2026-10-07. Read alongside [world table](planets/README.md). Recorded 2026-10-07. User wants all world rosters compared before specialist implementation tickets, with concrete mechanics that fit the game rather than speculative abilities.
 
 ## Selected identities and draft mechanics
 
@@ -32,11 +32,11 @@ Each proposed specialist must state weapon range/damage/cooldown, target and tri
 
 ## Next planning action
 
-World mechanics are approved as initial tuning, with implementation constraints in each ticket. Tunnel Listener is excluded without a replacement. Scouts gain a post-dash counterattack against their evade source; suppression stops rather than slows enemies. No worker dispatch until execution is authorized. Healing eligibility and exceptional enemy phases still require evidence or a material question, not silently expanded rules.
+World mechanics are approved as initial tuning, with implementation constraints in each ticket. Tunnel Listener is excluded without a replacement. Scouts gain a post-dash counterattack against their evade source; suppression stops rather than slows enemies. Execution is authorized, one board-bound worker at a time. Healing eligibility and exceptional enemy phases still require evidence or a material question, not silently expanded rules.
 
 ## Agreed world tickets — 2026-10-07
 
-User approved the remaining roster proposals with corrections below. Planning queue only; no implementation dispatch. Each world ticket contains mechanics, limitations and acceptance. Unspecified tuning belongs to a worker within scope; material gameplay conflicts require a question. Worlds without runtime missions get opt-in units and disposable fixtures, not unsolicited mission creation.
+User approved the remaining roster proposals with corrections below. User authorized sequential worker execution; do not run parallel implementation workers. Each world ticket contains mechanics, limitations and acceptance. Unspecified tuning belongs to a worker within scope; material gameplay conflicts require a question. Worlds without runtime missions get opt-in units and disposable fixtures, not unsolicited mission creation.
 
 - TRI-073: [Desert Scout counterattack](../../tasks/desert-trooper-roster.md).
 - TRI-074: [Snow specialist roster](../../tasks/snow-trooper-roster.md).
@@ -52,3 +52,6 @@ User approved the remaining roster proposals with corrections below. Planning qu
 - TRI-084: [Floating habitat specialist roster](../../tasks/floating-habitats-trooper-roster.md).
 - TRI-085: [Abandoned world specialist roster](../../tasks/abandoned-world-trooper-roster.md).
 - TRI-086: [Orbital scrapyard specialist roster](../../tasks/orbital-scrapyard-trooper-roster.md).
+
+The world task records below are authoritative for the accepted mechanics and supersede exploratory alternatives in this document. AI balance TRI-070 executes first, then TRI-071 guide sprites, TRI-072 reinforcement menu and TRI-073 through TRI-086 world roster tickets. TRI-067 soundtrack checkout is preserved for later recovery.
+
