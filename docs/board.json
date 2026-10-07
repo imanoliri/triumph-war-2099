@@ -1227,8 +1227,8 @@
       "id": "TRI-070",
       "title": "Rebalance enemy pressure and friendly soldier initiative",
       "task": "docs/tasks/ai-combat-balance.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker 8bc16d3 full suite passes; comparative AI evidence and unavailable live calibration recorded in session008; director reviewing",
       "questions": [],
       "approval": "User 2026-10-07 requested reduced enemy AI aggression/difficulty and more aggressive competent friendly soldiers; bounded AI-only correction",
       "worker": {
@@ -5218,6 +5218,15 @@
       "details": [
         "../triumph-ai-combat-balance",
         "/root/ai_balance_worker"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:03:02.744Z",
+      "command": "move",
+      "ticket": "TRI-070",
+      "details": [
+        "Review",
+        "Worker 8bc16d3 full suite passes; comparative AI evidence and unavailable live calibration recorded in session008; director reviewing"
       ]
     }
   ]
