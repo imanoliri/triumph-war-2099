@@ -1297,8 +1297,8 @@
       "id": "TRI-074",
       "title": "Snow specialist roster",
       "task": "docs/tasks/snow-trooper-roster.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker289ecea final full suite exit0; director winter/guide/menu checks and actual browser portrait/menu/save/world-isolation inspection passed; Units headcount review finding fixed",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
       "worker": {
@@ -5452,6 +5452,15 @@
       "details": [
         "../triumph-snow-trooper-roster",
         "/root/snow_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-07T20:15:03.285Z",
+      "command": "move",
+      "ticket": "TRI-074",
+      "details": [
+        "Review",
+        "Worker289ecea final full suite exit0; director winter/guide/menu checks and actual browser portrait/menu/save/world-isolation inspection passed; Units headcount review finding fixed"
       ]
     }
   ]
