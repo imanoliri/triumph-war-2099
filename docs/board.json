@@ -1259,8 +1259,8 @@
       "id": "TRI-072",
       "title": "Configure future ground and air eagle squads during missions",
       "task": "docs/tasks/reinforcement-composition-menu.md",
-      "status": "Queued",
-      "reason": "Planning queue only; user is brainstorming and has not authorized implementation execution",
+      "status": "Ready",
+      "reason": "Sequential execution: AI and guide fixes accepted; prepare approved reinforcement menu",
       "questions": [],
       "approval": "User agreed persistent in-mission reinforcement menu with separate ground and air compositions; numerical limits and roster details remain planning refinements"
     },
@@ -5286,6 +5286,15 @@
         "/root",
         "4ae11e93a69b8cc119939f924c3726ebd3721cbe",
         "e911e86e97efd168a811510d720b10738c2f4e4f"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:19:05.104Z",
+      "command": "move",
+      "ticket": "TRI-072",
+      "details": [
+        "Ready",
+        "Sequential execution: AI and guide fixes accepted; prepare approved reinforcement menu"
       ]
     }
   ]
