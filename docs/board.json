@@ -1259,8 +1259,8 @@
       "id": "TRI-072",
       "title": "Configure future ground and air eagle squads during missions",
       "task": "docs/tasks/reinforcement-composition-menu.md",
-      "status": "Review",
-      "reason": "Worker0c560fd full suite exit0; director actual UI and independent menu/support/custom-support checks passed; specialist initialization finding fixed",
+      "status": "Done",
+      "reason": "Acceptance reviewed; full worker suite and independent menu/support/custom-support checks passed; actual director browser menu interaction verified with delivery behavior covered by VM fixtures",
       "questions": [
         {
           "number": 1,
@@ -1270,10 +1270,11 @@
       ],
       "approval": "User agreed persistent in-mission reinforcement menu with separate ground and air compositions; numerical limits and roster details remain planning refinements",
       "branch": "feature/reinforcement-composition-menu",
-      "worker": {
-        "id": "/root/reinforcement_menu_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-reinforcement-composition-menu",
-        "branch": "feature/reinforcement-composition-menu"
+      "completion": {
+        "evidence": "Acceptance reviewed; full worker suite and independent menu/support/custom-support checks passed; actual director browser menu interaction verified with delivery behavior covered by VM fixtures",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "0c560fdf9d5596bb92befcfcdbd8f3a61ad56537",
+        "squashCommit": "0edaaf906b0aebc7b3e2b2de7d6b77437eace21b"
       }
     },
     {
@@ -5378,6 +5379,18 @@
       "details": [
         "Review",
         "Worker0c560fd full suite exit0; director actual UI and independent menu/support/custom-support checks passed; specialist initialization finding fixed"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:44:11.665Z",
+      "command": "move",
+      "ticket": "TRI-072",
+      "details": [
+        "Done",
+        "Acceptance reviewed; full worker suite and independent menu/support/custom-support checks passed; actual director browser menu interaction verified with delivery behavior covered by VM fixtures",
+        "/root/director",
+        "0edaaf906b0aebc7b3e2b2de7d6b77437eace21b",
+        "0c560fdf9d5596bb92befcfcdbd8f3a61ad56537"
       ]
     }
   ]
