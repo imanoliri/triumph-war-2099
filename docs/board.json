@@ -1259,8 +1259,8 @@
       "id": "TRI-072",
       "title": "Configure future ground and air eagle squads during missions",
       "task": "docs/tasks/reinforcement-composition-menu.md",
-      "status": "Ready",
-      "reason": "User answered air-pattern question; resume preserved checkout before newly prepared Scout ticket",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [
         {
           "number": 1,
@@ -1269,7 +1269,12 @@
         }
       ],
       "approval": "User agreed persistent in-mission reinforcement menu with separate ground and air compositions; numerical limits and roster details remain planning refinements",
-      "branch": "feature/reinforcement-composition-menu"
+      "branch": "feature/reinforcement-composition-menu",
+      "worker": {
+        "id": "/root/reinforcement_menu_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-reinforcement-composition-menu",
+        "branch": "feature/reinforcement-composition-menu"
+      }
     },
     {
       "id": "TRI-073",
@@ -5355,6 +5360,15 @@
       "details": [
         "Ready",
         "User answered air-pattern question; resume preserved checkout before newly prepared Scout ticket"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:23:26.153Z",
+      "command": "dispatch",
+      "ticket": "TRI-072",
+      "details": [
+        "../triumph-reinforcement-composition-menu",
+        "/root/reinforcement_menu_worker"
       ]
     }
   ]
