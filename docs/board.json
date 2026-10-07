@@ -1243,8 +1243,8 @@
       "id": "TRI-071",
       "title": "Show custom unit sprites in the Units tab",
       "task": "docs/tasks/custom-unit-guide-sprites.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker e911e86 full suite exit0, actual browser portraits verified; independent director guide/render checks and screenshot review passed",
       "questions": [],
       "approval": "User 2026-10-07 reported missing custom unit sprites in Units tab and requested tickets queued during director brainstorming",
       "worker": {
@@ -5264,6 +5264,15 @@
       "details": [
         "../triumph-custom-unit-guide-sprites",
         "/root/unit_guide_worker"
+      ]
+    },
+    {
+      "at": "2026-10-07T19:18:32.788Z",
+      "command": "move",
+      "ticket": "TRI-071",
+      "details": [
+        "Review",
+        "Worker e911e86 full suite exit0, actual browser portraits verified; independent director guide/render checks and screenshot review passed"
       ]
     }
   ]
