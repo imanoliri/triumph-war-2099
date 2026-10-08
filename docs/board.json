@@ -1361,8 +1361,8 @@
       "id": "TRI-078",
       "title": "Jungle specialist roster",
       "task": "docs/tasks/jungle-trooper-roster.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker944f75f clean, full suite exit0 including integrated rosters; final affected checks pass, independent Recon Canopy guide menu review/checks pass; user Medic deferral honored, live absence recorded",
       "questions": [
         {
           "number": 1,
@@ -6092,6 +6092,15 @@
       "details": [
         "../triumph-jungle-trooper-roster",
         "/root/jungle_recovery_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T16:43:19.541Z",
+      "command": "move",
+      "ticket": "TRI-078",
+      "details": [
+        "Review",
+        "Worker944f75f clean, full suite exit0 including integrated rosters; final affected checks pass, independent Recon Canopy guide menu review/checks pass; user Medic deferral honored, live absence recorded"
       ]
     }
   ]
