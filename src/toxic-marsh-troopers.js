@@ -16,7 +16,7 @@ window.TriumphToxicMarshTroopers=(()=>{
  function priority(u,a,s,{visible,lane,diagonal,cost}){
   if(u.focusTarget||u.useOrder||u.attackMove?.force||u.placeCharge||!Number.isFinite(cost(u,a))||!visible(u,a))return false;
   const leader=s.humans.find(h=>h.alive&&h.id===u.leader);if(u.order===1&&leader&&distance(u,leader)>75)return false;
-  const range=window.TriumphMercenaryTroopers.is(u)?window.TriumphMercenaryTroopers.range(u):({'mobile-skirmisher':160,'platform-defender':300,'heavy-trooper':220,'combat-drone':180,'chemical-trooper':100,'cooling-trooper':130,'heavy-riveter':180,'arc-technician':110,grenadier:240,'corner-ambusher':120,suppressor:200,'laser-cannon':220,'winter-gunner':280,'snow-sniper':480,'dune-guard':120,'rider-scout':180,'field-mechanic':180,tank:300,air:638})[u.type]??(u.weapon===1?145:u.weapon===2?319:245);
+  const range=window.TriumphMercenaryTroopers.is(u)?window.TriumphMercenaryTroopers.range(u):({'mobile-skirmisher':160,'platform-defender':300,'heavy-trooper':220,'combat-drone':180,'incendiary-trooper':120,'recovery-trooper':245,'chemical-trooper':100,'cooling-trooper':130,'heavy-riveter':180,'arc-technician':110,grenadier:240,'corner-ambusher':120,suppressor:200,'laser-cannon':220,'winter-gunner':280,'snow-sniper':480,'dune-guard':120,'rider-scout':180,'field-mechanic':180,tank:300,air:638})[u.type]??(u.weapon===1?145:u.weapon===2?319:245);
   if(distance(u,a)>range||!(s.trackerMarks||[]).some(m=>m.target===a&&m.until>s.t&&m.source.alive&&distance(u,m.source)<=rules.friendRange))return false;
   const probe={...u,angle:u.type==='snow-sniper'?Math.atan2(a.y-u.y,a.x-u.x):diagonal(Math.atan2(a.y-u.y,a.x-u.x))};return lane(probe,a);
  }
