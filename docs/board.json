@@ -1497,8 +1497,8 @@
       "id": "TRI-087",
       "title": "Add a playable Industrial mission",
       "task": "docs/tasks/industrial-mission.md",
-      "status": "Queued",
-      "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
+      "status": "Ready",
+      "reason": "Sequential execution authorized by user 2026-10-08; industrial mission ready",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
     },
@@ -6252,6 +6252,15 @@
         "/root/director",
         "2b8edd534c8eb8f29f2fbf6c57ee9510bb1996c3",
         "4c9aa316b0224e57461efed6c0e94ab2f3c9f951"
+      ]
+    },
+    {
+      "at": "2026-10-08T17:58:37.429Z",
+      "command": "move",
+      "ticket": "TRI-087",
+      "details": [
+        "Ready",
+        "Sequential execution authorized by user 2026-10-08; industrial mission ready"
       ]
     }
   ]
