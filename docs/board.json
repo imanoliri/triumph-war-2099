@@ -1361,8 +1361,8 @@
       "id": "TRI-078",
       "title": "Jungle specialist roster",
       "task": "docs/tasks/jungle-trooper-roster.md",
-      "status": "Blocked",
-      "reason": "Awaiting director/user answer",
+      "status": "Queued",
+      "reason": "Parked preserved partial Recon feb2bf50 in existing checkout; full suite and final independent Recon pass; Medic question1 unanswered, no full Review or integration",
       "questions": [
         {
           "number": 1,
@@ -1370,19 +1370,14 @@
         }
       ],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
-      "worker": {
-        "id": "/root/jungle_roster_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-jungle-trooper-roster",
-        "branch": "feature/jungle-trooper-roster"
-      },
       "branch": "feature/jungle-trooper-roster"
     },
     {
       "id": "TRI-079",
       "title": "Industrial specialist roster",
       "task": "docs/tasks/industrial-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "status": "Ready",
+      "reason": "Approved sequential queue execution; Industrial Heavy Riveter and Arc Technician only, opt-in definitions/fixtures if no runtime mission",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     },
@@ -5658,6 +5653,24 @@
       "ticket": "TRI-078",
       "details": [
         "Field Medic has no useful current recipients: production infantry have1HP and integer1 damage kills immediately; vehicles are excluded. Defer Medic and accept Recon-only scope, or explicitly approve a bounded infantry health-rule change? No health change inferred."
+      ]
+    },
+    {
+      "at": "2026-10-08T06:41:31.918Z",
+      "command": "move",
+      "ticket": "TRI-078",
+      "details": [
+        "Queued",
+        "Parked preserved partial Recon feb2bf50 in existing checkout; full suite and final independent Recon pass; Medic question1 unanswered, no full Review or integration"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:41:36.844Z",
+      "command": "move",
+      "ticket": "TRI-079",
+      "details": [
+        "Ready",
+        "Approved sequential queue execution; Industrial Heavy Riveter and Arc Technician only, opt-in definitions/fixtures if no runtime mission"
       ]
     }
   ]
