@@ -1497,10 +1497,16 @@
       "id": "TRI-087",
       "title": "Add a playable Industrial mission",
       "task": "docs/tasks/industrial-mission.md",
-      "status": "Ready",
-      "reason": "Sequential execution authorized by user 2026-10-08; industrial mission ready",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
+      "worker": {
+        "id": "/root/industrial_mission_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-industrial-mission",
+        "branch": "feature/industrial-mission"
+      },
+      "branch": "feature/industrial-mission"
     },
     {
       "id": "TRI-088",
@@ -6261,6 +6267,15 @@
       "details": [
         "Ready",
         "Sequential execution authorized by user 2026-10-08; industrial mission ready"
+      ]
+    },
+    {
+      "at": "2026-10-08T17:59:20.238Z",
+      "command": "dispatch",
+      "ticket": "TRI-087",
+      "details": [
+        "../triumph-industrial-mission",
+        "/root/industrial_mission_worker"
       ]
     }
   ]
