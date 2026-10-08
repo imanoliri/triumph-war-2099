@@ -36,15 +36,18 @@ polygons = [
     # Bottom border wall
     [(0, 725), (1024, 725), (1024, 768), (0, 768)],
     # West outer steel walls (North & South of staging)
-    [(0, 50), (60, 50), (60, 270), (0, 270)],
-    [(0, 510), (60, 510), (60, 725), (0, 725)],
-    # Central machinery pillars separating main corridors
-    [(310, 240), (370, 240), (370, 340), (310, 340)],
-    [(310, 440), (370, 440), (370, 540), (310, 540)],
-    # East assembly vault pillars
-    [(620, 100), (660, 100), (660, 260), (620, 260)],
-    [(620, 510), (660, 510), (660, 670), (620, 670)],
-    [(780, 270), (840, 270), (840, 500), (780, 500)]
+    [(0, 50), (60, 50), (60, 250), (0, 250)],
+    [(0, 530), (60, 530), (60, 725), (0, 725)],
+    # North Industrial Machine Block (Horizontal assembly line)
+    [(180, 100), (380, 100), (380, 170), (180, 170)],
+    # South Industrial Machine Block
+    [(180, 520), (380, 520), (380, 590), (180, 590)],
+    # Central Heavy Generator Core (Central island block)
+    [(500, 300), (660, 300), (660, 470), (500, 470)],
+    # Northeast Smelting Furnace Pillar
+    [(760, 110), (860, 110), (860, 270), (760, 270)],
+    # Southeast Conveyor Control Post
+    [(760, 490), (860, 490), (860, 650), (760, 650)]
 ]
 
 mask = Image.new('1', (1024, 768), 0)
