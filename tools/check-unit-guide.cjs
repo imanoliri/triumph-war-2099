@@ -3,7 +3,7 @@ if(require.main===module)process.chdir(require('node:path').resolve(__dirname,'.
 const fs=require('node:fs'),assert=require('node:assert/strict');
 const fixture=fs.readFileSync('tools/check-recreation.cjs','utf8').split('const api=sandbox.window.triumph')[0];
 const {sandbox:b,elements:e}=new Function('require','module','__dirname',fixture+'\nreturn {sandbox,elements};')(require,{},__dirname);
-const types=['rider-scout','dune-guard','field-mechanic','snow-sniper','winter-gunner','shield-trooper','laser-cannon'];
+const types=['rider-scout','dune-guard','field-mechanic','snow-sniper','winter-gunner','shield-trooper','laser-cannon','suppressor','grenadier'];
 const runtimeTypes=fs.readFileSync('game.js','utf8').match(/const infantryType=u=>\[([^\]]+)\]/)[1].match(/'([^']+)'/g).map(t=>t.slice(1,-1)).filter(t=>!['soldier','commando'].includes(t));
 assert.deepEqual(runtimeTypes.sort(),[...types].sort(),'Every implemented custom infantry type has a guide portrait');
 const portraits=new Map();

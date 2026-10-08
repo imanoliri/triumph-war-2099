@@ -3,7 +3,10 @@
 window.TriumphProjectiles={
 step(s,dt,{W,H,blocked,dist,damage,destroyProp,wormExposed,sound,tone,burst,emitAcousticEvent}){
  for(let i=s.bullets.length-1;i>=0;i--){
-  const b=s.bullets[i];b.x+=b.dx*b.speed*dt;b.y+=b.dy*b.speed*dt;b.life-=dt;
+  const b=s.bullets[i];if(b.grenadier){
+   let travel=Math.min(b.remaining,b.speed*dt),hit=false;while(travel>1e-9){const step=Math.min(1,travel),x=b.x+b.dx*step,y=b.y+b.dy*step;if(x<0||x>W||y<0||y>H||blocked(x,y)||(s.props||[]).some(p=>p.hp>0&&x>=p.left&&x<p.left+p.w&&y>=p.top&&y<p.top+p.h)){hit=true;break;}b.x=x;b.y=y;b.remaining-=step;travel-=step;}b.life-=dt;
+   if(hit||b.remaining<=1e-9){window.TriumphMaritimeTroopers.explode(b,s,{blocked,damage,burst,emitAcousticEvent,destroyProp,sound});s.bullets.splice(i,1);}continue;
+  }b.x+=b.dx*b.speed*dt;b.y+=b.dy*b.speed*dt;b.life-=dt;
   let hit=false;
   if(b.team==='human')for(const p of s.props||[])if(p.hp>0&&b.x>=p.left&&b.x<p.left+p.w&&b.y>=p.top&&b.y<p.top+p.h){
    p.hp-=b.damage;hit=true;if(p.hp<=0)destroyProp(p);break;
@@ -22,7 +25,7 @@ step(s,dt,{W,H,blocked,dist,damage,destroyProp,wormExposed,sound,tone,burst,emit
   if(!hit){
    const targets=b.team==='human'?s.aliens:s.humans;
    for(const a of targets)if(a.alive&&(a.type!=='desert-worm'||wormExposed(a))&&dist(a,b)<(a.type==='desert-worm'?12:a.type==='queen'?17:a.type==='tank'||a.type==='convoy-crawler'?17:8)){
-    damage(a,b.damage,b.owner,{kind:'projectile',dx:b.dx,dy:b.dy});hit=true;break;
+    damage(a,b.damage,b.owner,{kind:'projectile',dx:b.dx,dy:b.dy});if(b.suppression)window.TriumphMaritimeTroopers.suppress(a,s.t);hit=true;break;
    }
   }
   if(!hit&&b.team==='human')for(const n of s.nests)if(n.hp>0&&dist(n,b)<26){

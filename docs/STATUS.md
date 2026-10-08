@@ -2,6 +2,8 @@
 
 Updated: 2026-10-04. Latest integrated gameplay tasks: TRI-009 through TRI-017, covering commander selection, attack-move interactions, tactical mode, eagle availability, music independence, closed-door routing, duplicate weapon protection, sixteen-direction plasma cannons and ceiling vent bugs. All passed independent director review and were squash-integrated; integration commits are recorded in BOARD.
 
+TRI-076 current candidate (2026-10-08): Maritime Suppressor/Grenadier mechanics, matching-world roster/menu/support factories, Harbor two-for-two starting replacements and Units previews/descriptions are complete on `feature/maritime-trooper-roster`, awaiting director Review. Focused production and immutable support checks pass; final full-suite result and commit are recorded in [recovery handoff](journal/2026-10-08-001-maritime-trooper-roster.md). [Browser evidence](playtests/2026-10-07-maritime-troopers.md) covers menus, portraits, deployment and one default-AI completion; controlled live timing/orders/delivery, all-profile human balance, audio and physical-key hardware remain unverified.
+
 ## Checkpoints
 
 - `milestone-playable-2026-10-04` preserves eab0bb0: the playable state through rally flags before this maintenance task.
