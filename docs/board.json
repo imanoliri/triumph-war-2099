@@ -1392,10 +1392,16 @@
       "id": "TRI-080",
       "title": "Mercenary frontier specialist roster",
       "task": "docs/tasks/mercenary-trooper-roster.md",
-      "status": "Ready",
-      "reason": "Approved sequential queue; Mercenary Weapon Specialist preferred-mode setting and Bounty Hunter only, no new runtime mission",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
+      "worker": {
+        "id": "/root/mercenary_roster_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-mercenary-trooper-roster",
+        "branch": "feature/mercenary-trooper-roster"
+      },
+      "branch": "feature/mercenary-trooper-roster"
     },
     {
       "id": "TRI-081",
@@ -5717,6 +5723,15 @@
       "details": [
         "Ready",
         "Approved sequential queue; Mercenary Weapon Specialist preferred-mode setting and Bounty Hunter only, no new runtime mission"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:52:47.282Z",
+      "command": "dispatch",
+      "ticket": "TRI-080",
+      "details": [
+        "../triumph-mercenary-trooper-roster",
+        "/root/mercenary_roster_worker"
       ]
     }
   ]
