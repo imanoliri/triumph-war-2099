@@ -54,3 +54,5 @@ Review-ready candidate is the HEAD commit containing this handoff (retrieve with
 Exact next action: director independently reviews current branch versus main, checks full-suite exit0 evidence and browser limitation, then squash-integrates the accepted TRI-085 implementation as one meaningful main commit. Worker stops at Review and remains available for findings. Same session019 continues if review requires fixes. No new mission, terrain/placement edits, research, delegation, publication or merge to main is authorized here.
 
 Reviewer should inspect fixed flame cycle/terrain semantics, finite useful stationary treatment/order priority/crawler preservation, world-only menus/actual arrivals/caps, distinct Units marks and the two narrow inherited Floating fixture repairs. Live browser record remains not run.
+
+Director accepted squash4efb7897ba11c3be5520b7a17503ca3fb1bc40a5 fromab9bc3ee155c4d4ec7f4cebfe454a9c966f50615; Done immediately mirrored96items, fullsuiteexit0 and independent checks reviewed.

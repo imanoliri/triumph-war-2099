@@ -1479,15 +1479,16 @@
       "id": "TRI-085",
       "title": "Abandoned world specialist roster",
       "task": "docs/tasks/abandoned-world-trooper-roster.md",
-      "status": "Review",
-      "reason": "Worker ab9bc3ee155c4d4ec7f4cebfe454a9c966f50615 clean; full dev suite exit0, independent specialist/menu/Units checks pass; browser absence explicit",
+      "status": "Done",
+      "reason": "All acceptance met; full suite exit0 and independent scoped/menu/Units review passes; live browser absence documented",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
       "branch": "feature/abandoned-world-trooper-roster",
-      "worker": {
-        "id": "/root/abandoned_roster_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-abandoned-world-trooper-roster",
-        "branch": "feature/abandoned-world-trooper-roster"
+      "completion": {
+        "evidence": "All acceptance met; full suite exit0 and independent scoped/menu/Units review passes; live browser absence documented",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "ab9bc3ee155c4d4ec7f4cebfe454a9c966f50615",
+        "squashCommit": "4efb7897ba11c3be5520b7a17503ca3fb1bc40a5"
       }
     },
     {
@@ -6681,6 +6682,18 @@
       "details": [
         "Review",
         "Worker ab9bc3ee155c4d4ec7f4cebfe454a9c966f50615 clean; full dev suite exit0, independent specialist/menu/Units checks pass; browser absence explicit"
+      ]
+    },
+    {
+      "at": "2026-10-08T22:22:25.214Z",
+      "command": "move",
+      "ticket": "TRI-085",
+      "details": [
+        "Done",
+        "All acceptance met; full suite exit0 and independent scoped/menu/Units review passes; live browser absence documented",
+        "/root/director",
+        "4efb7897ba11c3be5520b7a17503ca3fb1bc40a5",
+        "ab9bc3ee155c4d4ec7f4cebfe454a9c966f50615"
       ]
     }
   ]
