@@ -1376,23 +1376,24 @@
       "id": "TRI-079",
       "title": "Industrial specialist roster",
       "task": "docs/tasks/industrial-trooper-roster.md",
-      "status": "Review",
-      "reason": "Worker fd2bfc2 full suite exit0 and clean; independent Industrial guide menu checks and final tip focused check pass; opt-in-only no-mission scope reviewed, browser absence recorded",
+      "status": "Done",
+      "reason": "Accepted opt-in Industrial scope; worker full suite/final checks and independent tip Industrial guide menu review pass; browser-not-run limits explicit",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
-      "worker": {
-        "id": "/root/industrial_roster_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-industrial-trooper-roster",
-        "branch": "feature/industrial-trooper-roster"
-      },
-      "branch": "feature/industrial-trooper-roster"
+      "branch": "feature/industrial-trooper-roster",
+      "completion": {
+        "evidence": "Accepted opt-in Industrial scope; worker full suite/final checks and independent tip Industrial guide menu review pass; browser-not-run limits explicit",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "fd2bfc2cb32cdbf7357b451ea269eb9db645e2af",
+        "squashCommit": "12b92298c691b9086da13dbdb21db895495963e2"
+      }
     },
     {
       "id": "TRI-080",
       "title": "Mercenary frontier specialist roster",
       "task": "docs/tasks/mercenary-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "status": "Ready",
+      "reason": "Approved sequential queue; Mercenary Weapon Specialist preferred-mode setting and Bounty Hunter only, no new runtime mission",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     },
@@ -5695,6 +5696,27 @@
       "details": [
         "Review",
         "Worker fd2bfc2 full suite exit0 and clean; independent Industrial guide menu checks and final tip focused check pass; opt-in-only no-mission scope reviewed, browser absence recorded"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:52:03.027Z",
+      "command": "move",
+      "ticket": "TRI-079",
+      "details": [
+        "Done",
+        "Accepted opt-in Industrial scope; worker full suite/final checks and independent tip Industrial guide menu review pass; browser-not-run limits explicit",
+        "/root/director",
+        "12b92298c691b9086da13dbdb21db895495963e2",
+        "fd2bfc2cb32cdbf7357b451ea269eb9db645e2af"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:52:07.820Z",
+      "command": "move",
+      "ticket": "TRI-080",
+      "details": [
+        "Ready",
+        "Approved sequential queue; Mercenary Weapon Specialist preferred-mode setting and Bounty Hunter only, no new runtime mission"
       ]
     }
   ]
