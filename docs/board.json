@@ -1479,8 +1479,8 @@
       "id": "TRI-085",
       "title": "Abandoned world specialist roster",
       "task": "docs/tasks/abandoned-world-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "status": "Ready",
+      "reason": "Resume previously authorized sequential roster queue from 2026-10-07 planning and 2026-10-08 director handoffs; no scope expansion",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     },
@@ -6482,6 +6482,15 @@
         "/root/director",
         "9e3d7b93811ee2e0c9a04c9fe894a5d717ecdb93",
         "8dec7a5ff0e4ec94ef9e8ca61e57c5b21c25ce5c"
+      ]
+    },
+    {
+      "at": "2026-10-08T21:26:15.402Z",
+      "command": "move",
+      "ticket": "TRI-085",
+      "details": [
+        "Ready",
+        "Resume previously authorized sequential roster queue from 2026-10-07 planning and 2026-10-08 director handoffs; no scope expansion"
       ]
     }
   ]
