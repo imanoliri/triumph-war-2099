@@ -1463,16 +1463,17 @@
       "id": "TRI-084",
       "title": "Floating habitat specialist roster",
       "task": "docs/tasks/floating-habitats-trooper-roster.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Accepted Floating Habitats mobile Skirmisher and deployable Defender roster; full suite and focused checks passed; live playability explicit limit",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
-      "worker": {
-        "id": "/root/floating_habitats_roster_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-floating-habitats-trooper-roster",
-        "branch": "feature/floating-habitats-trooper-roster"
-      },
-      "branch": "feature/floating-habitats-trooper-roster"
+      "branch": "feature/floating-habitats-trooper-roster",
+      "completion": {
+        "evidence": "Accepted Floating Habitats mobile Skirmisher and deployable Defender roster; full suite and focused checks passed; live playability explicit limit",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "4c9aa316b0224e57461efed6c0e94ab2f3c9f951",
+        "squashCommit": "2b8edd534c8eb8f29f2fbf6c57ee9510bb1996c3"
+      }
     },
     {
       "id": "TRI-085",
@@ -6230,6 +6231,27 @@
       "details": [
         "../triumph-floating-habitats-trooper-roster",
         "/root/floating_habitats_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T17:55:11.995Z",
+      "command": "move",
+      "ticket": "TRI-084",
+      "details": [
+        "Review",
+        "Worker commit 4c9aa316b0224e57461efed6c0e94ab2f3c9f951 full suite exit 0; focused check-floating-habitats-troopers exit 0; Skirmisher sustain-fire and Defender deploy/pack clock verified; browser spot inspected"
+      ]
+    },
+    {
+      "at": "2026-10-08T17:55:26.344Z",
+      "command": "move",
+      "ticket": "TRI-084",
+      "details": [
+        "Done",
+        "Accepted Floating Habitats mobile Skirmisher and deployable Defender roster; full suite and focused checks passed; live playability explicit limit",
+        "/root/director",
+        "2b8edd534c8eb8f29f2fbf6c57ee9510bb1996c3",
+        "4c9aa316b0224e57461efed6c0e94ab2f3c9f951"
       ]
     }
   ]
