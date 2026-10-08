@@ -1529,23 +1529,24 @@
       "id": "TRI-089",
       "title": "Add a playable Toxic Marsh mission",
       "task": "docs/tasks/toxic-marsh-mission.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Accepted playable Toxic Marsh Containment Strike mission; focused and full suite checks pass; live browser playability explicit limit",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
-      "worker": {
-        "id": "/root/toxic_marsh_mission_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-toxic-marsh-mission",
-        "branch": "feature/toxic-marsh-mission"
-      },
-      "branch": "feature/toxic-marsh-mission"
+      "branch": "feature/toxic-marsh-mission",
+      "completion": {
+        "evidence": "Accepted playable Toxic Marsh Containment Strike mission; focused and full suite checks pass; live browser playability explicit limit",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "3ddd964964040bdd3cc75ed2197e7d2d186524e2",
+        "squashCommit": "afe68c5f67b13da2e78439309ec9b7290daf62fb"
+      }
     },
     {
       "id": "TRI-090",
       "title": "Add a playable Airless Moon mission",
       "task": "docs/tasks/airless-moon-mission.md",
-      "status": "Queued",
-      "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
+      "status": "Ready",
+      "reason": "Sequential execution authorized by user 2026-10-08; airless moon mission ready",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
     },
@@ -6368,6 +6369,36 @@
       "details": [
         "../triumph-toxic-marsh-mission",
         "/root/toxic_marsh_mission_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T18:35:43.584Z",
+      "command": "move",
+      "ticket": "TRI-089",
+      "details": [
+        "Review",
+        "Worker commit 3ddd9643440e2cfddb10313f8ae74ebceb711e53; check-toxic-marsh-mission exit 0; full suite exit 0"
+      ]
+    },
+    {
+      "at": "2026-10-08T18:36:08.779Z",
+      "command": "move",
+      "ticket": "TRI-089",
+      "details": [
+        "Done",
+        "Accepted playable Toxic Marsh Containment Strike mission; focused and full suite checks pass; live browser playability explicit limit",
+        "/root/director",
+        "afe68c5f67b13da2e78439309ec9b7290daf62fb",
+        "3ddd964964040bdd3cc75ed2197e7d2d186524e2"
+      ]
+    },
+    {
+      "at": "2026-10-08T18:36:16.889Z",
+      "command": "move",
+      "ticket": "TRI-090",
+      "details": [
+        "Ready",
+        "Sequential execution authorized by user 2026-10-08; airless moon mission ready"
       ]
     }
   ]
