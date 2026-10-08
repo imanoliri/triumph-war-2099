@@ -1376,10 +1376,16 @@
       "id": "TRI-079",
       "title": "Industrial specialist roster",
       "task": "docs/tasks/industrial-trooper-roster.md",
-      "status": "Ready",
-      "reason": "Approved sequential queue execution; Industrial Heavy Riveter and Arc Technician only, opt-in definitions/fixtures if no runtime mission",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
+      "worker": {
+        "id": "/root/industrial_roster_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-industrial-trooper-roster",
+        "branch": "feature/industrial-trooper-roster"
+      },
+      "branch": "feature/industrial-trooper-roster"
     },
     {
       "id": "TRI-080",
@@ -5671,6 +5677,15 @@
       "details": [
         "Ready",
         "Approved sequential queue execution; Industrial Heavy Riveter and Arc Technician only, opt-in definitions/fixtures if no runtime mission"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:42:19.605Z",
+      "command": "dispatch",
+      "ticket": "TRI-079",
+      "details": [
+        "../triumph-industrial-trooper-roster",
+        "/root/industrial_roster_worker"
       ]
     }
   ]
