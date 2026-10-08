@@ -31,3 +31,5 @@ Focused checks pass on all five profiles, including specialist starts and route 
 
 - Director approval/recovery: [session018](../journal/2026-10-08-018-director-continuation.md).
 - [2026-10-08 / 020](../journal/2026-10-08-020-volcanic-forge-map-regression.md)
+
+Integrated: squash5787f8ed826a7d568c4fac80d4c3c23f3e2848be from reviewed83b1b5c2ace425b0ed6be2a1fb439c21b714b948. See session020 for checks and inherited-suite/live limitations.

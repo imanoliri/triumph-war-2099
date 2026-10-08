@@ -1596,16 +1596,17 @@
       "id": "TRI-094",
       "title": "Restore Volcanic Forge mission clearance after map redesign",
       "task": "docs/tasks/volcanic-forge-map-regression.md",
-      "status": "Review",
-      "reason": "Reviewed worker83b1b5c; independent Volcanic/kit/project checks pass and final committed scope/whitespace reviewed; inherited Floating full-suite failure explicitly recorded",
+      "status": "Done",
+      "reason": "Independent relevant checks and scoped acceptance reviewed; placement-only repair retains unique map, full-suite inherited Floating limitation recorded for TRI-085",
       "questions": [],
       "approval": "User2026-10-08 explicitly approved separate bounded Volcanic map regression fix; dispatch after parking preserved TRI-085",
-      "worker": {
-        "id": "/root/volcanic_map_fix_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-volcanic-forge-map-regression",
-        "branch": "fix/volcanic-forge-map-regression"
-      },
-      "branch": "fix/volcanic-forge-map-regression"
+      "branch": "fix/volcanic-forge-map-regression",
+      "completion": {
+        "evidence": "Independent relevant checks and scoped acceptance reviewed; placement-only repair retains unique map, full-suite inherited Floating limitation recorded for TRI-085",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "83b1b5c2ace425b0ed6be2a1fb439c21b714b948",
+        "squashCommit": "5787f8ed826a7d568c4fac80d4c3c23f3e2848be"
+      }
     },
     {
       "id": "TRI-095",
@@ -6599,6 +6600,18 @@
       "details": [
         "Review",
         "Reviewed worker83b1b5c; independent Volcanic/kit/project checks pass and final committed scope/whitespace reviewed; inherited Floating full-suite failure explicitly recorded"
+      ]
+    },
+    {
+      "at": "2026-10-08T21:52:56.118Z",
+      "command": "move",
+      "ticket": "TRI-094",
+      "details": [
+        "Done",
+        "Independent relevant checks and scoped acceptance reviewed; placement-only repair retains unique map, full-suite inherited Floating limitation recorded for TRI-085",
+        "/root/director",
+        "5787f8ed826a7d568c4fac80d4c3c23f3e2848be",
+        "83b1b5c2ace425b0ed6be2a1fb439c21b714b948"
       ]
     }
   ]

@@ -53,3 +53,5 @@ Full-suite result is red due to inherited Floating fixture drift awaiting TRI-08
 ## Next action / handoff
 
 Director independently reviews scoped placement/wave changes, unchanged map assets, expanded checks and these limitations; then squash-integrates if accepted. Worker stops at Review, does not merge or edit board. TRI-085 must subsequently resume against corrected main and rerun its final full suite. Exact worker implementation commit is the commit containing this journal (resolve with `git log -1 --format=%H -- docs/journal/2026-10-08-020-volcanic-forge-map-regression.md`); final SHA is reported to director after commit. No squash merge performed by worker.
+
+Director acceptance/integration: independent Volcanic Forge, Volcanic specialists and project checks passed; exact83b1b5c2ace425b0ed6be2a1fb439c21b714b948 scoped commit/whitespace and allfive route/budget assertions reviewed. Actual authorized squash5787f8ed826a7d568c4fac80d4c3c23f3e2848be onmain, Done mirrored96items. Full-suite inherited Floating baseline remains explicitly recorded pending085; no live rendering/audio claim.
