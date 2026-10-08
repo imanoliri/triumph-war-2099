@@ -1,7 +1,7 @@
 # Toxic marsh specialist roster
 
 - Ticket: TRI-082; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/toxic-marsh-trooper-roster`
 
 ## Goal and user-visible outcome
 
@@ -9,10 +9,10 @@ Provide the agreed toxic-marsh specialist roster, integrated with implemented ma
 
 ## Acceptance criteria
 
-- [ ] Implement each trooper mechanic listed below, including damage/range/timing, order behavior and terrain limits.
-- [ ] Add distinct world roster entries and meaningful Units-tab descriptions/sprite previews for new types; future TRI-072 ground/air menu exposes only eligible matching-world slots. Do not require TRI-072 to be implemented in this ticket.
-- [ ] Integrate specialists into existing matching-world missions with documented placements/payloads without changing objectives, map assets or unrelated enemy pressure. For worlds without runtime missions, provide opt-in roster definitions and disposable fixtures; do not create a mission.
-- [ ] Add relevant positive/negative regressions, run node tools/dev.cjs test, update DESIGN/Units/Controls where behavior changes, and record browser evidence or its absence separately.
+- [x] Implement each trooper mechanic listed below, including damage/range/timing, order behavior and terrain limits.
+- [x] Add distinct world roster entries and meaningful Units-tab descriptions/sprite previews for new types; future TRI-072 ground/air menu exposes only eligible matching-world slots. Do not require TRI-072 to be implemented in this ticket.
+- [x] Integrate specialists into existing matching-world missions with documented placements/payloads without changing objectives, map assets or unrelated enemy pressure. For worlds without runtime missions, provide opt-in roster definitions and disposable fixtures; do not create a mission.
+- [x] Add relevant positive/negative regressions, run node tools/dev.cjs test, update DESIGN/Units/Controls where behavior changes, and record browser evidence or its absence separately.
 
 ## Scope and decisions
 
@@ -29,3 +29,8 @@ Execution authorized by user on 2026-10-07: director dispatches agents one ticke
 
 - Planning approval and queue: [2026-10-07 roster checkpoint](../journal/2026-10-07-009-world-roster-planning.md).
 
+- [2026-10-08 / 009](../journal/2026-10-08-009-toxic-marsh-trooper-roster.md)
+
+## Implementation / Review evidence
+
+Tracker and Chemical Trooper are implemented as opt-in Toxic Marsh roster entries with starting factories, actual ground/air delivery and capacity handling. No shipped mission matches; no mission was created. Routine tuning and immunity/ownership rules are in DESIGN. Focused production regressions cover timing, legality/order exclusions, terrain, refresh and actual delivery. Full suite and scoped commit are recorded in session009. Live browser evidence is [not run](../playtests/2026-10-08-toxic-marsh-trooper-roster.md); this remains a visual/audio/playability limitation, not a simulation failure. Branch stops at Review for director integration.
