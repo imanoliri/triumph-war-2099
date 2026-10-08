@@ -1447,10 +1447,16 @@
       "id": "TRI-083",
       "title": "Airless moon specialist roster",
       "task": "docs/tasks/airless-moon-trooper-roster.md",
-      "status": "Ready",
-      "reason": "Sequential queue authority renewed2026-10-08; Toxic Marsh accepted, Airless Moon Heavy Trooper and one finite linked Drone next, mission090 separately queued",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
+      "worker": {
+        "id": "/root/airless_moon_roster_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-airless-moon-trooper-roster",
+        "branch": "feature/airless-moon-trooper-roster"
+      },
+      "branch": "feature/airless-moon-trooper-roster"
     },
     {
       "id": "TRI-084",
@@ -6169,6 +6175,15 @@
       "details": [
         "Ready",
         "Sequential queue authority renewed2026-10-08; Toxic Marsh accepted, Airless Moon Heavy Trooper and one finite linked Drone next, mission090 separately queued"
+      ]
+    },
+    {
+      "at": "2026-10-08T16:55:33.906Z",
+      "command": "dispatch",
+      "ticket": "TRI-083",
+      "details": [
+        "../triumph-airless-moon-trooper-roster",
+        "/root/airless_moon_roster_worker"
       ]
     }
   ]
