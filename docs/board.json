@@ -1612,8 +1612,8 @@
       "id": "TRI-095",
       "title": "Develop distinct world-map layout options and comparison artifact",
       "task": "docs/tasks/world-map-layout-options.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker e35bdfb0fa8b249c53bba522d219e220f96b575c; independent geometry/source/PNG/DOM review passes, inherited Floating baseline failure recorded",
       "questions": [],
       "approval": "User2026-10-08 requested many distinct map options with pros/cons artifact and selected all newer worlds; design atlas before runtime selections",
       "worker": {
@@ -6627,6 +6627,15 @@
       "details": [
         "../triumph-world-map-layout-options",
         "/root/world_map_atlas_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T22:14:10.603Z",
+      "command": "move",
+      "ticket": "TRI-095",
+      "details": [
+        "Review",
+        "Worker e35bdfb0fa8b249c53bba522d219e220f96b575c; independent geometry/source/PNG/DOM review passes, inherited Floating baseline failure recorded"
       ]
     }
   ]
