@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Triumph — world layout atlas</title>
+<style>
+body{margin:0;background:#f2f3ee;color:#15212e;font:16px/1.5 system-ui}
+header,main{max-width:1450px;margin:auto;padding:20px 28px}h1{font-size:30px;margin:0}
+p{margin:8px 0 18px}nav{display:flex;gap:8px;flex-wrap:wrap}
+button,select,a{font:inherit}button{padding:8px 14px;background:#fff;border:1px solid #8a979f;border-radius:5px;cursor:pointer}
+button[aria-pressed=true]{background:#183e52;color:#fff}select{padding:8px;max-width:100%}
+label{display:inline-block;margin-right:20px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.grid svg{width:100%;height:auto}.detail article{max-width:1024px}.detail svg{width:100%;height:auto}
+article h2{font-size:22px;margin:16px 0 8px}article h3{font-size:17px;margin:12px 0 2px}
+a{color:#176574}.badge{font-size:13px;color:#53616c}.legend{font-size:14px}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;border-bottom:1px solid #c7ced0;padding:8px}
+summary{cursor:pointer;font-weight:bold}footer{margin-top:20px;padding-top:16px;border-top:1px solid #c7ced0}
+pre{white-space:pre-wrap;font-size:12px}#budget{overflow-x:auto}
+@media(max-width:1050px){.grid{grid-template-columns:1fr}.grid article{max-width:900px}}
+@media print{header nav,button,select,label,.controls{display:none}.grid{grid-template-columns:1fr}article{break-inside:avoid}header,main{padding:8px}svg{max-height:70vh}}
+</style>
+<header>
+<div class="badge">TRI-095 · Design selection packet · Local, dependency-free</div>
+<h1>World layout atlas</h1>
+<p>39 alternatives across 13 worlds. Compare route choices, objectives and supply access, then open an option at full size. Light ground is traversable; dark terrain blocks movement and sight. These authored schematics preserve existing mission rules.</p>
+<nav id="worldnav" aria-label="World navigation"></nav>
+</header>
+<main>
+<div class="controls">
+<label>World <select id="world"></select></label>
+<label>View <select id="view"><option value="compare">Compare A / B / C</option><option value="0">Option A — large</option><option value="1">Option B — large</option><option value="2">Option C — large</option></select></label>
+<button id="print">Print / save PDF</button>
+</div>
+<h2 id="heading"></h2>
+<p id="contract"></p>
+<p id="goals"></p>
+<p id="exports"></p>
+<section id="maps" aria-live="polite"></section>
+<details><summary>Difficulty and reinforcement budgets</summary><div id="budget"></div></details>
+<footer>
+<p class="legend"><b>Map key:</b> teal solid = main approach; violet dashed = flank; dotted rust rings = connected birth/arrival pads. D deployment, C commanders, S infantry, SP specialist, RB robot, O terminal, R rescue party, X extraction, L scheduled friendly relief, N nest, E bug, T troop support, TK tank, P plasma, V vent, A existing ambush, H existing thermal hazard. Grid128px; top32px HUD reserved. Individual maps show Normal-profile placements; difficulty counts remain in the contract.</p>
+<p>Corridors144px with176px staging pads reserve a49px radius route envelope. Clear64px eight-direction firing positions are checked for enemies/nests. These tests cover the authored corridor union and hotspots. Pixel-mask collision, formations, AI, landing paths and balance require separate implementation and live playtests. Water, magma, canopy and void are blocking terrain labels; they add no damage, flight, oxygen or movement rules.</p>
+<details><summary>Source budget snapshot and proposed objective/landing coordinates</summary><pre id="metadata"></pre></details>
+<p><a href="geometry.json">Complete editable geometry / contracts</a> · <a href="validation.json">Geometry and similarity evidence</a> · <a href="README.md">Comparison guide</a> · <a href="all-worlds-overview.png">All39 thumbnail contact sheet</a></p>
+</footer>
+</main>
+<script>
+const data=@@DATA@@;
+const svgMarkup=@@SVG@@;
+const world=document.getElementById('world'),view=document.getElementById('view'),maps=document.getElementById('maps');
+const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-$/,'');
+const goals={
+Snow:'Activate the station relay, acquire three soldiers within70px and return ONE living rescued soldier to deployment (80px). All rescued lost or total army exhaustion fails; enemies may remain.',
+Maritime:'Hold120s, exhaust or destroy the finite nest/assault budgets, then clear bugs and pending arrivals. Preserve a living noncommander. There is no fixed capture or terminal objective.',
+Capital:'Activate both transit terminals, hold120s, receive all three70s relief commandos and clear bugs/pending finite arrivals. Preserve a living noncommander.',
+Jungle:'Activate the research terminal, acquire three survey survivors within70px and return ONE living survivor to deployment (80px). All rescued lost or total army exhaustion fails; enemies may remain.',
+Undercity:'Hack both nodes and extract ALL living ground forces into the east exit (80px), including at least one noncommander. Enemy clearance is not required.',
+'Abandoned World':'Proposed existing-system assault: activate two relays, destroy four nests and clear enemies. Recovery can use its two finite repair kits on an injured existing7HP robot; no new health system.',
+'Orbital Scrapyard':'Proposed existing-system assault: activate two relays, destroy four nests and clear enemies. Four explicitly ordered mines and90px Breacher shots; no hull demolition.',
+default:'Activate both existing terminals, destroy all four nests and clear enemies and scheduled arrivals. Either terminal may be first. Tank support is retained only in the existing eligible profiles.'
+};
+data.forEach((w,i)=>{world.add(new Option(w.world,i));const b=document.createElement('button');b.textContent=w.world;b.dataset.index=i;b.onclick=()=>{world.value=i;render()};document.getElementById('worldnav').append(b)});
+function render(){
+ const w=data[+world.value],compare=view.value==='compare';
+ document.getElementById('heading').textContent=w.world+' — '+w.contract.name;
+ document.getElementById('contract').textContent=w.contract.status+'. '+(w.contract.limits||'Current objectives and all five difficulty budgets are retained; route order is optional.');
+ document.getElementById('goals').textContent=goals[w.world]||goals.default;
+ document.getElementById('exports').innerHTML='<a href="'+slug(w.world)+'-overview.png">PNG comparison sheet</a> · <a href="'+slug(w.world)+'-overview.svg">Editable comparison SVG</a>';
+ maps.className=compare?'grid':'detail';maps.innerHTML='';
+ (compare?w.options:[w.options[+view.value]]).forEach(o=>{
+  const a=document.createElement('article');
+  a.innerHTML='<h2>'+o.name+'</h2>'+svgMarkup[o.id]+'<p class="badge">'+o.material+' · Main '+o.routeLengths.main+'px / flank '+o.routeLengths.flank+'px</p><h3>Why choose it</h3><p>'+o.pro+'</p><h3>Cost / risk</h3><p>'+o.con+'</p><h3>Specialist use</h3><p>'+o.roles+'</p><p><a href="'+o.id+'.svg">Editable SVG</a> · <a href="'+o.id+'.png">Native-size PNG</a></p>';
+  const b=document.createElement('button');b.textContent='Inspect '+o.name.charAt(0)+' at full size';b.onclick=()=>{view.value=w.options.indexOf(o);render();maps.scrollIntoView({block:'start'})};if(compare)a.append(b);maps.append(a);
+ });
+ const projection=w.options.map(o=>({id:o.id,proposedObjective:o.proposedObjective,proposedScheduledAir:o.proposedScheduledAir,acquisitionAreas:o.acquisitionAreas,extractionAreas:o.extractionAreas}));
+ document.getElementById('metadata').textContent=JSON.stringify({sourceSnapshot:w.contract,proposedSpatialProjection:projection},null,2);
+ const profiles=w.contract.profiles;
+ document.getElementById('budget').innerHTML=profiles?'<table><thead><tr><th>Profile</th><th>Starting force</th><th>Waves</th><th>Nests</th><th>Support</th></tr></thead><tbody>'+Object.entries(profiles).map(([d,p])=>'<tr><td>'+d+'</td><td>'+Object.entries(p.starting).map(([k,n])=>n+' '+k).join(', ')+'</td><td>'+p.waves.reduce((n,a)=>n+a.points.length*a.bugsPerPoint,0)+' arrivals / '+p.waves.length+' waves</td><td>'+p.nests+'; '+(p.nestBudget===null?'existing live births':p.nestBudget+' births each')+'</td><td>'+p.support.join(', ')+'</td></tr>').join('')+'</tbody></table>':'<p>Proposed finite starting budget:4 commanders,6 infantry,1 of each matching specialist,4 nests ×4 births,6 initial bugs,1 troop eagle,1 plasma; no waves. Abandoned includes one existing robot. Final five-profile tuning is TRI-092/093 work.</p>';
+ document.querySelectorAll('#worldnav button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.index===world.value));history.replaceState(null,'','#'+world.value+'/'+view.value);
+}
+world.onchange=render;view.onchange=render;document.getElementById('print').onclick=()=>print();
+const parts=location.hash.slice(1).split('/');if(data[+parts[0]])world.value=parts[0];if(['compare','0','1','2'].includes(parts[1]))view.value=parts[1];render();
+</script>
+</html>
