@@ -1513,10 +1513,16 @@
       "id": "TRI-088",
       "title": "Add a playable Mercenary Frontier mission",
       "task": "docs/tasks/mercenary-frontier-mission.md",
-      "status": "Ready",
-      "reason": "Sequential execution authorized by user 2026-10-08; mercenary frontier mission ready",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
+      "worker": {
+        "id": "/root/mercenary_frontier_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-mercenary-frontier-mission",
+        "branch": "feature/mercenary-frontier-mission"
+      },
+      "branch": "feature/mercenary-frontier-mission"
     },
     {
       "id": "TRI-089",
@@ -6307,6 +6313,15 @@
       "details": [
         "Ready",
         "Sequential execution authorized by user 2026-10-08; mercenary frontier mission ready"
+      ]
+    },
+    {
+      "at": "2026-10-08T18:10:02.159Z",
+      "command": "dispatch",
+      "ticket": "TRI-088",
+      "details": [
+        "../triumph-mercenary-frontier-mission",
+        "/root/mercenary_frontier_worker"
       ]
     }
   ]
