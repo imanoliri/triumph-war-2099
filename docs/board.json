@@ -1561,10 +1561,16 @@
       "id": "TRI-091",
       "title": "Add a playable Floating Habitats mission",
       "task": "docs/tasks/floating-habitats-mission.md",
-      "status": "Ready",
-      "reason": "Sequential execution authorized by user 2026-10-08; floating habitats mission ready",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
+      "worker": {
+        "id": "/root/floating_habitats_mission_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-floating-habitats-mission",
+        "branch": "feature/floating-habitats-mission"
+      },
+      "branch": "feature/floating-habitats-mission"
     },
     {
       "id": "TRI-092",
@@ -6445,6 +6451,15 @@
       "details": [
         "Ready",
         "Sequential execution authorized by user 2026-10-08; floating habitats mission ready"
+      ]
+    },
+    {
+      "at": "2026-10-08T19:08:50.706Z",
+      "command": "dispatch",
+      "ticket": "TRI-091",
+      "details": [
+        "../triumph-floating-habitats-mission",
+        "/root/floating_habitats_mission_worker"
       ]
     }
   ]
