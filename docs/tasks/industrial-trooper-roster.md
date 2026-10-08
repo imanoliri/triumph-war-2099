@@ -1,7 +1,7 @@
 # Industrial specialist roster
 
 - Ticket: TRI-079; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/industrial-trooper-roster`
 
 ## Goal and user-visible outcome
 
@@ -9,10 +9,10 @@ Provide the agreed industrial specialist roster, integrated with implemented mat
 
 ## Acceptance criteria
 
-- [ ] Implement each trooper mechanic listed below, including damage/range/timing, order behavior and terrain limits.
-- [ ] Add distinct world roster entries and meaningful Units-tab descriptions/sprite previews for new types; future TRI-072 ground/air menu exposes only eligible matching-world slots. Do not require TRI-072 to be implemented in this ticket.
-- [ ] Integrate specialists into existing matching-world missions with documented placements/payloads without changing objectives, map assets or unrelated enemy pressure. For worlds without runtime missions, provide opt-in roster definitions and disposable fixtures; do not create a mission.
-- [ ] Add relevant positive/negative regressions, run node tools/dev.cjs test, update DESIGN/Units/Controls where behavior changes, and record browser evidence or its absence separately.
+- [x] Implement each trooper mechanic listed below, including damage/range/timing, order behavior and terrain limits.
+- [x] Add distinct world roster entries and meaningful Units-tab descriptions/sprite previews for new types; future TRI-072 ground/air menu exposes only eligible matching-world slots. Do not require TRI-072 to be implemented in this ticket.
+- [x] Integrate specialists into existing matching-world missions with documented placements/payloads without changing objectives, map assets or unrelated enemy pressure. For worlds without runtime missions, provide opt-in roster definitions and disposable fixtures; do not create a mission.
+- [x] Add relevant positive/negative regressions, run node tools/dev.cjs test, update DESIGN/Units/Controls where behavior changes, and record browser evidence or its absence separately.
 
 ## Scope and decisions
 
@@ -29,3 +29,8 @@ Execution authorized by user on 2026-10-07: director dispatches agents one ticke
 
 - Planning approval and queue: [2026-10-07 roster checkpoint](../journal/2026-10-07-009-world-roster-planning.md).
 
+- [2026-10-08 / 005](../journal/2026-10-08-005-industrial-trooper-roster.md)
+
+## Implementation evidence
+
+TRI-079 uses authored opt-in Industrial definitions because no shipped runtime mission has Industrial environment. No placements/payloads or new mission were added. `riveters` / `technicians` coordinate arrays and the existing ground/air composition factories accept these types for future opted-in definitions. Starting1HP/fixed eight-direction kits,90px/s Riveter projectile and instantaneous Arc are documented routine tuning. Full command/evidence and limitations live in session005; browser absence is separate. Acceptance marks describe implementation/simulation evidence, not observed live playability.

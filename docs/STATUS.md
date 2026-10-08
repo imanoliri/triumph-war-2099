@@ -6,6 +6,8 @@ TRI-077 current candidate (2026-10-08): Undercity Corner Ambusher1s stationary s
 
 TRI-076 Maritime Suppressor/Grenadier was reviewed and integrated at46aebc7. [Recovery handoff](journal/2026-10-08-001-maritime-trooper-roster.md) and [browser evidence](playtests/2026-10-07-maritime-troopers.md) preserve checks and remaining live limitations.
 
+TRI-079 Industrial candidate (2026-10-08): Heavy Riveter2 damage/180px/1.2s/90px/s/75% movement and Arc Technician1 damage/110px/one clear40px jump/1.5s recharge implemented as opt-in roster definitions. No shipped Industrial runtime mission exists; disposable production fixtures cover integration without adding a mission or altering existing scenarios. Distinct Units portraits/Controls, orders, terrain and reinforcement factories/caps are integrated. See [session005](journal/2026-10-08-005-industrial-trooper-roster.md); live evidence/absence is [recorded separately](playtests/2026-10-08-industrial-troopers.md).
+
 ## Checkpoints
 
 - `milestone-playable-2026-10-04` preserves eab0bb0: the playable state through rally flags before this maintenance task.
