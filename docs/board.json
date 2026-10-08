@@ -1361,8 +1361,8 @@
       "id": "TRI-078",
       "title": "Jungle specialist roster",
       "task": "docs/tasks/jungle-trooper-roster.md",
-      "status": "Review",
-      "reason": "Worker944f75f clean, full suite exit0 including integrated rosters; final affected checks pass, independent Recon Canopy guide menu review/checks pass; user Medic deferral honored, live absence recorded",
+      "status": "Done",
+      "reason": "User-approved Recon-only acceptance met; full suite/final affected checks and independent Recon Canopy guide menu review pass; no health change, live absence explicit",
       "questions": [
         {
           "number": 1,
@@ -1372,10 +1372,11 @@
       ],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
       "branch": "feature/jungle-trooper-roster",
-      "worker": {
-        "id": "/root/jungle_recovery_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-jungle-trooper-roster",
-        "branch": "feature/jungle-trooper-roster"
+      "completion": {
+        "evidence": "User-approved Recon-only acceptance met; full suite/final affected checks and independent Recon Canopy guide menu review pass; no health change, live absence explicit",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "944f75f9e0beee792f8d6322bde20ba969acb3e5",
+        "squashCommit": "9457bb535c6f4fb4761c83f4448fc0d03c35d633"
       }
     },
     {
@@ -1430,8 +1431,8 @@
       "id": "TRI-082",
       "title": "Toxic marsh specialist roster",
       "task": "docs/tasks/toxic-marsh-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "status": "Ready",
+      "reason": "Sequential user-authorized execution; Jungle Recon accepted, Toxic Marsh Tracker/Chemical scope next, mission separately queued TRI-089",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     },
@@ -6101,6 +6102,27 @@
       "details": [
         "Review",
         "Worker944f75f clean, full suite exit0 including integrated rosters; final affected checks pass, independent Recon Canopy guide menu review/checks pass; user Medic deferral honored, live absence recorded"
+      ]
+    },
+    {
+      "at": "2026-10-08T16:43:40.603Z",
+      "command": "move",
+      "ticket": "TRI-078",
+      "details": [
+        "Done",
+        "User-approved Recon-only acceptance met; full suite/final affected checks and independent Recon Canopy guide menu review pass; no health change, live absence explicit",
+        "/root/director",
+        "9457bb535c6f4fb4761c83f4448fc0d03c35d633",
+        "944f75f9e0beee792f8d6322bde20ba969acb3e5"
+      ]
+    },
+    {
+      "at": "2026-10-08T16:43:45.719Z",
+      "command": "move",
+      "ticket": "TRI-082",
+      "details": [
+        "Ready",
+        "Sequential user-authorized execution; Jungle Recon accepted, Toxic Marsh Tracker/Chemical scope next, mission separately queued TRI-089"
       ]
     }
   ]
