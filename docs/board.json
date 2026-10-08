@@ -1447,8 +1447,8 @@
       "id": "TRI-083",
       "title": "Airless moon specialist roster",
       "task": "docs/tasks/airless-moon-trooper-roster.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker a8b17d8 full suite exit0 and final Airless/Units checks pass; independent Airless Units menu Toxic SilentReturn checks/scope review and saved UI artifact inspection pass; extraction finding fixed, live limits explicit",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
       "worker": {
@@ -6184,6 +6184,15 @@
       "details": [
         "../triumph-airless-moon-trooper-roster",
         "/root/airless_moon_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T17:08:21.342Z",
+      "command": "move",
+      "ticket": "TRI-083",
+      "details": [
+        "Review",
+        "Worker a8b17d8 full suite exit0 and final Airless/Units checks pass; independent Airless Units menu Toxic SilentReturn checks/scope review and saved UI artifact inspection pass; extraction finding fixed, live limits explicit"
       ]
     }
   ]
