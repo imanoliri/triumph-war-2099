@@ -1447,23 +1447,24 @@
       "id": "TRI-083",
       "title": "Airless moon specialist roster",
       "task": "docs/tasks/airless-moon-trooper-roster.md",
-      "status": "Review",
-      "reason": "Worker a8b17d8 full suite exit0 and final Airless/Units checks pass; independent Airless Units menu Toxic SilentReturn checks/scope review and saved UI artifact inspection pass; extraction finding fixed, live limits explicit",
+      "status": "Done",
+      "reason": "Accepted Heavy/linked ground Drone opt-in roster; full suite and independent focused checks/review pass, extraction finding fixed; saved Units-Control UI reviewed, live limits recorded",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
-      "worker": {
-        "id": "/root/airless_moon_roster_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-airless-moon-trooper-roster",
-        "branch": "feature/airless-moon-trooper-roster"
-      },
-      "branch": "feature/airless-moon-trooper-roster"
+      "branch": "feature/airless-moon-trooper-roster",
+      "completion": {
+        "evidence": "Accepted Heavy/linked ground Drone opt-in roster; full suite and independent focused checks/review pass, extraction finding fixed; saved Units-Control UI reviewed, live limits recorded",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "a8b17d85f674373b9afdad03266fa55561fc954c",
+        "squashCommit": "000fbcffc06fb962ef59308d9427cbcbdd179c9c"
+      }
     },
     {
       "id": "TRI-084",
       "title": "Floating habitat specialist roster",
       "task": "docs/tasks/floating-habitats-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "status": "Ready",
+      "reason": "Sequential user-authorized queue; Airless Moon accepted, Floating Habitats Skirmisher/Defender next, mission091 separately queued",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     },
@@ -6193,6 +6194,27 @@
       "details": [
         "Review",
         "Worker a8b17d8 full suite exit0 and final Airless/Units checks pass; independent Airless Units menu Toxic SilentReturn checks/scope review and saved UI artifact inspection pass; extraction finding fixed, live limits explicit"
+      ]
+    },
+    {
+      "at": "2026-10-08T17:08:44.436Z",
+      "command": "move",
+      "ticket": "TRI-083",
+      "details": [
+        "Done",
+        "Accepted Heavy/linked ground Drone opt-in roster; full suite and independent focused checks/review pass, extraction finding fixed; saved Units-Control UI reviewed, live limits recorded",
+        "/root/director",
+        "000fbcffc06fb962ef59308d9427cbcbdd179c9c",
+        "a8b17d85f674373b9afdad03266fa55561fc954c"
+      ]
+    },
+    {
+      "at": "2026-10-08T17:08:49.987Z",
+      "command": "move",
+      "ticket": "TRI-084",
+      "details": [
+        "Ready",
+        "Sequential user-authorized queue; Airless Moon accepted, Floating Habitats Skirmisher/Defender next, mission091 separately queued"
       ]
     }
   ]
