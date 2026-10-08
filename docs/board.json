@@ -1361,9 +1361,14 @@
       "id": "TRI-078",
       "title": "Jungle specialist roster",
       "task": "docs/tasks/jungle-trooper-roster.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
-      "questions": [],
+      "status": "Blocked",
+      "reason": "Awaiting director/user answer",
+      "questions": [
+        {
+          "number": 1,
+          "question": "Field Medic has no useful current recipients: production infantry have1HP and integer1 damage kills immediately; vehicles are excluded. Defer Medic and accept Recon-only scope, or explicitly approve a bounded infantry health-rule change? No health change inferred."
+        }
+      ],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
       "worker": {
         "id": "/root/jungle_roster_worker",
@@ -5645,6 +5650,14 @@
       "details": [
         "../triumph-jungle-trooper-roster",
         "/root/jungle_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:31:12.192Z",
+      "command": "ask",
+      "ticket": "TRI-078",
+      "details": [
+        "Field Medic has no useful current recipients: production infantry have1HP and integer1 damage kills immediately; vehicles are excluded. Defer Medic and accept Recon-only scope, or explicitly approve a bounded infantry health-rule change? No health change inferred."
       ]
     }
   ]
