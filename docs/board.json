@@ -1345,23 +1345,24 @@
       "id": "TRI-077",
       "title": "Undercity specialist roster",
       "task": "docs/tasks/undercity-trooper-roster.md",
-      "status": "Review",
-      "reason": "Worker a32126bd full suite exit0 and final affected checks pass; independent Corner Undercity menu guide and exact final range review pass; browser screenshot inspected and limits retained",
+      "status": "Done",
+      "reason": "Accepted Corner Ambusher only; full suite and final affected checks pass, independent production review and browser artifact inspection pass; controlled live limits recorded",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
-      "worker": {
-        "id": "/root/undercity_roster_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-undercity-trooper-roster",
-        "branch": "feature/undercity-trooper-roster"
-      },
-      "branch": "feature/undercity-trooper-roster"
+      "branch": "feature/undercity-trooper-roster",
+      "completion": {
+        "evidence": "Accepted Corner Ambusher only; full suite and final affected checks pass, independent production review and browser artifact inspection pass; controlled live limits recorded",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "a32126bd65acafbe27757924bc49c21435d07508",
+        "squashCommit": "8b5efba13d2cd0adbd3c78dfde727f3b08f4767f"
+      }
     },
     {
       "id": "TRI-078",
       "title": "Jungle specialist roster",
       "task": "docs/tasks/jungle-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "status": "Ready",
+      "reason": "Sequential execution authorized; approved Recon and Field Medic only, existing health eligibility must be proven or raised as material question",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     },
@@ -5608,6 +5609,27 @@
       "details": [
         "Review",
         "Worker a32126bd full suite exit0 and final affected checks pass; independent Corner Undercity menu guide and exact final range review pass; browser screenshot inspected and limits retained"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:29:49.835Z",
+      "command": "move",
+      "ticket": "TRI-077",
+      "details": [
+        "Done",
+        "Accepted Corner Ambusher only; full suite and final affected checks pass, independent production review and browser artifact inspection pass; controlled live limits recorded",
+        "/root/director",
+        "8b5efba13d2cd0adbd3c78dfde727f3b08f4767f",
+        "a32126bd65acafbe27757924bc49c21435d07508"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:29:54.726Z",
+      "command": "move",
+      "ticket": "TRI-078",
+      "details": [
+        "Ready",
+        "Sequential execution authorized; approved Recon and Field Medic only, existing health eligibility must be proven or raised as material question"
       ]
     }
   ]
