@@ -1596,8 +1596,8 @@
       "id": "TRI-094",
       "title": "Restore Volcanic Forge mission clearance after map redesign",
       "task": "docs/tasks/volcanic-forge-map-regression.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Reviewed worker83b1b5c; independent Volcanic/kit/project checks pass and final committed scope/whitespace reviewed; inherited Floating full-suite failure explicitly recorded",
       "questions": [],
       "approval": "User2026-10-08 explicitly approved separate bounded Volcanic map regression fix; dispatch after parking preserved TRI-085",
       "worker": {
@@ -6590,6 +6590,15 @@
       "details": [
         "Ready",
         "User2026-10-08 requested many distinct map options with pros/cons artifact and selected all newer worlds; design atlas before runtime selections"
+      ]
+    },
+    {
+      "at": "2026-10-08T21:52:29.655Z",
+      "command": "move",
+      "ticket": "TRI-094",
+      "details": [
+        "Review",
+        "Reviewed worker83b1b5c; independent Volcanic/kit/project checks pass and final committed scope/whitespace reviewed; inherited Floating full-suite failure explicitly recorded"
       ]
     }
   ]
