@@ -29,28 +29,28 @@ for _ in range(2800):
     if (130 <= x <= 200 and 55 <= y <= 130) or (250 <= x <= 310 and 135 <= y <= 235) or (410 <= x <= 480 and 45 <= y <= 340):
         d.point((x, y), fill=rng.choice(cloud_colors))
 
-# UNIQUE polygon layout for Floating Habitats (Aerial Sky Platform Catwalks, Cloud Habitat Domes, Floating Piers, Skybridge Gaps, Central Altitude Station) (in 1024x768 space)
+# UNIQUE polygon layout for Floating Habitats (Sky Platforms, Cloud Deck Barriers, Skybridge Gaps) (in 1024x768 space)
 polygons = [
     # Top sky atmosphere border railing
     [(0, 0), (1024, 0), (1024, 45), (0, 45)],
     # Bottom sky atmosphere border railing
     [(0, 725), (1024, 725), (1024, 768), (0, 768)],
     # West staging skybridge border North
-    [(0, 45), (75, 45), (75, 260), (0, 260)],
+    [(0, 45), (75, 45), (75, 250), (0, 250)],
     # West staging skybridge border South
-    [(0, 520), (75, 520), (75, 725), (0, 725)],
-    # NW Cloud Habitat Octagonal Dome structure
-    [(260, 110), (360, 110), (400, 150), (400, 220), (360, 260), (260, 260), (220, 220), (220, 150)],
-    # SW Floating Landing Pier Stabilizer & Energy Substation
-    [(250, 510), (390, 510), (390, 650), (250, 650)],
-    # Central Altitude Station Core Structure (divides central skyways)
-    [(500, 270), (620, 270), (620, 470), (500, 470)],
-    # NE Cloud Observatory Dome & Altitude Terminal Structure
-    [(730, 90), (810, 90), (810, 240), (730, 240)],
-    # SE Climate Control Filtration Plant Structure
-    [(730, 530), (810, 530), (810, 670), (730, 670)],
-    # Far East Sky Landing Pier End Ramp Wall
-    [(910, 250), (960, 250), (960, 510), (910, 510)]
+    [(0, 530), (75, 530), (75, 725), (0, 725)],
+    # NW Vertical Floating Habitat Module (West side barrier)
+    [(240, 100), (340, 100), (340, 280), (240, 280)],
+    # SW Vertical Floating Habitat Module
+    [(240, 480), (340, 480), (340, 660), (240, 660)],
+    # Central Skybridge Gap Wall (Tall vertical central sky barrier forcing N/S loops)
+    [(400, 220), (480, 220), (480, 540), (400, 540)],
+    # NE Cloud Deck Barrier Block
+    [(740, 100), (840, 100), (840, 240), (740, 240)],
+    # SE Cloud Deck Barrier Block
+    [(740, 520), (840, 520), (840, 660), (740, 660)],
+    # Far East Altitude Control Hub (Island station block)
+    [(860, 270), (960, 270), (960, 490), (860, 490)]
 ]
 
 mask = Image.new('1', (1024, 768), 0)
