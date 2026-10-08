@@ -1345,10 +1345,16 @@
       "id": "TRI-077",
       "title": "Undercity specialist roster",
       "task": "docs/tasks/undercity-trooper-roster.md",
-      "status": "Ready",
-      "reason": "Sequential execution authorized on 2026-10-07 and renewed 2026-10-08; Corner Ambusher only, rejected Listener excluded",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
+      "worker": {
+        "id": "/root/undercity_roster_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-undercity-trooper-roster",
+        "branch": "feature/undercity-trooper-roster"
+      },
+      "branch": "feature/undercity-trooper-roster"
     },
     {
       "id": "TRI-078",
@@ -5584,6 +5590,15 @@
       "details": [
         "Ready",
         "Sequential execution authorized on 2026-10-07 and renewed 2026-10-08; Corner Ambusher only, rejected Listener excluded"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:16:53.818Z",
+      "command": "dispatch",
+      "ticket": "TRI-077",
+      "details": [
+        "../triumph-undercity-trooper-roster",
+        "/root/undercity_roster_worker"
       ]
     }
   ]
