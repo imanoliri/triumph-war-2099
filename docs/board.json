@@ -1392,23 +1392,24 @@
       "id": "TRI-080",
       "title": "Mercenary frontier specialist roster",
       "task": "docs/tasks/mercenary-trooper-roster.md",
-      "status": "Review",
-      "reason": "Worker8cf5ca0 full suite and final affected checks pass; director independent final Mercenary guide menu scope review pass; tracking mode UI and Auto far-target findings resolved; browser absence explicit",
+      "status": "Done",
+      "reason": "Accepted Mercenary scope; full suite/final affected checks and independent final production review pass; tracking/UI/Auto transition findings resolved; committed test EOF blank-line formatting warning accepted, live absence explicit",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
-      "worker": {
-        "id": "/root/mercenary_roster_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-mercenary-trooper-roster",
-        "branch": "feature/mercenary-trooper-roster"
-      },
-      "branch": "feature/mercenary-trooper-roster"
+      "branch": "feature/mercenary-trooper-roster",
+      "completion": {
+        "evidence": "Accepted Mercenary scope; full suite/final affected checks and independent final production review pass; tracking/UI/Auto transition findings resolved; committed test EOF blank-line formatting warning accepted, live absence explicit",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "8cf5ca0fa48d453d67a0e196bf4f4a6bb1464ef6",
+        "squashCommit": "e825e47df787c4b3981b9241d4d8deb14f015b53"
+      }
     },
     {
       "id": "TRI-081",
       "title": "Volcanic specialist roster",
       "task": "docs/tasks/volcanic-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "status": "Ready",
+      "reason": "Approved sequential queue; finite explicit Demolition placement order and Cooling Trooper only, preserve Volcanic objectives/assets/pressure",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     },
@@ -5741,6 +5742,27 @@
       "details": [
         "Review",
         "Worker8cf5ca0 full suite and final affected checks pass; director independent final Mercenary guide menu scope review pass; tracking mode UI and Auto far-target findings resolved; browser absence explicit"
+      ]
+    },
+    {
+      "at": "2026-10-08T07:07:37.696Z",
+      "command": "move",
+      "ticket": "TRI-080",
+      "details": [
+        "Done",
+        "Accepted Mercenary scope; full suite/final affected checks and independent final production review pass; tracking/UI/Auto transition findings resolved; committed test EOF blank-line formatting warning accepted, live absence explicit",
+        "/root/director",
+        "e825e47df787c4b3981b9241d4d8deb14f015b53",
+        "8cf5ca0fa48d453d67a0e196bf4f4a6bb1464ef6"
+      ]
+    },
+    {
+      "at": "2026-10-08T07:07:42.513Z",
+      "command": "move",
+      "ticket": "TRI-081",
+      "details": [
+        "Ready",
+        "Approved sequential queue; finite explicit Demolition placement order and Cooling Trooper only, preserve Volcanic objectives/assets/pressure"
       ]
     }
   ]
