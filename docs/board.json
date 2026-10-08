@@ -1495,10 +1495,16 @@
       "id": "TRI-086",
       "title": "Orbital scrapyard specialist roster",
       "task": "docs/tasks/orbital-scrapyard-trooper-roster.md",
-      "status": "Ready",
-      "reason": "User2026-10-07 authorized sequential execution and2026-10-08/09 continuation retains approved roster queue; dispatch after TRI-085 acceptance",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
+      "worker": {
+        "id": "/root/orbital_roster_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-orbital-scrapyard-trooper-roster",
+        "branch": "feature/orbital-scrapyard-trooper-roster"
+      },
+      "branch": "feature/orbital-scrapyard-trooper-roster"
     },
     {
       "id": "TRI-087",
@@ -6694,6 +6700,15 @@
         "/root/director",
         "4efb7897ba11c3be5520b7a17503ca3fb1bc40a5",
         "ab9bc3ee155c4d4ec7f4cebfe454a9c966f50615"
+      ]
+    },
+    {
+      "at": "2026-10-08T22:22:52.648Z",
+      "command": "dispatch",
+      "ticket": "TRI-086",
+      "details": [
+        "../triumph-orbital-scrapyard-trooper-roster",
+        "/root/orbital_roster_worker"
       ]
     }
   ]
