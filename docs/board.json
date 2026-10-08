@@ -1596,6 +1596,15 @@
       "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+    },
+    {
+      "id": "TRI-094",
+      "title": "Restore Volcanic Forge mission clearance after map redesign",
+      "task": "docs/tasks/volcanic-forge-map-regression.md",
+      "status": "Ready",
+      "reason": "User2026-10-08 explicitly approved separate bounded Volcanic map regression fix; dispatch after parking preserved TRI-085",
+      "questions": [],
+      "approval": "User2026-10-08 explicitly approved separate bounded Volcanic map regression fix; dispatch after parking preserved TRI-085"
     }
   ],
   "events": [
@@ -6506,6 +6515,25 @@
       "details": [
         "../triumph-abandoned-world-trooper-roster",
         "/root/abandoned_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T21:40:31.656Z",
+      "command": "create",
+      "ticket": "TRI-094",
+      "details": [
+        "volcanic-forge-map-regression",
+        "Restore Volcanic Forge mission clearance after map redesign",
+        "Restore collision-safe authored mission placements and connected objective routes after the unique magma-core layout update, preserving world geometry identity and gameplay budgets"
+      ]
+    },
+    {
+      "at": "2026-10-08T21:40:55.506Z",
+      "command": "move",
+      "ticket": "TRI-094",
+      "details": [
+        "Ready",
+        "User2026-10-08 explicitly approved separate bounded Volcanic map regression fix; dispatch after parking preserved TRI-085"
       ]
     }
   ]
