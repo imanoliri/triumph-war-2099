@@ -1431,8 +1431,8 @@
       "id": "TRI-082",
       "title": "Toxic marsh specialist roster",
       "task": "docs/tasks/toxic-marsh-trooper-roster.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker e0c1928 full suite exit0, final Toxic Volcanic immutable combat checks pass; independent focused final Toxic/guide/menu/input review passes, live absence explicit",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
       "worker": {
@@ -6138,6 +6138,15 @@
       "details": [
         "../triumph-toxic-marsh-trooper-roster",
         "/root/toxic_marsh_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T16:54:26.700Z",
+      "command": "move",
+      "ticket": "TRI-082",
+      "details": [
+        "Review",
+        "Worker e0c1928 full suite exit0, final Toxic Volcanic immutable combat checks pass; independent focused final Toxic/guide/menu/input review passes, live absence explicit"
       ]
     }
   ]
