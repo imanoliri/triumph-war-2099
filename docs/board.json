@@ -1361,8 +1361,8 @@
       "id": "TRI-078",
       "title": "Jungle specialist roster",
       "task": "docs/tasks/jungle-trooper-roster.md",
-      "status": "Ready",
-      "reason": "User resolved question1: Field Medic deferred, Recon-only scope approved; resume preserved feb2bf50 checkout after active Volcanic worker finishes",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [
         {
           "number": 1,
@@ -1371,7 +1371,12 @@
         }
       ],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
-      "branch": "feature/jungle-trooper-roster"
+      "branch": "feature/jungle-trooper-roster",
+      "worker": {
+        "id": "/root/jungle_recovery_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-jungle-trooper-roster",
+        "branch": "feature/jungle-trooper-roster"
+      }
     },
     {
       "id": "TRI-079",
@@ -6078,6 +6083,15 @@
         "/root/director",
         "273f2819e06bb07b201b92c06c48f6aa96bf8900",
         "8ee888851dd8a9918009f7689b08042e732e30ef"
+      ]
+    },
+    {
+      "at": "2026-10-08T16:33:30.821Z",
+      "command": "dispatch",
+      "ticket": "TRI-078",
+      "details": [
+        "../triumph-jungle-trooper-roster",
+        "/root/jungle_recovery_worker"
       ]
     }
   ]
