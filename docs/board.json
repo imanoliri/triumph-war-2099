@@ -1376,8 +1376,8 @@
       "id": "TRI-079",
       "title": "Industrial specialist roster",
       "task": "docs/tasks/industrial-trooper-roster.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker fd2bfc2 full suite exit0 and clean; independent Industrial guide menu checks and final tip focused check pass; opt-in-only no-mission scope reviewed, browser absence recorded",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
       "worker": {
@@ -5686,6 +5686,15 @@
       "details": [
         "../triumph-industrial-trooper-roster",
         "/root/industrial_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:51:49.794Z",
+      "command": "move",
+      "ticket": "TRI-079",
+      "details": [
+        "Review",
+        "Worker fd2bfc2 full suite exit0 and clean; independent Industrial guide menu checks and final tip focused check pass; opt-in-only no-mission scope reviewed, browser absence recorded"
       ]
     }
   ]
