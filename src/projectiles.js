@@ -3,13 +3,13 @@
 window.TriumphProjectiles={
 step(s,dt,{W,H,blocked,dist,damage,destroyProp,wormExposed,sound,tone,burst,emitAcousticEvent}){
  for(let i=s.bullets.length-1;i>=0;i--){
-  const b=s.bullets[i];if((b.floating||b.moon||b.riveter||b.mercenary)&&dt>1/b.speed){const local={...s,bullets:[b]};let remaining=Math.min(dt,Math.max(0,b.life));while(remaining>1e-9&&local.bullets.length){const slice=Math.min(remaining,1/b.speed);window.TriumphProjectiles.step(local,slice,{W,H,blocked,dist,damage,destroyProp,wormExposed,sound,tone,burst,emitAcousticEvent});remaining-=slice;}if(!local.bullets.length||b.life<=1e-9)s.bullets.splice(i,1);continue;}if(b.grenadier){
+  const b=s.bullets[i];if((b.breacher||b.floating||b.moon||b.riveter||b.mercenary)&&dt>1/b.speed){const local={...s,bullets:[b]};let remaining=Math.min(dt,Math.max(0,b.life));while(remaining>1e-9&&local.bullets.length){const slice=Math.min(remaining,1/b.speed);window.TriumphProjectiles.step(local,slice,{W,H,blocked,dist,damage,destroyProp,wormExposed,sound,tone,burst,emitAcousticEvent});remaining-=slice;}if(!local.bullets.length||b.life<=1e-9)s.bullets.splice(i,1);continue;}if(b.grenadier){
    let travel=Math.min(b.remaining,b.speed*dt),hit=false;while(travel>1e-9){const step=Math.min(1,travel),x=b.x+b.dx*step,y=b.y+b.dy*step;if(x<0||x>W||y<0||y>H||blocked(x,y)||(s.props||[]).some(p=>p.hp>0&&x>=p.left&&x<p.left+p.w&&y>=p.top&&y<p.top+p.h)){hit=true;break;}b.x=x;b.y=y;b.remaining-=step;travel-=step;}b.life-=dt;
    if(hit||b.remaining<=1e-9){window.TriumphMaritimeTroopers.explode(b,s,{blocked,damage,burst,emitAcousticEvent,destroyProp,sound});s.bullets.splice(i,1);}continue;
-  }const flight=(b.ambusher||b.floating||b.moon||b.riveter||b.mercenary)?Math.min(dt,Math.max(0,b.life)):dt;b.x+=b.dx*b.speed*flight;b.y+=b.dy*b.speed*flight;b.life-=dt;
+  }const flight=(b.ambusher||b.breacher||b.floating||b.moon||b.riveter||b.mercenary)?Math.min(dt,Math.max(0,b.life)):dt;b.x+=b.dx*b.speed*flight;b.y+=b.dy*b.speed*flight;b.life-=dt;
   let hit=false;
   if(b.team==='human')for(const p of s.props||[])if(p.hp>0&&b.x>=p.left&&b.x<p.left+p.w&&b.y>=p.top&&b.y<p.top+p.h){
-   p.hp-=b.damage;hit=true;if(p.hp<=0)destroyProp(p);break;
+   if(!b.breacher||!p.wall)p.hp-=b.damage;hit=true;if(p.hp<=0)destroyProp(p);break;
   }
   if(b.team==='alien')for(const d of s.doors||[])if(!d.open&&b.x>=d.x&&b.x<d.x+d.w&&b.y>=d.y&&b.y<d.y+d.h){
    d.damage++;sound(34,.12);

@@ -1,7 +1,7 @@
 # Orbital scrapyard specialist roster
 
 - Ticket: TRI-086; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/orbital-scrapyard-trooper-roster`
 
 ## Goal and user-visible outcome
 
@@ -9,10 +9,10 @@ Provide the agreed orbital-scrapyard specialist roster, integrated with implemen
 
 ## Acceptance criteria
 
-- [ ] Implement each trooper mechanic listed below, including damage/range/timing, order behavior and terrain limits.
-- [ ] Add distinct world roster entries and meaningful Units-tab descriptions/sprite previews for new types; future TRI-072 ground/air menu exposes only eligible matching-world slots. Do not require TRI-072 to be implemented in this ticket.
-- [ ] Integrate specialists into existing matching-world missions with documented placements/payloads without changing objectives, map assets or unrelated enemy pressure. For worlds without runtime missions, provide opt-in roster definitions and disposable fixtures; do not create a mission.
-- [ ] Add relevant positive/negative regressions, run node tools/dev.cjs test, update DESIGN/Units/Controls where behavior changes, and record browser evidence or its absence separately.
+- [x] Implement each trooper mechanic listed below, including damage/range/timing, order behavior and terrain limits.
+- [x] Add distinct world roster entries and meaningful Units-tab descriptions/sprite previews for new types; future TRI-072 ground/air menu exposes only eligible matching-world slots. Do not require TRI-072 to be implemented in this ticket.
+- [x] Integrate specialists into existing matching-world missions with documented placements/payloads without changing objectives, map assets or unrelated enemy pressure. For worlds without runtime missions, provide opt-in roster definitions and disposable fixtures; do not create a mission.
+- [x] Add relevant positive/negative regressions, run node tools/dev.cjs test, update DESIGN/Units/Controls where behavior changes, and record browser evidence or its absence separately.
 
 ## Scope and decisions
 
@@ -29,3 +29,8 @@ Execution authorized by user on 2026-10-07: director dispatches agents one ticke
 
 - Planning approval and queue: [2026-10-07 roster checkpoint](../journal/2026-10-07-009-world-roster-planning.md).
 
+- [2026-10-09 / 001](../journal/2026-10-09-001-orbital-scrapyard-trooper-roster.md)
+
+## Review evidence
+
+Implementation is ready for director review. `node tools/check-orbital-troopers.cjs`, `node tools/check-unit-guide.cjs` and the complete `node tools/dev.cjs test` pass on final sources. No matching Orbital runtime mission exists; integration is limited to opt-in roster/factories/menus and disposable fixtures. Browser acceptance is explicitly not run, separately recorded in the session and live-check record.
