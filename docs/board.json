@@ -1497,23 +1497,24 @@
       "id": "TRI-087",
       "title": "Add a playable Industrial mission",
       "task": "docs/tasks/industrial-mission.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Accepted playable Industrial Assembly Plant mission; focused and full suite checks pass; live browser playability explicit limit",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
-      "worker": {
-        "id": "/root/industrial_mission_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-industrial-mission",
-        "branch": "feature/industrial-mission"
-      },
-      "branch": "feature/industrial-mission"
+      "branch": "feature/industrial-mission",
+      "completion": {
+        "evidence": "Accepted playable Industrial Assembly Plant mission; focused and full suite checks pass; live browser playability explicit limit",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "a1955f751921978914a901b646282189b9bb02aa",
+        "squashCommit": "37bdbfc87460ef27560b9c30ed7ba7ef69063a9a"
+      }
     },
     {
       "id": "TRI-088",
       "title": "Add a playable Mercenary Frontier mission",
       "task": "docs/tasks/mercenary-frontier-mission.md",
-      "status": "Queued",
-      "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
+      "status": "Ready",
+      "reason": "Sequential execution authorized by user 2026-10-08; mercenary frontier mission ready",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
     },
@@ -6276,6 +6277,36 @@
       "details": [
         "../triumph-industrial-mission",
         "/root/industrial_mission_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T18:09:37.258Z",
+      "command": "move",
+      "ticket": "TRI-087",
+      "details": [
+        "Review",
+        "Worker commit a1955f751921978914a901b646282189b9bb02aa; check-industrial-assembly exit 0; full suite exit 0"
+      ]
+    },
+    {
+      "at": "2026-10-08T18:09:42.397Z",
+      "command": "move",
+      "ticket": "TRI-087",
+      "details": [
+        "Done",
+        "Accepted playable Industrial Assembly Plant mission; focused and full suite checks pass; live browser playability explicit limit",
+        "/root/director",
+        "37bdbfc87460ef27560b9c30ed7ba7ef69063a9a",
+        "a1955f751921978914a901b646282189b9bb02aa"
+      ]
+    },
+    {
+      "at": "2026-10-08T18:09:47.514Z",
+      "command": "move",
+      "ticket": "TRI-088",
+      "details": [
+        "Ready",
+        "Sequential execution authorized by user 2026-10-08; mercenary frontier mission ready"
       ]
     }
   ]
