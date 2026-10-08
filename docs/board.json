@@ -1334,7 +1334,7 @@
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
       "worker": {
-        "id": "/root/maritime_roster_worker",
+        "id": "/root/maritime_recovery_worker",
         "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-maritime-trooper-roster",
         "branch": "feature/maritime-trooper-roster"
       },
@@ -5544,6 +5544,15 @@
       "details": [
         "../triumph-maritime-trooper-roster",
         "/root/maritime_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:08:50.166Z",
+      "command": "dispatch",
+      "ticket": "TRI-076",
+      "details": [
+        "../triumph-maritime-trooper-roster",
+        "/root/maritime_recovery_worker"
       ]
     }
   ]
