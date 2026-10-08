@@ -1,7 +1,7 @@
 # Jungle specialist roster
 
 - Ticket: TRI-078; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/jungle-trooper-roster`
 
 ## Goal and user-visible outcome
 
@@ -9,10 +9,10 @@ Provide the agreed jungle specialist roster, integrated with implemented matchin
 
 ## Acceptance criteria
 
-- [ ] Implement each trooper mechanic listed below, including damage/range/timing, order behavior and terrain limits.
-- [ ] Add distinct world roster entries and meaningful Units-tab descriptions/sprite previews for new types; future TRI-072 ground/air menu exposes only eligible matching-world slots. Do not require TRI-072 to be implemented in this ticket.
-- [ ] Integrate specialists into existing matching-world missions with documented placements/payloads without changing objectives, map assets or unrelated enemy pressure. For worlds without runtime missions, provide opt-in roster definitions and disposable fixtures; do not create a mission.
-- [ ] Add relevant positive/negative regressions, run node tools/dev.cjs test, update DESIGN/Units/Controls where behavior changes, and record browser evidence or its absence separately.
+- [x] Implement each trooper mechanic listed below, including damage/range/timing, order behavior and terrain limits.
+- [x] Add distinct world roster entries and meaningful Units-tab descriptions/sprite previews for new types; future TRI-072 ground/air menu exposes only eligible matching-world slots. Do not require TRI-072 to be implemented in this ticket.
+- [x] Integrate specialists into existing matching-world missions with documented placements/payloads without changing objectives, map assets or unrelated enemy pressure. For worlds without runtime missions, provide opt-in roster definitions and disposable fixtures; do not create a mission.
+- [x] Add relevant positive/negative regressions, run node tools/dev.cjs test, update DESIGN/Units/Controls where behavior changes, and record browser evidence or its absence separately.
 
 ## Scope and decisions
 
@@ -29,3 +29,10 @@ Execution authorized by user on 2026-10-07: director dispatches agents one ticke
 
 - Planning approval and queue: [2026-10-07 roster checkpoint](../journal/2026-10-07-009-world-roster-planning.md).
 
+- [2026-10-08 / 004](../journal/2026-10-08-004-jungle-trooper-roster.md)
+
+- [2026-10-08 / 008](../journal/2026-10-08-008-jungle-trooper-roster.md)
+
+## Recovery checkpoint (2026-10-08)
+
+User explicitly deferred Field Medic and accepted Recon-only, with no health-rule change. Preserved Recon is reconciled with current integrated rosters; historical blocked session004 remains unchanged. All Recon-only acceptance criteria are met; current recovery evidence/Review handoff is session008. Live browser evidence is explicitly absent.
