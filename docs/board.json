@@ -1513,23 +1513,24 @@
       "id": "TRI-088",
       "title": "Add a playable Mercenary Frontier mission",
       "task": "docs/tasks/mercenary-frontier-mission.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Accepted playable Mercenary Outpost Strike mission; focused and full suite checks pass; live browser playability explicit limit",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
-      "worker": {
-        "id": "/root/mercenary_frontier_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-mercenary-frontier-mission",
-        "branch": "feature/mercenary-frontier-mission"
-      },
-      "branch": "feature/mercenary-frontier-mission"
+      "branch": "feature/mercenary-frontier-mission",
+      "completion": {
+        "evidence": "Accepted playable Mercenary Outpost Strike mission; focused and full suite checks pass; live browser playability explicit limit",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "797a3b3dc38ee807f031e89e773ada313747773a",
+        "squashCommit": "50392d38b54bf4eccd36c729212cbd63fbfa475f"
+      }
     },
     {
       "id": "TRI-089",
       "title": "Add a playable Toxic Marsh mission",
       "task": "docs/tasks/toxic-marsh-mission.md",
-      "status": "Queued",
-      "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
+      "status": "Ready",
+      "reason": "Sequential execution authorized by user 2026-10-08; toxic marsh mission ready",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
     },
@@ -6322,6 +6323,36 @@
       "details": [
         "../triumph-mercenary-frontier-mission",
         "/root/mercenary_frontier_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T18:24:22.757Z",
+      "command": "move",
+      "ticket": "TRI-088",
+      "details": [
+        "Review",
+        "Worker commit 797a3b3dc38ee807f031e89e773ada313747773a; check-mercenary-outpost exit 0; full suite exit 0"
+      ]
+    },
+    {
+      "at": "2026-10-08T18:24:23.093Z",
+      "command": "move",
+      "ticket": "TRI-088",
+      "details": [
+        "Done",
+        "Accepted playable Mercenary Outpost Strike mission; focused and full suite checks pass; live browser playability explicit limit",
+        "/root/director",
+        "50392d38b54bf4eccd36c729212cbd63fbfa475f",
+        "797a3b3dc38ee807f031e89e773ada313747773a"
+      ]
+    },
+    {
+      "at": "2026-10-08T18:24:26.290Z",
+      "command": "move",
+      "ticket": "TRI-089",
+      "details": [
+        "Ready",
+        "Sequential execution authorized by user 2026-10-08; toxic marsh mission ready"
       ]
     }
   ]
