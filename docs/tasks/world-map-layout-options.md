@@ -36,3 +36,6 @@ The required full dev run failed at the inherited Floating veryeasy baseline mis
 
 - Director request/approval: [session018](../journal/2026-10-08-018-director-continuation.md).
 - [2026-10-08 / 021](../journal/2026-10-08-021-world-map-layout-options.md)
+
+## Integration
+Accepted squash abb6097914707cc94dae4786aed537a738c5cdba from reviewed worker e35bdfb0fa8b249c53bba522d219e220f96b575c on2026-10-09. User selections pending; runtime unchanged.

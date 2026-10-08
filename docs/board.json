@@ -1612,16 +1612,17 @@
       "id": "TRI-095",
       "title": "Develop distinct world-map layout options and comparison artifact",
       "task": "docs/tasks/world-map-layout-options.md",
-      "status": "Review",
-      "reason": "Worker e35bdfb0fa8b249c53bba522d219e220f96b575c; independent geometry/source/PNG/DOM review passes, inherited Floating baseline failure recorded",
+      "status": "Done",
+      "reason": "39 options accepted after independent source/geometry/visual/DOM checks; inherited full-suite Floating limitation recorded separately",
       "questions": [],
       "approval": "User2026-10-08 requested many distinct map options with pros/cons artifact and selected all newer worlds; design atlas before runtime selections",
-      "worker": {
-        "id": "/root/world_map_atlas_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-world-map-layout-options",
-        "branch": "chore/world-map-layout-options"
-      },
-      "branch": "chore/world-map-layout-options"
+      "branch": "chore/world-map-layout-options",
+      "completion": {
+        "evidence": "39 options accepted after independent source/geometry/visual/DOM checks; inherited full-suite Floating limitation recorded separately",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "e35bdfb0fa8b249c53bba522d219e220f96b575c",
+        "squashCommit": "abb6097914707cc94dae4786aed537a738c5cdba"
+      }
     }
   ],
   "events": [
@@ -6636,6 +6637,18 @@
       "details": [
         "Review",
         "Worker e35bdfb0fa8b249c53bba522d219e220f96b575c; independent geometry/source/PNG/DOM review passes, inherited Floating baseline failure recorded"
+      ]
+    },
+    {
+      "at": "2026-10-08T22:14:35.890Z",
+      "command": "move",
+      "ticket": "TRI-095",
+      "details": [
+        "Done",
+        "39 options accepted after independent source/geometry/visual/DOM checks; inherited full-suite Floating limitation recorded separately",
+        "/root/director",
+        "abb6097914707cc94dae4786aed537a738c5cdba",
+        "e35bdfb0fa8b249c53bba522d219e220f96b575c"
       ]
     }
   ]
