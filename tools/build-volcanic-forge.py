@@ -30,22 +30,25 @@ for _ in range(3000):
     if (140 <= x <= 190 and 100 <= y <= 280) or (300 <= x <= 330 and 30 <= y <= 350):
         d.point((x, y), fill=rng.choice(magma_colors))
 
-# Polygons for obstacle structures and lava pools (in 1024x768 space)
+# Polygons for obstacle structures and lava rock formations (in 1024x768 space)
 polygons = [
     # Top border basalt wall
     [(0, 0), (1024, 0), (1024, 50), (0, 50)],
     # Bottom border basalt wall
     [(0, 725), (1024, 725), (1024, 768), (0, 768)],
     # West outer basalt rock formations (North & South of staging)
-    [(0, 50), (60, 50), (60, 270), (0, 270)],
-    [(0, 510), (60, 510), (60, 725), (0, 725)],
-    # Magma barrier blocks & central industrial pillars separating passes
-    [(310, 240), (370, 240), (370, 340), (310, 340)],
-    [(310, 440), (370, 440), (370, 540), (310, 540)],
-    # East forge vault pillars
-    [(620, 100), (660, 100), (660, 260), (620, 260)],
-    [(620, 510), (660, 510), (660, 670), (620, 670)],
-    [(780, 270), (840, 270), (840, 500), (780, 500)]
+    [(0, 50), (60, 50), (60, 250), (0, 250)],
+    [(0, 530), (60, 530), (60, 725), (0, 725)],
+    # North Basalt Chokepoint Wall
+    [(240, 120), (370, 120), (370, 190), (240, 190)],
+    # South Basalt Chokepoint Wall
+    [(240, 570), (370, 570), (370, 640), (240, 640)],
+    # Central Magma Forge Core (Island basalt block)
+    [(460, 260), (600, 260), (620, 340), (600, 490), (460, 490), (440, 340)],
+    # Northeast Thermal Chamber Pillar
+    [(750, 100), (840, 100), (840, 260), (750, 260)],
+    # Southeast Thermal Chamber Pillar
+    [(750, 510), (840, 510), (840, 670), (750, 670)]
 ]
 
 mask = Image.new('1', (1024, 768), 0)
