@@ -1545,10 +1545,16 @@
       "id": "TRI-090",
       "title": "Add a playable Airless Moon mission",
       "task": "docs/tasks/airless-moon-mission.md",
-      "status": "Ready",
-      "reason": "Sequential execution authorized by user 2026-10-08; airless moon mission ready",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
+      "worker": {
+        "id": "/root/airless_moon_mission_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-airless-moon-mission",
+        "branch": "feature/airless-moon-mission"
+      },
+      "branch": "feature/airless-moon-mission"
     },
     {
       "id": "TRI-091",
@@ -6399,6 +6405,15 @@
       "details": [
         "Ready",
         "Sequential execution authorized by user 2026-10-08; airless moon mission ready"
+      ]
+    },
+    {
+      "at": "2026-10-08T18:36:33.580Z",
+      "command": "dispatch",
+      "ticket": "TRI-090",
+      "details": [
+        "../triumph-airless-moon-mission",
+        "/root/airless_moon_mission_worker"
       ]
     }
   ]
