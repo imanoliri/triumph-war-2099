@@ -29,28 +29,28 @@ for _ in range(2500):
     if (135 <= x <= 205 and 50 <= y <= 130) or (250 <= x <= 315 and 130 <= y <= 250) or (410 <= x <= 470 and 50 <= y <= 350):
         d.point((x, y), fill=rng.choice(dust_colors))
 
-# UNIQUE polygon layout for Airless Moon (Lunar Crater Rims, Observatory Domes, Solar Arrays, Station Walls) (in 1024x768 space)
+# UNIQUE polygon layout for Airless Moon (Lunar Crater Rims, Observatory Domes, Regolith Ridges) (in 1024x768 space)
 polygons = [
     # Top vacuum border wall
     [(0, 0), (1024, 0), (1024, 45), (0, 45)],
     # Bottom vacuum border wall
     [(0, 725), (1024, 725), (1024, 768), (0, 768)],
     # West staging embankment North
-    [(0, 45), (75, 45), (75, 260), (0, 260)],
+    [(0, 45), (75, 45), (75, 250), (0, 250)],
     # West staging embankment South
-    [(0, 520), (75, 520), (75, 725), (0, 725)],
-    # NW Lunar Observatory Octagonal Dome structure
-    [(270, 120), (370, 120), (410, 160), (410, 220), (370, 260), (270, 260), (230, 220), (230, 160)],
-    # SW Solar Power Substation Array
-    [(260, 500), (390, 500), (390, 640), (260, 640)],
-    # Central Lunar Crater Ridge Wall (divides central corridor)
-    [(510, 280), (630, 280), (630, 480), (510, 480)],
-    # NE Lunar Comm Vault Structure
-    [(720, 120), (830, 120), (830, 250), (720, 250)],
-    # SE Oxygen Generator Plant Structure
-    [(720, 520), (830, 520), (830, 650), (720, 650)],
-    # Far East Regolith Ridge Wall
-    [(900, 260), (950, 260), (950, 500), (900, 500)]
+    [(0, 530), (75, 530), (75, 725), (0, 725)],
+    # NW Lunar Crater Ridge Wall (Horizontal upper crater wall)
+    [(180, 110), (440, 110), (440, 180), (180, 180)],
+    # SW Lunar Crater Ridge Wall (Horizontal lower crater wall)
+    [(180, 500), (380, 500), (380, 560), (180, 560)],
+    # Central Lunar Observatory Core (Large central square dome core)
+    [(490, 280), (630, 280), (630, 480), (490, 480)],
+    # NE Solar Substation Array Block
+    [(750, 100), (840, 100), (840, 240), (750, 240)],
+    # SE Oxygen Generator Plant Block
+    [(750, 520), (840, 520), (840, 620), (750, 620)],
+    # Far East Regolith Chokepoint Wall
+    [(880, 260), (950, 260), (950, 500), (880, 500)]
 ]
 
 mask = Image.new('1', (1024, 768), 0)
