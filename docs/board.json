@@ -1329,23 +1329,24 @@
       "id": "TRI-076",
       "title": "Maritime specialist roster",
       "task": "docs/tasks/maritime-trooper-roster.md",
-      "status": "Review",
-      "reason": "Worker dacfc509 full suite exit0 and clean; independent Maritime Harbor Units menu checks and final scope review pass; saved browser evidence inspected, live timing limits retained",
+      "status": "Done",
+      "reason": "Accepted Maritime scope; worker full suite exit0, independent production Harbor guide menu checks and scope review pass; browser evidence separately limits controlled live claims",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
-      "worker": {
-        "id": "/root/maritime_recovery_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-maritime-trooper-roster",
-        "branch": "feature/maritime-trooper-roster"
-      },
-      "branch": "feature/maritime-trooper-roster"
+      "branch": "feature/maritime-trooper-roster",
+      "completion": {
+        "evidence": "Accepted Maritime scope; worker full suite exit0, independent production Harbor guide menu checks and scope review pass; browser evidence separately limits controlled live claims",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "dacfc50923e1c0d1e0d5b525be7c3d0f63a4bf96",
+        "squashCommit": "46aebc769429e51b999cd259fb926de8d14505a0"
+      }
     },
     {
       "id": "TRI-077",
       "title": "Undercity specialist roster",
       "task": "docs/tasks/undercity-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "status": "Ready",
+      "reason": "Sequential execution authorized on 2026-10-07 and renewed 2026-10-08; Corner Ambusher only, rejected Listener excluded",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     },
@@ -5562,6 +5563,27 @@
       "details": [
         "Review",
         "Worker dacfc509 full suite exit0 and clean; independent Maritime Harbor Units menu checks and final scope review pass; saved browser evidence inspected, live timing limits retained"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:16:14.857Z",
+      "command": "move",
+      "ticket": "TRI-076",
+      "details": [
+        "Done",
+        "Accepted Maritime scope; worker full suite exit0, independent production Harbor guide menu checks and scope review pass; browser evidence separately limits controlled live claims",
+        "/root/director",
+        "46aebc769429e51b999cd259fb926de8d14505a0",
+        "dacfc50923e1c0d1e0d5b525be7c3d0f63a4bf96"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:16:19.778Z",
+      "command": "move",
+      "ticket": "TRI-077",
+      "details": [
+        "Ready",
+        "Sequential execution authorized on 2026-10-07 and renewed 2026-10-08; Corner Ambusher only, rejected Listener excluded"
       ]
     }
   ]
