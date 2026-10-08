@@ -1596,10 +1596,16 @@
       "id": "TRI-094",
       "title": "Restore Volcanic Forge mission clearance after map redesign",
       "task": "docs/tasks/volcanic-forge-map-regression.md",
-      "status": "Ready",
-      "reason": "User2026-10-08 explicitly approved separate bounded Volcanic map regression fix; dispatch after parking preserved TRI-085",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User2026-10-08 explicitly approved separate bounded Volcanic map regression fix; dispatch after parking preserved TRI-085"
+      "approval": "User2026-10-08 explicitly approved separate bounded Volcanic map regression fix; dispatch after parking preserved TRI-085",
+      "worker": {
+        "id": "/root/volcanic_map_fix_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-volcanic-forge-map-regression",
+        "branch": "fix/volcanic-forge-map-regression"
+      },
+      "branch": "fix/volcanic-forge-map-regression"
     }
   ],
   "events": [
@@ -6547,6 +6553,15 @@
       "details": [
         "Ready",
         "Parked clean candidate7cecf9f and stopped worker; binding released for separate approved TRI-094. Resume preserved checkout after fix, final full acceptance remains unchecked"
+      ]
+    },
+    {
+      "at": "2026-10-08T21:46:21.116Z",
+      "command": "dispatch",
+      "ticket": "TRI-094",
+      "details": [
+        "../triumph-volcanic-forge-map-regression",
+        "/root/volcanic_map_fix_worker"
       ]
     }
   ]
