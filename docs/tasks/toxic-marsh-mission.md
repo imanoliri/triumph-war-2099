@@ -1,7 +1,7 @@
 # Toxic Marsh mission
 
 - Ticket: TRI-089; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/toxic-marsh-mission`
 - Dependency: TRI-082 integrated before dispatch.
 
 ## Goal and user-visible outcome
@@ -27,3 +27,4 @@ World identity is theme, briefing and roster. No new oxygen/gravity/flight/toxic
 ## Sessions
 
 - Planning: [director queue](../journal/2026-10-08-002-director-queue.md).
+- [2026-10-08 / 015](../journal/2026-10-08-015-toxic-marsh-mission.md)
