@@ -1408,10 +1408,16 @@
       "id": "TRI-081",
       "title": "Volcanic specialist roster",
       "task": "docs/tasks/volcanic-trooper-roster.md",
-      "status": "Ready",
-      "reason": "Approved sequential queue; finite explicit Demolition placement order and Cooling Trooper only, preserve Volcanic objectives/assets/pressure",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
+      "worker": {
+        "id": "/root/volcanic_roster_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-volcanic-trooper-roster",
+        "branch": "feature/volcanic-trooper-roster"
+      },
+      "branch": "feature/volcanic-trooper-roster"
     },
     {
       "id": "TRI-082",
@@ -5763,6 +5769,15 @@
       "details": [
         "Ready",
         "Approved sequential queue; finite explicit Demolition placement order and Cooling Trooper only, preserve Volcanic objectives/assets/pressure"
+      ]
+    },
+    {
+      "at": "2026-10-08T07:08:26.159Z",
+      "command": "dispatch",
+      "ticket": "TRI-081",
+      "details": [
+        "../triumph-volcanic-trooper-roster",
+        "/root/volcanic_roster_worker"
       ]
     }
   ]
