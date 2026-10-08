@@ -8,6 +8,7 @@ function setup() {
 }
 
 const b = setup(), w = b.window, id = 'custom-volcanic-forge-strike';
+const geometry = JSON.parse(fs.readFileSync('assets/custom/volcanic-forge/geometry.json', 'utf8'));
 let f, s;
 
 function fresh(d = 'normal') {
@@ -27,7 +28,23 @@ function run() {
 let budget = 0, interval = Infinity;
 for (const d of ['veryeasy', 'easy', 'normal', 'hard', 'veryhard']) {
   fresh(d);
+  const profileIndex = ['veryeasy', 'easy', 'normal', 'hard', 'veryhard'].indexOf(d);
   assert.equal(s.nests.length, 4);
+  assert.equal(s.humans.length, [12, 12, 12, 10, 8][profileIndex]);
+  assert.equal(s.customWaves.arrivals.length, [11, 14, 22, 33, 44][profileIndex]);
+  assert.equal(s.customMission.nestInterval, [7, 6, 4.5, 2.6, 2][profileIndex]);
+  assert.equal(s.customMission.support.length, profileIndex < 3 ? 2 : 1);
+  assert.equal(JSON.stringify(s.customMission.thermalHazards), JSON.stringify(geometry.hazards));
+  assert.equal(JSON.stringify(s.customMission.nests), JSON.stringify(geometry.nests));
+  assert.equal(JSON.stringify(s.customMission.terminals.map(t => [t.x, t.y])), JSON.stringify(geometry.terminals));
+  // Keep the distinctive core and pillar solid; placements must adapt to them.
+  assert(f.blocked(800, 110), 'Northeast pillar retained');
+  assert(f.blocked(520, 390), 'Magma core retained');
+  for (const [x, y] of [[880, 110], [650, 390]]) {
+    for (let dy = -8; dy <= 8; dy++) for (let dx = -8; dx <= 8; dx++) {
+      assert(!f.blocked(x + dx, y + dy), `${d} relocated footprint ${x},${y}`);
+    }
+  }
   assert(s.customWaves.arrivals.length > budget);
   assert(s.customMission.nestInterval < interval);
   budget = s.customWaves.arrivals.length;
@@ -42,7 +59,9 @@ for (const d of ['veryeasy', 'easy', 'normal', 'hard', 'veryhard']) {
     ...s.customMission.waves.flatMap(w => w.points),
     ...s.customMission.route,
     ...s.customMission.terminals.map(t => [t.x, t.y]),
-    ...s.customMission.support.map(p => [p.x, p.y])
+    ...s.customMission.support.map(p => [p.x, p.y]),
+    ...s.customMission.weapons.map(p => [p.x, p.y]),
+    ...s.humans.map(u => [u.x, u.y])
   ];
 
   for (const [x, y] of points) {
@@ -57,14 +76,26 @@ for (const d of ['veryeasy', 'easy', 'normal', 'hard', 'veryhard']) {
   }
 }
 
-// 2. Route travel check
-fresh();
-const walker = s.humans.find(u => u.type === 'soldier');
-for (const [x, y] of s.customMission.route) {
-  walker.attackMove = { x, y, force: true };
-  for (let i = 0; i < 5000 && walker.attackMove; i++) f.attackMoveStep(walker, null, 0.04);
-  assert(Math.hypot(walker.x - x, walker.y - y) < 20, 'Route checkpoint reached');
-  assert(!f.blocked(walker.x, walker.y));
+// 2. All profiles: ordinary infantry and both fixed kits can traverse the route
+// and reach the relocated northeast spawn / east-core hazard without crossing walls.
+for (const d of ['veryeasy', 'easy', 'normal', 'hard', 'veryhard']) {
+  for (const type of ['soldier', 'demolition-trooper', 'cooling-trooper']) {
+    fresh(d);
+    const walker = s.humans.find(u => u.type === type);
+    for (const [x, y] of [...s.customMission.route, [880, 110], [650, 390]]) {
+      walker.attackMove = { x, y, force: true };
+      for (let i = 0; i < 5000 && walker.attackMove; i++) {
+        const previous = { x: walker.x, y: walker.y };
+        f.attackMoveStep(walker, null, 0.04);
+        const samples = Math.max(1, Math.ceil(Math.hypot(walker.x - previous.x, walker.y - previous.y)));
+        for (let n = 1; n <= samples; n++) {
+          assert(!f.blocked(previous.x + (walker.x - previous.x) * n / samples, previous.y + (walker.y - previous.y) * n / samples), `${d} ${type} swept route clearance`);
+        }
+      }
+      assert(Math.hypot(walker.x - x, walker.y - y) < 20, `${d} ${type} route checkpoint ${x},${y}`);
+      assert(!f.blocked(walker.x, walker.y));
+    }
+  }
 }
 
 // 3. Tactical freeze preserves state

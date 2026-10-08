@@ -94,7 +94,7 @@ geometry = {
     'staging': [120, 390],
     'terminals': [[845, 190], [845, 580]],
     'nests': [[450, 160], [720, 180], [450, 600], [720, 580]],
-    'hazards': [[420, 190], [520, 390], [420, 590]]
+    'hazards': [[420, 190], [650, 390], [420, 590]]
 }
 (out / 'geometry.json').write_text(json.dumps(geometry, indent=2), encoding='utf8')
 
