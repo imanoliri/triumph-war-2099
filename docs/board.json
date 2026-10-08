@@ -1431,23 +1431,24 @@
       "id": "TRI-082",
       "title": "Toxic marsh specialist roster",
       "task": "docs/tasks/toxic-marsh-trooper-roster.md",
-      "status": "Review",
-      "reason": "Worker e0c1928 full suite exit0, final Toxic Volcanic immutable combat checks pass; independent focused final Toxic/guide/menu/input review passes, live absence explicit",
+      "status": "Done",
+      "reason": "Accepted opt-in-only Tracker/Chemical kits; full suite and final affected checks pass, independent final review/checks pass; live gap explicit",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
-      "worker": {
-        "id": "/root/toxic_marsh_roster_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-toxic-marsh-trooper-roster",
-        "branch": "feature/toxic-marsh-trooper-roster"
-      },
-      "branch": "feature/toxic-marsh-trooper-roster"
+      "branch": "feature/toxic-marsh-trooper-roster",
+      "completion": {
+        "evidence": "Accepted opt-in-only Tracker/Chemical kits; full suite and final affected checks pass, independent final review/checks pass; live gap explicit",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "e0c19282ce2578615d7f0bd69c1dd97d7d13e38d",
+        "squashCommit": "1bbd296b95ae7ddabf2fc821f9304ae0205ec2d8"
+      }
     },
     {
       "id": "TRI-083",
       "title": "Airless moon specialist roster",
       "task": "docs/tasks/airless-moon-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "status": "Ready",
+      "reason": "Sequential queue authority renewed2026-10-08; Toxic Marsh accepted, Airless Moon Heavy Trooper and one finite linked Drone next, mission090 separately queued",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     },
@@ -6147,6 +6148,27 @@
       "details": [
         "Review",
         "Worker e0c1928 full suite exit0, final Toxic Volcanic immutable combat checks pass; independent focused final Toxic/guide/menu/input review passes, live absence explicit"
+      ]
+    },
+    {
+      "at": "2026-10-08T16:54:46.329Z",
+      "command": "move",
+      "ticket": "TRI-082",
+      "details": [
+        "Done",
+        "Accepted opt-in-only Tracker/Chemical kits; full suite and final affected checks pass, independent final review/checks pass; live gap explicit",
+        "/root/director",
+        "1bbd296b95ae7ddabf2fc821f9304ae0205ec2d8",
+        "e0c19282ce2578615d7f0bd69c1dd97d7d13e38d"
+      ]
+    },
+    {
+      "at": "2026-10-08T16:54:51.150Z",
+      "command": "move",
+      "ticket": "TRI-083",
+      "details": [
+        "Ready",
+        "Sequential queue authority renewed2026-10-08; Toxic Marsh accepted, Airless Moon Heavy Trooper and one finite linked Drone next, mission090 separately queued"
       ]
     }
   ]
