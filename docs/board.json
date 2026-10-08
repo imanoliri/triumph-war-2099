@@ -1361,12 +1361,13 @@
       "id": "TRI-078",
       "title": "Jungle specialist roster",
       "task": "docs/tasks/jungle-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Parked preserved partial Recon feb2bf50 in existing checkout; full suite and final independent Recon pass; Medic question1 unanswered, no full Review or integration",
+      "status": "Ready",
+      "reason": "User resolved question1: Field Medic deferred, Recon-only scope approved; resume preserved feb2bf50 checkout after active Volcanic worker finishes",
       "questions": [
         {
           "number": 1,
-          "question": "Field Medic has no useful current recipients: production infantry have1HP and integer1 damage kills immediately; vehicles are excluded. Defer Medic and accept Recon-only scope, or explicitly approve a bounded infantry health-rule change? No health change inferred."
+          "question": "Field Medic has no useful current recipients: production infantry have1HP and integer1 damage kills immediately; vehicles are excluded. Defer Medic and accept Recon-only scope, or explicitly approve a bounded infantry health-rule change? No health change inferred.",
+          "answer": "User2026-10-08: Defer Medic; accept Recon-only Jungle. No health-rule change authorized."
         }
       ],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
@@ -5778,6 +5779,24 @@
       "details": [
         "../triumph-volcanic-trooper-roster",
         "/root/volcanic_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T16:20:36.043Z",
+      "command": "answer",
+      "ticket": "TRI-078",
+      "details": [
+        "1",
+        "User2026-10-08: Defer Medic; accept Recon-only Jungle. No health-rule change authorized."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:20:36.100Z",
+      "command": "move",
+      "ticket": "TRI-078",
+      "details": [
+        "Ready",
+        "User resolved question1: Field Medic deferred, Recon-only scope approved; resume preserved feb2bf50 checkout after active Volcanic worker finishes"
       ]
     }
   ]
