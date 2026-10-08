@@ -1612,10 +1612,16 @@
       "id": "TRI-095",
       "title": "Develop distinct world-map layout options and comparison artifact",
       "task": "docs/tasks/world-map-layout-options.md",
-      "status": "Ready",
-      "reason": "User2026-10-08 requested many distinct map options with pros/cons artifact and selected all newer worlds; design atlas before runtime selections",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User2026-10-08 requested many distinct map options with pros/cons artifact and selected all newer worlds; design atlas before runtime selections"
+      "approval": "User2026-10-08 requested many distinct map options with pros/cons artifact and selected all newer worlds; design atlas before runtime selections",
+      "worker": {
+        "id": "/root/world_map_atlas_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-world-map-layout-options",
+        "branch": "chore/world-map-layout-options"
+      },
+      "branch": "chore/world-map-layout-options"
     }
   ],
   "events": [
@@ -6612,6 +6618,15 @@
         "/root/director",
         "5787f8ed826a7d568c4fac80d4c3c23f3e2848be",
         "83b1b5c2ace425b0ed6be2a1fb439c21b714b948"
+      ]
+    },
+    {
+      "at": "2026-10-08T21:53:36.563Z",
+      "command": "dispatch",
+      "ticket": "TRI-095",
+      "details": [
+        "../triumph-world-map-layout-options",
+        "/root/world_map_atlas_worker"
       ]
     }
   ]
