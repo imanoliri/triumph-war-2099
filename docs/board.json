@@ -1329,8 +1329,8 @@
       "id": "TRI-076",
       "title": "Maritime specialist roster",
       "task": "docs/tasks/maritime-trooper-roster.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker dacfc509 full suite exit0 and clean; independent Maritime Harbor Units menu checks and final scope review pass; saved browser evidence inspected, live timing limits retained",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
       "worker": {
@@ -5553,6 +5553,15 @@
       "details": [
         "../triumph-maritime-trooper-roster",
         "/root/maritime_recovery_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:15:45.664Z",
+      "command": "move",
+      "ticket": "TRI-076",
+      "details": [
+        "Review",
+        "Worker dacfc509 full suite exit0 and clean; independent Maritime Harbor Units menu checks and final scope review pass; saved browser evidence inspected, live timing limits retained"
       ]
     }
   ]
