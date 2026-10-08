@@ -1345,8 +1345,8 @@
       "id": "TRI-077",
       "title": "Undercity specialist roster",
       "task": "docs/tasks/undercity-trooper-roster.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker a32126bd full suite exit0 and final affected checks pass; independent Corner Undercity menu guide and exact final range review pass; browser screenshot inspected and limits retained",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
       "worker": {
@@ -5599,6 +5599,15 @@
       "details": [
         "../triumph-undercity-trooper-roster",
         "/root/undercity_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:29:35.053Z",
+      "command": "move",
+      "ticket": "TRI-077",
+      "details": [
+        "Review",
+        "Worker a32126bd full suite exit0 and final affected checks pass; independent Corner Undercity menu guide and exact final range review pass; browser screenshot inspected and limits retained"
       ]
     }
   ]
