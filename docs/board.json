@@ -1409,16 +1409,17 @@
       "id": "TRI-081",
       "title": "Volcanic specialist roster",
       "task": "docs/tasks/volcanic-trooper-roster.md",
-      "status": "Review",
-      "reason": "Worker8ee8888 two full suites exit0, final affected checks pass; independent Volcanic Forge guide input menu review/checks and browser artifact inspection pass; live limits explicit",
+      "status": "Done",
+      "reason": "Accepted scoped Volcanic mechanics/UI/placement; two full suites and independent focused review/checks pass; browser spot evidence inspected, live limits retained",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
-      "worker": {
-        "id": "/root/volcanic_roster_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-volcanic-trooper-roster",
-        "branch": "feature/volcanic-trooper-roster"
-      },
-      "branch": "feature/volcanic-trooper-roster"
+      "branch": "feature/volcanic-trooper-roster",
+      "completion": {
+        "evidence": "Accepted scoped Volcanic mechanics/UI/placement; two full suites and independent focused review/checks pass; browser spot evidence inspected, live limits retained",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "8ee888851dd8a9918009f7689b08042e732e30ef",
+        "squashCommit": "273f2819e06bb07b201b92c06c48f6aa96bf8900"
+      }
     },
     {
       "id": "TRI-082",
@@ -6065,6 +6066,18 @@
       "details": [
         "Review",
         "Worker8ee8888 two full suites exit0, final affected checks pass; independent Volcanic Forge guide input menu review/checks and browser artifact inspection pass; live limits explicit"
+      ]
+    },
+    {
+      "at": "2026-10-08T16:32:53.686Z",
+      "command": "move",
+      "ticket": "TRI-081",
+      "details": [
+        "Done",
+        "Accepted scoped Volcanic mechanics/UI/placement; two full suites and independent focused review/checks pass; browser spot evidence inspected, live limits retained",
+        "/root/director",
+        "273f2819e06bb07b201b92c06c48f6aa96bf8900",
+        "8ee888851dd8a9918009f7689b08042e732e30ef"
       ]
     }
   ]
