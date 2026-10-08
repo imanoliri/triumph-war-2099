@@ -1463,10 +1463,16 @@
       "id": "TRI-084",
       "title": "Floating habitat specialist roster",
       "task": "docs/tasks/floating-habitats-trooper-roster.md",
-      "status": "Ready",
-      "reason": "Sequential user-authorized queue; Airless Moon accepted, Floating Habitats Skirmisher/Defender next, mission091 separately queued",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
+      "worker": {
+        "id": "/root/floating_habitats_roster_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-floating-habitats-trooper-roster",
+        "branch": "feature/floating-habitats-trooper-roster"
+      },
+      "branch": "feature/floating-habitats-trooper-roster"
     },
     {
       "id": "TRI-085",
@@ -6215,6 +6221,15 @@
       "details": [
         "Ready",
         "Sequential user-authorized queue; Airless Moon accepted, Floating Habitats Skirmisher/Defender next, mission091 separately queued"
+      ]
+    },
+    {
+      "at": "2026-10-08T17:09:32.180Z",
+      "command": "dispatch",
+      "ticket": "TRI-084",
+      "details": [
+        "../triumph-floating-habitats-trooper-roster",
+        "/root/floating_habitats_roster_worker"
       ]
     }
   ]
