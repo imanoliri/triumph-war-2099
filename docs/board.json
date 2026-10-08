@@ -1392,8 +1392,8 @@
       "id": "TRI-080",
       "title": "Mercenary frontier specialist roster",
       "task": "docs/tasks/mercenary-trooper-roster.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker8cf5ca0 full suite and final affected checks pass; director independent final Mercenary guide menu scope review pass; tracking mode UI and Auto far-target findings resolved; browser absence explicit",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
       "worker": {
@@ -5732,6 +5732,15 @@
       "details": [
         "../triumph-mercenary-trooper-roster",
         "/root/mercenary_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T07:07:15.016Z",
+      "command": "move",
+      "ticket": "TRI-080",
+      "details": [
+        "Review",
+        "Worker8cf5ca0 full suite and final affected checks pass; director independent final Mercenary guide menu scope review pass; tracking mode UI and Auto far-target findings resolved; browser absence explicit"
       ]
     }
   ]
