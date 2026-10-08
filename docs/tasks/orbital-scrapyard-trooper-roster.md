@@ -34,3 +34,6 @@ Execution authorized by user on 2026-10-07: director dispatches agents one ticke
 ## Review evidence
 
 Implementation is ready for director review. `node tools/check-orbital-troopers.cjs`, `node tools/check-unit-guide.cjs` and the complete `node tools/dev.cjs test` pass on final sources. No matching Orbital runtime mission exists; integration is limited to opt-in roster/factories/menus and disposable fixtures. Browser acceptance is explicitly not run, separately recorded in the session and live-check record.
+
+## Integration
+Accepted squash83f3794ba47436c808862ed3dfaee10a6c0a07d1 from reviewed70155235bfef4f5f42cd312d2ac118ebebbe9f84 on2026-10-09. Done; livebrowser absence explicit.

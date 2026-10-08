@@ -1495,16 +1495,17 @@
       "id": "TRI-086",
       "title": "Orbital scrapyard specialist roster",
       "task": "docs/tasks/orbital-scrapyard-trooper-roster.md",
-      "status": "Review",
-      "reason": "Final clean70155235bfef4f5f42cd312d2ac118ebebbe9f84; whitespace correction verified, focused/fullsuite evidence passes; independent acceptance complete",
+      "status": "Done",
+      "reason": "Acceptance reviewed; corrected fullsuiteexit0 and independent checks pass; browser absence recorded",
       "questions": [],
       "approval": "User2026-10-07 approved detailed roster mechanics and authorized sequential execution;2026-10-08/09 director continuation retains this authority. See task and director session018.",
-      "worker": {
-        "id": "/root/orbital_roster_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-orbital-scrapyard-trooper-roster",
-        "branch": "feature/orbital-scrapyard-trooper-roster"
-      },
-      "branch": "feature/orbital-scrapyard-trooper-roster"
+      "branch": "feature/orbital-scrapyard-trooper-roster",
+      "completion": {
+        "evidence": "Acceptance reviewed; corrected fullsuiteexit0 and independent checks pass; browser absence recorded",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "70155235bfef4f5f42cd312d2ac118ebebbe9f84",
+        "squashCommit": "83f3794ba47436c808862ed3dfaee10a6c0a07d1"
+      }
     },
     {
       "id": "TRI-087",
@@ -6744,6 +6745,18 @@
       "details": [
         "Review",
         "Final clean70155235bfef4f5f42cd312d2ac118ebebbe9f84; whitespace correction verified, focused/fullsuite evidence passes; independent acceptance complete"
+      ]
+    },
+    {
+      "at": "2026-10-08T22:38:03.283Z",
+      "command": "move",
+      "ticket": "TRI-086",
+      "details": [
+        "Done",
+        "Acceptance reviewed; corrected fullsuiteexit0 and independent checks pass; browser absence recorded",
+        "/root/director",
+        "83f3794ba47436c808862ed3dfaee10a6c0a07d1",
+        "70155235bfef4f5f42cd312d2ac118ebebbe9f84"
       ]
     }
   ]
