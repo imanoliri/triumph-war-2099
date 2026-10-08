@@ -1479,8 +1479,8 @@
       "id": "TRI-085",
       "title": "Abandoned world specialist roster",
       "task": "docs/tasks/abandoned-world-trooper-roster.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Worker ab9bc3ee155c4d4ec7f4cebfe454a9c966f50615 clean; full dev suite exit0, independent specialist/menu/Units checks pass; browser absence explicit",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
       "branch": "feature/abandoned-world-trooper-roster",
@@ -6672,6 +6672,15 @@
       "details": [
         "Ready",
         "User2026-10-07 authorized sequential execution and2026-10-08/09 continuation retains approved roster queue; dispatch after TRI-085 acceptance"
+      ]
+    },
+    {
+      "at": "2026-10-08T22:21:54.474Z",
+      "command": "move",
+      "ticket": "TRI-085",
+      "details": [
+        "Review",
+        "Worker ab9bc3ee155c4d4ec7f4cebfe454a9c966f50615 clean; full dev suite exit0, independent specialist/menu/Units checks pass; browser absence explicit"
       ]
     }
   ]
