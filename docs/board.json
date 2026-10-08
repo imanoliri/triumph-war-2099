@@ -1545,23 +1545,24 @@
       "id": "TRI-090",
       "title": "Add a playable Airless Moon mission",
       "task": "docs/tasks/airless-moon-mission.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Accepted playable Lunar Outpost Strike mission; focused and full suite checks pass; live browser playability explicit limit",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
-      "worker": {
-        "id": "/root/airless_moon_mission_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-airless-moon-mission",
-        "branch": "feature/airless-moon-mission"
-      },
-      "branch": "feature/airless-moon-mission"
+      "branch": "feature/airless-moon-mission",
+      "completion": {
+        "evidence": "Accepted playable Lunar Outpost Strike mission; focused and full suite checks pass; live browser playability explicit limit",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "38f37a1121c234af7312037c318743ab19b5edd4",
+        "squashCommit": "d3b586638f56524c70441cdf83d3e64c8d10699f"
+      }
     },
     {
       "id": "TRI-091",
       "title": "Add a playable Floating Habitats mission",
       "task": "docs/tasks/floating-habitats-mission.md",
-      "status": "Queued",
-      "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
+      "status": "Ready",
+      "reason": "Sequential execution authorized by user 2026-10-08; floating habitats mission ready",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
     },
@@ -6414,6 +6415,36 @@
       "details": [
         "../triumph-airless-moon-mission",
         "/root/airless_moon_mission_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T19:08:32.239Z",
+      "command": "move",
+      "ticket": "TRI-090",
+      "details": [
+        "Review",
+        "Worker commit 38f37a1121c234af7312037c318743ab19b5edd4; check-airless-moon-mission exit 0; full suite exit 0"
+      ]
+    },
+    {
+      "at": "2026-10-08T19:08:32.584Z",
+      "command": "move",
+      "ticket": "TRI-090",
+      "details": [
+        "Done",
+        "Accepted playable Lunar Outpost Strike mission; focused and full suite checks pass; live browser playability explicit limit",
+        "/root/director",
+        "d3b586638f56524c70441cdf83d3e64c8d10699f",
+        "38f37a1121c234af7312037c318743ab19b5edd4"
+      ]
+    },
+    {
+      "at": "2026-10-08T19:08:36.867Z",
+      "command": "move",
+      "ticket": "TRI-091",
+      "details": [
+        "Ready",
+        "Sequential execution authorized by user 2026-10-08; floating habitats mission ready"
       ]
     }
   ]
