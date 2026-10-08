@@ -29,28 +29,28 @@ for _ in range(3000):
     if (140 <= x <= 190 and 100 <= y <= 280) or (300 <= x <= 330 and 30 <= y <= 350) or (400 <= x <= 460 and 150 <= y <= 300):
         d.point((x, y), fill=rng.choice(toxic_colors))
 
-# UNIQUE polygon layout for Toxic Marsh containment walls and bio-vat islets (in 1024x768 space)
+# UNIQUE polygon layout for Toxic Marsh (Bio-Sludge Containment Vats, Marshland Islets, Meandering Sludge Channels) (in 1024x768 space)
 polygons = [
-    # Top containment wall
+    # Top bio-containment wall
     [(0, 0), (1024, 0), (1024, 50), (0, 50)],
-    # Bottom containment wall
+    # Bottom bio-containment wall
     [(0, 725), (1024, 725), (1024, 768), (0, 768)],
     # West embankment North (staging border)
-    [(0, 50), (75, 50), (75, 260), (0, 260)],
+    [(0, 50), (75, 50), (75, 250), (0, 250)],
     # West embankment South (staging border)
-    [(0, 520), (75, 520), (75, 725), (0, 725)],
-    # North-west bio-sludge containment vat island
-    [(290, 110), (410, 110), (410, 240), (290, 240)],
-    # South-west bio-sludge containment vat island
-    [(290, 530), (410, 530), (410, 660), (290, 660)],
-    # Central marshland barrier island (divides central corridor & flanks)
-    [(510, 290), (620, 290), (620, 470), (510, 470)],
-    # North-east bio-hazard research bunker
-    [(730, 90), (810, 90), (810, 230), (730, 230)],
-    # South-east bio-hazard containment bunker
-    [(730, 540), (810, 540), (810, 680), (730, 680)],
-    # Far east containment filtration wall
-    [(890, 260), (950, 260), (950, 510), (890, 510)]
+    [(0, 530), (75, 530), (75, 725), (0, 725)],
+    # North Horizontal Bio-Sludge Containment Vat
+    [(180, 110), (440, 110), (440, 170), (180, 170)],
+    # South Horizontal Bio-Sludge Containment Vat
+    [(180, 500), (380, 500), (380, 560), (180, 560)],
+    # Central Bio-Hazard Research Core (Diamond central island)
+    [(490, 290), (610, 290), (630, 384), (610, 480), (490, 480), (470, 384)],
+    # NE Bio-Filtration Structure
+    [(740, 90), (840, 90), (840, 230), (740, 230)],
+    # SE Bio-Filtration Structure
+    [(740, 530), (840, 530), (840, 670), (740, 670)],
+    # Far East Sludge Gate Barrier
+    [(890, 260), (950, 260), (950, 500), (890, 500)]
 ]
 
 mask = Image.new('1', (1024, 768), 0)
