@@ -1464,6 +1464,69 @@
       "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+    },
+    {
+      "id": "TRI-087",
+      "title": "Add a playable Industrial mission",
+      "task": "docs/tasks/industrial-mission.md",
+      "status": "Queued",
+      "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
+      "questions": [],
+      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+    },
+    {
+      "id": "TRI-088",
+      "title": "Add a playable Mercenary Frontier mission",
+      "task": "docs/tasks/mercenary-frontier-mission.md",
+      "status": "Queued",
+      "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
+      "questions": [],
+      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+    },
+    {
+      "id": "TRI-089",
+      "title": "Add a playable Toxic Marsh mission",
+      "task": "docs/tasks/toxic-marsh-mission.md",
+      "status": "Queued",
+      "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
+      "questions": [],
+      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+    },
+    {
+      "id": "TRI-090",
+      "title": "Add a playable Airless Moon mission",
+      "task": "docs/tasks/airless-moon-mission.md",
+      "status": "Queued",
+      "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
+      "questions": [],
+      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+    },
+    {
+      "id": "TRI-091",
+      "title": "Add a playable Floating Habitats mission",
+      "task": "docs/tasks/floating-habitats-mission.md",
+      "status": "Queued",
+      "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
+      "questions": [],
+      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+    },
+    {
+      "id": "TRI-092",
+      "title": "Add a playable Abandoned World mission",
+      "task": "docs/tasks/abandoned-world-mission.md",
+      "status": "Queued",
+      "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
+      "questions": [],
+      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+    },
+    {
+      "id": "TRI-093",
+      "title": "Add a playable Orbital Scrapyard mission",
+      "task": "docs/tasks/orbital-scrapyard-mission.md",
+      "status": "Queued",
+      "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
+      "questions": [],
+      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
     }
   ],
   "events": [
@@ -5797,6 +5860,202 @@
       "details": [
         "Ready",
         "User resolved question1: Field Medic deferred, Recon-only scope approved; resume preserved feb2bf50 checkout after active Volcanic worker finishes"
+      ]
+    },
+    {
+      "at": "2026-10-08T16:26:44.790Z",
+      "command": "create",
+      "ticket": "TRI-087",
+      "details": [
+        "industrial-mission",
+        "Add a playable Industrial mission",
+        "Ship one selectable custom mission with matching roster and reachable objectives."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:26:50.418Z",
+      "command": "move",
+      "ticket": "TRI-087",
+      "details": [
+        "Ready",
+        "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:26:55.814Z",
+      "command": "move",
+      "ticket": "TRI-087",
+      "details": [
+        "Queued",
+        "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:27:00.944Z",
+      "command": "create",
+      "ticket": "TRI-088",
+      "details": [
+        "mercenary-frontier-mission",
+        "Add a playable Mercenary Frontier mission",
+        "Ship one selectable custom mission with matching roster and reachable objectives."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:27:06.560Z",
+      "command": "move",
+      "ticket": "TRI-088",
+      "details": [
+        "Ready",
+        "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:27:11.350Z",
+      "command": "move",
+      "ticket": "TRI-088",
+      "details": [
+        "Queued",
+        "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:27:17.154Z",
+      "command": "create",
+      "ticket": "TRI-089",
+      "details": [
+        "toxic-marsh-mission",
+        "Add a playable Toxic Marsh mission",
+        "Ship one selectable custom mission with matching roster and reachable objectives."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:27:22.979Z",
+      "command": "move",
+      "ticket": "TRI-089",
+      "details": [
+        "Ready",
+        "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:27:28.050Z",
+      "command": "move",
+      "ticket": "TRI-089",
+      "details": [
+        "Queued",
+        "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:27:33.684Z",
+      "command": "create",
+      "ticket": "TRI-090",
+      "details": [
+        "airless-moon-mission",
+        "Add a playable Airless Moon mission",
+        "Ship one selectable custom mission with matching roster and reachable objectives."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:27:39.530Z",
+      "command": "move",
+      "ticket": "TRI-090",
+      "details": [
+        "Ready",
+        "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:27:45.368Z",
+      "command": "move",
+      "ticket": "TRI-090",
+      "details": [
+        "Queued",
+        "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:27:50.827Z",
+      "command": "create",
+      "ticket": "TRI-091",
+      "details": [
+        "floating-habitats-mission",
+        "Add a playable Floating Habitats mission",
+        "Ship one selectable custom mission with matching roster and reachable objectives."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:27:56.801Z",
+      "command": "move",
+      "ticket": "TRI-091",
+      "details": [
+        "Ready",
+        "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:28:01.729Z",
+      "command": "move",
+      "ticket": "TRI-091",
+      "details": [
+        "Queued",
+        "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:28:07.914Z",
+      "command": "create",
+      "ticket": "TRI-092",
+      "details": [
+        "abandoned-world-mission",
+        "Add a playable Abandoned World mission",
+        "Ship one selectable custom mission with matching roster and reachable objectives."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:28:13.956Z",
+      "command": "move",
+      "ticket": "TRI-092",
+      "details": [
+        "Ready",
+        "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:28:19.037Z",
+      "command": "move",
+      "ticket": "TRI-092",
+      "details": [
+        "Queued",
+        "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:28:24.403Z",
+      "command": "create",
+      "ticket": "TRI-093",
+      "details": [
+        "orbital-scrapyard-mission",
+        "Add a playable Orbital Scrapyard mission",
+        "Ship one selectable custom mission with matching roster and reachable objectives."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:28:30.660Z",
+      "command": "move",
+      "ticket": "TRI-093",
+      "details": [
+        "Ready",
+        "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+      ]
+    },
+    {
+      "at": "2026-10-08T16:28:35.884Z",
+      "command": "move",
+      "ticket": "TRI-093",
+      "details": [
+        "Queued",
+        "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time."
       ]
     }
   ]
