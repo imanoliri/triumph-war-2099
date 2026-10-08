@@ -1494,8 +1494,8 @@
       "id": "TRI-086",
       "title": "Orbital scrapyard specialist roster",
       "task": "docs/tasks/orbital-scrapyard-trooper-roster.md",
-      "status": "Queued",
-      "reason": "Roster planning queue; no worker dispatch until user authorizes execution",
+      "status": "Ready",
+      "reason": "User2026-10-07 authorized sequential execution and2026-10-08/09 continuation retains approved roster queue; dispatch after TRI-085 acceptance",
       "questions": [],
       "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
     },
@@ -6663,6 +6663,15 @@
       "details": [
         "../triumph-abandoned-world-trooper-roster",
         "/root/abandoned_roster_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T22:20:31.637Z",
+      "command": "move",
+      "ticket": "TRI-086",
+      "details": [
+        "Ready",
+        "User2026-10-07 authorized sequential execution and2026-10-08/09 continuation retains approved roster queue; dispatch after TRI-085 acceptance"
       ]
     }
   ]
