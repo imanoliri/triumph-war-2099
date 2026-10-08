@@ -1,55 +1,54 @@
-# 2026-10-08 /012 — director handover & mission tickets roadmap
+# 2026-10-08 /012 — director handover & mission tickets execution complete
 
-User requested continuing today's director session, focusing specifically on enabling and executing the playable mission tickets (TRI-087 through TRI-091), keeping check execution lean with focused scripts (`node tools/check-*.cjs`), and preparing a complete handoff note for Codex/future sessions.
+User requested continuing today's director session, focusing specifically on executing the authorized playable mission tickets (TRI-087 through TRI-091), maintaining strict map geometry uniqueness per environment, using lightweight focused checks (`node tools/check-*.cjs`), and preparing a complete handoff note for Codex/future chats.
 
-## Current State & Recent Integrations
+## Completed Mission Integrations (All 5 World Missions Shipped)
 
-- **TRI-084 (Floating Habitats Specialist Roster)**:
-  - Reviewed worker commit `4c9aa316b0224e57461efed6c0e94ab2f3c9f951` on `feature/floating-habitats-trooper-roster`.
-  - Focused check `node tools/check-floating-habitats-troopers.cjs` passed. Full suite exit 0 verified.
-  - Squash-merged into `main` at commit `2b8edd534c8eb8f29f2fbf6c57ee9510bb1996c3`.
-  - Board status moved to `Done` and GitHub Project mirrored (94 items).
+1. **TRI-087 — Industrial Assembly Plant** (`docs/tasks/industrial-mission.md`)
+   - **Environment**: Industrial
+   - **Roster**: Heavy Riveter + Arc Technician
+   - **Map**: Unique factory floor layout (`tools/build-industrial-assembly.py`) with horizontal machine blocks, central generator core, smelting furnace pillar, and conveyor control post.
+   - **Squash Commit**: `37bdbfc87460ef27560b9c30ed7ba7ef69063a9a` (layout update `803c0aa`).
+   - **Board Status**: Done.
 
-## Mission Tickets Ready for Sequential Execution
+2. **TRI-088 — Mercenary Outpost Strike** (`docs/tasks/mercenary-frontier-mission.md`)
+   - **Environment**: Mercenary Frontier
+   - **Roster**: Weapon Specialist + Bounty Hunter
+   - **Map**: Unique frontier fort layout (`tools/build-mercenary-outpost.py`) with north/south bunkers, central watchtower command post, storage depot, and fuel vault.
+   - **Squash Commit**: `50392d38b54bf4eccd36c729212cbd63fbfa475f`.
+   - **Board Status**: Done.
 
-The following mission tickets have all prerequisite roster integrations present on `main` and are ready to be dispatched one by one:
+3. **TRI-089 — Toxic Marsh Containment Strike** (`docs/tasks/toxic-marsh-mission.md`)
+   - **Environment**: Toxic Marsh
+   - **Roster**: Tracker + Chemical Trooper
+   - **Map**: Unique marshland/bio-hazard layout (`tools/build-toxic-marsh.py`) with bio-sludge containment vats, central marsh barrier, bio-research bunker, and filtration wall.
+   - **Squash Commit**: `afe68c5f67b13da2e78439309ec9b7290daf62fb`.
+   - **Board Status**: Done.
 
-1. **TRI-087 — Industrial Mission** (`docs/tasks/industrial-mission.md`)
-   - **Prerequisite**: TRI-079 (Done)
-   - **Status**: Ready for dispatch
-   - **Command**: `node tools/task.cjs prepare feature/industrial-mission --ticket TRI-087 --worktree ../triumph-industrial-mission`
+4. **TRI-090 — Lunar Outpost Strike** (`docs/tasks/airless-moon-mission.md`)
+   - **Environment**: Airless Moon
+   - **Roster**: Heavy Trooper + Ground Drone
+   - **Map**: Unique lunar terrain layout (`tools/build-airless-moon.py`) with octagonal observatory dome, solar power substation array, central crater ridge wall, comm vault, and oxygen generator plant.
+   - **Squash Commit**: `d3b586638f56524c70441cdf83d3e64c8d10699f`.
+   - **Board Status**: Done.
 
-2. **TRI-088 — Mercenary Frontier Mission** (`docs/tasks/mercenary-frontier-mission.md`)
-   - **Prerequisite**: TRI-080 (Done)
-   - **Status**: Ready for dispatch
-   - **Command**: `node tools/task.cjs prepare feature/mercenary-frontier-mission --ticket TRI-088 --worktree ../triumph-mercenary-frontier-mission`
+5. **TRI-091 — Floating Habitats Station Strike** (`docs/tasks/floating-habitats-mission.md`)
+   - **Environment**: Floating Habitats
+   - **Roster**: Skirmisher + Defender
+   - **Map**: Unique aerial platform layout (`tools/build-floating-habitats.py`) with octagonal cloud habitat dome, floating landing pier, central altitude station core, observatory vault, and climate control filtration plant.
+   - **Squash Commit**: `9e3d7b93811ee2e0c9a04c9fe894a5d717ecdb93`.
+   - **Board Status**: Done.
 
-3. **TRI-089 — Toxic Marsh Mission** (`docs/tasks/toxic-marsh-mission.md`)
-   - **Prerequisite**: TRI-082 (Done)
-   - **Status**: Ready for dispatch
-   - **Command**: `node tools/task.cjs prepare feature/toxic-marsh-mission --ticket TRI-089 --worktree ../triumph-toxic-marsh-mission`
+## Next Queue (For Future Handoff / Authorization)
 
-4. **TRI-090 — Airless Moon Mission** (`docs/tasks/airless-moon-mission.md`)
-   - **Prerequisite**: TRI-083 (Done)
-   - **Status**: Ready for dispatch
-   - **Command**: `node tools/task.cjs prepare feature/airless-moon-mission --ticket TRI-090 --worktree ../triumph-airless-moon-mission`
+- **TRI-085**: Abandoned World specialist roster (Queued)
+- **TRI-086**: Orbital Scrapyard specialist roster (Queued)
+- **TRI-092**: Abandoned World mission (Queued, requires TRI-085)
+- **TRI-093**: Orbital Scrapyard mission (Queued, requires TRI-086)
+- **TRI-067**: Expand game soundtrack (Ready / Parked)
 
-5. **TRI-091 — Floating Habitats Mission** (`docs/tasks/floating-habitats-mission.md`)
-   - **Prerequisite**: TRI-084 (Done)
-   - **Status**: Ready for dispatch
-   - **Command**: `node tools/task.cjs prepare feature/floating-habitats-mission --ticket TRI-091 --worktree ../triumph-floating-habitats-mission`
+## Handoff Directives for Codex / Future Director Chats
 
-## Queued Tasks (Following Mission Phase)
-
-- **TRI-085**: Abandoned World specialist roster
-- **TRI-086**: Orbital Scrapyard specialist roster
-- **TRI-092**: Abandoned World mission (requires TRI-085)
-- **TRI-093**: Orbital Scrapyard mission (requires TRI-086)
-- **TRI-067**: Expand game soundtrack (parked)
-
-## Handoff Directives for Codex / Director Agent
-
-1. **Focused Verification**: Use individual script checks (`node tools/check-<feature>.cjs`) during implementation and preliminary review to avoid lengthy test suite waits. Run the full suite (`node tools/dev.cjs test`) only prior to final Review/Done transitions.
-2. **One Worker at a Time**: Maintain strict single-worker isolation per worktree.
-3. **Squash Integration**: Always squash-merge accepted feature branches into `main` and record both the squash SHA and worker commit SHA in `docs/board.json`.
-4. **Mirror GitHub Project**: Execute `node tools/github-project.cjs` after every board state update.
+1. All 5 custom missions (Industrial, Mercenary Frontier, Toxic Marsh, Airless Moon, Floating Habitats) are fully squashed into `main` with 100% unique terrain geometries, verified objective flow across all 5 difficulty profiles, and matching specialist roster integrations.
+2. Board state (`docs/board.json` & `docs/BOARD.md`) and GitHub Project Mirror (94 tickets) are 100% synchronized.
+3. Every mission includes a dedicated focused check script (`tools/check-*-mission.cjs`) for fast, lean verification.

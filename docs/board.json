@@ -1561,16 +1561,17 @@
       "id": "TRI-091",
       "title": "Add a playable Floating Habitats mission",
       "task": "docs/tasks/floating-habitats-mission.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Done",
+      "reason": "Accepted playable Floating Habitats Station Strike mission; focused and full suite checks pass; live browser playability explicit limit",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
-      "worker": {
-        "id": "/root/floating_habitats_mission_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-floating-habitats-mission",
-        "branch": "feature/floating-habitats-mission"
-      },
-      "branch": "feature/floating-habitats-mission"
+      "branch": "feature/floating-habitats-mission",
+      "completion": {
+        "evidence": "Accepted playable Floating Habitats Station Strike mission; focused and full suite checks pass; live browser playability explicit limit",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "8dec7a5ff0e4ec94ef9e8ca61e57c5b21c25ce5c",
+        "squashCommit": "9e3d7b93811ee2e0c9a04c9fe894a5d717ecdb93"
+      }
     },
     {
       "id": "TRI-092",
@@ -6460,6 +6461,27 @@
       "details": [
         "../triumph-floating-habitats-mission",
         "/root/floating_habitats_mission_worker"
+      ]
+    },
+    {
+      "at": "2026-10-08T19:13:20.157Z",
+      "command": "move",
+      "ticket": "TRI-091",
+      "details": [
+        "Review",
+        "Worker commit 8dec7a5ff0e4ec94ef9e8ca61e57c5b21c25ce5c; check-floating-habitats-mission exit 0; full suite exit 0"
+      ]
+    },
+    {
+      "at": "2026-10-08T19:13:20.525Z",
+      "command": "move",
+      "ticket": "TRI-091",
+      "details": [
+        "Done",
+        "Accepted playable Floating Habitats Station Strike mission; focused and full suite checks pass; live browser playability explicit limit",
+        "/root/director",
+        "9e3d7b93811ee2e0c9a04c9fe894a5d717ecdb93",
+        "8dec7a5ff0e4ec94ef9e8ca61e57c5b21c25ce5c"
       ]
     }
   ]
