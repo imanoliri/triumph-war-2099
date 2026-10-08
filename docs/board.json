@@ -1361,10 +1361,16 @@
       "id": "TRI-078",
       "title": "Jungle specialist roster",
       "task": "docs/tasks/jungle-trooper-roster.md",
-      "status": "Ready",
-      "reason": "Sequential execution authorized; approved Recon and Field Medic only, existing health eligibility must be proven or raised as material question",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only"
+      "approval": "User 2026-10-07 approved world trooper proposal mechanics with explicit Scout/swap/stop/Listener corrections; planning only",
+      "worker": {
+        "id": "/root/jungle_roster_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-jungle-trooper-roster",
+        "branch": "feature/jungle-trooper-roster"
+      },
+      "branch": "feature/jungle-trooper-roster"
     },
     {
       "id": "TRI-079",
@@ -5630,6 +5636,15 @@
       "details": [
         "Ready",
         "Sequential execution authorized; approved Recon and Field Medic only, existing health eligibility must be proven or raised as material question"
+      ]
+    },
+    {
+      "at": "2026-10-08T06:30:35.808Z",
+      "command": "dispatch",
+      "ticket": "TRI-078",
+      "details": [
+        "../triumph-jungle-trooper-roster",
+        "/root/jungle_roster_worker"
       ]
     }
   ]
