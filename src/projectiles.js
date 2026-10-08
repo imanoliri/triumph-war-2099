@@ -6,7 +6,7 @@ step(s,dt,{W,H,blocked,dist,damage,destroyProp,wormExposed,sound,tone,burst,emit
   const b=s.bullets[i];if(b.grenadier){
    let travel=Math.min(b.remaining,b.speed*dt),hit=false;while(travel>1e-9){const step=Math.min(1,travel),x=b.x+b.dx*step,y=b.y+b.dy*step;if(x<0||x>W||y<0||y>H||blocked(x,y)||(s.props||[]).some(p=>p.hp>0&&x>=p.left&&x<p.left+p.w&&y>=p.top&&y<p.top+p.h)){hit=true;break;}b.x=x;b.y=y;b.remaining-=step;travel-=step;}b.life-=dt;
    if(hit||b.remaining<=1e-9){window.TriumphMaritimeTroopers.explode(b,s,{blocked,damage,burst,emitAcousticEvent,destroyProp,sound});s.bullets.splice(i,1);}continue;
-  }b.x+=b.dx*b.speed*dt;b.y+=b.dy*b.speed*dt;b.life-=dt;
+  }const flight=b.ambusher?Math.min(dt,Math.max(0,b.life)):dt;b.x+=b.dx*b.speed*flight;b.y+=b.dy*b.speed*flight;b.life-=dt;
   let hit=false;
   if(b.team==='human')for(const p of s.props||[])if(p.hp>0&&b.x>=p.left&&b.x<p.left+p.w&&b.y>=p.top&&b.y<p.top+p.h){
    p.hp-=b.damage;hit=true;if(p.hp<=0)destroyProp(p);break;
