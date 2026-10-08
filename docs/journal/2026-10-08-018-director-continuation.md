@@ -17,3 +17,5 @@ Recovery inspection only; no new simulation, browser or audio claim. Prior Gemin
 ## Next action
 
 Prepare isolated TRI-085 worktree, dispatch a minimal-context worker, record actual binding and immediately mirror. Worker must audit Recovery Trooper useful recipients without changing baseline HP and relay material scope questions; independently proceed with approved Incendiary work.
+
+TRI-085 prepared from303d3de in preserved new ../triumph-abandoned-world-trooper-roster, feature/abandoned-world-trooper-roster, initialsession019. Bound actual /root/abandoned_roster_worker In progress and immediately mirrored94items. Worker confirmed preparation-only edits and has binding confirmation. Next receive Recovery eligibility audit/material questions and Incendiary evidence; independent review after exact scoped SHA/checks.
