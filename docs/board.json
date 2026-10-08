@@ -1529,10 +1529,16 @@
       "id": "TRI-089",
       "title": "Add a playable Toxic Marsh mission",
       "task": "docs/tasks/toxic-marsh-mission.md",
-      "status": "Ready",
-      "reason": "Sequential execution authorized by user 2026-10-08; toxic marsh mission ready",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
+      "worker": {
+        "id": "/root/toxic_marsh_mission_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-toxic-marsh-mission",
+        "branch": "feature/toxic-marsh-mission"
+      },
+      "branch": "feature/toxic-marsh-mission"
     },
     {
       "id": "TRI-090",
@@ -6353,6 +6359,15 @@
       "details": [
         "Ready",
         "Sequential execution authorized by user 2026-10-08; toxic marsh mission ready"
+      ]
+    },
+    {
+      "at": "2026-10-08T18:24:46.305Z",
+      "command": "dispatch",
+      "ticket": "TRI-089",
+      "details": [
+        "../triumph-toxic-marsh-mission",
+        "/root/toxic_marsh_mission_worker"
       ]
     }
   ]
