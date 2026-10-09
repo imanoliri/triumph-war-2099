@@ -1654,10 +1654,16 @@
       "id": "TRI-096",
       "title": "Create reusable layout, soldier and enemy design catalogues",
       "task": "docs/tasks/reusable-design-catalogues.md",
-      "status": "Ready",
-      "reason": "User2026-10-09 requested reusable studied map/soldier/enemy catalogues independent of missions; bounded design-library scope, after active092 before093",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User2026-10-09 requested reusable studied map/soldier/enemy catalogues independent of missions; bounded design-library scope, after active092 before093"
+      "approval": "User2026-10-09 requested reusable studied map/soldier/enemy catalogues independent of missions; bounded design-library scope, after active092 before093",
+      "worker": {
+        "id": "/root/design_catalogue_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-reusable-design-catalogues",
+        "branch": "chore/reusable-design-catalogues"
+      },
+      "branch": "chore/reusable-design-catalogues"
     }
   ],
   "events": [
@@ -6894,6 +6900,15 @@
         "/root/director",
         "efb26b7b317e926d2bc402485796e9208bee8285",
         "d70a6d2a89b666062403a9feea2c0e7f3674759e"
+      ]
+    },
+    {
+      "at": "2026-10-09T11:29:14.296Z",
+      "command": "dispatch",
+      "ticket": "TRI-096",
+      "details": [
+        "../triumph-reusable-design-catalogues",
+        "/root/design_catalogue_worker"
       ]
     }
   ]
