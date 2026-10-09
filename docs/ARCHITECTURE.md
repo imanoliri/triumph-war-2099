@@ -22,7 +22,7 @@ index.html loads recovered asset globals, music.js, navigation.js, support.js, s
 | src/rally.js | Reachable rally destination selection and flag rendering |
 | navigation.js | Collision-aware route fields, reachability, destinations and route distance |
 | support.js | Recovered path stepping and creation-rule choice |
-| music.js | WebAudio scheduling, original MIDI notes, optional sample bank and fallback |
+| music.js | WebAudio scheduling, original/local authored notes, manual override/selector, optional sample bank and fallback |
 | assets/original-data.js | Images, objects, nine map instances and collision masks |
 | assets/original-rules.js | Source difficulty, terminal, door, mission and wave requirements |
 | assets/support-rules.js / pickup-rules.js | Source support creation and pickup roll rules |
@@ -112,3 +112,5 @@ TRI-083: `src/airless-moon-troopers.js` owns explicit per-actor ground-companion
 TRI-085: `src/abandoned-troopers.js` owns explicit mission-clock flame cycle/pulse geometry and finite stationary treatment. Runtime supplies current damage, sight and terrain services. Central factories initialize opt-in starting fields and actual support arrivals; shared orders cancel unfinished treatment, and Attack/movement/focus/use priorities remain authoritative. Recovery target references are nonenumerable and caps derive from existing recipient types; no baseline health or crawler lifecycle is changed. Combat/order/perception and Tracker legal-preference reach tables include the120px cone and ordinary Recovery rifle. Renderer and Units share recovered52 and authored distinct marks. Registry exports only the opt-in Abandoned roster; no matching mission is invented.
 
 TRI-086: `src/orbital-troopers.js` owns Mine-layer inventory, explicit reachable point validation/arrival and caller-clock mine advancement. Shared `TriumphDesertRiders.updateMines` accepts an optional immutable rules argument; defaults preserve crawler behavior. Pending placement uses the existing `placeCharge` order cancellation and shared button, whose label reflects selected Mine-layers. Central factory initializes both starting optional fields and support arrivals; roster/menu/cap/Units tables include both types. Breacher uses shared quantized combat aiming, a 90 px reach guard and a 3-damage/2-second single projectile; lifetime-clamped one-pixel sweep preserves range/collision, with wall props explicitly absorbing rather than taking its damage. Renderer and Units share recovered52 with authored marks. No Orbital mission exists or is invented.
+
+TRI-067: `tools/compose-soundtrack.cjs` composes the appended local environment matrix without regenerating recovered data. Root `music.js` owns theme aliases, mission assignment and persistent manual override; game startup binds the Controls selector. See [SOUNDTRACK](SOUNDTRACK.md).

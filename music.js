@@ -1,8 +1,40 @@
 'use strict';
-// Original MIDI performances, synthesized locally without downloads or network access.
+// Original MIDI performances & Royalty-Free Soundtrack Matrix, synthesized locally without downloads or network access.
 (() => {
- let context,timer,track,origin=0,cursor=0,enabled=true,unlocked=false,paused=false;
+ let context,timer,track,origin=0,cursor=0,enabled=true,unlocked=false,paused=false,currentHandle=0,missionHandle=0,override="auto";
  const voices=new Set(),buffers=new Map();
+ const THEME_KEYS = ['title', 'snow', 'maritime', 'capital', 'desert', 'jungle', 'volcanic', 'undercity'];
+ const THEME_MAP = {
+  'title': 'title', 'briefing': 'title', 'title/briefing': 'title',
+  'snow': 'snow', 'arctic': 'snow', 'arctic/snow': 'snow',
+  'maritime': 'maritime', 'harbor': 'maritime', 'maritime/harbor': 'maritime',
+  'capital': 'capital', 'urban': 'capital', 'capital/urban': 'capital',
+  'desert': 'desert',
+  'jungle': 'jungle',
+  'volcanic': 'volcanic',
+  'undercity': 'undercity'
+ };
+
+ function resolveTrack(handle) {
+  if (handle === undefined || handle === null) return window.ORIGINAL_MUSIC?.[0] || window.ROYALTY_FREE_MUSIC?.['title'];
+  if (typeof handle === 'number' && handle >= 14 && handle <= 21) {
+   const key = THEME_KEYS[handle - 14];
+   return window.ROYALTY_FREE_MUSIC?.[key] || window.ORIGINAL_MUSIC?.[0];
+  }
+  if (window.ORIGINAL_MUSIC?.[handle]) return window.ORIGINAL_MUSIC[handle];
+  if (window.ROYALTY_FREE_MUSIC?.[handle]) return window.ROYALTY_FREE_MUSIC[handle];
+  const normalized = String(handle).trim().toLowerCase();
+  const themeKey = THEME_MAP[normalized];
+  if (themeKey && window.ROYALTY_FREE_MUSIC?.[themeKey]) return window.ROYALTY_FREE_MUSIC[themeKey];
+  return window.ORIGINAL_MUSIC?.[0] || window.ROYALTY_FREE_MUSIC?.['title'];
+ }
+
+ function resolveThemeKey(theme) {
+  if (theme === undefined || theme === null) return 'title';
+  const norm = String(theme).trim().toLowerCase();
+  return THEME_MAP[norm] || (THEME_KEYS.includes(norm) ? norm : 'title');
+ }
+
  function sampled(n,when){const bank=window.WINDOWS_MIDI_BANK;if(!bank||!context.createBufferSource)return false;
   const [start,duration,pitch,velocity,channel,program]=n,drum=channel===9;
   const regions=bank.instruments[(drum?'drum:':'melodic:')+program]||bank.instruments[(drum?'drum:':'melodic:')+'0'];
@@ -35,5 +67,18 @@
   if(cursor===track.notes.length&&origin+track.duration<horizon){origin+=track.duration;cursor=0;}
  }
  function start(){stop();if(!enabled||!track||!unlocked)return;context??=new(window.AudioContext||window.webkitAudioContext)();paused=false;context.resume().catch(()=>{});origin=context.currentTime+.05;cursor=0;schedule();timer=setInterval(schedule,75);}
- window.TriumphMusic={unlock(){if(unlocked)return;unlocked=true;start();},select(handle){const next=window.ORIGINAL_MUSIC?.[handle];if(next===track)return;track=next;start();},enabled(value){enabled=value;start();},pause(value){if(!context||value===paused)return;paused=value;if(value)context.suspend().catch(()=>{});else context.resume().catch(()=>{});},stop};
+ function applySelection(){currentHandle=override==="auto"?missionHandle:override;const next=resolveTrack(currentHandle);if(next===track)return;track=next;start();}
+ window.TriumphMusic={
+  unlock(){if(unlocked)return;unlocked=true;start();},
+  select(handle){missionHandle=handle;applySelection();},
+  setOverride(handle){override=handle==="auto"?"auto":handle;applySelection();},
+  override(){return override;},
+  bindSelector(element){if(!element)return;element.value=String(override);element.addEventListener("change",()=>{window.TriumphMusic.unlock();window.TriumphMusic.setOverride(element.value);});},
+  getThemeTrack(theme){const key=resolveThemeKey(theme);return window.ROYALTY_FREE_MUSIC?.[key]||resolveTrack(theme);},
+  getThemeTrackKey(theme){return resolveThemeKey(theme);},
+  currentTrack(){return currentHandle;},
+  enabled(value){enabled=value;start();},
+  pause(value){if(!context||value===paused)return;paused=value;if(value)context.suspend().catch(()=>{});else context.resume().catch(()=>{});},
+  stop
+ };
 })();

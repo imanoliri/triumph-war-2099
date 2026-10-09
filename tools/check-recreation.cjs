@@ -10,9 +10,11 @@ elements['#controls']={open:false,showModal(){this.open=true},close(){this.open=
 elements['#unit-guide']={open:false,showModal(){this.open=true},close(){this.open=false;this.onclose()}};
 elements['#reinforcement-menu']={open:false,showModal(){this.open=true},close(){this.open=false;this.onclose()}};
 elements['#mission']={value:'0'};
+elements['#music-track']={value:'auto'};let boundSoundtrack;
+const sandboxMusic={select:noop,unlock:noop,bindSelector:element=>boundSoundtrack=element};
 class Image {constructor(){this.complete=true;this.naturalWidth=20;}}
 class Audio {cloneNode(){return this}play(){return Promise.resolve()}}
-const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.from(s,'base64').toString('latin1'),navigator:{getGamepads:()=>[]},document:{hasFocus:()=>true,querySelector:id=>elements[id],createElement:()=>canvas},window:{addEventListener:(name,cb)=>handlers[name]=cb},requestAnimationFrame:cb=>sandbox.nextFrame=cb};
+const sandbox={console,Math,JSON,Set,Map,Image,Audio,Uint8Array,atob:s=>Buffer.from(s,'base64').toString('latin1'),navigator:{getGamepads:()=>[]},document:{hasFocus:()=>true,querySelector:id=>elements[id],createElement:()=>canvas},window:{TriumphMusic:sandboxMusic,addEventListener:(name,cb)=>handlers[name]=cb},requestAnimationFrame:cb=>sandbox.nextFrame=cb};
 vm.createContext(sandbox);
 for(const file of ['assets/original-data.js','assets/original-rules.js','assets/audio/catalog.js','assets/support-rules.js','navigation.js','assets/pickup-rules.js','support.js','src/breeding.js','src/balance.js','assets/custom/split-ridge/terrain.js','assets/custom/relay-basin/terrain.js','assets/custom/switchback-mesa/terrain.js','assets/custom/beneath-dunes/terrain.js','assets/custom/beneath-dunes-variant-b/terrain.js','assets/custom/whiteout-signal/terrain.js','assets/custom/harbor-watch/terrain.js','assets/custom/district-twelve/terrain.js','assets/custom/jungle-canopy/terrain.js','assets/custom/volcanic-forge/terrain.js','assets/custom/undercity-tunnels/terrain.js','assets/custom/industrial-assembly/terrain.js','assets/custom/mercenary-outpost/terrain.js','assets/custom/toxic-marsh/terrain.js','assets/custom/airless-moon/terrain.js','assets/custom/floating-habitats/terrain.js','src/custom-missions.js','src/missions.js','src/rally.js','src/vent-bugs.js','src/desert-worm.js','src/desert-riders.js','src/jungle-ambush.js','src/volcanic-hazards.js','src/projectiles.js','src/winter-gunner.js','src/capital-troopers.js','src/maritime-troopers.js','src/corner-ambusher.js','src/recon.js','src/mercenary-troopers.js','src/industrial-troopers.js','src/volcanic-troopers.js','src/toxic-marsh-troopers.js','src/floating-habitats-troopers.js','src/airless-moon-troopers.js','src/abandoned-troopers.js','src/orbital-troopers.js','src/combat.js','src/orders.js','src/input.js','src/gamepad.js','src/input-dom.js','src/support-lifecycle.js','src/rendering.js','game.js']){
  let source=fs.readFileSync(''+file,'utf8');
@@ -20,6 +22,7 @@ for(const file of ['assets/original-data.js','assets/original-rules.js','assets/
  vm.runInContext(source,sandbox);
 }
 const api=sandbox.window.triumph,event=code=>({code,preventDefault:noop});let time=0;
+assert.equal(boundSoundtrack,elements['#music-track'],'Game startup binds the real soundtrack selector');
 function resumeSimulation(){if(api.state().paused)elements['#pause'].onclick();}
 function frames(n){for(let i=0;i<n;i++){time+=16.6667;sandbox.nextFrame(time)}}
 assert.equal(api.state().mode,'briefing');assert.equal(api.missions.length,9);
@@ -987,5 +990,3 @@ console.log('Passed active friendly fire for all orders, Normal/Follow alignment
 
     console.log('Passed TRI-065 high-fidelity pixel art sprite overlay rendering for custom soldier types across directional headings.');
   }
-
-
