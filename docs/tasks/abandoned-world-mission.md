@@ -27,3 +27,6 @@ World identity is theme, briefing and roster. No new oxygen/gravity/flight/toxic
 ## Sessions
 
 - Planning: [director queue](../journal/2026-10-08-002-director-queue.md).
+
+## Layout selection checkpoint
+TRI095 now supplies reviewed [Abandoned A/B/C options](../design/world-map-atlas/abandoned-world-overview.png) and [tradeoffs/geometry guide](../design/world-map-atlas/README.md). User selection remains pending from the presented artifact; recommendation A (Ruin terraces) is not recorded as a user answer. Keep Queued until the selection is recorded, then dispatch one isolated mission worker using the selected proposal and existing roster/mechanics/all-five acceptance. TRI085 prerequisite is integrated at4efb7897ba11c3be5520b7a17503ca3fb1bc40a5.
