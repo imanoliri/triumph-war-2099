@@ -29,4 +29,5 @@ World identity is theme, briefing and roster. No new oxygen/gravity/flight/toxic
 - Planning: [director queue](../journal/2026-10-08-002-director-queue.md).
 
 ## Layout selection checkpoint
-TRI095 now supplies reviewed [Orbital A/B/C options](../design/world-map-atlas/orbital-scrapyard-overview.png) and [tradeoffs/geometry guide](../design/world-map-atlas/README.md). User selection remains pending from the presented artifact; recommendation B (asymmetric hull circuits) is not recorded as a user answer. Keep Queued until the selection is recorded, then dispatch after TRI092 using the selected proposal and existing roster/mechanics/all-five acceptance. TRI086 prerequisite is integrated at83f3794ba47436c808862ed3dfaee10a6c0a07d1.
+
+User2026-10-09 selected B (asymmetric hull circuits) by accepting the director recommendation, and explicitly requested saving all choices for later. Implement this selected proposal from the retained TRI095 atlas geometry and comparison guide; preserve every A/B/C source and export as reusable alternatives. Adapt schematic placements into actual terrain safely while retaining route identity, existing systems and all-five acceptance. Integrated roster prerequisite: 83f3794ba47436c808862ed3dfaee10a6c0a07d1. Execute Abandoned first, then Orbital; separate isolated branches and reviews.

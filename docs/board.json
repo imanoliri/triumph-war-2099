@@ -1597,8 +1597,8 @@
       "id": "TRI-092",
       "title": "Add a playable Abandoned World mission",
       "task": "docs/tasks/abandoned-world-mission.md",
-      "status": "Queued",
-      "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
+      "status": "Ready",
+      "reason": "User2026-10-09 selected AbandonedA Ruin terraces; roster integrated, soundtrackDone, saved alternatives preserved",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
     },
@@ -1606,8 +1606,8 @@
       "id": "TRI-093",
       "title": "Add a playable Orbital Scrapyard mission",
       "task": "docs/tasks/orbital-scrapyard-mission.md",
-      "status": "Queued",
-      "reason": "After remaining rosters and TRI-067; matching roster prerequisite, one worker at a time.",
+      "status": "Ready",
+      "reason": "User2026-10-09 selected OrbitalB asymmetric hull circuits; execute after092, preserve alternatives",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
     },
@@ -6811,6 +6811,24 @@
         "/root/director",
         "b7e687221163cdae75d40ec8cddf7f02e978a10a",
         "bab0ec86883547f97ae93d173bcbdf98e8acc989"
+      ]
+    },
+    {
+      "at": "2026-10-09T11:06:20.711Z",
+      "command": "move",
+      "ticket": "TRI-092",
+      "details": [
+        "Ready",
+        "User2026-10-09 selected AbandonedA Ruin terraces; roster integrated, soundtrackDone, saved alternatives preserved"
+      ]
+    },
+    {
+      "at": "2026-10-09T11:06:25.619Z",
+      "command": "move",
+      "ticket": "TRI-093",
+      "details": [
+        "Ready",
+        "User2026-10-09 selected OrbitalB asymmetric hull circuits; execute after092, preserve alternatives"
       ]
     }
   ]
