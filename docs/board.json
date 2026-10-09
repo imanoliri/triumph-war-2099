@@ -1648,6 +1648,15 @@
         "reviewedImplementationCommit": "e35bdfb0fa8b249c53bba522d219e220f96b575c",
         "squashCommit": "abb6097914707cc94dae4786aed537a738c5cdba"
       }
+    },
+    {
+      "id": "TRI-096",
+      "title": "Create reusable layout, soldier and enemy design catalogues",
+      "task": "docs/tasks/reusable-design-catalogues.md",
+      "status": "Ready",
+      "reason": "User2026-10-09 requested reusable studied map/soldier/enemy catalogues independent of missions; bounded design-library scope, after active092 before093",
+      "questions": [],
+      "approval": "User2026-10-09 requested reusable studied map/soldier/enemy catalogues independent of missions; bounded design-library scope, after active092 before093"
     }
   ],
   "events": [
@@ -6844,6 +6853,25 @@
       "details": [
         "../triumph-abandoned-world-mission",
         "/root/abandoned_mission_worker"
+      ]
+    },
+    {
+      "at": "2026-10-09T11:12:31.950Z",
+      "command": "create",
+      "ticket": "TRI-096",
+      "details": [
+        "reusable-design-catalogues",
+        "Create reusable layout, soldier and enemy design catalogues",
+        "Deliver mission-independent catalogues and compatibility analysis, preserving current runtime and all saved options"
+      ]
+    },
+    {
+      "at": "2026-10-09T11:13:21.749Z",
+      "command": "move",
+      "ticket": "TRI-096",
+      "details": [
+        "Ready",
+        "User2026-10-09 requested reusable studied map/soldier/enemy catalogues independent of missions; bounded design-library scope, after active092 before093"
       ]
     }
   ]
