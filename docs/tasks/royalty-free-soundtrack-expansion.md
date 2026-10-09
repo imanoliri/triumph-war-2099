@@ -36,3 +36,6 @@ Prior sequential execution and preserved checkout recovery remain authorized. Th
 - Exact recovery run/evidence and Review handoff belong to the latest linked session. Audible quality/seams/output devices await human listening; bounded browser selector evidence is recorded separately.
 
 Implementation is ready for **Review**, with human listening limitation recorded in the latest session and playtest. No merge or publication performed.
+
+## Integration
+Accepted squashb7e687221163cdae75d40ec8cddf7f02e978a10a from reviewedbab0ec86883547f97ae93d173bcbdf98e8acc989 on2026-10-09. Done. Browserselector evidence accepted; audiblequality/loopseams/outputdevice unverified, not claimed. Originalcheckpoint/checkout/scratch retained.
