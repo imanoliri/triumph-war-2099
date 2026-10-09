@@ -36,3 +36,7 @@ User2026-10-09 selected B (asymmetric hull circuits) by accepting the director r
 ## Implementation evidence
 
 [Mission design](../design/orbital-scrapyard.md) records selected source identity,budgets and specialist roles; [all-five production fixtures](../design/orbital-scrapyard-evidence.json) verify real collision/movement,finite births,interactions,controlled completion/loss/reset and finite eagle delivery/caps. [Browser spot checks](../playtests/2026-10-09-orbital-scrapyard.md) record actual UI/rendering evidence and skipped full combat wins/audio. Review: final full suite passed; scoped implementation commit contains this record. Director owns board/integration.
+
+## Integration
+
+Accepted squash60661e184c20523b3d1ec15fb8a0cb5d0d9c9d5c from reviewed workerbcc5980de7beb87c219da5f617326d93c2c9e444. Independent production checks and static actual browser evidence accepted; fullsuite59007exit0. Full humanwins/audio remain unverified.

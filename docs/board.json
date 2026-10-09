@@ -1613,16 +1613,17 @@
       "id": "TRI-093",
       "title": "Add a playable Orbital Scrapyard mission",
       "task": "docs/tasks/orbital-scrapyard-mission.md",
-      "status": "Review",
-      "reason": "Independent allfive fixtures and terrain/browser evidence reviewed; clean bcc5980de7beb87c219da5f617326d93c2c9e444; full suite59007 exit0; live wins/audio limits recorded",
+      "status": "Done",
+      "reason": "Acceptance independently reviewed; allfive production fixtures and full suite59007 exit0; source reproducibility/browser spot checks and limitations durable",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
-      "worker": {
-        "id": "/root/orbital_mission_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-orbital-scrapyard-mission",
-        "branch": "feature/orbital-scrapyard-mission"
-      },
-      "branch": "feature/orbital-scrapyard-mission"
+      "branch": "feature/orbital-scrapyard-mission",
+      "completion": {
+        "evidence": "Acceptance independently reviewed; allfive production fixtures and full suite59007 exit0; source reproducibility/browser spot checks and limitations durable",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "bcc5980de7beb87c219da5f617326d93c2c9e444",
+        "squashCommit": "60661e184c20523b3d1ec15fb8a0cb5d0d9c9d5c"
+      }
     },
     {
       "id": "TRI-094",
@@ -6955,6 +6956,18 @@
       "details": [
         "Review",
         "Independent allfive fixtures and terrain/browser evidence reviewed; clean bcc5980de7beb87c219da5f617326d93c2c9e444; full suite59007 exit0; live wins/audio limits recorded"
+      ]
+    },
+    {
+      "at": "2026-10-09T17:37:21.021Z",
+      "command": "move",
+      "ticket": "TRI-093",
+      "details": [
+        "Done",
+        "Acceptance independently reviewed; allfive production fixtures and full suite59007 exit0; source reproducibility/browser spot checks and limitations durable",
+        "/root/director",
+        "60661e184c20523b3d1ec15fb8a0cb5d0d9c9d5c",
+        "bcc5980de7beb87c219da5f617326d93c2c9e444"
       ]
     }
   ]
