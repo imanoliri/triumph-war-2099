@@ -1597,10 +1597,16 @@
       "id": "TRI-092",
       "title": "Add a playable Abandoned World mission",
       "task": "docs/tasks/abandoned-world-mission.md",
-      "status": "Ready",
-      "reason": "User2026-10-09 selected AbandonedA Ruin terraces; roster integrated, soundtrackDone, saved alternatives preserved",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
+      "worker": {
+        "id": "/root/abandoned_mission_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-abandoned-world-mission",
+        "branch": "feature/abandoned-world-mission"
+      },
+      "branch": "feature/abandoned-world-mission"
     },
     {
       "id": "TRI-093",
@@ -6829,6 +6835,15 @@
       "details": [
         "Ready",
         "User2026-10-09 selected OrbitalB asymmetric hull circuits; execute after092, preserve alternatives"
+      ]
+    },
+    {
+      "at": "2026-10-09T11:06:57.205Z",
+      "command": "dispatch",
+      "ticket": "TRI-092",
+      "details": [
+        "../triumph-abandoned-world-mission",
+        "/root/abandoned_mission_worker"
       ]
     }
   ]
