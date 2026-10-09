@@ -1613,8 +1613,8 @@
       "id": "TRI-093",
       "title": "Add a playable Orbital Scrapyard mission",
       "task": "docs/tasks/orbital-scrapyard-mission.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Independent allfive fixtures and terrain/browser evidence reviewed; clean bcc5980de7beb87c219da5f617326d93c2c9e444; full suite59007 exit0; live wins/audio limits recorded",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
       "worker": {
@@ -6946,6 +6946,15 @@
       "details": [
         "../triumph-orbital-scrapyard-mission",
         "/root/orbital_mission_worker"
+      ]
+    },
+    {
+      "at": "2026-10-09T17:36:50.290Z",
+      "command": "move",
+      "ticket": "TRI-093",
+      "details": [
+        "Review",
+        "Independent allfive fixtures and terrain/browser evidence reviewed; clean bcc5980de7beb87c219da5f617326d93c2c9e444; full suite59007 exit0; live wins/audio limits recorded"
       ]
     }
   ]
