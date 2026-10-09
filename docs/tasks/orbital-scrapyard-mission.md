@@ -1,7 +1,7 @@
 # Orbital Scrapyard mission
 
 - Ticket: TRI-093; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/orbital-scrapyard-mission`
 - Dependency: TRI-086 integrated before dispatch.
 
 ## Goal and user-visible outcome
@@ -10,11 +10,11 @@ Add one playable selectable custom mission for Orbital Scrapyard, giving its app
 
 ## Acceptance criteria
 
-- [ ] Add exactly one custom mission with authored terrain, selector entry, briefing and visible objectives, preserving existing missions and recovered assets.
-- [ ] Integrate matching approved specialists in starting forces, world-only reinforcement menus and actual deliveries; demonstrate useful legal specialist roles without changing their mechanics.
-- [ ] Provide connected collision-safe routes, reachable objectives, legal placements and finite sufficient support; inaccessible enemies must not prevent completion.
-- [ ] Define all five supported profiles (Very easy, Easy, Normal, Hard, Very hard) using existing conventions and finite enemy/wave budgets; production fixtures verify objectives, victory, defeat, restart and actual support capacity on every profile.
-- [ ] Run node tools/dev.cjs test and focused regressions; update current documentation and task/session handoff, record browser map/UI/playtest evidence separately from simulations and return a scoped commit at Review.
+- [x] Add exactly one custom mission with authored terrain, selector entry, briefing and visible objectives, preserving existing missions and recovered assets.
+- [x] Integrate matching approved specialists in starting forces, world-only reinforcement menus and actual deliveries; demonstrate useful legal specialist roles without changing their mechanics.
+- [x] Provide connected collision-safe routes, reachable objectives, legal placements and finite sufficient support; inaccessible enemies must not prevent completion.
+- [x] Define all five supported profiles (Very easy, Easy, Normal, Hard, Very hard) using existing conventions and finite enemy/wave budgets; production fixtures verify objectives, victory, defeat, restart and actual support capacity on every profile.
+- [x] Run node tools/dev.cjs test and focused regressions; update current documentation and task/session handoff, record browser map/UI/playtest evidence separately from simulations and return a scoped commit at Review.
 
 ## Scope and decisions
 
@@ -27,7 +27,12 @@ World identity is theme, briefing and roster. No new oxygen/gravity/flight/toxic
 ## Sessions
 
 - Planning: [director queue](../journal/2026-10-08-002-director-queue.md).
+- [2026-10-09 / 005](../journal/2026-10-09-005-orbital-scrapyard-mission.md)
 
 ## Layout selection checkpoint
 
 User2026-10-09 selected B (asymmetric hull circuits) by accepting the director recommendation, and explicitly requested saving all choices for later. Implement this selected proposal from the retained TRI095 atlas geometry and comparison guide; preserve every A/B/C source and export as reusable alternatives. Adapt schematic placements into actual terrain safely while retaining route identity, existing systems and all-five acceptance. Integrated roster prerequisite: 83f3794ba47436c808862ed3dfaee10a6c0a07d1. Execute Abandoned first, then Orbital; separate isolated branches and reviews.
+
+## Implementation evidence
+
+[Mission design](../design/orbital-scrapyard.md) records selected source identity,budgets and specialist roles; [all-five production fixtures](../design/orbital-scrapyard-evidence.json) verify real collision/movement,finite births,interactions,controlled completion/loss/reset and finite eagle delivery/caps. [Browser spot checks](../playtests/2026-10-09-orbital-scrapyard.md) record actual UI/rendering evidence and skipped full combat wins/audio. Review: final full suite passed; scoped implementation commit contains this record. Director owns board/integration.

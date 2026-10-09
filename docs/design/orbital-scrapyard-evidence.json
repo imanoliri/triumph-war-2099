@@ -1,0 +1,50 @@
+{
+  "method": "Disposable full production VM fixtures; real move/interact, finite birth clocks, physical eagle collection and support delivery. Controlled clear/defeat states and specialist target states are fixtures, not an unmodified combat playthrough or live browser evidence.",
+  "reports": [
+    {
+      "difficulty": "veryeasy",
+      "infantry": 6,
+      "births": 8,
+      "delivered": 5,
+      "routes": "production attackMoveStep collision traversal for infantry/specialists and an alien-tagged actor; not enemy AI",
+      "objective": "actual interaction plus clear fixture",
+      "defeatRestart": true
+    },
+    {
+      "difficulty": "easy",
+      "infantry": 6,
+      "births": 12,
+      "delivered": 5,
+      "routes": "production attackMoveStep collision traversal for infantry/specialists and an alien-tagged actor; not enemy AI",
+      "objective": "actual interaction plus clear fixture",
+      "defeatRestart": true
+    },
+    {
+      "difficulty": "normal",
+      "infantry": 6,
+      "births": 16,
+      "delivered": 5,
+      "routes": "production attackMoveStep collision traversal for infantry/specialists and an alien-tagged actor; not enemy AI",
+      "objective": "actual interaction plus clear fixture",
+      "defeatRestart": true
+    },
+    {
+      "difficulty": "hard",
+      "infantry": 5,
+      "births": 20,
+      "delivered": 5,
+      "routes": "production attackMoveStep collision traversal for infantry/specialists and an alien-tagged actor; not enemy AI",
+      "objective": "actual interaction plus clear fixture",
+      "defeatRestart": true
+    },
+    {
+      "difficulty": "veryhard",
+      "infantry": 4,
+      "births": 24,
+      "delivered": 5,
+      "routes": "production attackMoveStep collision traversal for infantry/specialists and an alien-tagged actor; not enemy AI",
+      "objective": "actual interaction plus clear fixture",
+      "defeatRestart": true
+    }
+  ]
+}

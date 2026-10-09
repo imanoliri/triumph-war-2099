@@ -1,0 +1,86 @@
+{
+  "id": "orbital-scrapyard",
+  "width": 1024,
+  "height": 768,
+  "source": "docs/design/world-map-atlas/geometry.json#orbital-scrapyard-b",
+  "selectedOption": "orbital-scrapyard-b",
+  "points": [
+    [
+      150,
+      620
+    ],
+    [
+      150,
+      170
+    ],
+    [
+      440,
+      170
+    ],
+    [
+      440,
+      620
+    ],
+    [
+      740,
+      620
+    ],
+    [
+      870,
+      170
+    ],
+    [
+      440,
+      390
+    ],
+    [
+      760,
+      390
+    ]
+  ],
+  "edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      7
+    ]
+  ],
+  "corridorWidth": 144,
+  "nodePadRadius": 88,
+  "collisionContract": "Selected corridor union, 32px HUD solid; center movement plus 17px static visual envelope."
+}
