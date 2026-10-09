@@ -36,3 +36,6 @@ User2026-10-09 selected A (Ruin terraces) by accepting the director recommendati
 ## Review evidence
 
 Exactly one selectable mission, selected A topology/placements and preserved39 atlas alternatives. Five explicit finite profiles; world menus/actual ground deliveries and useful starting specialists/7HP robot covered in tools/check-abandoned-terraces.cjs. Existing clear-source semantics permit exhausted nests, explicitly documented. Full suite/commit handoff is in session003; live spot checks are separate in docs/playtests/2026-10-09-abandoned-terraces.md. Full live victory/audio/human calibration remains unverified. Worker stops at Review for independent director review.
+
+## Integration
+Accepted squashefb26b7b317e926d2bc402485796e9208bee8285 fromreviewedd70a6d2a89b666062403a9feea2c0e7f3674759e on2026-10-09. Done; all39atlasalternatives preserved, fullsuitepass, livewin/audio/humanbalance notclaimed.

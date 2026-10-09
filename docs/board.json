@@ -1597,16 +1597,17 @@
       "id": "TRI-092",
       "title": "Add a playable Abandoned World mission",
       "task": "docs/tasks/abandoned-world-mission.md",
-      "status": "Review",
-      "reason": "Cleand70a6d2a89b666062403a9feea2c0e7f3674759e fullsuiteexit0; independentallfive/mask/firing/staticUI reviewpass, browserbounded evidence and livewin/audio limits explicit",
+      "status": "Done",
+      "reason": "All acceptance reviewed; independentallfive/source/UI and fullsuitepass; boundedbrowser limitations explicit",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
-      "worker": {
-        "id": "/root/abandoned_mission_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-abandoned-world-mission",
-        "branch": "feature/abandoned-world-mission"
-      },
-      "branch": "feature/abandoned-world-mission"
+      "branch": "feature/abandoned-world-mission",
+      "completion": {
+        "evidence": "All acceptance reviewed; independentallfive/source/UI and fullsuitepass; boundedbrowser limitations explicit",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "d70a6d2a89b666062403a9feea2c0e7f3674759e",
+        "squashCommit": "efb26b7b317e926d2bc402485796e9208bee8285"
+      }
     },
     {
       "id": "TRI-093",
@@ -6881,6 +6882,18 @@
       "details": [
         "Review",
         "Cleand70a6d2a89b666062403a9feea2c0e7f3674759e fullsuiteexit0; independentallfive/mask/firing/staticUI reviewpass, browserbounded evidence and livewin/audio limits explicit"
+      ]
+    },
+    {
+      "at": "2026-10-09T11:28:37.628Z",
+      "command": "move",
+      "ticket": "TRI-092",
+      "details": [
+        "Done",
+        "All acceptance reviewed; independentallfive/source/UI and fullsuitepass; boundedbrowser limitations explicit",
+        "/root/director",
+        "efb26b7b317e926d2bc402485796e9208bee8285",
+        "d70a6d2a89b666062403a9feea2c0e7f3674759e"
       ]
     }
   ]
