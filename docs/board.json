@@ -1613,10 +1613,16 @@
       "id": "TRI-093",
       "title": "Add a playable Orbital Scrapyard mission",
       "task": "docs/tasks/orbital-scrapyard-mission.md",
-      "status": "Ready",
-      "reason": "User2026-10-09 selected OrbitalB asymmetric hull circuits; execute after092, preserve alternatives",
+      "status": "In progress",
+      "reason": "Dispatched approved ticket",
       "questions": [],
-      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded."
+      "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
+      "worker": {
+        "id": "/root/orbital_mission_worker",
+        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-orbital-scrapyard-mission",
+        "branch": "feature/orbital-scrapyard-mission"
+      },
+      "branch": "feature/orbital-scrapyard-mission"
     },
     {
       "id": "TRI-094",
@@ -6931,6 +6937,15 @@
         "/root/director",
         "ddce83fcc46a7e4e1523d55dc62e0ec6ee76e683",
         "f09f9956aeff9323a44f0c73716d223639a04835"
+      ]
+    },
+    {
+      "at": "2026-10-09T11:52:11.948Z",
+      "command": "dispatch",
+      "ticket": "TRI-093",
+      "details": [
+        "../triumph-orbital-scrapyard-mission",
+        "/root/orbital_mission_worker"
       ]
     }
   ]
