@@ -1597,8 +1597,8 @@
       "id": "TRI-092",
       "title": "Add a playable Abandoned World mission",
       "task": "docs/tasks/abandoned-world-mission.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Cleand70a6d2a89b666062403a9feea2c0e7f3674759e fullsuiteexit0; independentallfive/mask/firing/staticUI reviewpass, browserbounded evidence and livewin/audio limits explicit",
       "questions": [],
       "approval": "User2026-10-08 authorized one bounded playable mission per missing world using existing systems; scope and acceptance recorded.",
       "worker": {
@@ -6872,6 +6872,15 @@
       "details": [
         "Ready",
         "User2026-10-09 requested reusable studied map/soldier/enemy catalogues independent of missions; bounded design-library scope, after active092 before093"
+      ]
+    },
+    {
+      "at": "2026-10-09T11:28:00.147Z",
+      "command": "move",
+      "ticket": "TRI-092",
+      "details": [
+        "Review",
+        "Cleand70a6d2a89b666062403a9feea2c0e7f3674759e fullsuiteexit0; independentallfive/mask/firing/staticUI reviewpass, browserbounded evidence and livewin/audio limits explicit"
       ]
     }
   ]
