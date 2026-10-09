@@ -1654,8 +1654,8 @@
       "id": "TRI-096",
       "title": "Create reusable layout, soldier and enemy design catalogues",
       "task": "docs/tasks/reusable-design-catalogues.md",
-      "status": "In progress",
-      "reason": "Dispatched approved ticket",
+      "status": "Review",
+      "reason": "Reviewed worker f09f9956aeff9323a44f0c73716d223639a04835; catalogue source checks, full suite exit0 and actual artifact QA recorded; runtime unchanged",
       "questions": [],
       "approval": "User2026-10-09 requested reusable studied map/soldier/enemy catalogues independent of missions; bounded design-library scope, after active092 before093",
       "worker": {
@@ -6909,6 +6909,15 @@
       "details": [
         "../triumph-reusable-design-catalogues",
         "/root/design_catalogue_worker"
+      ]
+    },
+    {
+      "at": "2026-10-09T11:51:09.183Z",
+      "command": "move",
+      "ticket": "TRI-096",
+      "details": [
+        "Review",
+        "Reviewed worker f09f9956aeff9323a44f0c73716d223639a04835; catalogue source checks, full suite exit0 and actual artifact QA recorded; runtime unchanged"
       ]
     }
   ]
