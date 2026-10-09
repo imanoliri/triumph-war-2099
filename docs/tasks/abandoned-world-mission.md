@@ -1,7 +1,7 @@
 # Abandoned World mission
 
 - Ticket: TRI-092; state in [local board](../BOARD.md).
-- Branch: not started
+- Branch: `feature/abandoned-world-mission`
 - Dependency: TRI-085 integrated before dispatch.
 
 ## Goal and user-visible outcome
@@ -10,11 +10,11 @@ Add one playable selectable custom mission for Abandoned World, giving its appro
 
 ## Acceptance criteria
 
-- [ ] Add exactly one custom mission with authored terrain, selector entry, briefing and visible objectives, preserving existing missions and recovered assets.
-- [ ] Integrate matching approved specialists in starting forces, world-only reinforcement menus and actual deliveries; demonstrate useful legal specialist roles without changing their mechanics.
-- [ ] Provide connected collision-safe routes, reachable objectives, legal placements and finite sufficient support; inaccessible enemies must not prevent completion.
-- [ ] Define all five supported profiles (Very easy, Easy, Normal, Hard, Very hard) using existing conventions and finite enemy/wave budgets; production fixtures verify objectives, victory, defeat, restart and actual support capacity on every profile.
-- [ ] Run node tools/dev.cjs test and focused regressions; update current documentation and task/session handoff, record browser map/UI/playtest evidence separately from simulations and return a scoped commit at Review.
+- [x] Add exactly one custom mission with authored terrain, selector entry, briefing and visible objectives, preserving existing missions and recovered assets.
+- [x] Integrate matching approved specialists in starting forces, world-only reinforcement menus and actual deliveries; demonstrate useful legal specialist roles without changing their mechanics.
+- [x] Provide connected collision-safe routes, reachable objectives, legal placements and finite sufficient support; inaccessible enemies must not prevent completion.
+- [x] Define all five supported profiles (Very easy, Easy, Normal, Hard, Very hard) using existing conventions and finite enemy/wave budgets; production fixtures verify objectives, victory, defeat, restart and actual support capacity on every profile.
+- [x] Run node tools/dev.cjs test and focused regressions; update current documentation and task/session handoff, record browser map/UI/playtest evidence separately from simulations and return a scoped commit at Review.
 
 ## Scope and decisions
 
@@ -31,3 +31,8 @@ World identity is theme, briefing and roster. No new oxygen/gravity/flight/toxic
 ## Layout selection checkpoint
 
 User2026-10-09 selected A (Ruin terraces) by accepting the director recommendation, and explicitly requested saving all choices for later. Implement this selected proposal from the retained TRI095 atlas geometry and comparison guide; preserve every A/B/C source and export as reusable alternatives. Adapt schematic placements into actual terrain safely while retaining route identity, existing systems and all-five acceptance. Integrated roster prerequisite: 4efb7897ba11c3be5520b7a17503ca3fb1bc40a5. Execute Abandoned first, then Orbital; separate isolated branches and reviews.
+- [2026-10-09 / 003](../journal/2026-10-09-003-abandoned-world-mission.md)
+
+## Review evidence
+
+Exactly one selectable mission, selected A topology/placements and preserved39 atlas alternatives. Five explicit finite profiles; world menus/actual ground deliveries and useful starting specialists/7HP robot covered in tools/check-abandoned-terraces.cjs. Existing clear-source semantics permit exhausted nests, explicitly documented. Full suite/commit handoff is in session003; live spot checks are separate in docs/playtests/2026-10-09-abandoned-terraces.md. Full live victory/audio/human calibration remains unverified. Worker stops at Review for independent director review.

@@ -56,6 +56,8 @@ All three designs are mechanically different and geometrically feasible with the
 
 ## Split Ridge replacement (TRI-032)
 
+TRI-092 adds **Ruin Terraces** (`custom-abandoned-ruin-terraces`), one Abandoned assault using selected atlas A. Two relays, four finite sources and all enemies must be cleared (spent nests may remain). Incendiary/Recovery and the existing full7HP robot start on every profile; one finite yellow eagle supplies world roster troops and one plasma pickup remains usable by ordinary infantry. [Current profile budgets and evidence](abandoned-terraces.md) preserve all recovered maps and every atlas proposal.
+
 Relay Breaker keeps its stable scenario ID but uses accepted [A placements](relay-breaker-maps/proposals.json), replacing the prior Desert Rocks scenery/placements. Four commanders at x96 and eight soldiers at x160/x224 use y288/352/416/480; north/south relays at (800,200)/(800,560), nests at (904,240)/(904,600), six bugs and three pickups match proposal A exactly. Geometry and custom provenance are documented in [terrain source](../../tools/build-split-ridge.py). Original Desert Rocks rules/support template is retained unchanged. B/C concepts are preserved for possible later missions, never registered.
 
 ## Current TRI-037 pressure profiles

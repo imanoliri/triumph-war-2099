@@ -297,7 +297,7 @@ Both share selection, ordinary Normal/Follow/Attack/Defend, explicit focus/attac
 
 ## Abandoned specialists (TRI-085)
 
-Authored opt-in `TriumphCustomMissions.worldRosters.Abandoned` contains Infantry, Incendiary Trooper, Recovery Trooper and Commando. No matching runtime mission exists; future matching missions opt into `worldRoster` and `incendiaries` / `recoveryTroopers` starting coordinate arrays. No mission, asset, placement, payload or enemy-pressure change is introduced.
+Authored `TriumphCustomMissions.worldRosters.Abandoned` contains Infantry, Incendiary Trooper, Recovery Trooper and Commando. Ruin Terraces (TRI-092) opts into `worldRoster`, `incendiaries` and `recoveryTroopers`; the original roster ticket introduced no mission or pressure changes.
 
 Incendiary has 1 HP and ordinary infantry movement, collision and eight-direction aiming. Its fixed flame kit deals 1 damage per 0.18-second pulse in a 120 px, 45-degree cone, with sight and terrain/prop clearance. First legal firing starts a one-second firing window followed by two seconds cooling. Loss of target or movement orders do not reset that cycle; no firing is synthesized without a legal current target. Allies are immune, underground worms retain phase immunity, nests use normal damage credit. Props/buildings are not burned and no ground or spreading fires are created. Ordinary flame pickup infantry retains its current weapon behavior.
 
@@ -314,5 +314,7 @@ Mine-layer retains ordinary infantry 1 HP, movement and rifle bursts. Four finit
 Breacher retains ordinary 1 HP infantry movement and eight-direction aiming. Its single collision projectile travels at ordinary 290 px/s, reaches 90 px from the shooter (10 px muzzle plus 80 px travel), deals 3 damage to its first target and reloads for 2 simulation seconds, without added burst delay/rest. Shared focus/Attack/attack-move/Follow/Defend rules and firing-lane alignment apply. Terrain and props stop shots; the Breacher cannot damage walls or open locked doors. Ordinary destructible props/barrels keep their established collision and enemy-only blast behavior. Both fixed kits exclude weapon pickups and mounted cannons; starting and arriving specialists count toward the existing troop cap. World-filtered ground/air menus and Units portraits/descriptions are available for opt-in fixtures.
 
 ## Local soundtrack selection (TRI-067)
+
+Ruin Terraces (TRI-092) adds one Abandoned assault with selected atlas A terrain, two relays, finite sources and useful existing specialists/robot/support. [Current geometry, profile budgets and fixture limits](design/abandoned-terraces.md) distinguish authored terrain from recovered assets; all atlas alternatives remain preserved.
 
 Controls → Soundtrack defaults to Auto using unchanged mission assignments. A manual recovered MIDI or newly authored environment track persists across restart/difficulty/mission changes until Auto restores the latest mission track; page reload restores Auto. Eight local motifs cover Title/Briefing, Snow, Maritime, Capital, Desert, Jungle, Volcanic and Undercity. Music continues independently of tactical freeze. See [SOUNDTRACK](SOUNDTRACK.md) for source/provenance and exact semantics; no automatic campaign remapping or screen cues are added.

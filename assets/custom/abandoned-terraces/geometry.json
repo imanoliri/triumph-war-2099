@@ -1,0 +1,70 @@
+{
+  "id": "abandoned-terraces",
+  "width": 1024,
+  "height": 768,
+  "source": "docs/design/world-map-atlas/geometry.json#abandoned-world-a",
+  "selectedOption": "abandoned-world-a",
+  "points": [
+    [
+      150,
+      620
+    ],
+    [
+      150,
+      390
+    ],
+    [
+      430,
+      390
+    ],
+    [
+      430,
+      170
+    ],
+    [
+      710,
+      170
+    ],
+    [
+      870,
+      390
+    ],
+    [
+      870,
+      620
+    ]
+  ],
+  "edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      2
+    ]
+  ],
+  "corridorWidth": 144,
+  "nodePadRadius": 88,
+  "collisionContract": "Selected corridor union, 32px HUD solid; center movement plus 17px static visual envelope, robot route separately tested."
+}

@@ -22,6 +22,8 @@ When available, run the original v2.3 game and compare the same mission/track. R
 
 ## Release criteria
 
+Ruin Terraces (TRI-092): inspect all-five briefs, western terrace/eastern loop geometry, relays/nests/births/bugs status inset above tactical border, starting Incendiary/Recovery and7HP robot. Verify Abandoned-only menu/save, physical yellow-eagle delivery/cap retry, short flame lanes and stationary two-kit repair after combat injury. Activate both relays and destroy/exhaust finite nests plus bugs; verify victory, defeat and restart. [Live spot checks and skipped full wins/audio](playtests/2026-10-09-abandoned-terraces.md) remain separate from simulations.
+
 Automated suite green; required scenarios passed with recorded evidence; open failures classified; no live verification claims for skipped checks. A known limitation may be accepted explicitly by the user, with its scope documented.
 
 ## Gamepad acceptance (TRI-007)
