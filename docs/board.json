@@ -1654,16 +1654,17 @@
       "id": "TRI-096",
       "title": "Create reusable layout, soldier and enemy design catalogues",
       "task": "docs/tasks/reusable-design-catalogues.md",
-      "status": "Review",
-      "reason": "Reviewed worker f09f9956aeff9323a44f0c73716d223639a04835; catalogue source checks, full suite exit0 and actual artifact QA recorded; runtime unchanged",
+      "status": "Done",
+      "reason": "Independent source/artifact review accepted; exact committed range clean; full suite exit0; catalogue-only scope and all options retained",
       "questions": [],
       "approval": "User2026-10-09 requested reusable studied map/soldier/enemy catalogues independent of missions; bounded design-library scope, after active092 before093",
-      "worker": {
-        "id": "/root/design_catalogue_worker",
-        "checkout": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\he\\outputs\\triumph-reusable-design-catalogues",
-        "branch": "chore/reusable-design-catalogues"
-      },
-      "branch": "chore/reusable-design-catalogues"
+      "branch": "chore/reusable-design-catalogues",
+      "completion": {
+        "evidence": "Independent source/artifact review accepted; exact committed range clean; full suite exit0; catalogue-only scope and all options retained",
+        "reviewer": "/root/director",
+        "reviewedImplementationCommit": "f09f9956aeff9323a44f0c73716d223639a04835",
+        "squashCommit": "ddce83fcc46a7e4e1523d55dc62e0ec6ee76e683"
+      }
     }
   ],
   "events": [
@@ -6918,6 +6919,18 @@
       "details": [
         "Review",
         "Reviewed worker f09f9956aeff9323a44f0c73716d223639a04835; catalogue source checks, full suite exit0 and actual artifact QA recorded; runtime unchanged"
+      ]
+    },
+    {
+      "at": "2026-10-09T11:51:32.930Z",
+      "command": "move",
+      "ticket": "TRI-096",
+      "details": [
+        "Done",
+        "Independent source/artifact review accepted; exact committed range clean; full suite exit0; catalogue-only scope and all options retained",
+        "/root/director",
+        "ddce83fcc46a7e4e1523d55dc62e0ec6ee76e683",
+        "f09f9956aeff9323a44f0c73716d223639a04835"
       ]
     }
   ]

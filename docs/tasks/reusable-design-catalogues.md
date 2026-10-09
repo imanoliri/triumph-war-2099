@@ -26,9 +26,14 @@ Execution order: finish active TRI-092, then this catalogue design ticket, then 
 
 ## Review result
 
-Acceptance complete: [browsable catalogues](../design/catalogues/catalogue.html), [structured evidence](../design/catalogues/catalogue.json), [authoring/composition contract](../design/catalogues/README.md) and [actual artifact QA/screenshots](../design/catalogues/QA.md). Twelve generic patterns,34 implemented human entries with explicit deferred/rejected/historical statuses,7 existing+6 proposed enemy roles,45 preserved map alternatives and3 worked briefs. Source/factory/roster/record/DOM checks, unchanged atlas checks and full `node tools/dev.cjs test` passed. Runtime/assets/atlas unchanged; no gameplay/balance/publication claim. Latest session owns handoff; awaiting independent director review/squash integration.
+Acceptance complete: [browsable catalogues](../design/catalogues/catalogue.html), [structured evidence](../design/catalogues/catalogue.json), [authoring/composition contract](../design/catalogues/README.md) and [actual artifact QA/screenshots](../design/catalogues/QA.md). Twelve generic patterns,34 implemented human entries with explicit deferred/rejected/historical statuses,7 existing+6 proposed enemy roles,45 preserved map alternatives and3 worked briefs. Source/factory/roster/record/DOM checks, unchanged atlas checks and full 
+ode tools/dev.cjs test` passed. Runtime/assets/atlas unchanged; no gameplay/balance/publication claim. Latest session owns handoff; awaiting independent director review/squash integration.
 
 ## Sessions
 
 - Director request and scope: [session018](../journal/2026-10-08-018-director-continuation.md).
 - [2026-10-09 / 004](../journal/2026-10-09-004-reusable-design-catalogues.md)
+
+## Integration
+
+Accepted squash ddce83fcc46a7e4e1523d55dc62e0ec6ee76e683 from reviewed worker f09f9956aeff9323a44f0c73716d223639a04835. Independent catalogue/source checks and actual artifact evidence accepted; full suite exit0. Runtime unchanged; proposed mechanics remain unapproved.
