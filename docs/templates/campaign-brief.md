@@ -11,7 +11,7 @@
 - **Active Parallel Build Stages (`s-code`, `s-art`, `s-audio`):**
   - Run `s-code` (`Gameplay Engineer`): `yes | skip`
   - Run `s-art` (`Map & Sprite Artist`): `yes | skip`
-  - Run `s-audio` (`Sound Designer`): `yes | skip`
+  - Run `s-audio` (`Sound Designer`, optional — 1 song per planet): `skip (all planets already scored) | yes (1 track per new/unscored planet)`
 - **Explicit Exclusions & Provenance Guards:**
   - Original 9 recovered missions, `assets/images/*` (`995`), `assets/maps/*` (`9`), `assets/audio/catalog.json` (`62`/`14`), and `ORIGINAL_MUSIC` line-1 SHA256 remain untouched.
   - Open operator questions batched here before Step 2 begins:

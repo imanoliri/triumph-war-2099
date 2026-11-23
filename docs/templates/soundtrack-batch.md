@@ -1,13 +1,15 @@
-# All-Worlds Soundtrack Batch (`3C. Soundtrack Batch`)
+# Planet Soundtrack Batch (`3C. Soundtrack Batch` — Optional, 1 Song Per Planet)
 
 Style: tactical sci-fi orchestral synth, driving military percussion, crisp retro bassline, 128 BPM
 
-## Target World Tracks
+- **Policy:** Optional (`skip` `s-audio` if all campaign planets already have themes: `Snow`, `Maritime`, `Capital`, `Desert`, `Jungle`, `Volcanic`, `Undercity`). Compose strictly **1 shared song per new or unscored planet** — all missions on the same planet reuse its single planet track.
 
-| World / Theme | Key / Root MIDI | Lead Program | Duration (s) | Musical Identity & Motif |
+## Target Planets (1 Song Each)
+
+| Planet | Key / Root MIDI | Lead Program | Duration (s) | Shared Across Missions & Motif |
 |---|---|---|---|---|
-| `<World A>` | `<pitch>` | `<0..127>` | `<sec>` | `<motif & rhythm>` |
-| `<World B>` | `<pitch>` | `<0..127>` | `<sec>` | `<motif & rhythm>` |
+| `<Planet A>` | `<pitch>` | `<0..127>` | `<sec>` | `<missions sharing track + motif>` |
+| `<Planet B>` | `<pitch>` | `<0..127>` | `<sec>` | `<missions sharing track + motif>` |
 
 ## Wiring & Provenance Checklist
 - `tools/compose-soundtrack.cjs` deterministic composition output matches `assets/audio/music-data.js` (`ROYALTY_FREE_MUSIC`).

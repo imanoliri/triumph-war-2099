@@ -25,7 +25,7 @@ Fill `docs/templates/campaign-brief.md` with clear, batch-scoped decisions:
 - **Mode:** Choose `Multi-World Campaign` (all target worlds designed, coded, painted, and scored together in parallel waves), `Single-World Upgrade`, or `Engine/AI Sprint`.
 - **Target Worlds & Arc:** List every world in the batch, any selected Atlas A/B/C options (`docs/design/world-map-atlas/selections.md`), and how missions escalate mechanically.
 - **Roster & Enemy Scope:** Name exact `catalogue.json` unit/enemy IDs (`worldRoster` gates explicit) and new mechanics in scope.
-- **Build Stage Routing:** Explicitly list which parallel `build` stages (`s-code`, `s-art`, `s-audio`) should run vs. be skipped via `request-skip` for this run.
+- **Build Stage Routing:** Explicitly list which parallel `build` stages (`s-code`, `s-art`, `s-audio`) should run vs. be skipped via `request-skip` for this run. Always skip optional `s-audio` unless adding a new planet or scoring an unscored planet (strictly **1 song per planet**, shared across all missions on that planet).
 - **Exclusions:** Spell out what must remain untouched (original missions, unrequested rosters, local Windows MIDI bank `assets/audio/gm-bank.js`).
 
 ## 3. Gate Discipline & Batching
